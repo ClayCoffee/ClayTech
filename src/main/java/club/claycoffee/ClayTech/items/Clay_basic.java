@@ -34,5 +34,9 @@ public class Clay_basic {
 		Research basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELECBASIC"), 9915, "电器 I", 65);
 		basic2.addItems(SlimefunItem.getByItem(Defines.CLAY_CRAFTING_TABLE), SlimefunItem.getByItem(Defines.CLAY_FOOD_CAULDRON), SlimefunItem.getByItem(Defines.CLAY_FOOD_CHALKING_MACHINE));
 		basic2.register();
+		
+		Research basic3 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELEMACHINE"), 9918, "元素提取机", 65);
+		basic3.addItems(SlimefunItem.getByItem(Defines.CLAY_ELEMENT_EXTRACTER));
+		basic3.register();
 	}
 }

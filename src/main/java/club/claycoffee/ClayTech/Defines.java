@@ -35,8 +35,13 @@ public class Defines {
 	public static final LockedCategory C_DECORATES = new LockedCategory(
 			new NamespacedKey(ClayTech.plugin, "claycategory"), Utils.newItemD(Material.PLAYER_HEAD, "§b粘土科技 - 装饰品"),
 			C_BASICS);
+	public static final LockedCategory C_ELEMENTS = new LockedCategory(
+			new NamespacedKey(ClayTech.plugin, "claycategory"), Utils.newItemD(Material.FLOWER_POT, "§b粘土科技 - 元素"),
+			C_BASICS);
 
 	// 注册
+	public static final ItemStack USEFUL_DIRT = Utils.addLore(Utils.addLore(Utils.setDisplayName(new ItemStack(Material.DIRT), "§6有用的泥土"), "§b来自地球上的泥土..."), "§b它充满了有用的矿物质...");
+	public static final ItemStack ORE_DIAMOND = Utils.setDisplayName(new ItemStack(Material.DIAMOND), "§b矿物钻石");
 	public static final ItemStack MAGIC_CLAY = Utils.addLore(Utils.newItemD(Material.CLAY_BALL, "§6魔法の粘土"),
 			"§b粘土科技的基础物品,许多粘土科技的合成都需要这个");
 	public static final ItemStack CLAY_STICK = Utils.addLore(Utils.newItemD(Material.STICK, "§6克莱の木棍"),
@@ -93,6 +98,15 @@ public class Defines {
 			new String[] { "§6福寿螺", "§7吃一个试试?", "§7钓鱼有几率获得" });
 	public static final ItemStack HONEY_SWEET = Utils.setLoreList(Utils.newItemD(Material.HONEYCOMB, "§e蜂蜜糖"),
 			new String[] { "§6蜂蜜糖", "§7介个东西太甜了⑧..", "§7食用后增加8点饱食度." });
+	public static final ItemStack ELEMENT_UNIT = Utils.setLoreList(Utils.newItemD(Material.FLOWER_POT, "§e元素单元"),
+			new String[] { "§6元素单元", "§7可以容纳元素!", "§e不可放置" });
+	public static final ItemStack ELEMENT_OXYGEN = Utils.setLoreList(Utils.newItemD(Material.FLOWER_POT, "§e氧元素"),
+			new String[] { "§6氧元素", "§74P + 5O2 =点燃=2P2O5", "§7在元素提取机中放入有用的泥土三个获得", "§e不可放置" });
+	public static final ItemStack ELEMENT_CARBON = Utils.setLoreList(Utils.newItemD(Material.FLOWER_POT, "§e碳元素"),
+			new String[] { "§6碳元素", "§7可以做很多东西呢~", "§7在元素提取机中放入两个矿物钻石获得", "§e不可放置" });
+	public static final ItemStack ELEMENT_SILICON = Utils.setLoreList(Utils.newItemD(Material.FLOWER_POT, "§e硅元素"),
+			new String[] { "§6硅元素", "§7用来合成硅锭,制造电路板!", "§7在元素提取机中放入十个沙子获得", "§e不可放置" });
+	public static final ItemStack BLISTERING_CORE = Utils.newItemD(Material.GOLD_INGOT, "§e起泡核心");
 
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setLoreList(Utils.setDisplayName(SkullItem.fromURL(
@@ -167,4 +181,9 @@ public class Defines {
 			new String[] { "", "§f能够制作粘土科技中的某些粉末", "",
 					LoreBuilder.machine(MachineTier.AVERAGE, MachineType.MACHINE).replaceAll("&", "§"),
 					LoreBuilder.powerBuffer(512).replaceAll("&", "§"), "§8\u21E8 §e\u26A1 §732 J/s" });
+	public static final ItemStack CLAY_ELEMENT_EXTRACTER = Utils.setLoreList(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/c74170c66bf3140f234b322add724c5df6949a9209f807ebf86d4f9c8c1e178"),
+			"§e元素提取器"),
+			new String[] { "", "§f能够提取化学元素", "", LoreBuilder.powerBuffer(1024).replaceAll("&", "§"),
+					"§8\u21E8 §e\u26A1 §764 J/s" });
 }

@@ -20,7 +20,7 @@ public class ClayTech extends JavaPlugin {
 	@SuppressWarnings("unused")
 	@Override
 	public void onEnable() {
-		// 当前研究ID: 9916
+		// 当前研究ID: 9918
 		
 		Utils.info("粘土科技 By ClayCoffee，请不要未经我的授权使用本插件在你的服务器上(如果使用在基友服,且人数少于4人,默认授权。而且你也不能未经允许分发编译后的插件.谢谢合作!");
 		plugin = this;
@@ -41,14 +41,18 @@ public class ClayTech extends JavaPlugin {
 		ItemStack[] ClayCrafingTable = {SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.ELECTRO_MAGNET,SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.BATTERY,new ItemStack(Material.CRAFTING_TABLE),SlimefunItems.BATTERY,Defines.MAGIC_CLAY,SlimefunItems.SMALL_CAPACITOR,Defines.MAGIC_CLAY};
 		ItemStack[] ClayFoodCauldron = {SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.ELECTRO_MAGNET,SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.BATTERY,Defines.CLAY_CRAFTING_TABLE,SlimefunItems.BATTERY,Defines.MAGIC_CLAY,SlimefunItems.MEDIUM_CAPACITOR,Defines.MAGIC_CLAY};
 		ItemStack[] ClayChalkingMachine = {SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.ELECTRO_MAGNET,SlimefunItems.ELECTRIC_MOTOR,SlimefunItems.BATTERY,Defines.CLAY_CRAFTING_TABLE,SlimefunItems.BATTERY,Defines.CLAY_STICK,SlimefunItems.MEDIUM_CAPACITOR,Defines.MAGIC_CLAY};
+		ItemStack[] ClayElementExtracter = { Defines.BLISTERING_CORE, Defines.BLISTERING_CORE, Defines.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3, SlimefunItems.WITHER_PROOF_OBSIDIAN };
 		
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",Defines.CLAY_CRAFTING_TABLE);
 		SlimefunItemStack foodcauldron = new SlimefunItemStack("CLAY_FOOD_CAULDRON",Defines.CLAY_FOOD_CAULDRON);
 		SlimefunItemStack chalkingmachine = new SlimefunItemStack("CLAY_FOOD_CHALKING_MACHINE",Defines.CLAY_FOOD_CHALKING_MACHINE);
+		SlimefunItemStack elementextracter = new SlimefunItemStack("CLAY_ELEMENT_EXTRACTER", Defines.CLAY_ELEMENT_EXTRACTER);
+		
 		new CraftingTable(Defines.C_BASICS,craftingtable,"CLAY_CRAFTING_TABLE",RecipeType.ENHANCED_CRAFTING_TABLE,ClayCrafingTable).registerChargeableBlock(128);
 		new FoodCauldron(Defines.C_BASICS,foodcauldron,"CLAY_FOOD_CAULDRON",RecipeType.ENHANCED_CRAFTING_TABLE,ClayFoodCauldron).registerChargeableBlock(512);
 		new FoodChalkingMachine(Defines.C_BASICS,chalkingmachine,"CLAY_FOOD_CHALKING_MACHINE",RecipeType.ENHANCED_CRAFTING_TABLE,ClayChalkingMachine).registerChargeableBlock(512);
+		new ElementExtracter(Defines.C_BASICS, elementextracter, "CLAY_ELEMENT_EXTRACTER", RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).registerChargeableBlock(1024);
 		
 		// 物品
 		new Clay_basic();
@@ -60,7 +64,8 @@ public class ClayTech extends JavaPlugin {
 		new Drinks();
 		new FoodMakingStaff();
 		new Foods();
-		
+		new MachineMakingBasic();
+		new Elements();
 		
 		
 	}
