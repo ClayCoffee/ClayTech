@@ -5,11 +5,9 @@ import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.TRecipe;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
 
 public class MachineMakingBasic {
 	public MachineMakingBasic() {

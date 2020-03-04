@@ -61,6 +61,7 @@ public class CraftingTable extends ACraftingTable{
 		this.registerRecipe(100,Recipes.POISON_SWORD,new ItemStack[]{Defines.POISON_SWORD});
 		this.registerRecipe(100,Recipes.ANTI_SLOWNESS_BOOTS,new ItemStack[]{Defines.ANTI_SLOWNESS_BOOTS});
 		this.registerRecipe(80,Recipes.BLISTERING_CORE,new ItemStack[]{Defines.BLISTERING_CORE});
+		this.registerRecipe(30,Recipes.ELEMENT_UNIT,new ItemStack[]{Defines.ELEMENT_UNIT});
 	}
 
 }
