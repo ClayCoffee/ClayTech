@@ -30,7 +30,7 @@ public class Elements {
 		
 
 		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"),
-				9917, "元素热身", 50);
+				9919, "元素 I", 50);
 
 		before_element.addItems(SlimefunItem.getByItem(Defines.ELEMENT_UNIT),
 				SlimefunItem.getByItem(Defines.ELEMENT_OXYGEN),SlimefunItem.getByItem(Defines.ELEMENT_CARBON),SlimefunItem.getByItem(Defines.ELEMENT_SILICON));

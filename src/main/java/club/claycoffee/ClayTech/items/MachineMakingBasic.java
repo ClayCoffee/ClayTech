@@ -2,6 +2,7 @@ package club.claycoffee.ClayTech.items;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.TRecipe;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
@@ -12,13 +13,9 @@ import org.bukkit.inventory.ItemStack;
 
 public class MachineMakingBasic {
 	public MachineMakingBasic() {
-		ItemStack[] recipea = { SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-				SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-				SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-				SlimefunItems.BLISTERING_INGOT_3 };
 
 		Slimefunutils.registerItem(Defines.C_MATERIALS, "BLISTERING_CORE",
-				Defines.BLISTERING_CORE, "notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, recipea, false);
+				Defines.BLISTERING_CORE, "notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, Recipes.BLISTERING_CORE, false);
 
 		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"), 9917,
 				"元素热身", 50);

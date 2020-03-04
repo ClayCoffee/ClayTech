@@ -40,7 +40,7 @@ public class ElementExtracter extends AElementExtracter{
 	}
 
 	public void registerDefaultRecipes() {
-		registerRecipe(10, new ItemStack[] { Utils.addLore(Utils.addLore(Utils.setDisplayName(new ItemStack(Material.DIRT,3), "§6有用的泥土"), "§b来自地球上的泥土..."), "§b它充满了有用的矿物质...") }, new ItemStack[] { Defines.ELEMENT_OXYGEN });
+		registerRecipe(10, new ItemStack[] { Utils.setDisplayName(new ItemStack(Material.DIRT,3), "§6有用的泥土")}, new ItemStack[] { Defines.ELEMENT_OXYGEN });
 		registerRecipe(10, new ItemStack[] { Utils.setDisplayName(new ItemStack(Material.DIAMOND,2), "§b矿物钻石") }, new ItemStack[] { Defines.ELEMENT_CARBON });
 		registerRecipe(10, new ItemStack[] { new ItemStack(Material.SAND,10) }, new ItemStack[] { Defines.ELEMENT_SILICON });
 	}

@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.utils.Utils;
+import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
 public class Recipes {
 	public final static ItemStack[] BLIND_CORE = { new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
@@ -88,4 +89,8 @@ public class Recipes {
 	public final static ItemStack[] ELEMENT_CARBON = {null,null,null,null,Utils.setDisplayName(new ItemStack(Material.DIAMOND,2), "§b矿物钻石"),null,null,null,null};
 	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, Utils.addLore(Utils.addLore(Utils.setDisplayName(new ItemStack(Material.DIRT,3), "§6有用的泥土"), "§b来自地球上的泥土..."), "§b它充满了有用的矿物质..."), null, null, null, null };
 	public final static ItemStack[] ELEMENT_SILICON = {null,null,null,null,new ItemStack(Material.SAND,10),null,null,null,null};
+	public final static ItemStack[] BLISTERING_CORE = { SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
+			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
+			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
+			SlimefunItems.BLISTERING_INGOT_3 };
 }
