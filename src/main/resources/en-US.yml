@@ -141,7 +141,7 @@ Items:
     - "&7Can cover elements!"
     - "&eCan't Place"
   ELEMENT_OXYGEN: "&eElement O"
-  ELEMENT_OXYGEN:
+  ELEMENT_OXYGEN_LORE:
     - "&eElement O"
     - "&74P + 5O2 =Light=2P2O5"
     - "&7Gain this by putting three grass blocks in the Element Extracter."

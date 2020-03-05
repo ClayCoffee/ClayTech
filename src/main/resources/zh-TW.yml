@@ -141,7 +141,7 @@ Items:
     - "&7可以容納元素!"
     - "&e不可放置"
   ELEMENT_OXYGEN: "&e氧元素"
-  ELEMENT_OXYGEN:
+  ELEMENT_OXYGEN_LORE:
     - "&e氧元素"
     - "&74P + 5O2 =點燃=2P2O5"
     - "&7在元素提取機中放入草方塊三個獲得"
