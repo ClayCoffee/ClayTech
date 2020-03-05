@@ -265,6 +265,14 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &764 J/s" 
+  CLAY_ELECTRIC_STONE_CRUSHER: "&eElectric Stone Crusher"
+  CLAY_ELECTRIC_STONE_CRUSHER_LORE:
+    - ""
+    - "&fCan crush cobblestones into gravels."
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &716 J/s" 
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -292,13 +300,14 @@ Researches:
   CLAYTECH_DECORATES_I: "Decorates I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
-  CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Eletric Cauldron"
+  CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
   CLAY_FOOD_CHALKING_MACHINE: "&a&oCraft this in Food Chalking Machine"
   CLAY_ELEMENT_EXTRACTER: "&a&oExtract this in Element Extracter"
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&bClay Fusing Machine"
   CLAY_ELEMENT_EXTRACTER: "&bElement Extracter"
-  CLAY_FOOD_CAULDRON: "&bEletric Cauldron"
+  CLAY_FOOD_CAULDRON: "&bElectric Cauldron"
   CLAY_FOOD_CHALKING_MACHINE: "&bFood Chalking Machine"
+  CLAY_ELECTRIC_STONE_CRUSHER: "&bElectric Stone Crusher"
   ELEMENT_UNIT_DOWN: "&ePut element units below ↓"

@@ -33,7 +33,7 @@ public class Clay_basic {
 		basic.register();
 		
 		Research basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELECBASIC"), 9915, Lang.readResearchesText("CLAYTECH_ELECTRICMACHINE"), 65);
-		basic2.addItems(SlimefunItem.getByItem(Defines.CLAY_CRAFTING_TABLE), SlimefunItem.getByItem(Defines.CLAY_FOOD_CAULDRON), SlimefunItem.getByItem(Defines.CLAY_FOOD_CHALKING_MACHINE));
+		basic2.addItems(SlimefunItem.getByItem(Defines.CLAY_CRAFTING_TABLE), SlimefunItem.getByItem(Defines.CLAY_ELECTRIC_STONE_CRUSHER), SlimefunItem.getByItem(Defines.CLAY_FOOD_CAULDRON), SlimefunItem.getByItem(Defines.CLAY_FOOD_CHALKING_MACHINE));
 		basic2.register();
 		
 		Research basic3 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELEMACHINE"), 9918, Lang.readResearchesText("CLAYTECH_ELEMENT_EXTRACTER_MACHINE"), 65);

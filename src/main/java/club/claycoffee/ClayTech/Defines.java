@@ -168,6 +168,8 @@ public class Defines {
 			"http://textures.minecraft.net/texture/6d6c65b44c34b1acc2ccb346752397125f0d9ffa0ab3c50a99d1db3b74c63"),
 			Lang.readItemText("CLAY_FUSION_MACHINE")),
 			Utils.replaceList(Utils.replaceList(Lang.readItemLore("CLAY_FUSION_MACHINE"),"%TIER%",LoreBuilder.machine(MachineTier.BASIC, MachineType.MACHINE).replaceAll("&", "§")),"%POWER%",LoreBuilder.powerBuffer(128).replaceAll("&", "§")));
+	public static final ItemStack CLAY_ELECTRIC_STONE_CRUSHER = Utils.setLore(Utils.newItemD(Material.RED_STAINED_GLASS,Lang.readItemText("CLAY_ELECTRIC_STONE_CRUSHER")),
+			Utils.replaceList(Utils.replaceList(Lang.readItemLore("CLAY_ELECTRIC_STONE_CRUSHER"),"%TIER%",LoreBuilder.machine(MachineTier.BASIC, MachineType.MACHINE).replaceAll("&", "§")),"%POWER%",LoreBuilder.powerBuffer(128).replaceAll("&", "§")));
 	public static final ItemStack CLAY_FOOD_CAULDRON = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
 			"http://textures.minecraft.net/texture/dfd9b2f42d5f1c2a77b511fe41a4c6b5c192fb10b2ceadde05bd1af52a151"),
 			Lang.readItemText("CLAY_ELETRIC_CAULDRON")),

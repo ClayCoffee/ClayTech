@@ -108,6 +108,9 @@ public class ClayTech extends JavaPlugin {
 		ItemStack[] ClayCrafingTable = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, new ItemStack(Material.CRAFTING_TABLE),
 				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, Defines.MAGIC_CLAY };
+		ItemStack[] ClayStoneCrusher = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.DISPENSER) };
 		ItemStack[] ClayFoodCauldron = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, Defines.CLAY_CRAFTING_TABLE, SlimefunItems.BATTERY,
 				Defines.MAGIC_CLAY, SlimefunItems.MEDIUM_CAPACITOR, Defines.MAGIC_CLAY };
@@ -126,9 +129,13 @@ public class ClayTech extends JavaPlugin {
 				Defines.CLAY_FOOD_CHALKING_MACHINE);
 		SlimefunItemStack elementextracter = new SlimefunItemStack("CLAY_ELEMENT_EXTRACTER",
 				Defines.CLAY_ELEMENT_EXTRACTER);
+		SlimefunItemStack electricstonecrusher = new SlimefunItemStack("CLAY_ELECTRIC_STONE_CRUSHER",
+				Defines.CLAY_ELECTRIC_STONE_CRUSHER);
 
 		new CraftingTable(Defines.C_BASICS, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayCrafingTable).registerChargeableBlock(128);
+		new ElectricStoneCrusher(Defines.C_BASICS, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER", RecipeType.ENHANCED_CRAFTING_TABLE,
+				ClayStoneCrusher).registerChargeableBlock(128);
 		new FoodCauldron(Defines.C_BASICS, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayFoodCauldron).registerChargeableBlock(512);
 		new FoodChalkingMachine(Defines.C_BASICS, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
