@@ -296,7 +296,7 @@ MachineRecipes:
   CLAY_FOOD_CHALKING_MACHINE: "&a&oCraft this in Food Chalking Machine"
   CLAY_ELEMENT_EXTRACTER: "&a&oExtract this in Element Extracter"
 Machines:
-  SPLIT_LINE: "&bSplit Line"
+  SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&bClay Fusing Machine"
   CLAY_ELEMENT_EXTRACTER: "&bElement Extracter"
   CLAY_FOOD_CAULDRON: "&bEletric Cauldron"

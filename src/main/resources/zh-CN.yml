@@ -296,7 +296,7 @@ MachineRecipes:
   CLAY_FOOD_CHALKING_MACHINE: "&a&o在食物打粉机内合成"
   CLAY_ELEMENT_EXTRACTER: "&a&o在元素提取机内提取"
 Machines:
-  SPLIT_LINE: "&b分割线"
+  SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&b粘土融合器"
   CLAY_ELEMENT_EXTRACTER: "&b元素提取机"
   CLAY_FOOD_CAULDRON: "&b电锅"

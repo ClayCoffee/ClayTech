@@ -2,4 +2,5 @@
 /doc/
 /lib/
 /target/
+/src/main/java/club/claycoffee/ClayTech/utils
 pom.xml
