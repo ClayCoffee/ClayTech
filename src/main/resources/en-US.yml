@@ -56,7 +56,7 @@ Items:
   ADVANCED_CONFUSION_CORE: "&7Advanced Nausea Core"
   ADVANCED_SLOWNESS_CORE: "&7Advanced Slowness Core"
   ADVANCED_POISON_CORE: "&7Advanced Poison Core"
-  FOUR_BOW: "&7灵气四合弓"
+  FOUR_BOW: "&7Four Bound Bow"
   FOUR_BOW_LORE:
     - "&6Give the target player 5 seconds of Blind V,Slowness V and Nausea V effect and 2 seconds of Poison III affect"
     - "&7Blind V"
@@ -114,9 +114,9 @@ Items:
     - "&6Flour"
     - "&7Can do a lot of things."
     - "&7May gain this by harvesting wheats."
-  STARCH: "&e淀粉"
+  STARCH: "&eStarch"
   STARCH_LORE:
-    - "&6淀粉"
+    - "&6Starch"
     - "&7Can do a lot of things."
     - "&7May gain this by harvesting potatoes."
   #LUOSI
