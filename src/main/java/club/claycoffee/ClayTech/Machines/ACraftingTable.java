@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
 
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
 import org.bukkit.Material;
@@ -36,7 +37,6 @@ import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 @SuppressWarnings("deprecation")
 public abstract class ACraftingTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent{
-	// TODO 修BUG
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
 	public final static int[] inputslots = new int[] {19,20,21,28,29,30,37,38,39};
@@ -47,8 +47,8 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	private static final int[] BORDER = {0,1,2,3,5,6,7,8,14,15,16,17,23,41,50,51,52,53,32};
 	private static final int[] BORDER_IN = {9,10,11,12,13,18,22,27,31,36,40,45,46,47,48,49};
 	private static final int[] BORDER_OUT = {24,25,26,33,35,42,43,44};
-	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE,"§b分割线");
-	private static final ItemStack OTHERBORDER_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,"§a分割线");
+	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack OTHERBORDER_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
 	
 	public ACraftingTable(Category category, SlimefunItemStack item, String id, RecipeType recipeType, ItemStack[] recipe) {
@@ -83,12 +83,10 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 		this.registerDefaultRecipes();
 	}
 	public int[] getInputSlots() {
-		// TODO 自动生成的方法存根
 		return new int[] {19,20,21,28,29,30,37,38,39};
 	}
 	@Override
 	public int[] getOutputSlots() {
-		// TODO 自动生成的方法存根
 		return new int[] {34};
 	}
 	public abstract String getInventoryTitle();
@@ -134,9 +132,6 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	}
 	@Override
 	public int getCapacity() {
-		// Absolutely override this.
-		// This is just a temporary compiler-workaround.
-		// This default implementation will soon be removed.
 		return 0;
 	}
 	public List<ItemStack> getDisplayRecipes() {
@@ -184,9 +179,6 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	}
 
 	protected void tick(Block b) {
-//		TODO Map<Block, MachineRecipe> processing = new HashMap<>();
-//		TODO Map<Block, Integer> progress = new HashMap<>();
-//		TODO List<MachineRecipe> recipes = new ArrayList<>();
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -219,7 +211,6 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 		}
 		else {
 			// 没有在处理
-			// TODO fix this
 			MachineRecipe r = null;
 			Map<Integer, Integer> found = new HashMap<>();
 			int i;
@@ -229,14 +220,10 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 					if(SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[i]),input,true)){
 						// 如果该位置的物品符合某合成配方的对应位置物品
 						if(input != null) {
-							//Utils.info("SLOT"+inputslots[i]);
-							//Utils.info("AMOUNT"+input.getAmount());
 							found.put(inputslots[i], input.getAmount());
 						}
 					}
 					if(inv.getItemInSlot(inputslots[i]) == input && input == null){
-						//Utils.info("SLOT"+inputslots[i]);
-						//Utils.info("AMOUNT"+"null so empty");
 						found.put(i, 0);
 					}
 					if(i<8) {
@@ -244,7 +231,6 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 					}else i=0;
 				}
 				if (found.size() == recipe.getInput().length) {
-					//Utils.info("MATCH #01");
 					r = recipe;
 					break;
 				}
@@ -252,8 +238,6 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 			}
 			
 			if (r != null) {
-				// if (!fits(b, r.getOutput())) return;
-				// Utils.info("MATCH #02");
 				if (ChargableBlock.isChargable(b)) {
 					if (ChargableBlock.getCharge(b) < getEnergyConsumption()) return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());

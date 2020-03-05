@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -21,7 +22,7 @@ public class Armors {
 		Slimefunutils.registerItem(Defines.C_ARMORS, "ANTI_SLOWNESS_BOOTS", Defines.ANTI_SLOWNESS_BOOTS, "notresearch",
 				10, TRecipe.CLAY_CRAFTING_TABLE, recipea, false);
 
-		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ARMORS"), 9908, "基础效果装备", 50);
+		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ARMORS"), 9908, Lang.readResearchesText("CLAYTECH_ARMORS_I"), 50);
 		basic.addItems(SlimefunItem.getByItem(Defines.ANTI_SLOWNESS_BOOTS));
 		basic.register();
 	}

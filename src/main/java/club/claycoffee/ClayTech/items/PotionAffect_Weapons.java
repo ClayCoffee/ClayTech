@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -88,7 +89,7 @@ public class PotionAffect_Weapons {
 				TRecipe.CLAY_CRAFTING_TABLE, poison_sword, false);
 
 		Research weapon_requires = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_EX_BASIC_WEAPONS"), 9904,
-				"制作效果武器的热身", 50);
+				Lang.readResearchesText("CLAYTECH_BEFORE_AFFECT_WEAPONS"), 50);
 		weapon_requires.addItems(SlimefunItem.getByItem(Defines.BLIND_CORE),
 				SlimefunItem.getByItem(Defines.CONFUSION_CORE), SlimefunItem.getByItem(Defines.SLOWNESS_CORE),
 				SlimefunItem.getByItem(Defines.POISON_CORE),
@@ -97,13 +98,13 @@ public class PotionAffect_Weapons {
 		weapon_requires.register();
 
 		Research weapons_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BASIC_WEAPONS"), 9905,
-				"效果武器它来了!", 50);
+				Lang.readResearchesText("CLAYTECH_AFFECT_WEAPONS"), 50);
 		weapons_basic.addItems(SlimefunItem.getByItem(Defines.BLIND_SWORD),
 				SlimefunItem.getByItem(Defines.POISON_SWORD));
 		weapons_basic.register();
 
 		Research advancedweapon_requires = new Research(
-				new NamespacedKey(ClayTech.plugin, "CLAYTECH_EX_ADVANCED_WEAPONS"), 9906, "高级效果武器热身", 75);
+				new NamespacedKey(ClayTech.plugin, "CLAYTECH_EX_ADVANCED_WEAPONS"), 9906, Lang.readResearchesText("CLAYTECH_BEFORE_ADVANCED_AFFECT_WEAPONS"), 75);
 		advancedweapon_requires.addItems(SlimefunItem.getByItem(Defines.ADVANCED_BLIND_CORE),
 				SlimefunItem.getByItem(Defines.ADVANCED_CONFUSION_CORE),
 				SlimefunItem.getByItem(Defines.ADVANCED_SLOWNESS_CORE),
@@ -111,7 +112,7 @@ public class PotionAffect_Weapons {
 		advancedweapon_requires.register();
 
 		Research advancedweapon = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ADVANCED_WEAPONS"), 9906,
-				"高级效果武器", 100);
+				Lang.readResearchesText("CLAYTECH_ADVANCED_AFFECT_WEAPONS"), 100);
 		advancedweapon.addItems(SlimefunItem.getByItem(Defines.FOUR_BOW));
 		advancedweapon.register();
 	}

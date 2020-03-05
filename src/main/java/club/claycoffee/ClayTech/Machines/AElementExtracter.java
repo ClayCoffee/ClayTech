@@ -8,6 +8,7 @@ import java.util.Map;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
 import org.bukkit.Material;
@@ -47,9 +48,9 @@ public abstract class AElementExtracter extends SlimefunItem implements Inventor
 			51, 52, 53, 13 };
 	private static final int[] BORDER_A = { 10, 11, 12, 19, 21, 28, 29, 30, 14, 15, 16, 23, 25, 32, 33, 34 };
 	private static final int[] BORDER_B = { 37, 38, 39, 41, 42, 43 };
-	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, "§b分割线");
-	private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE, "§a分割线");
-	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE, "§a分割线");
+	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
 
 	public AElementExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
@@ -125,7 +126,7 @@ public abstract class AElementExtracter extends SlimefunItem implements Inventor
 		Preset.addItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "),
 				ChestMenuUtils.getEmptyClickHandler());
 		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, "§e在下方放入元素单元 ↓"),ChestMenuUtils.getEmptyClickHandler());
+		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),ChestMenuUtils.getEmptyClickHandler());
 		for (int i : getOutputSlots()) {
 			Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 

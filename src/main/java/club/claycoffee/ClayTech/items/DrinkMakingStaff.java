@@ -8,6 +8,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
@@ -37,11 +38,11 @@ public class DrinkMakingStaff {
 		Slimefunutils.registerItem(Defines.C_FOODMATERIALS, "LEMON_POWDER", Defines.LEMON_POWDER, "notresearch", 10,
 				TRecipe.CLAY_FOOD_CHALKING_MACHINE,Recipes.LEMON_POWDER, false);
 		
-		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSBASIC"), 9908, "制作饮料的材料 I", 50);
+		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSBASIC"), 9908, Lang.readResearchesText("CLAYTECH_DRINK_MAKINGS_I"), 50);
 		foodmaterialsI.addItems(SlimefunItem.getByItem(Defines.COCOA_BEAN),SlimefunItem.getByItem(Defines.PLASTIC),SlimefunItem.getByItem(Defines.DRINK_BOTTLE),SlimefunItem.getByItem(Defines.DIRTY_DRINK_BOTTLE));
 		foodmaterialsI.register();
 		
-		Research foodmaterialsII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSII"), 9911, "制作饮料的材料 II", 50);
+		Research foodmaterialsII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSII"), 9911, Lang.readResearchesText("CLAYTECH_DRINK_MAKINGS_II"), 50);
 		foodmaterialsII.addItems(SlimefunItem.getByItem(Defines.DIRTY_TEA),SlimefunItem.getByItem(Defines.RAW_TEA),SlimefunItem.getByItem(Defines.LEMON_POWDER),SlimefunItem.getByItem(Defines.TEA_POWDER));
 		foodmaterialsII.register();
 	}

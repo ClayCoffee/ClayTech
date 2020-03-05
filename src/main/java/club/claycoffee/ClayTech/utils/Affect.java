@@ -12,19 +12,19 @@ public class Affect {
 	public static void AffectCheck(Player d, Player e) {
 		if(Slimefun.hasUnlocked(d.getPlayer(),d.getItemInHand(), true)) {
 			try {
-				if (Utils.ExitsInList("§7反弹缓慢 III", Utils.getLore(e.getInventory().getBoots()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Anti_Slowness_3_effect"), Utils.getLore(e.getInventory().getBoots()))) {
 					d.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 40, 2));
 				}
-				if (Utils.ExitsInList("§7失明 V", Utils.getLore(d.getItemInHand()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Blind_5_effect"), Utils.getLore(d.getItemInHand()))) {
 					e.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 100, 4));
 				}
-				if (Utils.ExitsInList("§7缓慢 V", Utils.getLore(d.getItemInHand()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Slowness_5_effect"), Utils.getLore(d.getItemInHand()))) {
 					e.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 100, 4));
 				}
-				if (Utils.ExitsInList("§7反胃 V", Utils.getLore(d.getItemInHand()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Confusion_5_effect"), Utils.getLore(d.getItemInHand()))) {
 					e.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 100, 4));
 				}
-				if (Utils.ExitsInList("§7中毒 III", Utils.getLore(d.getItemInHand()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Poison_3_effect"), Utils.getLore(d.getItemInHand()))) {
 					e.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 40, 2));
 				}
 			} catch (NullPointerException err2) {

@@ -5,6 +5,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Machines.ANewContainer;
+import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -18,7 +19,7 @@ public class FoodChalkingMachine extends ANewContainer{
 
 	@Override
 	public String getInventoryTitle() {
-		return "§b食物打粉机";
+		return Lang.readMachinesText("CLAY_FOOD_CHALKING_MACHINE");
 	}
 
 	@Override

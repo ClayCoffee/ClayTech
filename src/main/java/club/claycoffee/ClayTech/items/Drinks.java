@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -26,7 +27,7 @@ public class Drinks {
 		Slimefunutils.registerItem(Defines.C_DRINK, "LEMON_TEA_DRINK", Defines.LEMON_TEA_DRINK, "notresearch", 10,
 				TRecipe.CLAY_FOOD_CAULDRON, reciped, false);
 
-		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKBASIC"), 9909, "这是??饮料!!", 50);
+		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKBASIC"), 9909, Lang.readResearchesText("CLAYTECH_DRINK_I"), 50);
 		foodI.addItems(SlimefunItem.getByItem(Defines.CLAY_COFFEE),SlimefunItem.getByItem(Defines.LEMON_POWDER_DRINK),SlimefunItem.getByItem(Defines.TEA_DRINK),SlimefunItem.getByItem(Defines.LEMON_TEA_DRINK));
 		foodI.register();
 	}

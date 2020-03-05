@@ -2,6 +2,7 @@ package club.claycoffee.ClayTech.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -33,7 +35,43 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
-
+	public static ItemStack setLore(ItemStack is, List<String> content) {
+		ItemMeta im = is.getItemMeta();
+		List<String> Lore = im.getLore();
+		Lore = content;
+		im.setLore(Lore);
+		is.setItemMeta(im);
+		return (is);
+	}
+	public static Map<String, String> sectionToMap(ConfigurationSection sec) {
+		Map<String, String> ret = new HashMap<String, String>();
+		for (String eachKey : sec.getKeys(false)) {
+			String eachValue = sec.getString(eachKey);
+			ret.put(eachKey, eachValue);
+		}
+		return ret;
+	}
+	public static List<String> sectionKeyToList(ConfigurationSection sec) {
+		List<String> ret = new ArrayList<String>();
+		if(sec == null) {
+			return Arrays.asList(new String[] {"null"});
+		}
+		if(sec.getKeys(false) == null) {
+			return Arrays.asList(new String[] {"null"});
+		}
+		for (String eachKey : sec.getKeys(false)) {
+			ret.add(eachKey);
+		}
+		return ret;
+	}
+	public static List<String> replaceList(List<String> array,String bereplace,String replace) {
+		int n = 0; 
+		for(String i : array) {
+			array.set(n, i.replaceAll(bereplace, replace));
+			n++;
+		}
+		return array;
+	}
 	// ��
 	public static ItemStack addLore(ItemStack is, String content) {
 		ItemMeta im = is.getItemMeta();

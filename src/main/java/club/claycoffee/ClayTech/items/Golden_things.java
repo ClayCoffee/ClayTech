@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -45,19 +46,19 @@ public class Golden_things {
 				Defines.ARTIFICIAL_ENCHANTED_GOLDEN_APPLE, "notresearch", 10, RecipeType.ANCIENT_ALTAR, recipeg, false);
 
 		Research artificial_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ARTIFICIAL_BASIC"), 9901,
-				"粘土科技中的人造物品!", 45);
+				Lang.readResearchesText("CLAYTECH_ARTIFICIAL_I"), 45);
 		artificial_basic.addItems(SlimefunItem.getByItem(Defines.ARTIFICIAL_GOLD_NUGGET),
 				SlimefunItem.getByItem(Defines.ARTIFICIAL_GOLD_INGOT),
 				SlimefunItem.getByItem(Defines.ARTIFICIAL_GOLD_BLOCK));
 		artificial_basic.register();
 
 		Research artificial_basic_o = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ARTIFICIAL_BASIC_O"),
-				9902, "人造物品需要的原矿", 30);
+				9902, Lang.readResearchesText("CLAYTECH_ARTIFICIAL_ORE_I"), 30);
 		artificial_basic_o.addItems(SlimefunItem.getByItem(Defines.ARTIFICIAL_GOLD_INGOT_O));
 		artificial_basic_o.register();
 
 		Research artificial_enchanted_golden_apple_r = new Research(
-				new NamespacedKey(ClayTech.plugin, "CLAYTECH_ENCHANTED_GOLDEN_APPLE"), 9903, "人造附魔金苹果!!", 100);
+				new NamespacedKey(ClayTech.plugin, "CLAYTECH_ENCHANTED_GOLDEN_APPLE"), 9903, Lang.readResearchesText("CLAYTECH_ARTIFICIAL_ENCHANTED_GOLDEN_APPLE"), 100);
 		artificial_enchanted_golden_apple_r.addItems(SlimefunItem.getByItem(Defines.ARTIFICIAL_ENCHANTED_GOLDEN_APPLE));
 		artificial_enchanted_golden_apple_r.register();
 	}

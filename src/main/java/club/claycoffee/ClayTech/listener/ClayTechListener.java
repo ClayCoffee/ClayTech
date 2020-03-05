@@ -26,6 +26,7 @@ import org.bukkit.event.player.PlayerFishEvent.State;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.utils.Affect;
 import club.claycoffee.ClayTech.utils.Food;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
 public class ClayTechListener implements Listener {
@@ -121,10 +122,10 @@ public class ClayTechListener implements Listener {
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void BlockPlaceEvent(BlockPlaceEvent e) {
-		if(Utils.ExitsInList("§e不可放置",Utils.getLore(e.getItemInHand()))){
+		if(Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"),Utils.getLore(e.getItemInHand()))){
 			e.setBuild(false);
 			e.setCancelled(false);
-			e.getPlayer().sendMessage("§b[粘土科技]§c你不能放置该物品.");
+			e.getPlayer().sendMessage(Lang.readGeneralText("CantPlace"));
 		}
 		
 	}

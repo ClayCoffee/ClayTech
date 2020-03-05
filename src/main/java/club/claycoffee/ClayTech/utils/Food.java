@@ -29,13 +29,19 @@ public class Food {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
 				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
-				p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+					p.setFoodLevel(20);
+					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
+				}
+				else {
+					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				}
 				for (PotionEffect pe : PotionEffect) {
 					p.addPotionEffect(pe);
 				}
-				p.sendMessage("§6咕嘟咕嘟咕嘟...真好喝...");
+				p.sendMessage(Lang.readGeneralText("Drink_Message"));
 			} else {
-				p.sendMessage("§c您已经饱了,不用再喝东西了!");
+				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
 		}
 
@@ -52,10 +58,16 @@ public class Food {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
 				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
-				p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
-				p.sendMessage("§6咕嘟咕嘟咕嘟...真好喝...");
+				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+					p.setFoodLevel(20);
+					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
+				}
+				else {
+					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				}
+				p.sendMessage(Lang.readGeneralText("Drink_Message"));
 			} else {
-				p.sendMessage("§c您已经饱了,不用再喝东西了!");
+				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
 		}
 
@@ -72,13 +84,19 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+					p.setFoodLevel(20);
+					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
+				}
+				else {
+					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				}
 				for (PotionEffect pe : PotionEffect) {
 					p.addPotionEffect(pe);
 				}
-				p.sendMessage("§6嘎吱嘎吱嘎吱...嗯,太好吃了。");
+				p.sendMessage(Lang.readGeneralText("Eat_Message"));
 			} else {
-				p.sendMessage("§c您已经饱了,不用再吃东西了!");
+				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
 		}
 
@@ -94,10 +112,16 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
-				p.sendMessage("§6嘎吱嘎吱嘎吱...嗯,太好吃了。");
+				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+					p.setFoodLevel(20);
+					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
+				}
+				else {
+					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
+				}
+				p.sendMessage(Lang.readGeneralText("Eat_Message"));
 			} else {
-				p.sendMessage("§c您已经饱了,不用再吃东西了!");
+				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
 		}
 
@@ -122,9 +146,9 @@ public class Food {
 					}
 					i.addItem(new ItemStack(Material.BUCKET));
 					i.addItem(cleanItem);
-					p.sendMessage("§6清洗完毕!!");
+					p.sendMessage(Lang.readGeneralText("Wash_Message"));
 				} else {
-					p.sendMessage("§c无法清洗!你没有水桶!");
+					p.sendMessage(Lang.readGeneralText("Cant_Wash_Message"));
 				}
 			}
 

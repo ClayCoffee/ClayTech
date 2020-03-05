@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.Machines.ACraftingTable;
+import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -18,7 +19,7 @@ public class CraftingTable extends ACraftingTable{
 
 	@Override
 	public String getInventoryTitle() {
-		return "§b粘土融合器";
+		return Lang.readMachinesText("CLAY_FUSION_MACHINE");
 	}
 
 	@Override

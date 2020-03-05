@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -32,15 +33,15 @@ public class FoodMakingStaff {
 		Slimefunutils.registerItem(Defines.C_FOODMATERIALS, "SNAIL_HEALTHY", Defines.SNAIL_HEALTHY, "notresearch", 10,
 				RecipeType.NULL, Defines.NORECIPE, false);
 		
-		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODMATERIALSBASIC"), 9910, "制作食物的材料 I", 50);
+		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODMATERIALSBASIC"), 9910, Lang.readResearchesText("CLAYTECH_FOOD_MAKINGS_I"), 50);
 		foodmaterialsI.addItems(SlimefunItem.getByItem(Defines.RAW_CHICKEN_FOOT),SlimefunItem.getByItem(Defines.RAW_BREAD),SlimefunItem.getByItem(Defines.RAW_VEGETABLE));
 		foodmaterialsI.register();
 		
-		Research foodmaterialsIE = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODMATERIALSBASIC"), 9913, "制作食物的材料 II", 50);
+		Research foodmaterialsIE = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODMATERIALSBASIC"), 9913, Lang.readResearchesText("CLAYTECH_FOOD_MAKINGS_II"), 50);
 		foodmaterialsIE.addItems(SlimefunItem.getByItem(Defines.FLOUR),SlimefunItem.getByItem(Defines.STARCH),SlimefunItem.getByItem(Defines.SNAIL_HEALTHY));
 		foodmaterialsIE.register();
 		
-		Research foodmaterialsII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FRUITBASIC"), 9912, "水果 I", 50);
+		Research foodmaterialsII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FRUITBASIC"), 9912, Lang.readResearchesText("CLAYTECH_FRUIT_I"), 50);
 		foodmaterialsII.addItems(SlimefunItem.getByItem(Defines.LEMON));
 		foodmaterialsII.register();
 	}

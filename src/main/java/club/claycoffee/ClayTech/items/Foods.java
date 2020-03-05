@@ -8,6 +8,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -36,11 +37,11 @@ public class Foods {
 		Slimefunutils.registerItem(Defines.C_FOOD, "HONEY_SWEET", Defines.HONEY_SWEET, "notresearch", 10,
 				TRecipe.CLAY_FOOD_CAULDRON, Recipes.HONEY_SWEET, false);
 		
-		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC"), 9911, "食物 I", 50);
+		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC"), 9911, Lang.readResearchesText("CLAYTECH_FOOD_I"), 50);
 		foodI.addItems(SlimefunItem.getByItem(Defines.CHICKEN_FOOT),SlimefunItem.getByItem(Defines.SPICY_CHICKEN_BURGER),SlimefunItem.getByItem(Defines.BABA_BURGER),SlimefunItem.getByItem(Defines.CHOCOLATE),SlimefunItem.getByItem(Defines.SNAIL_BAD),SlimefunItem.getByItem(Defines.SNAIL_FOOD));
 		foodI.register();
 		
-		Research foodII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC2"), 9916, "食物 II", 50);
+		Research foodII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC2"), 9916, Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
 		foodII.addItems(SlimefunItem.getByItem(Defines.HONEY_SWEET));
 		foodII.register();
 	}

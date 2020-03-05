@@ -3,7 +3,6 @@ package club.claycoffee.ClayTech;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
 public class Recipes {
@@ -86,8 +85,8 @@ public class Recipes {
 	public final static ItemStack[] TEA_POWDER = {null,null,null,null,Defines.RAW_TEA,null,null,null,null};
 	public final static ItemStack[] LEMON_POWDER = {null,null,null,null,Defines.LEMON,null,null,null,null};
 	public final static ItemStack[] HONEY_SWEET = {new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SUGAR),new ItemStack(Material.HONEY_BOTTLE),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR)};
-	public final static ItemStack[] ELEMENT_CARBON = {null,null,null,null,Utils.setDisplayName(new ItemStack(Material.DIAMOND,2), "§b矿物钻石"),null,null,null,null};
-	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, Utils.addLore(Utils.addLore(Utils.setDisplayName(new ItemStack(Material.DIRT,3), "§6有用的泥土"), "§b来自地球上的泥土..."), "§b它充满了有用的矿物质..."), null, null, null, null };
+	public final static ItemStack[] ELEMENT_CARBON = {null,null,null,null,new ItemStack(Material.COAL,8),null,null,null,null};
+	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, new ItemStack(Material.GRASS_BLOCK,3), null, null, null, null };
 	public final static ItemStack[] ELEMENT_SILICON = {null,null,null,null,new ItemStack(Material.SAND,10),null,null,null,null};
 	public final static ItemStack[] BLISTERING_CORE = { SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
 			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
