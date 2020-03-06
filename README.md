@@ -3,9 +3,8 @@
 A slimefun addon for minecraft.
 
 # 温馨提醒
-请不要未经我的授权使用本插件在你的服务器上(如果使用在基友服,且人数少于4人,默认授权。而且你也不能未经允许分发编译后的插件.谢谢合作!
-Please do not use the compiled jar on your minecraft server without my authorization.(But you can install this on a small server,like playing with your friends etc),and you can't share the jar with anyone else.Thank you!
-:( Sorry for my bad english
+If you want to use this plugin in a China server, please contact me for an authorization.
+如果您想在某个位于中国的服务器上使用本插件, 请用中文联系我获得授权.
 
 # Supported Languages
 * 简体中文 zh-CN
