@@ -36,7 +36,7 @@ public class ClayTech extends JavaPlugin {
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
 		if (locale == null)
-			locale = "zh-CN";
+			locale = "en-US";
 		if (!Utils.ExitsInList(locale, Lang.LocaleList)) {
 			Utils.info("§cLoading Error: Locale not found.Disableing plugin..");
 			this.getServer().getPluginManager().disablePlugin(this);
