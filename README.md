@@ -3,8 +3,8 @@
 A slimefun addon for minecraft.
 
 # 温馨提醒
-If you want to use this plugin in a China server, please contact me for an authorization.
-如果您想在某个位于中国的服务器上使用本插件, 请用中文联系我获得授权.
+If you want to use this plugin in a China(include Taiwan) server, please contact me for an authorization.
+如果您想在某个位于中国(包含台湾)的服务器上使用本插件, 请用中文联系我获得授权.
 
 # Supported Languages
 * 简体中文 zh-CN
