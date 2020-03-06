@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
 public class Recipes {
+	static ItemStack newMotor;
 	public final static ItemStack[] BLIND_CORE = { new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), Defines.MAGIC_CLAY,
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
@@ -96,4 +97,10 @@ public class Recipes {
 			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, null,
 			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
 			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT };
+	static {
+		newMotor = Defines.ELECTRIC_MOTOR_8.clone();
+		newMotor.setAmount(1);
+	}
+	public final static ItemStack[] ELECTRIC_MOTOR_8 = {null,null,null,null,SlimefunItems.ELECTRIC_MOTOR,null,null,null,null};
+	public final static ItemStack[] HIGHSPEED_RAILWAY = {null,null,null,null,new ItemStack(Material.POWERED_RAIL),null,null,newMotor,null};
 }

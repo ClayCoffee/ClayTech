@@ -63,6 +63,10 @@ public class CraftingTable extends ACraftingTable{
 		this.registerRecipe(100,Recipes.ANTI_SLOWNESS_BOOTS,new ItemStack[]{Defines.ANTI_SLOWNESS_BOOTS});
 		this.registerRecipe(80,Recipes.BLISTERING_CORE,new ItemStack[]{Defines.BLISTERING_CORE});
 		this.registerRecipe(30,Recipes.ELEMENT_UNIT,new ItemStack[]{Defines.ELEMENT_UNIT});
+		this.registerRecipe(8, Recipes.HIGHSPEED_RAILWAY, new ItemStack[] {Defines.HIGHSPEED_RAILWAY});
+		ItemStack elem8 = Defines.ELECTRIC_MOTOR_8;
+		elem8.setAmount(8);
+		this.registerRecipe(8, Recipes.ELECTRIC_MOTOR_8, new ItemStack[] {elem8});
 	}
 
 }

@@ -25,6 +25,8 @@ Categories:
   Armors: "&bClayTech - Armors"
   Decorates: "&bClayTech - Decorates"
   Elements: "&bClayTech - Elements"
+  Machines: "&bClayTech - Machines"
+  Other: "&bClayTech - Others"
 Items:
   USEFUL_DIRT: "&6Useful Dirt"
   USEFUL_DIRT_LORE:
@@ -273,6 +275,11 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s" 
+  HIGHSPEED_RAILWAY: "&bHigh Speed Railway"
+  HIGHSPEED_RAILWAY_LORE:
+    - "&6The minecart which is running on this kind of railway"
+    - "&6Its max speed can be three times!"
+  ELECTRIC_MOTOR_8: "&cElectric Motor Fragment"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -298,6 +305,7 @@ Researches:
   CLAYTECH_ADVANCED_AFFECT_WEAPONS: "Advanced Affect Weeapons"
   CLAYTECH_SKULL_I: "Skull Craft"
   CLAYTECH_DECORATES_I: "Decorates I"
+  CLAYTECH_RAILWAY_I: "Railways I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"

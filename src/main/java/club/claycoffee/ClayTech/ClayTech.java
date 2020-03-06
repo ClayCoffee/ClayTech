@@ -31,7 +31,7 @@ public class ClayTech extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9919
+		// 当前研究ID: 9920
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -132,15 +132,15 @@ public class ClayTech extends JavaPlugin {
 		SlimefunItemStack electricstonecrusher = new SlimefunItemStack("CLAY_ELECTRIC_STONE_CRUSHER",
 				Defines.CLAY_ELECTRIC_STONE_CRUSHER);
 
-		new CraftingTable(Defines.C_BASICS, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
+		new CraftingTable(Defines.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayCrafingTable).registerChargeableBlock(128);
-		new ElectricStoneCrusher(Defines.C_BASICS, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER", RecipeType.ENHANCED_CRAFTING_TABLE,
+		new ElectricStoneCrusher(Defines.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayStoneCrusher).registerChargeableBlock(128);
-		new FoodCauldron(Defines.C_BASICS, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
+		new FoodCauldron(Defines.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayFoodCauldron).registerChargeableBlock(512);
-		new FoodChalkingMachine(Defines.C_BASICS, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
+		new FoodChalkingMachine(Defines.C_MACHINES, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).registerChargeableBlock(512);
-		new ElementExtracter(Defines.C_BASICS, elementextracter, "CLAY_ELEMENT_EXTRACTER",
+		new ElementExtracter(Defines.C_MACHINES, elementextracter, "CLAY_ELEMENT_EXTRACTER",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).registerChargeableBlock(1024);
 
 		// 物品
@@ -155,6 +155,7 @@ public class ClayTech extends JavaPlugin {
 		new Foods();
 		new MachineMakingBasic();
 		new Elements();
+		new Railways();
 
 	}
 }

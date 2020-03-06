@@ -25,6 +25,8 @@ Categories:
   Armors: "&b粘土科技 - 装备"
   Decorates: "&b粘土科技 - 装饰品"
   Elements: "&b粘土科技 - 元素"
+  Machines: "&b粘土科技 - 机器"
+  Other: "&b粘土科技 - 其他"
 Items:
   USEFUL_DIRT: "&6有用的泥土"
   USEFUL_DIRT_LORE:
@@ -273,6 +275,11 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s" 
+  HIGHSPEED_RAILWAY: "&b高速铁路"
+  HIGHSPEED_RAILWAY_LORE:
+    - "&6在这种铁路上行驶的矿车"
+    - "&6最快速度可翻三倍!"
+  ELECTRIC_MOTOR_8: "&c电力马达碎片"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基础效果装备"
@@ -298,6 +305,7 @@ Researches:
   CLAYTECH_ADVANCED_AFFECT_WEAPONS: "高级效果武器"
   CLAYTECH_SKULL_I: "头颅工艺"
   CLAYTECH_DECORATES_I: "装饰品 I"
+  CLAYTECH_RAILWAY_I: "铁路 I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"

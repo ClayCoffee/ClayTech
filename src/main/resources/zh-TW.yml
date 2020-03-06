@@ -1,7 +1,7 @@
 General:
-  startTip: "粘土科技 By ClayCoffee，請不要未經我的授權使用本插件在妳的服務器上(如果使用在基友服,且人數少於4人,默認授權。而且妳也不能未經允許分發編譯後的插件.謝謝合作!"
-  registeringItems: "註冊粘液科技物品中..."
-  registeringError: "在註冊物品時發生錯誤:"
+  startTip: "粘土科技 By ClayCoffee，請不要未經我的授權使用本插件在妳的服務器上(如果使用在基友服,且人數少于4人,默認授權。而且妳也不能未經允許分發編譯後的插件.謝謝合作!"
+  registeringItems: "注冊粘液科技物品中..."
+  registeringError: "在注冊物品時發生錯誤:"
   CantPlaceLore: "&e不可放置"
   CantPlace: "§b[粘土科技]§c妳不能放置該物品."
   Blind_5_effect: "&7失明 V"
@@ -25,12 +25,14 @@ Categories:
   Armors: "&b粘土科技 - 裝備"
   Decorates: "&b粘土科技 - 裝飾品"
   Elements: "&b粘土科技 - 元素"
+  Machines: "&b粘土科技 - 機器"
+  Other: "&b粘土科技 - 其他"
 Items:
   USEFUL_DIRT: "&6有用的泥土"
   USEFUL_DIRT_LORE:
     - "&b來自地球上的泥土..."
     - "&b它充滿了有用的礦物質..."
-  ORE_DIAMOND: "&b礦物鉆石"
+  ORE_DIAMOND: "&b礦物鑽石"
   MAGIC_CLAY: "&6魔法の粘土"
   MAGIC_CLAY_LORE:
     - "&b粘土科技的基礎物品,許多粘土科技的合成都需要這個"
@@ -45,10 +47,10 @@ Items:
   BLIND_CORE: "&7失明核心"
   BLIND_SWORD: "&7失明劍"
   BLIND_SWORD_LORE:
-    - "&6在攻擊後給予被攻擊玩家5秒鐘的失明V效果"
+    - "&6在攻擊後給予被攻擊玩家5秒鍾的失明V效果"
     - "&7失明 V"
   CONFUSION_CORE: "&7反胃核心"
-  BLACK_ROCK_BLOCK: "&7黑巖塊"
+  BLACK_ROCK_BLOCK: "&7黑岩塊"
   SLOWNESS_CORE: "&7緩慢核心"
   POISON_EYE: "&7劇毒之眼"
   POISON_CORE: "&7劇毒核心"
@@ -58,14 +60,14 @@ Items:
   ADVANCED_POISON_CORE: "&7高級劇毒核心"
   FOUR_BOW: "&7靈氣四合弓"
   FOUR_BOW_LORE:
-    - "&6在攻擊後給予被攻擊玩家5秒鐘的失明V、緩慢V、反胃V和2秒鐘的中毒III效果"
+    - "&6在攻擊後給予被攻擊玩家5秒鍾的失明V、緩慢V、反胃V和2秒鍾的中毒III效果"
     - "&7失明 V"
     - "&7緩慢 V"
     - "&7反胃 V"
     - "&7中毒 III"
   POISON_SWORD: "&7梓毒劍"
   POISON_SWORD_LORE:
-    - "&6在攻擊後給予被攻擊玩家2秒鐘的中毒III效果"
+    - "&6在攻擊後給予被攻擊玩家2秒鍾的中毒III效果"
     - "&7中毒 III"
   ANTI_SLOWNESS_BOOTS: "&7反緩慢靴"
   ANTI_SLOWNESS_BOOTS_LORE:
@@ -74,11 +76,11 @@ Items:
   COCOA_BEAN: "&e可可豆"
   COCOA_BEAN_LORE:
     - "&6Yay!美味的可可豆!"
-    - "&7可用於制作咖啡和巧克力等"
+    - "&7可用于制作咖啡和巧克力等"
   PLASTIC: "&e塑料"
   PLASTIC_LORE:
     - "&6愛護環境,請勿隨意丟棄"
-    - "&7可用於制作飲料瓶"
+    - "&7可用于制作飲料瓶"
   RAW_CHICKEN_FOOT: "&e雞腿"
   RAW_CHICKEN_FOOT_LORE:
     - "&6雞腿"
@@ -91,16 +93,16 @@ Items:
   RAW_BREAD_LORE:
     - "&6面包胚"
     - "&7食用後增加6點飽食度."
-  DIRTY_TEA: "&e臟茶葉"
+  DIRTY_TEA: "&e髒茶葉"
   DIRTY_TEA_LORE:
-    - "&6臟茶葉"
+    - "&6髒茶葉"
     - "&7右鍵來清洗,變成茶葉!"
     - "&7打草有幾率獲得"
   TEA: "&e茶葉"
   TEA_LORE:
     - "&6茶葉"
     - "&7可以制作茶葉粉"
-    - "&7臟茶葉清洗獲得"
+    - "&7髒茶葉清洗獲得"
   TEA_POWDER: "&e茶葉粉"
   TEA_POWDER_LORE:
     - "&6茶葉粉"
@@ -120,15 +122,15 @@ Items:
     - "&7可以用來做好多東西"
     - "&7收獲馬鈴薯有幾率獲得"
   #LUOSI
-  SNAIL_HEALTHY: "&e螺螄"
+  SNAIL_HEALTHY: "&e螺蛳"
   SNAIL_HEALTHY_LORE:
-    - "&6螺螄"
-    - "&7可以用來做螺螄粉"
+    - "&6螺蛳"
+    - "&7可以用來做螺蛳粉"
     - "&7釣魚有幾率獲得"
   SNAIL_BAD: "&e福壽螺"
   SNAIL_BAD_LORE:
     - "&6福壽螺"
-    - "&7吃壹個試試?"
+    - "&7吃一個試試?"
     - "&7釣魚有幾率獲得"
   HONEY_SWEET: "&e蜂蜜糖"
   HONEY_SWEET_LORE:
@@ -163,11 +165,11 @@ Items:
   STALIN_HEAD: "&b斯大林的頭"
   MARX_HEAD: "&b馬克思的頭"
   LANTERN: "&b燈籠"
-  BLACK_CLOCK: "&b黑色時鐘"
+  BLACK_CLOCK: "&b黑色時鍾"
   CLAY_COFFEE: "&e粘土咖啡"
   CLAY_COFFEE_LORE:
     - "&e粘土咖啡!"
-    - "&7食用後可增加5點飽食度和3分鐘夜視效果"
+    - "&7食用後可增加5點飽食度和3分鍾夜視效果"
     - "&e不可放置"
   DRINK_BOTTLE: "&e飲料瓶"
   DRINK_BOTTLE_LORE:
@@ -175,17 +177,17 @@ Items:
     - "&7制作飲料的必備物品"
     - "&7沒有瓶子怎麽裝飲料呢?拿嘴裝嗎?"
     - "&e不可放置"
-  DIRTY_DRINK_BOTTLE: "&e臟飲料瓶"
+  DIRTY_DRINK_BOTTLE: "&e髒飲料瓶"
   DIRTY_DRINK_BOTTLE_LORE:
-    - "&6臟飲料瓶"
+    - "&6髒飲料瓶"
     - "&7這個飲料瓶需要用洗礦機洗洗.."
-    - "&7哪個小男孩會喝臟飲料瓶呢?右鍵我來清洗吧!(需要壹個水桶)"
+    - "&7哪個小男孩會喝髒飲料瓶呢?右鍵我來清洗吧!(需要一個水桶)"
     - "&e不可放置"
   SPICY_CHICKEN_BURGER: "&e香辣雞腿堡"
   SPICY_CHICKEN_BURGER_LORE:
     - "&6香辣雞腿堡"
     - "&7食用後增加15飽食度和20秒力量II效果"
-    - "&7寧難道在抄襲CFC?"
+    - "&7甯難道在抄襲CFC?"
     - "&e不可放置"
   BABA_BURGER: "&e老八秘制小憨包"
   BABA_BURGER_LORE:
@@ -219,7 +221,7 @@ Items:
   LEMON_TEA_DRINK_LORE:
     - "&6檸檬茶"
     - "&7食用後增加12點飽食度和60秒抗性提升III效果"
-    - "&7這東西冷壹點可能就是冰紅茶了.."
+    - "&7這東西冷一點可能就是冰紅茶了.."
     - "&e不可放置"
   CHOCOLATE: "&e巧克力"
   CHOCOLATE_LORE:
@@ -227,9 +229,9 @@ Items:
     - "&7食用後增加15點飽食度和30秒抗性提升III效果"
     - "&7餓貨!來條憨力架!橫掃饑餓,做回憨逼~"
     - "&e不可放置"
-  LUOSI_RICE_NOODLE: "&e螺螄粉"
+  LUOSI_RICE_NOODLE: "&e螺蛳粉"
   LUOSI_RICE_NOODLE_LORE:
-    - "&6螺螄粉"
+    - "&6螺蛳粉"
     - "&7食用後增加12點飽食度和30秒抗性提升III效果"
     - "&7好臭啊..不過挺好吃的."
     - "&e不可放置"
@@ -273,6 +275,11 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s" 
+  HIGHSPEED_RAILWAY: "&b高速鐵路"
+  HIGHSPEED_RAILWAY_LORE:
+    - "&6在這種鐵路上行駛的礦車"
+    - "&6最快速度可翻三倍!"
+  ELECTRIC_MOTOR_8: "&c電力馬達碎片"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -298,6 +305,7 @@ Researches:
   CLAYTECH_ADVANCED_AFFECT_WEAPONS: "高級效果武器"
   CLAYTECH_SKULL_I: "頭顱工藝"
   CLAYTECH_DECORATES_I: "裝飾品 I"
+  CLAYTECH_RAILWAY_I: "鐵路 I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"

@@ -39,6 +39,12 @@ public class Defines {
 	public static final LockedCategory C_ELEMENTS = new LockedCategory(
 			new NamespacedKey(ClayTech.plugin, "claycategory"), Utils.newItemD(Material.FLOWER_POT, Lang.readCategoriesText("Elements")),
 			C_BASICS);
+	public static final LockedCategory C_MACHINES = new LockedCategory(
+			new NamespacedKey(ClayTech.plugin, "claycategory"), Utils.newItemD(Material.FURNACE, Lang.readCategoriesText("Machines")),
+			C_BASICS);
+	public static final LockedCategory C_OTHER = new LockedCategory(
+			new NamespacedKey(ClayTech.plugin, "claycategory"), Utils.newItemD(Material.POWERED_RAIL, Lang.readCategoriesText("Other")),
+			C_BASICS);
 
 	// 注册
 	public static final ItemStack USEFUL_DIRT = Utils.setLore(Utils.setDisplayName(new ItemStack(Material.DIRT), Lang.readItemText("USEFUL_DIRT")), Lang.readItemLore("USEFUL_DIRT"));
@@ -99,6 +105,9 @@ public class Defines {
 			Lang.readItemLore("SNAIL_BAD"));
 	public static final ItemStack HONEY_SWEET = Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
 			Lang.readItemLore("HONEY_SWEET"));
+	public static final ItemStack HIGHSPEED_RAILWAY = Utils.setLore(Utils.newItemD(Material.POWERED_RAIL, Lang.readItemText("HIGHSPEED_RAILWAY")),
+			Lang.readItemLore("HIGHSPEED_RAILWAY"));
+	public static final ItemStack ELECTRIC_MOTOR_8 = Utils.newItemD(Material.FEATHER, Lang.readItemText("ELECTRIC_MOTOR_8"));
 	public static final ItemStack ELEMENT_UNIT = Utils.setLore(Utils.newItemD(Material.FLOWER_POT, Lang.readItemText("ELEMENT_UNIT")),
 			Lang.readItemLore("ELEMENT_UNIT"));
 	public static final ItemStack ELEMENT_OXYGEN = Utils.setLore(Utils.newItemD(Material.FLOWER_POT, Lang.readItemText("ELEMENT_OXYGEN")),
