@@ -275,9 +275,9 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s" 
-  HIGHSPEED_RAILWAY: "&bHigh Speed Railway"
+  HIGHSPEED_RAILWAY: "&bHigh Speed Rail"
   HIGHSPEED_RAILWAY_LORE:
-    - "&6The minecart which is running on this kind of railway"
+    - "&6The minecart which is running on this kind of rail"
     - "&6Its max speed can be three times!"
   ELECTRIC_MOTOR_8: "&cElectric Motor Fragment"
   # End Items
