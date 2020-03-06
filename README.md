@@ -10,7 +10,7 @@ If you want to use this plugin in a China(include Taiwan) server, please contact
 * 简体中文 zh-CN
 * 繁體中文 zh-TW
 * English(UK) en-UK
-* English(US) en-US
+* English(US) en-US (default)
 
 # Translate
 Want to translate this plugin to other languages?Just start an issue and a pull request and I will check and merge it.
