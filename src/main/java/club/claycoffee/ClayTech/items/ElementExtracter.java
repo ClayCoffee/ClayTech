@@ -30,7 +30,8 @@ public class ElementExtracter extends AElementExtracter{
 	public int getSpeed() {
 		return 1;
 	}
-
+	
+	@Override
 	public int getCapacity() {
 		return 1024;
 	}

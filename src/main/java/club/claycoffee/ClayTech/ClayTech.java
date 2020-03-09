@@ -14,6 +14,7 @@ import club.claycoffee.ClayTech.listener.*;
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import club.claycoffee.ClayTech.items.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -21,7 +22,7 @@ import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 @SuppressWarnings("deprecation")
-public class ClayTech extends JavaPlugin {
+public class ClayTech extends JavaPlugin implements SlimefunAddon{
 	public static ClayTech plugin;
 	public static String locale;
 	public static DataYML currentLangYML;
@@ -90,6 +91,12 @@ public class ClayTech extends JavaPlugin {
 		currentLangYML.reloadCustomConfig();
 		Utils.info(Lang.readGeneralText("startTip"));
 		Config cfg = new Config(this);
+		if(this.getServer().getVersion().equals("1.15")) {
+			
+		}
+		else {
+			
+		}
 		Utils.info(Lang.readGeneralText("registeringItems"));
 		try {
 			registerSlimefun();
@@ -104,7 +111,7 @@ public class ClayTech extends JavaPlugin {
 	public void onDisable() {
 	}
 
-	public static void registerSlimefun() {
+	public void registerSlimefun() {
 		ItemStack[] ClayCrafingTable = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, new ItemStack(Material.CRAFTING_TABLE),
 				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, Defines.MAGIC_CLAY };
@@ -133,15 +140,15 @@ public class ClayTech extends JavaPlugin {
 				Defines.CLAY_ELECTRIC_STONE_CRUSHER);
 
 		new CraftingTable(Defines.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayCrafingTable).registerChargeableBlock(128);
+				ClayCrafingTable).register(this);
 		new ElectricStoneCrusher(Defines.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayStoneCrusher).registerChargeableBlock(128);
+				ClayStoneCrusher).register(this);
 		new FoodCauldron(Defines.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayFoodCauldron).registerChargeableBlock(512);
+				ClayFoodCauldron).register(this);
 		new FoodChalkingMachine(Defines.C_MACHINES, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
-				RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).registerChargeableBlock(512);
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).register(this);
 		new ElementExtracter(Defines.C_MACHINES, elementextracter, "CLAY_ELEMENT_EXTRACTER",
-				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).registerChargeableBlock(1024);
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).register(this);
 
 		// 物品
 		new Clay_basic();
@@ -157,5 +164,16 @@ public class ClayTech extends JavaPlugin {
 		new Elements();
 		new Railways();
 
+	}
+
+	@Override
+	public JavaPlugin getJavaPlugin() {
+		return this;
+	}
+
+	@Override
+	public String getBugTrackerURL() {
+		// TODO 自动生成的方法存根
+		return null;
 	}
 }

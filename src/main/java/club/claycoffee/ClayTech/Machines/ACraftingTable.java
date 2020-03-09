@@ -26,7 +26,7 @@ import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
-import me.mrCookieSlime.Slimefun.api.energy.EnergyNetComponentType;
+import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -127,7 +127,7 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 		
 	}
 	@Override
-	public EnergyNetComponentType getEnergyComponentType() {
+	public io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType getEnergyComponentType() {
 		return EnergyNetComponentType.CONSUMER;
 	}
 	@Override

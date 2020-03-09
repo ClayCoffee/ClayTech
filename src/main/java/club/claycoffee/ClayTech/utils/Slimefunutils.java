@@ -14,12 +14,11 @@ import me.mrCookieSlime.Slimefun.api.Slimefun;
 public class Slimefunutils {
 	private static int researchId = 9901;
 
-	@SuppressWarnings("deprecation")
 	public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
 			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch) {
 		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
 		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
-		item.register();
+		item.register(ClayTech.plugin);
 		if (registerResearch) {
 			researchId++;
 			Slimefun.registerResearch(

@@ -38,7 +38,7 @@ Items:
     - "&b粘土科技的基礎物品,許多粘土科技的合成都需要這個"
   CLAY_STICK: "§6克萊の木棍"
   CLAY_STICK_LORE:
-    - "&b服主克萊咖啡收藏的木棍,可以做某些工具"
+    - "&b作者克萊咖啡收藏的木棍,可以做某些工具"
   ARTIFICIAL_GOLD_NUGGET: "&6人造金粒"
   ARTIFICIAL_GOLD_INGOT_O: "&6人造金錠原礦"
   ARTIFICIAL_GOLD_INGOT: "&6人造金錠"
@@ -192,7 +192,7 @@ Items:
   BABA_BURGER: "&e老八秘制小憨包"
   BABA_BURGER_LORE:
     - "&6老八秘制小憨包"
-    - "&7吃個試試?(造成的任何後果作者不負責)"
+    - "&7吃個試試?"
     - "&e不可放置"
   LETTUSE: "&e生菜"
   LETTUSE_LORE:

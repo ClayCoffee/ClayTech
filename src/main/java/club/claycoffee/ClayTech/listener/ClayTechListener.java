@@ -164,15 +164,15 @@ public class ClayTechListener implements Listener {
 			if (rail.getBlockData().getMaterial() == Material.POWERED_RAIL) {
 				if (BlockStorage.checkID(rail) != null) {
 					if (BlockStorage.checkID(rail).equalsIgnoreCase("CLAY_HIGHSPEED_RAILWAY")) {
-						ve.setMaxSpeed(0.4d * 3);
+						ve.setMaxSpeed(1.2d);
 					} else {
-						ve.setMaxSpeed(0.4);
+						ve.setMaxSpeed(0.4d);
 					}
 				} else {
-					ve.setMaxSpeed(0.4);
+					ve.setMaxSpeed(0.4d);
 				}
 			} else {
-				ve.setMaxSpeed(0.4);
+				ve.setMaxSpeed(0.4d);
 			}
 		}
 	}

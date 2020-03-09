@@ -41,6 +41,11 @@ public class ElectricStoneCrusher extends ANewContainer{
 	}
 	
 	@Override
+	public int getCapacity() {
+		return 128;
+	}
+	
+	@Override
 	public String getMachineIdentifier() {
 		return "CLAY_ELECTRIC_STONE_CRUSHER";
 	}
