@@ -103,8 +103,6 @@ public class Defines {
 			Lang.readItemLore("SNAIL_HEALTHY"));
 	public static final ItemStack SNAIL_BAD = Utils.setLore(Utils.newItemD(Material.NAUTILUS_SHELL, Lang.readItemText("SNAIL_BAD")),
 			Lang.readItemLore("SNAIL_BAD"));
-	public static final ItemStack HONEY_SWEET = Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
-			Lang.readItemLore("HONEY_SWEET"));
 	public static final ItemStack HIGHSPEED_RAILWAY = Utils.setLore(Utils.newItemD(Material.POWERED_RAIL, Lang.readItemText("HIGHSPEED_RAILWAY")),
 			Lang.readItemLore("HIGHSPEED_RAILWAY"));
 	public static final ItemStack ELECTRIC_MOTOR_8 = Utils.newItemD(Material.FEATHER, Lang.readItemText("ELECTRIC_MOTOR_8"));
@@ -191,4 +189,11 @@ public class Defines {
 			"http://textures.minecraft.net/texture/c74170c66bf3140f234b322add724c5df6949a9209f807ebf86d4f9c8c1e178"),
 			Lang.readItemText("CLAY_ELEMENT_EXTRACTER")),
 			Utils.replaceList(Utils.replaceList(Lang.readItemLore("CLAY_ELEMENT_EXTRACTER"),"%TIER%",LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE).replaceAll("&", "§")),"%POWER%",LoreBuilder.powerBuffer(1024).replaceAll("&", "§")));
+	public static ItemStack HONEY_SWEET;
+	static {
+		if(ClayTech.is115) {
+			HONEY_SWEET = Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
+					Lang.readItemLore("HONEY_SWEET"));
+		}
+	}
 }

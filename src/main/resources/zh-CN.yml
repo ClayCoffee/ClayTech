@@ -15,6 +15,8 @@ General:
   Cant_Eat_Message: "&c您已经饱了,不用再吃东西了!"
   Wash_Message: "&6清洗完毕!!"
   Cant_Wash_Message: "&c无法清洗!你没有水桶!"
+  Before_115: "&c检测到您的服务器运行在1.15版本以下,可能导致有的物品无法注册,但仍可正常运行本插件."
+  Not_compatible: "&c对不起,本插件仅限1.14.x,1.15.x的服务器使用!请尽快升级您的服务器.."
 Categories:
   Basic: "&b粘土科技 - 基础"
   Weapons: "&b粘土科技 - 武器"

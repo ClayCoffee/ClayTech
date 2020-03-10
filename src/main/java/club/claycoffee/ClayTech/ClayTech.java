@@ -28,6 +28,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 	public static DataYML currentLangYML;
 	public static FileConfiguration currentLang;
 	public static String highrailspeed;
+	private static String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+	public static boolean is115 = true;
+	public static boolean compatible = true;
 
 	@SuppressWarnings({ "unused", "static-access" })
 	@Override
@@ -93,6 +96,18 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 		}
 		currentLangYML.saveCustomConfig();
 		currentLangYML.reloadCustomConfig();
+		switch(version) {
+		  case "v1_15_R1" : break;
+		  case "v1_14_R1" : is115=false;break;
+		  default: compatible=false;break;
+		}
+		if(!compatible) {
+			Utils.info(Lang.readGeneralText("Not_compatible"));
+			this.getServer().getPluginManager().disablePlugin(this);
+		}
+		if(!is115) {
+			Utils.info(Lang.readGeneralText("Before_115"));
+		}
 		Utils.info(Lang.readGeneralText("startTip"));
 		Config cfg = new Config(this);
 		Utils.info(Lang.readGeneralText("registeringItems"));

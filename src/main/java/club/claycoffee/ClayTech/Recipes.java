@@ -85,7 +85,12 @@ public class Recipes {
 			Defines.TEA_POWDER, Defines.LEMON_POWDER, null, Defines.DRINK_BOTTLE, null };
 	public final static ItemStack[] TEA_POWDER = {null,null,null,null,Defines.RAW_TEA,null,null,null,null};
 	public final static ItemStack[] LEMON_POWDER = {null,null,null,null,Defines.LEMON,null,null,null,null};
-	public final static ItemStack[] HONEY_SWEET = {new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SUGAR),new ItemStack(Material.HONEY_BOTTLE),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR)};
+	public static ItemStack[] HONEY_SWEET;
+	static {
+		if(ClayTech.is115) {
+			HONEY_SWEET = new ItemStack[]{new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SUGAR),new ItemStack(Material.HONEY_BOTTLE),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR)};
+		}
+	}
 	public final static ItemStack[] ELEMENT_CARBON = {null,null,null,null,new ItemStack(Material.COAL,8),null,null,null,null};
 	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, new ItemStack(Material.GRASS_BLOCK,3), null, null, null, null };
 	public final static ItemStack[] ELEMENT_SILICON = {null,null,null,null,new ItemStack(Material.SAND,10),null,null,null,null};

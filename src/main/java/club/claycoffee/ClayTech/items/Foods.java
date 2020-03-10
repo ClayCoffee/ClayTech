@@ -34,15 +34,17 @@ public class Foods {
 				RecipeType.NULL, Defines.NORECIPE, false);
 		Slimefunutils.registerItem(Defines.C_FOOD, "SNAIL_FOOD", Defines.SNAIL_FOOD, "notresearch", 10,
 				TRecipe.CLAY_FOOD_CAULDRON, recipef, false);
-		Slimefunutils.registerItem(Defines.C_FOOD, "HONEY_SWEET", Defines.HONEY_SWEET, "notresearch", 10,
-				TRecipe.CLAY_FOOD_CAULDRON, Recipes.HONEY_SWEET, false);
+		if(ClayTech.is115) {
+			Slimefunutils.registerItem(Defines.C_FOOD, "HONEY_SWEET", Defines.HONEY_SWEET, "notresearch", 10,
+					TRecipe.CLAY_FOOD_CAULDRON, Recipes.HONEY_SWEET, false);
+			Research foodII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC2"), 9916, Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
+			foodII.addItems(SlimefunItem.getByItem(Defines.HONEY_SWEET));
+			foodII.register();
+		}
 		
 		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC"), 9911, Lang.readResearchesText("CLAYTECH_FOOD_I"), 50);
 		foodI.addItems(SlimefunItem.getByItem(Defines.CHICKEN_FOOT),SlimefunItem.getByItem(Defines.SPICY_CHICKEN_BURGER),SlimefunItem.getByItem(Defines.BABA_BURGER),SlimefunItem.getByItem(Defines.CHOCOLATE),SlimefunItem.getByItem(Defines.SNAIL_BAD),SlimefunItem.getByItem(Defines.SNAIL_FOOD));
 		foodI.register();
 		
-		Research foodII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC2"), 9916, Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
-		foodII.addItems(SlimefunItem.getByItem(Defines.HONEY_SWEET));
-		foodII.register();
 	}
 }
