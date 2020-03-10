@@ -39,7 +39,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 		locale = config.getString("Locale");
 		if (locale == null)
 			locale = "en-US";
-		highrailspeed = config.getString("Locale");
+		highrailspeed = config.getString("highrailspeed");
 		if (highrailspeed == null)
 			highrailspeed = "3";
 		if (!Utils.ExitsInList(locale, Lang.LocaleList)) {
