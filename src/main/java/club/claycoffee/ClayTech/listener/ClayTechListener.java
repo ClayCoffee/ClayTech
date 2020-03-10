@@ -25,6 +25,7 @@ import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.event.player.PlayerFishEvent.State;
 import org.bukkit.event.vehicle.VehicleMoveEvent;
 
+import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.utils.Affect;
 import club.claycoffee.ClayTech.utils.Food;
@@ -164,7 +165,7 @@ public class ClayTechListener implements Listener {
 			if (rail.getBlockData().getMaterial() == Material.POWERED_RAIL) {
 				if (BlockStorage.checkID(rail) != null) {
 					if (BlockStorage.checkID(rail).equalsIgnoreCase("CLAY_HIGHSPEED_RAILWAY")) {
-						ve.setMaxSpeed(1.2d);
+						ve.setMaxSpeed(0.4d * new Integer(ClayTech.highrailspeed).doubleValue());
 					} else {
 						ve.setMaxSpeed(0.4d);
 					}

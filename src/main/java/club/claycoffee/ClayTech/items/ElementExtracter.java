@@ -1,7 +1,7 @@
 package club.claycoffee.ClayTech.items;
 
 import club.claycoffee.ClayTech.Defines;
-import club.claycoffee.ClayTech.Machines.AElementExtracter;
+import club.claycoffee.ClayTech.Machines.AExtracter;
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
@@ -9,7 +9,7 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class ElementExtracter extends AElementExtracter{
+public class ElementExtracter extends AExtracter{
 	public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);

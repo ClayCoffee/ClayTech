@@ -36,7 +36,7 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 @SuppressWarnings("deprecation")
-public abstract class AElementExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
+public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
 	public final static int[] inputslots = new int[] { 20 };
@@ -53,7 +53,7 @@ public abstract class AElementExtracter extends SlimefunItem implements Inventor
 	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
 
-	public AElementExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
+	public AExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 
 		super(category, item, recipeType, recipe);
@@ -190,7 +190,7 @@ public abstract class AElementExtracter extends SlimefunItem implements Inventor
 		addItemHandler(new BlockTicker() {
 			@Override
 			public void tick(Block b, SlimefunItem sf, Config data) {
-				AElementExtracter.this.tick(b);
+				AExtracter.this.tick(b);
 			}
 
 			@Override

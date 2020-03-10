@@ -27,6 +27,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 	public static String locale;
 	public static DataYML currentLangYML;
 	public static FileConfiguration currentLang;
+	public static String highrailspeed;
 
 	@SuppressWarnings({ "unused", "static-access" })
 	@Override
@@ -38,6 +39,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 		locale = config.getString("Locale");
 		if (locale == null)
 			locale = "en-US";
+		highrailspeed = config.getString("Locale");
+		if (highrailspeed == null)
+			highrailspeed = "3";
 		if (!Utils.ExitsInList(locale, Lang.LocaleList)) {
 			Utils.info("§cLoading Error: Locale not found.Disableing plugin..");
 			this.getServer().getPluginManager().disablePlugin(this);
@@ -91,12 +95,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 		currentLangYML.reloadCustomConfig();
 		Utils.info(Lang.readGeneralText("startTip"));
 		Config cfg = new Config(this);
-		if(this.getServer().getVersion().equals("1.15")) {
-			
-		}
-		else {
-			
-		}
 		Utils.info(Lang.readGeneralText("registeringItems"));
 		try {
 			registerSlimefun();
@@ -173,7 +171,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 
 	@Override
 	public String getBugTrackerURL() {
-		// TODO 自动生成的方法存根
-		return null;
+		return "https://github.com/ClayCoffee/ClayTech/issues";
 	}
 }

@@ -14,7 +14,6 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class Railways {
-	@SuppressWarnings("deprecation")
 	public Railways() {
 		Slimefunutils.registerItem(Defines.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", Defines.HIGHSPEED_RAILWAY, "notresearch", 10,
 				TRecipe.CLAY_CRAFTING_TABLE, Recipes.HIGHSPEED_RAILWAY, false);
@@ -22,7 +21,7 @@ public class Railways {
 		elem8.setAmount(8);
 		SlimefunItemStack motor_8 = new SlimefunItemStack("ELECTRIC_MOTOR_8", elem8);
 		SlimefunItem motor_8_i = new SlimefunItem(Defines.C_OTHER, motor_8, TRecipe.CLAY_CRAFTING_TABLE, Recipes.ELECTRIC_MOTOR_8);
-		motor_8_i.register();
+		motor_8_i.register(ClayTech.plugin);
 		Research railway_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_RAILWAY_BASIC"), 9920, Lang.readResearchesText("CLAYTECH_RAILWAY_I"),
 				40);
 		railway_basic.addItems(SlimefunItem.getByItem(Defines.HIGHSPEED_RAILWAY),SlimefunItem.getByItem(Defines.ELECTRIC_MOTOR_8));

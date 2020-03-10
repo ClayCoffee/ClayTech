@@ -1,5 +1,5 @@
 name: ClayTech
 main: club.claycoffee.ClayTech.ClayTech
-version: nightly-20200309
+version: nightly-20200310
 api-version: 1.15
 depend: [CS-CoreLib, Slimefun]
