@@ -11,10 +11,10 @@ public class Recipes {
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), Defines.MAGIC_CLAY,
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
 			new ItemStack(Material.INK_SAC) };
-	public final static ItemStack[] BLIND_SWORD = { Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_BLIND_CORE,
-			Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_BLIND_CORE, new ItemStack(Material.DIAMOND_SWORD),
-			Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_BLIND_CORE,
-			Defines.ADVANCED_BLIND_CORE };
+	public final static ItemStack[] BLIND_SWORD = { Defines.BLIND_CORE, Defines.BLIND_CORE,
+			Defines.BLIND_CORE, Defines.BLIND_CORE, new ItemStack(Material.DIAMOND_SWORD),
+			Defines.BLIND_CORE, Defines.BLIND_CORE, Defines.BLIND_CORE,
+			Defines.BLIND_CORE };
 	public final static ItemStack[] POISON_EYE = { new ItemStack(Material.SPIDER_EYE),
 			new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE),
 			Defines.MAGIC_CLAY, new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE),
@@ -47,18 +47,18 @@ public class Recipes {
 	public final static ItemStack[] ADVANCED_BLIND_CORE = { Defines.BLIND_CORE, Defines.BLIND_CORE, Defines.BLIND_CORE,
 			Defines.BLIND_CORE, Defines.MAGIC_CLAY, Defines.BLIND_CORE, Defines.BLIND_CORE, Defines.BLIND_CORE,
 			Defines.BLIND_CORE };
-	public final static ItemStack[] FOUR_BOW = { new ItemStack(Material.COAL_BLOCK), Defines.ADVANCED_BLIND_CORE,
-			new ItemStack(Material.COAL_BLOCK), Defines.ADVANCED_CONFUSION_CORE, new ItemStack(Material.BOW),
-			Defines.ADVANCED_POISON_CORE, new ItemStack(Material.COAL_BLOCK), Defines.ADVANCED_SLOWNESS_CORE,
-			new ItemStack(Material.COAL_BLOCK) };
-	public final static ItemStack[] POISON_SWORD = { Defines.ADVANCED_POISON_CORE, Defines.ADVANCED_POISON_CORE,
-			Defines.ADVANCED_POISON_CORE, Defines.ADVANCED_POISON_CORE, new ItemStack(Material.DIAMOND_SWORD),
-			Defines.ADVANCED_POISON_CORE, Defines.ADVANCED_POISON_CORE, Defines.ADVANCED_POISON_CORE,
-			Defines.ADVANCED_POISON_CORE };
-	public final static ItemStack[] ANTI_SLOWNESS_BOOTS = { Defines.ADVANCED_SLOWNESS_CORE,
-			Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_SLOWNESS_CORE,
-			new ItemStack(Material.IRON_BOOTS), Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_SLOWNESS_CORE,
-			Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_SLOWNESS_CORE };
+	public final static ItemStack[] FOUR_BOW = { Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_POISON_CORE,
+			Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_CONFUSION_CORE, new ItemStack(Material.BOW),
+			Defines.ADVANCED_CONFUSION_CORE, Defines.ADVANCED_BLIND_CORE,Defines.ADVANCED_POISON_CORE,
+			Defines.ADVANCED_SLOWNESS_CORE };
+	public final static ItemStack[] POISON_SWORD = { Defines.POISON_CORE, Defines.POISON_CORE,
+			Defines.POISON_CORE, Defines.POISON_CORE, new ItemStack(Material.DIAMOND_SWORD),
+			Defines.POISON_CORE, Defines.POISON_CORE, Defines.POISON_CORE,
+			Defines.POISON_CORE };
+	public final static ItemStack[] ANTI_SLOWNESS_BOOTS = { Defines.SLOWNESS_CORE,
+			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
+			new ItemStack(Material.IRON_BOOTS), Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
+			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE };
 
 	// 食物
 	public final static ItemStack[] CHICKEN_FOOT = { null, new ItemStack(Material.COAL), null, null,
