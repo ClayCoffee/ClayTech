@@ -5,39 +5,42 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
-public class PlayerCookItemEvent extends Event{
+public class PlayerCookItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	private ItemStack[] Recipe;
 	private ItemStack CraftedItem;
 	private Block machine;
-	
-	
-	public PlayerCookItemEvent(Block machine,ItemStack[] Recipe,ItemStack CraftedItem) {
+
+	public PlayerCookItemEvent(Block machine, ItemStack[] Recipe, ItemStack CraftedItem) {
 		this.Recipe = Recipe;
 		this.CraftedItem = CraftedItem;
 		this.machine = machine;
 	}
+
 	/**
-    *
-    * @return the recipe.
-    */
+	 *
+	 * @return the recipe.
+	 */
 	public ItemStack[] getRecipe() {
 		return Recipe;
 	}
+
 	/**
-    *
-    * @return the item just crafted.
-    */
+	 *
+	 * @return the item just crafted.
+	 */
 	public ItemStack getCraftedItem() {
 		return CraftedItem;
 	}
+
 	/**
-    *
-    * @return the machine crafted the item.
-    */
+	 *
+	 * @return the machine crafted the item.
+	 */
 	public Block getMachine() {
 		return machine;
 	}
+
 	@Override
 	public HandlerList getHandlers() {
 		return handlers;

@@ -47,8 +47,7 @@ public class PotionAffect_Weapons {
 				Lang.readResearchesText("CLAYTECH_BEFORE_AFFECT_WEAPONS"), 50);
 		weapon_requires.addItems(SlimefunItem.getByItem(Defines.BLIND_CORE),
 				SlimefunItem.getByItem(Defines.CONFUSION_CORE), SlimefunItem.getByItem(Defines.SLOWNESS_CORE),
-				SlimefunItem.getByItem(Defines.POISON_CORE),
-				SlimefunItem.getByItem(Defines.POISON_EYE),
+				SlimefunItem.getByItem(Defines.POISON_CORE), SlimefunItem.getByItem(Defines.POISON_EYE),
 				SlimefunItem.getByItem(Defines.BLACK_ROCK_BLOCK));
 		weapon_requires.register();
 
@@ -59,7 +58,8 @@ public class PotionAffect_Weapons {
 		weapons_basic.register();
 
 		Research advancedweapon_requires = new Research(
-				new NamespacedKey(ClayTech.plugin, "CLAYTECH_EX_ADVANCED_WEAPONS"), 9906, Lang.readResearchesText("CLAYTECH_BEFORE_ADVANCED_AFFECT_WEAPONS"), 75);
+				new NamespacedKey(ClayTech.plugin, "CLAYTECH_EX_ADVANCED_WEAPONS"), 9906,
+				Lang.readResearchesText("CLAYTECH_BEFORE_ADVANCED_AFFECT_WEAPONS"), 75);
 		advancedweapon_requires.addItems(SlimefunItem.getByItem(Defines.ADVANCED_BLIND_CORE),
 				SlimefunItem.getByItem(Defines.ADVANCED_CONFUSION_CORE),
 				SlimefunItem.getByItem(Defines.ADVANCED_SLOWNESS_CORE),

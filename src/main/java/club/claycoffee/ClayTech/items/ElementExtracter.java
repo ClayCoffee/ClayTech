@@ -26,7 +26,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
 
-public class ElementExtracter extends AExtracter{
+public class ElementExtracter extends AExtracter {
 	public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -47,7 +47,7 @@ public class ElementExtracter extends AExtracter{
 	public int getSpeed() {
 		return 1;
 	}
-	
+
 	@Override
 	public int getCapacity() {
 		return 1024;
@@ -58,11 +58,14 @@ public class ElementExtracter extends AExtracter{
 	}
 
 	public void registerDefaultRecipes() {
-		registerRecipe(10, new ItemStack[] { new ItemStack(Material.DIRT,3)}, new ItemStack[] { Defines.ELEMENT_OXYGEN });
-		registerRecipe(10, new ItemStack[] { new ItemStack(Material.COAL,8) }, new ItemStack[] { Defines.ELEMENT_CARBON });
-		registerRecipe(10, new ItemStack[] { new ItemStack(Material.SAND,10) }, new ItemStack[] { Defines.ELEMENT_SILICON });
+		registerRecipe(10, new ItemStack[] { new ItemStack(Material.DIRT, 3) },
+				new ItemStack[] { Defines.ELEMENT_OXYGEN });
+		registerRecipe(10, new ItemStack[] { new ItemStack(Material.COAL, 8) },
+				new ItemStack[] { Defines.ELEMENT_CARBON });
+		registerRecipe(10, new ItemStack[] { new ItemStack(Material.SAND, 10) },
+				new ItemStack[] { Defines.ELEMENT_SILICON });
 	}
-	
+
 	protected void tick(Block b) {
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
@@ -90,8 +93,9 @@ public class ElementExtracter extends AExtracter{
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
 				MetadataValue md = b.getMetadata("currentRecipe").get(0);
-				Bukkit.getPluginManager().callEvent(new PlayerExtractElementEvent(b,(ItemStack[]) md.value(),processing.get(b).getOutput()[0]));
-				
+				Bukkit.getPluginManager().callEvent(
+						new PlayerExtractElementEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -121,13 +125,14 @@ public class ElementExtracter extends AExtracter{
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true)) return;
+				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true))
+					return;
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					if (entry.getValue() > 0) {
 						inv.consumeItem(entry.getKey(), entry.getValue());
 						inv.consumeItem(40, 1);
 					}
-					
+
 				}
 
 				processing.put(b, r);

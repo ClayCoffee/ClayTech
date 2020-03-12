@@ -11,10 +11,9 @@ public class Recipes {
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), Defines.MAGIC_CLAY,
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
 			new ItemStack(Material.INK_SAC) };
-	public final static ItemStack[] BLIND_SWORD = { Defines.BLIND_CORE, Defines.BLIND_CORE,
-			Defines.BLIND_CORE, Defines.BLIND_CORE, new ItemStack(Material.DIAMOND_SWORD),
-			Defines.BLIND_CORE, Defines.BLIND_CORE, Defines.BLIND_CORE,
-			Defines.BLIND_CORE };
+	public final static ItemStack[] BLIND_SWORD = { Defines.BLIND_CORE, Defines.BLIND_CORE, Defines.BLIND_CORE,
+			Defines.BLIND_CORE, new ItemStack(Material.DIAMOND_SWORD), Defines.BLIND_CORE, Defines.BLIND_CORE,
+			Defines.BLIND_CORE, Defines.BLIND_CORE };
 	public final static ItemStack[] POISON_EYE = { new ItemStack(Material.SPIDER_EYE),
 			new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE),
 			Defines.MAGIC_CLAY, new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SPIDER_EYE),
@@ -49,16 +48,14 @@ public class Recipes {
 			Defines.BLIND_CORE };
 	public final static ItemStack[] FOUR_BOW = { Defines.ADVANCED_SLOWNESS_CORE, Defines.ADVANCED_POISON_CORE,
 			Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_CONFUSION_CORE, new ItemStack(Material.BOW),
-			Defines.ADVANCED_CONFUSION_CORE, Defines.ADVANCED_BLIND_CORE,Defines.ADVANCED_POISON_CORE,
+			Defines.ADVANCED_CONFUSION_CORE, Defines.ADVANCED_BLIND_CORE, Defines.ADVANCED_POISON_CORE,
 			Defines.ADVANCED_SLOWNESS_CORE };
-	public final static ItemStack[] POISON_SWORD = { Defines.POISON_CORE, Defines.POISON_CORE,
-			Defines.POISON_CORE, Defines.POISON_CORE, new ItemStack(Material.DIAMOND_SWORD),
-			Defines.POISON_CORE, Defines.POISON_CORE, Defines.POISON_CORE,
-			Defines.POISON_CORE };
-	public final static ItemStack[] ANTI_SLOWNESS_BOOTS = { Defines.SLOWNESS_CORE,
-			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
-			new ItemStack(Material.IRON_BOOTS), Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
-			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE };
+	public final static ItemStack[] POISON_SWORD = { Defines.POISON_CORE, Defines.POISON_CORE, Defines.POISON_CORE,
+			Defines.POISON_CORE, new ItemStack(Material.DIAMOND_SWORD), Defines.POISON_CORE, Defines.POISON_CORE,
+			Defines.POISON_CORE, Defines.POISON_CORE };
+	public final static ItemStack[] ANTI_SLOWNESS_BOOTS = { Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
+			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, new ItemStack(Material.IRON_BOOTS), Defines.SLOWNESS_CORE,
+			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE };
 
 	// 食物
 	public final static ItemStack[] CHICKEN_FOOT = { null, new ItemStack(Material.COAL), null, null,
@@ -83,29 +80,37 @@ public class Recipes {
 			Defines.DRINK_BOTTLE, null };
 	public final static ItemStack[] LEMON_TEA_DRINK = { null, Defines.TEA_POWDER, null, Defines.LEMON_POWDER,
 			Defines.TEA_POWDER, Defines.LEMON_POWDER, null, Defines.DRINK_BOTTLE, null };
-	public final static ItemStack[] TEA_POWDER = {null,null,null,null,Defines.RAW_TEA,null,null,null,null};
-	public final static ItemStack[] LEMON_POWDER = {null,null,null,null,Defines.LEMON,null,null,null,null};
+	public final static ItemStack[] TEA_POWDER = { null, null, null, null, Defines.RAW_TEA, null, null, null, null };
+	public final static ItemStack[] LEMON_POWDER = { null, null, null, null, Defines.LEMON, null, null, null, null };
 	public static ItemStack[] HONEY_SWEET;
 	static {
-		if(ClayTech.is115) {
-			HONEY_SWEET = new ItemStack[]{new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SWEET_BERRIES),new ItemStack(Material.SUGAR),new ItemStack(Material.HONEY_BOTTLE),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR),new ItemStack(Material.SUGAR)};
+		if (ClayTech.is115) {
+			HONEY_SWEET = new ItemStack[] { new ItemStack(Material.SWEET_BERRIES),
+					new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SWEET_BERRIES),
+					new ItemStack(Material.SUGAR), new ItemStack(Material.HONEY_BOTTLE), new ItemStack(Material.SUGAR),
+					new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR) };
 		}
 	}
-	public final static ItemStack[] ELEMENT_CARBON = {null,null,null,null,new ItemStack(Material.COAL,8),null,null,null,null};
-	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, new ItemStack(Material.GRASS_BLOCK,3), null, null, null, null };
-	public final static ItemStack[] ELEMENT_SILICON = {null,null,null,null,new ItemStack(Material.SAND,10),null,null,null,null};
-	public final static ItemStack[] BLISTERING_CORE = { SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
+	public final static ItemStack[] ELEMENT_CARBON = { null, null, null, null, new ItemStack(Material.COAL, 8), null,
+			null, null, null };
+	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, new ItemStack(Material.GRASS_BLOCK, 3),
+			null, null, null, null };
+	public final static ItemStack[] ELEMENT_SILICON = { null, null, null, null, new ItemStack(Material.SAND, 10), null,
+			null, null, null };
+	public final static ItemStack[] BLISTERING_CORE = { SlimefunItems.BLISTERING_INGOT_3,
 			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
 			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-			SlimefunItems.BLISTERING_INGOT_3 };
-	public final static ItemStack[] ELEMENT_UNIT = { SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
-			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, null,
-			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
+			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3 };
+	public final static ItemStack[] ELEMENT_UNIT = { SlimefunItems.DAMASCUS_STEEL_INGOT,
+			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
+			null, SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
 			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT };
 	static {
 		newMotor = Defines.ELECTRIC_MOTOR_8.clone();
 		newMotor.setAmount(1);
 	}
-	public final static ItemStack[] ELECTRIC_MOTOR_8 = {null,null,null,null,SlimefunItems.ELECTRIC_MOTOR,null,null,null,null};
-	public final static ItemStack[] HIGHSPEED_RAILWAY = {null,null,null,null,new ItemStack(Material.POWERED_RAIL),null,null,newMotor,null};
+	public final static ItemStack[] ELECTRIC_MOTOR_8 = { null, null, null, null, SlimefunItems.ELECTRIC_MOTOR, null,
+			null, null, null };
+	public final static ItemStack[] HIGHSPEED_RAILWAY = { null, null, null, null, new ItemStack(Material.POWERED_RAIL),
+			null, null, newMotor, null };
 }

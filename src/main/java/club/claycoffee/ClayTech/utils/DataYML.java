@@ -31,8 +31,7 @@ public class DataYML {
 
 		Reader stream;
 		try {
-			stream = new InputStreamReader(club.claycoffee.ClayTech.ClayTech.plugin.getResource(configName),
-					"UTF8");
+			stream = new InputStreamReader(club.claycoffee.ClayTech.ClayTech.plugin.getResource(configName), "UTF8");
 			if (stream != null) {
 				YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(stream);
 				config.setDefaults(defConfig);

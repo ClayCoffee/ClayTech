@@ -27,9 +27,15 @@ public class Skulls {
 				new ItemStack(Material.IRON_BLOCK), Defines.ARTIFICIAL_GOLD_NUGGET, Defines.CLAY_STICK,
 				Defines.ARTIFICIAL_GOLD_NUGGET, new ItemStack(Material.IRON_BLOCK), new ItemStack(Material.GOLD_BLOCK),
 				new ItemStack(Material.IRON_BLOCK) };
-		ItemStack[] ClockRecipe = {new ItemStack(Material.IRON_INGOT),new ItemStack(Material.IRON_INGOT),new ItemStack(Material.IRON_INGOT),new ItemStack(Material.IRON_INGOT),Defines.MAGIC_CLAY,new ItemStack(Material.IRON_INGOT),new ItemStack(Material.IRON_INGOT),new ItemStack(Material.BLACK_DYE),new ItemStack(Material.IRON_INGOT)};
-		ItemStack[] LanternRecipe = {new ItemStack(Material.OAK_LOG),new ItemStack(Material.OAK_LOG),new ItemStack(Material.OAK_LOG),new ItemStack(Material.OAK_LOG),new ItemStack(Material.GLOWSTONE),new ItemStack(Material.OAK_LOG),new ItemStack(Material.OAK_LOG),Defines.MAGIC_CLAY,new ItemStack(Material.OAK_LOG)};
-		
+		ItemStack[] ClockRecipe = { new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), Defines.MAGIC_CLAY,
+				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+				new ItemStack(Material.BLACK_DYE), new ItemStack(Material.IRON_INGOT) };
+		ItemStack[] LanternRecipe = { new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG),
+				new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG), new ItemStack(Material.GLOWSTONE),
+				new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG), Defines.MAGIC_CLAY,
+				new ItemStack(Material.OAK_LOG) };
+
 		// 注册物品
 		Slimefunutils.registerItem(Defines.C_DECORATES, "CLAYCOFFEE_HEAD", Defines.CLAYCOFFEE_HEAD, "notresearch", 10,
 				RecipeType.ANCIENT_ALTAR, ClayCoffeeHeadRecipe, false);
@@ -43,16 +49,15 @@ public class Skulls {
 				RecipeType.ENHANCED_CRAFTING_TABLE, LanternRecipe, false);
 
 		// 注册研究
-		Research skull_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_SKULL_BASIC"), 9907, Lang.readResearchesText("CLAYTECH_SKULL_I"),
-				50);
+		Research skull_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_SKULL_BASIC"), 9907,
+				Lang.readResearchesText("CLAYTECH_SKULL_I"), 50);
 		skull_basic.addItems(SlimefunItem.getByItem(Defines.CLAYCOFFEE_HEAD),
 				SlimefunItem.getByItem(Defines.STALIN_HEAD), SlimefunItem.getByItem(Defines.MARX_HEAD));
 		skull_basic.register();
-		
-		Research skull_basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_SKULL_BASIC"), 9914, Lang.readResearchesText("CLAYTECH_DECORATES_I"),
-				50);
-		skull_basic2.addItems(SlimefunItem.getByItem(Defines.CLOCK_C),
-				SlimefunItem.getByItem(Defines.LANTERN_C));
+
+		Research skull_basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_SKULL_BASIC"), 9914,
+				Lang.readResearchesText("CLAYTECH_DECORATES_I"), 50);
+		skull_basic2.addItems(SlimefunItem.getByItem(Defines.CLOCK_C), SlimefunItem.getByItem(Defines.LANTERN_C));
 		skull_basic2.register();
 	}
 }

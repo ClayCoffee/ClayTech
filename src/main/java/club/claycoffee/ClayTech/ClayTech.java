@@ -22,13 +22,14 @@ import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 @SuppressWarnings("deprecation")
-public class ClayTech extends JavaPlugin implements SlimefunAddon{
+public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static ClayTech plugin;
 	public static String locale;
 	public static DataYML currentLangYML;
 	public static FileConfiguration currentLang;
 	public static String highrailspeed;
-	private static String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+	private static String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",")
+			.split(",")[3];
 	public static boolean is115 = true;
 	public static boolean compatible = true;
 
@@ -55,14 +56,14 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 		currentLang = currentLangYML.getCustomConfig();
 		try {
 			FileConfiguration current = YamlConfiguration
-					.loadConfiguration(new InputStreamReader(this.getResource(locale + ".yml"),"UTF8"));
+					.loadConfiguration(new InputStreamReader(this.getResource(locale + ".yml"), "UTF8"));
 			for (String select : current.getKeys(false)) {
-				if(Utils.sectionKeyToList(current.getConfigurationSection(select)).get(0).equalsIgnoreCase("null") || current.getConfigurationSection(select).getKeys(false) == null) {
+				if (Utils.sectionKeyToList(current.getConfigurationSection(select)).get(0).equalsIgnoreCase("null")
+						|| current.getConfigurationSection(select).getKeys(false) == null) {
 					currentLang.createPath(current.getConfigurationSection(select), select);
 					currentLangYML.saveCustomConfig();
 					continue;
-				}
-				else {
+				} else {
 					List<String> found = Utils.sectionKeyToList(current.getConfigurationSection(select));
 					List<String> found2 = Utils.sectionKeyToList(currentLang.getConfigurationSection(select));
 					for (String each : found) {
@@ -90,22 +91,26 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 				}
 			}
 		} catch (Exception e2) {
-			Utils.info(
-					"§cThere is an error when reading the language file.Replacing the new language file..");
+			Utils.info("§cThere is an error when reading the language file.Replacing the new language file..");
 			e2.printStackTrace();
 		}
 		currentLangYML.saveCustomConfig();
 		currentLangYML.reloadCustomConfig();
-		switch(version) {
-		  case "v1_15_R1" : break;
-		  case "v1_14_R1" : is115=false;break;
-		  default: compatible=false;break;
+		switch (version) {
+		case "v1_15_R1":
+			break;
+		case "v1_14_R1":
+			is115 = false;
+			break;
+		default:
+			compatible = false;
+			break;
 		}
-		if(!compatible) {
+		if (!compatible) {
 			Utils.info(Lang.readGeneralText("Not_compatible"));
 			this.getServer().getPluginManager().disablePlugin(this);
 		}
-		if(!is115) {
+		if (!is115) {
 			Utils.info(Lang.readGeneralText("Before_115"));
 		}
 		Utils.info(Lang.readGeneralText("startTip"));
@@ -130,7 +135,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, Defines.MAGIC_CLAY };
 		ItemStack[] ClayStoneCrusher = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.DISPENSER) };
+				SlimefunItems.BATTERY, Defines.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
+				new ItemStack(Material.DISPENSER) };
 		ItemStack[] ClayFoodCauldron = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, Defines.CLAY_CRAFTING_TABLE, SlimefunItems.BATTERY,
 				Defines.MAGIC_CLAY, SlimefunItems.MEDIUM_CAPACITOR, Defines.MAGIC_CLAY };
@@ -154,8 +160,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon{
 
 		new CraftingTable(Defines.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayCrafingTable).register(this);
-		new ElectricStoneCrusher(Defines.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayStoneCrusher).register(this);
+		new ElectricStoneCrusher(Defines.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayStoneCrusher).register(this);
 		new FoodCauldron(Defines.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
 				ClayFoodCauldron).register(this);
 		new FoodChalkingMachine(Defines.C_MACHINES, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",

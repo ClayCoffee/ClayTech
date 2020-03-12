@@ -33,18 +33,17 @@ public class Food {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
 				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
-				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
-					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
-				}
-				else {
+					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
+				} else {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				for (PotionEffect pe : PotionEffect) {
 					p.addPotionEffect(pe);
 				}
 				p.sendMessage(Lang.readGeneralText("Drink_Message"));
-				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p,HandItem));
+				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p, HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
@@ -63,15 +62,14 @@ public class Food {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
 				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
-				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
-					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
-				}
-				else {
+					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
+				} else {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				p.sendMessage(Lang.readGeneralText("Drink_Message"));
-				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p,HandItem));
+				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p, HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
@@ -90,18 +88,17 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
-					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
-				}
-				else {
+					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
+				} else {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				for (PotionEffect pe : PotionEffect) {
 					p.addPotionEffect(pe);
 				}
 				p.sendMessage(Lang.readGeneralText("Eat_Message"));
-				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p,HandItem));
+				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p, HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
@@ -119,15 +116,14 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				if(p.getFoodLevel() + incraseFoodLevel > 20) {
+				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
-					p.setSaturation(p.getSaturation()+(p.getFoodLevel() + incraseFoodLevel - 20));
-				}
-				else {
+					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
+				} else {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				p.sendMessage(Lang.readGeneralText("Eat_Message"));
-				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p,HandItem));
+				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p, HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
@@ -155,7 +151,7 @@ public class Food {
 					i.addItem(new ItemStack(Material.BUCKET));
 					i.addItem(cleanItem);
 					p.sendMessage(Lang.readGeneralText("Wash_Message"));
-					Bukkit.getPluginManager().callEvent(new PlayerWashEvent(p,matchItem,cleanItem));
+					Bukkit.getPluginManager().callEvent(new PlayerWashEvent(p, matchItem, cleanItem));
 				} else {
 					p.sendMessage(Lang.readGeneralText("Cant_Wash_Message"));
 				}

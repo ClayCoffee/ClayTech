@@ -28,15 +28,21 @@ public class Clay_basic {
 		Slimefunutils.registerItem(Defines.C_BASICS, "CLAY_STICK", Defines.CLAY_STICK, "notresearch", 10,
 				RecipeType.MAGIC_WORKBENCH, recipeb, false);
 
-		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BASIC"), 9900, Lang.readResearchesText("CLAYTECH_START"), 20);
+		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BASIC"), 9900,
+				Lang.readResearchesText("CLAYTECH_START"), 20);
 		basic.addItems(SlimefunItem.getByItem(Defines.MAGIC_CLAY), SlimefunItem.getByItem(Defines.CLAY_STICK));
 		basic.register();
-		
-		Research basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELECBASIC"), 9915, Lang.readResearchesText("CLAYTECH_ELECTRICMACHINE"), 65);
-		basic2.addItems(SlimefunItem.getByItem(Defines.CLAY_CRAFTING_TABLE), SlimefunItem.getByItem(Defines.CLAY_ELECTRIC_STONE_CRUSHER), SlimefunItem.getByItem(Defines.CLAY_FOOD_CAULDRON), SlimefunItem.getByItem(Defines.CLAY_FOOD_CHALKING_MACHINE));
+
+		Research basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELECBASIC"), 9915,
+				Lang.readResearchesText("CLAYTECH_ELECTRICMACHINE"), 65);
+		basic2.addItems(SlimefunItem.getByItem(Defines.CLAY_CRAFTING_TABLE),
+				SlimefunItem.getByItem(Defines.CLAY_ELECTRIC_STONE_CRUSHER),
+				SlimefunItem.getByItem(Defines.CLAY_FOOD_CAULDRON),
+				SlimefunItem.getByItem(Defines.CLAY_FOOD_CHALKING_MACHINE));
 		basic2.register();
-		
-		Research basic3 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELEMACHINE"), 9918, Lang.readResearchesText("CLAYTECH_ELEMENT_EXTRACTER_MACHINE"), 65);
+
+		Research basic3 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELEMACHINE"), 9918,
+				Lang.readResearchesText("CLAYTECH_ELEMENT_EXTRACTER_MACHINE"), 65);
 		basic3.addItems(SlimefunItem.getByItem(Defines.CLAY_ELEMENT_EXTRACTER));
 		basic3.register();
 	}

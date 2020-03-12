@@ -16,7 +16,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-
 public final class Utils {
 	// ��
 	public static ItemStack setDisplayName(ItemStack is, String Name) {
@@ -35,6 +34,7 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
+
 	public static ItemStack setLore(ItemStack is, List<String> content) {
 		ItemMeta im = is.getItemMeta();
 		List<String> Lore = im.getLore();
@@ -43,6 +43,7 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
+
 	public static Map<String, String> sectionToMap(ConfigurationSection sec) {
 		Map<String, String> ret = new HashMap<String, String>();
 		for (String eachKey : sec.getKeys(false)) {
@@ -51,27 +52,30 @@ public final class Utils {
 		}
 		return ret;
 	}
+
 	public static List<String> sectionKeyToList(ConfigurationSection sec) {
 		List<String> ret = new ArrayList<String>();
-		if(sec == null) {
-			return Arrays.asList(new String[] {"null"});
+		if (sec == null) {
+			return Arrays.asList(new String[] { "null" });
 		}
-		if(sec.getKeys(false) == null) {
-			return Arrays.asList(new String[] {"null"});
+		if (sec.getKeys(false) == null) {
+			return Arrays.asList(new String[] { "null" });
 		}
 		for (String eachKey : sec.getKeys(false)) {
 			ret.add(eachKey);
 		}
 		return ret;
 	}
-	public static List<String> replaceList(List<String> array,String bereplace,String replace) {
-		int n = 0; 
-		for(String i : array) {
+
+	public static List<String> replaceList(List<String> array, String bereplace, String replace) {
+		int n = 0;
+		for (String i : array) {
 			array.set(n, i.replaceAll(bereplace, replace));
 			n++;
 		}
 		return array;
 	}
+
 	// ��
 	public static ItemStack addLore(ItemStack is, String content) {
 		ItemMeta im = is.getItemMeta();
@@ -135,9 +139,11 @@ public final class Utils {
 		try {
 			Lore = is.getItemMeta().getLore();
 			return (Lore.toArray(new String[Lore.size()]));
-			}
-		
-		catch(NullPointerException e) {return(new String[]{"null"});}
+		}
+
+		catch (NullPointerException e) {
+			return (new String[] { "null" });
+		}
 	}
 
 	// ��
@@ -219,87 +225,107 @@ public final class Utils {
 				if (str.equals(text))
 					return true;
 			}
-		}
-		catch (NullPointerException e) {
+		} catch (NullPointerException e) {
 			return false;
 		}
 		return false;
 	}
-	public static int GetItemIndex(Inventory inv,ItemStack is) {
+
+	public static int GetItemIndex(Inventory inv, ItemStack is) {
 		int i = 0;
 		Iterator<ItemStack> it = inv.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			try {
-				if(it.next().getItemMeta().getDisplayName().equals(is.getItemMeta().getDisplayName()) && Utils.getLoreList(it.next()).equals(Utils.getLoreList(is))) {
+				if (it.next().getItemMeta().getDisplayName().equals(is.getItemMeta().getDisplayName())
+						&& Utils.getLoreList(it.next()).equals(Utils.getLoreList(is))) {
 					return i;
 				}
 				i++;
-			}catch(NullPointerException e) {return -1;}
+			} catch (NullPointerException e) {
+				return -1;
+			}
 		}
 		return -1;
 	}
-	public static boolean IsItemContain(Inventory inv,ItemStack is) {
+
+	public static boolean IsItemContain(Inventory inv, ItemStack is) {
 		Iterator<ItemStack> it = inv.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			try {
-				if(it.next().getItemMeta().getDisplayName().equals(is.getItemMeta().getDisplayName()) && Utils.getLoreList(it.next()).equals(Utils.getLoreList(is))) {
+				if (it.next().getItemMeta().getDisplayName().equals(is.getItemMeta().getDisplayName())
+						&& Utils.getLoreList(it.next()).equals(Utils.getLoreList(is))) {
 					return true;
 				}
-			}catch(NullPointerException e) {return false;}
+			} catch (NullPointerException e) {
+				return false;
+			}
 		}
 		return false;
 	}
-	public static boolean IsItemContainVanlia(Inventory inv,ItemStack is) {
+
+	public static boolean IsItemContainVanlia(Inventory inv, ItemStack is) {
 		Iterator<ItemStack> it = inv.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			try {
-					if(it.next().getType()==is.getType()) {
-						return true;
-					}
+				if (it.next().getType() == is.getType()) {
+					return true;
 				}
-				catch(NullPointerException e) {return false;}
+			} catch (NullPointerException e) {
+				return false;
+			}
 		}
 		return false;
 	}
-	public static int GetItemIndexVanlia(Inventory inv,ItemStack is) {
+
+	public static int GetItemIndexVanlia(Inventory inv, ItemStack is) {
 		int i = 0;
 		Iterator<ItemStack> it = inv.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			try {
-					if(it.next().getType()==is.getType()) {
-						return i;
-					}
-					i++;
+				if (it.next().getType() == is.getType()) {
+					return i;
 				}
-				catch(NullPointerException e) {return -1;}
+				i++;
+			} catch (NullPointerException e) {
+				return -1;
+			}
 		}
 		return -1;
 	}
-	public static boolean HasEnchantment(ItemStack is,Enchantment et) {
-		if(is.hasItemMeta()) {
-			if(is.getItemMeta().hasEnchants()) {
-				if(is.getItemMeta().hasEnchant(et)) {
+
+	public static boolean HasEnchantment(ItemStack is, Enchantment et) {
+		if (is.hasItemMeta()) {
+			if (is.getItemMeta().hasEnchants()) {
+				if (is.getItemMeta().hasEnchant(et)) {
 					return true;
-				}else return false;
-			}else return false;
-		}else return false;
+				} else
+					return false;
+			} else
+				return false;
+		} else
+			return false;
 	}
+
 	@SuppressWarnings("deprecation")
 	public static boolean isValidEnchantment(String name) {
-		if(Enchantment.getByName(name) != null) return true;
+		if (Enchantment.getByName(name) != null)
+			return true;
 		return false;
 	}
+
 	public static String[] convertList(List<?> list) {
 		return list.toArray(new String[list.size()]);
 	}
-	public static boolean keyInMap(Map<String,String> map,String key) {
-		for(String eachKey : map.keySet()) {
-			if(eachKey.equals(key)) {
+
+	public static boolean keyInMap(Map<String, String> map, String key) {
+		for (String eachKey : map.keySet()) {
+			if (eachKey.equals(key)) {
 				return true;
 			}
 		}
 		return false;
 	}
+
 	public static boolean ExitsInListL(String text, List<String> list) {
 		try {
 			for (String str : list) {
@@ -307,8 +333,7 @@ public final class Utils {
 					return true;
 				}
 			}
-		}
-		catch (NullPointerException e) {
+		} catch (NullPointerException e) {
 			return false;
 		}
 		return false;

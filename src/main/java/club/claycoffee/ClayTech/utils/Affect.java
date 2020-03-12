@@ -10,9 +10,10 @@ import me.mrCookieSlime.Slimefun.api.Slimefun;
 public class Affect {
 	@SuppressWarnings("deprecation")
 	public static void AffectCheck(Player d, Player e) {
-		if(Slimefun.hasUnlocked(d.getPlayer(),d.getItemInHand(), true)) {
+		if (Slimefun.hasUnlocked(d.getPlayer(), d.getItemInHand(), true)) {
 			try {
-				if (Utils.ExitsInList(Lang.readGeneralText("Anti_Slowness_3_effect"), Utils.getLore(e.getInventory().getBoots()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("Anti_Slowness_3_effect"),
+						Utils.getLore(e.getInventory().getBoots()))) {
 					d.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 40, 2));
 				}
 				if (Utils.ExitsInList(Lang.readGeneralText("Blind_5_effect"), Utils.getLore(d.getItemInHand()))) {

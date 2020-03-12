@@ -44,17 +44,19 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
 	protected final List<MachineRecipe> recipes = new ArrayList<>();
 
-	private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49, 50,
-			51, 52, 53, 13 };
+	private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49,
+			50, 51, 52, 53, 13 };
 	private static final int[] BORDER_A = { 10, 11, 12, 19, 21, 28, 29, 30, 14, 15, 16, 23, 25, 32, 33, 34 };
 	private static final int[] BORDER_B = { 37, 38, 39, 41, 42, 43 };
-	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
-	private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
-	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE, Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE,
+			Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
+			Lang.readMachinesText("SPLIT_LINE"));
+	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE,
+			Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
 
-	public AExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
-			ItemStack[] recipe) {
+	public AExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType, ItemStack[] recipe) {
 
 		super(category, item, recipeType, recipe);
 
@@ -76,8 +78,8 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						inv.replaceExistingItem(slot, null);
 					}
 				}
-				
-				if(inv.getItemInSlot(40) != null) {
+
+				if (inv.getItemInSlot(40) != null) {
 					b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(40));
 					inv.replaceExistingItem(40, null);
 				}
@@ -109,7 +111,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 	public abstract int getSpeed();
 
 	public abstract String getMachineIdentifier();
-	
+
 	public abstract void registerDefaultRecipes();
 
 	public void SetupMenu(BlockMenuPreset Preset) {
@@ -126,7 +128,8 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 		Preset.addItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "),
 				ChestMenuUtils.getEmptyClickHandler());
 		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),ChestMenuUtils.getEmptyClickHandler());
+		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),
+				ChestMenuUtils.getEmptyClickHandler());
 		for (int i : getOutputSlots()) {
 			Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 
@@ -255,13 +258,14 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true)) return;
+				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true))
+					return;
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					if (entry.getValue() > 0) {
 						inv.consumeItem(entry.getKey(), entry.getValue());
 						inv.consumeItem(40, 1);
 					}
-					
+
 				}
 
 				processing.put(b, r);

@@ -22,13 +22,13 @@ public class Elements {
 				TRecipe.CLAY_ELEMENT_EXTRACTER, Recipes.ELEMENT_CARBON, false);
 		Slimefunutils.registerItem(Defines.C_ELEMENTS, "ELEMENT_SILICON", Defines.ELEMENT_SILICON, "notresearch", 10,
 				TRecipe.CLAY_ELEMENT_EXTRACTER, Recipes.ELEMENT_SILICON, false);
-		
 
-		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"),
-				9919, Lang.readResearchesText("CLAYTECH_ELEMENTS_I"), 50);
+		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"), 9919,
+				Lang.readResearchesText("CLAYTECH_ELEMENTS_I"), 50);
 
 		before_element.addItems(SlimefunItem.getByItem(Defines.ELEMENT_UNIT),
-				SlimefunItem.getByItem(Defines.ELEMENT_OXYGEN),SlimefunItem.getByItem(Defines.ELEMENT_CARBON),SlimefunItem.getByItem(Defines.ELEMENT_SILICON));
+				SlimefunItem.getByItem(Defines.ELEMENT_OXYGEN), SlimefunItem.getByItem(Defines.ELEMENT_CARBON),
+				SlimefunItem.getByItem(Defines.ELEMENT_SILICON));
 		before_element.register();
 	}
 }

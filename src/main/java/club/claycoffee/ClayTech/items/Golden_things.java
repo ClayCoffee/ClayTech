@@ -58,7 +58,8 @@ public class Golden_things {
 		artificial_basic_o.register();
 
 		Research artificial_enchanted_golden_apple_r = new Research(
-				new NamespacedKey(ClayTech.plugin, "CLAYTECH_ENCHANTED_GOLDEN_APPLE"), 9903, Lang.readResearchesText("CLAYTECH_ARTIFICIAL_ENCHANTED_GOLDEN_APPLE"), 100);
+				new NamespacedKey(ClayTech.plugin, "CLAYTECH_ENCHANTED_GOLDEN_APPLE"), 9903,
+				Lang.readResearchesText("CLAYTECH_ARTIFICIAL_ENCHANTED_GOLDEN_APPLE"), 100);
 		artificial_enchanted_golden_apple_r.addItems(SlimefunItem.getByItem(Defines.ARTIFICIAL_ENCHANTED_GOLDEN_APPLE));
 		artificial_enchanted_golden_apple_r.register();
 	}

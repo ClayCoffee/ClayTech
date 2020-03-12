@@ -13,8 +13,8 @@ import org.bukkit.NamespacedKey;
 public class MachineMakingBasic {
 	public MachineMakingBasic() {
 
-		Slimefunutils.registerItem(Defines.C_MATERIALS, "BLISTERING_CORE",
-				Defines.BLISTERING_CORE, "notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, Recipes.BLISTERING_CORE, false);
+		Slimefunutils.registerItem(Defines.C_MATERIALS, "BLISTERING_CORE", Defines.BLISTERING_CORE, "notresearch", 10,
+				TRecipe.CLAY_CRAFTING_TABLE, Recipes.BLISTERING_CORE, false);
 
 		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"), 9917,
 				Lang.readResearchesText("CLAYTECH_BEFORE_ELEMENTS"), 50);
@@ -22,6 +22,5 @@ public class MachineMakingBasic {
 		before_element.addItems(new SlimefunItem[] { SlimefunItem.getByItem(Defines.BLISTERING_CORE) });
 		before_element.register();
 	}
-	
-	
+
 }
