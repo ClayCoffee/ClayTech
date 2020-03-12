@@ -2,6 +2,7 @@ package club.claycoffee.ClayTech.utils;
 
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -14,6 +15,9 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.event.player.PlayerFishEvent;
 
 import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.api.listeners.PlayerDrinkEvent;
+import club.claycoffee.ClayTech.api.listeners.PlayerEatEvent;
+import club.claycoffee.ClayTech.api.listeners.PlayerWashEvent;
 import club.claycoffee.ClayTech.utils.Utils;
 
 public class Food {
@@ -40,6 +44,7 @@ public class Food {
 					p.addPotionEffect(pe);
 				}
 				p.sendMessage(Lang.readGeneralText("Drink_Message"));
+				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p,HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
@@ -66,6 +71,7 @@ public class Food {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				p.sendMessage(Lang.readGeneralText("Drink_Message"));
+				Bukkit.getPluginManager().callEvent(new PlayerDrinkEvent(p,HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Drink_Message"));
 			}
@@ -95,6 +101,7 @@ public class Food {
 					p.addPotionEffect(pe);
 				}
 				p.sendMessage(Lang.readGeneralText("Eat_Message"));
+				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p,HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
@@ -120,6 +127,7 @@ public class Food {
 					p.setFoodLevel(p.getFoodLevel() + incraseFoodLevel);
 				}
 				p.sendMessage(Lang.readGeneralText("Eat_Message"));
+				Bukkit.getPluginManager().callEvent(new PlayerEatEvent(p,HandItem));
 			} else {
 				p.sendMessage(Lang.readGeneralText("Cant_Eat_Message"));
 			}
@@ -147,6 +155,7 @@ public class Food {
 					i.addItem(new ItemStack(Material.BUCKET));
 					i.addItem(cleanItem);
 					p.sendMessage(Lang.readGeneralText("Wash_Message"));
+					Bukkit.getPluginManager().callEvent(new PlayerWashEvent(p,matchItem,cleanItem));
 				} else {
 					p.sendMessage(Lang.readGeneralText("Cant_Wash_Message"));
 				}

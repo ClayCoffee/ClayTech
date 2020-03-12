@@ -22,4 +22,6 @@ public class MachineMakingBasic {
 		before_element.addItems(new SlimefunItem[] { SlimefunItem.getByItem(Defines.BLISTERING_CORE) });
 		before_element.register();
 	}
+	
+	
 }
