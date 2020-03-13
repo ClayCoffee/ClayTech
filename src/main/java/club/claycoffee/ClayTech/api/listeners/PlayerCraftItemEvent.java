@@ -5,6 +5,9 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Called when a player crafted a item. 
+ */
 public class PlayerCraftItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	private Block machine;

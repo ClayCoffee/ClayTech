@@ -5,6 +5,9 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Called when a player ate a food. 
+ */
 public class PlayerEatEvent extends Event {
 	private Player eatPlayer;
 	private ItemStack food;

@@ -5,6 +5,9 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Called when a player drank a food. 
+ */
 public class PlayerDrinkEvent extends Event {
 	private Player eatPlayer;
 	private ItemStack drink;
@@ -17,7 +20,7 @@ public class PlayerDrinkEvent extends Event {
 
 	/**
 	 *
-	 * @return the player who drunk the food.
+	 * @return the player who drank the food.
 	 */
 	public Player getPlayer() {
 		return eatPlayer;
@@ -25,7 +28,7 @@ public class PlayerDrinkEvent extends Event {
 
 	/**
 	 *
-	 * @return the drink drunk by the player.
+	 * @return the drink drank by the player.
 	 */
 	public ItemStack getDrink() {
 		return drink;

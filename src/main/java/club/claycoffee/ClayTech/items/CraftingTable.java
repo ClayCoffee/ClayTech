@@ -14,6 +14,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.Machines.ACraftingTable;
+import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerCraftItemEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -28,7 +29,8 @@ import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 public class CraftingTable extends ACraftingTable {
-
+	
+	
 	public CraftingTable(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -90,6 +92,7 @@ public class CraftingTable extends ACraftingTable {
 
 	@Override
 	protected void tick(Block b) {
+		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

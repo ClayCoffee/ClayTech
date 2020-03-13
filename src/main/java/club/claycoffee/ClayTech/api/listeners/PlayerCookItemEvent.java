@@ -5,6 +5,9 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * Called when a player cooked a item. 
+ */
 public class PlayerCookItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	private ItemStack[] Recipe;
