@@ -23,8 +23,7 @@ public class PlayerWashEvent extends Event {
 
 	/**
 	 *
-	 * @return the player who washed the item.
-	 * @return 洗物品的玩家
+	 * @return the player who washed the item.洗物品的玩家
 	 */
 	public Player getPlayer() {
 		return eatPlayer;
@@ -32,8 +31,7 @@ public class PlayerWashEvent extends Event {
 
 	/**
 	 *
-	 * @return the item just washed.
-	 * @return 已经被清洗的脏物品
+	 * @return the item just washed.已经被清洗的脏物品
 	 */
 	public ItemStack getItem() {
 		return Washthing;
@@ -41,8 +39,7 @@ public class PlayerWashEvent extends Event {
 
 	/**
 	 *
-	 * @return the item after washing.
-	 * @return 清洗后的干净物品
+	 * @return the item after washing.清洗后的干净物品
 	 */
 	public ItemStack getCleanedItem() {
 		return CleanedItem;
@@ -50,6 +47,10 @@ public class PlayerWashEvent extends Event {
 
 	@Override
 	public HandlerList getHandlers() {
+		return handlers;
+	}
+	
+	public static HandlerList getHandlerList() {
 		return handlers;
 	}
 }

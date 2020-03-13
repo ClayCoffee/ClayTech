@@ -23,8 +23,7 @@ public class PlayerCookItemEvent extends Event {
 
 	/**
 	 *
-	 * @return the recipe.
-	 * @return 合成配方
+	 * @return the recipe.合成配方
 	 */
 	public ItemStack[] getRecipe() {
 		return Recipe;
@@ -32,8 +31,7 @@ public class PlayerCookItemEvent extends Event {
 
 	/**
 	 *
-	 * @return the item just crafted.
-	 * @return 刚刚被合成的物品
+	 * @return the item just crafted.刚刚被合成的物品
 	 */
 	public ItemStack getCraftedItem() {
 		return CraftedItem;
@@ -41,8 +39,7 @@ public class PlayerCookItemEvent extends Event {
 
 	/**
 	 *
-	 * @return the machine crafted the item.
-	 * @return 合成物品的机器
+	 * @return the machine crafted the item.合成物品的机器.
 	 */
 	public Block getMachine() {
 		return machine;
@@ -50,6 +47,10 @@ public class PlayerCookItemEvent extends Event {
 
 	@Override
 	public HandlerList getHandlers() {
+		return handlers;
+	}
+	
+	public static HandlerList getHandlerList() {
 		return handlers;
 	}
 

@@ -23,8 +23,7 @@ public class PlayerExtractElementEvent extends Event {
 
 	/**
 	 *
-	 * @return the recipe.
-	 * @return 合成配方
+	 * @return the recipe.合成配方
 	 */
 	public ItemStack[] getRecipe() {
 		return Recipe;
@@ -32,8 +31,7 @@ public class PlayerExtractElementEvent extends Event {
 
 	/**
 	 *
-	 * @return the element just extracted.
-	 * @return 刚刚提取成功的元素
+	 * @return the element just extracted.刚刚提取成功的元素
 	 */
 	public ItemStack getElement() {
 		return Element;
@@ -41,8 +39,7 @@ public class PlayerExtractElementEvent extends Event {
 
 	/**
 	 *
-	 * @return the machine extracted the element.
-	 * @return 提取元素的机器
+	 * @return the machine extracted the element.提取元素的机器
 	 */
 	public Block getMachine() {
 		return machine;
@@ -53,4 +50,7 @@ public class PlayerExtractElementEvent extends Event {
 		return handlers;
 	}
 
+	public static HandlerList getHandlerList() {
+		return handlers;
+	}
 }

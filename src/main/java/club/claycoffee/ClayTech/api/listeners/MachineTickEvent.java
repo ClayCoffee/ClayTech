@@ -22,11 +22,14 @@ public class MachineTickEvent extends Event{
 	
 	/**
 	 *
-	 * @return the machine.
-	 * @return tick的机器
+	 * @return the machine. tick的机器
 	 */
 	public Block getMachine() {
 		return Machine;
+	}
+	
+	public static HandlerList getHandlerList() {
+		return handlers;
 	}
 
 }

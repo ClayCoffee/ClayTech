@@ -21,8 +21,7 @@ public class PlayerEatEvent extends Event {
 
 	/**
 	 *
-	 * @return the player who ate the food.
-	 * @return 吃食物的玩家
+	 * @return the player who ate the food.吃食物的玩家
 	 */
 	public Player getPlayer() {
 		return eatPlayer;
@@ -30,8 +29,7 @@ public class PlayerEatEvent extends Event {
 
 	/**
 	 *
-	 * @return the food eaten by the player.
-	 * @return 被吃的食物
+	 * @return the food eaten by the player.被吃的食物
 	 */
 	public ItemStack getFood() {
 		return food;
@@ -39,6 +37,10 @@ public class PlayerEatEvent extends Event {
 
 	@Override
 	public HandlerList getHandlers() {
+		return handlers;
+	}
+	
+	public static HandlerList getHandlerList() {
 		return handlers;
 	}
 }
