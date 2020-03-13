@@ -24,11 +24,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class ElementExtracter extends AExtracter {
+	private ItemStack[] inputItem;
+	private ItemStack outputItem;
+	
 	public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -90,22 +91,20 @@ public class ElementExtracter extends AExtracter {
 			} else {
 				// 处理结束
 				inv.replaceExistingItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "));
-
-				for (ItemStack output : processing.get(b).getOutput()) {
-					if (output != null)
-						inv.pushItem(output.clone(), getOutputSlots());
-				}
-				MetadataValue md = b.getMetadata("currentRecipe").get(0);
 				new BukkitRunnable() {
 
 					@Override
 					public void run() {
 						Bukkit.getPluginManager().callEvent(
-								new PlayerExtractElementEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+								new PlayerExtractElementEvent(b,inputItem, outputItem));
 						
 					}
 					
 				}.runTask(ClayTech.plugin);
+				for (ItemStack output : processing.get(b).getOutput()) {
+					if (output != null)
+						inv.pushItem(output.clone(), getOutputSlots());
+				}
 
 				progress.remove(b);
 				processing.remove(b);
@@ -122,7 +121,6 @@ public class ElementExtracter extends AExtracter {
 					}
 				}
 				if (found.size() == recipe.getInput().length) {
-					b.setMetadata("currentRecipe", new FixedMetadataValue(ClayTech.plugin, recipe.getInput()));
 					r = recipe;
 					break;
 				} else {
@@ -145,7 +143,8 @@ public class ElementExtracter extends AExtracter {
 					}
 
 				}
-
+				inputItem = r.getInput();
+				outputItem = r.getOutput()[0];
 				processing.put(b, r);
 				progress.put(b, r.getTicks());
 			}

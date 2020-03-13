@@ -7,8 +7,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
@@ -29,7 +27,9 @@ import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
 public class FoodCauldron extends ACraftingTable {
-
+	private ItemStack[] inputItem;
+	private ItemStack outputItem;
+	
 	public FoodCauldron(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -103,22 +103,20 @@ public class FoodCauldron extends ACraftingTable {
 			} else {
 				// 处理结束
 				inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
-
-				for (ItemStack output : processing.get(b).getOutput()) {
-					if (output != null)
-						inv.pushItem(output.clone(), getOutputSlots());
-				}
-				MetadataValue md = b.getMetadata("currentRecipe").get(0);
 				new BukkitRunnable() {
 
 					@Override
 					public void run() {
 						Bukkit.getPluginManager().callEvent(
-								new PlayerCookItemEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+								new PlayerCookItemEvent(b, inputItem, outputItem));
 						
 					}
 					
 				}.runTask(ClayTech.plugin);
+				for (ItemStack output : processing.get(b).getOutput()) {
+					if (output != null)
+						inv.pushItem(output.clone(), getOutputSlots());
+				}
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -145,7 +143,6 @@ public class FoodCauldron extends ACraftingTable {
 						i = 0;
 				}
 				if (found.size() == recipe.getInput().length) {
-					b.setMetadata("currentRecipe", new FixedMetadataValue(ClayTech.plugin, recipe.getInput()));
 					r = recipe;
 					break;
 				} else
@@ -162,7 +159,8 @@ public class FoodCauldron extends ACraftingTable {
 					if (entry.getValue() > 0)
 						inv.consumeItem(entry.getKey(), entry.getValue());
 				}
-
+				inputItem = r.getInput();
+				outputItem = r.getOutput()[0];
 				processing.put(b, r);
 				progress.put(b, r.getTicks());
 			}
