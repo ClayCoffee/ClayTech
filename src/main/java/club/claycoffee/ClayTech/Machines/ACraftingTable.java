@@ -7,9 +7,11 @@ import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
 
+import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -196,6 +198,7 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	}
 
 	protected void tick(Block b) {
+		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

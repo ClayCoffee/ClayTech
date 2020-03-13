@@ -14,7 +14,6 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.Machines.ACraftingTable;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerCookItemEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -83,7 +82,6 @@ public class FoodCauldron extends ACraftingTable {
 
 	@Override
 	protected void tick(Block b) {
-		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

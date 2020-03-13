@@ -8,7 +8,8 @@ import club.claycoffee.ClayTech.Defines;
 import club.claycoffee.ClayTech.utils.Utils;
 
 /**
- * ClayTech API manager.
+ * the ClayTech API manager.
+ * 粘土科技API管理器
  */
 public class ClayTechManager {
 	/**

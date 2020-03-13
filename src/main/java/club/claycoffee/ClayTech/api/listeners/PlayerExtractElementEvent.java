@@ -6,7 +6,8 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player extracted a item. 
+ * Called when a player extracted a item.
+ * 当一个玩家使用元素提取器提取元素成功的时候触发.
  */
 public class PlayerExtractElementEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
@@ -23,6 +24,7 @@ public class PlayerExtractElementEvent extends Event {
 	/**
 	 *
 	 * @return the recipe.
+	 * @return 合成配方
 	 */
 	public ItemStack[] getRecipe() {
 		return Recipe;
@@ -31,6 +33,7 @@ public class PlayerExtractElementEvent extends Event {
 	/**
 	 *
 	 * @return the element just extracted.
+	 * @return 刚刚提取成功的元素
 	 */
 	public ItemStack getElement() {
 		return Element;
@@ -39,6 +42,7 @@ public class PlayerExtractElementEvent extends Event {
 	/**
 	 *
 	 * @return the machine extracted the element.
+	 * @return 提取元素的机器
 	 */
 	public Block getMachine() {
 		return machine;

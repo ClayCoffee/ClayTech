@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 
 /**
  * Called when a ClayTech machine tick. 
+ * 当一个粘土科技机器tick的时候触发
  */
 public class MachineTickEvent extends Event{
 	private static final HandlerList handlers = new HandlerList();
@@ -22,6 +23,7 @@ public class MachineTickEvent extends Event{
 	/**
 	 *
 	 * @return the machine.
+	 * @return tick的机器
 	 */
 	public Block getMachine() {
 		return Machine;

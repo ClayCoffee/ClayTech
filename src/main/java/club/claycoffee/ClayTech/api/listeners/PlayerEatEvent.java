@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  * Called when a player ate a food. 
+ * 当一个玩家吃粘土科技中的食物的时候触发.
  */
 public class PlayerEatEvent extends Event {
 	private Player eatPlayer;
@@ -21,6 +22,7 @@ public class PlayerEatEvent extends Event {
 	/**
 	 *
 	 * @return the player who ate the food.
+	 * @return 吃食物的玩家
 	 */
 	public Player getPlayer() {
 		return eatPlayer;
@@ -29,6 +31,7 @@ public class PlayerEatEvent extends Event {
 	/**
 	 *
 	 * @return the food eaten by the player.
+	 * @return 被吃的食物
 	 */
 	public ItemStack getFood() {
 		return food;

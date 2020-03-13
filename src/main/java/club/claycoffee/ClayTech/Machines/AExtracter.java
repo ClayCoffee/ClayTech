@@ -6,11 +6,17 @@ import java.util.List;
 import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.metadata.MetadataValue;
 
+import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
+import club.claycoffee.ClayTech.api.listeners.PlayerExtractElementEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -204,6 +210,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 	}
 
 	protected void tick(Block b) {
+		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -229,7 +236,9 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 					if (output != null)
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
-
+				MetadataValue md = b.getMetadata("currentRecipe").get(0);
+				Bukkit.getPluginManager().callEvent(
+						new PlayerExtractElementEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -246,6 +255,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 				}
 				if (found.size() == recipe.getInput().length) {
 					r = recipe;
+					b.setMetadata("currentRecipe", new FixedMetadataValue(ClayTech.plugin, recipe.getInput()));
 					break;
 				} else {
 					found.clear();

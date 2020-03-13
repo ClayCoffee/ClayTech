@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  * Called when a player washed a item. 
+ * 当一个玩家使用水桶清洗某个物品成功的时候触发.
  */
 public class PlayerWashEvent extends Event {
 	private Player eatPlayer;
@@ -22,7 +23,8 @@ public class PlayerWashEvent extends Event {
 
 	/**
 	 *
-	 * @return the player who washed the food.
+	 * @return the player who washed the item.
+	 * @return 洗物品的玩家
 	 */
 	public Player getPlayer() {
 		return eatPlayer;
@@ -31,6 +33,7 @@ public class PlayerWashEvent extends Event {
 	/**
 	 *
 	 * @return the item just washed.
+	 * @return 已经被清洗的脏物品
 	 */
 	public ItemStack getItem() {
 		return Washthing;
@@ -39,6 +42,7 @@ public class PlayerWashEvent extends Event {
 	/**
 	 *
 	 * @return the item after washing.
+	 * @return 清洗后的干净物品
 	 */
 	public ItemStack getCleanedItem() {
 		return CleanedItem;

@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  * Called when a player crafted a item. 
+ * 当一个玩家使用粘土融合器合成物品成功的时候触发.
  */
 public class PlayerCraftItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
@@ -23,6 +24,7 @@ public class PlayerCraftItemEvent extends Event {
 	/**
 	 *
 	 * @return the recipe.
+	 * @return 合成配方
 	 */
 	public ItemStack[] getRecipe() {
 		return Recipe;
@@ -31,6 +33,7 @@ public class PlayerCraftItemEvent extends Event {
 	/**
 	 *
 	 * @return the item just crafted.
+	 * @return 刚刚被合成的物品
 	 */
 	public ItemStack getCraftedItem() {
 		return CraftedItem;
@@ -39,6 +42,7 @@ public class PlayerCraftItemEvent extends Event {
 	/**
 	 *
 	 * @return the machine crafted the item.
+	 * @return 合成物品的机器
 	 */
 	public Block getMachine() {
 		return machine;
