@@ -26,6 +26,7 @@ import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class ElementExtracter extends AExtracter {
 	public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
@@ -95,8 +96,16 @@ public class ElementExtracter extends AExtracter {
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
 				MetadataValue md = b.getMetadata("currentRecipe").get(0);
-				Bukkit.getPluginManager().callEvent(
-						new PlayerExtractElementEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+				new BukkitRunnable() {
+
+					@Override
+					public void run() {
+						Bukkit.getPluginManager().callEvent(
+								new PlayerExtractElementEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+						
+					}
+					
+				}.runTask(ClayTech.plugin);
 
 				progress.remove(b);
 				processing.remove(b);

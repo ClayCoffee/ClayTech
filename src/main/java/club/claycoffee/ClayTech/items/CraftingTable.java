@@ -9,6 +9,7 @@ import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.Defines;
@@ -116,8 +117,17 @@ public class CraftingTable extends ACraftingTable {
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
 				MetadataValue md = b.getMetadata("currentRecipe").get(0);
-				Bukkit.getPluginManager().callEvent(
-						new PlayerCraftItemEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+				new BukkitRunnable() {
+
+					@Override
+					public void run() {
+						Bukkit.getPluginManager().callEvent(
+								new PlayerCraftItemEvent(b, (ItemStack[]) md.value(), processing.get(b).getOutput()[0]));
+						
+					}
+					
+				}.runTask(ClayTech.plugin);
+				
 				progress.remove(b);
 				processing.remove(b);
 			}
