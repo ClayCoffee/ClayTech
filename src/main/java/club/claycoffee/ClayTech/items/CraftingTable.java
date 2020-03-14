@@ -87,6 +87,7 @@ public class CraftingTable extends ACraftingTable {
 		ItemStack elem8 = Defines.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		this.registerRecipe(8, Recipes.ELECTRIC_MOTOR_8, new ItemStack[] { elem8 });
+		this.registerRecipe(50, Recipes.TNT_EXPLOSION_CREATER, new ItemStack[] { Defines.TNT_EXPLOSION_CREATER });
 	}
 
 	@Override

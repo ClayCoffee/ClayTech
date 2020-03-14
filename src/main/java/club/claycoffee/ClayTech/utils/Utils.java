@@ -12,9 +12,13 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.metadata.MetadataValue;
+
+import club.claycoffee.ClayTech.ClayTech;
 
 public final class Utils {
 	// ��
@@ -34,7 +38,15 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
-
+	public static String readPlayerMetadataString(Player p,String key) {
+		for(MetadataValue mv : p.getMetadata(key)) {
+			if(mv.getOwningPlugin().equals(ClayTech.plugin)) {
+				return mv.asString();
+			}
+		}
+		return null;
+		
+	}
 	public static ItemStack setLore(ItemStack is, List<String> content) {
 		ItemMeta im = is.getItemMeta();
 		List<String> Lore = im.getLore();

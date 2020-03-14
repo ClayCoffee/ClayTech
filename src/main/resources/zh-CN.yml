@@ -17,6 +17,12 @@ General:
   Cant_Wash_Message: "&c无法清洗!你没有水桶!"
   Before_115: "&c检测到您的服务器运行在1.15版本以下,可能导致有的物品无法注册,但仍可正常运行本插件."
   Not_compatible: "&c对不起,本插件仅限1.14.x,1.15.x的服务器使用!请尽快升级您的服务器.."
+  TNT_EXPLOSION_CREATER_WAIT: "&aTNT将在5秒钟后放置。 请尽快逃离，避免受到伤害。"
+  TNT_EXPLOSION_CREATER_NO_TNT: "&c您的背包里没有TNT，无法放置!"
+  TNT_EXPLOSION_CREATER_SUCCESS: "&aTNT成功爆炸。"
+  TNT_EXPLOSION_CREATER_FATAL: "&cTNT爆炸失败。可能是由于领地保护等原因。"
+  TNT_EXPLOSION_CREATER_CD: "&c请等待冷却.."
+  Durability: "耐久"
 Categories:
   Basic: "&b粘土科技 - 基础"
   Weapons: "&b粘土科技 - 武器"
@@ -282,6 +288,12 @@ Items:
     - "&6在这种铁路上行驶的矿车"
     - "&6最快速度可翻三倍!"
   ELECTRIC_MOTOR_8: "&c电力马达碎片"
+  TNT_EXPLOSION_CREATER: "&6TNT爆炸发生器"
+  TNT_EXPLOSION_CREATER_LORE:
+    - "&b按右键从背包中在你当前位置放置一个点燃的TNT"
+    - "&b每次使用后会减1耐久."
+    - "&b(不会破坏容器)"
+    - "&b耐久: &632"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基础效果装备"
@@ -308,6 +320,7 @@ Researches:
   CLAYTECH_SKULL_I: "头颅工艺"
   CLAYTECH_DECORATES_I: "装饰品 I"
   CLAYTECH_RAILWAY_I: "铁路 I"
+  CLAYTECH_EFFECT_ITEM_I: "效果物品 I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"

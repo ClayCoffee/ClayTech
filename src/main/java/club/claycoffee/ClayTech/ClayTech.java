@@ -182,7 +182,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new MachineMakingBasic();
 		new Elements();
 		new Railways();
-
+		new EffectItems();
+		
 	}
 
 	@Override

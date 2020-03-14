@@ -56,7 +56,8 @@ public class Recipes {
 	public final static ItemStack[] ANTI_SLOWNESS_BOOTS = { Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE,
 			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, new ItemStack(Material.IRON_BOOTS), Defines.SLOWNESS_CORE,
 			Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE, Defines.SLOWNESS_CORE };
-
+	public final static ItemStack[] TNT_EXPLOSION_CREATER = {new ItemStack(Material.TNT),Defines.MAGIC_CLAY,new ItemStack(Material.TNT),Defines.MAGIC_CLAY,new ItemStack(Material.DIAMOND_HOE),Defines.MAGIC_CLAY,new ItemStack(Material.TNT),new ItemStack(Material.FLINT_AND_STEEL),new ItemStack(Material.TNT)};
+	
 	// 食物
 	public final static ItemStack[] CHICKEN_FOOT = { null, new ItemStack(Material.COAL), null, null,
 			Defines.RAW_CHICKEN_FOOT, null, null, new ItemStack(Material.COAL), null };

@@ -139,6 +139,9 @@ public class Defines {
 			Lang.readItemLore("ELEMENT_SILICON"));
 	public static final ItemStack BLISTERING_CORE = Utils.newItemD(Material.GOLD_INGOT,
 			Lang.readItemText("BLISTERING_CORE"));
+	public static final ItemStack TNT_EXPLOSION_CREATER = Utils.setLore(
+			Utils.newItemD(Material.GOLDEN_HOE, Lang.readItemText("TNT_EXPLOSION_CREATER")),
+			Lang.readItemLore("TNT_EXPLOSION_CREATER"));
 
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(
