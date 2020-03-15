@@ -13,7 +13,7 @@ import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 
-public class Defines {
+public class ClayTechItems {
 	public static final ItemStack[] NORECIPE = { null, null, null, null, null, null, null, null, null };
 
 	// 分类
@@ -142,6 +142,12 @@ public class Defines {
 	public static final ItemStack TNT_EXPLOSION_CREATER = Utils.setLore(
 			Utils.newItemD(Material.GOLDEN_HOE, Lang.readItemText("TNT_EXPLOSION_CREATER")),
 			Lang.readItemLore("TNT_EXPLOSION_CREATER"));
+	public static final ItemStack SWEET_POTATO = Utils.setLore(
+			Utils.newItemD(Material.BEETROOT,Lang.readItemText("SWEET_POTATO")),
+			Lang.readItemLore("SWEET_POTATO"));
+	public static final ItemStack COOKED_SWEET_POTATO = Utils.setLore(
+			Utils.newItemD(Material.BEETROOT,Lang.readItemText("COOKED_SWEET_POTATO")),
+			Lang.readItemLore("COOKED_SWEET_POTATO"));
 
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(

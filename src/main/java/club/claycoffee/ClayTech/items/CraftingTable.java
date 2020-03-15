@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.Recipes;
 import club.claycoffee.ClayTech.Machines.ACraftingTable;
 import club.claycoffee.ClayTech.api.listeners.PlayerCraftItemEvent;
@@ -67,27 +67,27 @@ public class CraftingTable extends ACraftingTable {
 
 	@Override
 	public void registerDefaultRecipes() {
-		this.registerRecipe(20, Recipes.BLIND_CORE, new ItemStack[] { Defines.BLIND_CORE });
-		this.registerRecipe(100, Recipes.BLIND_SWORD, new ItemStack[] { Defines.BLIND_SWORD });
-		this.registerRecipe(20, Recipes.POISON_EYE, new ItemStack[] { Defines.POISON_EYE });
-		this.registerRecipe(20, Recipes.POISON_CORE, new ItemStack[] { Defines.POISON_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { Defines.ADVANCED_POISON_CORE });
-		this.registerRecipe(20, Recipes.CONFUSION_CORE, new ItemStack[] { Defines.CONFUSION_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { Defines.ADVANCED_CONFUSION_CORE });
-		this.registerRecipe(20, Recipes.BLACK_ROCK_BLOCK, new ItemStack[] { Defines.BLACK_ROCK_BLOCK });
-		this.registerRecipe(20, Recipes.SLOWNESS_CORE, new ItemStack[] { Defines.SLOWNESS_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_SLOWNESS_CORE, new ItemStack[] { Defines.ADVANCED_SLOWNESS_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_BLIND_CORE, new ItemStack[] { Defines.ADVANCED_BLIND_CORE });
-		this.registerRecipe(400, Recipes.FOUR_BOW, new ItemStack[] { Defines.FOUR_BOW });
-		this.registerRecipe(100, Recipes.POISON_SWORD, new ItemStack[] { Defines.POISON_SWORD });
-		this.registerRecipe(100, Recipes.ANTI_SLOWNESS_BOOTS, new ItemStack[] { Defines.ANTI_SLOWNESS_BOOTS });
-		this.registerRecipe(80, Recipes.BLISTERING_CORE, new ItemStack[] { Defines.BLISTERING_CORE });
-		this.registerRecipe(30, Recipes.ELEMENT_UNIT, new ItemStack[] { Defines.ELEMENT_UNIT });
-		this.registerRecipe(8, Recipes.HIGHSPEED_RAILWAY, new ItemStack[] { Defines.HIGHSPEED_RAILWAY });
-		ItemStack elem8 = Defines.ELECTRIC_MOTOR_8;
+		this.registerRecipe(20, Recipes.BLIND_CORE, new ItemStack[] { ClayTechItems.BLIND_CORE });
+		this.registerRecipe(100, Recipes.BLIND_SWORD, new ItemStack[] { ClayTechItems.BLIND_SWORD });
+		this.registerRecipe(20, Recipes.POISON_EYE, new ItemStack[] { ClayTechItems.POISON_EYE });
+		this.registerRecipe(20, Recipes.POISON_CORE, new ItemStack[] { ClayTechItems.POISON_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { ClayTechItems.ADVANCED_POISON_CORE });
+		this.registerRecipe(20, Recipes.CONFUSION_CORE, new ItemStack[] { ClayTechItems.CONFUSION_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { ClayTechItems.ADVANCED_CONFUSION_CORE });
+		this.registerRecipe(20, Recipes.BLACK_ROCK_BLOCK, new ItemStack[] { ClayTechItems.BLACK_ROCK_BLOCK });
+		this.registerRecipe(20, Recipes.SLOWNESS_CORE, new ItemStack[] { ClayTechItems.SLOWNESS_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_SLOWNESS_CORE, new ItemStack[] { ClayTechItems.ADVANCED_SLOWNESS_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_BLIND_CORE, new ItemStack[] { ClayTechItems.ADVANCED_BLIND_CORE });
+		this.registerRecipe(400, Recipes.FOUR_BOW, new ItemStack[] { ClayTechItems.FOUR_BOW });
+		this.registerRecipe(100, Recipes.POISON_SWORD, new ItemStack[] { ClayTechItems.POISON_SWORD });
+		this.registerRecipe(100, Recipes.ANTI_SLOWNESS_BOOTS, new ItemStack[] { ClayTechItems.ANTI_SLOWNESS_BOOTS });
+		this.registerRecipe(80, Recipes.BLISTERING_CORE, new ItemStack[] { ClayTechItems.BLISTERING_CORE });
+		this.registerRecipe(30, Recipes.ELEMENT_UNIT, new ItemStack[] { ClayTechItems.ELEMENT_UNIT });
+		this.registerRecipe(8, Recipes.HIGHSPEED_RAILWAY, new ItemStack[] { ClayTechItems.HIGHSPEED_RAILWAY });
+		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		this.registerRecipe(8, Recipes.ELECTRIC_MOTOR_8, new ItemStack[] { elem8 });
-		this.registerRecipe(50, Recipes.TNT_EXPLOSION_CREATER, new ItemStack[] { Defines.TNT_EXPLOSION_CREATER });
+		this.registerRecipe(50, Recipes.TNT_EXPLOSION_CREATER, new ItemStack[] { ClayTechItems.TNT_EXPLOSION_CREATER });
 	}
 
 	@Override

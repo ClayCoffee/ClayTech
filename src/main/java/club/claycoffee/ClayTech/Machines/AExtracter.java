@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
 
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -260,7 +260,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true))
+				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
 					return;
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					if (entry.getValue() > 0) {

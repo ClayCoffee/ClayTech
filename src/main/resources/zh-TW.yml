@@ -22,7 +22,9 @@ General:
   TNT_EXPLOSION_CREATER_SUCCESS: "&aTNT成功爆炸。"
   TNT_EXPLOSION_CREATER_FATAL: "&cTNT爆炸失敗。可能是由於領地保護等原因。"
   TNT_EXPLOSION_CREATER_CD: "&c請等待冷卻.."
-  Durability: "耐久"
+  Durability: "&b耐久"
+  CantEat: "&7不可食用"
+  CantEatMessage: "&c您不能食用本物品。"
 Categories:
   Basic: "&b粘土科技 - 基礎"
   Weapons: "&b粘土科技 - 武器"
@@ -294,6 +296,15 @@ Items:
     - "&b每次使用後會减1耐久."
     - "&b(不會破壞容器)"
     - "&b耐久: &632"
+  SWEET_POTATO: "&e紅芋"
+  SWEET_POTATO_LORE:
+    - "&6紅芋"
+    - "&7收獲馬鈴薯有幾率獲得"
+    - "&7不可食用"
+  COOKED_SWEET_POTATO: "&e烤紅芋"
+  COOKED_SWEET_POTATO_LORE:
+    - "&6烤紅芋"
+    - "&7食用後增加6點飽食度"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"

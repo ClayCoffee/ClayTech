@@ -8,7 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class ClayItem {
 	public static boolean hasDurability(ItemStack item) {
 		for(String each : Utils.getLoreList(item)) {
-			if(each.startsWith("§b"+Lang.readGeneralText("Durability"))) {
+			if(each.startsWith(Lang.readGeneralText("Durability"))) {
 				return true;
 			}
 		}
@@ -17,8 +17,8 @@ public class ClayItem {
 	public static int getDurability(ItemStack item) {
 		if(hasDurability(item)) {
 			for(String each : Utils.getLoreList(item)) {
-				if(each.startsWith("§b"+Lang.readGeneralText("Durability"))) {
-					return new Integer(each.replaceFirst("§b"+Lang.readGeneralText("Durability")+":", "").replace(" §6", "")).intValue();
+				if(each.startsWith(Lang.readGeneralText("Durability"))) {
+					return new Integer(each.replaceFirst(Lang.readGeneralText("Durability")+":", "").replace(" §6", "")).intValue();
 				}
 			}
 		}
@@ -36,8 +36,8 @@ public class ClayItem {
 			List<String> Lore = Utils.getLoreList(item);
 			int i = 0;
 			for(String each : Lore) {
-				if(each.startsWith("§b"+Lang.readGeneralText("Durability"))) {
-					each = each.replace("§6"+getDurability(item), "§6"+durability);
+				if(each.startsWith(Lang.readGeneralText("Durability"))) {
+					each = each.replace(""+getDurability(item), ""+durability);
 					Lore.set(i, each);
 					break;
 				}

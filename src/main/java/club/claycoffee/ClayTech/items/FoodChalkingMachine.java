@@ -3,7 +3,7 @@ package club.claycoffee.ClayTech.items;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.Machines.ANewContainer;
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -49,7 +49,7 @@ public class FoodChalkingMachine extends ANewContainer {
 
 	@Override
 	public void registerDefaultRecipes() {
-		this.registerRecipe(8, new ItemStack[] { Defines.RAW_TEA }, new ItemStack[] { Defines.TEA_POWDER });
-		this.registerRecipe(8, new ItemStack[] { Defines.LEMON }, new ItemStack[] { Defines.LEMON_POWDER });
+		this.registerRecipe(8, new ItemStack[] { ClayTechItems.RAW_TEA }, new ItemStack[] { ClayTechItems.TEA_POWDER });
+		this.registerRecipe(8, new ItemStack[] { ClayTechItems.LEMON }, new ItemStack[] { ClayTechItems.LEMON_POWDER });
 	}
 }

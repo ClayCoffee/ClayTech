@@ -1,7 +1,7 @@
 package club.claycoffee.ClayTech.items;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.Machines.AExtracter;
 import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerExtractElementEvent;
@@ -62,11 +62,11 @@ public class ElementExtracter extends AExtracter {
 
 	public void registerDefaultRecipes() {
 		registerRecipe(10, new ItemStack[] { new ItemStack(Material.DIRT, 3) },
-				new ItemStack[] { Defines.ELEMENT_OXYGEN });
+				new ItemStack[] { ClayTechItems.ELEMENT_OXYGEN });
 		registerRecipe(10, new ItemStack[] { new ItemStack(Material.COAL, 8) },
-				new ItemStack[] { Defines.ELEMENT_CARBON });
+				new ItemStack[] { ClayTechItems.ELEMENT_CARBON });
 		registerRecipe(10, new ItemStack[] { new ItemStack(Material.SAND, 10) },
-				new ItemStack[] { Defines.ELEMENT_SILICON });
+				new ItemStack[] { ClayTechItems.ELEMENT_SILICON });
 	}
 
 	protected void tick(Block b) {
@@ -134,7 +134,7 @@ public class ElementExtracter extends AExtracter {
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), Defines.ELEMENT_UNIT, true))
+				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
 					return;
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					if (entry.getValue() > 0) {

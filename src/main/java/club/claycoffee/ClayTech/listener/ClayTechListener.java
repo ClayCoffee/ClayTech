@@ -36,7 +36,7 @@ import org.bukkit.event.vehicle.VehicleMoveEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.listeners.PlayerUseItemEvent;
 import club.claycoffee.ClayTech.utils.Affect;
 import club.claycoffee.ClayTech.utils.ClayItem;
@@ -51,16 +51,18 @@ public class ClayTechListener implements Listener {
 	public void BlockBreakEvent(BlockBreakEvent e) {
 		if (!e.isCancelled()) {
 			if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
-				Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES), Defines.LEMON,
+				Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES), ClayTechItems.LEMON,
 						new ItemStack(Material.SHEARS), 10, e);
 				try {
 					// 这里放其他事件
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS), Defines.DIRTY_TEA,
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS), ClayTechItems.DIRTY_TEA,
 							new ItemStack(Material.SHEARS), 10, e);
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.WHEAT), Defines.FLOUR,
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.WHEAT), ClayTechItems.FLOUR,
 							new ItemStack(Material.SHEARS), 15, 20, e);
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES), Defines.STARCH,
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES), ClayTechItems.STARCH,
 							new ItemStack(Material.SHEARS), 15, 20, e);
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES), ClayTechItems.SWEET_POTATO,
+							new ItemStack(Material.SHEARS), 25, 30, e);
 				} catch (NullPointerException err) {
 				}
 			}
@@ -71,6 +73,10 @@ public class ClayTechListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.getAction() == Action.RIGHT_CLICK_AIR) {
+			if(Utils.ExitsInList(Lang.readGeneralText("CantEat"), Utils.getLore(e.getItem()))) {
+				e.getPlayer().sendMessage(Lang.readGeneralText("CantEatMessage"));
+				return;
+			}
 			if(e.getItem().getItemMeta().getDisplayName().equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER"))) {
 				Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(),e.getItem()));
 				boolean pass = false;
@@ -120,38 +126,39 @@ public class ClayTechListener implements Listener {
 			}
 			Player p = e.getPlayer();
 			if (e.hasItem()) {
-				Food.DrinkCheck(p, e.getItem(), Defines.CLAY_COFFEE, 5,
+				Food.DrinkCheck(p, e.getItem(), ClayTechItems.CLAY_COFFEE, 5,
 						new PotionEffect[] { new PotionEffect(PotionEffectType.NIGHT_VISION, 3600, 1) });
 				try {
 					// 这里放其他食物/饮料8!!
-					Food.DrinkCheck(p, e.getItem(), Defines.LEMON_POWDER_DRINK, 6,
+					Food.DrinkCheck(p, e.getItem(), ClayTechItems.LEMON_POWDER_DRINK, 6,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.CONFUSION, 200, 3) });
-					Food.DrinkCheck(p, e.getItem(), Defines.TEA_DRINK, 6,
+					Food.DrinkCheck(p, e.getItem(), ClayTechItems.TEA_DRINK, 6,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 600, 2) });
-					Food.DrinkCheck(p, e.getItem(), Defines.LEMON_TEA_DRINK, 12,
+					Food.DrinkCheck(p, e.getItem(), ClayTechItems.LEMON_TEA_DRINK, 12,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 1200, 2) });
-					Food.FoodCheck(p, e.getItem(), Defines.CHICKEN_FOOT, 8);
-					Food.FoodCheck(p, e.getItem(), Defines.RAW_BREAD, 4);
-					Food.FoodCheck(p, e.getItem(), Defines.RAW_VEGETABLE, 1);
-					Food.FoodCheck(p, e.getItem(), Defines.LEMON, 1,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.CHICKEN_FOOT, 8);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.RAW_BREAD, 4);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.RAW_VEGETABLE, 1);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.LEMON, 1,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.CONFUSION, 200, 3) });
-					Food.FoodCheck(p, e.getItem(), Defines.SPICY_CHICKEN_BURGER, 15,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.SPICY_CHICKEN_BURGER, 15,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.getById(5), 400, 1) });
-					Food.FoodCheck(p, e.getItem(), Defines.BABA_BURGER, -15,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.BABA_BURGER, -15,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.POISON, 3600, 5) });
-					Food.FoodCheck(p, e.getItem(), Defines.SNAIL_BAD, -20,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.SNAIL_BAD, -20,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.POISON, 8000, 9) });
-					Food.FoodCheck(p, e.getItem(), Defines.CHOCOLATE, 15,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.CHOCOLATE, 15,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 600, 2) });
-					Food.FoodCheck(p, e.getItem(), Defines.SNAIL_FOOD, 12,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.SNAIL_FOOD, 12,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 600, 2) });
-					Food.FoodCheck(p, e.getItem(), Defines.HONEY_SWEET, 8);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.HONEY_SWEET, 8);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.COOKED_SWEET_POTATO, 6);
 				} catch (NullPointerException err) {
 				}
-				Food.WashCheck(p, e.getItem(), Defines.DIRTY_DRINK_BOTTLE, Defines.DRINK_BOTTLE);
+				Food.WashCheck(p, e.getItem(), ClayTechItems.DIRTY_DRINK_BOTTLE, ClayTechItems.DRINK_BOTTLE);
 				try {
 					// 这里放其他清理Event!!
-					Food.WashCheck(p, e.getItem(), Defines.DIRTY_TEA, Defines.RAW_TEA);
+					Food.WashCheck(p, e.getItem(), ClayTechItems.DIRTY_TEA, ClayTechItems.RAW_TEA);
 				} catch (NullPointerException err) {
 				}
 			}
@@ -197,10 +204,10 @@ public class ClayTechListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerFishEvent(PlayerFishEvent e) {
 		if (e.getState() == State.CAUGHT_FISH) {
-			Food.FishItemCheck(e, 1, 10, Defines.SNAIL_HEALTHY);
+			Food.FishItemCheck(e, 1, 10, ClayTechItems.SNAIL_HEALTHY);
 			try {
 				// 这里放其他食物/饮料8!!
-				Food.FishItemCheck(e, 11, 20, Defines.SNAIL_BAD);
+				Food.FishItemCheck(e, 11, 20, ClayTechItems.SNAIL_BAD);
 			} catch (NullPointerException err) {
 			}
 

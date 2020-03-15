@@ -22,7 +22,9 @@ General:
   TNT_EXPLOSION_CREATER_SUCCESS: "&aTNT exploded successfully."
   TNT_EXPLOSION_CREATER_FATAL: "&cTNT exploded failed.Might residence?"
   TNT_EXPLOSION_CREATER_CD: "&cPlease wait for the CD.."
-  Durability: "Durability"
+  Durability: "&bDurability"
+  CantEat: "&7Can't eat"
+  CantEatMessage: "&cYou can't eat this item."
 Categories:
   Basic: "&bClayTech - Basic"
   Weapons: "&bClayTech - Weapons"
@@ -294,6 +296,15 @@ Items:
     - "&bWill affect the durability"
     - "&bWon't break containers."
     - "&bDurability: &632"
+  SWEET_POTATO: "&eSweet Potato"
+  SWEET_POTATO_LORE:
+    - "&6Sweet Potato"
+    - "&7Gain this by harvesting potatoes"
+    - "&7Can't eat"
+  COOKED_SWEET_POTATO: "&eRoasted Sweet Potato"
+  COOKED_SWEET_POTATO_LORE:
+    - "&6Roasted Sweet Potato"
+    - "&7Increase 6 hunger value after eating"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"

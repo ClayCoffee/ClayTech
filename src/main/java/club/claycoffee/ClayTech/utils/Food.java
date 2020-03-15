@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.event.player.PlayerFishEvent;
 
-import club.claycoffee.ClayTech.Defines;
+import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.listeners.PlayerDrinkEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerEatEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerWashEvent;
@@ -32,7 +32,7 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
+				i.addItem(ClayTechItems.DIRTY_DRINK_BOTTLE);
 				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
 					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
@@ -61,7 +61,7 @@ public class Food {
 				if (Utils.IsItemContain(i, food)) {
 					i.setItem(Utils.GetItemIndex(i, HoldItem), HoldItem);
 				}
-				i.addItem(Defines.DIRTY_DRINK_BOTTLE);
+				i.addItem(ClayTechItems.DIRTY_DRINK_BOTTLE);
 				if (p.getFoodLevel() + incraseFoodLevel > 20) {
 					p.setFoodLevel(20);
 					p.setSaturation(p.getSaturation() + (p.getFoodLevel() + incraseFoodLevel - 20));
