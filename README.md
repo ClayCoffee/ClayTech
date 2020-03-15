@@ -16,5 +16,8 @@ This plugin made by me.Please do not claim this plugin as yours, because i put a
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
 
+# API
+Javadocs: http://claytech.claycoffee.space/javadocs/
+
 # Translate
 Want to translate this plugin to other languages?Just start an issue and a pull request and I will check and merge it.
