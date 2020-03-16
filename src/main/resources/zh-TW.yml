@@ -1,5 +1,5 @@
 General:
-  startTip: "粘土科技 By ClayCoffee，請不要未經我的授權使用本插件在妳的服務器上(如果使用在基友服,且人數少于4人,默認授權。而且妳也不能未經允許分發編譯後的插件.謝謝合作!"
+  startTip: "粘土科技 By ClayCoffee."
   registeringItems: "注冊粘液科技物品中..."
   registeringError: "在注冊物品時發生錯誤:"
   CantPlaceLore: "&e不可放置"

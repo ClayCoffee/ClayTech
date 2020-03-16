@@ -1,5 +1,5 @@
 General:
-  startTip: "ClayTech By ClayCoffee，Please do not use the compiled jar on your minecraft server without my authorization.(But you can install this on a small server,like playing with your friends etc),and you can't share the jar with anyone else.Thank you!"
+  startTip: "ClayTech By ClayCoffee."
   registeringItems: "Registering items.."
   registeringError: "There is an error when registering items:"
   CantPlaceLore: "&eCan't Place"
