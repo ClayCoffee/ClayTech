@@ -37,6 +37,8 @@ Categories:
   Elements: "&bClayTech - Elements"
   Machines: "&bClayTech - Machines"
   Other: "&bClayTech - Others"
+  Tools: "&bClayTech - Tools"
+  OreThings: "&bClayTech - Ores"
 Items:
   USEFUL_DIRT: "&6Useful Dirt"
   USEFUL_DIRT_LORE:
@@ -305,6 +307,14 @@ Items:
   COOKED_SWEET_POTATO_LORE:
     - "&6Roasted Sweet Potato"
     - "&7Increase 6 hunger value after eating"
+  REINFORCED_ALLOY_PICKAXE: "&9Reinforced Alloy Pickaxe"
+  CLAY_FUSION_INGOT: "&b&lClay Fusion Ingot"
+  CLAY_ALLOY_INGOT: "&9&lClay Alloy Ingot"
+  CLAY_ALLOY_PICKAXE: "&9Clay Alloy Pickaxe"
+  CLAY_ALLOY_HELMET: "&9Clay Alloy Helmet"
+  CLAY_ALLOY_CHESTPLATE: "&9Clay Alloy Chestplate"
+  CLAY_ALLOY_LEGGINGS: "&9Clay Alloy Leggings"
+  CLAY_ALLOY_BOOTS: "&9Clay Alloy Boots"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -326,12 +336,15 @@ Researches:
   CLAYTECH_BEFORE_ELEMENTS: "Before Elements"
   CLAYTECH_BEFORE_AFFECT_WEAPONS: "Before Affect Weapons"
   CLAYTECH_AFFECT_WEAPONS: "Basic Affect Weapons"
-  CLAYTECH_BEFORE_ADVANCED_AFFECT_WEAPONS: "Before Advanced Affect Weeapons"
-  CLAYTECH_ADVANCED_AFFECT_WEAPONS: "Advanced Affect Weeapons"
+  CLAYTECH_BEFORE_ADVANCED_AFFECT_WEAPONS: "Before Advanced Affect Weapons"
+  CLAYTECH_ADVANCED_AFFECT_WEAPONS: "Advanced Affect Weapons"
   CLAYTECH_SKULL_I: "Skull Craft"
   CLAYTECH_DECORATES_I: "Decorates I"
   CLAYTECH_RAILWAY_I: "Railways I"
   CLAYTECH_EFFECT_ITEM_I: "Affect Items I"
+  CLAYTECH_TOOLS_I: "Tools I"
+  CLAYTECH_OREINGOTS_I: "Ore Ingots I"
+  CLAYTECH_CLAY_ALLOY_ARMORS_I: "Clay Alloy Armors"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"

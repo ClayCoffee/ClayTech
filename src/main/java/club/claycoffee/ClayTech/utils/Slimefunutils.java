@@ -25,4 +25,39 @@ public class Slimefunutils {
 					new Research(new NamespacedKey(ClayTech.plugin, name), researchId, ResearchName, cost), ItemStack);
 		}
 	}
+	
+	public static void registerArmors(Category category, String nameprefix, ItemStack[] ItemStack, String ResearchName, int cost,
+			RecipeType Recipetype, ItemStack MaterialStack, boolean registerResearch) {
+		
+		SlimefunItemStack HELMET = new SlimefunItemStack(nameprefix+"_HELMET", ItemStack[0]);
+		SlimefunItem HELMET_I = new SlimefunItem(category, HELMET, Recipetype, getArmorsStack(1,MaterialStack));
+		HELMET_I.register(ClayTech.plugin);
+		SlimefunItemStack CHESTPLATE = new SlimefunItemStack(nameprefix+"_CHESTPLATE", ItemStack[1]);
+		SlimefunItem CHESTPLATE_I = new SlimefunItem(category, CHESTPLATE, Recipetype, getArmorsStack(2,MaterialStack));
+		CHESTPLATE_I.register(ClayTech.plugin);
+		SlimefunItemStack LEGGINGS = new SlimefunItemStack(nameprefix+"_LEGGINGS", ItemStack[2]);
+		SlimefunItem LEGGINGS_I = new SlimefunItem(category, LEGGINGS, Recipetype, getArmorsStack(3,MaterialStack));
+		LEGGINGS_I.register(ClayTech.plugin);
+		SlimefunItemStack BOOTS = new SlimefunItemStack(nameprefix+"_BOOTS", ItemStack[3]);
+		SlimefunItem BOOTS_I = new SlimefunItem(category, BOOTS, Recipetype, getArmorsStack(4,MaterialStack));
+		BOOTS_I.register(ClayTech.plugin);
+		if (registerResearch) {
+			researchId++;
+			Slimefun.registerResearch(
+					new Research(new NamespacedKey(ClayTech.plugin, nameprefix+"_ARMORS"), researchId, ResearchName, cost), ItemStack);
+		}
+	}
+	
+	public static ItemStack[] getArmorsStack(int type,ItemStack Material) {
+		if(type == 1) {
+			return new ItemStack[] {Material,Material,Material,Material,null,Material,null,null,null};
+		}
+		if(type == 2) {
+			return new ItemStack[] {Material,null,Material,Material,Material,Material,Material,Material,Material};
+		}
+		if(type == 3) {
+			return new ItemStack[] {Material,Material,Material,Material,null,Material,Material,null,Material};
+		}
+		return new ItemStack[] {null,null,null,Material,null,Material,Material,null,Material};
+	}
 }

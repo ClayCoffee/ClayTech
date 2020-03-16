@@ -3,6 +3,7 @@ package club.claycoffee.ClayTech;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
 public class Recipes {
@@ -116,4 +117,12 @@ public class Recipes {
 			null, null, null };
 	public final static ItemStack[] HIGHSPEED_RAILWAY = { null, null, null, null, new ItemStack(Material.POWERED_RAIL),
 			null, null, newMotor, null };
+	public final static ItemStack[] REINFORCED_ALLOY_PICKAXE = {SlimefunItems.REINFORCED_ALLOY_INGOT,SlimefunItems.REINFORCED_ALLOY_INGOT,SlimefunItems.REINFORCED_ALLOY_INGOT,null,SlimefunItems.REINFORCED_ALLOY_INGOT,null,null,SlimefunItems.REINFORCED_ALLOY_INGOT,null};
+	public final static ItemStack[] CLAY_FUSION_INGOT = {SlimefunItems.SYNTHETIC_DIAMOND,SlimefunItems.SYNTHETIC_EMERALD,SlimefunItems.SYNTHETIC_SAPPHIRE,SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.MAGIC_CLAY,SlimefunItems.REINFORCED_ALLOY_INGOT,null,null,null};
+	public final static ItemStack[] CLAY_ALLOY_INGOT = {SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.CLAY_FUSION_INGOT,SlimefunItems.CARBONADO,SlimefunItems.REDSTONE_ALLOY,ClayTechItems.MAGIC_CLAY,SlimefunItems.GOLD_24K,null,null,null};
+	public final static ItemStack[] CLAY_ALLOY_PICKAXE = {ClayTechItems.CLAY_ALLOY_INGOT,ClayTechItems.CLAY_ALLOY_INGOT,ClayTechItems.CLAY_ALLOY_INGOT,null,ClayTechItems.CLAY_ALLOY_INGOT,null,null,ClayTechItems.CLAY_ALLOY_INGOT,null};
+	public final static ItemStack[] CLAY_ALLOY_HELMET = Slimefunutils.getArmorsStack(1, ClayTechItems.CLAY_ALLOY_INGOT);
+	public final static ItemStack[] CLAY_ALLOY_CHESTPLATE = Slimefunutils.getArmorsStack(2, ClayTechItems.CLAY_ALLOY_INGOT);
+	public final static ItemStack[] CLAY_ALLOY_LEGGINGS = Slimefunutils.getArmorsStack(3, ClayTechItems.CLAY_ALLOY_INGOT);
+	public final static ItemStack[] CLAY_ALLOY_BOOTS = Slimefunutils.getArmorsStack(4, ClayTechItems.CLAY_ALLOY_INGOT);
 }

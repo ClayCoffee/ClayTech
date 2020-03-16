@@ -37,7 +37,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9921
+		// 当前研究ID: 9924
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -183,6 +183,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new Elements();
 		new Railways();
 		new EffectItems();
+		new Ingots();
+		new Tools();
 		
 	}
 

@@ -119,6 +119,11 @@ public final class Utils {
 		is.addEnchantment(ench, level);
 		return (is);
 	}
+	
+	public static ItemStack addEnchantH(ItemStack is, Enchantment ench, int level) {
+		is.addUnsafeEnchantment(ench, level);
+		return (is);
+	}
 
 	// ��
 	public static ItemStack removeEnchant(ItemStack is, Enchantment ench) {

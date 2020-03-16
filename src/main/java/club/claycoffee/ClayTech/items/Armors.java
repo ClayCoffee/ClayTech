@@ -1,6 +1,7 @@
 package club.claycoffee.ClayTech.items;
 
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
@@ -21,5 +22,11 @@ public class Armors {
 				Lang.readResearchesText("CLAYTECH_ARMORS_I"), 50);
 		basic.addItems(SlimefunItem.getByItem(ClayTechItems.ANTI_SLOWNESS_BOOTS));
 		basic.register();
+		
+		Slimefunutils.registerArmors(ClayTechItems.C_ARMORS, "CLAY_ALLOY", new ItemStack[]{ClayTechItems.CLAY_ALLOY_HELMET,ClayTechItems.CLAY_ALLOY_CHESTPLATE,ClayTechItems.CLAY_ALLOY_LEGGINGS,ClayTechItems.CLAY_ALLOY_BOOTS}, "notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, ClayTechItems.CLAY_ALLOY_INGOT, false);
+		Research clayalloy = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_CLAY_ALLOY_ARMORS_I"), 9924,
+				Lang.readResearchesText("CLAYTECH_CLAY_ALLOY_ARMORS_I"), 65);
+		clayalloy.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_ALLOY_HELMET),SlimefunItem.getByItem(ClayTechItems.CLAY_ALLOY_CHESTPLATE),SlimefunItem.getByItem(ClayTechItems.CLAY_ALLOY_LEGGINGS),SlimefunItem.getByItem(ClayTechItems.CLAY_ALLOY_BOOTS));
+		clayalloy.register();
 	}
 }

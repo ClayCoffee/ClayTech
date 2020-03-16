@@ -87,7 +87,17 @@ public class CraftingTable extends ACraftingTable {
 		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		this.registerRecipe(8, Recipes.ELECTRIC_MOTOR_8, new ItemStack[] { elem8 });
+		
+		
 		this.registerRecipe(50, Recipes.TNT_EXPLOSION_CREATER, new ItemStack[] { ClayTechItems.TNT_EXPLOSION_CREATER });
+		this.registerRecipe(180, Recipes.REINFORCED_ALLOY_PICKAXE, new ItemStack[] { ClayTechItems.REINFORCED_ALLOY_PICKAXE });
+		this.registerRecipe(40, Recipes.CLAY_FUSION_INGOT, new ItemStack[] { ClayTechItems.CLAY_FUSION_INGOT });
+		this.registerRecipe(50, Recipes.CLAY_ALLOY_INGOT, new ItemStack[] { ClayTechItems.CLAY_ALLOY_INGOT });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_PICKAXE, new ItemStack[] { ClayTechItems.CLAY_ALLOY_PICKAXE });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_HELMET, new ItemStack[] { ClayTechItems.CLAY_ALLOY_HELMET });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_CHESTPLATE, new ItemStack[] { ClayTechItems.CLAY_ALLOY_CHESTPLATE });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_LEGGINGS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_LEGGINGS });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_BOOTS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_BOOTS });
 	}
 
 	@Override

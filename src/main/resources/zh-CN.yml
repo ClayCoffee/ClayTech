@@ -37,6 +37,8 @@ Categories:
   Elements: "&b粘土科技 - 元素"
   Machines: "&b粘土科技 - 机器"
   Other: "&b粘土科技 - 其他"
+  Tools: "&b粘土科技 - 工具"
+  OreThings: "&b粘土科技 - 矿物资源"
 Items:
   USEFUL_DIRT: "&6有用的泥土"
   USEFUL_DIRT_LORE:
@@ -305,6 +307,14 @@ Items:
   COOKED_SWEET_POTATO_LORE:
     - "&6烤红芋"
     - "&7食用后增加6点饱食度"
+  REINFORCED_ALLOY_PICKAXE: "&9强化合金镐"
+  CLAY_FUSION_INGOT: "&b&l粘土融合锭"
+  CLAY_ALLOY_INGOT: "&9&l粘土合金锭"
+  CLAY_ALLOY_PICKAXE: "&9粘土合金镐"
+  CLAY_ALLOY_HELMET: "&9粘土合金头盔"
+  CLAY_ALLOY_CHESTPLATE: "&9粘土合金胸甲"
+  CLAY_ALLOY_LEGGINGS: "&9粘土合金护腿"
+  CLAY_ALLOY_BOOTS: "&9粘土合金靴子"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基础效果装备"
@@ -332,6 +342,9 @@ Researches:
   CLAYTECH_DECORATES_I: "装饰品 I"
   CLAYTECH_RAILWAY_I: "铁路 I"
   CLAYTECH_EFFECT_ITEM_I: "效果物品 I"
+  CLAYTECH_TOOLS_I: "工具 I"
+  CLAYTECH_OREINGOTS_I: "矿锭 I"
+  CLAYTECH_CLAY_ALLOY_ARMORS_I: "粘土合金装备"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"

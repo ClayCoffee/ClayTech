@@ -13,7 +13,7 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 public class EffectItems {
 	public EffectItems() {
-		Slimefunutils.registerItem(ClayTechItems.C_WEAPONS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER, "notresearch", 10,
+		Slimefunutils.registerItem(ClayTechItems.C_TOOLS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER, "notresearch", 10,
 				TRecipe.CLAY_CRAFTING_TABLE, Recipes.TNT_EXPLOSION_CREATER, false);
 
 
