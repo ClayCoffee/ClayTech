@@ -50,6 +50,7 @@ public class FoodChalkingMachine extends ANewContainer {
 	@Override
 	public void registerDefaultRecipes() {
 		this.registerRecipe(8, new ItemStack[] { ClayTechItems.RAW_TEA }, new ItemStack[] { ClayTechItems.TEA_POWDER });
-		this.registerRecipe(8, new ItemStack[] { ClayTechItems.LEMON }, new ItemStack[] { ClayTechItems.LEMON_POWDER });
+		this.registerRecipe(8, new ItemStack[] { ClayTechItems.CLAY_LEMON },
+				new ItemStack[] { ClayTechItems.LEMON_POWDER });
 	}
 }

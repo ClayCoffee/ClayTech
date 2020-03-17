@@ -6,8 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player washed a item. 
- * 当一个玩家使用水桶清洗某个物品成功的时候触发.
+ * Called when a player washed a item. 当一个玩家使用水桶清洗某个物品成功的时候触发.
  */
 public class PlayerWashEvent extends Event {
 	private Player eatPlayer;
@@ -49,7 +48,7 @@ public class PlayerWashEvent extends Event {
 	public HandlerList getHandlers() {
 		return handlers;
 	}
-	
+
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}

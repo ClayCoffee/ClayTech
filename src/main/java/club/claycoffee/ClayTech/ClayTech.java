@@ -132,24 +132,28 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public void registerSlimefun() {
 		ItemStack[] ClayCrafingTable = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, new ItemStack(Material.CRAFTING_TABLE),
-				SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR, ClayTechItems.MAGIC_CLAY };
+				SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
+				ClayTechItems.MAGIC_CLAY };
 		ItemStack[] ClayStoneCrusher = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
 				new ItemStack(Material.DISPENSER) };
 		ItemStack[] ClayFoodCauldron = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE, SlimefunItems.BATTERY,
-				ClayTechItems.MAGIC_CLAY, SlimefunItems.MEDIUM_CAPACITOR, ClayTechItems.MAGIC_CLAY };
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE,
+				SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.MEDIUM_CAPACITOR,
+				ClayTechItems.MAGIC_CLAY };
 		ItemStack[] ClayChalkingMachine = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE, SlimefunItems.BATTERY,
-				ClayTechItems.CLAY_STICK, SlimefunItems.MEDIUM_CAPACITOR, ClayTechItems.MAGIC_CLAY };
-		ItemStack[] ClayElementExtracter = { ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE,
-				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.ELECTRIC_MOTOR,
-				SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE,
+				SlimefunItems.BATTERY, ClayTechItems.CLAY_STICK, SlimefunItems.MEDIUM_CAPACITOR,
+				ClayTechItems.MAGIC_CLAY };
+		ItemStack[] ClayElementExtracter = { ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE,
+				ClayTechItems.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3,
 				SlimefunItems.WITHER_PROOF_OBSIDIAN };
 
 		// 机器
-		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE", ClayTechItems.CLAY_CRAFTING_TABLE);
+		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
+				ClayTechItems.CLAY_CRAFTING_TABLE);
 		SlimefunItemStack foodcauldron = new SlimefunItemStack("CLAY_FOOD_CAULDRON", ClayTechItems.CLAY_FOOD_CAULDRON);
 		SlimefunItemStack chalkingmachine = new SlimefunItemStack("CLAY_FOOD_CHALKING_MACHINE",
 				ClayTechItems.CLAY_FOOD_CHALKING_MACHINE);
@@ -158,12 +162,12 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		SlimefunItemStack electricstonecrusher = new SlimefunItemStack("CLAY_ELECTRIC_STONE_CRUSHER",
 				ClayTechItems.CLAY_ELECTRIC_STONE_CRUSHER);
 
-		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayCrafingTable).register(this);
+		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
 		new ElectricStoneCrusher(ClayTechItems.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayStoneCrusher).register(this);
-		new FoodCauldron(ClayTechItems.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON", RecipeType.ENHANCED_CRAFTING_TABLE,
-				ClayFoodCauldron).register(this);
+		new FoodCauldron(ClayTechItems.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayFoodCauldron).register(this);
 		new FoodChalkingMachine(ClayTechItems.C_MACHINES, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).register(this);
 		new ElementExtracter(ClayTechItems.C_MACHINES, elementextracter, "CLAY_ELEMENT_EXTRACTER",
@@ -185,7 +189,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new EffectItems();
 		new Ingots();
 		new Tools();
-		
+
 	}
 
 	@Override

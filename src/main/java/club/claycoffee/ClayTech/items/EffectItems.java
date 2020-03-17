@@ -13,9 +13,8 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 public class EffectItems {
 	public EffectItems() {
-		Slimefunutils.registerItem(ClayTechItems.C_TOOLS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER, "notresearch", 10,
-				TRecipe.CLAY_CRAFTING_TABLE, Recipes.TNT_EXPLOSION_CREATER, false);
-
+		Slimefunutils.registerItem(ClayTechItems.C_TOOLS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER,
+				"notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, Recipes.TNT_EXPLOSION_CREATER, false);
 
 		Research rs = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_AFT_1"), 9921,
 				Lang.readResearchesText("CLAYTECH_EFFECT_ITEM_I"), 30);

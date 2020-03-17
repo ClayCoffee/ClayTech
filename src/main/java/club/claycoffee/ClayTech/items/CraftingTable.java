@@ -29,7 +29,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 public class CraftingTable extends ACraftingTable {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;
-	
+
 	public CraftingTable(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -71,12 +71,15 @@ public class CraftingTable extends ACraftingTable {
 		this.registerRecipe(100, Recipes.BLIND_SWORD, new ItemStack[] { ClayTechItems.BLIND_SWORD });
 		this.registerRecipe(20, Recipes.POISON_EYE, new ItemStack[] { ClayTechItems.POISON_EYE });
 		this.registerRecipe(20, Recipes.POISON_CORE, new ItemStack[] { ClayTechItems.POISON_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { ClayTechItems.ADVANCED_POISON_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE,
+				new ItemStack[] { ClayTechItems.ADVANCED_POISON_CORE });
 		this.registerRecipe(20, Recipes.CONFUSION_CORE, new ItemStack[] { ClayTechItems.CONFUSION_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE, new ItemStack[] { ClayTechItems.ADVANCED_CONFUSION_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_CONFUSION_CORE,
+				new ItemStack[] { ClayTechItems.ADVANCED_CONFUSION_CORE });
 		this.registerRecipe(20, Recipes.BLACK_ROCK_BLOCK, new ItemStack[] { ClayTechItems.BLACK_ROCK_BLOCK });
 		this.registerRecipe(20, Recipes.SLOWNESS_CORE, new ItemStack[] { ClayTechItems.SLOWNESS_CORE });
-		this.registerRecipe(40, Recipes.ADVANCED_SLOWNESS_CORE, new ItemStack[] { ClayTechItems.ADVANCED_SLOWNESS_CORE });
+		this.registerRecipe(40, Recipes.ADVANCED_SLOWNESS_CORE,
+				new ItemStack[] { ClayTechItems.ADVANCED_SLOWNESS_CORE });
 		this.registerRecipe(40, Recipes.ADVANCED_BLIND_CORE, new ItemStack[] { ClayTechItems.ADVANCED_BLIND_CORE });
 		this.registerRecipe(400, Recipes.FOUR_BOW, new ItemStack[] { ClayTechItems.FOUR_BOW });
 		this.registerRecipe(100, Recipes.POISON_SWORD, new ItemStack[] { ClayTechItems.POISON_SWORD });
@@ -87,15 +90,16 @@ public class CraftingTable extends ACraftingTable {
 		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		this.registerRecipe(8, Recipes.ELECTRIC_MOTOR_8, new ItemStack[] { elem8 });
-		
-		
+
 		this.registerRecipe(50, Recipes.TNT_EXPLOSION_CREATER, new ItemStack[] { ClayTechItems.TNT_EXPLOSION_CREATER });
-		this.registerRecipe(180, Recipes.REINFORCED_ALLOY_PICKAXE, new ItemStack[] { ClayTechItems.REINFORCED_ALLOY_PICKAXE });
+		this.registerRecipe(180, Recipes.REINFORCED_ALLOY_PICKAXE,
+				new ItemStack[] { ClayTechItems.REINFORCED_ALLOY_PICKAXE });
 		this.registerRecipe(40, Recipes.CLAY_FUSION_INGOT, new ItemStack[] { ClayTechItems.CLAY_FUSION_INGOT });
 		this.registerRecipe(50, Recipes.CLAY_ALLOY_INGOT, new ItemStack[] { ClayTechItems.CLAY_ALLOY_INGOT });
 		this.registerRecipe(300, Recipes.CLAY_ALLOY_PICKAXE, new ItemStack[] { ClayTechItems.CLAY_ALLOY_PICKAXE });
 		this.registerRecipe(300, Recipes.CLAY_ALLOY_HELMET, new ItemStack[] { ClayTechItems.CLAY_ALLOY_HELMET });
-		this.registerRecipe(300, Recipes.CLAY_ALLOY_CHESTPLATE, new ItemStack[] { ClayTechItems.CLAY_ALLOY_CHESTPLATE });
+		this.registerRecipe(300, Recipes.CLAY_ALLOY_CHESTPLATE,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_CHESTPLATE });
 		this.registerRecipe(300, Recipes.CLAY_ALLOY_LEGGINGS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_LEGGINGS });
 		this.registerRecipe(300, Recipes.CLAY_ALLOY_BOOTS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_BOOTS });
 	}
@@ -122,23 +126,22 @@ public class CraftingTable extends ACraftingTable {
 			} else {
 				// 处理结束
 				inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
-				
+
 				new BukkitRunnable() {
 
 					@Override
 					public void run() {
-						Bukkit.getPluginManager().callEvent(
-								new PlayerCraftItemEvent(b, inputItem, outputItem));
-						
+						Bukkit.getPluginManager().callEvent(new PlayerCraftItemEvent(b, inputItem, outputItem));
+
 					}
-					
+
 				}.runTask(ClayTech.plugin);
-				
+
 				for (ItemStack output : processing.get(b).getOutput()) {
 					if (output != null)
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
-				
+
 				progress.remove(b);
 				processing.remove(b);
 			}

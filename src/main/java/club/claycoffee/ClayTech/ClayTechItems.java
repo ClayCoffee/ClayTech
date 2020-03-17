@@ -48,7 +48,8 @@ public class ClayTechItems {
 			Utils.newItemD(Material.POWERED_RAIL, Lang.readCategoriesText("Other")), C_BASICS);
 	public static final LockedCategory C_TOOLS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
 			Utils.newItemD(Material.DIAMOND_PICKAXE, Lang.readCategoriesText("Tools")), C_BASICS);
-	public static final LockedCategory C_ORESTHINGS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
+	public static final LockedCategory C_ORESTHINGS = new LockedCategory(
+			new NamespacedKey(ClayTech.plugin, "claycategory"),
 			Utils.newItemD(Material.BRICK, Lang.readCategoriesText("OreThings")), C_BASICS);
 
 	// 注册
@@ -147,21 +148,48 @@ public class ClayTechItems {
 	public static final ItemStack TNT_EXPLOSION_CREATER = Utils.setLore(
 			Utils.newItemD(Material.GOLDEN_HOE, Lang.readItemText("TNT_EXPLOSION_CREATER")),
 			Lang.readItemLore("TNT_EXPLOSION_CREATER"));
-	public static final ItemStack SWEET_POTATO = Utils.setLore(
-			Utils.newItemD(Material.BEETROOT,Lang.readItemText("SWEET_POTATO")),
-			Lang.readItemLore("SWEET_POTATO"));
+	public static final ItemStack CLAY_SWEET_POTATO = Utils.setLore(
+			Utils.newItemD(Material.BEETROOT, Lang.readItemText("SWEET_POTATO")), Lang.readItemLore("SWEET_POTATO"));
 	public static final ItemStack COOKED_SWEET_POTATO = Utils.setLore(
-			Utils.newItemD(Material.BEETROOT,Lang.readItemText("COOKED_SWEET_POTATO")),
+			Utils.newItemD(Material.BEETROOT, Lang.readItemText("COOKED_SWEET_POTATO")),
 			Lang.readItemLore("COOKED_SWEET_POTATO"));
-	public static final ItemStack REINFORCED_ALLOY_PICKAXE = Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_PICKAXE,Lang.readItemText("REINFORCED_ALLOY_PICKAXE")),Enchantment.DIG_SPEED,9),Enchantment.DURABILITY,9);
-	public static final ItemStack CLAY_FUSION_INGOT = Utils.newItemD(Material.IRON_INGOT,Lang.readItemText("CLAY_FUSION_INGOT"));
-	public static final ItemStack CLAY_ALLOY_INGOT = Utils.newItemD(Material.IRON_INGOT,Lang.readItemText("CLAY_ALLOY_INGOT"));
-	public static final ItemStack CLAY_ALLOY_PICKAXE = Utils.addEnchantH(Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_PICKAXE,Lang.readItemText("CLAY_ALLOY_PICKAXE")),Enchantment.DIG_SPEED,10),Enchantment.DURABILITY,10),Enchantment.MENDING,1);
-	public static final ItemStack CLAY_ALLOY_HELMET = Utils.addEnchantH(Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_HELMET,Lang.readItemText("CLAY_ALLOY_HELMET")),Enchantment.PROTECTION_ENVIRONMENTAL,10),Enchantment.DURABILITY,10),Enchantment.MENDING,1);
-	public static final ItemStack CLAY_ALLOY_CHESTPLATE = Utils.addEnchantH(Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_CHESTPLATE,Lang.readItemText("CLAY_ALLOY_CHESTPLATE")),Enchantment.PROTECTION_ENVIRONMENTAL,10),Enchantment.DURABILITY,10),Enchantment.MENDING,1);
-	public static final ItemStack CLAY_ALLOY_LEGGINGS = Utils.addEnchantH(Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_LEGGINGS,Lang.readItemText("CLAY_ALLOY_LEGGINGS")),Enchantment.PROTECTION_ENVIRONMENTAL,10),Enchantment.DURABILITY,10),Enchantment.MENDING,1);
-	public static final ItemStack CLAY_ALLOY_BOOTS = Utils.addEnchantH(Utils.addEnchantH(Utils.addEnchantH(Utils.newItemD(Material.IRON_BOOTS,Lang.readItemText("CLAY_ALLOY_BOOTS")),Enchantment.PROTECTION_ENVIRONMENTAL,10),Enchantment.DURABILITY,10),Enchantment.MENDING,1);
-	
+	public static final ItemStack REINFORCED_ALLOY_PICKAXE = Utils.addEnchantH(
+			Utils.addEnchantH(Utils.newItemD(Material.IRON_PICKAXE, Lang.readItemText("REINFORCED_ALLOY_PICKAXE")),
+					Enchantment.DIG_SPEED, 9),
+			Enchantment.DURABILITY, 9);
+	public static final ItemStack CLAY_FUSION_INGOT = Utils.newItemD(Material.IRON_INGOT,
+			Lang.readItemText("CLAY_FUSION_INGOT"));
+	public static final ItemStack CLAY_ALLOY_INGOT = Utils.newItemD(Material.IRON_INGOT,
+			Lang.readItemText("CLAY_ALLOY_INGOT"));
+	public static final ItemStack CLAY_ALLOY_PICKAXE = Utils.addEnchantH(Utils.addEnchantH(
+			Utils.addEnchantH(Utils.newItemD(Material.IRON_PICKAXE, Lang.readItemText("CLAY_ALLOY_PICKAXE")),
+					Enchantment.DIG_SPEED, 10),
+			Enchantment.DURABILITY, 10), Enchantment.MENDING, 1);
+	public static final ItemStack CLAY_ALLOY_HELMET = Utils.addEnchantH(
+			Utils.addEnchantH(
+					Utils.addEnchantH(Utils.newItemD(Material.IRON_HELMET, Lang.readItemText("CLAY_ALLOY_HELMET")),
+							Enchantment.PROTECTION_ENVIRONMENTAL, 10),
+					Enchantment.DURABILITY, 10),
+			Enchantment.MENDING, 1);
+	public static final ItemStack CLAY_ALLOY_CHESTPLATE = Utils
+			.addEnchantH(
+					Utils.addEnchantH(Utils.addEnchantH(
+							Utils.newItemD(Material.IRON_CHESTPLATE, Lang.readItemText("CLAY_ALLOY_CHESTPLATE")),
+							Enchantment.PROTECTION_ENVIRONMENTAL, 10), Enchantment.DURABILITY, 10),
+					Enchantment.MENDING, 1);
+	public static final ItemStack CLAY_ALLOY_LEGGINGS = Utils.addEnchantH(
+			Utils.addEnchantH(
+					Utils.addEnchantH(Utils.newItemD(Material.IRON_LEGGINGS, Lang.readItemText("CLAY_ALLOY_LEGGINGS")),
+							Enchantment.PROTECTION_ENVIRONMENTAL, 10),
+					Enchantment.DURABILITY, 10),
+			Enchantment.MENDING, 1);
+	public static final ItemStack CLAY_ALLOY_BOOTS = Utils.addEnchantH(
+			Utils.addEnchantH(
+					Utils.addEnchantH(Utils.newItemD(Material.IRON_BOOTS, Lang.readItemText("CLAY_ALLOY_BOOTS")),
+							Enchantment.PROTECTION_ENVIRONMENTAL, 10),
+					Enchantment.DURABILITY, 10),
+			Enchantment.MENDING, 1);
+
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(
 			"http://textures.minecraft.net/texture/58c55ba01ccc7e79b5495e5c4e00080ff6c92a832b2905fed724f2f68a3bb94c"),
@@ -196,7 +224,7 @@ public class ClayTechItems {
 	public static final ItemStack RAW_VEGETABLE = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
 			"http://textures.minecraft.net/texture/477dd842c975d8fb03b1add66db8377a18ba987052161f22591e6a4ede7f5"),
 			Lang.readItemText("LETTUSE")), Lang.readItemLore("LETTUSE"));
-	public static final ItemStack LEMON = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+	public static final ItemStack CLAY_LEMON = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
 			"http://textures.minecraft.net/texture/957fd56ca15978779324df519354b6639a8d9bc1192c7c3de925a329baef6c"),
 			Lang.readItemText("LEMON")), Lang.readItemLore("LEMON"));
 

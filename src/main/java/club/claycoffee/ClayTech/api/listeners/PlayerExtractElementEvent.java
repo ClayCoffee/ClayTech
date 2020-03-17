@@ -6,8 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player extracted a item.
- * 当一个玩家使用元素提取器提取元素成功的时候触发.
+ * Called when a player extracted a item. 当一个玩家使用元素提取器提取元素成功的时候触发.
  */
 public class PlayerExtractElementEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();

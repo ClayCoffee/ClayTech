@@ -6,8 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player drank a food. 
- * 当一个玩家喝粘土科技中的饮料的时候触发.
+ * Called when a player drank a food. 当一个玩家喝粘土科技中的饮料的时候触发.
  */
 public class PlayerDrinkEvent extends Event {
 	private Player eatPlayer;
@@ -39,7 +38,7 @@ public class PlayerDrinkEvent extends Event {
 	public HandlerList getHandlers() {
 		return handlers;
 	}
-	
+
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}

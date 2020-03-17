@@ -1,6 +1,5 @@
 package club.claycoffee.ClayTech.items;
 
-
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

@@ -6,8 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player cooked a item. 
- * 当一个玩家使用锅煮物品成功的时候触发.
+ * Called when a player cooked a item. 当一个玩家使用锅煮物品成功的时候触发.
  */
 public class PlayerCookItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
@@ -49,7 +48,7 @@ public class PlayerCookItemEvent extends Event {
 	public HandlerList getHandlers() {
 		return handlers;
 	}
-	
+
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}

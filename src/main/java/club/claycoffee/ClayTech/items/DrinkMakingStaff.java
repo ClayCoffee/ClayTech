@@ -22,36 +22,39 @@ public class DrinkMakingStaff {
 				new ItemStack(Material.COCOA_BEANS), new ItemStack(Material.COCOA_BEANS),
 				new ItemStack(Material.COCOA_BEANS), new ItemStack(Material.COCOA_BEANS) };
 		ItemStack[] recipeb = { null, null, null, null, SlimefunItems.BUCKET_OF_OIL, null, null, null, null };
-		ItemStack[] recipec = { ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.MAGIC_CLAY,
-				ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC };
+		ItemStack[] recipec = { ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC,
+				ClayTechItems.PLASTIC, ClayTechItems.MAGIC_CLAY, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC,
+				ClayTechItems.PLASTIC, ClayTechItems.PLASTIC };
 
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "COCOA_BEAN", ClayTechItems.COCOA_BEAN, "notresearch", 10,
-				RecipeType.ENHANCED_CRAFTING_TABLE, recipea, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "COCOA_BEAN", ClayTechItems.COCOA_BEAN, "notresearch",
+				10, RecipeType.ENHANCED_CRAFTING_TABLE, recipea, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "PLASTIC", ClayTechItems.PLASTIC, "notresearch", 10,
 				RecipeType.ENHANCED_CRAFTING_TABLE, recipeb, false);
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DRINK_BOTTLE", ClayTechItems.DRINK_BOTTLE, "notresearch", 10,
-				RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_DRINK_BOTTLE", ClayTechItems.DIRTY_DRINK_BOTTLE,
-				"notresearch", 10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_TEA", ClayTechItems.DIRTY_TEA, "notresearch", 10,
-				RecipeType.NULL, ClayTechItems.NORECIPE, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DRINK_BOTTLE", ClayTechItems.DRINK_BOTTLE,
+				"notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_DRINK_BOTTLE",
+				ClayTechItems.DIRTY_DRINK_BOTTLE, "notresearch", 10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_TEA", ClayTechItems.DIRTY_TEA, "notresearch",
+				10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_TEA", ClayTechItems.RAW_TEA, "notresearch", 10,
 				RecipeType.NULL, ClayTechItems.NORECIPE, false);
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "TEA_POWDER", ClayTechItems.TEA_POWDER, "notresearch", 10,
-				TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.TEA_POWDER, false);
-		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "LEMON_POWDER", ClayTechItems.LEMON_POWDER, "notresearch", 10,
-				TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.LEMON_POWDER, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "TEA_POWDER", ClayTechItems.TEA_POWDER, "notresearch",
+				10, TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.TEA_POWDER, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "LEMON_POWDER", ClayTechItems.LEMON_POWDER,
+				"notresearch", 10, TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.LEMON_POWDER, false);
 
 		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSBASIC"), 9908,
 				Lang.readResearchesText("CLAYTECH_DRINK_MAKINGS_I"), 50);
-		foodmaterialsI.addItems(SlimefunItem.getByItem(ClayTechItems.COCOA_BEAN), SlimefunItem.getByItem(ClayTechItems.PLASTIC),
-				SlimefunItem.getByItem(ClayTechItems.DRINK_BOTTLE), SlimefunItem.getByItem(ClayTechItems.DIRTY_DRINK_BOTTLE));
+		foodmaterialsI.addItems(SlimefunItem.getByItem(ClayTechItems.COCOA_BEAN),
+				SlimefunItem.getByItem(ClayTechItems.PLASTIC), SlimefunItem.getByItem(ClayTechItems.DRINK_BOTTLE),
+				SlimefunItem.getByItem(ClayTechItems.DIRTY_DRINK_BOTTLE));
 		foodmaterialsI.register();
 
 		Research foodmaterialsII = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSII"), 9911,
 				Lang.readResearchesText("CLAYTECH_DRINK_MAKINGS_II"), 50);
-		foodmaterialsII.addItems(SlimefunItem.getByItem(ClayTechItems.DIRTY_TEA), SlimefunItem.getByItem(ClayTechItems.RAW_TEA),
-				SlimefunItem.getByItem(ClayTechItems.LEMON_POWDER), SlimefunItem.getByItem(ClayTechItems.TEA_POWDER));
+		foodmaterialsII.addItems(SlimefunItem.getByItem(ClayTechItems.DIRTY_TEA),
+				SlimefunItem.getByItem(ClayTechItems.RAW_TEA), SlimefunItem.getByItem(ClayTechItems.LEMON_POWDER),
+				SlimefunItem.getByItem(ClayTechItems.TEA_POWDER));
 		foodmaterialsII.register();
 	}
 }

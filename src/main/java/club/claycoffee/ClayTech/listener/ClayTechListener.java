@@ -47,22 +47,23 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 public class ClayTechListener implements Listener {
 	Player p;
+
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void BlockBreakEvent(BlockBreakEvent e) {
 		if (!e.isCancelled()) {
 			if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
-				Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES), ClayTechItems.LEMON,
-						new ItemStack(Material.SHEARS), 10, e);
+				Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES),
+						ClayTechItems.CLAY_LEMON, new ItemStack(Material.SHEARS), 10, e);
 				try {
 					// 这里放其他事件
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS), ClayTechItems.DIRTY_TEA,
-							new ItemStack(Material.SHEARS), 10, e);
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
+							ClayTechItems.DIRTY_TEA, new ItemStack(Material.SHEARS), 10, e);
 					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.WHEAT), ClayTechItems.FLOUR,
 							new ItemStack(Material.SHEARS), 15, 20, e);
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES), ClayTechItems.STARCH,
-							new ItemStack(Material.SHEARS), 15, 20, e);
-					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES), ClayTechItems.SWEET_POTATO,
-							new ItemStack(Material.SHEARS), 25, 30, e);
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
+							ClayTechItems.STARCH, new ItemStack(Material.SHEARS), 15, 20, e);
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
+							ClayTechItems.CLAY_SWEET_POTATO, new ItemStack(Material.SHEARS), 25, 30, e);
 				} catch (NullPointerException err) {
 				}
 			}
@@ -73,56 +74,54 @@ public class ClayTechListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.getAction() == Action.RIGHT_CLICK_AIR) {
-			if(Utils.ExitsInList(Lang.readGeneralText("CantEat"), Utils.getLore(e.getItem()))) {
+			if (Utils.ExitsInList(Lang.readGeneralText("CantEat"), Utils.getLore(e.getItem()))) {
 				e.getPlayer().sendMessage(Lang.readGeneralText("CantEatMessage"));
 				return;
 			}
-			if(e.getItem().getItemMeta().getDisplayName().equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER"))) {
-				Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(),e.getItem()));
+			if (e.getItem().getItemMeta().getDisplayName()
+					.equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER"))) {
+				Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(), e.getItem()));
 				boolean pass = false;
-				String md = Utils.readPlayerMetadataString(e.getPlayer(),"lastUseTNTCreaterTime");
-				if(md != null) {
-					if(System.currentTimeMillis() >= Long.parseLong(md)+5000L) {
+				String md = Utils.readPlayerMetadataString(e.getPlayer(), "lastUseTNTCreaterTime");
+				if (md != null) {
+					if (System.currentTimeMillis() >= Long.parseLong(md) + 5000L) {
 						pass = true;
 					}
-				}
-				else {
+				} else {
 					pass = true;
 				}
-				if(pass) {
-					if(e.getPlayer().getInventory().containsAtLeast(new ItemStack(Material.TNT), 1)) {
+				if (pass) {
+					if (e.getPlayer().getInventory().containsAtLeast(new ItemStack(Material.TNT), 1)) {
 						Location currentLoc = e.getPlayer().getLocation();
 						Inventory inv = e.getPlayer().getInventory();
 						ItemStack TNT = inv.getItem(inv.first(Material.TNT));
-						TNT.setAmount(TNT.getAmount()-1);
+						TNT.setAmount(TNT.getAmount() - 1);
 						ItemStack tool = e.getPlayer().getInventory().getItemInMainHand();
-						ClayItem.setDurability(tool, ClayItem.getDurability(tool)-1);
+						ClayItem.setDurability(tool, ClayItem.getDurability(tool) - 1);
 						e.getPlayer().sendMessage(Lang.readGeneralText("TNT_EXPLOSION_CREATER_WAIT"));
-						e.getPlayer().setMetadata("lastUseTNTCreaterTime", new FixedMetadataValue(ClayTech.plugin,System.currentTimeMillis()+""));
+						e.getPlayer().setMetadata("lastUseTNTCreaterTime",
+								new FixedMetadataValue(ClayTech.plugin, System.currentTimeMillis() + ""));
 						new BukkitRunnable() {
 							@Override
 							public void run() {
 								e.getPlayer().getWorld().spawnEntity(currentLoc, EntityType.PRIMED_TNT);
 								Block center = currentLoc.add(0, -1, 0).getBlock();
-								center.setMetadata("isExplosionCreater", new FixedMetadataValue(ClayTech.plugin,true));
+								center.setMetadata("isExplosionCreater", new FixedMetadataValue(ClayTech.plugin, true));
 								p = e.getPlayer();
 								return;
 							}
-							
+
 						}.runTaskLater(ClayTech.plugin, 100);
-					}
-					else {
+					} else {
 						e.getPlayer().sendMessage(Lang.readGeneralText("TNT_EXPLOSION_CREATER_NO_TNT"));
 						return;
 					}
-					
-				}
-				else {
+
+				} else {
 					e.getPlayer().sendMessage(Lang.readGeneralText("TNT_EXPLOSION_CREATER_CD"));
 					return;
 				}
-				
-				
+
 			}
 			Player p = e.getPlayer();
 			if (e.hasItem()) {
@@ -139,7 +138,7 @@ public class ClayTechListener implements Listener {
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.CHICKEN_FOOT, 8);
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.RAW_BREAD, 4);
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.RAW_VEGETABLE, 1);
-					Food.FoodCheck(p, e.getItem(), ClayTechItems.LEMON, 1,
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.CLAY_LEMON, 1,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.CONFUSION, 200, 3) });
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.SPICY_CHICKEN_BURGER, 15,
 							new PotionEffect[] { new PotionEffect(PotionEffectType.getById(5), 400, 1) });
@@ -164,43 +163,43 @@ public class ClayTechListener implements Listener {
 			}
 		}
 	}
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void EntityExplodeEvent(EntityExplodeEvent e) {
 		List<Block> blockL = new ArrayList<Block>();
-		for(Block b : e.blockList()) {
+		for (Block b : e.blockList()) {
 			blockL.add(b);
 		}
 		boolean already = false;
-		for(Block each : blockL) {
-			for(MetadataValue eachv : each.getMetadata("isExplosionCreater")) {
-				if(eachv.getOwningPlugin().equals(ClayTech.plugin)) {
-					if(e.isCancelled()) {
+		for (Block each : blockL) {
+			for (MetadataValue eachv : each.getMetadata("isExplosionCreater")) {
+				if (eachv.getOwningPlugin().equals(ClayTech.plugin)) {
+					if (e.isCancelled()) {
 						p.sendMessage(Lang.readGeneralText("TNT_EXPLOSION_CREATER_FATAL"));
 						return;
-					}
-					else {
-						if(!already) {
+					} else {
+						if (!already) {
 							p.sendMessage(Lang.readGeneralText("TNT_EXPLOSION_CREATER_SUCCESS"));
 							already = true;
 						}
-						
+
 					}
-					if(eachv.asBoolean()) {
+					if (eachv.asBoolean()) {
 						Iterator<Block> b = e.blockList().iterator();
-						while(b.hasNext()) {
+						while (b.hasNext()) {
 							Block next = b.next();
-							if(next.getType() == Material.CHEST || next.getType() == Material.FURNACE) {
+							if (next.getType() == Material.CHEST || next.getType() == Material.FURNACE) {
 								b.remove();
 							}
 						}
 						break;
-						
+
 					}
 				}
 			}
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerFishEvent(PlayerFishEvent e) {
 		if (e.getState() == State.CAUGHT_FISH) {
@@ -213,7 +212,7 @@ public class ClayTechListener implements Listener {
 
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void EntityDamageByEntityEvent(EntityDamageByEntityEvent e) {
 		if (e.getDamager().getType() == EntityType.ARROW) {

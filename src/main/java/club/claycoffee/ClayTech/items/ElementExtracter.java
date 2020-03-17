@@ -29,7 +29,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class ElementExtracter extends AExtracter {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;
-	
+
 	public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
@@ -95,11 +95,10 @@ public class ElementExtracter extends AExtracter {
 
 					@Override
 					public void run() {
-						Bukkit.getPluginManager().callEvent(
-								new PlayerExtractElementEvent(b,inputItem, outputItem));
-						
+						Bukkit.getPluginManager().callEvent(new PlayerExtractElementEvent(b, inputItem, outputItem));
+
 					}
-					
+
 				}.runTask(ClayTech.plugin);
 				for (ItemStack output : processing.get(b).getOutput()) {
 					if (output != null)

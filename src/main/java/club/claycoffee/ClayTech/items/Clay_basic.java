@@ -30,7 +30,8 @@ public class Clay_basic {
 
 		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BASIC"), 9900,
 				Lang.readResearchesText("CLAYTECH_START"), 20);
-		basic.addItems(SlimefunItem.getByItem(ClayTechItems.MAGIC_CLAY), SlimefunItem.getByItem(ClayTechItems.CLAY_STICK));
+		basic.addItems(SlimefunItem.getByItem(ClayTechItems.MAGIC_CLAY),
+				SlimefunItem.getByItem(ClayTechItems.CLAY_STICK));
 		basic.register();
 
 		Research basic2 = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ELECBASIC"), 9915,

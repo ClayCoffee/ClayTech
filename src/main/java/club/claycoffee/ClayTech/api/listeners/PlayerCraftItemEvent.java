@@ -6,8 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player crafted a item. 
- * 当一个玩家使用粘土融合器合成物品成功的时候触发.
+ * Called when a player crafted a item. 当一个玩家使用粘土融合器合成物品成功的时候触发.
  */
 public class PlayerCraftItemEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
@@ -49,7 +48,7 @@ public class PlayerCraftItemEvent extends Event {
 	public HandlerList getHandlers() {
 		return handlers;
 	}
-	
+
 	public static HandlerList getHandlerList() {
 		return handlers;
 	}

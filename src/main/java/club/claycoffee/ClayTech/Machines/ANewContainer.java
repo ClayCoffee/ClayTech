@@ -58,65 +58,66 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 
 		this.registerDefaultRecipes();
 	}
+
 	@SuppressWarnings("deprecation")
 	protected void tick(Block b) {
 		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-        BlockMenu inv = BlockStorage.getInventory(b);
+		BlockMenu inv = BlockStorage.getInventory(b);
 
-        if (isProcessing(b)) {
-            int timeleft = progress.get(b);
+		if (isProcessing(b)) {
+			int timeleft = progress.get(b);
 
-            if (timeleft > 0) {
-                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+			if (timeleft > 0) {
+				ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
 
-                if (ChargableBlock.isChargable(b)) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption()) return;
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
-                }
-                else progress.put(b, timeleft - 1);
-            }
-            else {
-                inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
+				if (ChargableBlock.isChargable(b)) {
+					if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+						return;
+					ChargableBlock.addCharge(b, -getEnergyConsumption());
+					progress.put(b, timeleft - 1);
+				} else
+					progress.put(b, timeleft - 1);
+			} else {
+				inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
 
-                for (ItemStack output : processing.get(b).getOutput()) {
-                    inv.pushItem(output.clone(), getOutputSlots());
-                }
+				for (ItemStack output : processing.get(b).getOutput()) {
+					inv.pushItem(output.clone(), getOutputSlots());
+				}
 
-                progress.remove(b);
-                processing.remove(b);
-            }
-        }
-        else {
-            MachineRecipe r = null;
-            Map<Integer, Integer> found = new HashMap<>();
+				progress.remove(b);
+				processing.remove(b);
+			}
+		} else {
+			MachineRecipe r = null;
+			Map<Integer, Integer> found = new HashMap<>();
 
-            for (MachineRecipe recipe : recipes) {
-                for (ItemStack input : recipe.getInput()) {
-                    for (int slot : getInputSlots()) {
-                        if (SlimefunManager.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
-                            found.put(slot, input.getAmount());
-                            break;
-                        }
-                    }
-                }
-                if (found.size() == recipe.getInput().length) {
-                    r = recipe;
-                    break;
-                }
-                else found.clear();
-            }
+			for (MachineRecipe recipe : recipes) {
+				for (ItemStack input : recipe.getInput()) {
+					for (int slot : getInputSlots()) {
+						if (SlimefunManager.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
+							found.put(slot, input.getAmount());
+							break;
+						}
+					}
+				}
+				if (found.size() == recipe.getInput().length) {
+					r = recipe;
+					break;
+				} else
+					found.clear();
+			}
 
-            if (r != null) {
-                if (!fits(b, r.getOutput())) return;
+			if (r != null) {
+				if (!fits(b, r.getOutput()))
+					return;
 
-                for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    inv.consumeItem(entry.getKey(), entry.getValue());
-                }
+				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
+					inv.consumeItem(entry.getKey(), entry.getValue());
+				}
 
-                processing.put(b, r);
-                progress.put(b, r.getTicks());
-            }
-        }
-    }
+				processing.put(b, r);
+				progress.put(b, r.getTicks());
+			}
+		}
+	}
 }

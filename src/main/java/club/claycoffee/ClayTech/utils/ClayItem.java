@@ -7,37 +7,40 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class ClayItem {
 	public static boolean hasDurability(ItemStack item) {
-		for(String each : Utils.getLoreList(item)) {
-			if(each.startsWith(Lang.readGeneralText("Durability"))) {
+		for (String each : Utils.getLoreList(item)) {
+			if (each.startsWith(Lang.readGeneralText("Durability"))) {
 				return true;
 			}
 		}
 		return false;
 	}
+
 	public static int getDurability(ItemStack item) {
-		if(hasDurability(item)) {
-			for(String each : Utils.getLoreList(item)) {
-				if(each.startsWith(Lang.readGeneralText("Durability"))) {
-					return new Integer(each.replaceFirst(Lang.readGeneralText("Durability")+":", "").replace(" §6", "")).intValue();
+		if (hasDurability(item)) {
+			for (String each : Utils.getLoreList(item)) {
+				if (each.startsWith(Lang.readGeneralText("Durability"))) {
+					return new Integer(
+							each.replaceFirst(Lang.readGeneralText("Durability") + ":", "").replace(" §6", ""))
+									.intValue();
 				}
 			}
-		}
-		else {
+		} else {
 			return -1;
 		}
 		return -1;
 	}
-	public static boolean setDurability(ItemStack item,int durability) {
-		if(hasDurability(item)) {
-			if(durability <= 0) {
+
+	public static boolean setDurability(ItemStack item, int durability) {
+		if (hasDurability(item)) {
+			if (durability <= 0) {
 				item.setAmount(0);
 				return true;
 			}
 			List<String> Lore = Utils.getLoreList(item);
 			int i = 0;
-			for(String each : Lore) {
-				if(each.startsWith(Lang.readGeneralText("Durability"))) {
-					each = each.replace(""+getDurability(item), ""+durability);
+			for (String each : Lore) {
+				if (each.startsWith(Lang.readGeneralText("Durability"))) {
+					each = each.replace("" + getDurability(item), "" + durability);
 					Lore.set(i, each);
 					break;
 				}
@@ -48,7 +51,7 @@ public class ClayItem {
 			item.setItemMeta(im);
 			return true;
 		}
-		
+
 		return false;
 	}
 }

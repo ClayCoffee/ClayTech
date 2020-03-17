@@ -9,8 +9,7 @@ import club.claycoffee.ClayTech.utils.ClayItem;
 import club.claycoffee.ClayTech.utils.Utils;
 
 /**
- * the ClayTech API manager.
- * 粘土科技API管理器
+ * the ClayTech API manager. 粘土科技API管理器
  */
 public class ClayTechManager {
 	/**
@@ -24,12 +23,11 @@ public class ClayTechManager {
 			if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
 					&& Utils.getLoreList(is).equals(Utils.getLoreList(item)) && is.getType() == item.getType()) {
 				return true;
-			}
-			else if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
-					&& !Utils.getLoreList(is).equals(Utils.getLoreList(item)) && ClayItem.hasDurability(is) && is.getType() == item.getType()) {
+			} else if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
+					&& !Utils.getLoreList(is).equals(Utils.getLoreList(item)) && ClayItem.hasDurability(is)
+					&& is.getType() == item.getType()) {
 				return true;
-			}
-			else {
+			} else {
 				return false;
 			}
 		}

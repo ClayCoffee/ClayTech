@@ -15,8 +15,8 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class Railways {
 	public Railways() {
-		Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", ClayTechItems.HIGHSPEED_RAILWAY, "notresearch",
-				10, TRecipe.CLAY_CRAFTING_TABLE, Recipes.HIGHSPEED_RAILWAY, false);
+		Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", ClayTechItems.HIGHSPEED_RAILWAY,
+				"notresearch", 10, TRecipe.CLAY_CRAFTING_TABLE, Recipes.HIGHSPEED_RAILWAY, false);
 		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		SlimefunItemStack motor_8 = new SlimefunItemStack("ELECTRIC_MOTOR_8", elem8);

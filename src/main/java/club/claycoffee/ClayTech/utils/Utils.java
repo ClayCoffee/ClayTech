@@ -38,15 +38,17 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
-	public static String readPlayerMetadataString(Player p,String key) {
-		for(MetadataValue mv : p.getMetadata(key)) {
-			if(mv.getOwningPlugin().equals(ClayTech.plugin)) {
+
+	public static String readPlayerMetadataString(Player p, String key) {
+		for (MetadataValue mv : p.getMetadata(key)) {
+			if (mv.getOwningPlugin().equals(ClayTech.plugin)) {
 				return mv.asString();
 			}
 		}
 		return null;
-		
+
 	}
+
 	public static ItemStack setLore(ItemStack is, List<String> content) {
 		ItemMeta im = is.getItemMeta();
 		List<String> Lore = im.getLore();
@@ -119,7 +121,7 @@ public final class Utils {
 		is.addEnchantment(ench, level);
 		return (is);
 	}
-	
+
 	public static ItemStack addEnchantH(ItemStack is, Enchantment ench, int level) {
 		is.addUnsafeEnchantment(ench, level);
 		return (is);
