@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
-public class Recipes {
+public class ClayTechMachineRecipes {
 	static ItemStack newMotor;
 	public final static ItemStack[] BLIND_CORE = { new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
 			new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), ClayTechItems.MAGIC_CLAY,

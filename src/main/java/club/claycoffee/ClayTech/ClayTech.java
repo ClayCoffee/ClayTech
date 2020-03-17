@@ -122,7 +122,12 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			Utils.info(Lang.readGeneralText("registeringError"));
 			e.printStackTrace();
 		}
-		Bukkit.getPluginManager().registerEvents(new ClayTechListener(), this);
+		Bukkit.getPluginManager().registerEvents(new ItemInteractListener(), this);
+		Bukkit.getPluginManager().registerEvents(new ItemUseListener(), this);
+		Bukkit.getPluginManager().registerEvents(new FoodEatListener(), this);
+		Bukkit.getPluginManager().registerEvents(new FoodDropListener(), this);
+		Bukkit.getPluginManager().registerEvents(new WeaponListener(), this);
+		Bukkit.getPluginManager().registerEvents(new RailwayListener(), this);
 	}
 
 	@Override
@@ -150,6 +155,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3,
 				SlimefunItems.WITHER_PROOF_OBSIDIAN };
+		ItemStack[] ClayExperimentTableBasic = {ClayTechItems.CLAY_ALLOY_INGOT,SlimefunItems.ELECTRIC_MOTOR,ClayTechItems.CLAY_ALLOY_INGOT,SlimefunItems.ADVANCED_CIRCUIT_BOARD,ClayTechItems.CLAY_FOOD_CAULDRON,ClayTechItems.BLISTERING_CORE,ClayTechItems.CLAY_ALLOY_INGOT,ClayTechItems.ELEMENT_UNIT,ClayTechItems.CLAY_ALLOY_INGOT};
 
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
@@ -161,6 +167,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.CLAY_ELEMENT_EXTRACTER);
 		SlimefunItemStack electricstonecrusher = new SlimefunItemStack("CLAY_ELECTRIC_STONE_CRUSHER",
 				ClayTechItems.CLAY_ELECTRIC_STONE_CRUSHER);
+		SlimefunItemStack experimenttablebasic = new SlimefunItemStack("CLAY_EXPERIMENT_TABLE_BASIC",
+				ClayTechItems.CLAY_EXPERIMENT_TABLE_NORMAL);
 
 		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
@@ -172,6 +180,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).register(this);
 		new ElementExtracter(ClayTechItems.C_MACHINES, elementextracter, "CLAY_ELEMENT_EXTRACTER",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).register(this);
+		new ExperimentTableNormal(ClayTechItems.C_MACHINES, experimenttablebasic, "CLAY_EXPERIMENT_TABLE_BASIC",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayExperimentTableBasic).register(this);
 
 		// 物品
 		new Clay_basic();

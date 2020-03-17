@@ -5,22 +5,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
-
-import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
-import club.claycoffee.ClayTech.utils.Lang;
-import club.claycoffee.ClayTech.utils.Utils;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
+import club.claycoffee.ClayTech.utils.Lang;
+import club.claycoffee.ClayTech.utils.Utils;
+import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
+import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
+import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
+import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -31,36 +33,28 @@ import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
-import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
-import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 @SuppressWarnings("deprecation")
-public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
+public abstract class AExperimentTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
+	public final static int[] inputslots = new int[] {20,21,22,23,24};
+	public final static int[] outputslots = new int[] { 40 };
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
-	public final static int[] inputslots = new int[] { 20 };
-	public final static int[] outputslots = new int[] { 24 };
-
 	protected final List<MachineRecipe> recipes = new ArrayList<>();
-
-	private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49,
-			50, 51, 52, 53, 13 };
-	private static final int[] BORDER_A = { 10, 11, 12, 19, 21, 28, 29, 30, 14, 15, 16, 23, 25, 32, 33, 34 };
+	private static final int[] BORDER_A = { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25,
+			26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 44, 45, 46, 47, 48, 49, 50, 51, 41, 52, 53 };
 	private static final int[] BORDER_B = { 37, 38, 39, 41, 42, 43 };
-	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE,
+	private static final ItemStack FREE_STATE_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
-	private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
+	private static final ItemStack BORDER_A_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
-	private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE,
+	private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
-	SlimefunItemStack items;
 
-	public AExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType, ItemStack[] recipe) {
+	public AExperimentTable(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
+			ItemStack[] recipe) {
 
 		super(category, item, recipeType, recipe);
 
@@ -82,11 +76,6 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						inv.replaceExistingItem(slot, null);
 					}
 				}
-
-				if (inv.getItemInSlot(40) != null) {
-					b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(40));
-					inv.replaceExistingItem(40, null);
-				}
 			}
 
 			progress.remove(b);
@@ -95,15 +84,6 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 		});
 
 		this.registerDefaultRecipes();
-	}
-
-	public int[] getInputSlots() {
-		return inputslots;
-	}
-
-	@Override
-	public int[] getOutputSlots() {
-		return outputslots;
 	}
 
 	public abstract String getInventoryTitle();
@@ -116,24 +96,33 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
 	public abstract String getMachineIdentifier();
 
-	public abstract void registerDefaultRecipes();
+	@Override
+	public void preRegister() {
+		addItemHandler(new BlockTicker() {
+			@Override
+			public void tick(Block b, SlimefunItem sf, Config data) {
+				AExperimentTable.this.tick(b);
+			}
+
+			@Override
+			public boolean isSynchronized() {
+				return false;
+			}
+		});
+	}
 
 	public void SetupMenu(BlockMenuPreset Preset) {
-		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		for (int eachID : BORDER) {
-			Preset.addItem(eachID, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		}
+		// TODO Change
+		Preset.addItem(4, FREE_STATE_ITEM, ChestMenuUtils.getEmptyClickHandler());
 		for (int eachID : BORDER_A) {
-			Preset.addItem(eachID, BORDERA_ITEM, ChestMenuUtils.getEmptyClickHandler());
+			Preset.addItem(eachID, BORDER_A_ITEM, ChestMenuUtils.getEmptyClickHandler());
 		}
 		for (int eachID : BORDER_B) {
-			Preset.addItem(eachID, BORDERB_ITEM, ChestMenuUtils.getEmptyClickHandler());
+			Preset.addItem(eachID, BORDER_B_ITEM, ChestMenuUtils.getEmptyClickHandler());
 		}
-		Preset.addItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "),
+		Preset.addItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "),
 				ChestMenuUtils.getEmptyClickHandler());
-		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),
-				ChestMenuUtils.getEmptyClickHandler());
+		Preset.addItem(4, FREE_STATE_ITEM, ChestMenuUtils.getEmptyClickHandler());
 		for (int i : getOutputSlots()) {
 			Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 
@@ -151,6 +140,10 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 		}
 	}
 
+	public void registerDefaultRecipes() {
+
+	}
+
 	@Override
 	public EnergyNetComponentType getEnergyComponentType() {
 		return EnergyNetComponentType.CONSUMER;
@@ -158,9 +151,19 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
 	@Override
 	public int getCapacity() {
-		return 0;
+		return 1024;
 	}
 
+	@Override
+	public int[] getInputSlots() {
+		return inputslots;
+	}
+
+	@Override
+	public int[] getOutputSlots() {
+		return outputslots;
+	}
+	
 	public List<ItemStack> getDisplayRecipes() {
 		List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 2);
 
@@ -191,22 +194,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 	public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
 		registerRecipe(new MachineRecipe(seconds, input, output));
 	}
-
-	@Override
-	public void preRegister() {
-		addItemHandler(new BlockTicker() {
-			@Override
-			public void tick(Block b, SlimefunItem sf, Config data) {
-				AExtracter.this.tick(b);
-			}
-
-			@Override
-			public boolean isSynchronized() {
-				return false;
-			}
-		});
-	}
-
+	
 	protected void tick(Block b) {
 		new BukkitRunnable() {
 
@@ -224,7 +212,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
 			if (timeleft > 0) {
 				// 还在处理
-				ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+				ChestMenuUtils.updateProgressbar(inv, 4, timeleft, processing.get(b).getTicks(), getProgressBar());
 
 				if (ChargableBlock.isChargable(b)) {
 					if (ChargableBlock.getCharge(b) < getEnergyConsumption())
@@ -235,12 +223,13 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 					progress.put(b, timeleft - 1);
 			} else {
 				// 处理结束
-				inv.replaceExistingItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "));
+				inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
 
 				for (ItemStack output : processing.get(b).getOutput()) {
 					if (output != null)
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
+
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -248,19 +237,29 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 			// 没有在处理
 			MachineRecipe r = null;
 			Map<Integer, Integer> found = new HashMap<>();
+			int i;
 			for (MachineRecipe recipe : recipes) {
-				ItemStack input = recipe.getInput()[0];
-				if (SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
-					if (input != null) {
-						found.put(inputslots[0], input.getAmount());
+				i = 0;
+				for (ItemStack input : recipe.getInput()) {
+					if (SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[i]), input, true)) {
+						// 如果该位置的物品符合某实验配方的对应位置物品
+						if (input != null) {
+							found.put(inputslots[i], input.getAmount());
+						}
 					}
+					if (inv.getItemInSlot(inputslots[i]) == input && input == null) {
+						found.put(i, 0);
+					}
+					if (i < 4) {
+						i++;
+					} else
+						i = 0;
 				}
 				if (found.size() == recipe.getInput().length) {
 					r = recipe;
 					break;
-				} else {
+				} else
 					found.clear();
-				}
 			}
 
 			if (r != null) {
@@ -269,14 +268,9 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
-					return;
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-					if (entry.getValue() > 0) {
+					if (entry.getValue() > 0)
 						inv.consumeItem(entry.getKey(), entry.getValue());
-						inv.consumeItem(40, 1);
-					}
-
 				}
 
 				processing.put(b, r);
@@ -284,5 +278,4 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 			}
 		}
 	}
-
 }

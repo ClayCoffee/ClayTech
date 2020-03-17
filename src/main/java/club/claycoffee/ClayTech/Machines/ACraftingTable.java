@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -41,7 +43,7 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
 	public final static int[] inputslots = new int[] { 19, 20, 21, 28, 29, 30, 37, 38, 39 };
-	public final static int[] outpotslots = new int[] { 34 };
+	public final static int[] outputslots = new int[] { 34 };
 
 	protected final List<MachineRecipe> recipes = new ArrayList<>();
 
@@ -88,12 +90,12 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	}
 
 	public int[] getInputSlots() {
-		return new int[] { 19, 20, 21, 28, 29, 30, 37, 38, 39 };
+		return inputslots;
 	}
 
 	@Override
 	public int[] getOutputSlots() {
-		return new int[] { 34 };
+		return outputslots;
 	}
 
 	public abstract String getInventoryTitle();
@@ -198,7 +200,14 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
 	}
 
 	protected void tick(Block b) {
-		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+			}
+			
+		}.runTask(ClayTech.plugin);
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

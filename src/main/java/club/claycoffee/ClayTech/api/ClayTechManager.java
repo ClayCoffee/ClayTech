@@ -14,12 +14,19 @@ import club.claycoffee.ClayTech.utils.Utils;
 public class ClayTechManager {
 	/**
 	 *
-	 * @return the ItemStack is ClayTech item or not.
+	 * @return the ItemStack is ClayTech item or not. 这个ItemStack是不是粘土科技物品.
 	 */
-	public static boolean isClayTechItem(ItemStack item) throws IllegalArgumentException, IllegalAccessException {
+	public static boolean isClayTechItem(ItemStack item) {
 		Field[] fields = ClayTechItems.class.getDeclaredFields();
 		for (Field field : fields) {
-			ItemStack is = (ItemStack) field.get(new ClayTechItems());
+			ItemStack is;
+			try {
+				is = (ItemStack) field.get(new ClayTechItems());
+			} catch (IllegalArgumentException e) {
+				return false;
+			} catch (IllegalAccessException e) {
+				return false;
+			}
 			if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
 					&& Utils.getLoreList(is).equals(Utils.getLoreList(item)) && is.getType() == item.getType()) {
 				return true;

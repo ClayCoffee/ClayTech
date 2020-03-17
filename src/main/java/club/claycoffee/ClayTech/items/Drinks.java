@@ -5,7 +5,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -23,13 +23,13 @@ public class Drinks {
 				ClayTechItems.TEA_POWDER, ClayTechItems.LEMON_POWDER, null, ClayTechItems.DRINK_BOTTLE, null };
 
 		Slimefunutils.registerItem(ClayTechItems.C_DRINK, "CLAY_COFFEE", ClayTechItems.CLAY_COFFEE, "notresearch", 10,
-				TRecipe.CLAY_FOOD_CAULDRON, recipea, false);
+				ClayTechRecipeType.CLAY_FOOD_CAULDRON, recipea, false);
 		Slimefunutils.registerItem(ClayTechItems.C_DRINK, "LEMON_POWDER_DRINK", ClayTechItems.LEMON_POWDER_DRINK,
-				"notresearch", 10, TRecipe.CLAY_FOOD_CAULDRON, recipeb, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, recipeb, false);
 		Slimefunutils.registerItem(ClayTechItems.C_DRINK, "TEA_DRINK", ClayTechItems.TEA_DRINK, "notresearch", 10,
-				TRecipe.CLAY_FOOD_CAULDRON, recipec, false);
+				ClayTechRecipeType.CLAY_FOOD_CAULDRON, recipec, false);
 		Slimefunutils.registerItem(ClayTechItems.C_DRINK, "LEMON_TEA_DRINK", ClayTechItems.LEMON_TEA_DRINK,
-				"notresearch", 10, TRecipe.CLAY_FOOD_CAULDRON, reciped, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, reciped, false);
 
 		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKBASIC"), 9909,
 				Lang.readResearchesText("CLAYTECH_DRINK_I"), 50);

@@ -281,6 +281,13 @@ public class ClayTechItems {
 					Utils.replaceList(Lang.readItemLore("CLAY_ELEMENT_EXTRACTER"), "%TIER%",
 							LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE).replaceAll("&", "§")),
 					"%POWER%", LoreBuilder.powerBuffer(1024).replaceAll("&", "§")));
+	public static final ItemStack CLAY_EXPERIMENT_TABLE_NORMAL = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/52baeb4a35da8a85d14bdccf7184f5545088f954da55144f235c2983fdb8e05b"),
+			Lang.readItemText("CLAY_EXPERIMENT_TABLE_NORMAL")),
+			Utils.replaceList(
+					Utils.replaceList(Lang.readItemLore("CLAY_EXPERIMENT_TABLE_NORMAL"), "%TIER%",
+							LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE).replaceAll("&", "§")),
+					"%POWER%", LoreBuilder.powerBuffer(1024).replaceAll("&", "§")));
 	public static ItemStack HONEY_SWEET;
 	static {
 		if (ClayTech.is115) {

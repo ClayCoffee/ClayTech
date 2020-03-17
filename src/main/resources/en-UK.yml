@@ -345,6 +345,14 @@ Researches:
   CLAYTECH_TOOLS_I: "Tools I"
   CLAYTECH_OREINGOTS_I: "Ore Ingots I"
   CLAYTECH_CLAY_ALLOY_ARMORS_I: "Clay Alloy Armors"
+  CLAY_EXPERIMENT_TABLE_NORMAL: "&eExperiment Table(Basic)"
+  CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
+    - ""
+    - "&fCan do some basic experiments or crafting new matter."
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &780 J/s" 
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
@@ -357,4 +365,5 @@ Machines:
   CLAY_FOOD_CAULDRON: "&bElectric Cauldron"
   CLAY_FOOD_CHALKING_MACHINE: "&bFood Chalking Machine"
   CLAY_ELECTRIC_STONE_CRUSHER: "&bElectric Stone Crusher"
+  CLAY_EXPERIMENTTABLE_NORMAL: "&bExperiment Table(Basic)"
   ELEMENT_UNIT_DOWN: "&ePut element units below ↓"

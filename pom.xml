@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>club.claycoffee</groupId>
   <artifactId>ClayTech</artifactId>
-  <version>nightly-20200317</version>
+  <version>1.0.1</version>
    <build>
       <plugins>
           <plugin>

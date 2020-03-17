@@ -315,6 +315,14 @@ Items:
   CLAY_ALLOY_CHESTPLATE: "&9粘土合金胸甲"
   CLAY_ALLOY_LEGGINGS: "&9粘土合金護腿"
   CLAY_ALLOY_BOOTS: "&9粘土合金靴子"
+  CLAY_EXPERIMENT_TABLE_NORMAL: "&e實驗台(基本)"
+  CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
+    - ""
+    - "&f能夠做某些基本實驗,獲得新物質"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &780 J/s" 
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -357,4 +365,5 @@ Machines:
   CLAY_FOOD_CAULDRON: "&b電鍋"
   CLAY_FOOD_CHALKING_MACHINE: "&b食物打粉機"
   CLAY_ELECTRIC_STONE_CRUSHER: "&b電力碎石機"
+  CLAY_EXPERIMENTTABLE_NORMAL: "&b實驗台(基礎)"
   ELEMENT_UNIT_DOWN: "&e在下方放入元素單元 ↓"

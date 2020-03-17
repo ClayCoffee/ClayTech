@@ -6,7 +6,7 @@ import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-public class TRecipe {
+public class ClayTechRecipeType {
 	public static final RecipeType CLAY_CRAFTING_TABLE = new RecipeType(
 			new NamespacedKey(ClayTech.plugin, "CLAY_CRAFTIONG_TABLE"),
 			new SlimefunItemStack("CLAY_CRAFTING_TABLE", ClayTechItems.CLAY_CRAFTING_TABLE), "",

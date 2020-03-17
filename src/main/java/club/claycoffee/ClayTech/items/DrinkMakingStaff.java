@@ -6,8 +6,8 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.Recipes;
-import club.claycoffee.ClayTech.TRecipe;
+import club.claycoffee.ClayTech.ClayTechMachineRecipes;
+import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -39,9 +39,9 @@ public class DrinkMakingStaff {
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_TEA", ClayTechItems.RAW_TEA, "notresearch", 10,
 				RecipeType.NULL, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "TEA_POWDER", ClayTechItems.TEA_POWDER, "notresearch",
-				10, TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.TEA_POWDER, false);
+				10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE, ClayTechMachineRecipes.TEA_POWDER, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "LEMON_POWDER", ClayTechItems.LEMON_POWDER,
-				"notresearch", 10, TRecipe.CLAY_FOOD_CHALKING_MACHINE, Recipes.LEMON_POWDER, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE, ClayTechMachineRecipes.LEMON_POWDER, false);
 
 		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_DRINKMATERIALSBASIC"), 9908,
 				Lang.readResearchesText("CLAYTECH_DRINK_MAKINGS_I"), 50);

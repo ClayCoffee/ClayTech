@@ -7,7 +7,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
@@ -61,7 +63,14 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 
 	@SuppressWarnings("deprecation")
 	protected void tick(Block b) {
-		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+			}
+			
+		}.runTask(ClayTech.plugin);
 		BlockMenu inv = BlockStorage.getInventory(b);
 
 		if (isProcessing(b)) {
