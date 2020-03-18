@@ -323,6 +323,8 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &780 J/s" 
+  SILICON_INGOT: "&b硅锭"
+  
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基础效果装备"
@@ -358,6 +360,7 @@ MachineRecipes:
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"
   CLAY_FOOD_CHALKING_MACHINE: "&a&o在食物打粉机内合成"
   CLAY_ELEMENT_EXTRACTER: "&a&o在元素提取机内提取"
+  CLAY_EXPERIMENT_TABLE_BASIC: "&a&o在实验台(基本)中实验获得"
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&b粘土融合器"

@@ -189,6 +189,8 @@ public class ClayTechItems {
 							Enchantment.PROTECTION_ENVIRONMENTAL, 10),
 					Enchantment.DURABILITY, 10),
 			Enchantment.MENDING, 1);
+	public static final ItemStack SILICON_INGOT = Utils.newItemD(Material.IRON_INGOT,
+			Lang.readItemText("SILICON_INGOT"));
 
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(

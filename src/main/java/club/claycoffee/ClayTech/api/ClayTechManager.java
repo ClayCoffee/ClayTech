@@ -15,6 +15,7 @@ public class ClayTechManager {
 	/**
 	 *
 	 * @return the ItemStack is ClayTech item or not. 这个ItemStack是不是粘土科技物品.
+	 * @param item The item.物品.
 	 */
 	public static boolean isClayTechItem(ItemStack item) {
 		Field[] fields = ClayTechItems.class.getDeclaredFields();

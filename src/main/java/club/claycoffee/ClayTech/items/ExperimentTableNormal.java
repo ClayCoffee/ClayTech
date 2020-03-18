@@ -3,13 +3,15 @@ package club.claycoffee.ClayTech.items;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import club.claycoffee.ClayTech.ClayTechItems;
+import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.Machines.AExperimentTable;
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-public class ExperimentTableNormal extends AExperimentTable{
+public class ExperimentTableNormal extends AExperimentTable {
 
 	public ExperimentTableNormal(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
@@ -40,9 +42,9 @@ public class ExperimentTableNormal extends AExperimentTable{
 	public String getMachineIdentifier() {
 		return null;
 	}
-	
+
 	@Override
 	public void registerDefaultRecipes() {
-		// TODO Recipes.
+		this.registerRecipe(20, ClayTechMachineRecipes.SILICON_INGOT, new ItemStack[] { ClayTechItems.SILICON_INGOT });
 	}
 }

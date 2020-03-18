@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Food;
 
-public class FoodDropListener implements Listener{
+public class FoodDropListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void BlockBreakEvent(BlockBreakEvent e) {
 		if (!e.isCancelled()) {
@@ -35,7 +35,7 @@ public class FoodDropListener implements Listener{
 			}
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerFishEvent(PlayerFishEvent e) {
 		if (e.getState() == State.CAUGHT_FISH) {

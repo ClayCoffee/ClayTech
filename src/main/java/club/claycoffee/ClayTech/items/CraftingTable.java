@@ -73,35 +73,48 @@ public class CraftingTable extends ACraftingTable {
 		this.registerRecipe(20, ClayTechMachineRecipes.POISON_CORE, new ItemStack[] { ClayTechItems.POISON_CORE });
 		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_CONFUSION_CORE,
 				new ItemStack[] { ClayTechItems.ADVANCED_POISON_CORE });
-		this.registerRecipe(20, ClayTechMachineRecipes.CONFUSION_CORE, new ItemStack[] { ClayTechItems.CONFUSION_CORE });
+		this.registerRecipe(20, ClayTechMachineRecipes.CONFUSION_CORE,
+				new ItemStack[] { ClayTechItems.CONFUSION_CORE });
 		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_CONFUSION_CORE,
 				new ItemStack[] { ClayTechItems.ADVANCED_CONFUSION_CORE });
-		this.registerRecipe(20, ClayTechMachineRecipes.BLACK_ROCK_BLOCK, new ItemStack[] { ClayTechItems.BLACK_ROCK_BLOCK });
+		this.registerRecipe(20, ClayTechMachineRecipes.BLACK_ROCK_BLOCK,
+				new ItemStack[] { ClayTechItems.BLACK_ROCK_BLOCK });
 		this.registerRecipe(20, ClayTechMachineRecipes.SLOWNESS_CORE, new ItemStack[] { ClayTechItems.SLOWNESS_CORE });
 		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_SLOWNESS_CORE,
 				new ItemStack[] { ClayTechItems.ADVANCED_SLOWNESS_CORE });
-		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_BLIND_CORE, new ItemStack[] { ClayTechItems.ADVANCED_BLIND_CORE });
+		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_BLIND_CORE,
+				new ItemStack[] { ClayTechItems.ADVANCED_BLIND_CORE });
 		this.registerRecipe(400, ClayTechMachineRecipes.FOUR_BOW, new ItemStack[] { ClayTechItems.FOUR_BOW });
 		this.registerRecipe(100, ClayTechMachineRecipes.POISON_SWORD, new ItemStack[] { ClayTechItems.POISON_SWORD });
-		this.registerRecipe(100, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS, new ItemStack[] { ClayTechItems.ANTI_SLOWNESS_BOOTS });
-		this.registerRecipe(80, ClayTechMachineRecipes.BLISTERING_CORE, new ItemStack[] { ClayTechItems.BLISTERING_CORE });
+		this.registerRecipe(100, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS,
+				new ItemStack[] { ClayTechItems.ANTI_SLOWNESS_BOOTS });
+		this.registerRecipe(80, ClayTechMachineRecipes.BLISTERING_CORE,
+				new ItemStack[] { ClayTechItems.BLISTERING_CORE });
 		this.registerRecipe(30, ClayTechMachineRecipes.ELEMENT_UNIT, new ItemStack[] { ClayTechItems.ELEMENT_UNIT });
-		this.registerRecipe(8, ClayTechMachineRecipes.HIGHSPEED_RAILWAY, new ItemStack[] { ClayTechItems.HIGHSPEED_RAILWAY });
+		this.registerRecipe(8, ClayTechMachineRecipes.HIGHSPEED_RAILWAY,
+				new ItemStack[] { ClayTechItems.HIGHSPEED_RAILWAY });
 		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		this.registerRecipe(8, ClayTechMachineRecipes.ELECTRIC_MOTOR_8, new ItemStack[] { elem8 });
 
-		this.registerRecipe(50, ClayTechMachineRecipes.TNT_EXPLOSION_CREATER, new ItemStack[] { ClayTechItems.TNT_EXPLOSION_CREATER });
+		this.registerRecipe(50, ClayTechMachineRecipes.TNT_EXPLOSION_CREATER,
+				new ItemStack[] { ClayTechItems.TNT_EXPLOSION_CREATER });
 		this.registerRecipe(180, ClayTechMachineRecipes.REINFORCED_ALLOY_PICKAXE,
 				new ItemStack[] { ClayTechItems.REINFORCED_ALLOY_PICKAXE });
-		this.registerRecipe(40, ClayTechMachineRecipes.CLAY_FUSION_INGOT, new ItemStack[] { ClayTechItems.CLAY_FUSION_INGOT });
-		this.registerRecipe(50, ClayTechMachineRecipes.CLAY_ALLOY_INGOT, new ItemStack[] { ClayTechItems.CLAY_ALLOY_INGOT });
-		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_PICKAXE, new ItemStack[] { ClayTechItems.CLAY_ALLOY_PICKAXE });
-		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_HELMET, new ItemStack[] { ClayTechItems.CLAY_ALLOY_HELMET });
+		this.registerRecipe(40, ClayTechMachineRecipes.CLAY_FUSION_INGOT,
+				new ItemStack[] { ClayTechItems.CLAY_FUSION_INGOT });
+		this.registerRecipe(50, ClayTechMachineRecipes.CLAY_ALLOY_INGOT,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_INGOT });
+		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_PICKAXE,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_PICKAXE });
+		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_HELMET,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_HELMET });
 		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_CHESTPLATE,
 				new ItemStack[] { ClayTechItems.CLAY_ALLOY_CHESTPLATE });
-		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_LEGGINGS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_LEGGINGS });
-		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_BOOTS, new ItemStack[] { ClayTechItems.CLAY_ALLOY_BOOTS });
+		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_LEGGINGS,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_LEGGINGS });
+		this.registerRecipe(300, ClayTechMachineRecipes.CLAY_ALLOY_BOOTS,
+				new ItemStack[] { ClayTechItems.CLAY_ALLOY_BOOTS });
 	}
 
 	@Override

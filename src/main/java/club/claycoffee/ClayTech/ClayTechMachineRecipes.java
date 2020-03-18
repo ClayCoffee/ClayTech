@@ -149,4 +149,7 @@ public class ClayTechMachineRecipes {
 	public final static ItemStack[] CLAY_ALLOY_LEGGINGS = Slimefunutils.getArmorsStack(3,
 			ClayTechItems.CLAY_ALLOY_INGOT);
 	public final static ItemStack[] CLAY_ALLOY_BOOTS = Slimefunutils.getArmorsStack(4, ClayTechItems.CLAY_ALLOY_INGOT);
+	public final static ItemStack[] SILICON_INGOT = { ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON,
+			ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON, null, null,
+			null, null };
 }

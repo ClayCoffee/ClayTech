@@ -27,13 +27,13 @@ import club.claycoffee.ClayTech.utils.ClayItem;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
-public class ItemUseListener implements Listener{
+public class ItemUseListener implements Listener {
 	private Player p;
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
-		if(e.hasItem()) {
-			if(e.getItem().hasItemMeta()) {
+		if (e.hasItem()) {
+			if (e.getItem().hasItemMeta()) {
 				if (e.getItem().getItemMeta().getDisplayName()
 						.equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER"))) {
 					Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(), e.getItem()));
@@ -62,7 +62,8 @@ public class ItemUseListener implements Listener{
 								public void run() {
 									e.getPlayer().getWorld().spawnEntity(currentLoc, EntityType.PRIMED_TNT);
 									Block center = currentLoc.add(0, -1, 0).getBlock();
-									center.setMetadata("isExplosionCreater", new FixedMetadataValue(ClayTech.plugin, true));
+									center.setMetadata("isExplosionCreater",
+											new FixedMetadataValue(ClayTech.plugin, true));
 									p = e.getPlayer();
 									return;
 								}
@@ -82,7 +83,7 @@ public class ItemUseListener implements Listener{
 			}
 		}
 	}
-	
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void EntityExplodeEvent(EntityExplodeEvent e) {
 		List<Block> blockL = new ArrayList<Block>();

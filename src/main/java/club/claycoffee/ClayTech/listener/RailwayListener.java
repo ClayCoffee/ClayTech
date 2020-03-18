@@ -12,7 +12,7 @@ import org.bukkit.event.vehicle.VehicleMoveEvent;
 import club.claycoffee.ClayTech.ClayTech;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
-public class RailwayListener implements Listener{
+public class RailwayListener implements Listener {
 	@EventHandler
 	public void VehicleMoveEvent(VehicleMoveEvent e) {
 		if (e.getVehicle() instanceof Minecart) {

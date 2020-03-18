@@ -17,11 +17,14 @@ public class Elements {
 		Slimefunutils.registerItem(ClayTechItems.C_ELEMENTS, "ELEMENT_UNIT", ClayTechItems.ELEMENT_UNIT, "notresearch",
 				10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ELEMENT_UNIT, false);
 		Slimefunutils.registerItem(ClayTechItems.C_ELEMENTS, "ELEMENT_OXYGEN", ClayTechItems.ELEMENT_OXYGEN,
-				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_OXYGEN, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_OXYGEN,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_ELEMENTS, "ELEMENT_CARBON", ClayTechItems.ELEMENT_CARBON,
-				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_CARBON, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_CARBON,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_ELEMENTS, "ELEMENT_SILICON", ClayTechItems.ELEMENT_SILICON,
-				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_SILICON, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_ELEMENT_EXTRACTER, ClayTechMachineRecipes.ELEMENT_SILICON,
+				false);
 
 		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"), 9919,
 				Lang.readResearchesText("CLAYTECH_ELEMENTS_I"), 50);

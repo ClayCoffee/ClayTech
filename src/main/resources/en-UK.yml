@@ -315,6 +315,15 @@ Items:
   CLAY_ALLOY_CHESTPLATE: "&9Clay Alloy Chestplate"
   CLAY_ALLOY_LEGGINGS: "&9Clay Alloy Leggings"
   CLAY_ALLOY_BOOTS: "&9Clay Alloy Boots"
+  CLAY_EXPERIMENT_TABLE_NORMAL: "&eExperiment Table(Basic)"
+  CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
+    - ""
+    - "&fCan do some basic experiments or crafting new matter."
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &780 J/s" 
+  SILICON_INGOT: "&bSilicon Ingot"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -345,19 +354,12 @@ Researches:
   CLAYTECH_TOOLS_I: "Tools I"
   CLAYTECH_OREINGOTS_I: "Ore Ingots I"
   CLAYTECH_CLAY_ALLOY_ARMORS_I: "Clay Alloy Armors"
-  CLAY_EXPERIMENT_TABLE_NORMAL: "&eExperiment Table(Basic)"
-  CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
-    - ""
-    - "&fCan do some basic experiments or crafting new matter."
-    - ""
-    - "%TIER%"
-    - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &780 J/s" 
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
   CLAY_FOOD_CHALKING_MACHINE: "&a&oCraft this in Food Chalking Machine"
   CLAY_ELEMENT_EXTRACTER: "&a&oExtract this in Element Extracter"
+  CLAY_EXPERIMENT_TABLE_BASIC: "&a&oGet this by experimenting in the Experiment Table(Basic)."
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&bClay Fusing Machine"

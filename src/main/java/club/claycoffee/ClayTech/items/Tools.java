@@ -17,7 +17,8 @@ public class Tools {
 				ClayTechItems.REINFORCED_ALLOY_PICKAXE, "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE,
 				ClayTechMachineRecipes.REINFORCED_ALLOY_PICKAXE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_TOOLS, "CLAY_ALLOY_PICKAXE", ClayTechItems.CLAY_ALLOY_PICKAXE,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.CLAY_ALLOY_PICKAXE, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.CLAY_ALLOY_PICKAXE,
+				false);
 
 		Research rs = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_TOOLS_1"), 9922,
 				Lang.readResearchesText("CLAYTECH_TOOLS_I"), 35);

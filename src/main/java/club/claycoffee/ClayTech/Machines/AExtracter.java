@@ -214,7 +214,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 			public void run() {
 				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 			}
-			
+
 		}.runTask(ClayTech.plugin);
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理

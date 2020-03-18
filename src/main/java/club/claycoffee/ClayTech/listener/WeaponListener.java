@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import club.claycoffee.ClayTech.utils.Affect;
 import club.claycoffee.ClayTech.utils.Utils;
 
-public class WeaponListener implements Listener{
+public class WeaponListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void EntityDamageByEntityEvent(EntityDamageByEntityEvent e) {
 		if (e.getDamager().getType() == EntityType.ARROW) {
@@ -20,7 +20,7 @@ public class WeaponListener implements Listener{
 				Player d = (Player) ((Projectile) e.getDamager()).getShooter();
 				Player p = (Player) e.getEntity();
 				Affect.AffectCheck(d, p);
-			} catch (ClassCastException err) {
+			} catch (Exception err) {
 			}
 		} else {
 			if (e.getDamager().getType() == EntityType.PLAYER && e.getEntity().getType() == EntityType.PLAYER) {
@@ -30,18 +30,17 @@ public class WeaponListener implements Listener{
 			}
 		}
 	}
-	
-	@SuppressWarnings("deprecation")
+
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEntityEvent(PlayerInteractEntityEvent e) {
 		if (e.getRightClicked().getType() == EntityType.PLAYER) {
 			Player d = e.getPlayer();
 			try {
-				if (Utils.ExitsInList("§7钩子武器", Utils.getLore(d.getItemInHand()))) {
+				if (Utils.ExitsInList("§7钩子武器", Utils.getLore(d.getInventory().getItemInMainHand()))) {
 					Player p = (Player) e.getRightClicked();
 					Affect.AffectCheck(d, p);
 				}
-			} catch (NullPointerException err) {
+			} catch (Exception err) {
 
 			}
 		}

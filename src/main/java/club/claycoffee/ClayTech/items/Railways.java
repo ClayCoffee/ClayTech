@@ -16,12 +16,13 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 public class Railways {
 	public Railways() {
 		Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", ClayTechItems.HIGHSPEED_RAILWAY,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.HIGHSPEED_RAILWAY, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.HIGHSPEED_RAILWAY,
+				false);
 		ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
 		elem8.setAmount(8);
 		SlimefunItemStack motor_8 = new SlimefunItemStack("ELECTRIC_MOTOR_8", elem8);
-		SlimefunItem motor_8_i = new SlimefunItem(ClayTechItems.C_OTHER, motor_8, ClayTechRecipeType.CLAY_CRAFTING_TABLE,
-				ClayTechMachineRecipes.ELECTRIC_MOTOR_8);
+		SlimefunItem motor_8_i = new SlimefunItem(ClayTechItems.C_OTHER, motor_8,
+				ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ELECTRIC_MOTOR_8);
 		motor_8_i.register(ClayTech.plugin);
 		Research railway_basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_RAILWAY_BASIC"), 9920,
 				Lang.readResearchesText("CLAYTECH_RAILWAY_I"), 40);

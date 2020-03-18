@@ -14,7 +14,8 @@ public class MachineMakingBasic {
 	public MachineMakingBasic() {
 
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "BLISTERING_CORE", ClayTechItems.BLISTERING_CORE,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLISTERING_CORE, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLISTERING_CORE,
+				false);
 
 		Research before_element = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_BEFORE_ELEMENT"), 9917,
 				Lang.readResearchesText("CLAYTECH_BEFORE_ELEMENTS"), 50);

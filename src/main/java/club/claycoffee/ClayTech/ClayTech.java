@@ -155,7 +155,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3,
 				SlimefunItems.WITHER_PROOF_OBSIDIAN };
-		ItemStack[] ClayExperimentTableBasic = {ClayTechItems.CLAY_ALLOY_INGOT,SlimefunItems.ELECTRIC_MOTOR,ClayTechItems.CLAY_ALLOY_INGOT,SlimefunItems.ADVANCED_CIRCUIT_BOARD,ClayTechItems.CLAY_FOOD_CAULDRON,ClayTechItems.BLISTERING_CORE,ClayTechItems.CLAY_ALLOY_INGOT,ClayTechItems.ELEMENT_UNIT,ClayTechItems.CLAY_ALLOY_INGOT};
+		ItemStack[] ClayExperimentTableBasic = { ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ELECTRIC_MOTOR,
+				ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ADVANCED_CIRCUIT_BOARD, ClayTechItems.CLAY_FOOD_CAULDRON,
+				ClayTechItems.BLISTERING_CORE, ClayTechItems.CLAY_ALLOY_INGOT, ClayTechItems.ELEMENT_UNIT,
+				ClayTechItems.CLAY_ALLOY_INGOT };
 
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",

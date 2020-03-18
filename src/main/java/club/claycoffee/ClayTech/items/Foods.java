@@ -17,7 +17,8 @@ public class Foods {
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "CHICKEN_FOOT", ClayTechItems.CHICKEN_FOOT, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.CHICKEN_FOOT, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "SPICY_CHICKEN_BURGER", ClayTechItems.SPICY_CHICKEN_BURGER,
-				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.SPICY_CHICKEN_BURGER, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.SPICY_CHICKEN_BURGER,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "BABA_BURGER", ClayTechItems.BABA_BURGER, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.BABA_BURGER, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "CHOCOLATE", ClayTechItems.CHOCOLATE, "notresearch", 10,
@@ -27,7 +28,8 @@ public class Foods {
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "SNAIL_FOOD", ClayTechItems.SNAIL_FOOD, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.SNAIL_FOOD, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "COOKED_SWEET_POTATO", ClayTechItems.COOKED_SWEET_POTATO,
-				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.COOKED_SWEET_POTATO, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.COOKED_SWEET_POTATO,
+				false);
 
 		Research foodI = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_FOODBASIC"), 9911,
 				Lang.readResearchesText("CLAYTECH_FOOD_I"), 50);

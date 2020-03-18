@@ -38,13 +38,13 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
 @SuppressWarnings("deprecation")
 public abstract class AExperimentTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
-	public final static int[] inputslots = new int[] {20,21,22,23,24};
+	public final static int[] inputslots = new int[] { 20, 21, 22, 23, 24 };
 	public final static int[] outputslots = new int[] { 40 };
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
 	protected final List<MachineRecipe> recipes = new ArrayList<>();
-	private static final int[] BORDER_A = { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25,
-			26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 44, 45, 46, 47, 48, 49, 50, 51, 41, 52, 53 };
+	private static final int[] BORDER_A = { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 25, 26,
+			27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 44, 45, 46, 47, 48, 49, 50, 51, 41, 52, 53 };
 	private static final int[] BORDER_B = { 37, 38, 39, 41, 42, 43 };
 	private static final ItemStack FREE_STATE_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
@@ -163,7 +163,7 @@ public abstract class AExperimentTable extends SlimefunItem implements Inventory
 	public int[] getOutputSlots() {
 		return outputslots;
 	}
-	
+
 	public List<ItemStack> getDisplayRecipes() {
 		List<ItemStack> displayRecipes = new ArrayList<>(recipes.size() * 2);
 
@@ -194,7 +194,7 @@ public abstract class AExperimentTable extends SlimefunItem implements Inventory
 	public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
 		registerRecipe(new MachineRecipe(seconds, input, output));
 	}
-	
+
 	protected void tick(Block b) {
 		new BukkitRunnable() {
 
@@ -202,7 +202,7 @@ public abstract class AExperimentTable extends SlimefunItem implements Inventory
 			public void run() {
 				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 			}
-			
+
 		}.runTask(ClayTech.plugin);
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
@@ -255,7 +255,7 @@ public abstract class AExperimentTable extends SlimefunItem implements Inventory
 					} else
 						i = 0;
 				}
-				if (found.size() == recipe.getInput().length) {
+				if (found.size() == 5) {
 					r = recipe;
 					break;
 				} else

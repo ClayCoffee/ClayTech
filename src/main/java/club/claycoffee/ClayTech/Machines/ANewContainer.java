@@ -69,7 +69,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 			public void run() {
 				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
 			}
-			
+
 		}.runTask(ClayTech.plugin);
 		BlockMenu inv = BlockStorage.getInventory(b);
 

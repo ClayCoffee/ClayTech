@@ -16,7 +16,8 @@ public class Armors {
 	public Armors() {
 
 		Slimefunutils.registerItem(ClayTechItems.C_ARMORS, "ANTI_SLOWNESS_BOOTS", ClayTechItems.ANTI_SLOWNESS_BOOTS,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS,
+				false);
 
 		Research basic = new Research(new NamespacedKey(ClayTech.plugin, "CLAYTECH_ARMORS"), 9908,
 				Lang.readResearchesText("CLAYTECH_ARMORS_I"), 50);

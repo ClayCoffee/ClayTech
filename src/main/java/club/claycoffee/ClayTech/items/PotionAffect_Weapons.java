@@ -24,7 +24,8 @@ public class PotionAffect_Weapons {
 				ClayTechItems.ADVANCED_POISON_CORE, "notresearch", 10, RecipeType.ANCIENT_ALTAR,
 				ClayTechMachineRecipes.ADVANCED_POISON_CORE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "CONFUSION_CORE", ClayTechItems.CONFUSION_CORE,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.CONFUSION_CORE, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.CONFUSION_CORE,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_CONFUSION_CORE",
 				ClayTechItems.ADVANCED_CONFUSION_CORE, "notresearch", 10, RecipeType.ANCIENT_ALTAR,
 				ClayTechMachineRecipes.ADVANCED_CONFUSION_CORE, false);
@@ -37,7 +38,8 @@ public class PotionAffect_Weapons {
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "POISON_EYE", ClayTechItems.POISON_EYE, "notresearch", 10,
 				ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.POISON_EYE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "BLACK_ROCK_BLOCK", ClayTechItems.BLACK_ROCK_BLOCK,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLACK_ROCK_BLOCK, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLACK_ROCK_BLOCK,
+				false);
 
 		Slimefunutils.registerItem(ClayTechItems.C_WEAPONS, "BLIND_SWORD", ClayTechItems.BLIND_SWORD, "notresearch", 10,
 				ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLIND_SWORD, false);

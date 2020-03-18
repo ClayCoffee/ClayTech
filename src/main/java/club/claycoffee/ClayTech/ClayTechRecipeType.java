@@ -23,4 +23,8 @@ public class ClayTechRecipeType {
 			new NamespacedKey(ClayTech.plugin, "CLAY_ELEMENT_EXTRACTER"),
 			new SlimefunItemStack("CLAY_ELEMENT_EXTRACTER", ClayTechItems.CLAY_ELEMENT_EXTRACTER), "",
 			Lang.readMachineRecipesText("CLAY_ELEMENT_EXTRACTER"));
+	public static final RecipeType CLAY_EXPERIMENT_TABLE_BASIC = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "CLAY_EXPERIMENT_TABLE_BASIC"),
+			new SlimefunItemStack("CLAY_EXPERIMENT_TABLE_BASIC", ClayTechItems.CLAY_EXPERIMENT_TABLE_NORMAL), "",
+			Lang.readMachineRecipesText("CLAY_EXPERIMENT_TABLE_BASIC"));
 }

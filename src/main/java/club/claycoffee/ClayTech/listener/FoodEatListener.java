@@ -12,7 +12,7 @@ import org.bukkit.potion.PotionEffectType;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Food;
 
-public class FoodEatListener implements Listener{
+public class FoodEatListener implements Listener {
 	@SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
