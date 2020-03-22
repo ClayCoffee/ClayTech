@@ -1,8 +1,10 @@
 package club.claycoffee.ClayTech.listeners;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,6 +21,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
+import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.PlanetUtils;
 import club.claycoffee.ClayTech.utils.RocketUtils;
@@ -79,18 +82,6 @@ public class RocketLauncherListener implements Listener {
 	public void InventoryMoveItemEvent(InventoryClickEvent e) {
 		if (e.getWhoClicked() instanceof Player) {
 			Player p = (Player) e.getWhoClicked();
-			if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("CLAY_ROCKET_FUEL_INJECTOR"))
-					&& e.getSlot() == 20) {
-				if (ClayTech.RunningInjectors.get(e.getInventory()) != null) {
-					e.setCancelled(true);
-				}
-			}
-			if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("CLAY_SPACESUIT_OXYGEN_INJECTOR"))
-					&& e.getSlot() == 22) {
-				if (ClayTech.RunningInjectorsOxygen.get(e.getInventory()) != null) {
-					e.setCancelled(true);
-				}
-			}
 			if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("ROCKET_LAUNCHER"))) {
 				if (Utils.ExitsInList(e.getSlot(), BORDER) || Utils.ExitsInList(e.getSlot(), BORDER_2)) {
 					e.setCancelled(true);
@@ -117,6 +108,7 @@ public class RocketLauncherListener implements Listener {
 										new BukkitRunnable() {
 											int time = 0;
 
+											@SuppressWarnings("deprecation")
 											@Override
 											public void run() {
 												time++;
@@ -130,10 +122,21 @@ public class RocketLauncherListener implements Listener {
 														p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
 														p.setMetadata("inrocket",
 																new FixedMetadataValue(ClayTech.getInstance(), "true"));
-														p.teleport(
-																PlanetUtils.findSafeLocation(
-																		Bukkit.getWorld(target.planetName)),
-																TeleportCause.PLUGIN);
+														DataYML planetsData = ClayTech.getPlanetDataYML();
+														FileConfiguration pd = planetsData.getCustomConfig();
+														if(pd.getBoolean(p.getName()+"."+target.planetName+".base")) {
+															int X = pd.getInt(p.getName()+"."+target.planetName+".baseX");
+															int Y = pd.getInt(p.getName()+"."+target.planetName+".baseY");
+															int Z = pd.getInt(p.getName()+"."+target.planetName+".baseZ");
+															p.teleport(new Location(Bukkit.getWorld(target.planetName),X,Y,Z),TeleportCause.PLUGIN);
+															p.sendTitle(Lang.readGeneralText("TeleportedToBase"), Lang.readGeneralText("TeleportedToBase_Sub"));
+														}
+														else {
+															p.teleport(
+																	PlanetUtils.findSafeLocation(
+																			Bukkit.getWorld(target.planetName)),
+																	TeleportCause.PLUGIN);
+														}
 														p.setMetadata("inrocket", new FixedMetadataValue(
 																ClayTech.getInstance(), "false"));
 														RocketUtils.setFuel(thandItem, RocketUtils.getFuel(thandItem)

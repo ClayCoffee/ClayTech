@@ -52,7 +52,7 @@ public class RocketUtils {
 	}
 
 	public static int getOxygen(ItemStack im) {
-		if (ClayTechManager.isSpaceSuit(im)) {
+		if (ClayTechManager.isSpaceSuit(im) || ClayTechManager.isOxygenDistributer(im)) {
 			for (String str : Utils.getLore(im)) {
 				if (str.startsWith(Lang.readGeneralText("Oxygen"))) {
 					str = StrUtils.getRightStr(str, "§6");
@@ -67,7 +67,7 @@ public class RocketUtils {
 	}
 
 	public static void setOxygen(ItemStack im, int oxygen) {
-		if (ClayTechManager.isSpaceSuit(im)) {
+		if (ClayTechManager.isSpaceSuit(im) || ClayTechManager.isOxygenDistributer(im)) {
 			int i = 0;
 			List<String> lore = Utils.getLoreList(im);
 			for (String str : lore) {
@@ -82,7 +82,7 @@ public class RocketUtils {
 	}
 
 	public static int getMaxOxygen(ItemStack im) {
-		if (ClayTechManager.isSpaceSuit(im)) {
+		if (ClayTechManager.isSpaceSuit(im) || ClayTechManager.isOxygenDistributer(im)) {
 			for (String str : Utils.getLore(im)) {
 				if (str.startsWith(Lang.readGeneralText("Oxygen"))) {
 					str = StrUtils.getRightStr(str, "§9/§a");

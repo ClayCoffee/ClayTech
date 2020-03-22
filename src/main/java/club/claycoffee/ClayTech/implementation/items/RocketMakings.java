@@ -46,7 +46,7 @@ public class RocketMakings {
 				ClayTechMachineRecipes.MIXED_ROCKET_FUEL, false);
 
 		Research rk1 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_ROCKETS_1"), 9926,
-				Lang.readResearchesText("CLAYTECH_ROCKETS_I"), 105);
+				Lang.readResearchesText("CLAYTECH_ROCKETS_I"), 85);
 		rk1.addItems(SlimefunItem.getByItem(ClayTechItems.MOTOR_CORE),
 				SlimefunItem.getByItem(ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN),
 				SlimefunItem.getByItem(ClayTechItems.ROCKET_ENGINE_SHELL),
@@ -95,6 +95,24 @@ public class RocketMakings {
 				SlimefunItem.getByItem(ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR),
 				SlimefunItem.getByItem(ClayTechItems.CLAY_SPACESUIT_OXYGEN_INJECTOR));
 		ms1.register();
+		
+		
+		Slimefunutils.registerItem(ClayTechItems.C_OTHER, "PLANET_BASE_SIGNER", ClayTechItems.PLANET_BASE_SIGNER,
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.PLANET_BASE_SIGNER,
+				false);
+		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "TUBE", ClayTechItems.TUBE,
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.TUBE,
+				false);
+		Slimefunutils.registerItem(ClayTechItems.C_OTHER, "OXYGEN_DISTRIBUTER", ClayTechItems.OXYGEN_DISTRIBUTER,
+				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.OXYGEN_DISTRIBUTER,
+				false);
+		
+		Research bs1 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_BASE_1"), 9930,
+				Lang.readResearchesText("CLAYTECH_BASE_I"), 50);
+		bs1.addItems(SlimefunItem.getByItem(ClayTechItems.PLANET_BASE_SIGNER),
+				SlimefunItem.getByItem(ClayTechItems.TUBE),
+				SlimefunItem.getByItem(ClayTechItems.OXYGEN_DISTRIBUTER));
+		bs1.register();
 
 	}
 }

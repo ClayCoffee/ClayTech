@@ -1,6 +1,7 @@
 package club.claycoffee.ClayTech.implementation.items;
 
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
@@ -8,14 +9,18 @@ import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
+import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 public class Rockets {
 	public Rockets() {
 		// 平台
+		ItemStack[] rocketlauncher = {ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,SlimefunItems.PROGRAMMABLE_ANDROID,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT};
+		
 		Slimefunutils.registerItem(ClayTechItems.C_MACHINES, "ROCKET_LAUNCHER", ClayTechItems.ROCKET_LAUNCHER,
-				"notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS,
+				"notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, rocketlauncher,
 				false);
 
 		Research ms2 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_UNIVERSE_MACHINE_2"), 9929,

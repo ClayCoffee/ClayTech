@@ -74,6 +74,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static Map<Inventory, Block> RunningLaunchersG = new HashMap<Inventory, Block>();
 	public static Map<Inventory, Block> RunningInjectors = new HashMap<Inventory, Block>();
 	public static Map<Inventory, Block> RunningInjectorsOxygen = new HashMap<Inventory, Block>();
+	public static DataYML planetDataYML;
 
 	public static ClayTech getInstance() {
 		return plugin;
@@ -110,12 +111,16 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static DataYML getPlanetYML() {
 		return planetYML;
 	}
+	
+	public static DataYML getPlanetDataYML() {
+		return planetDataYML;
+	}
 
 	@SuppressWarnings({ "unused", "static-access" })
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9929
+		// 当前研究ID: 9930
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -230,6 +235,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		planetYML = new DataYML("planets.yml");
 		planetYML.saveCDefaultConfig();
 		planetYML.reloadCustomConfig();
+		planetDataYML = new DataYML("planetsdata.yml");
+		planetDataYML.saveCDefaultConfig();
+		planetDataYML.reloadCustomConfig();
 		Utils.info(Lang.readGeneralText("startTip"));
 		Config cfg = new Config(this);
 		Utils.info(Lang.readGeneralText("registeringItems"));
@@ -249,7 +257,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new RailwayListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlanetListener(), this);
 		Bukkit.getPluginManager().registerEvents(new RocketLauncherListener(), this);
-		Bukkit.getPluginManager().registerEvents(new Debug(), this);
+		Bukkit.getPluginManager().registerEvents(new PlanetBaseListener(), this);
+//		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 	}
 
 	@Override

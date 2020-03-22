@@ -57,6 +57,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 	private static final List<Material> LEAVES = Arrays
 			.asList(new Material[] { Material.OAK_LEAVES, Material.ACACIA_LEAVES, Material.BIRCH_LEAVES,
 					Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.SPRUCE_LEAVES });
+	private static ItemStack item;
 
 	public SpaceSuitOxygenInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
@@ -228,7 +229,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 				// 处理结束
 				inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
 
-				ItemStack spacesuit = inv.getItemInSlot(22);
+				ItemStack spacesuit = item;
 				if(RocketUtils.getOxygen(spacesuit) + 5 > RocketUtils.getMaxOxygen(spacesuit)) {
 					RocketUtils.setOxygen(spacesuit, RocketUtils.getMaxOxygen(spacesuit));
 				}
@@ -244,7 +245,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 			// 没有在处理
 			ItemStack spacesuit = inv.getItemInSlot(22);
 			if (spacesuit != null) {
-				if (ClayTechManager.isSpaceSuit(spacesuit) && spacesuit.getAmount() == 1) {
+				if (ClayTechManager.isSpaceSuit(spacesuit) && spacesuit.getAmount() == 1 || ClayTechManager.isOxygenDistributer(spacesuit) && spacesuit.getAmount() == 1) {
 					if (ChargableBlock.isChargable(b)) {
 						if (ChargableBlock.getCharge(b) < getEnergyConsumption())
 							return;
@@ -254,10 +255,14 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 						return;
 					if (RocketUtils.getOxygen(spacesuit) >= RocketUtils.getMaxOxygen(spacesuit))
 						return;
-
+					
+					
 					MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[] { spacesuit },
 							new ItemStack[] {});
+					item = spacesuit.clone();
+					inv.consumeItem(22,1);
 					ClayTech.RunningInjectorsOxygen.put(inv.toInventory(), b);
+					inv.replaceExistingItem(22, new ItemStack(Material.BEDROCK));
 					processing.put(b, oxygeninjectrecipe);
 					progress.put(b, oxygeninjectrecipe.getTicks());
 				}

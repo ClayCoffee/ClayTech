@@ -147,6 +147,13 @@ public class CraftingTable extends ACraftingTable {
 				new ItemStack[] { ClayTechItems.SPACESUIT_LEGGINGS });
 		this.registerRecipe(300, ClayTechMachineRecipes.SPACESUIT_BOOTS,
 				new ItemStack[] { ClayTechItems.SPACESUIT_BOOTS });
+
+		this.registerRecipe(60, ClayTechMachineRecipes.PLANET_BASE_SIGNER,
+				new ItemStack[] { ClayTechItems.PLANET_BASE_SIGNER });
+		this.registerRecipe(20, ClayTechMachineRecipes.TUBE,
+				new ItemStack[] { ClayTechItems.TUBE });
+		this.registerRecipe(60, ClayTechMachineRecipes.OXYGEN_DISTRIBUTER,
+				new ItemStack[] { ClayTechItems.OXYGEN_DISTRIBUTER });
 	}
 
 	@Override

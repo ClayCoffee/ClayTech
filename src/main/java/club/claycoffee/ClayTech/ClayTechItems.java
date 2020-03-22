@@ -229,6 +229,11 @@ public class ClayTechItems {
 			Utils.newItemD(Material.GRANITE, Lang.readItemText("KREEP_ROCK")), Lang.readItemLore("KREEP_ROCK"));
 	public static final ItemStack KREEP_INGOT = Utils.setLore(
 			Utils.newItemD(Material.IRON_INGOT, Lang.readItemText("KREEP_INGOT")), Lang.readItemLore("KREEP_INGOT"));
+	public static final ItemStack PLANET_BASE_SIGNER = Utils.setLore(
+			Utils.newItemD(Material.OBSIDIAN, Lang.readItemText("PLANET_BASE_SIGNER")), Lang.readItemLore("PLANET_BASE_SIGNER"));
+	public static final ItemStack TUBE = Utils.newItemD(Material.BONE, Lang.readItemText("TUBE"));
+	public static final ItemStack OXYGEN_DISTRIBUTER = Utils.setLore(
+			Utils.newItemD(Material.FIREWORK_STAR, Lang.readItemText("OXYGEN_DISTRIBUTER")), Lang.readItemLore("OXYGEN_DISTRIBUTER"));
 
 	public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
 			SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),

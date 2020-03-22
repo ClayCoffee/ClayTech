@@ -40,6 +40,15 @@ General:
   SamePlanet: "&cYou've already in this planet!"
   StakingRockets: "&cYou can't stack rockets!"
   CantUseOtherTeleportInUniverse: "&cSorry, you can't use teleport in space or teleport to space."
+  BaseCompleted: "&3Base setuped!"
+  BaseExists: "&cThe base already exists.Please destroy it."
+  BaseDestroyed: "&6Destroy Completed!"
+  TeleportedToBase: "&aTeleported to the base"
+  TeleportedToBase_Sub: "&aWelcome to the base"
+  OxygenDistributer: "&9Oxygen Distributer"
+  SPACESUIT_NOT_OK: "&cYour spacesuits aren't intact!"
+  SPACESUIT_4: "&cYou need 4 oxygen level in your oxygen distributer."
+  SPACESUIT_DISTRIBUTER_OK: "&3Done!"
   Yes_1: "Yes"
   No_1: "No"
 Categories:
@@ -461,6 +470,16 @@ Items:
   KREEP_INGOT_LORE:
     - "&3Rare on the moon"
     - "&3Can upgrade rockets"
+  PLANET_BASE_SIGNER: "&9Planet Base Signer"
+  PLANET_BASE_SIGNER_LORE:
+    - "&3Can sign your current location."
+    - "&3When you teleport to the planet you signed"
+    - "&3It will teleport to here"
+  TUBE: "&9Tube"
+  OXYGEN_DISTRIBUTER: "&9Oxygen Distributer(Tier I)"
+  OXYGEN_DISTRIBUTER_LORE:
+    - "&3When you use this item,It will share its oxygen level to your spacesuits averagely."
+    - "&bCurrent Oxygen Level: &60&9/&a120"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -496,6 +515,7 @@ Researches:
   CLAYTECH_SPACESUIT_I: "Spacesuit (Tier I)"
   CLAYTECH_UNIVERSE_MACHINE_I: "Machines leading to the universe I"
   CLAYTECH_UNIVERSE_MACHINE_II: "Machines leading to the universe II"
+  CLAYTECH_BASE_I: "Base I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"

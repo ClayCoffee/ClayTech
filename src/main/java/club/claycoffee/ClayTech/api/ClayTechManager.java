@@ -40,8 +40,8 @@ public class ClayTechManager {
 				return true;
 			} else if (isSpaceSuit(is)) {
 				return true;
-			} else {
-				return false;
+			} else if (isOxygenDistributer(is)){
+				return true;
 			}
 		}
 		return false;
@@ -65,6 +65,19 @@ public class ClayTechManager {
 			return false;
 		if (item.hasItemMeta()) {
 			if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("SpaceSuit"))) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean isOxygenDistributer(ItemStack item) {
+		if (item == null)
+			return false;
+		if (item.hasItemMeta()) {
+			if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("OxygenDistributer"))) {
 				return true;
 			} else {
 				return false;

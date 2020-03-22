@@ -40,6 +40,15 @@ General:
   SamePlanet: "&c您已經在這顆星球了!"
   StakingRockets: "&c您不能堆疊火箭!"
   CantUseOtherTeleportInUniverse: "&c對不起.您不能在外太空使用傳送或傳送到外太空!"
+  BaseCompleted: "&3基地設置完畢!"
+  BaseExists: "&c您在該星球已經有壹個基地了!請先破壞後再試。"
+  BaseDestroyed: "&6基地摧毀成功!"
+  TeleportedToBase: "&a已傳送到基地"
+  TeleportedToBase_Sub: "&a基地歡迎您"
+  OxygenDistributer: "&9氧氣分配器"
+  SPACESUIT_NOT_OK: "&c您的宇航服沒有穿齊!"
+  SPACESUIT_4: "&c分配器內至少要求有4點氧氣!"
+  SPACESUIT_DISTRIBUTER_OK: "&3分配成功!"
   Yes_1: "是"
   No_1: "否"
 Categories:
@@ -473,6 +482,14 @@ Items:
   KREEP_INGOT_LORE:
     - "&3一種在月球上極其稀有的巖石冶煉成的錠"
     - "&3可以升級火箭"
+  PLANET_BASE_SIGNER: "&9星球基地標記器"
+  PLANET_BASE_SIGNER_LORE:
+    - "&3放置之後當妳坐火箭到這個星球的時候就能直接傳送到這個位置"
+  TUBE: "&9吸管"
+  OXYGEN_DISTRIBUTER: "&9氧氣分配器(壹階)"
+  OXYGEN_DISTRIBUTER_LORE:
+    - "&3當妳右鍵該物品的時候會把儲存在該物品中的氧氣平均分配給宇航服"
+    - "&b當前氧氣: &60&9/&a120"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -508,6 +525,7 @@ Researches:
   CLAYTECH_SPACESUIT_I: "一級宇航服"
   CLAYTECH_UNIVERSE_MACHINE_I: "通向宇宙的機器 I"
   CLAYTECH_UNIVERSE_MACHINE_II: "通向宇宙的機器 II"
+  CLAYTECH_BASE_I: "基地 I"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"

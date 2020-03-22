@@ -55,6 +55,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 			Lang.readMachinesText("SPLIT_LINE"));
 	private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
+	private static ItemStack item;
 
 	public RocketFuelInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
@@ -222,13 +223,14 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 				inv.replaceExistingItem(22,
 						Utils.addLore(Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, "§9§l←"), " "));
 
-				ItemStack rocket = inv.getItemInSlot(20);
+				ItemStack rocket = item;
 				if(RocketUtils.getFuel(rocket) + 5 > RocketUtils.getMaxFuel(rocket)) {
 					RocketUtils.setFuel(rocket, RocketUtils.getMaxFuel(rocket));
 				}
 				else {
 					RocketUtils.setFuel(rocket, RocketUtils.getFuel(rocket) + 5);
 				}
+				inv.replaceExistingItem(20, rocket);
 				ClayTech.RunningInjectors.remove(inv.toInventory());
 				progress.remove(b);
 				processing.remove(b);
@@ -253,7 +255,10 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 
 					MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[] { rocket, fuel },
 							new ItemStack[] {});
+					item = rocket.clone();
+					inv.consumeItem(20, 1);
 					ClayTech.RunningInjectors.put(inv.toInventory(), b);
+					inv.replaceExistingItem(20, new ItemStack(Material.BEDROCK));
 					processing.put(b, fuelinjectrecipe);
 					progress.put(b, fuelinjectrecipe.getTicks());
 				}
