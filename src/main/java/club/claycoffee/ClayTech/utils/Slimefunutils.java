@@ -18,11 +18,12 @@ public class Slimefunutils {
 			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch) {
 		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
 		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
-		item.register(ClayTech.plugin);
+		item.register(ClayTech.getInstance());
 		if (registerResearch) {
 			researchId++;
 			Slimefun.registerResearch(
-					new Research(new NamespacedKey(ClayTech.plugin, name), researchId, ResearchName, cost), ItemStack);
+					new Research(new NamespacedKey(ClayTech.getInstance(), name), researchId, ResearchName, cost),
+					ItemStack);
 		}
 	}
 
@@ -31,20 +32,20 @@ public class Slimefunutils {
 
 		SlimefunItemStack HELMET = new SlimefunItemStack(nameprefix + "_HELMET", ItemStack[0]);
 		SlimefunItem HELMET_I = new SlimefunItem(category, HELMET, Recipetype, getArmorsStack(1, MaterialStack));
-		HELMET_I.register(ClayTech.plugin);
+		HELMET_I.register(ClayTech.getInstance());
 		SlimefunItemStack CHESTPLATE = new SlimefunItemStack(nameprefix + "_CHESTPLATE", ItemStack[1]);
 		SlimefunItem CHESTPLATE_I = new SlimefunItem(category, CHESTPLATE, Recipetype,
 				getArmorsStack(2, MaterialStack));
-		CHESTPLATE_I.register(ClayTech.plugin);
+		CHESTPLATE_I.register(ClayTech.getInstance());
 		SlimefunItemStack LEGGINGS = new SlimefunItemStack(nameprefix + "_LEGGINGS", ItemStack[2]);
 		SlimefunItem LEGGINGS_I = new SlimefunItem(category, LEGGINGS, Recipetype, getArmorsStack(3, MaterialStack));
-		LEGGINGS_I.register(ClayTech.plugin);
+		LEGGINGS_I.register(ClayTech.getInstance());
 		SlimefunItemStack BOOTS = new SlimefunItemStack(nameprefix + "_BOOTS", ItemStack[3]);
 		SlimefunItem BOOTS_I = new SlimefunItem(category, BOOTS, Recipetype, getArmorsStack(4, MaterialStack));
-		BOOTS_I.register(ClayTech.plugin);
+		BOOTS_I.register(ClayTech.getInstance());
 		if (registerResearch) {
 			researchId++;
-			Slimefun.registerResearch(new Research(new NamespacedKey(ClayTech.plugin, nameprefix + "_ARMORS"),
+			Slimefun.registerResearch(new Research(new NamespacedKey(ClayTech.getInstance(), nameprefix + "_ARMORS"),
 					researchId, ResearchName, cost), ItemStack);
 		}
 	}

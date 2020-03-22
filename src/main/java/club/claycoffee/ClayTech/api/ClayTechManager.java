@@ -6,6 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.ClayItem;
+import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
 /**
@@ -35,10 +36,41 @@ public class ClayTechManager {
 					&& !Utils.getLoreList(is).equals(Utils.getLoreList(item)) && ClayItem.hasDurability(is)
 					&& is.getType() == item.getType()) {
 				return true;
+			} else if (isRocket(is)) {
+				return true;
+			} else if (isSpaceSuit(is)) {
+				return true;
 			} else {
 				return false;
 			}
 		}
 		return false;
 	}
+
+	public static boolean isRocket(ItemStack item) {
+		if (item == null)
+			return false;
+		if (item.hasItemMeta()) {
+			if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("Rocket"))) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+
+	public static boolean isSpaceSuit(ItemStack item) {
+		if (item == null)
+			return false;
+		if (item.hasItemMeta()) {
+			if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("SpaceSuit"))) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+
 }

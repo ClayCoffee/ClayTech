@@ -10,12 +10,14 @@ import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
 
 import club.claycoffee.ClayTech.ClayTech;
@@ -41,7 +43,7 @@ public final class Utils {
 
 	public static String readPlayerMetadataString(Player p, String key) {
 		for (MetadataValue mv : p.getMetadata(key)) {
-			if (mv.getOwningPlugin().equals(ClayTech.plugin)) {
+			if (mv.getOwningPlugin().equals(ClayTech.getInstance())) {
 				return mv.asString();
 			}
 		}
@@ -238,10 +240,40 @@ public final class Utils {
 		return (new ItemStack(material, 1));
 	}
 
+	public static String getMetadata(Block b, String path) {
+		List<MetadataValue> md = b.getMetadata(path);
+		if (md.size() > 0) {
+			for (MetadataValue each : md) {
+				if (each.getOwningPlugin().equals(ClayTech.getInstance())) {
+					return each.asString();
+				}
+			}
+		} else {
+			return null;
+		}
+		return null;
+	}
+
+	public static void setMetadata(Block b, String path, String info) {
+		b.setMetadata(path, new FixedMetadataValue(ClayTech.getInstance(), info));
+	}
+
 	public static boolean ExitsInList(String text, String[] list) {
 		try {
 			for (String str : list) {
 				if (str.equals(text))
+					return true;
+			}
+		} catch (NullPointerException e) {
+			return false;
+		}
+		return false;
+	}
+
+	public static boolean ExitsInList(int text, int[] list) {
+		try {
+			for (int i : list) {
+				if (i == text)
 					return true;
 			}
 		} catch (NullPointerException e) {

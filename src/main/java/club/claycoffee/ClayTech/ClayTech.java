@@ -1,21 +1,57 @@
 package club.claycoffee.ClayTech;
 
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import club.claycoffee.ClayTech.listener.*;
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import club.claycoffee.ClayTech.items.*;
+import club.claycoffee.ClayTech.api.Planet;
+import club.claycoffee.ClayTech.implementation.Planets.Earth;
+import club.claycoffee.ClayTech.implementation.Planets.Moon;
+import club.claycoffee.ClayTech.implementation.items.Armors;
+import club.claycoffee.ClayTech.implementation.items.ClayFuel;
+import club.claycoffee.ClayTech.implementation.items.Clay_basic;
+import club.claycoffee.ClayTech.implementation.items.DrinkMakingStaff;
+import club.claycoffee.ClayTech.implementation.items.Drinks;
+import club.claycoffee.ClayTech.implementation.items.EffectItems;
+import club.claycoffee.ClayTech.implementation.items.Elements;
+import club.claycoffee.ClayTech.implementation.items.FoodMakingStaff;
+import club.claycoffee.ClayTech.implementation.items.Foods;
+import club.claycoffee.ClayTech.implementation.items.Golden_things;
+import club.claycoffee.ClayTech.implementation.items.Ingots;
+import club.claycoffee.ClayTech.implementation.items.MachineMakingBasic;
+import club.claycoffee.ClayTech.implementation.items.PotionAffect_Weapons;
+import club.claycoffee.ClayTech.implementation.items.Railways;
+import club.claycoffee.ClayTech.implementation.items.RocketMakings;
+import club.claycoffee.ClayTech.implementation.items.Rockets;
+import club.claycoffee.ClayTech.implementation.items.Skulls;
+import club.claycoffee.ClayTech.implementation.items.Tools;
+import club.claycoffee.ClayTech.implementation.machines.CraftingTable;
+import club.claycoffee.ClayTech.implementation.machines.ElectricStoneCrusher;
+import club.claycoffee.ClayTech.implementation.machines.ElementExtracter;
+import club.claycoffee.ClayTech.implementation.machines.ExperimentTableNormal;
+import club.claycoffee.ClayTech.implementation.machines.FoodCauldron;
+import club.claycoffee.ClayTech.implementation.machines.FoodChalkingMachine;
+import club.claycoffee.ClayTech.implementation.machines.RocketAssemblingMachine;
+import club.claycoffee.ClayTech.implementation.machines.RocketFuelGenerator;
+import club.claycoffee.ClayTech.implementation.machines.RocketFuelInjector;
+import club.claycoffee.ClayTech.implementation.machines.SpaceSuitOxygenInjector;
+import club.claycoffee.ClayTech.implementation.resources.ClayFuelResource;
+import club.claycoffee.ClayTech.listeners.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
@@ -23,21 +59,63 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 @SuppressWarnings("deprecation")
 public class ClayTech extends JavaPlugin implements SlimefunAddon {
-	public static ClayTech plugin;
-	public static String locale;
-	public static DataYML currentLangYML;
-	public static FileConfiguration currentLang;
-	public static String highrailspeed;
+	protected static ClayTech plugin;
+	private static String locale;
+	private static DataYML currentLangYML;
+	private static FileConfiguration currentLang;
+	private static DataYML planetYML;
+	private static String highrailspeed;
 	private static String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",")
 			.split(",")[3];
-	public static boolean is115 = true;
-	public static boolean compatible = true;
+	private static boolean is115 = true;
+	private static boolean compatible = true;
+	private static List<Planet> planetList = new ArrayList<Planet>();
+	private static String overworld = "";
+	public static Map<Inventory, Block> RunningLaunchersG = new HashMap<Inventory, Block>();
+	public static Map<Inventory, Block> RunningInjectors = new HashMap<Inventory, Block>();
+	public static Map<Inventory, Block> RunningInjectorsOxygen = new HashMap<Inventory, Block>();
+
+	public static ClayTech getInstance() {
+		return plugin;
+	}
+
+	public static String getLocale() {
+		return locale;
+	}
+
+	public static DataYML getLangYML() {
+		return currentLangYML;
+	}
+
+	public static String getHighRailSpeed() {
+		return highrailspeed;
+	}
+
+	public static boolean getCompatible() {
+		return compatible;
+	}
+
+	public static boolean is115() {
+		return is115;
+	}
+
+	public static List<Planet> getPlanets() {
+		return planetList;
+	}
+
+	public static String getOverworld() {
+		return overworld;
+	}
+
+	public static DataYML getPlanetYML() {
+		return planetYML;
+	}
 
 	@SuppressWarnings({ "unused", "static-access" })
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9924
+		// 当前研究ID: 9929
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -50,6 +128,42 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			Utils.info("§cLoading Error: Locale not found.Disableing plugin..");
 			this.getServer().getPluginManager().disablePlugin(this);
 		}
+		// config
+		try {
+			FileConfiguration current = YamlConfiguration
+					.loadConfiguration(new InputStreamReader(this.getResource("config.yml"), "UTF8"));
+			List<String> currentconfig = new ArrayList<String>();
+			for (String each : config.getKeys(false)) {
+				currentconfig.add(each);
+			}
+			for (String each : current.getKeys(false)) {
+				if (!Utils.ExitsInListL(each, currentconfig)) {
+					try {
+						if (current.isString(each)) {
+							config.set(each, current.getString(each));
+						}
+						if (current.isInt(each)) {
+							config.set(each, current.getInt(each));
+						}
+						if (current.isList(each)) {
+							config.set(each, current.getList(each));
+						}
+					} catch (Exception e) {
+						Utils.info("§cThere is an error when reading the config file.Replacing the new config file..");
+						config = current;
+						this.saveConfig();
+						this.reloadConfig();
+						e.printStackTrace();
+					}
+				}
+			}
+		} catch (Exception e2) {
+			Utils.info("§cThere is an error when reading the config file.");
+			e2.printStackTrace();
+		}
+		this.saveConfig();
+		this.reloadConfig();
+		overworld = config.getString("overworld");
 		currentLangYML = new DataYML(locale + ".yml");
 		currentLangYML.saveCDefaultConfig();
 		currentLangYML.reloadCustomConfig();
@@ -113,11 +227,16 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		if (!is115) {
 			Utils.info(Lang.readGeneralText("Before_115"));
 		}
+		planetYML = new DataYML("planets.yml");
+		planetYML.saveCDefaultConfig();
+		planetYML.reloadCustomConfig();
 		Utils.info(Lang.readGeneralText("startTip"));
 		Config cfg = new Config(this);
 		Utils.info(Lang.readGeneralText("registeringItems"));
 		try {
 			registerSlimefun();
+			registerPlanets();
+			registerResources();
 		} catch (Exception e) {
 			Utils.info(Lang.readGeneralText("registeringError"));
 			e.printStackTrace();
@@ -128,13 +247,38 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new FoodDropListener(), this);
 		Bukkit.getPluginManager().registerEvents(new WeaponListener(), this);
 		Bukkit.getPluginManager().registerEvents(new RailwayListener(), this);
+		Bukkit.getPluginManager().registerEvents(new PlanetListener(), this);
+		Bukkit.getPluginManager().registerEvents(new RocketLauncherListener(), this);
+		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 	}
 
 	@Override
 	public void onDisable() {
 	}
 
-	public void registerSlimefun() {
+	private void registerSlimefun() {
+		registerMachines();
+		new Clay_basic();
+		new PotionAffect_Weapons();
+		new Golden_things();
+		new Skulls();
+		new Armors();
+		new DrinkMakingStaff();
+		new Drinks();
+		new FoodMakingStaff();
+		new Foods();
+		new MachineMakingBasic();
+		new Elements();
+		new Railways();
+		new EffectItems();
+		new Ingots();
+		new Tools();
+		new ClayFuelResource();
+		new RocketMakings();
+		new Rockets();
+	}
+
+	public void registerMachines() {
 		ItemStack[] ClayCrafingTable = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, new ItemStack(Material.CRAFTING_TABLE),
 				SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
@@ -159,6 +303,22 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ADVANCED_CIRCUIT_BOARD, ClayTechItems.CLAY_FOOD_CAULDRON,
 				ClayTechItems.BLISTERING_CORE, ClayTechItems.CLAY_ALLOY_INGOT, ClayTechItems.ELEMENT_UNIT,
 				ClayTechItems.CLAY_ALLOY_INGOT };
+		ItemStack[] ClayRocketAssemblingMachine = { SlimefunItems.ELECTRIC_MOTOR, ClayTechItems.BLISTERING_CORE,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
+				SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.MEDIUM_CAPACITOR,
+				SlimefunItems.PROGRAMMABLE_ANDROID, SlimefunItems.MEDIUM_CAPACITOR };
+		ItemStack[] ClayRocketFuelGenerator = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
+				SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR, ClayTechItems.CLAY_FUSION_INGOT,
+				SlimefunItems.SMALL_CAPACITOR };
+		ItemStack[] ClayRocketFuelInjector = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
+				SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR, ClayTechItems.BLISTERING_CORE,
+				SlimefunItems.SMALL_CAPACITOR };
+		ItemStack[] ClaySpaceSuitOxygenInjector = { SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.SMALL_CAPACITOR, ClayTechItems.OXYGEN_TANK, SlimefunItems.SMALL_CAPACITOR };
 
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
@@ -172,6 +332,14 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.CLAY_ELECTRIC_STONE_CRUSHER);
 		SlimefunItemStack experimenttablebasic = new SlimefunItemStack("CLAY_EXPERIMENT_TABLE_BASIC",
 				ClayTechItems.CLAY_EXPERIMENT_TABLE_NORMAL);
+		SlimefunItemStack rocketassemblingmachine = new SlimefunItemStack("CLAY_ROCKET_ASSEMBLING_MACHINE",
+				ClayTechItems.CLAY_ROCKET_ASSEMBLING_MACHINE);
+		SlimefunItemStack rocketfuelgenerator = new SlimefunItemStack("CLAY_ROCKET_FUEL_GENERATOR",
+				ClayTechItems.CLAY_ROCKET_FUEL_GENERATOR);
+		SlimefunItemStack rocketfuelinjector = new SlimefunItemStack("CLAY_ROCKET_FUEL_INJECTOR",
+				ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR);
+		SlimefunItemStack spacesuitoxygeninjector = new SlimefunItemStack("CLAY_SPACESUIT_OXYGEN_INJECTOR",
+				ClayTechItems.CLAY_SPACESUIT_OXYGEN_INJECTOR);
 
 		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
@@ -185,24 +353,14 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).register(this);
 		new ExperimentTableNormal(ClayTechItems.C_MACHINES, experimenttablebasic, "CLAY_EXPERIMENT_TABLE_BASIC",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayExperimentTableBasic).register(this);
-
-		// 物品
-		new Clay_basic();
-		new PotionAffect_Weapons();
-		new Golden_things();
-		new Skulls();
-		new Armors();
-		new DrinkMakingStaff();
-		new Drinks();
-		new FoodMakingStaff();
-		new Foods();
-		new MachineMakingBasic();
-		new Elements();
-		new Railways();
-		new EffectItems();
-		new Ingots();
-		new Tools();
-
+		new RocketAssemblingMachine(ClayTechItems.C_MACHINES, rocketassemblingmachine, "CLAY_ROCKET_ASSEMBLING_MACHINE",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketAssemblingMachine).register(this);
+		new RocketFuelGenerator(ClayTechItems.C_MACHINES, rocketfuelgenerator, "CLAY_ROCKET_FUEL_GENERATOR",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelGenerator).register(this);
+		new RocketFuelInjector(ClayTechItems.C_MACHINES, rocketfuelinjector, "CLAY_ROCKET_FUEL_INJECTOR",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelInjector).register(this);
+		new SpaceSuitOxygenInjector(ClayTechItems.C_MACHINES, spacesuitoxygeninjector, "CLAY_SPACESUIT_OXYGEN_INJECTOR",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClaySpaceSuitOxygenInjector).register(this);
 	}
 
 	@Override
@@ -213,5 +371,16 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public String getBugTrackerURL() {
 		return "https://github.com/ClayCoffee/ClayTech/issues";
+	}
+
+	private void registerPlanets() {
+		// Earth(Overworld) 地球(主世界)
+		new Earth();
+		// Moon 月球
+		new Moon();
+	}
+
+	private void registerResources() {
+		new ClayFuel().register();
 	}
 }

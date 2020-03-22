@@ -191,6 +191,52 @@ public class ClayTechItems {
 			Enchantment.MENDING, 1);
 	public static final ItemStack SILICON_INGOT = Utils.newItemD(Material.IRON_INGOT,
 			Lang.readItemText("SILICON_INGOT"));
+	public static final ItemStack ROCKET_LAUNCHER = Utils.newItemD(Material.IRON_BLOCK,
+			Lang.readItemText("ROCKET_LAUNCHER"));
+	public static final ItemStack MOTOR_CORE = Utils.newItemD(Material.NETHER_STAR, Lang.readItemText("MOTOR_CORE"));
+	public static final ItemStack TEMPERATURE_RESISTANCE_OBSIDIAN = Utils.setLore(
+			Utils.newItemD(Material.OBSIDIAN, Lang.readItemText("TEMPERATURE_RESISTANCE_OBSIDIAN")),
+			Lang.readItemLore("TEMPERATURE_RESISTANCE_OBSIDIAN"));
+	public static final ItemStack ROCKET_ENGINE_SHELL = Utils.newItemD(Material.IRON_INGOT,
+			Lang.readItemText("ROCKET_ENGINE_SHELL"));
+	public static final ItemStack ROCKET_ANTENNA = Utils.setLore(
+			Utils.newItemD(Material.REDSTONE_TORCH, Lang.readItemText("ROCKET_ANTENNA")),
+			Lang.readItemLore("ROCKET_ANTENNA"));
+	public static final ItemStack ROCKET_CPU = Utils.setLore(
+			Utils.newItemD(Material.NETHER_STAR, Lang.readItemText("ROCKET_CPU")), Lang.readItemLore("ROCKET_CPU"));
+	public static final ItemStack ROCKET_CONTROL_CORE = Utils.setLore(
+			Utils.newItemD(Material.FIREWORK_STAR, Lang.readItemText("ROCKET_CONTROL_CORE")),
+			Lang.readItemLore("ROCKET_CONTROL_CORE"));
+	public static final ItemStack ROCKET_GLASS = Utils.setLore(
+			Utils.newItemD(Material.LIME_STAINED_GLASS_PANE, Lang.readItemText("ROCKET_GLASS")),
+			Lang.readItemLore("ROCKET_GLASS"));
+	public static final ItemStack ROCKET_STEEL_PLATE = Utils.setLore(
+			Utils.newItemD(Material.PAPER, Lang.readItemText("ROCKET_STEEL_PLATE")),
+			Lang.readItemLore("ROCKET_STEEL_PLATE"));
+	public static final ItemStack SPACESUIT_HELMET = Utils.setLore(
+			Utils.newItemD(Material.DIAMOND_HELMET, Lang.readItemText("SPACESUIT_HELMET")),
+			Lang.readItemLore("SPACESUIT_HELMET"));
+	public static final ItemStack SPACESUIT_CHESTPLATE = Utils.setLore(
+			Utils.newItemD(Material.DIAMOND_CHESTPLATE, Lang.readItemText("SPACESUIT_CHESTPLATE")),
+			Lang.readItemLore("SPACESUIT_CHESTPLATE"));
+	public static final ItemStack SPACESUIT_LEGGINGS = Utils.setLore(
+			Utils.newItemD(Material.DIAMOND_LEGGINGS, Lang.readItemText("SPACESUIT_LEGGINGS")),
+			Lang.readItemLore("SPACESUIT_LEGGINGS"));
+	public static final ItemStack SPACESUIT_BOOTS = Utils.setLore(
+			Utils.newItemD(Material.DIAMOND_BOOTS, Lang.readItemText("SPACESUIT_BOOTS")),
+			Lang.readItemLore("SPACESUIT_BOOTS"));
+	public static final ItemStack KREEP_ROCK = Utils.setLore(
+			Utils.newItemD(Material.GRANITE, Lang.readItemText("KREEP_ROCK")), Lang.readItemLore("KREEP_ROCK"));
+	public static final ItemStack KREEP_INGOT = Utils.setLore(
+			Utils.newItemD(Material.IRON_INGOT, Lang.readItemText("KREEP_INGOT")), Lang.readItemLore("KREEP_INGOT"));
+
+	public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
+			SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),
+			Lang.readItemText("CLAY_FUEL"));
+	public static final ItemStack MIXED_ROCKET_FUEL = Utils.setLore(
+			Utils.setDisplayName(SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),
+					Lang.readItemText("MIXED_ROCKET_FUEL")),
+			Lang.readItemLore("MIXED_ROCKET_FUEL"));
 
 	// 头颅
 	public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(
@@ -245,6 +291,24 @@ public class ClayTechItems {
 	public static final ItemStack SNAIL_FOOD = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
 			"http://textures.minecraft.net/texture/26834b5b25426de63538ec82ca8fbecfcbb3e682d8063643d2e67a7621bd"),
 			Lang.readItemText("LUOSI_RICE_NOODLE")), Lang.readItemLore("LUOSI_RICE_NOODLE"));
+	public static final ItemStack ROCKET = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/25b3f2cfa0739c4e828316f39f90b05bc1f4ed27b1e35888511f558d4675"),
+			Lang.readItemText("ROCKET")), Lang.readItemLore("ROCKET"));
+	public static final ItemStack FUEL_TANK = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/5175bdf47aea1a4bf1d349be6b7fa4ab37f479672f4c43aca57511b427ab4"),
+			Lang.readItemText("FUEL_TANK")), Lang.readItemLore("FUEL_TANK"));
+	public static final ItemStack ROCKET_ENGINE = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/5175bdf47aea1a4bf1d349be6b7fa4ab37f479672f4c43aca57511b427ab4"),
+			Lang.readItemText("ROCKET_ENGINE")), Lang.readItemLore("ROCKET_ENGINE"));
+	public static final ItemStack ROCKET_FUEL_TANK = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/5175bdf47aea1a4bf1d349be6b7fa4ab37f479672f4c43aca57511b427ab4"),
+			Lang.readItemText("ROCKET_FUEL_TANK")), Lang.readItemLore("ROCKET_FUEL_TANK"));
+	public static final ItemStack OXYGEN_TANK = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/52baeb4a35da8a85d14bdccf7184f5545088f954da55144f235c2983fdb8e05b"),
+			Lang.readItemText("OXYGEN_TANK")), Lang.readItemLore("OXYGEN_TANK"));
+	public static final ItemStack SPACESUIT_OXYGEN_TANK = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
+			"http://textures.minecraft.net/texture/52baeb4a35da8a85d14bdccf7184f5545088f954da55144f235c2983fdb8e05b"),
+			Lang.readItemText("SPACESUIT_OXYGEN_TANK")), Lang.readItemLore("SPACESUIT_OXYGEN_TANK"));
 
 	// 机器
 	public static final ItemStack CLAY_CRAFTING_TABLE = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
@@ -290,9 +354,41 @@ public class ClayTechItems {
 					Utils.replaceList(Lang.readItemLore("CLAY_EXPERIMENT_TABLE_NORMAL"), "%TIER%",
 							LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE).replaceAll("&", "§")),
 					"%POWER%", LoreBuilder.powerBuffer(1024).replaceAll("&", "§")));
+	public static final ItemStack CLAY_ROCKET_ASSEMBLING_MACHINE = Utils
+			.setLore(
+					Utils.newItemD(Material.GOLD_BLOCK, Lang.readItemText("CLAY_ROCKET_ASSEMBLING_MACHINE")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_ROCKET_ASSEMBLING_MACHINE"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(512).replaceAll("&", "§")));
+	public static final ItemStack CLAY_ROCKET_FUEL_GENERATOR = Utils
+			.setLore(
+					Utils.newItemD(Material.EMERALD_BLOCK, Lang.readItemText("CLAY_ROCKET_FUEL_GENERATOR")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_ROCKET_FUEL_GENERATOR"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+	public static final ItemStack CLAY_ROCKET_FUEL_INJECTOR = Utils
+			.setLore(
+					Utils.newItemD(Material.DIAMOND_BLOCK, Lang.readItemText("CLAY_ROCKET_FUEL_INJECTOR")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_ROCKET_FUEL_INJECTOR"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+	public static final ItemStack CLAY_SPACESUIT_OXYGEN_INJECTOR = Utils
+			.setLore(
+					Utils.newItemD(Material.LAPIS_BLOCK, Lang.readItemText("CLAY_SPACESUIT_OXYGEN_INJECTOR")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_SPACESUIT_OXYGEN_INJECTOR"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
 	public static ItemStack HONEY_SWEET;
 	static {
-		if (ClayTech.is115) {
+		if (ClayTech.is115()) {
 			HONEY_SWEET = Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
 					Lang.readItemLore("HONEY_SWEET"));
 		}

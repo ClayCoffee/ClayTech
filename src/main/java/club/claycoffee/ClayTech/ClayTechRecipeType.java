@@ -1,6 +1,8 @@
 package club.claycoffee.ClayTech;
 
+import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -27,4 +29,15 @@ public class ClayTechRecipeType {
 			new NamespacedKey(ClayTech.plugin, "CLAY_EXPERIMENT_TABLE_BASIC"),
 			new SlimefunItemStack("CLAY_EXPERIMENT_TABLE_BASIC", ClayTechItems.CLAY_EXPERIMENT_TABLE_NORMAL), "",
 			Lang.readMachineRecipesText("CLAY_EXPERIMENT_TABLE_BASIC"));
+	public static final RecipeType CLAY_ROCKET_ASSEMBLING_MACHINE = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "CLAY_ROCKET_ASSEMBLING_MACHINE"),
+			new SlimefunItemStack("CLAY_ROCKET_ASSEMBLING_MACHINE", ClayTechItems.CLAY_ROCKET_ASSEMBLING_MACHINE), "",
+			Lang.readMachineRecipesText("CLAY_ROCKET_ASSEMBLING_MACHINE"));
+	public static final RecipeType CLAY_ROCKET_FUEL_GENERATOR = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "CLAY_ROCKET_FUEL_GENERATOR"),
+			new SlimefunItemStack("CLAY_ROCKET_FUEL_GENERATOR", ClayTechItems.CLAY_ROCKET_FUEL_GENERATOR), "",
+			Lang.readMachineRecipesText("CLAY_ROCKET_FUEL_GENERATOR"));
+	public static final RecipeType DIG_IN_THE_MOON = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "DIG_IN_THE_MOON"), new SlimefunItemStack("DIG_IN_THE_MOON",
+					new ItemStack(Material.IRON_PICKAXE), "", Lang.readMachineRecipesText("DIG_IN_THE_MOON")));
 }

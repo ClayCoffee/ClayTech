@@ -10,6 +10,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import club.claycoffee.ClayTech.ClayTech;
+
 public class DataYML {
 	private FileConfiguration config = null;
 	private File configFile = null;
@@ -25,13 +27,13 @@ public class DataYML {
 
 	public void reloadCustomConfig() {
 		if (configFile == null) {
-			configFile = new File(club.claycoffee.ClayTech.ClayTech.plugin.getDataFolder(), configName);
+			configFile = new File(ClayTech.getInstance().getDataFolder(), configName);
 		}
 		config = YamlConfiguration.loadConfiguration(configFile);
 
 		Reader stream;
 		try {
-			stream = new InputStreamReader(club.claycoffee.ClayTech.ClayTech.plugin.getResource(configName), "UTF8");
+			stream = new InputStreamReader(ClayTech.getInstance().getResource(configName), "UTF8");
 			if (stream != null) {
 				YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(stream);
 				config.setDefaults(defConfig);
@@ -61,11 +63,11 @@ public class DataYML {
 
 	public void saveCDefaultConfig() {
 		if (config == null) {
-			configFile = new File(club.claycoffee.ClayTech.ClayTech.plugin.getDataFolder(), configName);
+			configFile = new File(ClayTech.getInstance().getDataFolder(), configName);
 		}
 		if (!configFile.exists()) {
 			Bukkit.getLogger().info("§bInit.");
-			club.claycoffee.ClayTech.ClayTech.plugin.saveResource(configName, false);
+			ClayTech.getInstance().saveResource(configName, false);
 		}
 	}
 }
