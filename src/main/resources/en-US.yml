@@ -49,6 +49,7 @@ General:
   SPACESUIT_NOT_OK: "&cYour spacesuits aren't intact!"
   SPACESUIT_4: "&cYou need 4 oxygen level in your oxygen distributer."
   SPACESUIT_DISTRIBUTER_OK: "&3Done!"
+  NotInPlanet: "&cSorry. You are not in a planet.So you can't set up a base."
   Yes_1: "Yes"
   No_1: "No"
 Categories:
@@ -470,7 +471,7 @@ Items:
   KREEP_INGOT_LORE:
     - "&3Rare on the moon"
     - "&3Can upgrade rockets"
-  PLANET_BASE_SIGNER: "&9Planet Base Signer"
+  PLANET_BASE_SIGNER: "&9Planetary Base Marker"
   PLANET_BASE_SIGNER_LORE:
     - "&3Can sign your current location."
     - "&3When you teleport to the planet you signed"

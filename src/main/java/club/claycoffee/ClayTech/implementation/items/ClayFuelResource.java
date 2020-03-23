@@ -1,4 +1,4 @@
-package club.claycoffee.ClayTech.implementation.resources;
+package club.claycoffee.ClayTech.implementation.items;
 
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Slimefunutils;

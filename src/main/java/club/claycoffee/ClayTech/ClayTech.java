@@ -23,7 +23,7 @@ import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.implementation.Planets.Earth;
 import club.claycoffee.ClayTech.implementation.Planets.Moon;
 import club.claycoffee.ClayTech.implementation.items.Armors;
-import club.claycoffee.ClayTech.implementation.items.ClayFuel;
+import club.claycoffee.ClayTech.implementation.items.ClayFuelResource;
 import club.claycoffee.ClayTech.implementation.items.Clay_basic;
 import club.claycoffee.ClayTech.implementation.items.DrinkMakingStaff;
 import club.claycoffee.ClayTech.implementation.items.Drinks;
@@ -50,7 +50,7 @@ import club.claycoffee.ClayTech.implementation.machines.RocketAssemblingMachine;
 import club.claycoffee.ClayTech.implementation.machines.RocketFuelGenerator;
 import club.claycoffee.ClayTech.implementation.machines.RocketFuelInjector;
 import club.claycoffee.ClayTech.implementation.machines.SpaceSuitOxygenInjector;
-import club.claycoffee.ClayTech.implementation.resources.ClayFuelResource;
+import club.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import club.claycoffee.ClayTech.listeners.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -390,6 +390,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	}
 
 	private void registerResources() {
-		new ClayFuel().register();
+		new ClayFuel();
 	}
 }

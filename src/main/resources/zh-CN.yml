@@ -49,6 +49,7 @@ General:
   SPACESUIT_NOT_OK: "&c您的宇航服没有穿齐!"
   SPACESUIT_4: "&c分配器内至少要求有4点氧气!"
   SPACESUIT_DISTRIBUTER_OK: "&3分配成功!"
+  NotInPlanet: "&c抱歉,您当前不在星球中!无法设立基地。"
   Yes_1: "是"
   No_1: "否"
 Categories:

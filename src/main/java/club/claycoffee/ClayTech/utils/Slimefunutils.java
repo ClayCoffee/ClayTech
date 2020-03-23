@@ -4,6 +4,8 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
+import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.Research;
@@ -62,5 +64,10 @@ public class Slimefunutils {
 			return new ItemStack[] { Material, Material, Material, Material, null, Material, Material, null, Material };
 		}
 		return new ItemStack[] { null, null, null, Material, null, Material, Material, null, Material };
+	}
+	
+	public static void registerResource(GEOResource res) {
+		SlimefunPlugin.getGPSNetwork().getResourceManager().register(res);
+		SlimefunPlugin.getRegistry().getGEOResources().add(res);
 	}
 }

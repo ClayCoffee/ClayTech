@@ -25,7 +25,7 @@ public class Moon extends ChunkGenerator {
 
 	public Moon() {
 		new Planet("CMoon", Utils.newItemD(Material.GRAY_GLAZED_TERRACOTTA, Lang.readPlanetsText("Moon")), this,
-				Environment.NORMAL, false, 3, 100, 1).register();
+				Environment.NORMAL, false, 3, 100, 1, true).register();
 	}
 
 	@SuppressWarnings("deprecation")

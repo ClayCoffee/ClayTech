@@ -13,6 +13,6 @@ public class Earth extends ChunkGenerator {
 	public Earth() {
 		new Planet(ClayTech.getOverworld(),
 				Utils.newItemD(Material.GREEN_GLAZED_TERRACOTTA, Lang.readPlanetsText("Earth")), this,
-				Environment.NORMAL, true, 1, 0, 0).register();
+				Environment.NORMAL, true, 1, 0, 0, false).register();
 	}
 }

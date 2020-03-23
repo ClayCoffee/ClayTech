@@ -6,6 +6,8 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
+import club.claycoffee.ClayTech.ClayTechMachineRecipes;
+import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -14,14 +16,13 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 public class FoodMakingStaff {
 	public FoodMakingStaff() {
-		ItemStack[] recipea = { null, null, null, null, new ItemStack(Material.CHICKEN), null, null, null, null };
 		ItemStack[] recipec = { null, new ItemStack(Material.BREAD), null, null, ClayTechItems.MAGIC_CLAY, null, null,
 				new ItemStack(Material.BREAD), null };
 		ItemStack[] reciped = { null, new ItemStack(Material.KELP), null, null, ClayTechItems.MAGIC_CLAY, null, null,
 				new ItemStack(Material.BAMBOO), null };
 
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_CHICKEN_FOOT", ClayTechItems.RAW_CHICKEN_FOOT,
-				"notresearch", 10, RecipeType.ORE_CRUSHER, recipea, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE, ClayTechMachineRecipes.RAW_CHICKEN_FOOT, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_BREAD", ClayTechItems.RAW_BREAD, "notresearch",
 				10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_VEGETABLE", ClayTechItems.RAW_VEGETABLE,

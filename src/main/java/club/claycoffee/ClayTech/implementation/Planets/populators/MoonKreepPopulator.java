@@ -9,6 +9,7 @@ import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
 import club.claycoffee.ClayTech.ClayTechItems;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 public class MoonKreepPopulator extends BlockPopulator {
@@ -22,28 +23,34 @@ public class MoonKreepPopulator extends BlockPopulator {
 		int count = 0;
 		while (random.nextDouble() < 0.8D && count <= 4) {
 			if (source.getBlock(x, y, z).getType() == Material.STONE) {
+				if(!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
+					BlockStorage bs = new BlockStorage(world);
+					SlimefunPlugin.getRegistry().getWorlds().put(world.getName(), bs);
+				}
 				source.getBlock(x, y, z).setType(ClayTechItems.KREEP_ROCK.getType());
 				BlockStorage.addBlockInfo(source.getBlock(x, y, z), "id", "KREEP_ROCK",true);
+				count++;
+			
 			}
-
+			
 			switch (random.nextInt(6)) {
 			case 0:
-				x++;
+				x = Math.min(x + 1, 15);
 				break;
 			case 1:
-				y++;
+				y = Math.min(y + 1, 20);
 				break;
 			case 2:
-				z++;
+				z = Math.min(z + 1, 15);
 				break;
 			case 3:
-				x--;
+				x = Math.max(x - 1, 0);
 				break;
 			case 4:
-				y = Math.max(y - 1, 29);
+				y = Math.max(y - 1, 30);
 				break;
 			default:
-				z--;
+				z = Math.max(z - 1, 0);
 				break;
 			}
 		}

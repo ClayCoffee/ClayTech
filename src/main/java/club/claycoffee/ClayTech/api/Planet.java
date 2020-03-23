@@ -30,9 +30,10 @@ public class Planet {
 	public int gravity;
 	public int distance;
 	public int harmlevel;
+	public boolean cold;
 
 	public Planet(String planetName, ItemStack displayItem, ChunkGenerator planetWorld, Environment environment,
-			boolean habitable, int gravity, int distance, int harmlevel) {
+			boolean habitable, int gravity, int distance, int harmlevel, boolean cold) {
 		this.planetName = planetName;
 		this.displayItem = displayItem;
 		this.planetWorld = planetWorld;
@@ -41,10 +42,11 @@ public class Planet {
 		this.gravity = gravity;
 		this.distance = distance;
 		this.harmlevel = harmlevel;
+		this.cold = cold;
 	}
 
 	public Planet(String planetName, ItemStack displayItem, World planetWorld, Environment environment,
-			boolean habitable, int gravity, int distance, int harmlevel) {
+			boolean habitable, int gravity, int distance, int harmlevel, boolean cold) {
 		this.planetName = planetName;
 		this.displayItem = displayItem;
 		this.planetWorld = planetWorld.getGenerator();
@@ -52,6 +54,7 @@ public class Planet {
 		this.habitable = habitable;
 		this.gravity = gravity;
 		this.harmlevel = harmlevel;
+		this.cold = cold;
 	}
 
 	public void register() {
@@ -79,16 +82,18 @@ public class Planet {
 			}
 		}
 		ClayTech.getPlanets().add(this);
+		
 		if (Bukkit.getWorld(this.planetName) == null) {
 			// Register
 			WorldCreator newWorld = new WorldCreator(this.planetName);
 			newWorld.environment(this.environment);
-			newWorld.generator(this.planetWorld);
 			long seed = new Random().nextLong();
-			newWorld.seed(seed);
-			newWorld.type(WorldType.NORMAL);
-			newWorld.generateStructures(false);
+			newWorld = newWorld.seed(seed);
+			newWorld = newWorld.type(WorldType.NORMAL);
+			newWorld = newWorld.generateStructures(false);
+			newWorld = newWorld.generator(this.planetWorld);
 			newWorld.createWorld();
+			
 
 			// 多世界注册
 			if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {

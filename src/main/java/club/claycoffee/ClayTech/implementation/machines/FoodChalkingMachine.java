@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTechItems;
+import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.implementation.abstractMachines.ANewContainer;
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -52,5 +53,7 @@ public class FoodChalkingMachine extends ANewContainer {
 		this.registerRecipe(8, new ItemStack[] { ClayTechItems.RAW_TEA }, new ItemStack[] { ClayTechItems.TEA_POWDER });
 		this.registerRecipe(8, new ItemStack[] { ClayTechItems.CLAY_LEMON },
 				new ItemStack[] { ClayTechItems.LEMON_POWDER });
+		this.registerRecipe(8, ClayTechMachineRecipes.RAW_CHICKEN_FOOT,
+				new ItemStack[] { ClayTechItems.RAW_CHICKEN_FOOT });
 	}
 }

@@ -228,7 +228,7 @@ public class ClayTechMachineRecipes {
 			null };
 	public final static ItemStack[] KREEP_INGOT = { null, null, null, null, ClayTechItems.KREEP_ROCK, null, null, null,
 			null };
-	
+	public final static ItemStack[] RAW_CHICKEN_FOOT = { null, null, null, null, new ItemStack(Material.CHICKEN), null, null, null, null };;
 	public final static ItemStack[] PLANET_BASE_SIGNER = {SlimefunItems.STEEL_PLATE,ClayTechItems.ROCKET_ANTENNA,SlimefunItems.STEEL_PLATE,SlimefunItems.HARDENED_GLASS,SlimefunItems.PROGRAMMABLE_ANDROID,SlimefunItems.HARDENED_GLASS,ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN,SlimefunItems.ELECTRIC_MOTOR,ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN};
 	public final static ItemStack[] TUBE = {SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET,SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET,SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET};
 	public final static ItemStack[] OXYGEN_DISTRIBUTER = {SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.TUBE,SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.KREEP_INGOT,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.KREEP_INGOT};
