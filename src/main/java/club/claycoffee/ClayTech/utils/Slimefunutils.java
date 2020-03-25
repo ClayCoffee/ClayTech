@@ -65,7 +65,7 @@ public class Slimefunutils {
 		}
 		return new ItemStack[] { null, null, null, Material, null, Material, Material, null, Material };
 	}
-	
+
 	public static void registerResource(GEOResource res) {
 		SlimefunPlugin.getGPSNetwork().getResourceManager().register(res);
 		SlimefunPlugin.getRegistry().getGEOResources().add(res);

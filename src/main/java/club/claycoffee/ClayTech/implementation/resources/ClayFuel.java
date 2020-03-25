@@ -14,11 +14,11 @@ import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 
 public class ClayFuel implements GEOResource {
 	private final NamespacedKey key = new NamespacedKey(ClayTech.getInstance(), "CLAY_FUEL");
-	
+
 	public ClayFuel() {
 		Slimefunutils.registerResource(this);
 	}
-	
+
 	@Override
 	public @NotNull NamespacedKey getKey() {
 		return key;

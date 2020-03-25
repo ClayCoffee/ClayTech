@@ -40,7 +40,7 @@ public class ClayTechManager {
 				return true;
 			} else if (isSpaceSuit(is)) {
 				return true;
-			} else if (isOxygenDistributer(is)){
+			} else if (isOxygenDistributer(is)) {
 				return true;
 			}
 		}
@@ -72,7 +72,7 @@ public class ClayTechManager {
 		}
 		return false;
 	}
-	
+
 	public static boolean isOxygenDistributer(ItemStack item) {
 		if (item == null)
 			return false;

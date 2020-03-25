@@ -17,11 +17,13 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 public class Rockets {
 	public Rockets() {
 		// 平台
-		ItemStack[] rocketlauncher = {ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,SlimefunItems.PROGRAMMABLE_ANDROID,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT,ClayTechItems.CLAY_FUSION_INGOT};
-		
+		ItemStack[] rocketlauncher = { ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
+				ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.PROGRAMMABLE_ANDROID,
+				ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
+				ClayTechItems.CLAY_FUSION_INGOT };
+
 		Slimefunutils.registerItem(ClayTechItems.C_MACHINES, "ROCKET_LAUNCHER", ClayTechItems.ROCKET_LAUNCHER,
-				"notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, rocketlauncher,
-				false);
+				"notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, rocketlauncher, false);
 
 		Research ms2 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_UNIVERSE_MACHINE_2"), 9929,
 				Lang.readResearchesText("CLAYTECH_UNIVERSE_MACHINE_II"), 55);

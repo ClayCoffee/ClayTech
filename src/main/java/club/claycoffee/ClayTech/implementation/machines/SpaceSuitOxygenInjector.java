@@ -70,8 +70,10 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 			if (inv != null) {
 				for (int slot : getInputSlots()) {
 					if (inv.getItemInSlot(slot) != null) {
-						b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-						inv.replaceExistingItem(slot, null);
+						if (inv.getItemInSlot(slot).getType() != Material.BEDROCK) {
+							b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
+							inv.replaceExistingItem(slot, null);
+						}
 					}
 				}
 
@@ -230,10 +232,9 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 				inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
 
 				ItemStack spacesuit = item;
-				if(RocketUtils.getOxygen(spacesuit) + 5 > RocketUtils.getMaxOxygen(spacesuit)) {
+				if (RocketUtils.getOxygen(spacesuit) + 5 > RocketUtils.getMaxOxygen(spacesuit)) {
 					RocketUtils.setOxygen(spacesuit, RocketUtils.getMaxOxygen(spacesuit));
-				}
-				else {
+				} else {
 					RocketUtils.setOxygen(spacesuit, RocketUtils.getOxygen(spacesuit) + 5);
 				}
 				inv.replaceExistingItem(22, spacesuit);
@@ -245,7 +246,8 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 			// 没有在处理
 			ItemStack spacesuit = inv.getItemInSlot(22);
 			if (spacesuit != null) {
-				if (ClayTechManager.isSpaceSuit(spacesuit) && spacesuit.getAmount() == 1 || ClayTechManager.isOxygenDistributer(spacesuit) && spacesuit.getAmount() == 1) {
+				if (ClayTechManager.isSpaceSuit(spacesuit) && spacesuit.getAmount() == 1
+						|| ClayTechManager.isOxygenDistributer(spacesuit) && spacesuit.getAmount() == 1) {
 					if (ChargableBlock.isChargable(b)) {
 						if (ChargableBlock.getCharge(b) < getEnergyConsumption())
 							return;
@@ -255,12 +257,11 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 						return;
 					if (RocketUtils.getOxygen(spacesuit) >= RocketUtils.getMaxOxygen(spacesuit))
 						return;
-					
-					
+
 					MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[] { spacesuit },
 							new ItemStack[] {});
 					item = spacesuit.clone();
-					inv.consumeItem(22,1);
+					inv.consumeItem(22, 1);
 					ClayTech.RunningInjectorsOxygen.put(inv.toInventory(), b);
 					inv.replaceExistingItem(22, new ItemStack(Material.BEDROCK));
 					processing.put(b, oxygeninjectrecipe);

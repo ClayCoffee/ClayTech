@@ -8,10 +8,10 @@ import club.claycoffee.ClayTech.implementation.abstractMachines.AExtracter;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
-import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
@@ -70,7 +70,14 @@ public class ElementExtracter extends AExtracter {
 	}
 
 	protected void tick(Block b) {
-		Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+			}
+
+		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -114,7 +121,7 @@ public class ElementExtracter extends AExtracter {
 			Map<Integer, Integer> found = new HashMap<>();
 			for (MachineRecipe recipe : recipes) {
 				ItemStack input = recipe.getInput()[0];
-				if (SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
+				if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
 					if (input != null) {
 						found.put(inputslots[0], input.getAmount());
 					}
@@ -133,7 +140,7 @@ public class ElementExtracter extends AExtracter {
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
+				if (!SlimefunUtils.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
 					return;
 				if (inv.getItemInSlot(outputslots[0]) != null) {
 					ItemStack is = inv.getItemInSlot(outputslots[0]);

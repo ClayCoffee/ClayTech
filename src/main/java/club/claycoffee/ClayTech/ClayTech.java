@@ -74,7 +74,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static Map<Inventory, Block> RunningLaunchersG = new HashMap<Inventory, Block>();
 	public static Map<Inventory, Block> RunningInjectors = new HashMap<Inventory, Block>();
 	public static Map<Inventory, Block> RunningInjectorsOxygen = new HashMap<Inventory, Block>();
-	public static DataYML planetDataYML;
+	private static DataYML planetDataYML;
 
 	public static ClayTech getInstance() {
 		return plugin;
@@ -111,7 +111,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static DataYML getPlanetYML() {
 		return planetYML;
 	}
-	
+
 	public static DataYML getPlanetDataYML() {
 		return planetDataYML;
 	}
@@ -306,7 +306,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.MAGIC_CLAY };
 		ItemStack[] ClayElementExtracter = { ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE,
 				ClayTechItems.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID_3,
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID,
 				SlimefunItems.WITHER_PROOF_OBSIDIAN };
 		ItemStack[] ClayExperimentTableBasic = { ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ELECTRIC_MOTOR,
 				ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ADVANCED_CIRCUIT_BOARD, ClayTechItems.CLAY_FOOD_CAULDRON,

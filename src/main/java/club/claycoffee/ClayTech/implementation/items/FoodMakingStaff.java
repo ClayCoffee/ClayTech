@@ -22,7 +22,8 @@ public class FoodMakingStaff {
 				new ItemStack(Material.BAMBOO), null };
 
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_CHICKEN_FOOT", ClayTechItems.RAW_CHICKEN_FOOT,
-				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE, ClayTechMachineRecipes.RAW_CHICKEN_FOOT, false);
+				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE,
+				ClayTechMachineRecipes.RAW_CHICKEN_FOOT, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_BREAD", ClayTechItems.RAW_BREAD, "notresearch",
 				10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_VEGETABLE", ClayTechItems.RAW_VEGETABLE,

@@ -68,8 +68,10 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 			if (inv != null) {
 				for (int slot : getInputSlots()) {
 					if (inv.getItemInSlot(slot) != null) {
-						b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-						inv.replaceExistingItem(slot, null);
+						if (inv.getItemInSlot(slot).getType() != Material.BEDROCK) {
+							b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
+							inv.replaceExistingItem(slot, null);
+						}
 					}
 				}
 
@@ -224,10 +226,9 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 						Utils.addLore(Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, "§9§l←"), " "));
 
 				ItemStack rocket = item;
-				if(RocketUtils.getFuel(rocket) + 5 > RocketUtils.getMaxFuel(rocket)) {
+				if (RocketUtils.getFuel(rocket) + 5 > RocketUtils.getMaxFuel(rocket)) {
 					RocketUtils.setFuel(rocket, RocketUtils.getMaxFuel(rocket));
-				}
-				else {
+				} else {
 					RocketUtils.setFuel(rocket, RocketUtils.getFuel(rocket) + 5);
 				}
 				inv.replaceExistingItem(20, rocket);

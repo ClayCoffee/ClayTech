@@ -8,7 +8,6 @@ import org.bukkit.World;
 import org.bukkit.generator.BlockPopulator;
 import org.jetbrains.annotations.NotNull;
 
-
 public class MoonDiamondPopulator extends BlockPopulator {
 
 	@Override

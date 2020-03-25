@@ -114,10 +114,8 @@ public class ClayTechMachineRecipes {
 			null, null, null, null };
 	public final static ItemStack[] ELEMENT_SILICON = { null, null, null, null, new ItemStack(Material.SAND, 10), null,
 			null, null, null };
-	public final static ItemStack[] BLISTERING_CORE = { SlimefunItems.BLISTERING_INGOT_3,
-			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3,
-			SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.BLISTERING_INGOT_3 };
+	public final static ItemStack[] BLISTERING_CORE = { null, ClayTechItems.CLAY_FUSION_INGOT, null, null,
+			SlimefunItems.BLISTERING_INGOT_3, null, null, ClayTechItems.CLAY_FUSION_INGOT, null };
 	public final static ItemStack[] ELEMENT_UNIT = { SlimefunItems.DAMASCUS_STEEL_INGOT,
 			SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
 			null, SlimefunItems.DAMASCUS_STEEL_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
@@ -133,9 +131,9 @@ public class ClayTechMachineRecipes {
 	public final static ItemStack[] REINFORCED_ALLOY_PICKAXE = { SlimefunItems.REINFORCED_ALLOY_INGOT,
 			SlimefunItems.REINFORCED_ALLOY_INGOT, SlimefunItems.REINFORCED_ALLOY_INGOT, null,
 			SlimefunItems.REINFORCED_ALLOY_INGOT, null, null, SlimefunItems.REINFORCED_ALLOY_INGOT, null };
-	public final static ItemStack[] CLAY_FUSION_INGOT = { SlimefunItems.SYNTHETIC_DIAMOND,
-			SlimefunItems.SYNTHETIC_EMERALD, SlimefunItems.SYNTHETIC_SAPPHIRE, SlimefunItems.REINFORCED_ALLOY_INGOT,
-			ClayTechItems.MAGIC_CLAY, SlimefunItems.REINFORCED_ALLOY_INGOT, null, null, null };
+	public final static ItemStack[] CLAY_FUSION_INGOT = { SlimefunItems.GOLD_12K, SlimefunItems.SYNTHETIC_EMERALD,
+			SlimefunItems.SYNTHETIC_SAPPHIRE, SlimefunItems.REINFORCED_ALLOY_INGOT, ClayTechItems.MAGIC_CLAY,
+			SlimefunItems.REINFORCED_ALLOY_INGOT, null, null, null };
 	public final static ItemStack[] CLAY_ALLOY_INGOT = { SlimefunItems.REINFORCED_ALLOY_INGOT,
 			ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.CARBONADO, SlimefunItems.REDSTONE_ALLOY,
 			ClayTechItems.MAGIC_CLAY, SlimefunItems.GOLD_24K, null, null, null };
@@ -161,25 +159,24 @@ public class ClayTechMachineRecipes {
 			SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.WITHER_PROOF_OBSIDIAN,
 			SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN,
 			SlimefunItems.WITHER_PROOF_OBSIDIAN };
-	public final static ItemStack[] ROCKET_ENGINE_SHELL = { ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
+	public final static ItemStack[] ROCKET_ENGINE_SHELL = { SlimefunItems.DAMASCUS_STEEL_INGOT,
+			ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
 			ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT };
-	public final static ItemStack[] FUEL_TANK = { ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.MAGIC_CLAY,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT };
+			SlimefunItems.DAMASCUS_STEEL_INGOT, ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT };
+	public final static ItemStack[] FUEL_TANK = { SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT,
+			SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT, ClayTechItems.MAGIC_CLAY, SlimefunItems.TIN_INGOT,
+			SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT };
 	public final static ItemStack[] ROCKET_ENGINE = { ClayTechItems.ROCKET_ENGINE_SHELL,
 			ClayTechItems.ROCKET_ENGINE_SHELL, ClayTechItems.ROCKET_ENGINE_SHELL, ClayTechItems.MOTOR_CORE,
 			ClayTechItems.FUEL_TANK, ClayTechItems.MOTOR_CORE, ClayTechItems.ARTIFICIAL_GOLD_BLOCK,
 			ClayTechItems.ARTIFICIAL_GOLD_BLOCK, ClayTechItems.ARTIFICIAL_GOLD_BLOCK };
-	public final static ItemStack[] ROCKET_ANTENNA = { ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.COPPER_WIRE,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT };
+	public final static ItemStack[] ROCKET_ANTENNA = { SlimefunItems.DAMASCUS_STEEL_INGOT,
+			ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
+			SlimefunItems.COPPER_WIRE, ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT,
+			ClayTechItems.CLAY_FUSION_INGOT, SlimefunItems.DAMASCUS_STEEL_INGOT };
 	public final static ItemStack[] ROCKET_CPU = { ClayTechItems.CLAY_FUSION_INGOT,
 			ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.ROCKET_ANTENNA, SlimefunItems.PROGRAMMABLE_ANDROID_3, ClayTechItems.ROCKET_ANTENNA,
+			ClayTechItems.ROCKET_ANTENNA, SlimefunItems.PROGRAMMABLE_ANDROID, ClayTechItems.ROCKET_ANTENNA,
 			ClayTechItems.ROCKET_ENGINE_SHELL, ClayTechItems.ROCKET_ENGINE_SHELL, ClayTechItems.ROCKET_ENGINE_SHELL };
 	public final static ItemStack[] ROCKET_CONTROL_CORE = { ClayTechItems.ARTIFICIAL_GOLD_BLOCK,
 			ClayTechItems.ARTIFICIAL_GOLD_BLOCK, ClayTechItems.ARTIFICIAL_GOLD_BLOCK, ClayTechItems.ROCKET_ENGINE_SHELL,
@@ -205,10 +202,9 @@ public class ClayTechMachineRecipes {
 			ClayTechItems.ROCKET_STEEL_PLATE, ClayTechItems.ROCKET_STEEL_PLATE, ClayTechItems.ROCKET_ENGINE,
 			ClayTechItems.ROCKET_STEEL_PLATE };
 
-	public final static ItemStack[] OXYGEN_TANK = { ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_STICK,
-			ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
-			ClayTechItems.CLAY_FUSION_INGOT };
+	public final static ItemStack[] OXYGEN_TANK = { SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT,
+			SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT, ClayTechItems.CLAY_STICK, SlimefunItems.TIN_INGOT,
+			SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT, SlimefunItems.TIN_INGOT };
 	public final static ItemStack[] SPACESUIT_OXYGEN_TANK = { ClayTechItems.OXYGEN_TANK, ClayTechItems.OXYGEN_TANK,
 			ClayTechItems.OXYGEN_TANK, ClayTechItems.OXYGEN_TANK, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN,
 			ClayTechItems.OXYGEN_TANK, ClayTechItems.OXYGEN_TANK, ClayTechItems.OXYGEN_TANK,
@@ -228,8 +224,17 @@ public class ClayTechMachineRecipes {
 			null };
 	public final static ItemStack[] KREEP_INGOT = { null, null, null, null, ClayTechItems.KREEP_ROCK, null, null, null,
 			null };
-	public final static ItemStack[] RAW_CHICKEN_FOOT = { null, null, null, null, new ItemStack(Material.CHICKEN), null, null, null, null };;
-	public final static ItemStack[] PLANET_BASE_SIGNER = {SlimefunItems.STEEL_PLATE,ClayTechItems.ROCKET_ANTENNA,SlimefunItems.STEEL_PLATE,SlimefunItems.HARDENED_GLASS,SlimefunItems.PROGRAMMABLE_ANDROID,SlimefunItems.HARDENED_GLASS,ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN,SlimefunItems.ELECTRIC_MOTOR,ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN};
-	public final static ItemStack[] TUBE = {SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET,SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET,SlimefunItems.PLASTIC_SHEET,null,SlimefunItems.PLASTIC_SHEET};
-	public final static ItemStack[] OXYGEN_DISTRIBUTER = {SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.TUBE,SlimefunItems.REINFORCED_ALLOY_INGOT,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.KREEP_INGOT,ClayTechItems.SPACESUIT_OXYGEN_TANK,ClayTechItems.KREEP_INGOT};
+	public final static ItemStack[] RAW_CHICKEN_FOOT = { null, null, null, null, new ItemStack(Material.CHICKEN), null,
+			null, null, null };;
+	public final static ItemStack[] PLANET_BASE_SIGNER = { SlimefunItems.STEEL_PLATE, ClayTechItems.ROCKET_ANTENNA,
+			SlimefunItems.STEEL_PLATE, SlimefunItems.HARDENED_GLASS, SlimefunItems.PROGRAMMABLE_ANDROID,
+			SlimefunItems.HARDENED_GLASS, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, SlimefunItems.ELECTRIC_MOTOR,
+			ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN };
+	public final static ItemStack[] TUBE = { SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET,
+			SlimefunItems.PLASTIC_SHEET, null, SlimefunItems.PLASTIC_SHEET, SlimefunItems.PLASTIC_SHEET, null,
+			SlimefunItems.PLASTIC_SHEET };
+	public final static ItemStack[] OXYGEN_DISTRIBUTER = { SlimefunItems.REINFORCED_ALLOY_INGOT, ClayTechItems.TUBE,
+			SlimefunItems.REINFORCED_ALLOY_INGOT, ClayTechItems.SPACESUIT_OXYGEN_TANK,
+			ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT,
+			ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT };
 }

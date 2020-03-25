@@ -32,10 +32,11 @@ public class PlanetListener implements Listener {
 		Planet p = PlanetUtils.getPlanet(e.getEntity().getWorld());
 		if (p != null) {
 			if (!p.habitable) {
-				if(e.getEntity() instanceof Mob || e.getEntity() instanceof Animals || e.getEntity() instanceof Monster || e.getEntity() instanceof Boss) {
+				if (e.getEntity() instanceof Mob || e.getEntity() instanceof Animals || e.getEntity() instanceof Monster
+						|| e.getEntity() instanceof Boss) {
 					e.setCancelled(true);
 				}
-				
+
 			}
 		}
 	}

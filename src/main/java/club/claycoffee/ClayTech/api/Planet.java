@@ -82,7 +82,7 @@ public class Planet {
 			}
 		}
 		ClayTech.getPlanets().add(this);
-		
+
 		if (Bukkit.getWorld(this.planetName) == null) {
 			// Register
 			WorldCreator newWorld = new WorldCreator(this.planetName);
@@ -93,7 +93,6 @@ public class Planet {
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator(this.planetWorld);
 			newWorld.createWorld();
-			
 
 			// 多世界注册
 			if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {

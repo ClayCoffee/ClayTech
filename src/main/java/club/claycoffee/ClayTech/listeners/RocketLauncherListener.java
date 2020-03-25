@@ -124,14 +124,19 @@ public class RocketLauncherListener implements Listener {
 																new FixedMetadataValue(ClayTech.getInstance(), "true"));
 														DataYML planetsData = ClayTech.getPlanetDataYML();
 														FileConfiguration pd = planetsData.getCustomConfig();
-														if(pd.getBoolean(p.getName()+"."+target.planetName+".base")) {
-															int X = pd.getInt(p.getName()+"."+target.planetName+".baseX");
-															int Y = pd.getInt(p.getName()+"."+target.planetName+".baseY");
-															int Z = pd.getInt(p.getName()+"."+target.planetName+".baseZ");
-															p.teleport(new Location(Bukkit.getWorld(target.planetName),X,Y,Z),TeleportCause.PLUGIN);
-															p.sendTitle(Lang.readGeneralText("TeleportedToBase"), Lang.readGeneralText("TeleportedToBase_Sub"));
-														}
-														else {
+														if (pd.getBoolean(
+																p.getName() + "." + target.planetName + ".base")) {
+															int X = pd.getInt(
+																	p.getName() + "." + target.planetName + ".baseX");
+															int Y = pd.getInt(
+																	p.getName() + "." + target.planetName + ".baseY");
+															int Z = pd.getInt(
+																	p.getName() + "." + target.planetName + ".baseZ");
+															p.teleport(new Location(Bukkit.getWorld(target.planetName),
+																	X, Y, Z), TeleportCause.PLUGIN);
+															p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
+																	Lang.readGeneralText("TeleportedToBase_Sub"));
+														} else {
 															p.teleport(
 																	PlanetUtils.findSafeLocation(
 																			Bukkit.getWorld(target.planetName)),

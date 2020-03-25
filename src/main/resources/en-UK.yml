@@ -50,6 +50,7 @@ General:
   SPACESUIT_4: "&cYou need 4 oxygen level in your oxygen distributer."
   SPACESUIT_DISTRIBUTER_OK: "&3Done!"
   NotInPlanet: "&cSorry. You are not in a planet.So you can't set up a base."
+  NotYourBase: "&cSorry. You can't destroy other people's base."
   Yes_1: "Yes"
   No_1: "No"
 Categories:

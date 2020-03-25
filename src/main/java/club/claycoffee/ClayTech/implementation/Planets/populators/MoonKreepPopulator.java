@@ -23,16 +23,16 @@ public class MoonKreepPopulator extends BlockPopulator {
 		int count = 0;
 		while (random.nextDouble() < 0.8D && count <= 4) {
 			if (source.getBlock(x, y, z).getType() == Material.STONE) {
-				if(!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
+				if (!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
 					BlockStorage bs = new BlockStorage(world);
 					SlimefunPlugin.getRegistry().getWorlds().put(world.getName(), bs);
 				}
 				source.getBlock(x, y, z).setType(ClayTechItems.KREEP_ROCK.getType());
-				BlockStorage.addBlockInfo(source.getBlock(x, y, z), "id", "KREEP_ROCK",true);
+				BlockStorage.addBlockInfo(source.getBlock(x, y, z), "id", "KREEP_ROCK", true);
 				count++;
-			
+
 			}
-			
+
 			switch (random.nextInt(6)) {
 			case 0:
 				x = Math.min(x + 1, 15);

@@ -12,15 +12,16 @@ import org.bukkit.scheduler.BukkitRunnable;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.ClayTechMachineRecipes;
+import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerCookItemEvent;
 import club.claycoffee.ClayTech.implementation.abstractMachines.ACraftingTable;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
-import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
@@ -88,6 +89,14 @@ public class FoodCauldron extends ACraftingTable {
 
 	@Override
 	protected void tick(Block b) {
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
+			}
+
+		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -132,7 +141,7 @@ public class FoodCauldron extends ACraftingTable {
 			for (MachineRecipe recipe : recipes) {
 				i = 0;
 				for (ItemStack input : recipe.getInput()) {
-					if (SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[i]), input, true)) {
+					if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[i]), input, true)) {
 						// 如果该位置的物品符合某合成配方的对应位置物品
 						if (input != null) {
 							found.put(inputslots[i], input.getAmount());

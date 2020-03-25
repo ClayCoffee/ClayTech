@@ -17,7 +17,7 @@ public class Golden_things {
 		ItemStack[] recipec = { new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.GOLD_INGOT),
 				new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.GOLD_INGOT), ClayTechItems.MAGIC_CLAY,
 				new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.GOLD_INGOT),
-				new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.GOLD_INGOT)};
+				new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.GOLD_INGOT) };
 		ItemStack[] reciped = { ClayTechItems.ARTIFICIAL_GOLD_NUGGET, ClayTechItems.ARTIFICIAL_GOLD_NUGGET,
 				ClayTechItems.ARTIFICIAL_GOLD_NUGGET, ClayTechItems.ARTIFICIAL_GOLD_NUGGET, ClayTechItems.MAGIC_CLAY,
 				ClayTechItems.ARTIFICIAL_GOLD_NUGGET, ClayTechItems.ARTIFICIAL_GOLD_NUGGET,
@@ -36,13 +36,17 @@ public class Golden_things {
 				ClayTechItems.ARTIFICIAL_GOLD_BLOCK };
 
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_NUGGET",
-				ClayTechItems.ARTIFICIAL_GOLD_NUGGET, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
+				ClayTechItems.ARTIFICIAL_GOLD_NUGGET, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT_O",
-				ClayTechItems.ARTIFICIAL_GOLD_INGOT_O, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, reciped, false);
+				ClayTechItems.ARTIFICIAL_GOLD_INGOT_O, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, reciped,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT",
-				ClayTechItems.ARTIFICIAL_GOLD_INGOT, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipee, false);
+				ClayTechItems.ARTIFICIAL_GOLD_INGOT, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipee,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_BLOCK",
-				ClayTechItems.ARTIFICIAL_GOLD_BLOCK, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipef, false);
+				ClayTechItems.ARTIFICIAL_GOLD_BLOCK, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipef,
+				false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "ARTIFICIAL_ENCHANTED_GOLDEN_APPLE",
 				ClayTechItems.ARTIFICIAL_ENCHANTED_GOLDEN_APPLE, "notresearch", 10, RecipeType.ANCIENT_ALTAR, recipeg,
 				false);
