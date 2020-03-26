@@ -1,5 +1,12 @@
 package club.claycoffee.ClayTech.utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 public class StrUtils {
 	public static String getLeftStr(String bep, String leftstr) {
 		if (bep.contains(leftstr)) {
@@ -31,5 +38,18 @@ public class StrUtils {
 			return null;
 		}
 	}
+	
+	public static Map<String, String> parseJSON(String json) {
+        Map<String, String> ret = new HashMap<>();
 
+        if (json != null && json.length() > 2) {
+            JsonParser p = new JsonParser();
+            JsonObject obj = p.parse(json).getAsJsonObject();
+
+            for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
+                ret.put(entry.getKey(), entry.getValue().getAsString());
+            }
+        }
+        return ret;
+    }
 }

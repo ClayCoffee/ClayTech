@@ -20,6 +20,7 @@ import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
@@ -74,7 +75,7 @@ public class CraftingTable extends ACraftingTable {
 
 		this.registerRecipe(20, ClayTechMachineRecipes.POISON_CORE, new ItemStack[] { ClayTechItems.POISON_CORE });
 
-		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_CONFUSION_CORE,
+		this.registerRecipe(40, ClayTechMachineRecipes.ADVANCED_POISON_CORE,
 				new ItemStack[] { ClayTechItems.ADVANCED_POISON_CORE });
 		this.registerRecipe(20, ClayTechMachineRecipes.CONFUSION_CORE,
 				new ItemStack[] { ClayTechItems.CONFUSION_CORE });
@@ -154,6 +155,10 @@ public class CraftingTable extends ACraftingTable {
 		this.registerRecipe(20, ClayTechMachineRecipes.TUBE, new ItemStack[] { ClayTechItems.TUBE });
 		this.registerRecipe(60, ClayTechMachineRecipes.OXYGEN_DISTRIBUTER,
 				new ItemStack[] { ClayTechItems.OXYGEN_DISTRIBUTER });
+
+		this.registerRecipe(2, ClayTechMachineRecipes.COPPER_DUST_O, new ItemStack[] { SlimefunItems.COPPER_DUST });
+		this.registerRecipe(2, ClayTechMachineRecipes.CLAY_FUSION_INGOT_O,
+				new ItemStack[] { ClayTechItems.CLAY_FUSION_INGOT });
 	}
 
 	@Override

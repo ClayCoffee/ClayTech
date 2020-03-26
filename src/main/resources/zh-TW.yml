@@ -51,6 +51,7 @@ General:
   SPACESUIT_DISTRIBUTER_OK: "&3分配成功!"
   NotInPlanet: "&c抱歉,您當前不在星球中!無法設立基地。"
   NotYourBase: "&c抱歉,這不是妳的基地,妳不能拆除!"
+  notOwner: "&c您只能打開妳自己的火箭發射器!"
   Yes_1: "是"
   No_1: "否"
 Categories:
@@ -492,6 +493,12 @@ Items:
   OXYGEN_DISTRIBUTER_LORE:
     - "&3當妳右鍵該物品的時候會把儲存在該物品中的氧氣平均分配給宇航服"
     - "&b當前氧氣: &60&9/&a120"
+  COPPER_ORE: "&6銅礦石"
+  COPPER_ORE_LORE:
+    - "&3可以放入粘土融合器合成界面的中間位置,粉碎成銅粉"
+  CLAY_FUSION_ORE: "&6粘土融合錠礦石"
+  CLAY_FUSION_ORE_LORE:
+    - "&3可以放入粘土融合器合成界面的中間位置,粉碎成粘土融合錠"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -537,6 +544,7 @@ MachineRecipes:
   CLAY_ROCKET_ASSEMBLING_MACHINE: "&a&o在火箭組裝器中組裝獲得"
   CLAY_ROCKET_FUEL_GENERATOR: "&a&o在火箭燃料制造機中制造"
   DIG_IN_THE_MOON: "&a&o在月球上挖掘"
+  DIG_IN_NON_EARTH: "&a&o在非地球(主世界)的星球上挖掘"
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&b粘土融合器"

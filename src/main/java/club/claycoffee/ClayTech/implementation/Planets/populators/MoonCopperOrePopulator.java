@@ -11,10 +11,11 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechItems;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
-public class MoonDiamondPopulator extends BlockPopulator {
+public class MoonCopperOrePopulator extends BlockPopulator {
 
 	@Override
 	public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {
@@ -22,13 +23,13 @@ public class MoonDiamondPopulator extends BlockPopulator {
 
 			@Override
 			public void run() {
-				int tryc = 3 + random.nextInt(2);
+				int tryc = 5 + random.nextInt(4);
 				for (int i = 0; i < tryc; i++) {
 					int x = random.nextInt(16);
 					int y = random.nextInt(100) + 1;
 					int z = random.nextInt(16);
 					int count = 0;
-					while (random.nextDouble() < 0.9D && count <= 12 || count <= 7) {
+					while (random.nextDouble() < 0.92D && count <= 8 || count <= 5) {
 						final int tx = x;
 						final int ty = y;
 						final int tz = z;
@@ -43,7 +44,8 @@ public class MoonDiamondPopulator extends BlockPopulator {
 
 									@Override
 									public void run() {
-										source.getBlock(tx, ty, tz).setType(Material.DIAMOND_ORE, false);
+										source.getBlock(tx, ty, tz).setType(ClayTechItems.COPPER_ORE.getType(), false);
+										BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "COPPER_ORE", true);
 										
 									}
 									
@@ -51,7 +53,6 @@ public class MoonDiamondPopulator extends BlockPopulator {
 								count++;
 							}
 						}
-
 
 						switch (random.nextInt(6)) {
 						case 0:
@@ -74,11 +75,13 @@ public class MoonDiamondPopulator extends BlockPopulator {
 							break;
 						}
 					}
+
 				}
 				
 			}
 			
 		}.runTaskAsynchronously(ClayTech.getInstance());
+
 	}
 
 }

@@ -19,7 +19,7 @@ public class PlanetUtils {
 
 	public static int getHighestBlockAt(World w, int x, int z) {
 		int currentHighestY = 0;
-		for (int y = 255; y > 0; y--) {
+		for (int y = 0; y < 255; y++) {
 			if (w.getBlockAt(x, y, z).getType() != Material.AIR) {
 				currentHighestY = y;
 			}

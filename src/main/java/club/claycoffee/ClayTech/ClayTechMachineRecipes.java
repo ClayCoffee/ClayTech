@@ -194,7 +194,7 @@ public class ClayTechMachineRecipes {
 			ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, ClayTechItems.CLAY_FUSION_INGOT,
 			ClayTechItems.CLAY_FUSION_INGOT, null, ClayTechItems.CLAY_FUSION_INGOT };
 	public final static ItemStack[] MIXED_ROCKET_FUEL = { ClayTechItems.CLAY_FUEL, ClayTechItems.CLAY_FUEL,
-			ClayTechItems.CLAY_FUEL, SlimefunItems.URANIUM, SlimefunItems.URANIUM, SlimefunItems.URANIUM,
+			ClayTechItems.CLAY_FUEL, new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK),
 			SlimefunItems.NETHER_ICE, SlimefunItems.NETHER_ICE, SlimefunItems.NETHER_ICE };
 
 	public final static ItemStack[] ROCKET_1 = { ClayTechItems.ROCKET_GLASS, ClayTechItems.ROCKET_FUEL_TANK,
@@ -237,4 +237,9 @@ public class ClayTechMachineRecipes {
 			SlimefunItems.REINFORCED_ALLOY_INGOT, ClayTechItems.SPACESUIT_OXYGEN_TANK,
 			ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT,
 			ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT };
+
+	public final static ItemStack[] COPPER_DUST_O = { null, null, null, null, ClayTechItems.COPPER_ORE, null, null,
+			null, null };
+	public final static ItemStack[] CLAY_FUSION_INGOT_O = { null, null, null, null, ClayTechItems.CLAY_FUSION_ORE, null,
+			null, null, null };
 }

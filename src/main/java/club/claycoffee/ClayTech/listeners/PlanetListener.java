@@ -31,7 +31,7 @@ public class PlanetListener implements Listener {
 	public void EntitySpawnEvent(EntitySpawnEvent e) {
 		Planet p = PlanetUtils.getPlanet(e.getEntity().getWorld());
 		if (p != null) {
-			if (!p.habitable) {
+			if (!p.spawnMob) {
 				if (e.getEntity() instanceof Mob || e.getEntity() instanceof Animals || e.getEntity() instanceof Monster
 						|| e.getEntity() instanceof Boss) {
 					e.setCancelled(true);

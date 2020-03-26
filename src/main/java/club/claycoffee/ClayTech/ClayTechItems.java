@@ -236,6 +236,11 @@ public class ClayTechItems {
 	public static final ItemStack OXYGEN_DISTRIBUTER = Utils.setLore(
 			Utils.newItemD(Material.FIREWORK_STAR, Lang.readItemText("OXYGEN_DISTRIBUTER")),
 			Lang.readItemLore("OXYGEN_DISTRIBUTER"));
+	public static final ItemStack COPPER_ORE = Utils.setLore(
+			Utils.newItemD(Material.GOLD_BLOCK, Lang.readItemText("COPPER_ORE")), Lang.readItemLore("COPPER_ORE"));
+	public static final ItemStack CLAY_FUSION_ORE = Utils.setLore(
+			Utils.newItemD(Material.IRON_BLOCK, Lang.readItemText("CLAY_FUSION_ORE")),
+			Lang.readItemLore("CLAY_FUSION_ORE"));
 
 	public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
 			SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),

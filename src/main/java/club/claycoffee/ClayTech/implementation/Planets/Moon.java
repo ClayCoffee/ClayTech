@@ -11,6 +11,9 @@ import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 
 import club.claycoffee.ClayTech.api.Planet;
+import club.claycoffee.ClayTech.implementation.Planets.populators.MoonClayFusionOrePopulator;
+import club.claycoffee.ClayTech.implementation.Planets.populators.MoonCoalPopulator;
+import club.claycoffee.ClayTech.implementation.Planets.populators.MoonCopperOrePopulator;
 import club.claycoffee.ClayTech.implementation.Planets.populators.MoonDiamondPopulator;
 import club.claycoffee.ClayTech.implementation.Planets.populators.MoonKreepPopulator;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -64,6 +67,6 @@ public class Moon extends ChunkGenerator {
 
 	@Override
 	public List<BlockPopulator> getDefaultPopulators(World world) {
-		return ImmutableList.of(new MoonKreepPopulator(), new MoonDiamondPopulator());
+		return ImmutableList.of(new MoonKreepPopulator(), new MoonDiamondPopulator(), new MoonCoalPopulator(), new MoonCopperOrePopulator(), new MoonClayFusionOrePopulator());
 	}
 }

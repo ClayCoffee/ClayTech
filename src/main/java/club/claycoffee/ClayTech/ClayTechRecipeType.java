@@ -40,4 +40,7 @@ public class ClayTechRecipeType {
 	public static final RecipeType DIG_IN_THE_MOON = new RecipeType(
 			new NamespacedKey(ClayTech.plugin, "DIG_IN_THE_MOON"), new SlimefunItemStack("DIG_IN_THE_MOON",
 					new ItemStack(Material.IRON_PICKAXE), "", Lang.readMachineRecipesText("DIG_IN_THE_MOON")));
+	public static final RecipeType DIG_IN_NON_EARTH = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "DIG_IN_NON_EARTH"), new SlimefunItemStack("DIG_IN_NON_EARTH",
+					new ItemStack(Material.IRON_PICKAXE), "", Lang.readMachineRecipesText("DIG_IN_NON_EARTH")));
 }

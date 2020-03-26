@@ -14,7 +14,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
-public class MoonDiamondPopulator extends BlockPopulator {
+public class MoonCoalPopulator extends BlockPopulator {
 
 	@Override
 	public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {
@@ -22,13 +22,13 @@ public class MoonDiamondPopulator extends BlockPopulator {
 
 			@Override
 			public void run() {
-				int tryc = 3 + random.nextInt(2);
+				int tryc = 8 + random.nextInt(3);
 				for (int i = 0; i < tryc; i++) {
 					int x = random.nextInt(16);
 					int y = random.nextInt(100) + 1;
 					int z = random.nextInt(16);
 					int count = 0;
-					while (random.nextDouble() < 0.9D && count <= 12 || count <= 7) {
+					while (random.nextDouble() < 0.94D && count <= 18 || count <= 12) {
 						final int tx = x;
 						final int ty = y;
 						final int tz = z;
@@ -43,7 +43,7 @@ public class MoonDiamondPopulator extends BlockPopulator {
 
 									@Override
 									public void run() {
-										source.getBlock(tx, ty, tz).setType(Material.DIAMOND_ORE, false);
+										source.getBlock(tx, ty, tz).setType(Material.COAL_ORE, false);
 										
 									}
 									
@@ -74,11 +74,13 @@ public class MoonDiamondPopulator extends BlockPopulator {
 							break;
 						}
 					}
+
 				}
 				
 			}
 			
 		}.runTaskAsynchronously(ClayTech.getInstance());
+
 	}
 
 }

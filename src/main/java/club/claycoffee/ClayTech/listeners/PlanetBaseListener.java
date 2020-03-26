@@ -70,15 +70,18 @@ public class PlanetBaseListener implements Listener {
 				int baseX = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseX");
 				int baseY = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseY");
 				int baseZ = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseZ");
-				if (baseX == e.getBlock().getX() && baseY == e.getBlock().getY() + 1 && baseZ == e.getBlock().getZ()) {
-					pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base", false);
-					pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseX", null);
-					pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseY", null);
-					pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseZ", null);
-					planetsData.saveCustomConfig();
-					e.getPlayer().sendMessage(Lang.readGeneralText("BaseDestroyed"));
-				} else {
-					e.getPlayer().sendMessage(Lang.readGeneralText("NotYourBase"));
+				boolean hasBase = pd.getBoolean(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base");
+				if(hasBase) {
+					if (baseX == e.getBlock().getX() && baseY == e.getBlock().getY() + 1 && baseZ == e.getBlock().getZ()) {
+						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base", false);
+						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseX", null);
+						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseY", null);
+						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseZ", null);
+						planetsData.saveCustomConfig();
+						e.getPlayer().sendMessage(Lang.readGeneralText("BaseDestroyed"));
+					} else {
+						e.getPlayer().sendMessage(Lang.readGeneralText("NotYourBase"));
+					}
 				}
 			}
 		}

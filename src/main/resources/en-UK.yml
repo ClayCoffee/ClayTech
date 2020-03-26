@@ -51,6 +51,7 @@ General:
   SPACESUIT_DISTRIBUTER_OK: "&3Done!"
   NotInPlanet: "&cSorry. You are not in a planet.So you can't set up a base."
   NotYourBase: "&cSorry. You can't destroy other people's base."
+  notOwner: "&cYou can only open your Rocket Launcher!"
   Yes_1: "Yes"
   No_1: "No"
 Categories:
@@ -482,6 +483,12 @@ Items:
   OXYGEN_DISTRIBUTER_LORE:
     - "&3When you use this item,It will share its oxygen level to your spacesuits averagely."
     - "&bCurrent Oxygen Level: &60&9/&a120"
+  COPPER_ORE: "&6Copper Ore"
+  COPPER_ORE_LORE:
+    - "&3Put this in the middle slot of the Clay Crafting table to gain the dust."
+  CLAY_FUSION_ORE: "&6Clay Fusion Ore"
+  CLAY_FUSION_ORE_LORE:
+    - "&3Put this in the middle slot of the Clay Crafting table to gain the ingot."
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -527,6 +534,7 @@ MachineRecipes:
   CLAY_ROCKET_ASSEMBLING_MACHINE: "&a&oAssemble in the Rocket Assembling Machine."
   CLAY_ROCKET_FUEL_GENERATOR: "&a&oGenerate in the Rocket Fuel Generator."
   DIG_IN_THE_MOON: "&a&oDig in the moon."
+  DIG_IN_NON_EARTH: "&a&oDig in other planets except earth."
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&bClay Fusing Machine"

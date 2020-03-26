@@ -11,10 +11,11 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechItems;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
-public class MoonDiamondPopulator extends BlockPopulator {
+public class MoonClayFusionOrePopulator extends BlockPopulator {
 
 	@Override
 	public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {
@@ -28,7 +29,7 @@ public class MoonDiamondPopulator extends BlockPopulator {
 					int y = random.nextInt(100) + 1;
 					int z = random.nextInt(16);
 					int count = 0;
-					while (random.nextDouble() < 0.9D && count <= 12 || count <= 7) {
+					while (random.nextDouble() < 0.85D && count <= 6 || count <= 3) {
 						final int tx = x;
 						final int ty = y;
 						final int tz = z;
@@ -43,7 +44,8 @@ public class MoonDiamondPopulator extends BlockPopulator {
 
 									@Override
 									public void run() {
-										source.getBlock(tx, ty, tz).setType(Material.DIAMOND_ORE, false);
+										source.getBlock(tx, ty, tz).setType(ClayTechItems.CLAY_FUSION_ORE.getType(), false);
+										BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "CLAY_FUSION_ORE", true);
 										
 									}
 									
@@ -51,7 +53,6 @@ public class MoonDiamondPopulator extends BlockPopulator {
 								count++;
 							}
 						}
-
 
 						switch (random.nextInt(6)) {
 						case 0:
@@ -74,7 +75,9 @@ public class MoonDiamondPopulator extends BlockPopulator {
 							break;
 						}
 					}
+
 				}
+
 				
 			}
 			

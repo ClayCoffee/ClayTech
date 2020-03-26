@@ -27,6 +27,10 @@ public class Ingots {
 				10, ClayTechRecipeType.DIG_IN_THE_MOON, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_ORESTHINGS, "KREEP_INGOT", ClayTechItems.KREEP_INGOT, "notresearch",
 				10, RecipeType.SMELTERY, ClayTechMachineRecipes.KREEP_INGOT, false);
+		Slimefunutils.registerItem(ClayTechItems.C_ORESTHINGS, "COPPER_ORE", ClayTechItems.COPPER_ORE, "notresearch",
+				10, ClayTechRecipeType.DIG_IN_NON_EARTH, ClayTechItems.NORECIPE, false);
+		Slimefunutils.registerItem(ClayTechItems.C_ORESTHINGS, "CLAY_FUSION_ORE", ClayTechItems.CLAY_FUSION_ORE,
+				"notresearch", 10, ClayTechRecipeType.DIG_IN_NON_EARTH, ClayTechItems.NORECIPE, false);
 
 		Research rs = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_OREINGOTS_1"), 9923,
 				Lang.readResearchesText("CLAYTECH_OREINGOTS_I"), 50);
@@ -38,7 +42,8 @@ public class Ingots {
 		Research rs2 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_OREINGOTS_2"), 9925,
 				Lang.readResearchesText("CLAYTECH_OREINGOTS_II"), 50);
 		rs2.addItems(SlimefunItem.getByItem(ClayTechItems.KREEP_INGOT),
-				SlimefunItem.getByItem(ClayTechItems.KREEP_ROCK));
+				SlimefunItem.getByItem(ClayTechItems.KREEP_ROCK), SlimefunItem.getByItem(ClayTechItems.COPPER_ORE),
+				SlimefunItem.getByItem(ClayTechItems.CLAY_FUSION_ORE));
 		rs2.register();
 	}
 }

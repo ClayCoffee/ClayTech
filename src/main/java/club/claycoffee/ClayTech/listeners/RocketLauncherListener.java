@@ -1,5 +1,7 @@
 package club.claycoffee.ClayTech.listeners;
 
+import java.util.Map;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -25,6 +27,7 @@ import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.PlanetUtils;
 import club.claycoffee.ClayTech.utils.RocketUtils;
+import club.claycoffee.ClayTech.utils.StrUtils;
 import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
@@ -48,31 +51,38 @@ public class RocketLauncherListener implements Listener {
 			Block b = e.getClickedBlock();
 			if (BlockStorage.checkID(b) != null) {
 				if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
-					Planet current = PlanetUtils.getPlanet(b.getWorld());
-					if (current == null) {
-						e.getPlayer().sendMessage("unspp");
+					Map<String,String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
+					String ownerName = jbj.get("owner");
+					if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
+						Planet current = PlanetUtils.getPlanet(b.getWorld());
+						if (current == null) {
+							e.getPlayer().sendMessage("unspp");
+							return;
+						}
+						if (Utils.getMetadata(b, "currentPage") != null) {
+							currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
+						}
+						Inventory Preset = Bukkit.createInventory(null, 54, Lang.readMachinesText("ROCKET_LAUNCHER"));
+						if (!ClayTech.RunningLaunchersG.containsKey(Preset)) {
+							ClayTech.RunningLaunchersG.put(Preset, b);
+						}
+						Preset.setItem(5, BORDER_ITEM);
+						for (int eachID : BORDER) {
+							Preset.setItem(eachID, BORDER_ITEM);
+						}
+						for (int eachID : BORDER_2) {
+							Preset.setItem(eachID, OTHERBORDER_ITEM);
+						}
+						Preset.setItem(5, BORDER_ITEM);
+
+						Preset = PlanetUtils.renderLauncherMenu(current, Preset, currentPage);
+
+						e.getPlayer().openInventory(Preset);
+					} else {
+						e.getPlayer().sendMessage(Lang.readGeneralText("notOwner"));
+						e.setCancelled(true);
 						return;
 					}
-					if (Utils.getMetadata(b, "currentPage") != null) {
-						currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
-					}
-					Inventory Preset = Bukkit.createInventory(null, 54, Lang.readMachinesText("ROCKET_LAUNCHER"));
-					if (!ClayTech.RunningLaunchersG.containsKey(Preset)) {
-						ClayTech.RunningLaunchersG.put(Preset, b);
-					}
-					Preset.setItem(5, BORDER_ITEM);
-					for (int eachID : BORDER) {
-						Preset.setItem(eachID, BORDER_ITEM);
-					}
-					for (int eachID : BORDER_2) {
-						Preset.setItem(eachID, OTHERBORDER_ITEM);
-					}
-					Preset.setItem(5, BORDER_ITEM);
-
-					Preset = PlanetUtils.renderLauncherMenu(current, Preset, currentPage);
-
-					e.getPlayer().openInventory(Preset);
-
 				}
 			}
 		}

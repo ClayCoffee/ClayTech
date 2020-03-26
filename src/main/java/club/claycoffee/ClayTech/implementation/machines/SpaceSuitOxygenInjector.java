@@ -257,7 +257,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 						return;
 					if (RocketUtils.getOxygen(spacesuit) >= RocketUtils.getMaxOxygen(spacesuit))
 						return;
-
+					b.getLocation().add(0, 1, 0).getBlock().setType(Material.AIR); // 消耗树叶
 					MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[] { spacesuit },
 							new ItemStack[] {});
 					item = spacesuit.clone();

@@ -31,6 +31,9 @@ public class Planet {
 	public int distance;
 	public int harmlevel;
 	public boolean cold;
+	public boolean spawnMob;
+	private DataYML planets = ClayTech.getPlanetYML();
+	private FileConfiguration f = planets.getCustomConfig();
 
 	public Planet(String planetName, ItemStack displayItem, ChunkGenerator planetWorld, Environment environment,
 			boolean habitable, int gravity, int distance, int harmlevel, boolean cold) {
@@ -43,6 +46,20 @@ public class Planet {
 		this.distance = distance;
 		this.harmlevel = harmlevel;
 		this.cold = cold;
+		if (!f.contains(this.planetName + "-spawnMobs")) {
+			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				f.set(this.planetName + "-spawnMobs", true);
+				this.spawnMob = true;
+			} else {
+				f.set(this.planetName + "-spawnMobs", false);
+				this.spawnMob = false;
+			}
+			planets.saveCustomConfig();
+			planets.reloadCustomConfig();
+		} else {
+			this.spawnMob = f.getBoolean(this.planetName + "-spawnMobs");
+		}
+
 	}
 
 	public Planet(String planetName, ItemStack displayItem, World planetWorld, Environment environment,
@@ -58,8 +75,6 @@ public class Planet {
 	}
 
 	public void register() {
-		DataYML planets = ClayTech.getPlanetYML();
-		FileConfiguration f = planets.getCustomConfig();
 		if (!f.contains(this.planetName)) {
 			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 				f.set(this.planetName, true);

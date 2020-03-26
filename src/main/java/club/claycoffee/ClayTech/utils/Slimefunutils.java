@@ -10,6 +10,7 @@ import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import me.mrCookieSlime.Slimefun.Objects.handlers.ItemHandler;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.Slimefun;
 
@@ -28,7 +29,19 @@ public class Slimefunutils {
 					ItemStack);
 		}
 	}
-
+	public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
+			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch, ItemHandler[] handler) {
+		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
+		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
+		item.register(ClayTech.getInstance());
+		item.addItemHandler(handler);
+		if (registerResearch) {
+			researchId++;
+			Slimefun.registerResearch(
+					new Research(new NamespacedKey(ClayTech.getInstance(), name), researchId, ResearchName, cost),
+					ItemStack);
+		}
+	}
 	public static void registerArmors(Category category, String nameprefix, ItemStack[] ItemStack, String ResearchName,
 			int cost, RecipeType Recipetype, ItemStack MaterialStack, boolean registerResearch) {
 
