@@ -46,6 +46,15 @@ public class Planet {
 		this.distance = distance;
 		this.harmlevel = harmlevel;
 		this.cold = cold;
+		if (!f.contains(this.planetName)) {
+			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				f.set(this.planetName, true);
+			} else {
+				f.set(this.planetName, false);
+			}
+			planets.saveCustomConfig();
+			planets.reloadCustomConfig();
+		}
 		if (!f.contains(this.planetName + "-spawnMobs")) {
 			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 				f.set(this.planetName + "-spawnMobs", true);
@@ -72,9 +81,6 @@ public class Planet {
 		this.gravity = gravity;
 		this.harmlevel = harmlevel;
 		this.cold = cold;
-	}
-
-	public void register() {
 		if (!f.contains(this.planetName)) {
 			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 				f.set(this.planetName, true);
@@ -84,6 +90,22 @@ public class Planet {
 			planets.saveCustomConfig();
 			planets.reloadCustomConfig();
 		}
+		if (!f.contains(this.planetName + "-spawnMobs")) {
+			if (this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				f.set(this.planetName + "-spawnMobs", true);
+				this.spawnMob = true;
+			} else {
+				f.set(this.planetName + "-spawnMobs", false);
+				this.spawnMob = false;
+			}
+			planets.saveCustomConfig();
+			planets.reloadCustomConfig();
+		} else {
+			this.spawnMob = f.getBoolean(this.planetName + "-spawnMobs");
+		}
+	}
+
+	public void register() {
 		if (!f.getBoolean(this.planetName) && !this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 			if (Bukkit.getWorld(this.planetName) != null) {
 				Bukkit.unloadWorld(this.planetName, true);
