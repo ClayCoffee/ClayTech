@@ -26,6 +26,7 @@ import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
+@SuppressWarnings("deprecation")
 public class ElementExtracter extends AExtracter {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;

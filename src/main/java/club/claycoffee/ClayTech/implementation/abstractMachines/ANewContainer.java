@@ -25,6 +25,7 @@ import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 
+@SuppressWarnings("deprecation")
 public abstract class ANewContainer extends AContainer implements InventoryBlock, EnergyNetComponent {
 
 	@SuppressWarnings("static-access")
@@ -61,7 +62,6 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 		this.registerDefaultRecipes();
 	}
 
-	@SuppressWarnings("deprecation")
 	protected void tick(Block b) {
 		new BukkitRunnable() {
 

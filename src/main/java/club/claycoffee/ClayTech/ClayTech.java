@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
+import club.claycoffee.ClayTech.utils.Metrics;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import club.claycoffee.ClayTech.api.Planet;
@@ -232,6 +233,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		if (!is115) {
 			Utils.info(Lang.readGeneralText("Before_115"));
 		}
+		Metrics mt = new Metrics(this, 6887);
+		
 		planetYML = new DataYML("planets.yml");
 		planetYML.saveCDefaultConfig();
 		planetYML.reloadCustomConfig();

@@ -6,7 +6,9 @@ import org.bukkit.event.HandlerList;
 
 /**
  * Called when a ClayTech machine tick. 当一个粘土科技机器tick的时候触发
+ * @Deprecated This may cause some performance issues.
  */
+@Deprecated
 public class MachineTickEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	private Block Machine;

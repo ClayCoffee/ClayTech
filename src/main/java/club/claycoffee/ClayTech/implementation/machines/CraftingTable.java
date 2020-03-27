@@ -28,6 +28,7 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
+@SuppressWarnings("deprecation")
 public class CraftingTable extends ACraftingTable {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;

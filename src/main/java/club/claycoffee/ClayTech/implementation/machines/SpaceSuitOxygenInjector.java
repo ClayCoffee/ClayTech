@@ -219,8 +219,6 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 					if (ChargableBlock.getCharge(b) < getEnergyConsumption())
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
-					if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
-						return;
 					progress.put(b, timeleft - 1);
 				} else {
 					if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
@@ -257,7 +255,14 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 						return;
 					if (RocketUtils.getOxygen(spacesuit) >= RocketUtils.getMaxOxygen(spacesuit))
 						return;
-					b.getLocation().add(0, 1, 0).getBlock().setType(Material.AIR); // 消耗树叶
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							b.getLocation().add(0, 1, 0).getBlock().setType(Material.AIR); // 消耗树叶
+						}
+						
+					}.runTask(ClayTech.getInstance());
 					MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[] { spacesuit },
 							new ItemStack[] {});
 					item = spacesuit.clone();

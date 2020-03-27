@@ -30,6 +30,7 @@ import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.StrUtils;
 import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import me.mrCookieSlime.Slimefun.api.Slimefun;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 
@@ -51,6 +52,14 @@ public class RocketLauncherListener implements Listener {
 			Block b = e.getClickedBlock();
 			if (BlockStorage.checkID(b) != null) {
 				if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
+					if(e.hasItem()) {
+						if(!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
+							return;
+						}
+					}
+					if(!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
+						return;
+					}
 					Map<String,String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
 					String ownerName = jbj.get("owner");
 					if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
