@@ -34,4 +34,151 @@
 √24. 支持自定义是否生成星球怪物
 √21. 月球上的铜矿
 √22. 月球上的粘土融合矿
-14. 月球地牢?(难度较大,里面只有箱子没有其他物品。可不实现。)
+
+3.29
+修复所有不可放置物品放置后出现幽灵方块的bug
+交互移到粘土科技 handler
+
+ ELEMENT_UNIT: "&e元素单元"
+  ELEMENT_UNIT_LORE:
+    - "&6元素单元"
+    - "&7可以容纳元素!"
+    - "&e不可放置"
+  ELEMENT_OXYGEN: "&e氧元素"
+  ELEMENT_OXYGEN_LORE:
+    - "&e氧元素"
+    - "&74P + 5O2 =点燃=2P2O5"
+    - "&7在元素提取机中放入草方块三个获得"
+    - "&e不可放置"
+  ELEMENT_CARBON: "&e碳元素"
+  ELEMENT_CARBON_LORE:
+    - "&6碳元素"
+    - "&7可以做很多东西呢~"
+    - "&7在元素提取机中放入八个煤炭获得"
+    - "&e不可放置"
+  ELEMENT_SILICON: "&e硅元素"
+  ELEMENT_SILICON_LORE:
+    - "&6硅元素"
+    - "&7用来合成硅锭,制造电路板!"
+    - "&7在元素提取机中放入十个沙子获得"
+    - "&e不可放置"
+  CLAY_COFFEE: "&e粘土咖啡"
+  CLAY_COFFEE_LORE:
+    - "&e粘土咖啡!"
+    - "&7食用后可增加5点饱食度和3分钟夜视效果"
+    - "&e不可放置"
+  DRINK_BOTTLE: "&e饮料瓶"
+  DRINK_BOTTLE_LORE:
+    - "&6饮料瓶"
+    - "&7制作饮料的必备物品"
+    - "&7没有瓶子怎么装饮料呢?拿嘴装吗?"
+    - "&e不可放置"
+  DIRTY_DRINK_BOTTLE: "&e脏饮料瓶"
+  DIRTY_DRINK_BOTTLE_LORE:
+    - "&6脏饮料瓶"
+    - "&7这个饮料瓶需要用洗矿机洗洗.."
+    - "&7哪个小男孩会喝脏饮料瓶呢?右键我来清洗吧!(需要一个水桶)"
+    - "&e不可放置"
+  SPICY_CHICKEN_BURGER: "&e香辣鸡腿堡"
+  SPICY_CHICKEN_BURGER_LORE:
+    - "&6香辣鸡腿堡"
+    - "&7食用后增加15饱食度和20秒力量II效果"
+    - "&7宁难道在抄袭CFC?"
+    - "&e不可放置"
+  BABA_BURGER: "&e老八秘制小憨包"
+  BABA_BURGER_LORE:
+    - "&6老八秘制小憨包"
+    - "&7吃个试试?"
+    - "&e不可放置"
+  LETTUSE: "&e生菜"
+  LETTUSE_LORE:
+    - "&6生菜"
+    - "&7食用后增加1点饱食度"
+    - "&e不可放置"
+  LEMON: "&e柠檬"
+  LEMON_LORE:
+    - "&6柠檬"
+    - "&7食用后增加1点饱食度和10秒反胃IV效果"
+    - "&7我柠檬了"
+    - "&7破坏树叶有几率获得"
+    - "&e不可放置"
+  LEMON_POWDER_DRINK: "&e柠檬汁"
+  LEMON_POWDER_DRINK_LORE:
+    - "&6柠檬汁"
+    - "&7食用后增加6点饱食度和10秒反胃IV效果"
+    - "&7我柠檬了"
+    - "&e不可放置"
+  TEA_DRINK: "&e茶"
+  TEA_DRINK_LORE:
+    - "&6茶"
+    - "&7食用后增加6点饱食度和30秒抗性提升III效果"
+    - "&e不可放置"
+  LEMON_TEA_DRINK: "&e柠檬茶"
+  LEMON_TEA_DRINK_LORE:
+    - "&6柠檬茶"
+    - "&7食用后增加12点饱食度和60秒抗性提升III效果"
+    - "&7这东西冷一点可能就是冰红茶了.."
+    - "&e不可放置"
+  CHOCOLATE: "&e巧克力"
+  CHOCOLATE_LORE:
+    - "&6巧克力"
+    - "&7食用后增加15点饱食度和30秒抗性提升III效果"
+    - "&7饿货!来条憨力架!横扫饥饿,做回憨逼~"
+    - "&e不可放置"
+  LUOSI_RICE_NOODLE: "&e螺蛳粉"
+  LUOSI_RICE_NOODLE_LORE:
+    - "&6螺蛳粉"
+    - "&7食用后增加12点饱食度和30秒抗性提升III效果"
+    - "&7好臭啊..不过挺好吃的."
+    - "&e不可放置"
+  ROCKET: "&9火箭 (一阶)"
+  ROCKET_LORE:
+    - "&3一阶的火箭"
+    - "&b当前燃料: &60&9/&a125"
+    - "&c&l不要堆叠"
+    - "&e不可放置"
+  MOTOR_CORE: "&e马达核心"
+  TEMPERATURE_RESISTANCE_OBSIDIAN: "&3一阶耐温黑曜石"
+  TEMPERATURE_RESISTANCE_OBSIDIAN_LORE:
+    - "&6这种黑曜石很耐高温"
+    - "&6非常适合造火箭!"
+    - "&e不可放置"
+  ROCKET_ENGINE_SHELL: "&6一阶火箭引擎外壳"
+  FUEL_TANK: "&6燃料桶"
+  FUEL_TANK_LORE:
+    - "&3可以用来装燃料!"
+    - "&b可储存&610&b点燃料"
+    - "&e不可放置"
+  ROCKET_ENGINE: "&9一阶火箭引擎"
+  ROCKET_ENGINE_LORE:
+    - "&3制造一阶火箭的必需品!"
+    - "&e不可放置"
+  ROCKET_ANTENNA: "&9一阶火箭天线"
+  ROCKET_ANTENNA_LORE:
+    - "&3用于在火箭轨道中的信息传输"
+    - "&e不可放置"
+   ROCKET_FUEL_TANK: "&9一阶火箭燃料罐"
+  ROCKET_FUEL_TANK_LORE:
+    - "&3可以用来装燃料!"
+    - "&b可储存&6125&b点燃料"
+    - "&e不可放置"
+  ROCKET_GLASS: "&9一阶火箭玻璃"
+  ROCKET_GLASS_LORE:
+    - "&3非同寻常的玻璃"
+    - "&3可以在宇宙使用!"
+    - "&e不可放置"
+ MIXED_ROCKET_FUEL: "&6混合火箭燃料"
+  MIXED_ROCKET_FUEL_LORE:
+    - "&9可以给火箭注入燃料"
+    - "&9去往更深邃的宇宙"
+    - "&e不可放置"
+   OXYGEN_TANK: "&9氧气罐"
+  OXYGEN_TANK_LORE:
+    - "&3只是个普普通通的氧气罐.."
+    - "&b可储存&65&b点氧气"
+    - "&e不可放置"
+  SPACESUIT_OXYGEN_TANK: "&9宇航服氧气罐"
+  SPACESUIT_OXYGEN_TANK_LORE:
+    - "&3可以为宇航服提供氧气"
+    - "&b可储存&640&b点氧气"
+    - "&e不可放置"

@@ -2,8 +2,11 @@ package club.claycoffee.ClayTech.api;
 
 import java.lang.reflect.Field;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
 
+import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.ClayItem;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -84,6 +87,17 @@ public class ClayTechManager {
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * set a player's spacesuit cost no durability once.(will lose efficacy when the server restarting or reloading)
+	 */
+	public static void setSpaceSuitFallNoCostDurabilityOnce(Player p) {
+		p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(),true));
+	}
+	
+	public static void allowSpaceTeleportOnce(Player p) {
+		p.setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(),true));
 	}
 
 }

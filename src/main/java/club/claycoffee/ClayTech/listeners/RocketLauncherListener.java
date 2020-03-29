@@ -123,58 +123,77 @@ public class RocketLauncherListener implements Listener {
 								if (PlanetUtils.getFuel(current, target) <= RocketUtils.getFuel(handItem)) {
 									if (handItem.getAmount() == 1) {
 										e.setCancelled(true);
-										p.sendMessage(Lang.readGeneralText("RocketOK"));
-										new BukkitRunnable() {
-											int time = 0;
+										String inRocket = "false";
+										if (Utils.readPlayerMetadataString(p, "inrocket") != null) {
+											inRocket = Utils.readPlayerMetadataString(p, "inrocket");
+										}
+										if(!inRocket.equalsIgnoreCase("true")) {
+											p.setMetadata("inrocket",
+													new FixedMetadataValue(ClayTech.getInstance(), "true"));
+											p.sendMessage(Lang.readGeneralText("RocketOK"));
+											new BukkitRunnable() {
+												int time = 0;
 
-											@SuppressWarnings("deprecation")
-											@Override
-											public void run() {
-												time++;
-												p.sendMessage(Lang.readGeneralText("RocketCountdown")
-														.replaceAll("%seconds%", "" + (10 - time)));
-												ItemStack thandItem = p.getInventory().getItemInMainHand();
-												if (ClayTechManager.isRocket(thandItem)) {
-													if (time >= 10) {
-														BlockStorage._integrated_removeBlockInfo(b.getLocation(), true);
-														b.setType(Material.AIR);
-														p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
-														p.setMetadata("inrocket",
-																new FixedMetadataValue(ClayTech.getInstance(), "true"));
-														DataYML planetsData = ClayTech.getPlanetDataYML();
-														FileConfiguration pd = planetsData.getCustomConfig();
-														if (pd.getBoolean(
-																p.getName() + "." + target.planetName + ".base")) {
-															int X = pd.getInt(
-																	p.getName() + "." + target.planetName + ".baseX");
-															int Y = pd.getInt(
-																	p.getName() + "." + target.planetName + ".baseY");
-															int Z = pd.getInt(
-																	p.getName() + "." + target.planetName + ".baseZ");
-															p.teleport(new Location(Bukkit.getWorld(target.planetName),
-																	X, Y, Z), TeleportCause.PLUGIN);
-															p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
-																	Lang.readGeneralText("TeleportedToBase_Sub"));
-														} else {
-															p.teleport(
-																	PlanetUtils.findSafeLocation(
-																			Bukkit.getWorld(target.planetName)),
-																	TeleportCause.PLUGIN);
+												@SuppressWarnings("deprecation")
+												@Override
+												public void run() {
+													time++;
+													p.sendMessage(Lang.readGeneralText("RocketCountdown")
+															.replaceAll("%seconds%", "" + (10 - time)));
+													ItemStack thandItem = p.getInventory().getItemInMainHand();
+													if (ClayTechManager.isRocket(thandItem)) {
+														if (time >= 10) {
+															BlockStorage._integrated_removeBlockInfo(b.getLocation(), true);
+															b.setType(Material.AIR);
+															p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
+															DataYML planetsData = ClayTech.getPlanetDataYML();
+															FileConfiguration pd = planetsData.getCustomConfig();
+															if (pd.getBoolean(
+																	p.getName() + "." + target.planetName + ".base")) {
+																int X = pd.getInt(
+																		p.getName() + "." + target.planetName + ".baseX");
+																int Y = pd.getInt(
+																		p.getName() + "." + target.planetName + ".baseY");
+																int Z = pd.getInt(
+																		p.getName() + "." + target.planetName + ".baseZ");
+																p.teleport(new Location(Bukkit.getWorld(target.planetName),
+																			X, Y, Z), TeleportCause.PLUGIN);
+																p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
+																		Lang.readGeneralText("TeleportedToBase_Sub"));
+															} else {
+																try {
+																	p.teleport(
+																			PlanetUtils.findSafeLocation(
+																					Bukkit.getWorld(target.planetName)),
+																			TeleportCause.PLUGIN);
+																}
+																catch(Exception ex) {
+																	p.sendMessage(Lang.readGeneralText("LocationFatal"));
+																	e.setCancelled(true);
+																	return;
+																}
+															}
+															p.setMetadata("inrocket", new FixedMetadataValue(
+																	ClayTech.getInstance(), "false"));
+															RocketUtils.setFuel(thandItem, RocketUtils.getFuel(thandItem)
+																	- PlanetUtils.getFuel(current, target));
+															p.sendMessage(Lang.readGeneralText("RocketArrived"));
+															this.cancel();
 														}
-														p.setMetadata("inrocket", new FixedMetadataValue(
-																ClayTech.getInstance(), "false"));
-														RocketUtils.setFuel(thandItem, RocketUtils.getFuel(thandItem)
-																- PlanetUtils.getFuel(current, target));
-														p.sendMessage(Lang.readGeneralText("RocketArrived"));
+													} else {
+														p.setMetadata("inrocket",
+																new FixedMetadataValue(ClayTech.getInstance(), "false"));
+														p.sendMessage(Lang.readGeneralText("NotRocket"));
 														this.cancel();
 													}
-												} else {
-													p.sendMessage(Lang.readGeneralText("NotRocket"));
-													this.cancel();
 												}
-											}
 
-										}.runTaskTimer(ClayTech.getInstance(), 0, 20);
+											}.runTaskTimer(ClayTech.getInstance(), 0, 20);
+										}
+										else {
+											p.sendMessage(Lang.readGeneralText("AlreadyInRocket"));
+											e.setCancelled(true);
+										}
 									} else {
 										p.sendMessage(Lang.readGeneralText("StakingRockets"));
 										e.setCancelled(true);

@@ -52,6 +52,9 @@ General:
   NotInPlanet: "&cSorry. You are not in a planet.So you can't set up a base."
   NotYourBase: "&cSorry. You can't destroy other people's base."
   notOwner: "&cYou can only open your Rocket Launcher!"
+  SpaceSuitFall: "&6>> Your spacesuit protected you."
+  AlreadyInRocket: "&cYou are already in the rocket!"
+  LocationFatal: "&cThere isn't a safe location to land.You can retry once."
   Yes_1: "Yes"
   No_1: "No"
 Categories:

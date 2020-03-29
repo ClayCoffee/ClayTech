@@ -13,8 +13,7 @@ public class ItemInteractListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void BlockPlaceEvent(BlockPlaceEvent e) {
 		if (Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"), Utils.getLore(e.getItemInHand()))) {
-			e.setBuild(false);
-			e.setCancelled(false);
+			e.setCancelled(true);
 			e.getPlayer().sendMessage(Lang.readGeneralText("CantPlace"));
 		}
 
@@ -26,6 +25,7 @@ public class ItemInteractListener implements Listener {
 			if (e.getItem().hasItemMeta()) {
 				if (Utils.ExitsInList(Lang.readGeneralText("CantEat"), Utils.getLore(e.getItem()))) {
 					e.getPlayer().sendMessage(Lang.readGeneralText("CantEatMessage"));
+					e.setCancelled(true);
 					return;
 				}
 			}

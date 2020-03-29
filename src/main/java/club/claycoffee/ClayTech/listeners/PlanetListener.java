@@ -3,19 +3,24 @@ package club.claycoffee.ClayTech.listeners;
 import org.bukkit.World;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Boss;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Mob;
 import org.bukkit.entity.Monster;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.ClayTechManager;
@@ -346,7 +351,12 @@ public class PlanetListener implements Listener {
 			if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
 				inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
 			}
+			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
 			if (!inRocket.equalsIgnoreCase("true") && !p.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				if(ast) {
+					e.getPlayer().setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(),false));
+					return;
+				}
 				// 其他星球传送到主世界
 				e.getPlayer().sendMessage(Lang.readGeneralText("CantUseOtherTeleportInUniverse"));
 				e.setCancelled(true);
@@ -358,12 +368,35 @@ public class PlanetListener implements Listener {
 			if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
 				inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
 			}
+			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
 			if (!inRocket.equalsIgnoreCase("true") && p.planetName.equalsIgnoreCase(ClayTech.getOverworld())
 					&& !to.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				if(ast) {
+					e.getPlayer().setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(),false));
+					return;
+				}
 				// 在主世界传送到其他星球
 				e.getPlayer().sendMessage(Lang.readGeneralText("CantUseOtherTeleportInUniverse"));
 				e.setCancelled(true);
 				return;
+			}
+		}
+	}
+	
+	@EventHandler
+	public void EntityDamageEvent(EntityDamageEvent e) {
+		if(e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
+			Player p = (Player) e.getEntity();
+			if (ClayTechManager.isSpaceSuit(p.getInventory().getHelmet())
+					&& ClayTechManager.isSpaceSuit(p.getInventory().getChestplate())
+					&& ClayTechManager.isSpaceSuit(p.getInventory().getLeggings())
+					&& ClayTechManager.isSpaceSuit(p.getInventory().getBoots())) {
+				e.setDamage(e.getDamage() - e.getFinalDamage());
+				if(Utils.readPlayerMetadataBoolean(p, "SpaceSuitNoCostDurability")) {
+					e.setCancelled(true);
+					p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(),false));
+				}
+				p.sendMessage(Lang.readGeneralText("SpaceSuitFall"));
 			}
 		}
 	}

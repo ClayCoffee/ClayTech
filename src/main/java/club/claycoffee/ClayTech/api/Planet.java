@@ -126,16 +126,16 @@ public class Planet {
 			newWorld.environment(this.environment);
 			long seed = new Random().nextLong();
 			newWorld = newWorld.seed(seed);
-			newWorld = newWorld.type(WorldType.NORMAL);
+			newWorld = newWorld.type(WorldType.CUSTOMIZED);
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator(this.planetWorld);
 			newWorld.createWorld();
-
+			
 			// 多世界注册
 			if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {
 				MVWorldManager wm = ((MultiverseCore) Bukkit.getPluginManager().getPlugin("Multiverse-Core"))
 						.getMVWorldManager();
-				wm.addWorld(trimWorldName(this.planetName), this.environment, null, null, null, null, true);
+				wm.addWorld(trimWorldName(this.planetName), this.environment, null, WorldType.CUSTOMIZED, null, null, true);
 			}
 		}
 	}

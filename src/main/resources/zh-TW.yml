@@ -52,6 +52,9 @@ General:
   NotInPlanet: "&c抱歉,您當前不在星球中!無法設立基地。"
   NotYourBase: "&c抱歉,這不是妳的基地,妳不能拆除!"
   notOwner: "&c您只能打開妳自己的火箭發射器!"
+  SpaceSuitFall: "&6>> 您的宇航服免除了您的摔落傷害"
+  AlreadyInRocket: "&c您已經在火箭中了! 移動物品取消發射."
+  LocationFatal: "&c著陸失敗!但是燃料並沒有被消耗."
   Yes_1: "是"
   No_1: "否"
 Categories:
