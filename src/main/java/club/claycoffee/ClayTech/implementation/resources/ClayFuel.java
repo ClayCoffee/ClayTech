@@ -4,7 +4,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.World.Environment;
 import org.bukkit.block.Biome;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
+import org.eclipse.jdt.annotation.NonNull;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
@@ -20,7 +20,7 @@ public class ClayFuel implements GEOResource {
 	}
 
 	@Override
-	public @NotNull NamespacedKey getKey() {
+	public @NonNull NamespacedKey getKey() {
 		return key;
 	}
 

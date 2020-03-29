@@ -8,7 +8,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.jetbrains.annotations.NotNull;
+import org.eclipse.jdt.annotation.NonNull;
 
 import club.claycoffee.ClayTech.ClayTech;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
@@ -17,7 +17,7 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 public class MoonDiamondPopulator extends BlockPopulator {
 
 	@Override
-	public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {
+	public void populate(@NonNull World world, @NonNull Random random, @NonNull Chunk source) {
 		new BukkitRunnable() {
 
 			@Override

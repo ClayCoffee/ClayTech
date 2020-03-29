@@ -116,21 +116,58 @@ public class PlanetBaseListener implements Listener {
 							int takeOxygen = totalOxygen / okPart.size();
 							for (String eachPart : okPart) {
 								totalOxygen -= takeOxygen;
+								int curOxg = 0;
 								if (eachPart.equalsIgnoreCase("HELMET")) {
-									RocketUtils.setOxygen(piv.getHelmet(),
-											RocketUtils.getOxygen(piv.getHelmet()) + takeOxygen);
+									curOxg = RocketUtils.getOxygen(piv.getHelmet());
+									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getHelmet())) {
+										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getHelmet());
+										RocketUtils.setOxygen(piv.getHelmet(),
+												RocketUtils.getMaxOxygen(piv.getHelmet()));
+										
+									}
+									else {
+										RocketUtils.setOxygen(piv.getHelmet(),
+												RocketUtils.getOxygen(piv.getHelmet()) + takeOxygen);
+									}
 								}
 								if (eachPart.equalsIgnoreCase("CHESTPLATE")) {
-									RocketUtils.setOxygen(piv.getChestplate(),
-											RocketUtils.getOxygen(piv.getChestplate()) + takeOxygen);
+									curOxg = RocketUtils.getOxygen(piv.getChestplate());
+									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getChestplate())) {
+										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getChestplate());
+										RocketUtils.setOxygen(piv.getChestplate(),
+												RocketUtils.getMaxOxygen(piv.getChestplate()));
+										
+									}
+									else {
+										RocketUtils.setOxygen(piv.getChestplate(),
+												RocketUtils.getOxygen(piv.getChestplate()) + takeOxygen);
+									}
 								}
 								if (eachPart.equalsIgnoreCase("LEGGINGS")) {
-									RocketUtils.setOxygen(piv.getLeggings(),
-											RocketUtils.getOxygen(piv.getLeggings()) + takeOxygen);
+									curOxg = RocketUtils.getOxygen(piv.getLeggings());
+									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getLeggings())) {
+										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getLeggings());
+										RocketUtils.setOxygen(piv.getLeggings(),
+												RocketUtils.getMaxOxygen(piv.getLeggings()));
+										
+									}
+									else {
+										RocketUtils.setOxygen(piv.getLeggings(),
+												RocketUtils.getOxygen(piv.getLeggings()) + takeOxygen);
+									}
 								}
 								if (eachPart.equalsIgnoreCase("BOOTS")) {
-									RocketUtils.setOxygen(piv.getBoots(),
-											RocketUtils.getOxygen(piv.getBoots()) + takeOxygen);
+									curOxg = RocketUtils.getOxygen(piv.getBoots());
+									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getBoots())) {
+										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getBoots());
+										RocketUtils.setOxygen(piv.getBoots(),
+												RocketUtils.getMaxOxygen(piv.getBoots()));
+										
+									}
+									else {
+										RocketUtils.setOxygen(piv.getBoots(),
+												RocketUtils.getOxygen(piv.getBoots()) + takeOxygen);
+									}
 								}
 							}
 							RocketUtils.setOxygen(e.getItem(), totalOxygen);

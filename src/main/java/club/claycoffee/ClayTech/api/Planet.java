@@ -11,9 +11,6 @@ import org.bukkit.World.Environment;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.inventory.ItemStack;
 
-import com.onarandombox.MultiverseCore.MultiverseCore;
-import com.onarandombox.MultiverseCore.api.MVWorldManager;
-
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -119,7 +116,6 @@ public class Planet {
 			}
 		}
 		ClayTech.getPlanets().add(this);
-
 		if (Bukkit.getWorld(this.planetName) == null) {
 			// Register
 			WorldCreator newWorld = new WorldCreator(this.planetName);
@@ -130,17 +126,6 @@ public class Planet {
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator(this.planetWorld);
 			newWorld.createWorld();
-			
-			// 多世界注册
-			if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {
-				MVWorldManager wm = ((MultiverseCore) Bukkit.getPluginManager().getPlugin("Multiverse-Core"))
-						.getMVWorldManager();
-				wm.addWorld(trimWorldName(this.planetName), this.environment, null, WorldType.CUSTOMIZED, null, null, true);
-			}
 		}
-	}
-
-	private String trimWorldName(String userInput) {
-		return userInput.replaceAll("^[./\\\\]+", "");
 	}
 }
