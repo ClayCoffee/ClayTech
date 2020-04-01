@@ -1,13 +1,13 @@
 # ClayTech
-一个我的世界粘液科技插件.
+一个我的世界粘液科技插件.  
 A slimefun addon for minecraft.
 
 # 温馨提醒 / Tips
-This plugin made by me.Please do not claim this plugin as yours, because i put a lot of work on it.
-这个插件是由我制作的.请不要对外声明这个插件是你的,因为我花了很多时间和功夫来制作这个插件.
-Please notify: the Public License has been changed.
-请注意: 开源协议已被更改.
-GPLv3 → AGPLv3
+This plugin made by me.Please do not claim this plugin as yours, because i put a lot of work on it.  
+这个插件是由我制作的.请不要对外声明这个插件是你的,因为我花了很多时间和功夫来制作这个插件.  
+Please notify: the Public License has been changed.  
+请注意: 开源协议已被更改.  
+GPLv3 → AGPLv3  
 
 # Supported Languages
 * 简体中文 zh-CN
