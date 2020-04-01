@@ -16,6 +16,7 @@ GPLv3 → AGPLv3
 * English(US) en-US (default)
 
 # Supported Minecraft Server Version
+* Spigot / PaperSpigot 1.13.x
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
 
