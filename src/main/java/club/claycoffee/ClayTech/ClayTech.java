@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -14,6 +15,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -263,6 +265,21 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new RocketLauncherListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlanetBaseListener(), this);
 //		Bukkit.getPluginManager().registerEvents(new Debug(), this);
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				List<String> Authors = plugin.getDescription().getAuthors();
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_1"));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_2").replaceAll("\\{version\\}", plugin.getDescription().getVersion()));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_3").replaceAll("\\{author\\}", Utils.ArrayToString(Authors.toArray(new String[Authors.size()]), "," , ".")));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_4"));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_5").replaceAll("\\{issue_tracker\\}",plugin.getBugTrackerURL()));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_6"));
+			}
+			
+		}.runTaskAsynchronously(this);
+		
 	}
 
 	@Override

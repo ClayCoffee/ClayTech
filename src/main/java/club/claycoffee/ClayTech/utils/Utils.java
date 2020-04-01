@@ -40,7 +40,23 @@ public final class Utils {
 		is.setItemMeta(im);
 		return (is);
 	}
-
+	
+	public static String ArrayToString(String[] Array,String split,String LastSplit) {
+		String returnMessage="";
+		int i = 0;
+		for(String each : Array) {
+			i = i + 1;
+			if(i == Array.length) {
+				returnMessage += each + LastSplit;
+			}
+			else {
+				returnMessage += each;
+				continue;
+			}
+		}
+		return(returnMessage);
+	}
+	
 	public static String readPlayerMetadataString(Player p, String key) {
 		for (MetadataValue mv : p.getMetadata(key)) {
 			if (mv.getOwningPlugin().equals(ClayTech.getInstance())) {
