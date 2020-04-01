@@ -44,14 +44,13 @@ public class MoonDiamondPopulator extends BlockPopulator {
 									@Override
 									public void run() {
 										source.getBlock(tx, ty, tz).setType(Material.DIAMOND_ORE, false);
-										
+
 									}
-									
+
 								}.runTask(ClayTech.getInstance());
 								count++;
 							}
 						}
-
 
 						switch (random.nextInt(6)) {
 						case 0:
@@ -75,9 +74,9 @@ public class MoonDiamondPopulator extends BlockPopulator {
 						}
 					}
 				}
-				
+
 			}
-			
+
 		}.runTaskAsynchronously(ClayTech.getInstance());
 	}
 

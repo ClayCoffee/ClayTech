@@ -12,7 +12,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.ClayTechMachineRecipes;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerCraftItemEvent;
 import club.claycoffee.ClayTech.implementation.abstractMachines.ACraftingTable;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -28,7 +27,6 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
-@SuppressWarnings("deprecation")
 public class CraftingTable extends ACraftingTable {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;
@@ -164,14 +162,6 @@ public class CraftingTable extends ACraftingTable {
 
 	@Override
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

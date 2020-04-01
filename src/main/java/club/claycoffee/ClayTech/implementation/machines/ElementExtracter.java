@@ -2,7 +2,6 @@ package club.claycoffee.ClayTech.implementation.machines;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.api.listeners.PlayerExtractElementEvent;
 import club.claycoffee.ClayTech.implementation.abstractMachines.AExtracter;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -26,7 +25,6 @@ import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
-@SuppressWarnings("deprecation")
 public class ElementExtracter extends AExtracter {
 	private ItemStack[] inputItem;
 	private ItemStack outputItem;
@@ -71,14 +69,6 @@ public class ElementExtracter extends AExtracter {
 	}
 
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

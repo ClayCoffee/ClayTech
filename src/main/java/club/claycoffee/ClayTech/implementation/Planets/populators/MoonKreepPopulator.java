@@ -43,7 +43,7 @@ public class MoonKreepPopulator extends BlockPopulator {
 								source.getBlock(tx, ty, tz).setType(ClayTechItems.KREEP_ROCK.getType(), false);
 								BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "KREEP_ROCK", true);
 							}
-							
+
 						}.runTask(ClayTech.getInstance());
 						count++;
 
@@ -70,9 +70,9 @@ public class MoonKreepPopulator extends BlockPopulator {
 						break;
 					}
 				}
-				
+
 			}
-			
+
 		}.runTaskAsynchronously(ClayTech.getInstance());
 	}
 

@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
+import club.claycoffee.ClayTech.api.listeners.RocketInjectFuelEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -195,14 +195,6 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 	}
 
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -233,6 +225,16 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 				}
 				inv.replaceExistingItem(20, rocket);
 				ClayTech.RunningInjectors.remove(inv.toInventory());
+				new BukkitRunnable() {
+
+					@Override
+					public void run() {
+						Bukkit.getPluginManager().callEvent(new RocketInjectFuelEvent(b,
+								processing.get(b).getInput()[1], processing.get(b).getInput()[0]));
+
+					}
+
+				}.runTask(ClayTech.getInstance());
 				progress.remove(b);
 				processing.remove(b);
 			}

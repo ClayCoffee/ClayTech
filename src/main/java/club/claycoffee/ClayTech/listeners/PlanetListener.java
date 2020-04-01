@@ -353,8 +353,9 @@ public class PlanetListener implements Listener {
 			}
 			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
 			if (!inRocket.equalsIgnoreCase("true") && !p.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
-				if(ast) {
-					e.getPlayer().setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(),false));
+				if (ast) {
+					e.getPlayer().setMetadata("allowSpaceTeleport",
+							new FixedMetadataValue(ClayTech.getInstance(), false));
 					return;
 				}
 				// 其他星球传送到主世界
@@ -371,8 +372,9 @@ public class PlanetListener implements Listener {
 			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
 			if (!inRocket.equalsIgnoreCase("true") && p.planetName.equalsIgnoreCase(ClayTech.getOverworld())
 					&& !to.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
-				if(ast) {
-					e.getPlayer().setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(),false));
+				if (ast) {
+					e.getPlayer().setMetadata("allowSpaceTeleport",
+							new FixedMetadataValue(ClayTech.getInstance(), false));
 					return;
 				}
 				// 在主世界传送到其他星球
@@ -382,19 +384,19 @@ public class PlanetListener implements Listener {
 			}
 		}
 	}
-	
+
 	@EventHandler
 	public void EntityDamageEvent(EntityDamageEvent e) {
-		if(e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
+		if (e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
 			Player p = (Player) e.getEntity();
 			if (ClayTechManager.isSpaceSuit(p.getInventory().getHelmet())
 					&& ClayTechManager.isSpaceSuit(p.getInventory().getChestplate())
 					&& ClayTechManager.isSpaceSuit(p.getInventory().getLeggings())
 					&& ClayTechManager.isSpaceSuit(p.getInventory().getBoots())) {
 				e.setDamage(e.getDamage() - e.getFinalDamage());
-				if(Utils.readPlayerMetadataBoolean(p, "SpaceSuitNoCostDurability")) {
+				if (Utils.readPlayerMetadataBoolean(p, "SpaceSuitNoCostDurability")) {
 					e.setCancelled(true);
-					p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(),false));
+					p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(), false));
 				}
 				p.sendMessage(Lang.readGeneralText("SpaceSuitFall"));
 			}

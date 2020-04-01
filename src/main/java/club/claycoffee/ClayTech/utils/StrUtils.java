@@ -38,18 +38,18 @@ public class StrUtils {
 			return null;
 		}
 	}
-	
+
 	public static Map<String, String> parseJSON(String json) {
-        Map<String, String> ret = new HashMap<>();
+		Map<String, String> ret = new HashMap<>();
 
-        if (json != null && json.length() > 2) {
-            JsonParser p = new JsonParser();
-            JsonObject obj = p.parse(json).getAsJsonObject();
+		if (json != null && json.length() > 2) {
+			JsonParser p = new JsonParser();
+			JsonObject obj = p.parse(json).getAsJsonObject();
 
-            for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
-                ret.put(entry.getKey(), entry.getValue().getAsString());
-            }
-        }
-        return ret;
-    }
+			for (Map.Entry<String, JsonElement> entry : obj.entrySet()) {
+				ret.put(entry.getKey(), entry.getValue().getAsString());
+			}
+		}
+		return ret;
+	}
 }

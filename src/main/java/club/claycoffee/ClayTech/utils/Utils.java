@@ -50,6 +50,7 @@ public final class Utils {
 		return null;
 
 	}
+
 	public static boolean readPlayerMetadataBoolean(Player p, String key) {
 		for (MetadataValue mv : p.getMetadata(key)) {
 			if (mv.getOwningPlugin().equals(ClayTech.getInstance())) {

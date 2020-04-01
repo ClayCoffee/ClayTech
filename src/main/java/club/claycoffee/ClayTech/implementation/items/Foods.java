@@ -39,22 +39,14 @@ public class Foods {
 				SlimefunItem.getByItem(ClayTechItems.SNAIL_BAD), SlimefunItem.getByItem(ClayTechItems.SNAIL_FOOD));
 		foodI.register();
 
-		if (ClayTech.is115()) {
-			Slimefunutils.registerItem(ClayTechItems.C_FOOD, "HONEY_SWEET", ClayTechItems.HONEY_SWEET, "notresearch",
-					10, ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.HONEY_SWEET, false);
-			Research foodII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODBASIC2"), 9916,
-					Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
-			foodII.addItems(SlimefunItem.getByItem(ClayTechItems.HONEY_SWEET),
-					SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
-					SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
-			foodII.register();
-		} else {
-			Research foodII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODBASIC2"), 9916,
-					Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
-			foodII.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
-					SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
-			foodII.register();
-		}
+		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "HONEY_SWEET", ClayTechItems.HONEY_SWEET, "notresearch", 10,
+				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.HONEY_SWEET, false);
+		Research foodII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODBASIC2"), 9916,
+				Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
+		foodII.addItems(SlimefunItem.getByItem(ClayTechItems.HONEY_SWEET),
+				SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
+				SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
+		foodII.register();
 
 	}
 }

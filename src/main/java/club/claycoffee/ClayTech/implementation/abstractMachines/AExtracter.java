@@ -6,21 +6,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 
-import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -36,6 +33,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
@@ -132,7 +130,10 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 		Preset.addItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "),
 				ChestMenuUtils.getEmptyClickHandler());
 		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-		Preset.addItem(31, Utils.newItemD(Material.OAK_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),
+		Preset.addItem(31,
+				Utils.newItemD(SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+						? Material.OAK_SIGN
+						: Material.LEGACY_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),
 				ChestMenuUtils.getEmptyClickHandler());
 		for (int i : getOutputSlots()) {
 			Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
@@ -208,14 +209,6 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 	}
 
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {

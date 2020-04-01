@@ -4,6 +4,8 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.utils.Slimefunutils;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 
 public class ClayTechMachineRecipes {
@@ -99,15 +101,25 @@ public class ClayTechMachineRecipes {
 	public final static ItemStack[] COOKED_SWEET_POTATO = { null, new ItemStack(Material.COAL), null, null,
 			ClayTechItems.CLAY_SWEET_POTATO, null, null, new ItemStack(Material.COAL), null };
 
-	public static ItemStack[] HONEY_SWEET;
-	static {
-		if (ClayTech.is115()) {
-			HONEY_SWEET = new ItemStack[] { new ItemStack(Material.SWEET_BERRIES),
-					new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SWEET_BERRIES),
-					new ItemStack(Material.SUGAR), new ItemStack(Material.HONEY_BOTTLE), new ItemStack(Material.SUGAR),
-					new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR) };
-		}
-	}
+	public static ItemStack[] HONEY_SWEET = SlimefunPlugin.getMinecraftVersion()
+			.isAtLeast(MinecraftVersion.MINECRAFT_1_15)
+					? new ItemStack[] { new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SWEET_BERRIES),
+							new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SUGAR),
+							new ItemStack(Material.HONEY_BOTTLE), new ItemStack(Material.SUGAR),
+							new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR),
+							new ItemStack(Material.SUGAR) }
+					: SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+							? new ItemStack[] { new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SWEET_BERRIES), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SUGAR) }
+							: new ItemStack[] { new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SUGAR), new ItemStack(Material.SUGAR),
+									new ItemStack(Material.SUGAR) };
+
 	public final static ItemStack[] ELEMENT_CARBON = { null, null, null, null, new ItemStack(Material.COAL, 8), null,
 			null, null, null };
 	public final static ItemStack[] ELEMENT_OXYGEN = { null, null, null, null, new ItemStack(Material.GRASS_BLOCK, 3),
@@ -194,8 +206,9 @@ public class ClayTechMachineRecipes {
 			ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, ClayTechItems.CLAY_FUSION_INGOT,
 			ClayTechItems.CLAY_FUSION_INGOT, null, ClayTechItems.CLAY_FUSION_INGOT };
 	public final static ItemStack[] MIXED_ROCKET_FUEL = { ClayTechItems.CLAY_FUEL, ClayTechItems.CLAY_FUEL,
-			ClayTechItems.CLAY_FUEL, new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK),
-			SlimefunItems.NETHER_ICE, SlimefunItems.NETHER_ICE, SlimefunItems.NETHER_ICE };
+			ClayTechItems.CLAY_FUEL, new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK),
+			new ItemStack(Material.COAL_BLOCK), SlimefunItems.NETHER_ICE, SlimefunItems.NETHER_ICE,
+			SlimefunItems.NETHER_ICE };
 
 	public final static ItemStack[] ROCKET_1 = { ClayTechItems.ROCKET_GLASS, ClayTechItems.ROCKET_FUEL_TANK,
 			ClayTechItems.ROCKET_GLASS, ClayTechItems.ROCKET_STEEL_PLATE, ClayTechItems.ROCKET_CONTROL_CORE,

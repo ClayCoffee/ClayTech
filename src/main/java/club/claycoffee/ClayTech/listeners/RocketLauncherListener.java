@@ -23,6 +23,7 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
+import club.claycoffee.ClayTech.api.listeners.RocketLandEvent;
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.PlanetUtils;
@@ -52,15 +53,15 @@ public class RocketLauncherListener implements Listener {
 			Block b = e.getClickedBlock();
 			if (BlockStorage.checkID(b) != null) {
 				if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
-					if(e.hasItem()) {
-						if(!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
+					if (e.hasItem()) {
+						if (!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
 							return;
 						}
 					}
-					if(!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
+					if (!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
 						return;
 					}
-					Map<String,String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
+					Map<String, String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
 					String ownerName = jbj.get("owner");
 					if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
 						Planet current = PlanetUtils.getPlanet(b.getWorld());
@@ -127,7 +128,7 @@ public class RocketLauncherListener implements Listener {
 										if (Utils.readPlayerMetadataString(p, "inrocket") != null) {
 											inRocket = Utils.readPlayerMetadataString(p, "inrocket");
 										}
-										if(!inRocket.equalsIgnoreCase("true")) {
+										if (!inRocket.equalsIgnoreCase("true")) {
 											p.setMetadata("inrocket",
 													new FixedMetadataValue(ClayTech.getInstance(), "true"));
 											p.sendMessage(Lang.readGeneralText("RocketOK"));
@@ -143,21 +144,24 @@ public class RocketLauncherListener implements Listener {
 													ItemStack thandItem = p.getInventory().getItemInMainHand();
 													if (ClayTechManager.isRocket(thandItem)) {
 														if (time >= 10) {
-															BlockStorage._integrated_removeBlockInfo(b.getLocation(), true);
+															BlockStorage._integrated_removeBlockInfo(b.getLocation(),
+																	true);
 															b.setType(Material.AIR);
 															p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
 															DataYML planetsData = ClayTech.getPlanetDataYML();
 															FileConfiguration pd = planetsData.getCustomConfig();
 															if (pd.getBoolean(
 																	p.getName() + "." + target.planetName + ".base")) {
-																int X = pd.getInt(
-																		p.getName() + "." + target.planetName + ".baseX");
-																int Y = pd.getInt(
-																		p.getName() + "." + target.planetName + ".baseY");
-																int Z = pd.getInt(
-																		p.getName() + "." + target.planetName + ".baseZ");
-																p.teleport(new Location(Bukkit.getWorld(target.planetName),
-																			X, Y, Z), TeleportCause.PLUGIN);
+																int X = pd.getInt(p.getName() + "." + target.planetName
+																		+ ".baseX");
+																int Y = pd.getInt(p.getName() + "." + target.planetName
+																		+ ".baseY");
+																int Z = pd.getInt(p.getName() + "." + target.planetName
+																		+ ".baseZ");
+																p.teleport(
+																		new Location(Bukkit.getWorld(target.planetName),
+																				X, Y, Z),
+																		TeleportCause.PLUGIN);
 																p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
 																		Lang.readGeneralText("TeleportedToBase_Sub"));
 															} else {
@@ -166,31 +170,42 @@ public class RocketLauncherListener implements Listener {
 																			PlanetUtils.findSafeLocation(
 																					Bukkit.getWorld(target.planetName)),
 																			TeleportCause.PLUGIN);
-																}
-																catch(Exception ex) {
-																	p.sendMessage(Lang.readGeneralText("LocationFatal"));
+																} catch (Exception ex) {
+																	p.sendMessage(
+																			Lang.readGeneralText("LocationFatal"));
 																	e.setCancelled(true);
 																	return;
 																}
 															}
 															p.setMetadata("inrocket", new FixedMetadataValue(
 																	ClayTech.getInstance(), "false"));
-															RocketUtils.setFuel(thandItem, RocketUtils.getFuel(thandItem)
-																	- PlanetUtils.getFuel(current, target));
+															RocketUtils.setFuel(thandItem,
+																	RocketUtils.getFuel(thandItem)
+																			- PlanetUtils.getFuel(current, target));
+															new BukkitRunnable() {
+
+																@Override
+																public void run() {
+																	Bukkit.getPluginManager()
+																			.callEvent(new RocketLandEvent(p, current,
+																					target, thandItem));
+
+																}
+
+															}.runTask(ClayTech.getInstance());
 															p.sendMessage(Lang.readGeneralText("RocketArrived"));
 															this.cancel();
 														}
 													} else {
-														p.setMetadata("inrocket",
-																new FixedMetadataValue(ClayTech.getInstance(), "false"));
+														p.setMetadata("inrocket", new FixedMetadataValue(
+																ClayTech.getInstance(), "false"));
 														p.sendMessage(Lang.readGeneralText("NotRocket"));
 														this.cancel();
 													}
 												}
 
 											}.runTaskTimer(ClayTech.getInstance(), 0, 20);
-										}
-										else {
+										} else {
 											p.sendMessage(Lang.readGeneralText("AlreadyInRocket"));
 											e.setCancelled(true);
 										}

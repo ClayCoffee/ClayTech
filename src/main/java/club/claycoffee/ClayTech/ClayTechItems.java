@@ -7,10 +7,12 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.Categories;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 
@@ -100,8 +102,10 @@ public class ClayTechItems {
 			Lang.readItemLore("ANTI_SLOWNESS_BOOTS"));
 	public static final ItemStack COCOA_BEAN = Utils.setLore(
 			Utils.newItemD(Material.COCOA_BEANS, Lang.readItemText("COCOA_BEAN")), Lang.readItemLore("COCOA_BEAN"));
-	public static final ItemStack PLASTIC = Utils
-			.setLore(Utils.newItemD(Material.WHITE_DYE, Lang.readItemText("PLASTIC")), Lang.readItemLore("PLASTIC"));
+	public static final ItemStack PLASTIC = Utils.setLore(Utils.newItemD(
+			SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14) ? Material.WHITE_DYE
+					: Material.BONE_MEAL,
+			Lang.readItemText("PLASTIC")), Lang.readItemLore("PLASTIC"));
 	public static final ItemStack RAW_CHICKEN_FOOT = Utils.setLore(
 			Utils.newItemD(Material.RABBIT_FOOT, Lang.readItemText("RAW_CHICKEN_FOOT")),
 			Lang.readItemLore("RAW_CHICKEN_FOOT"));
@@ -114,10 +118,16 @@ public class ClayTechItems {
 			.setLore(Utils.newItemD(Material.KELP, Lang.readItemText("DIRTY_TEA")), Lang.readItemLore("DIRTY_TEA"));
 	public static final ItemStack RAW_TEA = Utils.setLore(Utils.newItemD(Material.KELP, Lang.readItemText("TEA")),
 			Lang.readItemLore("TEA"));
-	public static final ItemStack TEA_POWDER = Utils.setLore(
-			Utils.newItemD(Material.BROWN_DYE, Lang.readItemText("TEA_POWDER")), Lang.readItemLore("TEA_POWDER"));
-	public static final ItemStack LEMON_POWDER = Utils.setLore(
-			Utils.newItemD(Material.YELLOW_DYE, Lang.readItemText("LEMON_POWDER")), Lang.readItemLore("LEMON_POWDER"));
+	public static final ItemStack TEA_POWDER = Utils.setLore(Utils.newItemD(
+			SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14) ? Material.BROWN_DYE
+					: Material.BONE_MEAL,
+			Lang.readItemText("TEA_POWDER")), Lang.readItemLore("TEA_POWDER"));
+	public static final ItemStack LEMON_POWDER = Utils
+			.setLore(
+					Utils.newItemD(SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+							? Material.YELLOW_DYE
+							: Material.BONE_MEAL, Lang.readItemText("LEMON_POWDER")),
+					Lang.readItemLore("LEMON_POWDER"));
 	public static final ItemStack FLOUR = Utils.setLore(Utils.newItemD(Material.SUGAR, Lang.readItemText("FLOUR")),
 			Lang.readItemLore("FLOUR"));
 	public static final ItemStack STARCH = Utils.setLore(Utils.newItemD(Material.SUGAR, Lang.readItemText("STARCH")),
@@ -398,11 +408,10 @@ public class ClayTechItems {
 											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
 													.replaceAll("&", "§")),
 									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
-	public static ItemStack HONEY_SWEET;
-	static {
-		if (ClayTech.is115()) {
-			HONEY_SWEET = Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
-					Lang.readItemLore("HONEY_SWEET"));
-		}
-	}
+	public static ItemStack HONEY_SWEET = SlimefunPlugin.getMinecraftVersion()
+			.isAtLeast(MinecraftVersion.MINECRAFT_1_15)
+					? Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
+							Lang.readItemLore("HONEY_SWEET"))
+					: Utils.setLore(Utils.newItemD(Material.SUGAR, Lang.readItemText("HONEY_SWEET")),
+							Lang.readItemLore("HONEY_SWEET"));
 }

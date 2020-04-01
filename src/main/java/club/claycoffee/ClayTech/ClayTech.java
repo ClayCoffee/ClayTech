@@ -19,6 +19,7 @@ import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Metrics;
 import club.claycoffee.ClayTech.utils.Utils;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.implementation.Planets.Earth;
@@ -54,6 +55,7 @@ import club.claycoffee.ClayTech.implementation.machines.SpaceSuitOxygenInjector;
 import club.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import club.claycoffee.ClayTech.listeners.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -68,7 +70,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	private static String highrailspeed;
 	private static String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",")
 			.split(",")[3];
-	private static boolean is115 = true;
 	private static boolean compatible = true;
 	private static List<Planet> planetList = new ArrayList<Planet>();
 	private static String overworld = "";
@@ -95,10 +96,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 
 	public static boolean getCompatible() {
 		return compatible;
-	}
-
-	public static boolean is115() {
-		return is115;
 	}
 
 	public static List<Planet> getPlanets() {
@@ -220,7 +217,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		case "v1_15_R1":
 			break;
 		case "v1_14_R1":
-			is115 = false;
+			break;
+		case "v1_13_R2":
+			break;
+		case "v1_13_R1":
 			break;
 		default:
 			compatible = false;
@@ -229,12 +229,13 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		if (!compatible) {
 			Utils.info(Lang.readGeneralText("Not_compatible"));
 			this.getServer().getPluginManager().disablePlugin(this);
+			return;
 		}
-		if (!is115) {
+		if (!SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_15)) {
 			Utils.info(Lang.readGeneralText("Before_115"));
 		}
 		Metrics mt = new Metrics(this, 6887);
-		
+
 		planetYML = new DataYML("planets.yml");
 		planetYML.saveCDefaultConfig();
 		planetYML.reloadCustomConfig();

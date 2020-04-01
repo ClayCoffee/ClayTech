@@ -70,9 +70,11 @@ public class PlanetBaseListener implements Listener {
 				int baseX = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseX");
 				int baseY = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseY");
 				int baseZ = pd.getInt(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseZ");
-				boolean hasBase = pd.getBoolean(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base");
-				if(hasBase) {
-					if (baseX == e.getBlock().getX() && baseY == e.getBlock().getY() + 1 && baseZ == e.getBlock().getZ()) {
+				boolean hasBase = pd
+						.getBoolean(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base");
+				if (hasBase) {
+					if (baseX == e.getBlock().getX() && baseY == e.getBlock().getY() + 1
+							&& baseZ == e.getBlock().getZ()) {
 						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".base", false);
 						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseX", null);
 						pd.set(e.getPlayer().getName() + "." + e.getPlayer().getWorld().getName() + ".baseY", null);
@@ -119,52 +121,49 @@ public class PlanetBaseListener implements Listener {
 								int curOxg = 0;
 								if (eachPart.equalsIgnoreCase("HELMET")) {
 									curOxg = RocketUtils.getOxygen(piv.getHelmet());
-									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getHelmet())) {
-										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getHelmet());
+									if (curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getHelmet())) {
+										totalOxygen += curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getHelmet());
 										RocketUtils.setOxygen(piv.getHelmet(),
 												RocketUtils.getMaxOxygen(piv.getHelmet()));
-										
-									}
-									else {
+
+									} else {
 										RocketUtils.setOxygen(piv.getHelmet(),
 												RocketUtils.getOxygen(piv.getHelmet()) + takeOxygen);
 									}
 								}
 								if (eachPart.equalsIgnoreCase("CHESTPLATE")) {
 									curOxg = RocketUtils.getOxygen(piv.getChestplate());
-									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getChestplate())) {
-										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getChestplate());
+									if (curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getChestplate())) {
+										totalOxygen += curOxg + takeOxygen
+												- RocketUtils.getMaxOxygen(piv.getChestplate());
 										RocketUtils.setOxygen(piv.getChestplate(),
 												RocketUtils.getMaxOxygen(piv.getChestplate()));
-										
-									}
-									else {
+
+									} else {
 										RocketUtils.setOxygen(piv.getChestplate(),
 												RocketUtils.getOxygen(piv.getChestplate()) + takeOxygen);
 									}
 								}
 								if (eachPart.equalsIgnoreCase("LEGGINGS")) {
 									curOxg = RocketUtils.getOxygen(piv.getLeggings());
-									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getLeggings())) {
-										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getLeggings());
+									if (curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getLeggings())) {
+										totalOxygen += curOxg + takeOxygen
+												- RocketUtils.getMaxOxygen(piv.getLeggings());
 										RocketUtils.setOxygen(piv.getLeggings(),
 												RocketUtils.getMaxOxygen(piv.getLeggings()));
-										
-									}
-									else {
+
+									} else {
 										RocketUtils.setOxygen(piv.getLeggings(),
 												RocketUtils.getOxygen(piv.getLeggings()) + takeOxygen);
 									}
 								}
 								if (eachPart.equalsIgnoreCase("BOOTS")) {
 									curOxg = RocketUtils.getOxygen(piv.getBoots());
-									if(curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getBoots())) {
-										totalOxygen +=  curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getBoots());
-										RocketUtils.setOxygen(piv.getBoots(),
-												RocketUtils.getMaxOxygen(piv.getBoots()));
-										
-									}
-									else {
+									if (curOxg + takeOxygen > RocketUtils.getMaxOxygen(piv.getBoots())) {
+										totalOxygen += curOxg + takeOxygen - RocketUtils.getMaxOxygen(piv.getBoots());
+										RocketUtils.setOxygen(piv.getBoots(), RocketUtils.getMaxOxygen(piv.getBoots()));
+
+									} else {
 										RocketUtils.setOxygen(piv.getBoots(),
 												RocketUtils.getOxygen(piv.getBoots()) + takeOxygen);
 									}

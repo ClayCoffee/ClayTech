@@ -10,6 +10,8 @@ import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -19,7 +21,10 @@ public class FoodMakingStaff {
 		ItemStack[] recipec = { null, new ItemStack(Material.BREAD), null, null, ClayTechItems.MAGIC_CLAY, null, null,
 				new ItemStack(Material.BREAD), null };
 		ItemStack[] reciped = { null, new ItemStack(Material.KELP), null, null, ClayTechItems.MAGIC_CLAY, null, null,
-				new ItemStack(Material.BAMBOO), null };
+				SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+						? new ItemStack(Material.BAMBOO)
+						: new ItemStack(Material.KELP),
+				null };
 
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_CHICKEN_FOOT", ClayTechItems.RAW_CHICKEN_FOOT,
 				"notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE,

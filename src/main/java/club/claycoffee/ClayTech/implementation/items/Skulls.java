@@ -8,6 +8,8 @@ import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
+import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -27,10 +29,17 @@ public class Skulls {
 				new ItemStack(Material.IRON_BLOCK), ClayTechItems.ARTIFICIAL_GOLD_NUGGET, ClayTechItems.CLAY_STICK,
 				ClayTechItems.ARTIFICIAL_GOLD_NUGGET, new ItemStack(Material.IRON_BLOCK),
 				new ItemStack(Material.GOLD_BLOCK), new ItemStack(Material.IRON_BLOCK) };
-		ItemStack[] ClockRecipe = { new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
-				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT), ClayTechItems.MAGIC_CLAY,
-				new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
-				new ItemStack(Material.BLACK_DYE), new ItemStack(Material.IRON_INGOT) };
+		ItemStack[] ClockRecipe = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+				? new ItemStack[] { new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+						new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+						ClayTechItems.MAGIC_CLAY, new ItemStack(Material.IRON_INGOT),
+						new ItemStack(Material.IRON_INGOT), new ItemStack(Material.BLACK_DYE),
+						new ItemStack(Material.IRON_INGOT) }
+				: new ItemStack[] { new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+						new ItemStack(Material.IRON_INGOT), new ItemStack(Material.IRON_INGOT),
+						ClayTechItems.MAGIC_CLAY, new ItemStack(Material.IRON_INGOT),
+						new ItemStack(Material.IRON_INGOT), new ItemStack(Material.COAL),
+						new ItemStack(Material.IRON_INGOT) };
 		ItemStack[] LanternRecipe = { new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG),
 				new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG), new ItemStack(Material.GLOWSTONE),
 				new ItemStack(Material.OAK_LOG), new ItemStack(Material.OAK_LOG), ClayTechItems.MAGIC_CLAY,

@@ -29,6 +29,7 @@ public class Slimefunutils {
 					ItemStack);
 		}
 	}
+
 	public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
 			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch, ItemHandler[] handler) {
 		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
@@ -42,6 +43,7 @@ public class Slimefunutils {
 					ItemStack);
 		}
 	}
+
 	public static void registerArmors(Category category, String nameprefix, ItemStack[] ItemStack, String ResearchName,
 			int cost, RecipeType Recipetype, ItemStack MaterialStack, boolean registerResearch) {
 

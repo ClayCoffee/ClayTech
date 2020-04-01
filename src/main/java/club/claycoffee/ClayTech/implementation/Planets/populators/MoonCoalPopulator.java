@@ -44,14 +44,13 @@ public class MoonCoalPopulator extends BlockPopulator {
 									@Override
 									public void run() {
 										source.getBlock(tx, ty, tz).setType(Material.COAL_ORE, false);
-										
+
 									}
-									
+
 								}.runTask(ClayTech.getInstance());
 								count++;
 							}
 						}
-
 
 						switch (random.nextInt(6)) {
 						case 0:
@@ -76,9 +75,9 @@ public class MoonCoalPopulator extends BlockPopulator {
 					}
 
 				}
-				
+
 			}
-			
+
 		}.runTaskAsynchronously(ClayTech.getInstance());
 
 	}

@@ -44,11 +44,13 @@ public class MoonClayFusionOrePopulator extends BlockPopulator {
 
 									@Override
 									public void run() {
-										source.getBlock(tx, ty, tz).setType(ClayTechItems.CLAY_FUSION_ORE.getType(), false);
-										BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "CLAY_FUSION_ORE", true);
-										
+										source.getBlock(tx, ty, tz).setType(ClayTechItems.CLAY_FUSION_ORE.getType(),
+												false);
+										BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "CLAY_FUSION_ORE",
+												true);
+
 									}
-									
+
 								}.runTask(ClayTech.getInstance());
 								count++;
 							}
@@ -78,9 +80,8 @@ public class MoonClayFusionOrePopulator extends BlockPopulator {
 
 				}
 
-				
 			}
-			
+
 		}.runTaskAsynchronously(ClayTech.getInstance());
 	}
 

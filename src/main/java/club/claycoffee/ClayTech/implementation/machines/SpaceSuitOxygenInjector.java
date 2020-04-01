@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.ClayTechManager;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
+import club.claycoffee.ClayTech.api.listeners.InjectOxygenEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.Utils;
@@ -197,14 +197,6 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 	}
 
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -237,6 +229,15 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 				}
 				inv.replaceExistingItem(22, spacesuit);
 				ClayTech.RunningInjectorsOxygen.remove(inv.toInventory());
+				new BukkitRunnable() {
+
+					@Override
+					public void run() {
+						Bukkit.getPluginManager().callEvent(new InjectOxygenEvent(b, spacesuit));
+
+					}
+
+				}.runTask(ClayTech.getInstance());
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -261,7 +262,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 						public void run() {
 							b.getLocation().add(0, 1, 0).getBlock().setType(Material.AIR); // 消耗树叶
 						}
-						
+
 					}.runTask(ClayTech.getInstance());
 					MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[] { spacesuit },
 							new ItemStack[] {});

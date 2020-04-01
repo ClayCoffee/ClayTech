@@ -9,7 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.api.listeners.MachineTickEvent;
+import club.claycoffee.ClayTech.api.listeners.PlayerAssembleEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
@@ -204,14 +204,6 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 	}
 
 	protected void tick(Block b) {
-		new BukkitRunnable() {
-
-			@Override
-			public void run() {
-				Bukkit.getPluginManager().callEvent(new MachineTickEvent(b));
-			}
-
-		}.runTask(ClayTech.getInstance());
 		BlockMenu inv = BlockStorage.getInventory(b);
 		// 机器正在处理
 		if (isProcessing(b)) {
@@ -237,7 +229,16 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 					if (output != null)
 						inv.pushItem(output.clone(), getOutputSlots());
 				}
+				new BukkitRunnable() {
 
+					@Override
+					public void run() {
+						Bukkit.getPluginManager().callEvent(new PlayerAssembleEvent(b, processing.get(b).getInput(),
+								processing.get(b).getOutput()[0]));
+
+					}
+
+				}.runTask(ClayTech.getInstance());
 				progress.remove(b);
 				processing.remove(b);
 			}
