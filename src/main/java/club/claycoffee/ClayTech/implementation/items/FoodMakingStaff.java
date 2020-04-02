@@ -34,15 +34,15 @@ public class FoodMakingStaff {
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_VEGETABLE", ClayTechItems.RAW_VEGETABLE,
 				"notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, reciped, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_LEMON", ClayTechItems.CLAY_LEMON, "notresearch",
-				10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				10, ClayTechRecipeType.PLUCKING, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "STARCH", ClayTechItems.STARCH, "notresearch", 10,
-				RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "FLOUR", ClayTechItems.FLOUR, "notresearch", 10,
-				RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "SNAIL_HEALTHY", ClayTechItems.SNAIL_HEALTHY,
-				"notresearch", 10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				"notresearch", 10, ClayTechRecipeType.FISHING, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_SWEET_POTATO", ClayTechItems.CLAY_SWEET_POTATO,
-				"notresearch", 10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				"notresearch", 10, ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 
 		Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODMATERIALSBASIC"),
 				9910, Lang.readResearchesText("CLAYTECH_FOOD_MAKINGS_I"), 50);

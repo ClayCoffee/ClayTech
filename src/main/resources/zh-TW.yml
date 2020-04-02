@@ -508,6 +508,11 @@ Items:
   CLAY_FUSION_ORE: "&6粘土融合錠礦石"
   CLAY_FUSION_ORE_LORE:
     - "&3可以放入粘土融合器合成界面的中間位置,粉碎成粘土融合錠"
+  TUNA_FISH: "&e金槍魚"
+  TUNA_FISH_LORE:
+    - "&6可以做刺身"
+    - "&9釣魚獲得"
+    - "&7食用後增加6點飽食度"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -544,6 +549,7 @@ Researches:
   CLAYTECH_UNIVERSE_MACHINE_I: "通向宇宙的機器 I"
   CLAYTECH_UNIVERSE_MACHINE_II: "通向宇宙的機器 II"
   CLAYTECH_BASE_I: "基地 I"
+  CLAYTECH_FISH_I: "魚類"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"
@@ -554,6 +560,10 @@ MachineRecipes:
   CLAY_ROCKET_FUEL_GENERATOR: "&a&o在火箭燃料制造機中制造"
   DIG_IN_THE_MOON: "&a&o在月球上挖掘"
   DIG_IN_NON_EARTH: "&a&o在非地球(主世界)的星球上挖掘"
+  FISHING: "&a&o通過釣魚獲得"
+  HARVEST: "&a&o通過收獲某種作物獲得"
+  PLUCKING: "&a&o通過在樹葉上采摘獲得"
+  CLEANING: "&a&o通過清洗獲得"
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&b粘土融合器"

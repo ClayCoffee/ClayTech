@@ -43,4 +43,16 @@ public class ClayTechRecipeType {
 	public static final RecipeType DIG_IN_NON_EARTH = new RecipeType(
 			new NamespacedKey(ClayTech.plugin, "DIG_IN_NON_EARTH"), new SlimefunItemStack("DIG_IN_NON_EARTH",
 					new ItemStack(Material.IRON_PICKAXE), "", Lang.readMachineRecipesText("DIG_IN_NON_EARTH")));
+	public static final RecipeType FISHING = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "FISHING"), new SlimefunItemStack("FISHING",
+					new ItemStack(Material.TROPICAL_FISH), "", Lang.readMachineRecipesText("FISHING")));
+	public static final RecipeType HARVEST = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "HARVEST"), new SlimefunItemStack("HARVEST",
+					new ItemStack(Material.DIAMOND_HOE), "", Lang.readMachineRecipesText("HARVEST")));
+	public static final RecipeType PLUCKING = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "PLUCKING"), new SlimefunItemStack("PLUCKING",
+					new ItemStack(Material.APPLE), "", Lang.readMachineRecipesText("PLUCKING")));
+	public static final RecipeType CLEANING = new RecipeType(
+			new NamespacedKey(ClayTech.plugin, "CLEANING"), new SlimefunItemStack("CLEANING",
+					new ItemStack(Material.WATER_BUCKET), "", Lang.readMachineRecipesText("CLEANING")));
 }

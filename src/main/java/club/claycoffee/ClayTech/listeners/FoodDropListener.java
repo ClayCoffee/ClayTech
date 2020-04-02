@@ -43,6 +43,7 @@ public class FoodDropListener implements Listener {
 			try {
 				// 这里放其他食物/饮料8!!
 				Food.FishItemCheck(e, 11, 20, ClayTechItems.SNAIL_BAD);
+				Food.FishItemCheck(e, 85, 92, ClayTechItems.TUNA_FISH);
 			} catch (NullPointerException err) {
 			}
 

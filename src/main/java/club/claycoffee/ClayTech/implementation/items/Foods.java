@@ -8,7 +8,6 @@ import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
@@ -24,7 +23,7 @@ public class Foods {
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "CHOCOLATE", ClayTechItems.CHOCOLATE, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.CHOCOLATE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "SNAIL_BAD", ClayTechItems.SNAIL_BAD, "notresearch", 10,
-				RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				ClayTechRecipeType.FISHING, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "SNAIL_FOOD", ClayTechItems.SNAIL_FOOD, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.SNAIL_FOOD, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "COOKED_SWEET_POTATO", ClayTechItems.COOKED_SWEET_POTATO,
@@ -47,6 +46,14 @@ public class Foods {
 				SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
 				SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
 		foodII.register();
+		
+		
+		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "TUNA_FISH", ClayTechItems.TUNA_FISH, "notresearch", 10,
+				ClayTechRecipeType.FISHING, ClayTechItems.NORECIPE, false);
+		Research foodIII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FISH1"), 9931,
+				Lang.readResearchesText("CLAYTECH_FISH_I"), 30);
+		foodIII.addItems(SlimefunItem.getByItem(ClayTechItems.TUNA_FISH));
+		foodIII.register();
 
 	}
 }

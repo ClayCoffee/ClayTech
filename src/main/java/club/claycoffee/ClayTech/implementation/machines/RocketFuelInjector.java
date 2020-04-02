@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.listeners.RocketInjectFuelEvent;
@@ -56,6 +57,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 	private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
 	private static ItemStack item;
+	private static ItemStack itemfuel;
 
 	public RocketFuelInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
@@ -223,18 +225,16 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 				} else {
 					RocketUtils.setFuel(rocket, RocketUtils.getFuel(rocket) + 5);
 				}
-				inv.replaceExistingItem(20, rocket);
-				ClayTech.RunningInjectors.remove(inv.toInventory());
 				new BukkitRunnable() {
 
 					@Override
 					public void run() {
-						Bukkit.getPluginManager().callEvent(new RocketInjectFuelEvent(b,
-								processing.get(b).getInput()[1], processing.get(b).getInput()[0]));
-
+						Bukkit.getPluginManager().callEvent(new RocketInjectFuelEvent(b,itemfuel, rocket));
 					}
 
 				}.runTask(ClayTech.getInstance());
+				inv.replaceExistingItem(20, rocket);
+				ClayTechData.RunningInjectors.remove(inv.toInventory());
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -259,8 +259,10 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 					MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[] { rocket, fuel },
 							new ItemStack[] {});
 					item = rocket.clone();
+					itemfuel = fuel.clone();
+					itemfuel.setAmount(1);
 					inv.consumeItem(20, 1);
-					ClayTech.RunningInjectors.put(inv.toInventory(), b);
+					ClayTechData.RunningInjectors.put(inv.toInventory(), b);
 					inv.replaceExistingItem(20, new ItemStack(Material.BEDROCK));
 					processing.put(b, fuelinjectrecipe);
 					progress.put(b, fuelinjectrecipe.getTicks());

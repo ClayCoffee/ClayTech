@@ -2,17 +2,13 @@ package club.claycoffee.ClayTech;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -75,9 +71,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	private static boolean compatible = true;
 	private static List<Planet> planetList = new ArrayList<Planet>();
 	private static String overworld = "";
-	public static Map<Inventory, Block> RunningLaunchersG = new HashMap<Inventory, Block>();
-	public static Map<Inventory, Block> RunningInjectors = new HashMap<Inventory, Block>();
-	public static Map<Inventory, Block> RunningInjectorsOxygen = new HashMap<Inventory, Block>();
 	private static DataYML planetDataYML;
 
 	public static ClayTech getInstance() {
@@ -120,7 +113,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9930
+		// 当前研究ID: 9931
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -237,7 +230,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			Utils.info(Lang.readGeneralText("Before_115"));
 		}
 		Metrics mt = new Metrics(this, 6887);
-
+		mt.addCustomChart(new Metrics.SimplePie("language", () -> languageCodeToLanguage(locale)));
+		
 		planetYML = new DataYML("planets.yml");
 		planetYML.saveCDefaultConfig();
 		planetYML.reloadCustomConfig();
@@ -284,6 +278,21 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 
 	@Override
 	public void onDisable() {
+	}
+	
+	private String languageCodeToLanguage(String code) {
+		switch(code.toUpperCase()) {
+			case "ZH-CN":
+				return "Simplified Chinese";
+			case "ZH-TW":
+				return "Traditional Chinese";
+			case "EN-US":
+				return "English(US)";
+			case "EN-UK":
+				return "English(UK)";
+			default: 
+				return code;
+		}
 	}
 
 	private void registerSlimefun() {

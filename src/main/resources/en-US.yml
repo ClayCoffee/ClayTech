@@ -498,6 +498,10 @@ Items:
   CLAY_FUSION_ORE: "&6Clay Fusion Ore"
   CLAY_FUSION_ORE_LORE:
     - "&3Put this in the middle slot of the Clay Crafting table to gain the ingot."
+  TUNA_FISH: "&eTuna Fish"
+  TUNA_FISH_LORE:
+    - "&9Get this by fishing"
+    - "&6Increase 6 hunger value after eating"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -534,6 +538,7 @@ Researches:
   CLAYTECH_UNIVERSE_MACHINE_I: "Machines leading to the universe I"
   CLAYTECH_UNIVERSE_MACHINE_II: "Machines leading to the universe II"
   CLAYTECH_BASE_I: "Base I"
+  CLAYTECH_FISH_I: "Fish"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
@@ -544,6 +549,10 @@ MachineRecipes:
   CLAY_ROCKET_FUEL_GENERATOR: "&a&oGenerate in the Rocket Fuel Generator."
   DIG_IN_THE_MOON: "&a&oDig in the moon."
   DIG_IN_NON_EARTH: "&a&oDig in other planets except earth."
+  FISHING: "&a&oGet this by fishing"
+  HARVEST: "&a&oGet this by harvesting some crops"
+  PLUCKING: "&a&oGet this by plucking leaves"
+  CLEANING: "&a&oGet this by cleaning items"
 Machines:
   SPLIT_LINE: " "
   CLAY_FUSION_MACHINE: "&bClay Fusing Machine"

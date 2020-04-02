@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.listeners.InjectOxygenEvent;
 import club.claycoffee.ClayTech.utils.Lang;
@@ -227,8 +228,6 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 				} else {
 					RocketUtils.setOxygen(spacesuit, RocketUtils.getOxygen(spacesuit) + 5);
 				}
-				inv.replaceExistingItem(22, spacesuit);
-				ClayTech.RunningInjectorsOxygen.remove(inv.toInventory());
 				new BukkitRunnable() {
 
 					@Override
@@ -238,6 +237,8 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 					}
 
 				}.runTask(ClayTech.getInstance());
+				inv.replaceExistingItem(22, spacesuit);
+				ClayTechData.RunningInjectorsOxygen.remove(inv.toInventory());
 				progress.remove(b);
 				processing.remove(b);
 			}
@@ -268,7 +269,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 							new ItemStack[] {});
 					item = spacesuit.clone();
 					inv.consumeItem(22, 1);
-					ClayTech.RunningInjectorsOxygen.put(inv.toInventory(), b);
+					ClayTechData.RunningInjectorsOxygen.put(inv.toInventory(), b);
 					inv.replaceExistingItem(22, new ItemStack(Material.BEDROCK));
 					processing.put(b, oxygeninjectrecipe);
 					progress.put(b, oxygeninjectrecipe.getTicks());

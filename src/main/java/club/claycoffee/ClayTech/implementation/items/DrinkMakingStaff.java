@@ -35,9 +35,9 @@ public class DrinkMakingStaff {
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_DRINK_BOTTLE",
 				ClayTechItems.DIRTY_DRINK_BOTTLE, "notresearch", 10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "DIRTY_TEA", ClayTechItems.DIRTY_TEA, "notresearch",
-				10, RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				10, ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_TEA", ClayTechItems.RAW_TEA, "notresearch", 10,
-				RecipeType.NULL, ClayTechItems.NORECIPE, false);
+				ClayTechRecipeType.CLEANING, ClayTechItems.NORECIPE, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "TEA_POWDER", ClayTechItems.TEA_POWDER, "notresearch",
 				10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE, ClayTechMachineRecipes.TEA_POWDER, false);
 		Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "LEMON_POWDER", ClayTechItems.LEMON_POWDER,

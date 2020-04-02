@@ -20,6 +20,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
@@ -73,8 +74,8 @@ public class RocketLauncherListener implements Listener {
 							currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
 						}
 						Inventory Preset = Bukkit.createInventory(null, 54, Lang.readMachinesText("ROCKET_LAUNCHER"));
-						if (!ClayTech.RunningLaunchersG.containsKey(Preset)) {
-							ClayTech.RunningLaunchersG.put(Preset, b);
+						if (!ClayTechData.RunningLaunchersG.containsKey(Preset)) {
+							ClayTechData.RunningLaunchersG.put(Preset, b);
 						}
 						Preset.setItem(5, BORDER_ITEM);
 						for (int eachID : BORDER) {
@@ -112,7 +113,7 @@ public class RocketLauncherListener implements Listener {
 						if (ClayTechManager.isRocket(handItem)) {
 							// 是火箭
 							Inventory inv = e.getInventory();
-							Block b = ClayTech.RunningLaunchersG.get(inv);
+							Block b = ClayTechData.RunningLaunchersG.get(inv);
 							int currentPage = 1;
 							if (Utils.getMetadata(b, "currentPage") != null) {
 								currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
@@ -231,7 +232,7 @@ public class RocketLauncherListener implements Listener {
 					}
 				}
 				Inventory inv = e.getInventory();
-				Block b = ClayTech.RunningLaunchersG.get(inv);
+				Block b = ClayTechData.RunningLaunchersG.get(inv);
 				Planet current = PlanetUtils.getPlanet(b.getWorld());
 				int currentPage = 1;
 				if (e.getSlot() == 46) {

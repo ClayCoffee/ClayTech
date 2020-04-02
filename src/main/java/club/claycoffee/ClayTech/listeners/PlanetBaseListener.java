@@ -18,6 +18,7 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
@@ -187,13 +188,13 @@ public class PlanetBaseListener implements Listener {
 	public void InventoryClickEvent(InventoryClickEvent e) {
 		if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("CLAY_ROCKET_FUEL_INJECTOR"))
 				&& e.getSlot() == 20) {
-			if (ClayTech.RunningInjectors.get(e.getInventory()) != null) {
+			if (ClayTechData.RunningInjectors.get(e.getInventory()) != null) {
 				e.setCancelled(true);
 			}
 		}
 		if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("CLAY_SPACESUIT_OXYGEN_INJECTOR"))
 				&& e.getSlot() == 22) {
-			if (ClayTech.RunningInjectorsOxygen.get(e.getInventory()) != null) {
+			if (ClayTechData.RunningInjectorsOxygen.get(e.getInventory()) != null) {
 				e.setCancelled(true);
 			}
 		}
