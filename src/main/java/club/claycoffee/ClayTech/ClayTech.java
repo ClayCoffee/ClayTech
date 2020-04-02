@@ -231,7 +231,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		}
 		Metrics mt = new Metrics(this, 6887);
 		mt.addCustomChart(new Metrics.SimplePie("language", () -> languageCodeToLanguage(locale)));
-		
+
 		planetYML = new DataYML("planets.yml");
 		planetYML.saveCDefaultConfig();
 		planetYML.reloadCustomConfig();
@@ -265,33 +265,36 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			public void run() {
 				List<String> Authors = plugin.getDescription().getAuthors();
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_1"));
-				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_2").replaceAll("\\{version\\}", plugin.getDescription().getVersion()));
-				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_3").replaceAll("\\{author\\}", Utils.ArrayToString(Authors.toArray(new String[Authors.size()]), "," , ".")));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_2").replaceAll("\\{version\\}",
+						plugin.getDescription().getVersion()));
+				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_3").replaceAll("\\{author\\}",
+						Utils.ArrayToString(Authors.toArray(new String[Authors.size()]), ",", ".")));
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_4"));
-				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_5").replaceAll("\\{issue_tracker\\}",plugin.getBugTrackerURL()));
+				Bukkit.getLogger().info(ChatColor.GREEN
+						+ Lang.readGeneralText("Info_5").replaceAll("\\{issue_tracker\\}", plugin.getBugTrackerURL()));
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_6"));
 			}
-			
+
 		}.runTaskAsynchronously(this);
-		
+
 	}
 
 	@Override
 	public void onDisable() {
 	}
-	
+
 	private String languageCodeToLanguage(String code) {
-		switch(code.toUpperCase()) {
-			case "ZH-CN":
-				return "Simplified Chinese";
-			case "ZH-TW":
-				return "Traditional Chinese";
-			case "EN-US":
-				return "English(US)";
-			case "EN-UK":
-				return "English(UK)";
-			default: 
-				return code;
+		switch (code.toUpperCase()) {
+		case "ZH-CN":
+			return "Simplified Chinese";
+		case "ZH-TW":
+			return "Traditional Chinese";
+		case "EN-US":
+			return "English(US)";
+		case "EN-UK":
+			return "English(UK)";
+		default:
+			return code;
 		}
 	}
 

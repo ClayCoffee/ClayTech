@@ -46,8 +46,7 @@ public class Foods {
 				SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
 				SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
 		foodII.register();
-		
-		
+
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "TUNA_FISH", ClayTechItems.TUNA_FISH, "notresearch", 10,
 				ClayTechRecipeType.FISHING, ClayTechItems.NORECIPE, false);
 		Research foodIII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FISH1"), 9931,

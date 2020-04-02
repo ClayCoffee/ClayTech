@@ -252,8 +252,7 @@ public class ClayTechItems {
 			Utils.newItemD(Material.IRON_BLOCK, Lang.readItemText("CLAY_FUSION_ORE")),
 			Lang.readItemLore("CLAY_FUSION_ORE"));
 	public static final ItemStack TUNA_FISH = Utils.setLore(
-			Utils.newItemD(Material.TROPICAL_FISH, Lang.readItemText("TUNA_FISH")),
-			Lang.readItemLore("TUNA_FISH"));
+			Utils.newItemD(Material.TROPICAL_FISH, Lang.readItemText("TUNA_FISH")), Lang.readItemLore("TUNA_FISH"));
 
 	public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
 			SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),
