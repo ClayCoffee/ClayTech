@@ -31,6 +31,8 @@ General:
   Durability: "&b耐久"
   CantEat: "&7不可食用"
   CantEatMessage: "&c您不能食用本物品。"
+  CantInteract: "&7不可交互"
+  CantInteractMessage: "&c您不能對本物品進行交互."
   Rocket: "&9火箭"
   SpaceSuit: "&9宇航服"
   Fuel: "&b當前燃料:"
@@ -336,6 +338,7 @@ Items:
     - "&b每次使用後會减1耐久."
     - "&b(不會破壞容器)"
     - "&b耐久: &632"
+    - "&7不可交互"
   SWEET_POTATO: "&e紅芋"
   SWEET_POTATO_LORE:
     - "&6紅芋"

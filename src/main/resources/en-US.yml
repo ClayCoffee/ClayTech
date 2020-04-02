@@ -31,6 +31,8 @@ General:
   Durability: "&bDurability"
   CantEat: "&7Can't eat"
   CantEatMessage: "&cYou can't eat this item."
+  CantInteract: "&7Can't Interact"
+  CantInteractMessage: "&cYou can't interact with this item."
   Rocket: "&9Rocket"
   SpaceSuit: "&9Space Suit"
   Fuel: "&bCurrent Fuel Level:"
@@ -336,6 +338,7 @@ Items:
     - "&bWill affect the durability"
     - "&bWon't break containers."
     - "&bDurability: &632"
+    - "&7Can't Interact"
   SWEET_POTATO: "&eSweet Potato"
   SWEET_POTATO_LORE:
     - "&6Sweet Potato"

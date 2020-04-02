@@ -31,6 +31,8 @@ General:
   Durability: "&bDurability"
   CantEat: "&7Can't eat"
   CantEatMessage: "&cYou can't eat this item."
+  CantInteract: "&7Can't Interact"
+  CantInteractMessage: "&cYou can't interact with this item."
   Rocket: "&9Rocket"
   SpaceSuit: "&9Space Suit"
   Fuel: "&bCurrent Fuel Level:"
@@ -336,6 +338,7 @@ Items:
     - "&bWill affect the durability"
     - "&bWon't break containers."
     - "&bDurability: &632"
+    - "&7Can't Interact"
   SWEET_POTATO: "&eSweet Potato"
   SWEET_POTATO_LORE:
     - "&6Sweet Potato"
@@ -494,13 +497,13 @@ Items:
     - "&bCurrent Oxygen Level: &60&9/&a120"
   COPPER_ORE: "&6Copper Ore"
   COPPER_ORE_LORE:
-    - "&3Put this in the middle slot of the Clay Crafting table to get the dust."
+    - "&3Put this in the middle slot of the Clay Crafting table to gain the dust."
   CLAY_FUSION_ORE: "&6Clay Fusion Ore"
   CLAY_FUSION_ORE_LORE:
-    - "&3Put this in the middle slot of the Clay Crafting table to get the ingot."
+    - "&3Put this in the middle slot of the Clay Crafting table to gain the ingot."
   TUNA_FISH: "&eTuna Fish"
   TUNA_FISH_LORE:
-    - "&9Get this by fishing"  
+    - "&9Get this by fishing"
     - "&6Increase 6 hunger value after eating"
   # End Items
 Researches:

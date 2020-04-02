@@ -28,6 +28,11 @@ public class ItemInteractListener implements Listener {
 					e.setCancelled(true);
 					return;
 				}
+				if (Utils.ExitsInList(Lang.readGeneralText("CantInteract"), Utils.getLore(e.getItem()))) {
+					e.getPlayer().sendMessage(Lang.readGeneralText("CantInteractMessage"));
+					e.setCancelled(true);
+					return;
+				}
 			}
 		}
 	}
