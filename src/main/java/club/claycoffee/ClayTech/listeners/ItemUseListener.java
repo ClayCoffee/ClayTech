@@ -10,6 +10,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -35,7 +36,7 @@ public class ItemUseListener implements Listener {
 		if (e.hasItem()) {
 			if (e.getItem().hasItemMeta()) {
 				if (e.getItem().getItemMeta().getDisplayName()
-						.equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER"))) {
+						.equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER")) && e.getAction() == Action.RIGHT_CLICK_AIR) {
 					Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(), e.getItem()));
 					boolean pass = false;
 					String md = Utils.readPlayerMetadataString(e.getPlayer(), "lastUseTNTCreaterTime");

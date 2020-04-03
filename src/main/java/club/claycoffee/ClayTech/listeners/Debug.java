@@ -7,6 +7,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.utils.PlanetUtils;
 
 public class Debug implements Listener {
@@ -17,6 +18,7 @@ public class Debug implements Listener {
 
 				@Override
 				public void run() {
+					ClayTechManager.allowSpaceTeleportOnce(e.getPlayer());
 					e.getPlayer().teleport(PlanetUtils.findSafeLocation(Bukkit.getWorld("CMoon")));
 				}
 

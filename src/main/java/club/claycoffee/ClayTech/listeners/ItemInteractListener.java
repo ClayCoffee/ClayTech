@@ -10,25 +10,26 @@ import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
 public class ItemInteractListener implements Listener {
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void BlockPlaceEvent(BlockPlaceEvent e) {
-		if (Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"), Utils.getLore(e.getItemInHand()))) {
+		if (Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"), Utils.getLore(e.getItemInHand())) && !e.isCancelled()) {
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(Lang.readGeneralText("CantPlace"));
 		}
 
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@SuppressWarnings("deprecation")
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.hasItem()) {
-			if (e.getItem().hasItemMeta()) {
+			if (e.getItem().hasItemMeta() && !e.isCancelled()) {
 				if (Utils.ExitsInList(Lang.readGeneralText("CantEat"), Utils.getLore(e.getItem()))) {
 					e.getPlayer().sendMessage(Lang.readGeneralText("CantEatMessage"));
 					e.setCancelled(true);
 					return;
 				}
-				if (Utils.ExitsInList(Lang.readGeneralText("CantInteract"), Utils.getLore(e.getItem()))) {
+				if (Utils.ExitsInList(Lang.readGeneralText("CantInteract"), Utils.getLore(e.getItem())) && e.hasBlock()) {
 					e.getPlayer().sendMessage(Lang.readGeneralText("CantInteractMessage"));
 					e.setCancelled(true);
 					return;

@@ -14,7 +14,7 @@ import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Food;
 
 public class FoodDropListener implements Listener {
-	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void BlockBreakEvent(BlockBreakEvent e) {
 		if (!e.isCancelled()) {
 			if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
