@@ -64,6 +64,13 @@
   			</exclusion>
   		</exclusions>
   	</dependency>
+  	<dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>Anotation</artifactId>
+            <version>2.2.400</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/org.eclipse.jdt.annotation_2.2.400.v20191120-1313.jar</systemPath>
+    </dependency>
    </dependencies>
    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
