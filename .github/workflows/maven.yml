@@ -23,8 +23,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: Pack
+    - name: Move Files
       run: mkdir staging && cp target/*.jar staging
+    - name: Pack
       uses: actions/cache@v1
       with:
         path: ~/.m2
