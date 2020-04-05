@@ -24,4 +24,5 @@ GPLv3 → AGPLv3
 Javadocs: http://claytech.claycoffee.space/javadocs/
 
 # Translate
-Want to translate this plugin to other languages?Just start an issue and a pull request and I will check and merge it.
+You can translate ClayTech here: [Click me](https://gitlocalize.com/repo/4241)  
+The default language file(en-US、en-GB) might have some grammar mistakes, I hope you can help me translate it.
