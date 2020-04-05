@@ -3,6 +3,7 @@ package club.claycoffee.ClayTech.api;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
+import org.bukkit.GameRule;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
@@ -125,7 +126,11 @@ public class Planet {
 			newWorld = newWorld.type(WorldType.CUSTOMIZED);
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator(this.planetWorld);
-			newWorld.createWorld();
+			World w = newWorld.createWorld();
+			if(this.cold) {
+				// 如果冷就不会下雨
+				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
+			}
 		}
 	}
 }

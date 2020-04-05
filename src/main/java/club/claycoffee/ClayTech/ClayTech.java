@@ -7,8 +7,10 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -16,9 +18,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Metrics;
+import club.claycoffee.ClayTech.utils.PlanetUtils;
+import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.implementation.Planets.Earth;
 import club.claycoffee.ClayTech.implementation.Planets.Moon;
@@ -273,10 +278,64 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				Bukkit.getLogger().info(ChatColor.GREEN
 						+ Lang.readGeneralText("Info_5").replaceAll("\\{issue_tracker\\}", plugin.getBugTrackerURL()));
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_6"));
+				for(Player player : Bukkit.getOnlinePlayers()) {
+					Planet p = PlanetUtils.getPlanet(player.getWorld());
+					if(p != null) {
+						if(!p.habitable) {
+							World PreviousWorld = player.getWorld();
+							new BukkitRunnable() {
+								@Override
+								public void run() {
+									if (!PreviousWorld.equals(player.getWorld()) || !player.isOnline()) {
+										this.cancel();
+										return;
+									}
+									if (!(ClayTechManager.isSpaceSuit(player.getInventory().getHelmet())
+											&& ClayTechManager.isSpaceSuit(player.getInventory().getChestplate())
+											&& ClayTechManager.isSpaceSuit(player.getInventory().getLeggings())
+											&& ClayTechManager.isSpaceSuit(player.getInventory().getBoots()))) {
+										// 扣血
+										player.sendTitle(Lang.readGeneralText("SpaceSuitError"),
+												Lang.readGeneralText("SpaceSuitError_Sub"));
+										player.damage(5);
+
+									} else {
+										if (!(RocketUtils.getOxygen(player.getInventory().getHelmet()) > 0
+												&& RocketUtils.getOxygen(player.getInventory().getChestplate()) > 0
+												&& RocketUtils.getOxygen(player.getInventory().getLeggings()) > 0
+												&& RocketUtils.getOxygen(player.getInventory().getBoots()) > 0)) {
+											// 扣血
+											player.sendTitle(Lang.readGeneralText("SpaceSuitError"),
+													Lang.readGeneralText("SpaceSuitError_Sub"));
+											player.damage(5);
+										} else {
+											int harmlevel = p.harmlevel;
+											if (RocketUtils
+													.getProtectLevel(player.getInventory().getHelmet()) < harmlevel
+													|| RocketUtils.getProtectLevel(
+															player.getInventory().getChestplate()) < harmlevel
+													|| RocketUtils.getProtectLevel(
+															player.getInventory().getLeggings()) < harmlevel
+													|| RocketUtils.getProtectLevel(
+															player.getInventory().getBoots()) < harmlevel) {
+												// 扣血
+												player.sendTitle(Lang.readGeneralText("SpaceSuitError"),
+														Lang.readGeneralText("SpaceSuitError_Sub"));
+												player.damage(5);
+											}
+										}
+									}
+								}
+
+							}.runTaskTimer(ClayTech.getInstance(), 20, 20);
+						}
+					}
+				}
 			}
 
 		}.runTaskAsynchronously(this);
-
+		
+		
 	}
 
 	@Override

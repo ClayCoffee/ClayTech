@@ -1,6 +1,10 @@
 package club.claycoffee.ClayTech.listeners;
 
+import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.block.data.type.Dispenser;
 import org.bukkit.entity.Animals;
 import org.bukkit.entity.Boss;
 import org.bukkit.entity.EntityType;
@@ -10,8 +14,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.player.PlayerBucketEmptyEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -21,6 +27,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.block.CauldronLevelChangeEvent;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.ClayTechManager;
@@ -62,8 +69,10 @@ public class PlanetListener implements Listener {
 
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
+								return;
+							}
 							// 扣氧气线程
 							if (ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
@@ -94,9 +103,10 @@ public class PlanetListener implements Listener {
 						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
-
+								return;
+							}
 							if (!(ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -142,9 +152,10 @@ public class PlanetListener implements Listener {
 						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
-
+								return;
+							}
 							if (!(ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -207,8 +218,10 @@ public class PlanetListener implements Listener {
 
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
+								return;
+							}
 							// 扣氧气线程
 							if (ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
@@ -239,9 +252,10 @@ public class PlanetListener implements Listener {
 						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
-
+								return;
+							}
 							if (!(ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -287,9 +301,10 @@ public class PlanetListener implements Listener {
 						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
-							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline())
+							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
 								this.cancel();
-
+								return;
+							}
 							if (!(ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 									&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -399,6 +414,91 @@ public class PlanetListener implements Listener {
 					p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(), false));
 				}
 				p.sendMessage(Lang.readGeneralText("SpaceSuitFall"));
+			}
+		}
+	}
+	
+
+	@EventHandler
+	public void PlayerBucketEmptyEvent(PlayerBucketEmptyEvent e) {
+		// 禁止玩家放置液体
+		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
+		if (p != null) {
+			if (p.cold) {
+				if(e.getPlayer().getInventory().getItemInMainHand().getType() == Material.WATER_BUCKET) {
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().setType(Material.BLUE_ICE);
+						}
+
+					}.runTaskLater(ClayTech.getInstance(), 30);
+					return;
+				}
+				if(e.getPlayer().getInventory().getItemInMainHand().getType() == Material.LAVA_BUCKET) {
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().setType(Material.OBSIDIAN);
+						}
+
+					}.runTaskLater(ClayTech.getInstance(), 30);
+					return;
+				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void BlockDispenseEvent(BlockDispenseEvent e) {
+		// 禁止发射器放置液体
+		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
+		if (p != null) {
+			if (p.cold) {
+				if(e.getItem().getType() == Material.WATER_BUCKET) {
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							Dispenser d = (Dispenser) e.getBlock().getBlockData();
+							Block targetBlock = e.getBlock().getRelative(d.getFacing());
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							targetBlock.setType(Material.BLUE_ICE);
+						}
+
+					}.runTaskLater(ClayTech.getInstance(), 30);
+					return;
+				}
+				if(e.getItem().getType() == Material.LAVA_BUCKET) {
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							Dispenser d = (Dispenser) e.getBlock().getBlockData();
+							Block targetBlock = e.getBlock().getRelative(d.getFacing());
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							targetBlock.setType(Material.OBSIDIAN);
+						}
+
+					}.runTaskLater(ClayTech.getInstance(), 30);
+					return;
+				}
+			}
+		}
+	}
+	
+	@EventHandler
+	public void CauldronLevelChangeEvent(CauldronLevelChangeEvent e) {
+		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
+		if (p != null) {
+			if (p.cold) {
+				e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+				e.setNewLevel(0);
+				return;
 			}
 		}
 	}

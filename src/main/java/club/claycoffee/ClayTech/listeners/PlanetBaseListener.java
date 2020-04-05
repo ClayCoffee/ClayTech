@@ -14,6 +14,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
+import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -196,25 +197,6 @@ public class PlanetBaseListener implements Listener {
 				&& e.getSlot() == 22) {
 			if (ClayTechData.RunningInjectorsOxygen.get(e.getInventory()) != null) {
 				e.setCancelled(true);
-			}
-		}
-	}
-
-	@EventHandler
-	public void PlayerBucketEmptyEvent(PlayerBucketEmptyEvent e) {
-		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
-		if (p != null) {
-			if (p.cold && e.getPlayer().getInventory().getItemInMainHand().getType() == Material.WATER_BUCKET) {
-				new BukkitRunnable() {
-
-					@Override
-					public void run() {
-						e.getBlock().setType(Material.BLUE_ICE);
-
-					}
-
-				}.runTaskLater(ClayTech.getInstance(), 30);
-				return;
 			}
 		}
 	}
