@@ -34,8 +34,8 @@ public class Slimefunutils {
 			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch, ItemHandler[] handler) {
 		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
 		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
-		item.register(ClayTech.getInstance());
 		item.addItemHandler(handler);
+		item.register(ClayTech.getInstance());
 		if (registerResearch) {
 			researchId++;
 			Slimefun.registerResearch(
