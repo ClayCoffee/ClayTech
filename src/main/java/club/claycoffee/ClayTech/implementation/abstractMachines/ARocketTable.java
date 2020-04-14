@@ -55,6 +55,7 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 	private static final ItemStack OTHERBORDER_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
+	private static ItemStack item;
 
 	public ARocketTable(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
@@ -233,9 +234,7 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 
 					@Override
 					public void run() {
-						Bukkit.getPluginManager().callEvent(new PlayerAssembleEvent(b, processing.get(b).getInput(),
-								processing.get(b).getOutput()[0]));
-
+						Bukkit.getPluginManager().callEvent(new PlayerAssembleEvent(b, processing.get(b).getInput(),item));
 					}
 
 				}.runTask(ClayTech.getInstance());
@@ -286,6 +285,7 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 					if (entry.getValue() > 0)
 						inv.consumeItem(entry.getKey(), entry.getValue());
 				}
+				item = r.getOutput()[0];
 				processing.put(b, r);
 				progress.put(b, r.getTicks());
 			}

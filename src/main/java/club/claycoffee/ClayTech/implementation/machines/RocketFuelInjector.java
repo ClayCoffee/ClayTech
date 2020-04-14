@@ -253,14 +253,14 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 					}
 					if (RocketUtils.getFuel(rocket) == RocketUtils.getMaxFuel(rocket))
 						return;
-
+					itemfuel = fuel.clone();
+					itemfuel.setAmount(1);
+					
 					inv.consumeItem(24, 1);
 
 					MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[] { rocket, fuel },
 							new ItemStack[] {});
 					item = rocket.clone();
-					itemfuel = fuel.clone();
-					itemfuel.setAmount(1);
 					inv.consumeItem(20, 1);
 					ClayTechData.RunningInjectors.put(inv.toInventory(), b);
 					inv.replaceExistingItem(20, new ItemStack(Material.BEDROCK));

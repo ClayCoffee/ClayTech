@@ -82,7 +82,7 @@ public class Slimefunutils {
 	}
 
 	public static void registerResource(GEOResource res) {
-		SlimefunPlugin.getGPSNetwork().getResourceManager().register(res);
+		res.register();
 		SlimefunPlugin.getRegistry().getGEOResources().add(res);
 	}
 }
