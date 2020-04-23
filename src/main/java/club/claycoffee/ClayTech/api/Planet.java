@@ -127,7 +127,7 @@ public class Planet {
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator(this.planetWorld);
 			World w = newWorld.createWorld();
-			if(this.cold) {
+			if (this.cold) {
 				// 如果冷就不会下雨
 				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 			}

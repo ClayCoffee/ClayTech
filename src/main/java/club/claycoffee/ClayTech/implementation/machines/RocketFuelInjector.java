@@ -255,7 +255,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 						return;
 					itemfuel = fuel.clone();
 					itemfuel.setAmount(1);
-					
+
 					inv.consumeItem(24, 1);
 
 					MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[] { rocket, fuel },

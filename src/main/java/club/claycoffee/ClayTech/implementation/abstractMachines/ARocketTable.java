@@ -234,7 +234,8 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 
 					@Override
 					public void run() {
-						Bukkit.getPluginManager().callEvent(new PlayerAssembleEvent(b, processing.get(b).getInput(),item));
+						Bukkit.getPluginManager()
+								.callEvent(new PlayerAssembleEvent(b, processing.get(b).getInput(), item));
 					}
 
 				}.runTask(ClayTech.getInstance());

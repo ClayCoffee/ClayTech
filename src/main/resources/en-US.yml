@@ -63,6 +63,7 @@ General:
   SpaceSuitFall: "&6>> Your spacesuit protected you."
   AlreadyInRocket: "&cYou are already in the rocket!"
   LocationFatal: "&cThere isn't a safe location to land.You can retry once."
+  NotAtAPlanet: "&cSorry,you have to launch your rocket in a planet(like overworld)."
   Yes_1: "Yes"
   No_1: "No"
 Categories:
@@ -411,7 +412,7 @@ Items:
   CLAY_ROCKET_ASSEMBLING_MACHINE: "&9Rocket Assembling Machine"
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
     - ""
-    - "&3Can Assembling rockets"
+    - "&3Can assemble rockets"
     - "&4Are you ready for it?"
     - ""
     - "%TIER%"
@@ -446,7 +447,7 @@ Items:
     - "&3A normal oxygen tank.."
     - "&bCan save &65&b points of oxygen"
     - "&eCan't Place"
-  SPACESUIT_OXYGEN_TANK: "&9宇航服氧气罐"
+  SPACESUIT_OXYGEN_TANK: "&9Spacesuit Oxygen Tank"
   SPACESUIT_OXYGEN_TANK_LORE:
     - "&3Used to craft the space suit"
     - "&bCan save &640&b points of oxygen"
@@ -573,7 +574,7 @@ Machines:
   FUEL_TO_PLANET: "&9Require &6%fuel% &9points of fuel to reach"
   PLANET_HABITABLE: "&9Habitable: &6%habitable%"
   PLANET_GRAVITY: "&9Gravity: &6%gravity%&9G"
-  PLANET_HARM_LEVEL: "&9Harm Level: &6%harm_level%&9级"
+  PLANET_HARM_LEVEL: "&9Harm Level: &9Level &6%harm_level%"
   PREVIOUS_PAGE_CANT_USE: "&bPrevious Page(Can't use)"
   NEXT_PAGE_CANT_USE: "&bNext Page(Can't use)"
   PREVIOUS_PAGE: "&bPrevious Page"

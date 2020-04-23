@@ -278,10 +278,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				Bukkit.getLogger().info(ChatColor.GREEN
 						+ Lang.readGeneralText("Info_5").replaceAll("\\{issue_tracker\\}", plugin.getBugTrackerURL()));
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_6"));
-				for(Player player : Bukkit.getOnlinePlayers()) {
+				for (Player player : Bukkit.getOnlinePlayers()) {
 					Planet p = PlanetUtils.getPlanet(player.getWorld());
-					if(p != null) {
-						if(!p.habitable) {
+					if (p != null) {
+						if (!p.habitable) {
 							World PreviousWorld = player.getWorld();
 							new BukkitRunnable() {
 								@Override
@@ -334,8 +334,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			}
 
 		}.runTaskAsynchronously(this);
-		
-		
+
 	}
 
 	@Override
@@ -358,7 +357,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	}
 
 	private void registerSlimefun() {
-		registerMachines();
 		new Clay_basic();
 		new PotionAffect_Weapons();
 		new Golden_things();
@@ -377,6 +375,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new ClayFuelResource();
 		new RocketMakings();
 		new Rockets();
+		registerMachines();
 	}
 
 	public void registerMachines() {

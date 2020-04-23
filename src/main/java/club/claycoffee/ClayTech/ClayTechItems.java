@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
-import me.mrCookieSlime.Slimefun.Lists.Categories;
 import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
@@ -18,41 +17,42 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 
 public class ClayTechItems {
 	public static final ItemStack[] NORECIPE = { null, null, null, null, null, null, null, null, null };
-
+	private static final NamespacedKey N_BASIC = new NamespacedKey(ClayTech.plugin, "claycategory");
+	
 	// 分类
-	public static final LockedCategory C_BASICS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.CLAY, Lang.readCategoriesText("Basic")), Categories.BASIC_MACHINES);
+	public static final LockedCategory C_BASICS = new LockedCategory(N_BASIC,
+			Utils.newItemD(Material.CLAY, Lang.readCategoriesText("Basic")), new NamespacedKey(SlimefunPlugin.instance, "basic_machines"));
 	public static final LockedCategory C_WEAPONS = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.DIAMOND_SWORD, Lang.readCategoriesText("Weapons")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory1"),
+			Utils.newItemD(Material.DIAMOND_SWORD, Lang.readCategoriesText("Weapons")), N_BASIC);
 	public static final LockedCategory C_FOOD = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.ENCHANTED_GOLDEN_APPLE, Lang.readCategoriesText("Food")), C_BASICS);
+			Utils.newItemD(Material.ENCHANTED_GOLDEN_APPLE, Lang.readCategoriesText("Food")), N_BASIC);
 	public static final LockedCategory C_FOODMATERIALS = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.COCOA_BEANS, Lang.readCategoriesText("FoodMakings")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory2"),
+			Utils.newItemD(Material.COCOA_BEANS, Lang.readCategoriesText("FoodMakings")), N_BASIC);
 	public static final LockedCategory C_DRINK = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.WATER_BUCKET, Lang.readCategoriesText("Drink")), C_BASICS);
+			Utils.newItemD(Material.WATER_BUCKET, Lang.readCategoriesText("Drink")), N_BASIC);
 	public static final LockedCategory C_MATERIALS = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.COAL, Lang.readCategoriesText("Makings")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory3"),
+			Utils.newItemD(Material.COAL, Lang.readCategoriesText("Makings")), N_BASIC);
 	public static final LockedCategory C_ARMORS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.DIAMOND_CHESTPLATE, Lang.readCategoriesText("Armors")), C_BASICS);
+			Utils.newItemD(Material.DIAMOND_CHESTPLATE, Lang.readCategoriesText("Armors")), N_BASIC);
 	public static final LockedCategory C_DECORATES = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.PLAYER_HEAD, Lang.readCategoriesText("Decorates")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory4"),
+			Utils.newItemD(Material.PLAYER_HEAD, Lang.readCategoriesText("Decorates")), N_BASIC);
 	public static final LockedCategory C_ELEMENTS = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.FLOWER_POT, Lang.readCategoriesText("Elements")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory5"),
+			Utils.newItemD(Material.FLOWER_POT, Lang.readCategoriesText("Elements")), N_BASIC);
 	public static final LockedCategory C_MACHINES = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.FURNACE, Lang.readCategoriesText("Machines")), C_BASICS);
-	public static final LockedCategory C_OTHER = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.POWERED_RAIL, Lang.readCategoriesText("Other")), C_BASICS);
-	public static final LockedCategory C_TOOLS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.DIAMOND_PICKAXE, Lang.readCategoriesText("Tools")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory6"),
+			Utils.newItemD(Material.FURNACE, Lang.readCategoriesText("Machines")), N_BASIC);
+	public static final LockedCategory C_OTHER = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory7"),
+			Utils.newItemD(Material.POWERED_RAIL, Lang.readCategoriesText("Other")), N_BASIC);
+	public static final LockedCategory C_TOOLS = new LockedCategory(new NamespacedKey(ClayTech.plugin, "claycategory8"),
+			Utils.newItemD(Material.DIAMOND_PICKAXE, Lang.readCategoriesText("Tools")), N_BASIC);
 	public static final LockedCategory C_ORESTHINGS = new LockedCategory(
-			new NamespacedKey(ClayTech.plugin, "claycategory"),
-			Utils.newItemD(Material.BRICK, Lang.readCategoriesText("OreThings")), C_BASICS);
+			new NamespacedKey(ClayTech.plugin, "claycategory9"),
+			Utils.newItemD(Material.BRICK, Lang.readCategoriesText("OreThings")), N_BASIC);
 
 	// 注册
 	public static final ItemStack USEFUL_DIRT = Utils.setLore(

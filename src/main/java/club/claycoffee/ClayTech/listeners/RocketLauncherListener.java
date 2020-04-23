@@ -40,64 +40,8 @@ public class RocketLauncherListener implements Listener {
 	private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 17, 18, 26, 27, 35, 36, 44, 45, 47, 48, 49,
 			50, 51, 53 };
 	private static final int[] BORDER_2 = { 10, 11, 12, 14, 15, 16 };
-	private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
-			Lang.readMachinesText("SPLIT_LINE"));
-	private static final ItemStack OTHERBORDER_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
-			Lang.readMachinesText("SPLIT_LINE"));
-	private static int currentPage = 1;
 	private static final int[] planet = { 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41,
 			42, 43 };
-
-	@EventHandler(priority = EventPriority.HIGHEST)
-	public void PlayerInteractEvent(PlayerInteractEvent e) {
-		if (e.hasBlock() && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-			Block b = e.getClickedBlock();
-			if (BlockStorage.checkID(b) != null) {
-				if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
-					if (e.hasItem()) {
-						if (!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
-							return;
-						}
-					}
-					if (!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
-						return;
-					}
-					Map<String, String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
-					String ownerName = jbj.get("owner");
-					if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
-						Planet current = PlanetUtils.getPlanet(b.getWorld());
-						if (current == null) {
-							e.getPlayer().sendMessage("unspp");
-							return;
-						}
-						if (Utils.getMetadata(b, "currentPage") != null) {
-							currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
-						}
-						Inventory Preset = Bukkit.createInventory(null, 54, Lang.readMachinesText("ROCKET_LAUNCHER"));
-						if (!ClayTechData.RunningLaunchersG.containsKey(Preset)) {
-							ClayTechData.RunningLaunchersG.put(Preset, b);
-						}
-						Preset.setItem(5, BORDER_ITEM);
-						for (int eachID : BORDER) {
-							Preset.setItem(eachID, BORDER_ITEM);
-						}
-						for (int eachID : BORDER_2) {
-							Preset.setItem(eachID, OTHERBORDER_ITEM);
-						}
-						Preset.setItem(5, BORDER_ITEM);
-
-						Preset = PlanetUtils.renderLauncherMenu(current, Preset, currentPage);
-
-						e.getPlayer().openInventory(Preset);
-					} else {
-						e.getPlayer().sendMessage(Lang.readGeneralText("notOwner"));
-						e.setCancelled(true);
-						return;
-					}
-				}
-			}
-		}
-	}
 
 	@EventHandler
 	public void InventoryMoveItemEvent(InventoryClickEvent e) {

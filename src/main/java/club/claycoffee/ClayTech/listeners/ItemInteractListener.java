@@ -12,7 +12,8 @@ import club.claycoffee.ClayTech.utils.Utils;
 public class ItemInteractListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void BlockPlaceEvent(BlockPlaceEvent e) {
-		if (Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"), Utils.getLore(e.getItemInHand())) && !e.isCancelled()) {
+		if (Utils.ExitsInList(Lang.readGeneralText("CantPlaceLore"), Utils.getLore(e.getItemInHand()))
+				&& !e.isCancelled()) {
 			e.setCancelled(true);
 			e.getPlayer().sendMessage(Lang.readGeneralText("CantPlace"));
 		}
@@ -29,7 +30,8 @@ public class ItemInteractListener implements Listener {
 					e.setCancelled(true);
 					return;
 				}
-				if (Utils.ExitsInList(Lang.readGeneralText("CantInteract"), Utils.getLore(e.getItem())) && e.hasBlock()) {
+				if (Utils.ExitsInList(Lang.readGeneralText("CantInteract"), Utils.getLore(e.getItem()))
+						&& e.hasBlock()) {
 					e.getPlayer().sendMessage(Lang.readGeneralText("CantInteractMessage"));
 					e.setCancelled(true);
 					return;

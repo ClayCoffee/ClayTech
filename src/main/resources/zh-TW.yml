@@ -63,6 +63,7 @@ General:
   SpaceSuitFall: "&6>> 您的宇航服免除了您的摔落傷害"
   AlreadyInRocket: "&c您已經在火箭中了! 移動物品取消發射."
   LocationFatal: "&c著陸失敗!但是燃料並沒有被消耗."
+  NotAtAPlanet: "&c對不起,妳需要在壹顆星球起飛!(如主世界)"
   Yes_1: "是"
   No_1: "否"
 Categories:
@@ -70,7 +71,7 @@ Categories:
   Weapons: "&b粘土科技 - 武器"
   Food: "&b粘土科技 - 食物"
   FoodMakings: "&b粘土科技 - 食物飲料材料"
-  Drink: "&b粘土科技 - 飲料"
+  Drink: "&b粘土科技 - 飲料"w
   Makings: "&b粘土科技 - 材料"
   Armors: "&b粘土科技 - 裝備"
   Decorates: "&b粘土科技 - 裝飾品"

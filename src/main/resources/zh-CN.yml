@@ -63,6 +63,7 @@ General:
   SpaceSuitFall: "&6>> 您的宇航服免除了您的摔落伤害"
   AlreadyInRocket: "&c您已经在火箭中了! 移动物品取消发射."
   LocationFatal: "&c着陆失败!但是燃料并没有被消耗."
+  NotAtAPlanet: "&c对不起,你需要在一颗星球起飞!(如主世界)"
   Yes_1: "是"
   No_1: "否"
 Categories:

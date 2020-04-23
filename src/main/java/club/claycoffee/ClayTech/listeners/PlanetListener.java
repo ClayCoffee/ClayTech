@@ -417,7 +417,6 @@ public class PlanetListener implements Listener {
 			}
 		}
 	}
-	
 
 	@EventHandler
 	public void PlayerBucketEmptyEvent(PlayerBucketEmptyEvent e) {
@@ -425,24 +424,26 @@ public class PlanetListener implements Listener {
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
 		if (p != null) {
 			if (p.cold) {
-				if(e.getPlayer().getInventory().getItemInMainHand().getType() == Material.WATER_BUCKET) {
+				if (e.getPlayer().getInventory().getItemInMainHand().getType() == Material.WATER_BUCKET) {
 					new BukkitRunnable() {
 
 						@Override
 						public void run() {
-							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH,
+									1.0F, 1.0F);
 							e.getBlock().setType(Material.BLUE_ICE);
 						}
 
 					}.runTaskLater(ClayTech.getInstance(), 30);
 					return;
 				}
-				if(e.getPlayer().getInventory().getItemInMainHand().getType() == Material.LAVA_BUCKET) {
+				if (e.getPlayer().getInventory().getItemInMainHand().getType() == Material.LAVA_BUCKET) {
 					new BukkitRunnable() {
 
 						@Override
 						public void run() {
-							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH,
+									1.0F, 1.0F);
 							e.getBlock().setType(Material.OBSIDIAN);
 						}
 
@@ -452,35 +453,37 @@ public class PlanetListener implements Listener {
 			}
 		}
 	}
-	
+
 	@EventHandler
 	public void BlockDispenseEvent(BlockDispenseEvent e) {
 		// 禁止发射器放置液体
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
 		if (p != null) {
 			if (p.cold) {
-				if(e.getItem().getType() == Material.WATER_BUCKET) {
+				if (e.getItem().getType() == Material.WATER_BUCKET) {
 					new BukkitRunnable() {
 
 						@Override
 						public void run() {
 							Dispenser d = (Dispenser) e.getBlock().getBlockData();
 							Block targetBlock = e.getBlock().getRelative(d.getFacing());
-							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH,
+									1.0F, 1.0F);
 							targetBlock.setType(Material.BLUE_ICE);
 						}
 
 					}.runTaskLater(ClayTech.getInstance(), 30);
 					return;
 				}
-				if(e.getItem().getType() == Material.LAVA_BUCKET) {
+				if (e.getItem().getType() == Material.LAVA_BUCKET) {
 					new BukkitRunnable() {
 
 						@Override
 						public void run() {
 							Dispenser d = (Dispenser) e.getBlock().getBlockData();
 							Block targetBlock = e.getBlock().getRelative(d.getFacing());
-							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
+							e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH,
+									1.0F, 1.0F);
 							targetBlock.setType(Material.OBSIDIAN);
 						}
 
@@ -490,7 +493,7 @@ public class PlanetListener implements Listener {
 			}
 		}
 	}
-	
+
 	@EventHandler
 	public void CauldronLevelChangeEvent(CauldronLevelChangeEvent e) {
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());

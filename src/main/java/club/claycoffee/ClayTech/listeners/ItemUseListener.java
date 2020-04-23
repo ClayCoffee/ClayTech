@@ -35,8 +35,8 @@ public class ItemUseListener implements Listener {
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.hasItem()) {
 			if (e.getItem().hasItemMeta()) {
-				if (e.getItem().getItemMeta().getDisplayName()
-						.equalsIgnoreCase(Lang.readItemText("TNT_EXPLOSION_CREATER")) && e.getAction() == Action.RIGHT_CLICK_AIR) {
+				if (e.getItem().getItemMeta().getDisplayName().equalsIgnoreCase(
+						Lang.readItemText("TNT_EXPLOSION_CREATER")) && e.getAction() == Action.RIGHT_CLICK_AIR) {
 					Bukkit.getPluginManager().callEvent(new PlayerUseItemEvent(e.getPlayer(), e.getItem()));
 					boolean pass = false;
 					String md = Utils.readPlayerMetadataString(e.getPlayer(), "lastUseTNTCreaterTime");
