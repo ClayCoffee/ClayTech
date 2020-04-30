@@ -24,7 +24,6 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
@@ -36,6 +35,7 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenu
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 @SuppressWarnings("deprecation")
 public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
@@ -243,7 +243,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 			Map<Integer, Integer> found = new HashMap<>();
 			for (MachineRecipe recipe : recipes) {
 				ItemStack input = recipe.getInput()[0];
-				if (SlimefunManager.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
+				if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
 					if (input != null) {
 						found.put(inputslots[0], input.getAmount());
 					}
@@ -262,7 +262,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 						return;
 					ChargableBlock.addCharge(b, -getEnergyConsumption());
 				}
-				if (!SlimefunManager.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
+				if (!SlimefunUtils.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
 					return;
 				if (inv.getItemInSlot(outputslots[0]) != null) {
 					ItemStack is = inv.getItemInSlot(outputslots[0]);

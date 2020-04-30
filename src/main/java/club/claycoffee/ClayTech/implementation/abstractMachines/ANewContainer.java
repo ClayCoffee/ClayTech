@@ -9,10 +9,10 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
-import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
@@ -91,7 +91,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 			for (MachineRecipe recipe : recipes) {
 				for (ItemStack input : recipe.getInput()) {
 					for (int slot : getInputSlots()) {
-						if (SlimefunManager.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
+						if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
 							found.put(slot, input.getAmount());
 							break;
 						}

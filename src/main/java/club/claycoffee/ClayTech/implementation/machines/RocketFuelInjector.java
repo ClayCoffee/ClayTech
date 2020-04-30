@@ -24,6 +24,7 @@ import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
@@ -33,7 +34,6 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
-import me.mrCookieSlime.Slimefun.Setup.SlimefunManager;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
@@ -244,7 +244,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 			ItemStack fuel = inv.getItemInSlot(24);
 			if (rocket != null && fuel != null) {
 				if (ClayTechManager.isRocket(rocket)
-						&& SlimefunManager.isItemSimilar(fuel, ClayTechItems.MIXED_ROCKET_FUEL, true)
+						&& SlimefunUtils.isItemSimilar(fuel, ClayTechItems.MIXED_ROCKET_FUEL, true)
 						&& rocket.getAmount() == 1) {
 					if (ChargableBlock.isChargable(b)) {
 						if (ChargableBlock.getCharge(b) < getEnergyConsumption())
