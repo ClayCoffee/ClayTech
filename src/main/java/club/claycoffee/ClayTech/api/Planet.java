@@ -20,16 +20,16 @@ import club.claycoffee.ClayTech.utils.Utils;
  * Planet. 星球.
  */
 public class Planet {
-	public String planetName;
-	public ItemStack displayItem;
-	public ChunkGenerator planetWorld;
-	public Environment environment;
-	public boolean habitable;
-	public int gravity;
-	public int distance;
-	public int harmlevel;
-	public boolean cold;
-	public boolean spawnMob;
+	private String planetName;
+	private ItemStack displayItem;
+	private ChunkGenerator planetWorld;
+	private Environment environment;
+	private boolean habitable;
+	private int gravity;
+	private int distance;
+	private int harmlevel;
+	private boolean cold;
+	private boolean spawnMob;
 	private DataYML planets = ClayTech.getPlanetYML();
 	private FileConfiguration f = planets.getCustomConfig();
 
@@ -132,5 +132,46 @@ public class Planet {
 				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 			}
 		}
+	}
+	
+	public void setDistance(int newDistance) {
+		this.distance = newDistance;
+	}
+	public void setHarmLevel(int newLevel) {
+		this.harmlevel = newLevel;
+	}
+	public void setHabitable(boolean habitable) {
+		this.habitable = habitable;
+	}
+	public void setCold(boolean cold) {
+		this.cold = cold;
+	}
+	public void setGravity(int newGravity) {
+		this.gravity = newGravity;
+	}
+	
+	public int getDistance() {
+		return this.distance;
+	}
+	public int getHarmLevel() {
+		return this.harmlevel;
+	}
+	public boolean getHabitable() {
+		return this.habitable;
+	}
+	public boolean getCold() {
+		return this.cold;
+	}
+	public boolean getMobSpawnable() {
+		return this.spawnMob;
+	}
+	public int getGravity() {
+		return this.gravity;
+	}
+	public String getPlanetWorldName() {
+		return this.planetName;
+	}
+	public ItemStack getDisplayStack() {
+		return this.displayItem.clone();
 	}
 }

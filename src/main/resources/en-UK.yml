@@ -584,5 +584,6 @@ Machines:
 Planets:
   Earth: "&aEarth(Overworld)"
   Moon: "&eMoon"
+  Mars: "&6Mars"
 Resources:
   CLAY_FUEL: "Clay Fuel"

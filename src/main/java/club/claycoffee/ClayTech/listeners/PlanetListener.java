@@ -43,7 +43,7 @@ public class PlanetListener implements Listener {
 	public void EntitySpawnEvent(EntitySpawnEvent e) {
 		Planet p = PlanetUtils.getPlanet(e.getEntity().getWorld());
 		if (p != null) {
-			if (!p.spawnMob) {
+			if (!p.getMobSpawnable()) {
 				if (e.getEntity() instanceof Mob || e.getEntity() instanceof Animals || e.getEntity() instanceof Monster
 						|| e.getEntity() instanceof Boss) {
 					e.setCancelled(true);
@@ -59,7 +59,7 @@ public class PlanetListener implements Listener {
 
 		Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
 		if (p != null) {
-			if (!p.habitable) {
+			if (!p.getHabitable()) {
 				if (ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 						&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 						&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -126,7 +126,7 @@ public class PlanetListener implements Listener {
 											Lang.readGeneralText("SpaceSuitError_Sub"));
 									e.getPlayer().damage(5);
 								} else {
-									int harmlevel = p.harmlevel;
+									int harmlevel = p.getHarmLevel();
 									if (RocketUtils
 											.getProtectLevel(e.getPlayer().getInventory().getHelmet()) < harmlevel
 											|| RocketUtils.getProtectLevel(
@@ -175,7 +175,7 @@ public class PlanetListener implements Listener {
 											Lang.readGeneralText("SpaceSuitError_Sub"));
 									e.getPlayer().damage(5);
 								} else {
-									int harmlevel = p.harmlevel;
+									int harmlevel = p.getHarmLevel();
 									if (RocketUtils
 											.getProtectLevel(e.getPlayer().getInventory().getHelmet()) < harmlevel
 											|| RocketUtils.getProtectLevel(
@@ -196,8 +196,8 @@ public class PlanetListener implements Listener {
 					}.runTaskTimer(ClayTech.getInstance(), 20, 20);
 				}
 			}
-			if (p.gravity > 1) {
-				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.gravity - 1));
+			if (p.getGravity() > 1) {
+				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
 			}
 		}
 	}
@@ -208,7 +208,7 @@ public class PlanetListener implements Listener {
 
 		Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
 		if (p != null) {
-			if (!p.habitable) {
+			if (!p.getHabitable()) {
 				if (ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getHelmet())
 						&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getChestplate())
 						&& ClayTechManager.isSpaceSuit(e.getPlayer().getInventory().getLeggings())
@@ -275,7 +275,7 @@ public class PlanetListener implements Listener {
 											Lang.readGeneralText("SpaceSuitError_Sub"));
 									e.getPlayer().damage(5);
 								} else {
-									int harmlevel = p.harmlevel;
+									int harmlevel = p.getHarmLevel();
 									if (RocketUtils
 											.getProtectLevel(e.getPlayer().getInventory().getHelmet()) < harmlevel
 											|| RocketUtils.getProtectLevel(
@@ -324,7 +324,7 @@ public class PlanetListener implements Listener {
 											Lang.readGeneralText("SpaceSuitError_Sub"));
 									e.getPlayer().damage(5);
 								} else {
-									int harmlevel = p.harmlevel;
+									int harmlevel = p.getHarmLevel();
 									if (RocketUtils
 											.getProtectLevel(e.getPlayer().getInventory().getHelmet()) < harmlevel
 											|| RocketUtils.getProtectLevel(
@@ -345,8 +345,8 @@ public class PlanetListener implements Listener {
 					}.runTaskTimer(ClayTech.getInstance(), 20, 20);
 				}
 			}
-			if (p.gravity > 1) {
-				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.gravity - 1));
+			if (p.getGravity() > 1) {
+				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
 			}
 		}
 	}
@@ -358,7 +358,7 @@ public class PlanetListener implements Listener {
 		String inRocket = "false";
 		if (p != null) {
 			if (to != null) {
-				if (p.planetName.equalsIgnoreCase(to.planetName)) {
+				if (p.getPlanetWorldName().equalsIgnoreCase(to.getPlanetWorldName())) {
 					// 如果目标位置在当前世界
 					return;
 				}
@@ -367,7 +367,7 @@ public class PlanetListener implements Listener {
 				inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
 			}
 			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-			if (!inRocket.equalsIgnoreCase("true") && !p.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+			if (!inRocket.equalsIgnoreCase("true") && !p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
 				if (ast) {
 					e.getPlayer().setMetadata("allowSpaceTeleport",
 							new FixedMetadataValue(ClayTech.getInstance(), false));
@@ -385,8 +385,8 @@ public class PlanetListener implements Listener {
 				inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
 			}
 			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-			if (!inRocket.equalsIgnoreCase("true") && p.planetName.equalsIgnoreCase(ClayTech.getOverworld())
-					&& !to.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+			if (!inRocket.equalsIgnoreCase("true") && p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())
+					&& !to.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
 				if (ast) {
 					e.getPlayer().setMetadata("allowSpaceTeleport",
 							new FixedMetadataValue(ClayTech.getInstance(), false));
@@ -423,7 +423,7 @@ public class PlanetListener implements Listener {
 		// 禁止玩家放置液体
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
 		if (p != null) {
-			if (p.cold) {
+			if (p.getCold()) {
 				if (e.getPlayer().getInventory().getItemInMainHand().getType() == Material.WATER_BUCKET) {
 					new BukkitRunnable() {
 
@@ -459,7 +459,7 @@ public class PlanetListener implements Listener {
 		// 禁止发射器放置液体
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
 		if (p != null) {
-			if (p.cold) {
+			if (p.getCold()) {
 				if (e.getItem().getType() == Material.WATER_BUCKET) {
 					new BukkitRunnable() {
 
@@ -498,7 +498,7 @@ public class PlanetListener implements Listener {
 	public void CauldronLevelChangeEvent(CauldronLevelChangeEvent e) {
 		Planet p = PlanetUtils.getPlanet(e.getBlock().getWorld());
 		if (p != null) {
-			if (p.cold) {
+			if (p.getCold()) {
 				e.getBlock().getWorld().playSound(e.getBlock().getLocation(), Sound.BLOCK_FIRE_EXTINGUISH, 1.0F, 1.0F);
 				e.setNewLevel(0);
 				return;

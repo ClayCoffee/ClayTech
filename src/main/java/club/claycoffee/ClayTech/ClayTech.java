@@ -26,6 +26,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.implementation.Planets.Earth;
+import club.claycoffee.ClayTech.implementation.Planets.Mars;
 import club.claycoffee.ClayTech.implementation.Planets.Moon;
 import club.claycoffee.ClayTech.implementation.items.Armors;
 import club.claycoffee.ClayTech.implementation.items.ClayFuelResource;
@@ -281,7 +282,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				for (Player player : Bukkit.getOnlinePlayers()) {
 					Planet p = PlanetUtils.getPlanet(player.getWorld());
 					if (p != null) {
-						if (!p.habitable) {
+						if (!p.getHabitable()) {
 							World PreviousWorld = player.getWorld();
 							new BukkitRunnable() {
 								@Override
@@ -309,7 +310,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 													Lang.readGeneralText("SpaceSuitError_Sub"));
 											player.damage(5);
 										} else {
-											int harmlevel = p.harmlevel;
+											int harmlevel = p.getHarmLevel();
 											if (RocketUtils
 													.getProtectLevel(player.getInventory().getHelmet()) < harmlevel
 													|| RocketUtils.getProtectLevel(
@@ -478,6 +479,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new Earth();
 		// Moon 月球
 		new Moon();
+		// Mars 火星
+		new Mars();
 	}
 
 	private void registerResources() {

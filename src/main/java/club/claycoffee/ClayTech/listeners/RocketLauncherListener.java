@@ -1,6 +1,5 @@
 package club.claycoffee.ClayTech.listeners;
 
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -9,10 +8,7 @@ import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -29,10 +25,8 @@ import club.claycoffee.ClayTech.utils.DataYML;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.PlanetUtils;
 import club.claycoffee.ClayTech.utils.RocketUtils;
-import club.claycoffee.ClayTech.utils.StrUtils;
 import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.Slimefun;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 
@@ -65,7 +59,7 @@ public class RocketLauncherListener implements Listener {
 							int index = (currentPage - 1) * 21 + (e.getSlot() - 18) - 1;
 							Planet target = ClayTech.getPlanets().get(index);
 							Planet current = PlanetUtils.getPlanet(b.getWorld());
-							if (!target.planetName.equalsIgnoreCase(current.planetName)) {
+							if (!target.getPlanetWorldName().equalsIgnoreCase(current.getPlanetWorldName())) {
 								if (PlanetUtils.getFuel(current, target) <= RocketUtils.getFuel(handItem)) {
 									if (handItem.getAmount() == 1) {
 										e.setCancelled(true);
@@ -96,15 +90,15 @@ public class RocketLauncherListener implements Listener {
 															DataYML planetsData = ClayTech.getPlanetDataYML();
 															FileConfiguration pd = planetsData.getCustomConfig();
 															if (pd.getBoolean(
-																	p.getName() + "." + target.planetName + ".base")) {
-																int X = pd.getInt(p.getName() + "." + target.planetName
+																	p.getName() + "." + target.getPlanetWorldName() + ".base")) {
+																int X = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
 																		+ ".baseX");
-																int Y = pd.getInt(p.getName() + "." + target.planetName
+																int Y = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
 																		+ ".baseY");
-																int Z = pd.getInt(p.getName() + "." + target.planetName
+																int Z = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
 																		+ ".baseZ");
 																p.teleport(
-																		new Location(Bukkit.getWorld(target.planetName),
+																		new Location(Bukkit.getWorld(target.getPlanetWorldName()),
 																				X, Y, Z),
 																		TeleportCause.PLUGIN);
 																p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
@@ -113,7 +107,7 @@ public class RocketLauncherListener implements Listener {
 																try {
 																	p.teleport(
 																			PlanetUtils.findSafeLocation(
-																					Bukkit.getWorld(target.planetName)),
+																					Bukkit.getWorld(target.getPlanetWorldName())),
 																			TeleportCause.PLUGIN);
 																} catch (Exception ex) {
 																	p.sendMessage(

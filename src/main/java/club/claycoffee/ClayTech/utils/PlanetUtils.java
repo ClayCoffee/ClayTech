@@ -53,7 +53,7 @@ public class PlanetUtils {
 
 	public static Planet getPlanet(World w) {
 		for (Planet each : ClayTech.getPlanets()) {
-			if (each.planetName.equalsIgnoreCase(w.getName())) {
+			if (each.getPlanetWorldName().equalsIgnoreCase(w.getName())) {
 				return each;
 			}
 		}
@@ -61,11 +61,11 @@ public class PlanetUtils {
 	}
 
 	public static int getDistance(Planet a, Planet b) {
-		if (a.distance > b.distance) {
-			return a.distance - b.distance;
+		if (a.getDistance() > b.getDistance()) {
+			return a.getDistance() - b.getDistance();
 		}
-		if (a.distance < b.distance) {
-			return b.distance - a.distance;
+		if (a.getDistance() < b.getDistance()) {
+			return b.getDistance() - a.getDistance();
 		}
 		return 0;
 	}
@@ -109,16 +109,16 @@ public class PlanetUtils {
 			c++;
 			if (c > (currentPage - 1) * 21 && c <= currentPage * 21) {
 				i++;
-				ItemStack di = each.displayItem;
+				ItemStack di = each.getDisplayStack();
 				di = Utils.setLoreList(di, new String[] {
 						Lang.readMachinesText("DISTANCE_TO_PLANET").replaceAll("%ly%",
 								"" + PlanetUtils.getDistance(current, each)),
 						Lang.readMachinesText("FUEL_TO_PLANET").replaceAll("%fuel%",
 								"" + PlanetUtils.getFuel(current, each)),
 						Lang.readMachinesText("PLANET_HABITABLE").replaceAll("%habitable%",
-								PlanetUtils.booleanToString(each.habitable)),
-						Lang.readMachinesText("PLANET_GRAVITY").replaceAll("%gravity%", "1/" + each.gravity),
-						Lang.readMachinesText("PLANET_HARM_LEVEL").replaceAll("%harm_level%", each.harmlevel + "") });
+								PlanetUtils.booleanToString(each.getHabitable())),
+						Lang.readMachinesText("PLANET_GRAVITY").replaceAll("%gravity%", "1/" + each.getGravity()),
+						Lang.readMachinesText("PLANET_HARM_LEVEL").replaceAll("%harm_level%", each.getHarmLevel() + "") });
 				Preset.setItem(planet[i - 1], di);
 			} else if (c > currentPage * 21) {
 				break;

@@ -595,5 +595,6 @@ Machines:
 Planets:
   Earth: "&a地球(主世界)"
   Moon: "&e月球"
+  Mars: "&6火星"
 Resources:
   CLAY_FUEL: "粘土燃料"
