@@ -1,0 +1,191 @@
+---
+General:
+  startTip: ClayTech par ClayCoffee.
+  registeringItems: Enregistrement des items slimefun...
+  registeringError: 'Une erreur est survenue lors du chargement d(u/es) item(s) :'
+  Info_1: "###########################################################"
+  Info_2: ClayTech v{version} à chargé avec succès.
+  Info_3: 'Auteur: {author}'
+  Info_5: 'Suivi des problèmes: {issue_tracker}'
+  Info_6: "###########################################################"
+  CantPlaceLore: "&eNe peux pas être placé."
+  CantPlace: "§b[ClayTech]§cVous ne pouvez pas placer cet item."
+  Blind_5_effect: "&7Cécité V"
+  Slowness_5_effect: "&7Lenteur V"
+  Confusion_5_effect: "&7Nausée V"
+  Poison_3_effect: "&7Poison III"
+  Anti_Slowness_3_effect: "&7Anti-Lenteur III"
+  Drink_Message: "&6Glou... Glou... Ça n'a pas un si mauvais goût!"
+  Eat_Message: "&6Woah! C’est si délicieux!"
+  Cant_Drink_Message: "&cVous êtes désaltéré(e)! Vous n’avez donc plus besoin de boire!"
+  Cant_Eat_Message: "&cVous êtes rassasié(e)! Vous n'avez donc plus besoin de boire!"
+  Wash_Message: "&6Lavé avec succès!"
+  Cant_Wash_Message: "&cImpossible de le laver... Vous avez besoin d’un seau d’eau
+    pour cela."
+  Before_115: "&cNous avons détecté que votre serveur tourne sous une version inférieure
+    à la 1.15, cela peut causer pas mal d’instabilité lors du chargement des items,
+    mais normalement le plugin est censé fonctionner correctement."
+  Not_compatible: "&cNavré ! Le plugin ne peut que tourner sous les versions 1.13.x,
+    1.14.x ou 1.15.x de Minecraft. Veuillez s’il vous plaît mettre à jour la version
+    de votre serveur dès que possible pour pouvoir utiliser ce plugin."
+  TNT_EXPLOSION_CREATER_WAIT: "&aLa TNT sera placée dans 5 secondes... FUYEZ DÈS QUE
+    POSSIBLE !!! "
+  TNT_EXPLOSION_CREATER_NO_TNT: "&cIl n’y a pas de TNT dans votre backpack, vous ne
+    pouvez donc pas en placer."
+  TNT_EXPLOSION_CREATER_SUCCESS: "&aLa TNT à explosée avec succès."
+  TNT_EXPLOSION_CREATER_FATAL: "&cLa TNT n’a pas réussi à exploser. Cela peut être
+    dû à la protection de la zone."
+  TNT_EXPLOSION_CREATER_CD: "&cVeuillez patienter en attendant le CD...."
+  Durability: "&bDurabilité"
+  CantEat: "&7Impossible de manger cet item."
+  CantEatMessage: "&cImpossible de manger cet item."
+  CantInteract: "&7Impossible d’interagir."
+  CantInteractMessage: "&cImpossible d'interagir avec cet item."
+  Rocket: "&9Fusée"
+  SpaceSuit: "&9Tenue d’astronaute"
+  Fuel: "&bCarburant actuel :"
+  Oxygen: "&bOxygène actuel:"
+  ProtectLevel: "&bNiveau de protection:"
+  SpaceSuitError: "&c&lDANGER: Oxygène insuffisant"
+  SpaceSuitError_Sub: "&6Veuillez vérifier l’état de votre équipement de survie !"
+  NotRocket: "&cNavré, vous devez tenir la fusée dans votre main pour continuer cette
+    opération!"
+  NotEnoughFuel: "&cNavrée, la fusée n’a pas suffisamment de carburant !"
+  RocketOK: "&eDécollage immédiat! Lancement dans &610 &esecondes, si vous souhaitez
+    annuler, veuillez déplacer ou drop la fusée pour annuler."
+  RocketArrived: "&aFélicitation ! Vous avez atteint la planète ciblée !"
+  RocketCountdown: "&6%seconds% &bseconde(s) restante(s) avant le décollage!"
+  SamePlanet: "&cVous êtes déjà sur cette planète !"
+  StakingRockets: "&cImpossible de stacker les fusées!"
+  CantUseOtherTeleportInUniverse: "&cNavré, vous ne pouvez pas utiliser la téléportation
+    spaciale ni la téléportation du inter-monde vers l'espace!"
+  BaseCompleted: "&3Base créée avec succès !"
+  BaseExists: "&cNavré, Vous avez déjà une base sur cette planète! Détruisez-la, puis
+    réessayez."
+  BaseDestroyed: "&6Base détruite avec succès!"
+  TeleportedToBase: "&aVous avez déjà été transféré à la base"
+  TeleportedToBase_Sub: "&aDistributeur d'oxygène"
+  OxygenDistributer: "&aDistributeur d'oxygène"
+  SPACESUIT_NOT_OK: "&cVotre combinaison spatiale n'a pas encore été portée!"
+  SPACESUIT_4: "&cVotre distributeur d'oxygène doit contenir au moins 4 unités d'oxygène."
+  SPACESUIT_DISTRIBUTER_OK: "&3Attribué avec succès!"
+  NotInPlanet: "&cVous ne pouvez pas placer la base car vous n'êtes pas sur une planète
+    en ce moment!"
+  NotYourBase: "&cDésolé, ce n'est pas votre base, vous ne pouvez pas la détruire!"
+  notOwner: "&cVous ne pouvez ouvrir que votre propre lance-roquettes!"
+  SpaceSuitFall: "&6>> Votre combinaison spatiale d’avoir des dégâts de chute"
+  AlreadyInRocket: "&cVous êtes déjà dans une fusée ! N’essayez pas de lancer d’autres
+    fusées depuis votre backpack pendant le lancement. Vous pouvez vous déplacer durant
+    le lancement pour l’annuler !"
+  LocationFatal: "&cÉchec de l'atterrissage! Mais, le carburant n'a pas été consommé!"
+  Yes_1: Oui
+  No_1: Non
+Categories:
+  Basic: "&bClayTech - Objets Basiques"
+  Weapons: "&bClayTech - Armes"
+  Food: "&bClayTech - Nourriture"
+  FoodMakings: "&bClayTech - Produits alimentaires"
+  Drink: "&bClayTech - Boissons"
+  Makings: "&bClayTech - Éléments essentiels"
+  Armors: "&bClayTech - Armures"
+  Decorates: "&bClayTech - Décorations"
+  Elements: "&bClayTech - Éléments"
+  Machines: "&bClayTech - Machines"
+  Other: "&bClayTech - Divers"
+  Tools: "&bCllayTech - Outils"
+  OreThings: "&bClayTech - Minerais"
+Items:
+  USEFUL_DIRT: "&6Terre utile"
+  USEFUL_DIRT_LORE:
+  - "&bDe la terre provenant de la planète Terre."
+  - "&bCette terre regorge de minéraux utiles..."
+  ORE_DIAMOND: "&bMinerai de diamant"
+  MAGIC_CLAY: "&6Argile magique"
+  MAGIC_CLAY_LORE:
+  - "&bL’item le plus basique de la technologie utilisant l’argile. Beaucoup de technologies
+    de synthèse l’utilisent."
+  CLAY_STICK: "§6Bâton d'argile"
+  CLAY_STICK_LORE:
+  - "&bLe bâton de l’auteur de ClayTech peut être utilisé comme certains outils."
+  ARTIFICIAL_GOLD_NUGGET: "&6Pépite d'or artificielle"
+  ARTIFICIAL_GOLD_INGOT_O: "&6Lingot d’Or brut artificiel"
+  ARTIFICIAL_GOLD_INGOT: "&6Lingot d'Or artificiel"
+  ARTIFICIAL_GOLD_BLOCK: "&6Bloc d'Or artificiel"
+  ARTIFICIAL_ENCHANTED_GOLDEN_APPLE: "&5&lPomme de notch artificielle"
+  BLIND_CORE: "&7Noyau aveuglant"
+  BLIND_SWORD: "&7Épée aveuglante"
+  BLIND_SWORD_LORE:
+  - "&6Donne Cécité V pendant 5 secondes à la cible à chaque coup !"
+  - "&7Cécité V"
+  CONFUSION_CORE: "&7Noyau nauséeux"
+  BLACK_ROCK_BLOCK: "&7Bloc de roche noir"
+  SLOWNESS_CORE: "&7Noyau ralentisseur"
+  POISON_EYE: "&7L'Oeil toxique"
+  POISON_CORE: "&7Noyau toxique"
+  ADVANCED_BLIND_CORE: "&7Noyau aveuglant avancé"
+  ADVANCED_CONFUSION_CORE: "&7Noyau nauséeux avancé"
+  ADVANCED_SLOWNESS_CORE: "&7Noyau ralentisseur avancé"
+  ADVANCED_POISON_CORE: "&7Noyau toxique avancé"
+  FOUR_BOW: "&7Arc au quadruple Aura"
+  FOUR_BOW_LORE:
+  - "&6Quand la cible est touchée, elle reçoit pendant 5 secondes : Cécité V, Lenteur
+    V, Nausée V et pendant 2 secondes Poison III."
+  - "&7Cécité V"
+  - "&7Lenteur V"
+  - "&7Nausée V"
+  - "&7Poison III"
+  POISON_SWORD: "&7Épée empoisonnée"
+  POISON_SWORD_LORE:
+  - "&6Donne l’effet Poison III au joueur cible pendant 2 secondes à chaque coup."
+  - "&7Poison III"
+  ANTI_SLOWNESS_BOOTS: "&7Bottes anti-lenteur"
+  ANTI_SLOWNESS_BOOTS_LORE:
+  - "&6Si quelqu’un vous frappe, vous aurez l’effet Lenteur III pendant 2 secondes
+    au lieu de 5."
+  - "&7Anti-Lenteur III"
+  COCOA_BEAN: "&eFèves de cacao"
+  COCOA_BEAN_LORE:
+  - "&6Yay! De délicieuses fèves de cacao!"
+  - "&7Peut être utilisé pour faire du café et du chocolat."
+  PLASTIC: "&ePlastique"
+  PLASTIC_LORE:
+  - "&6Soucieux de l’environnement ? Alors ne le jetez JAMAIS !"
+  - "&7Peut être utilisé pour fabriquer des bouteilles."
+  RAW_CHICKEN_FOOT: "&ePoulet cru"
+  RAW_CHICKEN_FOOT_LORE:
+  - "&6Du Poulet... tout ce qu’il y a de plus ordinaire"
+  - "&7Non comestible, il faut le rôtir dans la casserole électrique avant de le manger."
+  FRIED_CHICKEN_FOOT: "&ePoulet frit"
+  FRIED_CHICKEN_FOOT_LORE:
+  - "&6Du Poulet... tout ce qu’il y a de plus ordinaire"
+  - "&7Après l’avoir mangé, augmente la barre de nourriture de 8."
+  RAW_BREAD: "&ePain frais"
+  RAW_BREAD_LORE:
+  - "&6Pain frais."
+  - "&7Après l’avoir mangé, augmente la barre de nourriture de 6."
+  DIRTY_TEA: "&eFeuille de thé sale"
+  DIRTY_TEA_LORE:
+  - "&6Il faut la nettoyer !"
+  - "&7Faites un clic droit pour la nettoyer et la transformer en thé!"
+  - "&7Il y a aussi une chance d’avoir de l’herbe en plus."
+  TEA: "&7Thé"
+  TEA_LORE:
+  - "&6Thé"
+  - "&7Peut permettre de faire du thé en poudre"
+  - "&7sale"
+  TEA_POWDER: "&eThé en poudre"
+  TEA_POWDER_LORE:
+  - "&6Thé en poudre"
+  - "&7Peut permettre de faire du thé"
+  LEMON_POWDER: "&ePoudre de citron"
+  LEMON_POWDER_LORE:
+  - "&6Poudre de citron"
+  - "&7Peut permettre de faire du jus de citron"
+  FLOUR: "&eFarine"
+  FLOUR_LORE:
+  - "&6Farine de blé"
+  - "&7Peut être utilisé pour faire diverses choses."
+  - "&7Il y a une chance d'obtenir du blé avec."
+  STARCH: "&eAmidon"
+  STARCH_LORE:
+  - "&6Amidon"
