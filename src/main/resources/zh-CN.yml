@@ -589,7 +589,7 @@ Machines:
   PREVIOUS_PAGE_CANT_USE: "&b上一页(不可使用!)"
   NEXT_PAGE_CANT_USE: "&b下一页(不可使用!)"
   PREVIOUS_PAGE: "&b上一页"
-  NEXT_PAGE: "&b上一页"
+  NEXT_PAGE: "&b下一页"
   ELEMENT_UNIT_DOWN: "&e在下方放入元素单元 ↓"
   ROCKET_ASSEMBLING_BLUEPRINT: "&e在下方放入图纸 ↓(初级物品不需要)"
 Planets:

@@ -17,6 +17,7 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.cscorelib2.inventory.InvUtils;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
@@ -105,8 +106,9 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 			}
 
 			if (r != null) {
-				if (!fits(b, r.getOutput()))
-					return;
+				if (!InvUtils.fitAll(inv.toInventory(), r.getOutput(), getOutputSlots())) {
+                    return;
+                }
 
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					inv.consumeItem(entry.getKey(), entry.getValue());
