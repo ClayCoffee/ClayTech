@@ -56,6 +56,7 @@ public class PlanetListener implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerChangeWorldEvent(PlayerChangedWorldEvent e) {
 		e.getPlayer().removePotionEffect(PotionEffectType.JUMP);
+		e.getPlayer().removePotionEffect(PotionEffectType.SLOW_FALLING);
 
 		Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
 		if (p != null) {
@@ -198,6 +199,7 @@ public class PlanetListener implements Listener {
 			}
 			if (p.getGravity() > 1) {
 				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
+				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
 			}
 		}
 	}
@@ -205,7 +207,8 @@ public class PlanetListener implements Listener {
 	@EventHandler
 	public void PlayerJoinEvent(PlayerJoinEvent e) {
 		e.getPlayer().removePotionEffect(PotionEffectType.JUMP);
-
+		e.getPlayer().removePotionEffect(PotionEffectType.SLOW_FALLING);
+		
 		Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
 		if (p != null) {
 			if (!p.getHabitable()) {
@@ -347,6 +350,7 @@ public class PlanetListener implements Listener {
 			}
 			if (p.getGravity() > 1) {
 				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
+				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
 			}
 		}
 	}
