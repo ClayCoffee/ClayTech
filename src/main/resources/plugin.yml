@@ -1,6 +1,17 @@
 name: ClayTech
 main: club.claycoffee.ClayTech.ClayTech
-version: 1.2.0-dev6
+version: DEV-45
 api-version: 1.13
 author: ClayCoffee
 depend: [CS-CoreLib, Slimefun]
+commands:
+   claytech:
+      description: '粘土科技'
+      permission: claytech.basic
+permissions:
+  claytech.basic:
+    description: 'Basic command.'
+    default: all
+  claytech.checkupdate:
+    description: 'check update'
+    default: op

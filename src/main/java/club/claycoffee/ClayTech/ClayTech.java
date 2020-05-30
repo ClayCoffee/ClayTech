@@ -1,5 +1,6 @@
 package club.claycoffee.ClayTech;
 
+import java.io.File;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +65,6 @@ import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-@SuppressWarnings("deprecation")
 public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	protected static ClayTech plugin;
 	private static String locale;
@@ -78,6 +78,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	private static List<Planet> planetList = new ArrayList<Planet>();
 	private static String overworld = "";
 	private static DataYML planetDataYML;
+	private static ClayTechUpdater updater;
 
 	public static ClayTech getInstance() {
 		return plugin;
@@ -94,7 +95,11 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static String getHighRailSpeed() {
 		return highrailspeed;
 	}
-
+	
+	public static ClayTechUpdater getUpdater() {
+		return updater;
+	}
+	
 	public static boolean getCompatible() {
 		return compatible;
 	}
@@ -264,11 +269,23 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new PlanetListener(), this);
 		Bukkit.getPluginManager().registerEvents(new RocketLauncherListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlanetBaseListener(), this);
+		
+		this.getCommand("claytech").setExecutor(new ClayTechCommands());
 //		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 		new BukkitRunnable() {
 
 			@Override
 			public void run() {
+				// Updater
+				updater = new ClayTechUpdater();
+				if(!getConfig().getBoolean("disable-auto-updater")) {
+					updater.tryUpdate();
+				}
+				else {
+					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_1"));
+					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Auto-updater_disabled"));
+					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_6"));
+				}
 				List<String> Authors = plugin.getDescription().getAuthors();
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_1"));
 				Bukkit.getLogger().info(ChatColor.GREEN + Lang.readGeneralText("Info_2").replaceAll("\\{version\\}",
@@ -335,6 +352,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			}
 
 		}.runTaskAsynchronously(this);
+		
+		
 
 	}
 
@@ -467,6 +486,11 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public JavaPlugin getJavaPlugin() {
 		return this;
+	}
+	
+	@Override
+	public File getFile() {
+		return super.getFile();
 	}
 
 	@Override
