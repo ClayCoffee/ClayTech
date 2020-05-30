@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
-import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
+import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
@@ -18,10 +18,11 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 public class ClayTechItems {
 	public static final ItemStack[] NORECIPE = { null, null, null, null, null, null, null, null, null };
 	private static final NamespacedKey N_BASIC = new NamespacedKey(ClayTech.plugin, "claycategory");
-	
+
 	// 分类
 	public static final LockedCategory C_BASICS = new LockedCategory(N_BASIC,
-			Utils.newItemD(Material.CLAY, Lang.readCategoriesText("Basic")), new NamespacedKey(SlimefunPlugin.instance, "basic_machines"));
+			Utils.newItemD(Material.CLAY, Lang.readCategoriesText("Basic")),
+			new NamespacedKey(SlimefunPlugin.instance, "basic_machines"));
 	public static final LockedCategory C_WEAPONS = new LockedCategory(
 			new NamespacedKey(ClayTech.plugin, "claycategory1"),
 			Utils.newItemD(Material.DIAMOND_SWORD, Lang.readCategoriesText("Weapons")), N_BASIC);

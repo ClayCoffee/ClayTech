@@ -118,7 +118,8 @@ public class PlanetUtils {
 						Lang.readMachinesText("PLANET_HABITABLE").replaceAll("%habitable%",
 								PlanetUtils.booleanToString(each.getHabitable())),
 						Lang.readMachinesText("PLANET_GRAVITY").replaceAll("%gravity%", "1/" + each.getGravity()),
-						Lang.readMachinesText("PLANET_HARM_LEVEL").replaceAll("%harm_level%", each.getHarmLevel() + "") });
+						Lang.readMachinesText("PLANET_HARM_LEVEL").replaceAll("%harm_level%",
+								each.getHarmLevel() + "") });
 				Preset.setItem(planet[i - 1], di);
 			} else if (c > currentPage * 21) {
 				break;

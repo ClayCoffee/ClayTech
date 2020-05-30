@@ -1,6 +1,5 @@
 package club.claycoffee.ClayTech.listeners;
 
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -89,25 +88,25 @@ public class RocketLauncherListener implements Listener {
 															p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
 															DataYML planetsData = ClayTech.getPlanetDataYML();
 															FileConfiguration pd = planetsData.getCustomConfig();
-															if (pd.getBoolean(
-																	p.getName() + "." + target.getPlanetWorldName() + ".base")) {
-																int X = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
-																		+ ".baseX");
-																int Y = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
-																		+ ".baseY");
-																int Z = pd.getInt(p.getName() + "." + target.getPlanetWorldName()
-																		+ ".baseZ");
-																p.teleport(
-																		new Location(Bukkit.getWorld(target.getPlanetWorldName()),
-																				X, Y, Z),
-																		TeleportCause.PLUGIN);
+															if (pd.getBoolean(p.getName() + "."
+																	+ target.getPlanetWorldName() + ".base")) {
+																int X = pd.getInt(p.getName() + "."
+																		+ target.getPlanetWorldName() + ".baseX");
+																int Y = pd.getInt(p.getName() + "."
+																		+ target.getPlanetWorldName() + ".baseY");
+																int Z = pd.getInt(p.getName() + "."
+																		+ target.getPlanetWorldName() + ".baseZ");
+																p.teleport(new Location(
+																		Bukkit.getWorld(target.getPlanetWorldName()), X,
+																		Y, Z), TeleportCause.PLUGIN);
 																p.sendTitle(Lang.readGeneralText("TeleportedToBase"),
 																		Lang.readGeneralText("TeleportedToBase_Sub"));
 															} else {
 																try {
 																	p.teleport(
 																			PlanetUtils.findSafeLocation(
-																					Bukkit.getWorld(target.getPlanetWorldName())),
+																					Bukkit.getWorld(target
+																							.getPlanetWorldName())),
 																			TeleportCause.PLUGIN);
 																} catch (Exception ex) {
 																	p.sendMessage(

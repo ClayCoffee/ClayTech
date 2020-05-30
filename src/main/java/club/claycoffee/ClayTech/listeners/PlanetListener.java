@@ -199,7 +199,8 @@ public class PlanetListener implements Listener {
 			}
 			if (p.getGravity() > 1) {
 				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
-				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
+				e.getPlayer()
+						.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
 			}
 		}
 	}
@@ -208,7 +209,7 @@ public class PlanetListener implements Listener {
 	public void PlayerJoinEvent(PlayerJoinEvent e) {
 		e.getPlayer().removePotionEffect(PotionEffectType.JUMP);
 		e.getPlayer().removePotionEffect(PotionEffectType.SLOW_FALLING);
-		
+
 		Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
 		if (p != null) {
 			if (!p.getHabitable()) {
@@ -350,7 +351,8 @@ public class PlanetListener implements Listener {
 			}
 			if (p.getGravity() > 1) {
 				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
-				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
+				e.getPlayer()
+						.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
 			}
 		}
 	}
@@ -371,7 +373,8 @@ public class PlanetListener implements Listener {
 				inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
 			}
 			boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-			if (!inRocket.equalsIgnoreCase("true") && !p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
+			if (!inRocket.equalsIgnoreCase("true")
+					&& !p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
 				if (ast) {
 					e.getPlayer().setMetadata("allowSpaceTeleport",
 							new FixedMetadataValue(ClayTech.getInstance(), false));

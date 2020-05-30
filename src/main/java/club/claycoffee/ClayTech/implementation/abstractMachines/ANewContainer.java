@@ -107,8 +107,8 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 
 			if (r != null) {
 				if (!InvUtils.fitAll(inv.toInventory(), r.getOutput(), getOutputSlots())) {
-                    return;
-                }
+					return;
+				}
 
 				for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
 					inv.consumeItem(entry.getKey(), entry.getValue());

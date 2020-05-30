@@ -10,20 +10,18 @@ import org.bukkit.block.Biome;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
-
 import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 
-public class Mars extends ChunkGenerator{
+public class Mars extends ChunkGenerator {
 	private SimplexOctaveGenerator sog;
-	
+
 	public Mars() {
-		new Planet("CMars",
-				Utils.newItemD(Material.YELLOW_GLAZED_TERRACOTTA, Lang.readPlanetsText("Mars")), this,
+		new Planet("CMars", Utils.newItemD(Material.YELLOW_GLAZED_TERRACOTTA, Lang.readPlanetsText("Mars")), this,
 				Environment.NORMAL, true, 1, 100, 0, false).register();
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public ChunkData generateChunkData(World world, Random random, int chunkX, int chunkZ, BiomeGrid biome) {
@@ -43,51 +41,49 @@ public class Mars extends ChunkGenerator{
 				double noise3 = sog.noise(realX, realZ, 16D, 32D);
 				double noise4 = sog.noise(realX, realZ, 32D, 16D);
 				double noise5 = sog.noise(realX, realZ, 64D, 8D);
-				
-				double[] sort = new double[] {noise1,noise2,noise3,noise4,noise5};
+
+				double[] sort = new double[] { noise1, noise2, noise3, noise4, noise5 };
 				Arrays.sort(sort);
-				
+
 				double basicNoiseValue = sort[0];
-			    
+
 				int basicHeight = (int) (basicNoiseValue * 40D + 55D);
 				int finalHeight = basicHeight;
 				finalHeight += 7D;
-				
+
 				chunkData.setBlock(x, 0, z, Material.BEDROCK);
-				
-				for(int eh = 1 ; eh < finalHeight - 1 ;eh++) {
+
+				for (int eh = 1; eh < finalHeight - 1; eh++) {
 					// 设置高度
-					if(eh == 45 || eh == 46 || eh == 47 || eh == 48) {
-						if(eh == 45) {
+					if (eh == 45 || eh == 46 || eh == 47 || eh == 48) {
+						if (eh == 45) {
 							chunkData.setBlock(x, 45, z, Material.LAVA);
 						}
-						if(eh == 46) {
+						if (eh == 46) {
 							chunkData.setBlock(x, 46, z, Material.AIR);
 						}
-						if(eh == 47) {
+						if (eh == 47) {
 							chunkData.setBlock(x, 47, z, Material.AIR);
 						}
-						if(eh == 48) {
+						if (eh == 48) {
 							chunkData.setBlock(x, 48, z, Material.AIR);
 						}
-					}
-					else {
+					} else {
 						chunkData.setBlock(x, eh, z, Material.STONE);
 					}
 				}
-				
-				if(random.nextDouble() >= 0.4) {
+
+				if (random.nextDouble() >= 0.4) {
 					// 生成沙砾
 					chunkData.setBlock(x, finalHeight - 1, z, Material.GRAVEL);
-				}
-				else {
+				} else {
 					// 生成红沙
 					chunkData.setBlock(x, finalHeight - 1, z, Material.RED_SAND);
 				}
-				
+
 				// 最顶端红沙石覆盖
 				chunkData.setBlock(x, finalHeight, z, Material.RED_SANDSTONE);
-				
+
 				biome.setBiome(x, z, Biome.DESERT);
 			}
 		}

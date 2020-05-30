@@ -23,7 +23,7 @@ import club.claycoffee.ClayTech.utils.Utils;
 public class Food {
 	public static void DrinkCheck(Player p, ItemStack HandItem, ItemStack food, int incraseFoodLevel,
 			PotionEffect[] PotionEffect) {
-		if(HandItem.hasItemMeta()) {
+		if (HandItem.hasItemMeta()) {
 			if (HandItem.getItemMeta().getDisplayName().equals(food.getItemMeta().getDisplayName())) {
 				if (p.getFoodLevel() < 20 || PotionEffect.length > 0) {
 					p.playSound(p.getLocation(), Sound.ENTITY_GENERIC_DRINK, 1.0F, 1.0F);
@@ -53,7 +53,7 @@ public class Food {
 	}
 
 	public static void DrinkCheck(Player p, ItemStack HandItem, ItemStack food, int incraseFoodLevel) {
-		if(HandItem.hasItemMeta()) {
+		if (HandItem.hasItemMeta()) {
 			if (HandItem.getItemMeta().getDisplayName().equals(food.getItemMeta().getDisplayName())) {
 				if (p.getFoodLevel() < 20) {
 					p.playSound(p.getLocation(), Sound.ENTITY_GENERIC_DRINK, 1.0F, 1.0F);
@@ -81,7 +81,7 @@ public class Food {
 
 	public static void FoodCheck(Player p, ItemStack HandItem, ItemStack food, int incraseFoodLevel,
 			PotionEffect[] PotionEffect) {
-		if(HandItem.hasItemMeta()) {
+		if (HandItem.hasItemMeta()) {
 			if (HandItem.getItemMeta().getDisplayName().equals(food.getItemMeta().getDisplayName())) {
 				if (p.getFoodLevel() < 20 || PotionEffect.length > 0) {
 					p.playSound(p.getLocation(), Sound.ENTITY_GENERIC_EAT, 1.0F, 1.0F);
@@ -110,7 +110,7 @@ public class Food {
 	}
 
 	public static void FoodCheck(Player p, ItemStack HandItem, ItemStack food, int incraseFoodLevel) {
-		if(HandItem.hasItemMeta()) {
+		if (HandItem.hasItemMeta()) {
 			if (HandItem.getItemMeta().getDisplayName().equals(food.getItemMeta().getDisplayName())) {
 				if (p.getFoodLevel() < 20) {
 					p.playSound(p.getLocation(), Sound.ENTITY_GENERIC_EAT, 1.0F, 1.0F);

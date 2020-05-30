@@ -8,7 +8,7 @@ import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.implementation.abstractMachines.ANewContainer;
 import club.claycoffee.ClayTech.utils.Lang;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.LockedCategory;
+import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class FoodChalkingMachine extends ANewContainer {
