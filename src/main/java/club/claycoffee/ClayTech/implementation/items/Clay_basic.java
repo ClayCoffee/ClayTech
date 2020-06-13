@@ -46,5 +46,10 @@ public class Clay_basic {
 				Lang.readResearchesText("CLAYTECH_ELEMENT_EXTRACTER_MACHINE"), 65);
 		basic3.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_ELEMENT_EXTRACTER));
 		basic3.register();
+		
+		Research basic4 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_COBBLESTONE_GENERATOR"), 9932,
+				Lang.readResearchesText("CLAYTECH_COBBLESTONE_GENERATOR"), 65);
+		basic4.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_COBBLESTONE_GENERATOR));
+		basic4.register();
 	}
 }

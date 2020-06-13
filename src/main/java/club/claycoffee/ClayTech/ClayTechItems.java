@@ -7,6 +7,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
+import club.claycoffee.ClayTech.ClayTech;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
@@ -408,6 +409,14 @@ public class ClayTechItems {
 					Utils.newItemD(Material.LAPIS_BLOCK, Lang.readItemText("CLAY_SPACESUIT_OXYGEN_INJECTOR")), Utils
 							.replaceList(
 									Utils.replaceList(Lang.readItemLore("CLAY_SPACESUIT_OXYGEN_INJECTOR"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+	public static final ItemStack CLAY_COBBLESTONE_GENERATOR = Utils
+			.setLore(
+					Utils.newItemD(Material.FURNACE, Lang.readItemText("CLAY_COBBLESTONE_GENERATOR")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_COBBLESTONE_GENERATOR"), "%TIER%",
 											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
 													.replaceAll("&", "§")),
 									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));

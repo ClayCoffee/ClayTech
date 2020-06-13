@@ -9,7 +9,8 @@ General:
   Info_5: "問題追蹤器: {issue_tracker}"
   Info_6: "###########################################################"
   Auto-updater_disabled: "您已經禁用了自動更新!這可能會導致某些問題無法被自動修復."
-  update_done: "已成功從版本 {old_version} 更新至 {new_version}.請重啟您的伺服器!"
+  update_done: "&a已成功從版本 &c{old_version} &a更新至 &6{new_version}.&a請關閉您的伺服器然後手動刪除舊版本插件!"
+  DEV_VERSION: "&eClayTech檢測到您正在使用開發版. 如遇任何BUG,請提交到我們的Issue Tracker!"
   command_not_found: "§b[粘土科技]§c未找到該命令."
   basic_command: "&3粘土科技 {version} &eBy &6ClayCoffee"
   CantPlaceLore: "&e不可放置"
@@ -522,6 +523,14 @@ Items:
     - "&6可以做刺身"
     - "&9釣魚獲得"
     - "&7食用後增加6點飽食度"
+  CLAY_COBBLESTONE_GENERATOR_LORE:
+    - ""
+    - "&3可以自動生成圓石"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &750 J/s"
+  CLAY_COBBLESTONE_GENERATOR: "&b圓石制造機"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -559,6 +568,7 @@ Researches:
   CLAYTECH_UNIVERSE_MACHINE_II: "通向宇宙的機器 II"
   CLAYTECH_BASE_I: "基地 I"
   CLAYTECH_FISH_I: "魚類"
+  CLAYTECH_COBBLESTONE_GENERATOR: "圓石制造機"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"
@@ -585,6 +595,7 @@ Machines:
   CLAY_ROCKET_FUEL_GENERATOR: "&b火箭燃料制造機"
   CLAY_ROCKET_FUEL_INJECTOR: "&b火箭燃料註入器"
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&b宇航服氧氣註入器"
+  CLAY_COBBLESTONE_GENERATOR: "&b圓石制造機"
   ROCKET_LAUNCHER: "&9火箭發射器"
   DISTANCE_TO_PLANET: "&9距離當前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到達需要燃料 &6%fuel% &9點"

@@ -31,13 +31,6 @@ public class FileDownloader {
 			}
 			File file = new File(saveDir + File.separator + fileName);
 			FileOutputStream fos = new FileOutputStream(file);
-			ClayTech.getInstance().getLogger().log(Level.FINE, Lang.readGeneralText("Info_1"));
-			ClayTech.getInstance().getLogger().log(Level.FINE,
-					Lang.readGeneralText("update_done")
-							.replaceAll("\\{new_version\\}",
-									ja.get(0).getAsJsonObject().get("tag_name").getAsString())
-							.replaceAll("\\{old_version\\}", ClayTech.getInstance().getPluginVersion()));
-			ClayTech.getInstance().getLogger().log(Level.FINE, Lang.readGeneralText("Info_6"));
 			fos.write(getdata);
 			if (fos != null) {
 				fos.close();
@@ -48,8 +41,8 @@ public class FileDownloader {
 			return saveDir + File.separator + fileName;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "";
 		}
-		return "";
  
 	}
 	
@@ -79,9 +72,8 @@ public class FileDownloader {
 			return saveDir + File.separator + fileName;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "";
 		}
-		return "";
- 
 	}
  
 	public static byte[] readInputStream(InputStream inputStream) throws IOException {

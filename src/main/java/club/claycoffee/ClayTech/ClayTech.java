@@ -47,6 +47,7 @@ import club.claycoffee.ClayTech.implementation.items.RocketMakings;
 import club.claycoffee.ClayTech.implementation.items.Rockets;
 import club.claycoffee.ClayTech.implementation.items.Skulls;
 import club.claycoffee.ClayTech.implementation.items.Tools;
+import club.claycoffee.ClayTech.implementation.machines.CobbleStoneGenerator;
 import club.claycoffee.ClayTech.implementation.machines.CraftingTable;
 import club.claycoffee.ClayTech.implementation.machines.ElectricStoneCrusher;
 import club.claycoffee.ClayTech.implementation.machines.ElementExtracter;
@@ -124,7 +125,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9931
+		// 当前研究ID: 9932
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -439,6 +440,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.SMALL_CAPACITOR, ClayTechItems.OXYGEN_TANK, SlimefunItems.SMALL_CAPACITOR };
+		ItemStack[] ClayCobbleStoneGenerator = { SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.WATER_BUCKET),
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.LAVA_BUCKET), SlimefunItems.SMALL_CAPACITOR };
 
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
@@ -460,6 +465,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR);
 		SlimefunItemStack spacesuitoxygeninjector = new SlimefunItemStack("CLAY_SPACESUIT_OXYGEN_INJECTOR",
 				ClayTechItems.CLAY_SPACESUIT_OXYGEN_INJECTOR);
+		SlimefunItemStack cobblestonegenerator = new SlimefunItemStack("CLAY_COBBLESTONE_GENERATOR",
+				ClayTechItems.CLAY_COBBLESTONE_GENERATOR);
 
 		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
@@ -481,6 +488,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelInjector).register(this);
 		new SpaceSuitOxygenInjector(ClayTechItems.C_MACHINES, spacesuitoxygeninjector, "CLAY_SPACESUIT_OXYGEN_INJECTOR",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClaySpaceSuitOxygenInjector).register(this);
+		new CobbleStoneGenerator(ClayTechItems.C_MACHINES, cobblestonegenerator, "CLAY_COBBLESTONE_GENERATOR",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCobbleStoneGenerator).register(this);
 	}
 
 	@Override
