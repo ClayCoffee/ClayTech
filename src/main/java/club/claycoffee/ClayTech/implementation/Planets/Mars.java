@@ -22,7 +22,6 @@ public class Mars extends ChunkGenerator {
 				Environment.NORMAL, true, 1, 100, 0, false).register();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public ChunkData generateChunkData(World world, Random random, int chunkX, int chunkZ, BiomeGrid biome) {
 		ChunkData chunkData = createChunkData(world);

@@ -7,24 +7,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.logging.Level;
 
 import com.google.gson.JsonArray;
 
-import club.claycoffee.ClayTech.ClayTech;
-
 public class FileDownloader {
 
-	public static String updateFunc(String urlp, String fileName, String savePath,JsonArray ja) {
+	public static String updateFunc(String urlp, String fileName, String savePath, JsonArray ja) {
 		try {
 			URL url = new URL(urlp);
 			HttpURLConnection conne = (HttpURLConnection) url.openConnection();
 			conne.setConnectTimeout(5 * 1000);
 			conne.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
- 
+
 			InputStream input = conne.getInputStream();
 			byte[] getdata = readInputStream(input);
- 
+
 			File saveDir = new File(savePath);
 			if (!saveDir.exists()) {
 				saveDir.mkdir();
@@ -43,19 +40,19 @@ public class FileDownloader {
 			e.printStackTrace();
 			return "";
 		}
- 
+
 	}
-	
+
 	public static String downloadFile(String urlp, String fileName, String savePath) {
 		try {
 			URL url = new URL(urlp);
 			HttpURLConnection conne = (HttpURLConnection) url.openConnection();
 			conne.setConnectTimeout(5 * 1000);
 			conne.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
- 
+
 			InputStream input = conne.getInputStream();
 			byte[] getdata = readInputStream(input);
- 
+
 			File saveDir = new File(savePath);
 			if (!saveDir.exists()) {
 				saveDir.mkdir();
@@ -75,7 +72,7 @@ public class FileDownloader {
 			return "";
 		}
 	}
- 
+
 	public static byte[] readInputStream(InputStream inputStream) throws IOException {
 		byte[] buffer = new byte[1024];
 		int leng = 0;

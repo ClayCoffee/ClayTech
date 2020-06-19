@@ -11,13 +11,11 @@ import org.bukkit.command.TabExecutor;
 
 import club.claycoffee.ClayTech.utils.Lang;
 
-public class ClayTechCommands implements TabExecutor{
-	String[] subCommands = {
-			"checkupdate"
-	};
+public class ClayTechCommands implements TabExecutor {
+	String[] subCommands = { "checkupdate" };
+
 	@Override
-	public List<String> onTabComplete(CommandSender sender, Command command,
-			String alias, String[] args) {
+	public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
 		if (args.length > 1)
 			return new ArrayList<>();
 		if (args.length == 0)
@@ -26,40 +24,36 @@ public class ClayTechCommands implements TabExecutor{
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label,
-			String[] args) {
-		if(command.getName().equalsIgnoreCase("claytech")) {
-			if(args.length >= 1) {
-				if(args.length == 1) {
-					if(args[0].equalsIgnoreCase("checkupdate")) {
-						if(sender.hasPermission("claytech.checkupdate")) {
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		if (command.getName().equalsIgnoreCase("claytech")) {
+			if (args.length >= 1) {
+				if (args.length == 1) {
+					if (args[0].equalsIgnoreCase("checkupdate")) {
+						if (sender.hasPermission("claytech.checkupdate")) {
 							// 检查更新了兄弟!!
 							ClayTech.getUpdater().tryUpdate();
 							return true;
-						}
-						else {
+						} else {
 							sender.sendMessage(Lang.readGeneralText("no_permission"));
 						}
-					}
-					else {
+					} else {
 						subCommandNotFound(sender);
 						return true;
 					}
-				}
-				else {
+				} else {
 					subCommandNotFound(sender);
 					return true;
 				}
-			}
-			else {
+			} else {
 				// 基础命令
-				sender.sendMessage(Lang.readGeneralText("basic_command").replaceAll("\\{version\\}", ClayTech.getInstance().getPluginVersion()));
+				sender.sendMessage(Lang.readGeneralText("basic_command").replaceAll("\\{version\\}",
+						ClayTech.getInstance().getPluginVersion()));
 				return true;
 			}
 		}
 		return true;
 	}
-	
+
 	private void subCommandNotFound(CommandSender sender) {
 		sender.sendMessage(Lang.readGeneralText("command_not_found"));
 	}

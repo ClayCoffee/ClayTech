@@ -31,7 +31,6 @@ public class Moon extends ChunkGenerator {
 				Environment.NORMAL, false, 3, 100, 1, true).register();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public ChunkData generateChunkData(World world, Random random, int chunkX, int chunkZ, BiomeGrid biome) {
 		ChunkData chunkData = createChunkData(world);

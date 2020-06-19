@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -25,9 +24,9 @@ public class ClayTechUpdater {
 		if (plugin.getDescription().getVersion().toUpperCase().contains("DEV")
 				|| plugin.getDescription().getVersion().toUpperCase().contains("PRE")) {
 			branch = ClayTechBranch.DEVELOPMENT;
-			Bukkit.getServer().getLogger().info("§e"+Lang.readGeneralText("Info_1"));
+			Bukkit.getServer().getLogger().info("§e" + Lang.readGeneralText("Info_1"));
 			Bukkit.getServer().getLogger().info(Lang.readGeneralText("DEV_VERSION"));
-			Bukkit.getServer().getLogger().info("§e"+Lang.readGeneralText("Info_6"));
+			Bukkit.getServer().getLogger().info("§e" + Lang.readGeneralText("Info_6"));
 		} else {
 			branch = ClayTechBranch.STABLE;
 		}
@@ -52,19 +51,24 @@ public class ClayTechUpdater {
 									.equalsIgnoreCase(plugin.getPluginVersion())) {
 								downloadURL = ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 										.getAsJsonObject().get("browser_download_url").getAsString();
-								if(!FileDownloader.updateFunc(downloadURL,
+								if (!FileDownloader.updateFunc(downloadURL,
 										ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 												.getAsJsonObject().get("name").getAsString(),
-										plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja).equalsIgnoreCase("")) {
-									Bukkit.getServer().getLogger().info("§a"+Lang.readGeneralText("Info_1"));
-									Bukkit.getServer().getLogger().info(Lang.readGeneralText("update_done")
-											.replaceAll("\\{new_version\\}",
-													ja.get(i).getAsJsonObject().get("tag_name").getAsString())
-											.replaceAll("\\{old_version\\}", ClayTech.getInstance().getPluginVersion()));
-									Bukkit.getServer().getLogger().info("§a"+Lang.readGeneralText("Info_6"));
+										plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+										.equalsIgnoreCase("")) {
+									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
+									Bukkit.getServer().getLogger()
+											.info(Lang.readGeneralText("update_done")
+													.replaceAll("\\{new_version\\}",
+															ja.get(i).getAsJsonObject().get("tag_name").getAsString())
+													.replaceAll("\\{old_version\\}",
+															ClayTech.getInstance().getPluginVersion()));
+									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
+									return;
 								}
 							}
 						}
+						Bukkit.getServer().getLogger().info(Lang.readGeneralText("LatestVersion"));
 					} else {
 						if (ja.get(0).getAsJsonObject().get("prerelease").getAsBoolean()) {
 							if (!ja.get(0).getAsJsonObject().get("tag_name").getAsString()
@@ -72,23 +76,30 @@ public class ClayTechUpdater {
 								downloadURL = ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 										.getAsJsonObject().get("browser_download_url").getAsString();
 								// 开始下载
-								if(!FileDownloader.updateFunc(downloadURL,
+								if (!FileDownloader.updateFunc(downloadURL,
 										ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 												.getAsJsonObject().get("name").getAsString(),
-										plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja).equalsIgnoreCase("")) {
-									Bukkit.getServer().getLogger().info("§a"+Lang.readGeneralText("Info_1"));
-									Bukkit.getServer().getLogger().info(Lang.readGeneralText("update_done")
-											.replaceAll("\\{new_version\\}",
-													ja.get(0).getAsJsonObject().get("tag_name").getAsString())
-											.replaceAll("\\{old_version\\}", ClayTech.getInstance().getPluginVersion()));
-									Bukkit.getServer().getLogger().info("§a"+Lang.readGeneralText("Info_6"));
+										plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+										.equalsIgnoreCase("")) {
+									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
+									Bukkit.getServer().getLogger()
+											.info(Lang.readGeneralText("update_done")
+													.replaceAll("\\{new_version\\}",
+															ja.get(0).getAsJsonObject().get("tag_name").getAsString())
+													.replaceAll("\\{old_version\\}",
+															ClayTech.getInstance().getPluginVersion()));
+									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
+									return;
 								}
+							} else {
+								Bukkit.getServer().getLogger().info(Lang.readGeneralText("LatestVersion"));
+								return;
 							}
 						} else
 							return;
 					}
 					// 服务器关闭时删除原文件
-					plugin.getFile().deleteOnExit();
+					ClayTech.getInstance().getFile().deleteOnExit();
 
 				} catch (IOException e) {
 					Bukkit.getLogger().info("§cCould not perform update. Is the Github down?");

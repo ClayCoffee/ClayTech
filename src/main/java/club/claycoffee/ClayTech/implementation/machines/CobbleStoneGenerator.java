@@ -35,21 +35,22 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
 	public static Map<Block, MachineRecipe> processing = new HashMap<>();
 	public static Map<Block, Integer> progress = new HashMap<>();
 	public final static int[] inputslots = new int[] {};
-	public final static int[] outputslots = new int[] {22};
+	public final static int[] outputslots = new int[] { 22 };
 
 	protected final List<MachineRecipe> recipes = new ArrayList<>();
 
-	private static final int[] BORDER_A = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,17,18,26,27,35,36,37,38,39,40,41,42,43,44,12,14,21,23,30,31,32};
-	private static final int[] BORDER_B = { 10,11,15,16,19,20,24,25,28,29,33,34 };
+	private static final int[] BORDER_A = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41,
+			42, 43, 44, 12, 14, 21, 23, 30, 31, 32 };
+	private static final int[] BORDER_B = { 10, 11, 15, 16, 19, 20, 24, 25, 28, 29, 33, 34 };
 	private static final ItemStack BORDER_A_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
 	private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
-	
+
 	public CobbleStoneGenerator(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 		super(category, item, id, recipeType, recipe);
-		
+
 		createPreset(this, getInventoryTitle(), this::SetupMenu);
 
 		registerBlockHandler(id, (p, b, tool, reason) -> {
@@ -94,9 +95,9 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
 
 	@Override
 	public int[] getOutputSlots() {
-		return new int[] {22};
+		return new int[] { 22 };
 	}
-	
+
 	public void SetupMenu(BlockMenuPreset Preset) {
 		for (int eachID : BORDER_A) {
 			Preset.addItem(eachID, BORDER_A_ITEM.clone(), ChestMenuUtils.getEmptyClickHandler());
@@ -127,7 +128,7 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
 	public int[] getInputSlots() {
 		return new int[] {};
 	}
-	
+
 	@Override
 	public void preRegister() {
 		addItemHandler(new BlockTicker() {
@@ -175,22 +176,22 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
 			}
 		} else {
 			// 没有在处理
-			MachineRecipe r = new MachineRecipe(1,new ItemStack[] {}, new ItemStack[] {new ItemStack(Material.COBBLESTONE)});
-				if (ChargableBlock.isChargable(b)) {
-					if (ChargableBlock.getCharge(b) < getEnergyConsumption())
-						return;
-					ChargableBlock.addCharge(b, -getEnergyConsumption());
-				}
-				if (inv.getItemInSlot(outputslots[0]) != null) {
-					ItemStack is = inv.getItemInSlot(outputslots[0]);
-					if (is.getMaxStackSize() == is.getAmount())
-						return;
-				}
-
-
-				processing.put(b, r);
-				progress.put(b, r.getTicks());
+			MachineRecipe r = new MachineRecipe(1, new ItemStack[] {},
+					new ItemStack[] { new ItemStack(Material.COBBLESTONE) });
+			if (ChargableBlock.isChargable(b)) {
+				if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+					return;
+				ChargableBlock.addCharge(b, -getEnergyConsumption());
 			}
+			if (inv.getItemInSlot(outputslots[0]) != null) {
+				ItemStack is = inv.getItemInSlot(outputslots[0]);
+				if (is.getMaxStackSize() == is.getAmount())
+					return;
+			}
+
+			processing.put(b, r);
+			progress.put(b, r.getTicks());
+		}
 	}
 
 	private ItemStack getProgressBar() {
@@ -200,11 +201,11 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
 	public int getEnergyConsumption() {
 		return 50;
 	}
-	
+
 	public MachineRecipe getProcessing(Block b) {
 		return processing.get(b);
 	}
-	
+
 	public boolean isProcessing(Block b) {
 		return getProcessing(b) != null;
 	}

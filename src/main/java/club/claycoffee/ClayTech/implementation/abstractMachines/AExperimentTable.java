@@ -32,7 +32,6 @@ import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
-@SuppressWarnings("deprecation")
 public abstract class AExperimentTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
 	public final static int[] inputslots = new int[] { 20, 21, 22, 23, 24 };
 	public final static int[] outputslots = new int[] { 40 };

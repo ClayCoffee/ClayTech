@@ -101,7 +101,6 @@ public class PlanetListener implements Listener {
 					}.runTaskTimerAsynchronously(ClayTech.getInstance(), 1200, 1200);
 					new BukkitRunnable() {
 
-						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
 							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
@@ -150,7 +149,6 @@ public class PlanetListener implements Listener {
 					World PreviousWorld = e.getPlayer().getWorld();
 					new BukkitRunnable() {
 
-						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
 							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
@@ -253,7 +251,6 @@ public class PlanetListener implements Listener {
 					}.runTaskTimerAsynchronously(ClayTech.getInstance(), 1200, 1200);
 					new BukkitRunnable() {
 
-						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
 							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {
@@ -302,7 +299,6 @@ public class PlanetListener implements Listener {
 					World PreviousWorld = e.getPlayer().getWorld();
 					new BukkitRunnable() {
 
-						@SuppressWarnings("deprecation")
 						@Override
 						public void run() {
 							if (!PreviousWorld.equals(e.getPlayer().getWorld()) || !e.getPlayer().isOnline()) {

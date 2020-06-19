@@ -73,7 +73,6 @@ public class RocketLauncherListener implements Listener {
 											new BukkitRunnable() {
 												int time = 0;
 
-												@SuppressWarnings("deprecation")
 												@Override
 												public void run() {
 													time++;

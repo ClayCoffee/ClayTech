@@ -13,6 +13,7 @@ General:
   DEV_VERSION: "&eClayTech檢測到您正在使用開發版. 如遇任何BUG,請提交到我們的Issue Tracker!"
   command_not_found: "§b[粘土科技]§c未找到該命令."
   basic_command: "&3粘土科技 {version} &eBy &6ClayCoffee"
+  LatestVersion: "&a您當前正在使用 &6ClayTech &a最新版本."
   CantPlaceLore: "&e不可放置"
   no_permission: "§c妳沒有權限."
   CantPlace: "§b[粘土科技]§c妳不能放置該物品."
@@ -77,7 +78,7 @@ Categories:
   Weapons: "&b粘土科技 - 武器"
   Food: "&b粘土科技 - 食物"
   FoodMakings: "&b粘土科技 - 食物飲料材料"
-  Drink: "&b粘土科技 - 飲料"w
+  Drink: "&b粘土科技 - 飲料"
   Makings: "&b粘土科技 - 材料"
   Armors: "&b粘土科技 - 裝備"
   Decorates: "&b粘土科技 - 裝飾品"

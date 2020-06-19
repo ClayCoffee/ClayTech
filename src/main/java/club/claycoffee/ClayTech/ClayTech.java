@@ -96,11 +96,11 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public static String getHighRailSpeed() {
 		return highrailspeed;
 	}
-	
+
 	public static ClayTechUpdater getUpdater() {
 		return updater;
 	}
-	
+
 	public static boolean getCompatible() {
 		return compatible;
 	}
@@ -270,7 +270,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new PlanetListener(), this);
 		Bukkit.getPluginManager().registerEvents(new RocketLauncherListener(), this);
 		Bukkit.getPluginManager().registerEvents(new PlanetBaseListener(), this);
-		
+
 		this.getCommand("claytech").setExecutor(new ClayTechCommands());
 //		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 		new BukkitRunnable() {
@@ -279,10 +279,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			public void run() {
 				// Updater
 				updater = new ClayTechUpdater();
-				if(!getConfig().getBoolean("disable-auto-updater")) {
+				if (!getConfig().getBoolean("disable-auto-updater")) {
 					updater.tryUpdate();
-				}
-				else {
+				} else {
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_1"));
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Auto-updater_disabled"));
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_6"));
@@ -353,8 +352,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 			}
 
 		}.runTaskAsynchronously(this);
-		
-		
 
 	}
 
@@ -496,7 +493,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	public JavaPlugin getJavaPlugin() {
 		return this;
 	}
-	
+
 	@Override
 	public File getFile() {
 		return super.getFile();

@@ -11,7 +11,6 @@ import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 
 public class ClayFuel implements GEOResource {
 	private final NamespacedKey key = new NamespacedKey(ClayTech.getInstance(), "CLAY_FUEL");

@@ -22,10 +22,8 @@ import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 
-@SuppressWarnings("deprecation")
 public abstract class ANewContainer extends AContainer implements InventoryBlock, EnergyNetComponent {
 
-	@SuppressWarnings("static-access")
 	public ANewContainer(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
 
@@ -51,8 +49,8 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 				}
 			}
 
-			super.progress.remove(b);
-			super.processing.remove(b);
+			progress.remove(b);
+			processing.remove(b);
 			return true;
 		});
 
