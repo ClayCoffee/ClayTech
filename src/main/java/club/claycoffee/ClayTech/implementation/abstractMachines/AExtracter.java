@@ -115,6 +115,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
 	public abstract void registerDefaultRecipes();
 
+	@SuppressWarnings("deprecation")
 	public void SetupMenu(BlockMenuPreset Preset) {
 		Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
 		for (int eachID : BORDER) {

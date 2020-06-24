@@ -20,6 +20,7 @@ public class ItemInteractListener implements Listener {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.hasItem()) {

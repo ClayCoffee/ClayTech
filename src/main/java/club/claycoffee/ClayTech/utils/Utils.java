@@ -382,6 +382,7 @@ public final class Utils {
 			return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	public static boolean isValidEnchantment(String name) {
 		if (Enchantment.getByName(name) != null)
 			return true;

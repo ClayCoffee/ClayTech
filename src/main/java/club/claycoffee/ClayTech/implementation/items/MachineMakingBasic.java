@@ -6,7 +6,7 @@ import club.claycoffee.ClayTech.ClayTechMachineRecipes;
 import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
-import me.mrCookieSlime.Slimefun.Objects.Research;
+import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.NamespacedKey;
 

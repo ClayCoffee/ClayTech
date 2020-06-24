@@ -13,6 +13,7 @@ import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.utils.Food;
 
 public class FoodEatListener implements Listener {
+	@SuppressWarnings("deprecation")
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void PlayerInteractEvent(PlayerInteractEvent e) {
 		if (e.getAction() == Action.RIGHT_CLICK_AIR) {

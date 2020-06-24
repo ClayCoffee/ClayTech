@@ -1,6 +1,5 @@
 package club.claycoffee.ClayTech.utils;
 
-import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
@@ -8,26 +7,18 @@ import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.Research;
+
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.handlers.ItemHandler;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.Slimefun;
 
 public class Slimefunutils {
-	private static int researchId = 9901;
 
 	public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
 			RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch) {
 		SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
 		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
 		item.register(ClayTech.getInstance());
-		if (registerResearch) {
-			researchId++;
-			Slimefun.registerResearch(
-					new Research(new NamespacedKey(ClayTech.getInstance(), name), researchId, ResearchName, cost),
-					ItemStack);
-		}
 	}
 
 	public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
@@ -36,12 +27,6 @@ public class Slimefunutils {
 		SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
 		item.addItemHandler(handler);
 		item.register(ClayTech.getInstance());
-		if (registerResearch) {
-			researchId++;
-			Slimefun.registerResearch(
-					new Research(new NamespacedKey(ClayTech.getInstance(), name), researchId, ResearchName, cost),
-					ItemStack);
-		}
 	}
 
 	public static void registerArmors(Category category, String nameprefix, ItemStack[] ItemStack, String ResearchName,
@@ -60,11 +45,6 @@ public class Slimefunutils {
 		SlimefunItemStack BOOTS = new SlimefunItemStack(nameprefix + "_BOOTS", ItemStack[3]);
 		SlimefunItem BOOTS_I = new SlimefunItem(category, BOOTS, Recipetype, getArmorsStack(4, MaterialStack));
 		BOOTS_I.register(ClayTech.getInstance());
-		if (registerResearch) {
-			researchId++;
-			Slimefun.registerResearch(new Research(new NamespacedKey(ClayTech.getInstance(), nameprefix + "_ARMORS"),
-					researchId, ResearchName, cost), ItemStack);
-		}
 	}
 
 	public static ItemStack[] getArmorsStack(int type, ItemStack Material) {

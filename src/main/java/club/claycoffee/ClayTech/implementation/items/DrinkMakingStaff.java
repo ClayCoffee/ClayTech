@@ -11,8 +11,8 @@ import club.claycoffee.ClayTech.ClayTechRecipeType;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
-import me.mrCookieSlime.Slimefun.Objects.Research;
+import io.github.thebusybiscuit.slimefun4.core.researching.Research;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 public class DrinkMakingStaff {
@@ -21,7 +21,7 @@ public class DrinkMakingStaff {
 				new ItemStack(Material.COCOA_BEANS), new ItemStack(Material.COCOA_BEANS), ClayTechItems.CLAY_STICK,
 				new ItemStack(Material.COCOA_BEANS), new ItemStack(Material.COCOA_BEANS),
 				new ItemStack(Material.COCOA_BEANS), new ItemStack(Material.COCOA_BEANS) };
-		ItemStack[] recipeb = { null, null, null, null, SlimefunItems.BUCKET_OF_OIL, null, null, null, null };
+		ItemStack[] recipeb = { null, null, null, null, SlimefunItems.OIL_BUCKET, null, null, null, null };
 		ItemStack[] recipec = { ClayTechItems.PLASTIC, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC,
 				ClayTechItems.PLASTIC, ClayTechItems.MAGIC_CLAY, ClayTechItems.PLASTIC, ClayTechItems.PLASTIC,
 				ClayTechItems.PLASTIC, ClayTechItems.PLASTIC };

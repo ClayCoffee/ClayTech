@@ -25,6 +25,7 @@ import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
 import club.claycoffee.ClayTech.implementation.Planets.Earth;
@@ -65,7 +66,6 @@ import club.claycoffee.ClayTech.listeners.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class ClayTech extends JavaPlugin implements SlimefunAddon {
@@ -315,6 +315,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 						if (!p.getHabitable()) {
 							World PreviousWorld = player.getWorld();
 							new BukkitRunnable() {
+								@SuppressWarnings("deprecation")
 								@Override
 								public void run() {
 									if (!PreviousWorld.equals(player.getWorld()) || !player.isOnline()) {

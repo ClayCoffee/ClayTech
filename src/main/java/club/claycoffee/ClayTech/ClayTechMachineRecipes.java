@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.utils.Slimefunutils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import me.mrCookieSlime.Slimefun.SlimefunPlugin;
-import me.mrCookieSlime.Slimefun.Lists.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 public class ClayTechMachineRecipes {
 	static ItemStack newMotor;

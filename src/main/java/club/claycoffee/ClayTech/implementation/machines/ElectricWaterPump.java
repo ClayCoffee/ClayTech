@@ -239,7 +239,7 @@ public class ElectricWaterPump extends SlimefunItem implements InventoryBlock, E
 					public void run() {
 						targetBlock.setType(Material.AIR);
 					}
-					
+
 				}.runTask(ClayTech.getInstance());
 
 				inv.consumeItem(20, 1);
