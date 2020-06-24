@@ -285,7 +285,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		this.getCommand("claytech").setExecutor(new ClayTechCommands());
 
 		spacetravelneedperm = config.getBoolean("space-travel-need-perm");
-		Bukkit.getPluginManager().registerEvents(new Debug(), this);
+//		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 		new BukkitRunnable() {
 
 			@Override
