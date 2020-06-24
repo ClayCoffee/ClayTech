@@ -505,6 +505,14 @@ Items:
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &750 J/s"
   CLAY_COBBLESTONE_GENERATOR: "&b圆石制造机"
+  CLAY_ELECTRIC_WATER_PUMP: "&b电动水泵"
+  CLAY_ELECTRIC_WATER_PUMP_LORE:
+    - ""
+    - "&3可以将水泵入机器中"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &726 J/s"  
   KREEP_ROCK: "&9克里普岩"
   KREEP_ROCK_LORE:
     - "&3一种在月球上极其稀有的岩石"
@@ -570,6 +578,7 @@ Researches:
   CLAYTECH_BASE_I: "基地 I"
   CLAYTECH_FISH_I: "鱼类"
   CLAYTECH_COBBLESTONE_GENERATOR: "圆石制造机"
+  CLAYTECH_ELECTRIC_WATER_PUMP: "电动水泵"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"
@@ -597,6 +606,7 @@ Machines:
   CLAY_ROCKET_FUEL_INJECTOR: "&b火箭燃料注入器"
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&b宇航服氧气注入器"
   CLAY_COBBLESTONE_GENERATOR: "&b圆石制造机"
+  CLAY_ELECTRIC_WATER_PUMP: "&b电动水泵"
   ROCKET_LAUNCHER: "&9火箭发射器"
   DISTANCE_TO_PLANET: "&9距离当前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到达需要燃料 &6%fuel% &9点"

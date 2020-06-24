@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
+import club.claycoffee.ClayTech.ClayTechBiomes;
 import club.claycoffee.ClayTech.api.Planet;
 
 public class PlanetUtils {
@@ -141,5 +142,32 @@ public class PlanetUtils {
 					Lang.readMachinesText("NEXT_PAGE") + "(" + (currentPage + 1) + "/" + totalPage + ")"));
 		}
 		return Preset;
+	}
+
+	public static ClayTechBiomes getBiome(int height, boolean hasRiver, boolean hasLava, boolean hasCrater) {
+		if (height <= 62) {
+			if (hasRiver)
+				return ClayTechBiomes.RIVER;
+			if (hasLava)
+				return ClayTechBiomes.LAVA_RIVER;
+			if (hasRiver && hasLava) {
+				if (hasCrater) {
+					return ClayTechBiomes.LAVA_RIVER;
+				} else {
+					if (height <= 39)
+						return ClayTechBiomes.LAVA_RIVER;
+					else
+						return ClayTechBiomes.CRATER;
+				}
+			}
+			if (hasCrater)
+				return ClayTechBiomes.CRATER;
+			return ClayTechBiomes.PLAIN;
+		} else if (height > 62 && height <= 71)
+			return ClayTechBiomes.PLAIN;
+		else if (height > 72)
+			return ClayTechBiomes.MOUNTAIN;
+
+		return ClayTechBiomes.PLAIN;
 	}
 }

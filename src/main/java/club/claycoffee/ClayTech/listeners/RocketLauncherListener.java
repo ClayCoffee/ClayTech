@@ -30,9 +30,6 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class RocketLauncherListener implements Listener {
-	private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 17, 18, 26, 27, 35, 36, 44, 45, 47, 48, 49,
-			50, 51, 53 };
-	private static final int[] BORDER_2 = { 10, 11, 12, 14, 15, 16 };
 	private static final int[] planet = { 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34, 37, 38, 39, 40, 41,
 			42, 43 };
 
@@ -41,9 +38,7 @@ public class RocketLauncherListener implements Listener {
 		if (e.getWhoClicked() instanceof Player) {
 			Player p = (Player) e.getWhoClicked();
 			if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("ROCKET_LAUNCHER"))) {
-				if (Utils.ExitsInList(e.getSlot(), BORDER) || Utils.ExitsInList(e.getSlot(), BORDER_2)) {
-					e.setCancelled(true);
-				}
+				e.setCancelled(true);
 				if (Utils.ExitsInList(e.getSlot(), planet)) {
 					if (e.getInventory().getItem(e.getSlot()) != null) {
 						ItemStack handItem = p.getInventory().getItemInMainHand();
@@ -61,7 +56,12 @@ public class RocketLauncherListener implements Listener {
 							if (!target.getPlanetWorldName().equalsIgnoreCase(current.getPlanetWorldName())) {
 								if (PlanetUtils.getFuel(current, target) <= RocketUtils.getFuel(handItem)) {
 									if (handItem.getAmount() == 1) {
-										e.setCancelled(true);
+										if (ClayTech.isSpaceTravelNeedPerm()) {
+											if (!p.hasPermission("claytech.travel." + target.getPlanetWorldName())) {
+												p.sendMessage(Lang.readGeneralText("no_permission"));
+												return;
+											}
+										}
 										String inRocket = "false";
 										if (Utils.readPlayerMetadataString(p, "inrocket") != null) {
 											inRocket = Utils.readPlayerMetadataString(p, "inrocket");

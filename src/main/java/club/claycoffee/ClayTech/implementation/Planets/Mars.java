@@ -35,53 +35,50 @@ public class Mars extends ChunkGenerator {
 			for (int z = 0; z < 16; z++) {
 				int realX = chunkX * 16 + x;
 				int realZ = chunkZ * 16 + z;
-				double noise1 = sog.noise(realX, realZ, 4D, 128D);
-				double noise2 = sog.noise(realX, realZ, 8D, 64D);
-				double noise3 = sog.noise(realX, realZ, 16D, 32D);
-				double noise4 = sog.noise(realX, realZ, 32D, 16D);
-				double noise5 = sog.noise(realX, realZ, 64D, 8D);
+				double noise1 = sog.noise(realX, realZ, 5D, 12D);
+				double noise2 = sog.noise(realX, realZ, 128D, 6D);
+				double noise3 = sog.noise(realX, realZ, 8D, 128D);
+				double noise4 = sog.noise(realX, realZ, 256D, 16D);
+				double noise5 = sog.noise(realX, realZ, 64D, 188D);
 
 				double[] sort = new double[] { noise1, noise2, noise3, noise4, noise5 };
 				Arrays.sort(sort);
 
 				double basicNoiseValue = sort[0];
 
-				int basicHeight = (int) (basicNoiseValue * 40D + 55D);
+				int basicHeight = (int) (basicNoiseValue * 40D + 45D);
 				int finalHeight = basicHeight;
 				finalHeight += 7D;
 
 				chunkData.setBlock(x, 0, z, Material.BEDROCK);
 
 				for (int eh = 1; eh < finalHeight - 1; eh++) {
-					// 设置高度
-					if (eh == 45 || eh == 46 || eh == 47 || eh == 48) {
-						if (eh == 45) {
-							chunkData.setBlock(x, 45, z, Material.LAVA);
-						}
-						if (eh == 46) {
-							chunkData.setBlock(x, 46, z, Material.AIR);
-						}
-						if (eh == 47) {
-							chunkData.setBlock(x, 47, z, Material.AIR);
-						}
-						if (eh == 48) {
-							chunkData.setBlock(x, 48, z, Material.AIR);
-						}
-					} else {
-						chunkData.setBlock(x, eh, z, Material.STONE);
-					}
+					chunkData.setBlock(x, eh, z, Material.STONE);
 				}
 
-				if (random.nextDouble() >= 0.4) {
+				double c1 = random.nextDouble();
+				if (c1 >= 0.4) {
 					// 生成沙砾
 					chunkData.setBlock(x, finalHeight - 1, z, Material.GRAVEL);
-				} else {
+				} else if (c1 <= 0.4 && c1 >= 0.3) {
 					// 生成红沙
 					chunkData.setBlock(x, finalHeight - 1, z, Material.RED_SAND);
+				} else {
+					chunkData.setBlock(x, finalHeight - 1, z, Material.RED_SANDSTONE);
 				}
 
 				// 最顶端红沙石覆盖
 				chunkData.setBlock(x, finalHeight, z, Material.RED_SANDSTONE);
+
+				if (finalHeight + 1 <= 57) {
+					for (int i = 57; i >= finalHeight + 1; i--) {
+						chunkData.setBlock(x, i, z, Material.LAVA);
+					}
+				} else if (finalHeight + 1 <= 60) {
+					for (int i = 60; i >= finalHeight + 1; i--) {
+						chunkData.setBlock(x, i, z, Material.RED_SANDSTONE);
+					}
+				}
 
 				biome.setBiome(x, z, Biome.DESERT);
 			}

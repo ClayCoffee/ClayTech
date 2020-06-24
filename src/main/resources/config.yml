@@ -2,3 +2,4 @@ Locale: "en-US"
 highrailspeed: "3"
 overworld: "world"
 disable-auto-updater: false
+space-travel-need-perm: false

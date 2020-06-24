@@ -51,5 +51,10 @@ public class Clay_basic {
 				9932, Lang.readResearchesText("CLAYTECH_COBBLESTONE_GENERATOR"), 65);
 		basic4.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_COBBLESTONE_GENERATOR));
 		basic4.register();
+
+		Research basic5 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_ELECTRIC_WATER_PUMP"), 9933,
+				Lang.readResearchesText("CLAYTECH_ELECTRIC_WATER_PUMP"), 65);
+		basic5.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_ELECTRIC_WATER_PUMP));
+		basic5.register();
 	}
 }

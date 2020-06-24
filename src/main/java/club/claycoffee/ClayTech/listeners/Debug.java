@@ -19,7 +19,7 @@ public class Debug implements Listener {
 				@Override
 				public void run() {
 					ClayTechManager.allowSpaceTeleportOnce(e.getPlayer());
-					e.getPlayer().teleport(PlanetUtils.findSafeLocation(Bukkit.getWorld("CMoon")));
+					e.getPlayer().teleport(PlanetUtils.findSafeLocation(Bukkit.getWorld("CMars")));
 				}
 
 			}.runTask(ClayTech.getInstance());

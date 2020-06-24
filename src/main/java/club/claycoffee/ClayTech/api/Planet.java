@@ -117,9 +117,8 @@ public class Planet {
 			}
 		}
 		ClayTech.getPlanets().add(this);
+		WorldCreator newWorld = new WorldCreator(this.planetName);
 		if (Bukkit.getWorld(this.planetName) == null) {
-			// Register
-			WorldCreator newWorld = new WorldCreator(this.planetName);
 			newWorld.environment(this.environment);
 			long seed = new Random().nextLong();
 			newWorld = newWorld.seed(seed);
@@ -131,7 +130,9 @@ public class Planet {
 				// 如果冷就不会下雨
 				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 			}
+			return;
 		}
+		newWorld.createWorld();
 	}
 
 	public void setDistance(int newDistance) {
@@ -184,5 +185,9 @@ public class Planet {
 
 	public ItemStack getDisplayStack() {
 		return this.displayItem.clone();
+	}
+
+	public ChunkGenerator getPlanetGenerator() {
+		return this.planetWorld;
 	}
 }

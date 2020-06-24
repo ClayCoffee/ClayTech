@@ -12,6 +12,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+//import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -50,6 +51,7 @@ import club.claycoffee.ClayTech.implementation.items.Tools;
 import club.claycoffee.ClayTech.implementation.machines.CobbleStoneGenerator;
 import club.claycoffee.ClayTech.implementation.machines.CraftingTable;
 import club.claycoffee.ClayTech.implementation.machines.ElectricStoneCrusher;
+import club.claycoffee.ClayTech.implementation.machines.ElectricWaterPump;
 import club.claycoffee.ClayTech.implementation.machines.ElementExtracter;
 import club.claycoffee.ClayTech.implementation.machines.ExperimentTableNormal;
 import club.claycoffee.ClayTech.implementation.machines.FoodCauldron;
@@ -80,6 +82,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	private static String overworld = "";
 	private static DataYML planetDataYML;
 	private static ClayTechUpdater updater;
+	private static boolean spacetravelneedperm;
 
 	public static ClayTech getInstance() {
 		return plugin;
@@ -91,6 +94,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 
 	public static DataYML getLangYML() {
 		return currentLangYML;
+	}
+
+	public static boolean isSpaceTravelNeedPerm() {
+		return spacetravelneedperm;
 	}
 
 	public static String getHighRailSpeed() {
@@ -125,7 +132,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	@Override
 	public void onEnable() {
 		plugin = this;
-		// 当前研究ID: 9932
+		// 当前研究ID: 9933
 		this.saveDefaultConfig();
 		FileConfiguration config = this.getConfig();
 		locale = config.getString("Locale");
@@ -158,6 +165,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 						if (current.isList(each)) {
 							config.set(each, current.getList(each));
 						}
+						if (current.isBoolean(each)) {
+							config.set(each, current.getBoolean(each));
+						}
+
 					} catch (Exception e) {
 						Utils.info("§cThere is an error when reading the config file.Replacing the new config file..");
 						config = current;
@@ -272,7 +283,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		Bukkit.getPluginManager().registerEvents(new PlanetBaseListener(), this);
 
 		this.getCommand("claytech").setExecutor(new ClayTechCommands());
-//		Bukkit.getPluginManager().registerEvents(new Debug(), this);
+
+		spacetravelneedperm = config.getBoolean("space-travel-need-perm");
+		Bukkit.getPluginManager().registerEvents(new Debug(), this);
 		new BukkitRunnable() {
 
 			@Override
@@ -375,6 +388,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	}
 
 	private void registerSlimefun() {
+		registerMachines();
+
 		new Clay_basic();
 		new PotionAffect_Weapons();
 		new Golden_things();
@@ -393,7 +408,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new ClayFuelResource();
 		new RocketMakings();
 		new Rockets();
-		registerMachines();
 	}
 
 	public void registerMachines() {
@@ -441,6 +455,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
 				SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.LAVA_BUCKET), SlimefunItems.SMALL_CAPACITOR };
+		ItemStack[] ClayElectricWaterPump = { SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.DISPENSER),
+				SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
+				SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.DISPENSER), SlimefunItems.SMALL_CAPACITOR };
 
 		// 机器
 		SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
@@ -464,6 +482,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				ClayTechItems.CLAY_SPACESUIT_OXYGEN_INJECTOR);
 		SlimefunItemStack cobblestonegenerator = new SlimefunItemStack("CLAY_COBBLESTONE_GENERATOR",
 				ClayTechItems.CLAY_COBBLESTONE_GENERATOR);
+		SlimefunItemStack electricwaterpump = new SlimefunItemStack("CLAY_ELECTRIC_WATER_PUMP",
+				ClayTechItems.CLAY_ELECTRIC_WATER_PUMP);
 
 		new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
@@ -487,6 +507,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClaySpaceSuitOxygenInjector).register(this);
 		new CobbleStoneGenerator(ClayTechItems.C_MACHINES, cobblestonegenerator, "CLAY_COBBLESTONE_GENERATOR",
 				RecipeType.ENHANCED_CRAFTING_TABLE, ClayCobbleStoneGenerator).register(this);
+		new ElectricWaterPump(ClayTechItems.C_MACHINES, electricwaterpump, "CLAY_ELECTRIC_WATER_PUMP",
+				RecipeType.ENHANCED_CRAFTING_TABLE, ClayElectricWaterPump).register(this);
 	}
 
 	@Override
@@ -516,4 +538,18 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 	private void registerResources() {
 		new ClayFuel();
 	}
+
+//	@Override
+//	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
+//		List<String> PlanetNameList = new ArrayList<String>();
+//		List<Planet> PlanetList = getPlanets();
+//		for (Planet p : PlanetList) {
+//			PlanetNameList.add(p.getPlanetWorldName());
+//		}
+//		if (Utils.ExitsInList(id, PlanetNameList.toArray(new String[PlanetNameList.size()]))) {
+//			return PlanetList.get(PlanetNameList.indexOf(id)).getPlanetGenerator();
+//		}
+//		return Bukkit.getWorld(getOverworld()).getGenerator();
+//	}
+
 }

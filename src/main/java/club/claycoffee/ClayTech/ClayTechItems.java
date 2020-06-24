@@ -420,6 +420,14 @@ public class ClayTechItems {
 											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
 													.replaceAll("&", "§")),
 									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+	public static final ItemStack CLAY_ELECTRIC_WATER_PUMP = Utils
+			.setLore(
+					Utils.newItemD(Material.DISPENSER, Lang.readItemText("CLAY_ELECTRIC_WATER_PUMP")), Utils
+							.replaceList(
+									Utils.replaceList(Lang.readItemLore("CLAY_ELECTRIC_WATER_PUMP"), "%TIER%",
+											LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+													.replaceAll("&", "§")),
+									"%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
 	public static ItemStack HONEY_SWEET = SlimefunPlugin.getMinecraftVersion()
 			.isAtLeast(MinecraftVersion.MINECRAFT_1_15)
 					? Utils.setLore(Utils.newItemD(Material.HONEYCOMB, Lang.readItemText("HONEY_SWEET")),
