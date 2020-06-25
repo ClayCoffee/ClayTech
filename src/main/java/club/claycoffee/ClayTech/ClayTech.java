@@ -12,7 +12,7 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-//import org.bukkit.generator.ChunkGenerator;
+import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -294,6 +294,14 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 				updater = new ClayTechUpdater();
 				if (!getConfig().getBoolean("disable-auto-updater")) {
 					updater.tryUpdate();
+					new BukkitRunnable() {
+
+						@Override
+						public void run() {
+							updater.tryUpdate();
+						}
+						
+					}.runTaskTimerAsynchronously(ClayTech.getInstance(), 72000, 7200);
 				} else {
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_1"));
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Auto-updater_disabled"));
@@ -540,17 +548,17 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 		new ClayFuel();
 	}
 
-//	@Override
-//	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
-//		List<String> PlanetNameList = new ArrayList<String>();
-//		List<Planet> PlanetList = getPlanets();
-//		for (Planet p : PlanetList) {
-//			PlanetNameList.add(p.getPlanetWorldName());
-//		}
-//		if (Utils.ExitsInList(id, PlanetNameList.toArray(new String[PlanetNameList.size()]))) {
-//			return PlanetList.get(PlanetNameList.indexOf(id)).getPlanetGenerator();
-//		}
-//		return Bukkit.getWorld(getOverworld()).getGenerator();
-//	}
+	@Override
+	public ChunkGenerator getDefaultWorldGenerator(String worldName, String id) {
+		List<String> PlanetNameList = new ArrayList<String>();
+		List<Planet> PlanetList = getPlanets();
+		for (Planet p : PlanetList) {
+			PlanetNameList.add(p.getPlanetWorldName());
+		}
+		if (Utils.ExitsInList(id, PlanetNameList.toArray(new String[PlanetNameList.size()]))) {
+			return PlanetList.get(PlanetNameList.indexOf(id)).getPlanetGenerator();
+		}
+		return Bukkit.getWorld(getOverworld()).getGenerator();
+	}
 
 }

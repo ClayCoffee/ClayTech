@@ -117,6 +117,7 @@ public class Planet {
 			}
 		}
 		ClayTech.getPlanets().add(this);
+		
 		WorldCreator newWorld = new WorldCreator(this.planetName);
 		if (Bukkit.getWorld(this.planetName) == null) {
 			newWorld.environment(this.environment);
@@ -124,7 +125,7 @@ public class Planet {
 			newWorld = newWorld.seed(seed);
 			newWorld = newWorld.type(WorldType.CUSTOMIZED);
 			newWorld = newWorld.generateStructures(false);
-			newWorld = newWorld.generator(this.planetWorld);
+			newWorld = newWorld.generator("ClayTech:"+this.planetName);
 			World w = newWorld.createWorld();
 			if (this.cold) {
 				// 如果冷就不会下雨

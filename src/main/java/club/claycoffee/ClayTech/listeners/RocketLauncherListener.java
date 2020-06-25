@@ -1,5 +1,9 @@
 package club.claycoffee.ClayTech.listeners;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -51,8 +55,34 @@ public class RocketLauncherListener implements Listener {
 								currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
 							}
 							int index = (currentPage - 1) * 21 + (e.getSlot() - 18) - 1;
-							Planet target = ClayTech.getPlanets().get(index);
 							Planet current = PlanetUtils.getPlanet(b.getWorld());
+							// 排列星球
+							List<Planet> pl = new ArrayList<Planet>();
+							for(Planet p1 : ClayTech.getPlanets()) {
+								pl.add(p1);
+							}
+							Planet[] pl2 = pl.toArray(new Planet[pl.size()]);
+							List<Integer> d = new ArrayList<Integer>();
+							for(Planet p1 : pl2) {
+								d.add((Integer) PlanetUtils.getDistance(current, p1));
+							}
+							Integer[] distance = d.toArray(new Integer[d.size()]); 
+					        for (int i = 0; i < distance.length; i++) {
+					            for (int j = 0; j < distance.length - i - 1; j++) {
+					                if (distance[j].intValue() > distance[j + 1].intValue()) {
+					                	int temp = distance[j + 1];
+					                	distance[j + 1] = distance[j];
+					                	distance[j] = temp;
+					                	
+					                	Planet temp2 = pl2[j + 1];
+					                	pl2[j + 1] = pl2[j];
+					                	pl2[j] = temp2;
+					                }
+					            }
+					        }
+					        pl = Arrays.asList(pl2);
+							
+							Planet target = pl.get(index);
 							if (!target.getPlanetWorldName().equalsIgnoreCase(current.getPlanetWorldName())) {
 								if (PlanetUtils.getFuel(current, target) <= RocketUtils.getFuel(handItem)) {
 									if (handItem.getAmount() == 1) {

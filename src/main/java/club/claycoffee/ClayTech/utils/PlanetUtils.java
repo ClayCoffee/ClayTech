@@ -1,5 +1,7 @@
 package club.claycoffee.ClayTech.utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -103,13 +105,40 @@ public class PlanetUtils {
 	}
 
 	public static Inventory renderLauncherMenu(Planet current, Inventory Preset, int currentPage) {
-		int i = 0;
+		int v = 0;
 		int c = 0;
-		List<Planet> pl = ClayTech.getPlanets();
-		for (Planet each : pl) {
+		
+		// 排列星球
+		List<Planet> pl = new ArrayList<Planet>();
+		for(Planet p : ClayTech.getPlanets()) {
+			pl.add(p);
+		}
+		Planet[] pl2 = pl.toArray(new Planet[pl.size()]);
+		List<Integer> d = new ArrayList<Integer>();
+		for(Planet p : pl2) {
+			d.add((Integer) PlanetUtils.getDistance(current, p));
+		}
+		Integer[] distance = d.toArray(new Integer[d.size()]); 
+        for (int i = 0; i < distance.length; i++) {
+            for (int j = 0; j < distance.length - i - 1; j++) {
+                if (distance[j].intValue() > distance[j + 1].intValue()) {
+                	int temp = distance[j + 1];
+                	distance[j + 1] = distance[j];
+                	distance[j] = temp;
+                	
+                	Planet temp2 = pl2[j + 1];
+                	pl2[j + 1] = pl2[j];
+                	pl2[j] = temp2;
+                }
+            }
+        }
+        pl = Arrays.asList(pl2);
+        
+        
+		for (Planet each : pl) {	
 			c++;
 			if (c > (currentPage - 1) * 21 && c <= currentPage * 21) {
-				i++;
+				v++;
 				ItemStack di = each.getDisplayStack();
 				di = Utils.setLoreList(di, new String[] {
 						Lang.readMachinesText("DISTANCE_TO_PLANET").replaceAll("%ly%",
@@ -121,7 +150,7 @@ public class PlanetUtils {
 						Lang.readMachinesText("PLANET_GRAVITY").replaceAll("%gravity%", "1/" + each.getGravity()),
 						Lang.readMachinesText("PLANET_HARM_LEVEL").replaceAll("%harm_level%",
 								each.getHarmLevel() + "") });
-				Preset.setItem(planet[i - 1], di);
+				Preset.setItem(planet[v - 1], di);
 			} else if (c > currentPage * 21) {
 				break;
 			}
