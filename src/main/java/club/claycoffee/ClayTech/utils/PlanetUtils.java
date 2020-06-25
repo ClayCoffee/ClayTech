@@ -107,35 +107,34 @@ public class PlanetUtils {
 	public static Inventory renderLauncherMenu(Planet current, Inventory Preset, int currentPage) {
 		int v = 0;
 		int c = 0;
-		
+
 		// 排列星球
 		List<Planet> pl = new ArrayList<Planet>();
-		for(Planet p : ClayTech.getPlanets()) {
+		for (Planet p : ClayTech.getPlanets()) {
 			pl.add(p);
 		}
 		Planet[] pl2 = pl.toArray(new Planet[pl.size()]);
 		List<Integer> d = new ArrayList<Integer>();
-		for(Planet p : pl2) {
+		for (Planet p : pl2) {
 			d.add((Integer) PlanetUtils.getDistance(current, p));
 		}
-		Integer[] distance = d.toArray(new Integer[d.size()]); 
-        for (int i = 0; i < distance.length; i++) {
-            for (int j = 0; j < distance.length - i - 1; j++) {
-                if (distance[j].intValue() > distance[j + 1].intValue()) {
-                	int temp = distance[j + 1];
-                	distance[j + 1] = distance[j];
-                	distance[j] = temp;
-                	
-                	Planet temp2 = pl2[j + 1];
-                	pl2[j + 1] = pl2[j];
-                	pl2[j] = temp2;
-                }
-            }
-        }
-        pl = Arrays.asList(pl2);
-        
-        
-		for (Planet each : pl) {	
+		Integer[] distance = d.toArray(new Integer[d.size()]);
+		for (int i = 0; i < distance.length; i++) {
+			for (int j = 0; j < distance.length - i - 1; j++) {
+				if (distance[j].intValue() > distance[j + 1].intValue()) {
+					int temp = distance[j + 1];
+					distance[j + 1] = distance[j];
+					distance[j] = temp;
+
+					Planet temp2 = pl2[j + 1];
+					pl2[j + 1] = pl2[j];
+					pl2[j] = temp2;
+				}
+			}
+		}
+		pl = Arrays.asList(pl2);
+
+		for (Planet each : pl) {
 			c++;
 			if (c > (currentPage - 1) * 21 && c <= currentPage * 21) {
 				v++;

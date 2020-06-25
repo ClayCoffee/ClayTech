@@ -300,7 +300,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 						public void run() {
 							updater.tryUpdate();
 						}
-						
+
 					}.runTaskTimerAsynchronously(ClayTech.getInstance(), 72000, 7200);
 				} else {
 					Bukkit.getLogger().info(ChatColor.YELLOW + Lang.readGeneralText("Info_1"));
