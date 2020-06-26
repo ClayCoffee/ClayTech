@@ -19,6 +19,7 @@ GPLv3 → AGPLv3
 * Spigot / PaperSpigot 1.13.x
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
+* Spigot 1.16 & 1.16.1
 
 # API
 Javadocs: http://claytech.claycoffee.space/javadocs/
