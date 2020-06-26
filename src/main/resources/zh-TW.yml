@@ -29,7 +29,7 @@ General:
   Wash_Message: "&6清洗完畢!!"
   Cant_Wash_Message: "&c無法清洗!妳沒有水桶!"
   Before_115: "&c檢測到您的伺服器運行在1.15版本以下,可能導致有的物品無法註冊,但仍可正常運行本插件."
-  Not_compatible: "&c對不起，本挿件僅限1.13.x,1.14.x,1.15.x的伺服器使用！請儘快陞級您的伺服器.."
+  Not_compatible: "&c對不起，本挿件僅限1.13.x,1.14.x,1.15.x,1.16.x的伺服器使用！請儘快陞級您的伺服器.."
   TNT_EXPLOSION_CREATER_WAIT: "&aTNT將在5秒鐘後放置。 請盡快逃離，避免受到傷害。"
   TNT_EXPLOSION_CREATER_NO_TNT: "&c您的背包裏沒有TNT，無法放置!"
   TNT_EXPLOSION_CREATER_SUCCESS: "&aTNT成功爆炸。"

@@ -1,6 +1,7 @@
 package club.claycoffee.ClayTech;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -49,6 +50,11 @@ public class ClayTechUpdater {
 								continue;
 							} else if (!ja.get(i).getAsJsonObject().get("tag_name").getAsString()
 									.equalsIgnoreCase(plugin.getPluginVersion())) {
+								if (new File(plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"),
+										ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+												.getAsJsonObject().get("name").getAsString()).exists())
+									return;
+
 								downloadURL = ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 										.getAsJsonObject().get("browser_download_url").getAsString();
 								if (!FileDownloader.updateFunc(downloadURL,
@@ -73,6 +79,10 @@ public class ClayTechUpdater {
 						if (ja.get(0).getAsJsonObject().get("prerelease").getAsBoolean()) {
 							if (!ja.get(0).getAsJsonObject().get("tag_name").getAsString()
 									.equalsIgnoreCase(plugin.getPluginVersion())) {
+								if (new File(plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"),
+										ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+												.getAsJsonObject().get("name").getAsString()).exists())
+									return;
 								downloadURL = ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 										.getAsJsonObject().get("browser_download_url").getAsString();
 								// 开始下载
