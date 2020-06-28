@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import club.claycoffee.ClayTech.ClayTech;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;

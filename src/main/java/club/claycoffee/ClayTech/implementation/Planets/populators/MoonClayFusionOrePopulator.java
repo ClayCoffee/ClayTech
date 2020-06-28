@@ -12,7 +12,7 @@ import org.eclipse.jdt.annotation.NonNull;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 public class MoonClayFusionOrePopulator extends BlockPopulator {

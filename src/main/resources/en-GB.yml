@@ -9,7 +9,7 @@ General:
   Info_5: "Issue Tracker: {issue_tracker}"
   Info_6: "###########################################################"
   Auto-updater_disabled: "You have disabled the auto updater! This may cause certain issues to be unable to be automatically repaired."
-  update_done: "&aSuccessfully updated from version &c{old_version} &ato &6{new_version}. &aPlease shut down your server and manually delete the old version of the plugin!"
+  update_done: "&aSuccessfully updated from version &c{old_version} &ato &6{new_version}. &aPlease restart your server to apply the changes!"
   DEV_VERSION: "&eClayTech detected that you are using a development version. If you encounter any bugs, please submit them to our Issue Tracker!"
   command_not_found: "§b[ClayTech] §c The command was not found."
   basic_command: "&3ClayTech {version} &eBy &6ClayCoffee"
@@ -71,6 +71,7 @@ General:
   AlreadyInRocket: "&cYou are already in the rocket!"
   LocationFatal: "&cThere isn't a safe location to land.You can retry once."
   NotAtAPlanet: "&cSorry,you have to launch your rocket in a planet(like overworld)."
+  Cant_Drink_Milk: "&cYou cannot drink milk on this planet to dispel the effect."
   Yes_1: "Yes"
   No_1: "No"
 Categories:

@@ -123,7 +123,7 @@ public class Planet {
 			newWorld.environment(this.environment);
 			long seed = new Random().nextLong();
 			newWorld = newWorld.seed(seed);
-			newWorld = newWorld.type(WorldType.CUSTOMIZED);
+			newWorld = newWorld.type(WorldType.NORMAL);
 			newWorld = newWorld.generateStructures(false);
 			newWorld = newWorld.generator("ClayTech:" + this.planetName);
 			World w = newWorld.createWorld();

@@ -4,7 +4,7 @@ import org.bukkit.inventory.ItemStack;
 
 import club.claycoffee.ClayTech.ClayTech;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 

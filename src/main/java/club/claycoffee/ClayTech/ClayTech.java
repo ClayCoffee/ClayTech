@@ -64,7 +64,7 @@ import club.claycoffee.ClayTech.implementation.machines.SpaceSuitOxygenInjector;
 import club.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import club.claycoffee.ClayTech.listeners.*;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.Slimefun.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 

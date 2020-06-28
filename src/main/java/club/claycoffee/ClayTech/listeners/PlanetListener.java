@@ -17,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.EntityPotionEffectEvent.Cause;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
@@ -28,6 +29,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.block.CauldronLevelChangeEvent;
+import org.bukkit.event.entity.EntityPotionEffectEvent;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.api.ClayTechManager;
@@ -353,6 +355,17 @@ public class PlanetListener implements Listener {
 				e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 99999, p.getGravity() - 1));
 				e.getPlayer()
 						.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 99999, p.getGravity() - 1));
+			}
+		}
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void EntityPotionEffectEvent(EntityPotionEffectEvent e) {
+		if (e.getCause() == Cause.MILK && e.getEntity() instanceof Player) {
+			Planet p = PlanetUtils.getPlanet(e.getEntity().getWorld());
+			if (p.getGravity() != 1) {
+				e.setCancelled(true);
+				e.getEntity().sendMessage(Lang.readGeneralText("Cant_Drink_Milk"));
 			}
 		}
 	}

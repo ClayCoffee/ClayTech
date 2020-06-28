@@ -10,6 +10,8 @@ import java.net.URL;
 
 import com.google.gson.JsonArray;
 
+import club.claycoffee.ClayTech.ClayTech;
+
 public class FileDownloader {
 
 	public static String updateFunc(String urlp, String fileName, String savePath, JsonArray ja) {
@@ -26,8 +28,7 @@ public class FileDownloader {
 			if (!saveDir.exists()) {
 				saveDir.mkdir();
 			}
-			File file = new File(saveDir + File.separator + fileName);
-			FileOutputStream fos = new FileOutputStream(file);
+			FileOutputStream fos = new FileOutputStream(ClayTech.getInstance().getFile());
 			fos.write(getdata);
 			if (fos != null) {
 				fos.close();
