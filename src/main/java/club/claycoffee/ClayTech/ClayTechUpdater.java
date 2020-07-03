@@ -49,7 +49,7 @@ public class ClayTechUpdater {
 							if (ja.get(i).getAsJsonObject().get("prerelease").getAsBoolean()) {
 								continue;
 							} else if (!ja.get(i).getAsJsonObject().get("tag_name").getAsString()
-									.equalsIgnoreCase(plugin.getPluginVersion())) {
+									.equalsIgnoreCase(ClayTechData.currentVersion)) {
 								if (new File(plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"),
 										ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 												.getAsJsonObject().get("name").getAsString()).exists())
@@ -70,6 +70,7 @@ public class ClayTechUpdater {
 													.replaceAll("\\{old_version\\}",
 															ClayTech.getInstance().getPluginVersion()));
 									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
+									ClayTechData.currentVersion = ja.get(i).getAsJsonObject().get("tag_name").getAsString();
 									return;
 								}
 							}
@@ -78,7 +79,7 @@ public class ClayTechUpdater {
 					} else {
 						if (ja.get(0).getAsJsonObject().get("prerelease").getAsBoolean()) {
 							if (!ja.get(0).getAsJsonObject().get("tag_name").getAsString()
-									.equalsIgnoreCase(plugin.getPluginVersion())) {
+									.equalsIgnoreCase(ClayTechData.currentVersion)) {
 								if (new File(plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"),
 										ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
 												.getAsJsonObject().get("name").getAsString()).exists())
@@ -99,6 +100,7 @@ public class ClayTechUpdater {
 													.replaceAll("\\{old_version\\}",
 															ClayTech.getInstance().getPluginVersion()));
 									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
+									ClayTechData.currentVersion = ja.get(0).getAsJsonObject().get("tag_name").getAsString();
 									return;
 								}
 							} else {
