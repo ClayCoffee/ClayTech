@@ -19,10 +19,10 @@ GPLv3 → AGPLv3
 * Spigot / PaperSpigot 1.13.x
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
-* Spigot 1.16 & 1.16.1
+* Spigot / PaperSpigot 1.16.x
 
 # API
-Javadocs: http://claytech.claycoffee.space/javadocs/
+Javadocs: https://claycoffee.github.io/ClayTechWebsite/javadocs/
 
 # Translate
 You can translate ClayTech here: [Click me](https://gitlocalize.com/repo/4241)  
