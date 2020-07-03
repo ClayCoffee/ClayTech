@@ -30,6 +30,8 @@ public class FoodDropListener implements Listener {
 							ClayTechItems.STARCH, new ItemStack(Material.SHEARS), 15, 20, e);
 					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
 							ClayTechItems.CLAY_SWEET_POTATO, new ItemStack(Material.SHEARS), 25, 30, e);
+					Food.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
+							ClayTechItems.GREEN_GRASS, new ItemStack(Material.SHEARS), 31, 40, e);
 				} catch (NullPointerException err) {
 				}
 			}

@@ -47,6 +47,7 @@ public class FoodEatListener implements Listener {
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.HONEY_SWEET, 8);
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.COOKED_SWEET_POTATO, 6);
 					Food.FoodCheck(p, e.getItem(), ClayTechItems.TUNA_FISH, 6);
+					Food.FoodCheck(p, e.getItem(), ClayTechItems.GREEN_GRASS, 1);
 				} catch (NullPointerException err) {
 				}
 				Food.WashCheck(p, e.getItem(), ClayTechItems.DIRTY_DRINK_BOTTLE, ClayTechItems.DRINK_BOTTLE);

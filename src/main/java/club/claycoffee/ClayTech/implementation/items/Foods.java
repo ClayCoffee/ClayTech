@@ -40,11 +40,14 @@ public class Foods {
 
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "HONEY_SWEET", ClayTechItems.HONEY_SWEET, "notresearch", 10,
 				ClayTechRecipeType.CLAY_FOOD_CAULDRON, ClayTechMachineRecipes.HONEY_SWEET, false);
+		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "GREEN_GRASS", ClayTechItems.GREEN_GRASS, "notresearch", 10,
+				ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 		Research foodII = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODBASIC2"), 9916,
 				Lang.readResearchesText("CLAYTECH_FOOD_II"), 50);
 		foodII.addItems(SlimefunItem.getByItem(ClayTechItems.HONEY_SWEET),
 				SlimefunItem.getByItem(ClayTechItems.CLAY_SWEET_POTATO),
-				SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO));
+				SlimefunItem.getByItem(ClayTechItems.COOKED_SWEET_POTATO),
+				SlimefunItem.getByItem(ClayTechItems.GREEN_GRASS));
 		foodII.register();
 
 		Slimefunutils.registerItem(ClayTechItems.C_FOOD, "TUNA_FISH", ClayTechItems.TUNA_FISH, "notresearch", 10,

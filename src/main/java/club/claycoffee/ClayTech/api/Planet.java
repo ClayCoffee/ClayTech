@@ -11,6 +11,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.World.Environment;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import com.onarandombox.MultiverseCore.MultiverseCore;
+import com.onarandombox.MultiverseCore.api.MVWorldManager;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.utils.DataYML;
@@ -104,6 +108,23 @@ public class Planet {
 	}
 
 	public void register() {
+		if(planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+			if (!f.getBoolean(this.planetName) && !this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+				if (Bukkit.getWorld(this.planetName) != null) {
+					Bukkit.unloadWorld(this.planetName, true);
+				}
+				return;
+			}
+			for (Planet each : ClayTech.getPlanets()) {
+				if (each.planetName.equalsIgnoreCase(this.planetName)) {
+					Utils.info("Registering Error: Planet" + this.planetName + "already exists!");
+					return;
+				}
+			}
+			ClayTech.getPlanets().add(this);
+			return;
+		}
+		
 		if (!f.getBoolean(this.planetName) && !this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 			if (Bukkit.getWorld(this.planetName) != null) {
 				Bukkit.unloadWorld(this.planetName, true);
@@ -131,9 +152,29 @@ public class Planet {
 				// 如果冷就不会下雨
 				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 			}
+			
+			
 			return;
 		}
 		newWorld.createWorld();
+		
+		new BukkitRunnable() {
+
+			@Override
+			public void run() {
+				if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {
+					MVWorldManager wm = ((MultiverseCore) Bukkit.getPluginManager().getPlugin("Multiverse-Core"))
+							.getMVWorldManager();
+					wm.addWorld(trimWorldName(planetName), environment, null, WorldType.NORMAL, null, "ClayTech:" + planetName, true);
+				}
+				
+			}
+			
+		}.runTaskAsynchronously(ClayTech.getInstance());
+	}
+	
+	private String trimWorldName(String userInput) {
+		return userInput.replaceAll("^[./\\\\]+", "");
 	}
 
 	public void setDistance(int newDistance) {

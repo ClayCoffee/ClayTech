@@ -32,7 +32,7 @@
            <version>1.15.2-R0.1-SNAPSHOT</version>
            <scope>provided</scope>
        </dependency>
-		<dependency>
+	   <dependency>
   		<groupId>com.github.TheBusyBiscuit</groupId>
   		<artifactId>CS-CoreLib</artifactId>
   		<version>master-SNAPSHOT</version>
@@ -47,6 +47,12 @@
   				<artifactId>bstats-bukkit</artifactId>
   			</exclusion>
   		</exclusions>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.Multiverse</groupId>
+  		<artifactId>Multiverse-Core</artifactId>
+  		<version>master-SNAPSHOT</version>
+  		<scope>provided</scope>
   	</dependency>
   	<dependency>
   		<groupId>com.github.TheBusyBiscuit</groupId>

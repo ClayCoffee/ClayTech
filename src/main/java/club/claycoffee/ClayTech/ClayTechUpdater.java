@@ -110,8 +110,6 @@ public class ClayTechUpdater {
 						} else
 							return;
 					}
-					// 服务器关闭时删除原文件
-					ClayTech.getInstance().getFile().deleteOnExit();
 
 				} catch (IOException e) {
 					Bukkit.getLogger().info("§cCould not perform update. Is the Github down?");

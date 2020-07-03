@@ -198,6 +198,12 @@ Items:
     - "&6Honey Sweet"
     - "&7It's too sweet..."
     - "&7Increase 8 hunger value after eating."
+  GREEN_GRASS: "&2Green Grass"
+  GREEN_GRASS_LORE:
+    - "&7I am a sheep!"
+    - "&7If you don't have enough food,"
+    - "&7Please try this!"
+    - "&7Increase 1 hunger value after eating"
   ELEMENT_UNIT: "&eElement Unit"
   ELEMENT_UNIT_LORE:
     - "&6Element Unit"
