@@ -57,7 +57,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
 	private static final List<Material> LEAVES = Arrays
 			.asList(new Material[] { Material.OAK_LEAVES, Material.ACACIA_LEAVES, Material.BIRCH_LEAVES,
 					Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.SPRUCE_LEAVES });
-	private static ItemStack item;
+	private ItemStack item;
 
 	public SpaceSuitOxygenInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {

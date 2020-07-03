@@ -55,8 +55,8 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 			Lang.readMachinesText("SPLIT_LINE"));
 	private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
-	private static ItemStack item;
-	private static ItemStack itemfuel;
+	private ItemStack item;
+	private ItemStack itemfuel;
 
 	public RocketFuelInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {
