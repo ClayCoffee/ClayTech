@@ -54,7 +54,7 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
 	private static final ItemStack OTHERBORDER_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
 			Lang.readMachinesText("SPLIT_LINE"));
 	SlimefunItemStack items;
-	private static ItemStack item;
+	private ItemStack item;
 
 	public ARocketTable(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
 			ItemStack[] recipe) {

@@ -108,7 +108,7 @@ public class Planet {
 	}
 
 	public void register() {
-		if(planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
+		if (planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 			if (!f.getBoolean(this.planetName) && !this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 				if (Bukkit.getWorld(this.planetName) != null) {
 					Bukkit.unloadWorld(this.planetName, true);
@@ -124,7 +124,7 @@ public class Planet {
 			ClayTech.getPlanets().add(this);
 			return;
 		}
-		
+
 		if (!f.getBoolean(this.planetName) && !this.planetName.equalsIgnoreCase(ClayTech.getOverworld())) {
 			if (Bukkit.getWorld(this.planetName) != null) {
 				Bukkit.unloadWorld(this.planetName, true);
@@ -152,12 +152,11 @@ public class Planet {
 				// 如果冷就不会下雨
 				w.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
 			}
-			
-			
+
 			return;
 		}
 		newWorld.createWorld();
-		
+
 		new BukkitRunnable() {
 
 			@Override
@@ -165,14 +164,15 @@ public class Planet {
 				if (Bukkit.getPluginManager().isPluginEnabled("Multiverse-Core")) {
 					MVWorldManager wm = ((MultiverseCore) Bukkit.getPluginManager().getPlugin("Multiverse-Core"))
 							.getMVWorldManager();
-					wm.addWorld(trimWorldName(planetName), environment, null, WorldType.NORMAL, null, "ClayTech:" + planetName, true);
+					wm.addWorld(trimWorldName(planetName), environment, null, WorldType.NORMAL, null,
+							"ClayTech:" + planetName, true);
 				}
-				
+
 			}
-			
+
 		}.runTaskAsynchronously(ClayTech.getInstance());
 	}
-	
+
 	private String trimWorldName(String userInput) {
 		return userInput.replaceAll("^[./\\\\]+", "");
 	}

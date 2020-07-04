@@ -70,7 +70,8 @@ public class ClayTechUpdater {
 													.replaceAll("\\{old_version\\}",
 															ClayTech.getInstance().getPluginVersion()));
 									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
-									ClayTechData.currentVersion = ja.get(i).getAsJsonObject().get("tag_name").getAsString();
+									ClayTechData.currentVersion = ja.get(i).getAsJsonObject().get("tag_name")
+											.getAsString();
 									return;
 								}
 							}
@@ -100,7 +101,8 @@ public class ClayTechUpdater {
 													.replaceAll("\\{old_version\\}",
 															ClayTech.getInstance().getPluginVersion()));
 									Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
-									ClayTechData.currentVersion = ja.get(0).getAsJsonObject().get("tag_name").getAsString();
+									ClayTechData.currentVersion = ja.get(0).getAsJsonObject().get("tag_name")
+											.getAsString();
 									return;
 								}
 							} else {
