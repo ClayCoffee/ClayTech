@@ -89,6 +89,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 
 			for (MachineRecipe recipe : recipes) {
 				for (ItemStack input : recipe.getInput()) {
+					if(input == null) continue;
 					for (int slot : getInputSlots()) {
 						if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
 							found.put(slot, input.getAmount());
