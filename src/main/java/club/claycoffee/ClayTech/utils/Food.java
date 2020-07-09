@@ -3,6 +3,7 @@ package club.claycoffee.ClayTech.utils;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
+import org.bukkit.CropState;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
@@ -11,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.Crops;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.event.player.PlayerFishEvent;
 

@@ -23,7 +23,7 @@ public class ClayTechItems {
 	// 分类
 	public static final LockedCategory C_BASICS = new LockedCategory(N_BASIC,
 			Utils.newItemD(Material.CLAY, Lang.readCategoriesText("Basic")),
-			new NamespacedKey(SlimefunPlugin.instance, "basic_machines"));
+			new NamespacedKey(SlimefunPlugin.instance(), "basic_machines"));
 	public static final LockedCategory C_WEAPONS = new LockedCategory(
 			new NamespacedKey(ClayTech.plugin, "claycategory1"),
 			Utils.newItemD(Material.DIAMOND_SWORD, Lang.readCategoriesText("Weapons")), N_BASIC);
