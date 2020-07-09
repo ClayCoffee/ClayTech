@@ -9,36 +9,36 @@ import org.bukkit.inventory.ItemStack;
  * Called when a player assemble a item.当一个玩家组装物品的时候触发.
  */
 public class PlayerAssembleEvent extends Event {
-	private static final HandlerList handlers = new HandlerList();
-	private Block machine;
-	private ItemStack[] Recipe;
-	private ItemStack AssembledItem;
+    private static final HandlerList handlers = new HandlerList();
+    private Block machine;
+    private ItemStack[] Recipe;
+    private ItemStack AssembledItem;
 
-	public PlayerAssembleEvent(Block machine, ItemStack[] Recipe, ItemStack AssembledItem) {
-		this.Recipe = Recipe;
-		this.AssembledItem = AssembledItem;
-		this.machine = machine;
-	}
+    public PlayerAssembleEvent(Block machine, ItemStack[] Recipe, ItemStack AssembledItem) {
+        this.Recipe = Recipe;
+        this.AssembledItem = AssembledItem;
+        this.machine = machine;
+    }
 
-	public ItemStack[] getRecipe() {
-		return Recipe;
-	}
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
-	public ItemStack getAssembledItem() {
-		return AssembledItem;
-	}
+    public ItemStack[] getRecipe() {
+        return Recipe;
+    }
 
-	public Block getMachine() {
-		return machine;
-	}
+    public ItemStack getAssembledItem() {
+        return AssembledItem;
+    }
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
+    public Block getMachine() {
+        return machine;
+    }
 
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 
 }

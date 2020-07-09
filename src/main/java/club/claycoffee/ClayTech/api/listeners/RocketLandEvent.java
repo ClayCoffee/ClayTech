@@ -1,51 +1,50 @@
 package club.claycoffee.ClayTech.api.listeners;
 
+import club.claycoffee.ClayTech.api.Planet;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
-import club.claycoffee.ClayTech.api.Planet;
-
 /**
  * Called when a rocket land.在火箭着陆的时候触发.
  */
 public class RocketLandEvent extends Event {
-	private Player onRocketPlayer;
-	private Planet fromPlanet;
-	private Planet toPlanet;
-	private ItemStack rocket;
-	private static final HandlerList handlers = new HandlerList();
+    private static final HandlerList handlers = new HandlerList();
+    private Player onRocketPlayer;
+    private Planet fromPlanet;
+    private Planet toPlanet;
+    private ItemStack rocket;
 
-	public RocketLandEvent(Player p, Planet fromPlanet, Planet toPlanet, ItemStack rocket) {
-		this.onRocketPlayer = p;
-		this.fromPlanet = fromPlanet;
-		this.toPlanet = toPlanet;
-		this.rocket = rocket;
-	}
+    public RocketLandEvent(Player p, Planet fromPlanet, Planet toPlanet, ItemStack rocket) {
+        this.onRocketPlayer = p;
+        this.fromPlanet = fromPlanet;
+        this.toPlanet = toPlanet;
+        this.rocket = rocket;
+    }
 
-	public Player getPlayer() {
-		return onRocketPlayer;
-	}
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
-	public ItemStack getRocket() {
-		return rocket;
-	}
+    public Player getPlayer() {
+        return onRocketPlayer;
+    }
 
-	public Planet getFromPlanet() {
-		return fromPlanet;
-	}
+    public ItemStack getRocket() {
+        return rocket;
+    }
 
-	public Planet getToPlanet() {
-		return toPlanet;
-	}
+    public Planet getFromPlanet() {
+        return fromPlanet;
+    }
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
+    public Planet getToPlanet() {
+        return toPlanet;
+    }
 
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 }

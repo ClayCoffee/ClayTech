@@ -6,9 +6,9 @@ author: ClayCoffee
 loadbefore: [Multiverse-Core]
 depend: [CS-CoreLib, Slimefun]
 commands:
-   claytech:
-      description: '粘土科技'
-      permission: claytech.basic
+  claytech:
+    description: '粘土科技'
+    permission: claytech.basic
 permissions:
   claytech.basic:
     description: 'Basic command.'

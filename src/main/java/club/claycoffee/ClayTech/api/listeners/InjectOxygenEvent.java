@@ -9,38 +9,36 @@ import org.bukkit.inventory.ItemStack;
  * Called when a item injected oxygen.当一个物品被注入氧气的时候触发.
  */
 public class InjectOxygenEvent extends Event {
-	private static final HandlerList handlers = new HandlerList();
-	private Block machine;
-	private ItemStack Item;
+    private static final HandlerList handlers = new HandlerList();
+    private Block machine;
+    private ItemStack Item;
 
-	public InjectOxygenEvent(Block machine, ItemStack Item) {
-		this.Item = Item;
-		this.machine = machine;
-	}
+    public InjectOxygenEvent(Block machine, ItemStack Item) {
+        this.Item = Item;
+        this.machine = machine;
+    }
 
-	/**
-	 *
-	 * @return the item.物品
-	 */
-	public ItemStack getItem() {
-		return Item;
-	}
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
-	/**
-	 *
-	 * @return the injector.注入的机器.
-	 */
-	public Block getMachine() {
-		return machine;
-	}
+    /**
+     * @return the item.物品
+     */
+    public ItemStack getItem() {
+        return Item;
+    }
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
+    /**
+     * @return the injector.注入的机器.
+     */
+    public Block getMachine() {
+        return machine;
+    }
 
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 
 }

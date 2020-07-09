@@ -64,6 +64,7 @@ General:
   SPACESUIT_NOT_OK: "&cYour spacesuits aren't intact!"
   SPACESUIT_4: "&cYou need 4 oxygen level in your oxygen distributer."
   SPACESUIT_DISTRIBUTER_OK: "&3Done!"
+  SPACESUIT_DISTRIBUTER_FULL: "&3Spacesuit is full of oxygen."
   NotInPlanet: "&cSorry. You are not in a planet.So you can't set up a base."
   NotYourBase: "&cSorry. You can't destroy other people's base."
   notOwner: "&cYou can only open your Rocket Launcher!"
@@ -317,7 +318,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &732 J/s" 
+    - "&8\u21E8 &e\u26A1 &732 J/s"
   CLAY_FOOD_CHALKING_MACHINE: "&eFood Chalking Machine"
   CLAY_FOOD_CHALKING_MACHINE_LORE:
     - ""
@@ -325,7 +326,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &732 J/s" 
+    - "&8\u21E8 &e\u26A1 &732 J/s"
   CLAY_ELEMENT_EXTRACTER: "&eElement Extracter"
   CLAY_ELEMENT_EXTRACTER_LORE:
     - ""
@@ -333,7 +334,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &764 J/s" 
+    - "&8\u21E8 &e\u26A1 &764 J/s"
   CLAY_ELECTRIC_STONE_CRUSHER: "&eElectric Stone Crusher"
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
     - ""
@@ -341,7 +342,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &716 J/s" 
+    - "&8\u21E8 &e\u26A1 &716 J/s"
   HIGHSPEED_RAILWAY: "&bHigh Speed Rail"
   HIGHSPEED_RAILWAY_LORE:
     - "&6The minecart which is running on this kind of rail"
@@ -378,7 +379,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &780 J/s" 
+    - "&8\u21E8 &e\u26A1 &780 J/s"
   SILICON_INGOT: "&bSilicon Ingot"
   ROCKET_LAUNCHER: "&6Rocket Launcher"
   ROCKET: "&9Rocket (Tier I)"
@@ -535,7 +536,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &726 J/s"  
+    - "&8\u21E8 &e\u26A1 &726 J/s"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"

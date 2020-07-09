@@ -64,6 +64,7 @@ General:
   SPACESUIT_NOT_OK: "&c您的宇航服沒有穿齊!"
   SPACESUIT_4: "&c分配器內至少要求有4點氧氣!"
   SPACESUIT_DISTRIBUTER_OK: "&3分配成功!"
+  SPACESUIT_DISTRIBUTER_FULL: "&3宇航服氧氣已全滿."
   NotInPlanet: "&c抱歉,您當前不在星球中!無法設立基地。"
   NotYourBase: "&c抱歉,這不是妳的基地,妳不能拆除!"
   notOwner: "&c您只能打開妳自己的火箭發射器!"
@@ -316,7 +317,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &732 J/s" 
+    - "&8\u21E8 &e\u26A1 &732 J/s"
   CLAY_FOOD_CHALKING_MACHINE: "&e食物打粉機"
   CLAY_FOOD_CHALKING_MACHINE_LORE:
     - ""
@@ -324,7 +325,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &732 J/s" 
+    - "&8\u21E8 &e\u26A1 &732 J/s"
   CLAY_ELEMENT_EXTRACTER: "&e元素提取機"
   CLAY_ELEMENT_EXTRACTER_LORE:
     - ""
@@ -332,7 +333,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &764 J/s" 
+    - "&8\u21E8 &e\u26A1 &764 J/s"
   CLAY_ELECTRIC_STONE_CRUSHER: "&e電力碎石機"
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
     - ""
@@ -340,7 +341,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &716 J/s" 
+    - "&8\u21E8 &e\u26A1 &716 J/s"
   HIGHSPEED_RAILWAY: "&b高速鐵路"
   HIGHSPEED_RAILWAY_LORE:
     - "&6在這種鐵路上行駛的礦車"
@@ -377,7 +378,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &780 J/s" 
+    - "&8\u21E8 &e\u26A1 &780 J/s"
   SILICON_INGOT: "&b矽錠"
   ROCKET_LAUNCHER: "&6火箭發射器"
   ROCKET: "&9火箭 (一階)"
@@ -545,7 +546,7 @@ Items:
     - ""
     - "%TIER%"
     - "%POWER%"
-    - "&8\u21E8 &e\u26A1 &726 J/s"  
+    - "&8\u21E8 &e\u26A1 &726 J/s"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"

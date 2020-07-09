@@ -9,37 +9,35 @@ import org.bukkit.inventory.ItemStack;
  * Called when a player ate a food. 当一个玩家吃粘土科技中的食物的时候触发.
  */
 public class PlayerEatEvent extends Event {
-	private Player eatPlayer;
-	private ItemStack food;
-	private static final HandlerList handlers = new HandlerList();
+    private static final HandlerList handlers = new HandlerList();
+    private Player eatPlayer;
+    private ItemStack food;
 
-	public PlayerEatEvent(Player p, ItemStack ClayFoodStack) {
-		this.eatPlayer = p;
-		this.food = ClayFoodStack;
-	}
+    public PlayerEatEvent(Player p, ItemStack ClayFoodStack) {
+        this.eatPlayer = p;
+        this.food = ClayFoodStack;
+    }
 
-	/**
-	 *
-	 * @return the player who ate the food.吃食物的玩家
-	 */
-	public Player getPlayer() {
-		return eatPlayer;
-	}
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
-	/**
-	 *
-	 * @return the food eaten by the player.被吃的食物
-	 */
-	public ItemStack getFood() {
-		return food;
-	}
+    /**
+     * @return the player who ate the food.吃食物的玩家
+     */
+    public Player getPlayer() {
+        return eatPlayer;
+    }
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
+    /**
+     * @return the food eaten by the player.被吃的食物
+     */
+    public ItemStack getFood() {
+        return food;
+    }
 
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 }
