@@ -343,6 +343,20 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s"
+  CLAY_ELECTRIC_COPIER: "&eClay Electric Copier"
+  CLAY_ELECTRIC_COPIER_LORE:
+    - ""
+    - "&fCan copy books"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &740 J/s"
+  COPYING_MODULE: "&bCopying Module"
+  COPYING_MODULE_LORE:
+    - "&6The module to copy books."
+  INK_MODULE: "&bInk Module"
+  INK_MODULE_LORE:
+    - "&6There is a lot of ink in it."
   HIGHSPEED_RAILWAY: "&bHigh Speed Rail"
   HIGHSPEED_RAILWAY_LORE:
     - "&6The minecart which is running on this kind of rail"
@@ -576,6 +590,7 @@ Researches:
   CLAYTECH_FISH_I: "Fish"
   CLAYTECH_COBBLESTONE_GENERATOR: "Cobblestone Generator"
   CLAYTECH_ELECTRIC_WATER_PUMP: "Electric Water Pump"
+  CLAYTECH_COPIER: "Electric Copier"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
@@ -604,6 +619,7 @@ Machines:
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&bSpacesuit Oxygen Injector"
   CLAY_COBBLESTONE_GENERATOR: "&bCobblestone Generator"
   CLAY_ELECTRIC_WATER_PUMP: "&bElectric Water Pump"
+  CLAY_ELECTRIC_COPIER: "&eClay Electric Copier"
   ROCKET_LAUNCHER: "&9Rocket Launcher"
   DISTANCE_TO_PLANET: "&6%ly% &9light years to the planet you on"
   FUEL_TO_PLANET: "&9Require &6%fuel% &9points of fuel to reach"

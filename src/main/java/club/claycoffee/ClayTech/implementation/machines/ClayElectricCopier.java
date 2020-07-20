@@ -1,0 +1,132 @@
+package club.claycoffee.ClayTech.implementation.machines;
+
+import club.claycoffee.ClayTech.implementation.abstractMachines.ANewContainer;
+import club.claycoffee.ClayTech.utils.Lang;
+import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import me.mrCookieSlime.Slimefun.Lists.RecipeType;
+import me.mrCookieSlime.Slimefun.Objects.Category;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BookMeta;
+
+/**
+ * @Project: ClayTech
+ * @Author: ClayCoffee
+ * @Date: 2020/7/20 11:35
+ * @Email: 1020757140@qq.com
+ * AGPL 3.0
+ */
+
+public class ClayElectricCopier extends ANewContainer {
+    private int mode;
+    private ItemStack source;
+    private ItemStack copy;
+
+    public ClayElectricCopier(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
+                              ItemStack[] recipe) {
+        super(category, item, id, recipeType, recipe);
+    }
+
+    @Override
+    public String getInventoryTitle() {
+        return Lang.readMachinesText("CLAY_ELECTRIC_COPIER");
+    }
+
+    @Override
+    public ItemStack getProgressBar() {
+        return new ItemStack(Material.BOOK);
+    }
+
+    @Override
+    public int getEnergyConsumption() {
+        return 40;
+    }
+
+    @Override
+    public int getSpeed() {
+        return 1;
+    }
+
+    @Override
+    public String getMachineIdentifier() {
+        return "CLAY_ELECTRIC_COPIER";
+    }
+
+    @Override
+    public int getCapacity() {
+        return 256;
+    }
+
+    protected void tick(Block b) {
+        BlockMenu inv = BlockStorage.getInventory(b);
+        if (progress.keySet().size() > 0) {
+            int timeleft = progress.get(b);
+
+            if (timeleft > 0) {
+                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+
+                if (ChargableBlock.isChargable(b)) {
+                    if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                        return;
+                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    progress.put(b, timeleft - 1);
+                } else
+                    progress.put(b, timeleft - 1);
+            } else {
+                if (inv.getItemInSlot(getOutputSlots()[0]) != null || inv.getItemInSlot(getOutputSlots()[1]) != null)
+                    return;
+
+                inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
+
+                if (mode == 1) {
+                    inv.pushItem(source, getOutputSlots());
+                    inv.pushItem(source, getOutputSlots());
+                } else if (mode == 2) {
+                    BookMeta sourceMeta = (BookMeta) source.getItemMeta();
+                    BookMeta copyMeta = (BookMeta) copy.getItemMeta();
+                    copyMeta.setPages(sourceMeta.getPages());
+                    copyMeta.setGeneration(BookMeta.Generation.COPY_OF_ORIGINAL);
+                    copy.setItemMeta(copyMeta);
+                    inv.pushItem(source, getOutputSlots());
+                    inv.pushItem(copy, getOutputSlots());
+                }
+                progress.remove(b);
+                processing.remove(b);
+            }
+        } else {
+            if (inv.getItemInSlot(19) == null || inv.getItemInSlot(20) == null) return;
+            if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
+                // Mode I
+                mode = 1;
+                source = inv.getItemInSlot(19).clone();
+                copy = inv.getItemInSlot(20).clone();
+            } else if (inv.getItemInSlot(19).getType() == Material.WRITTEN_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
+                // Mode II
+                mode = 2;
+                source = inv.getItemInSlot(19).clone();
+                copy = inv.getItemInSlot(20).clone();
+            } else if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITTEN_BOOK) {
+                // Mode II
+                mode = 2;
+                source = inv.getItemInSlot(20).clone();
+                copy = inv.getItemInSlot(19).clone();
+            } else mode = 0;
+            if (mode > 0) {
+                BookMeta sourceMeta = (BookMeta) source.getItemMeta();
+                MachineRecipe r = new MachineRecipe(sourceMeta.getPages().size() * 4, null, null);
+                progress.put(b, r.getTicks());
+                processing.put(b, r);
+                inv.consumeItem(19);
+                inv.consumeItem(20);
+                return;
+            }
+        }
+    }
+}

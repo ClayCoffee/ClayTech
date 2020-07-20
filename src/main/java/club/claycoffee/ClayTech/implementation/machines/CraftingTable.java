@@ -157,6 +157,11 @@ public class CraftingTable extends ACraftingTable {
         this.registerRecipe(2, ClayTechMachineRecipes.COPPER_DUST_O, new ItemStack[]{SlimefunItems.COPPER_DUST});
         this.registerRecipe(2, ClayTechMachineRecipes.CLAY_FUSION_INGOT_O,
                 new ItemStack[]{ClayTechItems.CLAY_FUSION_INGOT});
+
+        this.registerRecipe(30, ClayTechMachineRecipes.INK_MODULE,
+                new ItemStack[]{ClayTechItems.INK_MODULE});
+        this.registerRecipe(60, ClayTechMachineRecipes.COPYING_MODULE,
+                new ItemStack[]{ClayTechItems.COPYING_MODULE});
     }
 
     @Override

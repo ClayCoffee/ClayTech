@@ -16,14 +16,10 @@ public class ClayTechUpdater {
     private ClayTechBranch branch;
 
     public ClayTechUpdater() {
-        if (plugin.getDescription().getVersion().toUpperCase().contains("DEV")
-                || plugin.getDescription().getVersion().toUpperCase().contains("PRE")) {
-            branch = ClayTechBranch.DEVELOPMENT;
-            Bukkit.getServer().getLogger().info("§e" + Lang.readGeneralText("Info_1"));
-            Bukkit.getServer().getLogger().info(Lang.readGeneralText("DEV_VERSION"));
-            Bukkit.getServer().getLogger().info("§e" + Lang.readGeneralText("Info_6"));
-        } else {
-            branch = ClayTechBranch.STABLE;
+        try {
+            branch = ClayTechBranch.valueOf(ClayTech.getUpdateBranch());
+        } catch (Exception e) {
+            Bukkit.getLogger().info("§cInvalid Update Branch.");
         }
     }
 
@@ -68,10 +64,12 @@ public class ClayTechUpdater {
                                             .getAsString();
                                     return;
                                 }
+                            } else {
+                                Bukkit.getServer().getLogger().info(Lang.readGeneralText("LatestVersion"));
+                                return;
                             }
                         }
-                        Bukkit.getServer().getLogger().info(Lang.readGeneralText("LatestVersion"));
-                    } else {
+                    } else if (branch == ClayTechBranch.DEVELOPMENT) {
                         if (ja.get(0).getAsJsonObject().get("prerelease").getAsBoolean()) {
                             if (!ja.get(0).getAsJsonObject().get("tag_name").getAsString()
                                     .equalsIgnoreCase(ClayTechData.currentVersion)) {
@@ -105,6 +103,37 @@ public class ClayTechUpdater {
                             }
                         } else
                             return;
+                    } else if (branch == ClayTechBranch.ALL) {
+                        if (!ja.get(0).getAsJsonObject().get("tag_name").getAsString()
+                                .equalsIgnoreCase(ClayTechData.currentVersion)) {
+                            if (new File(plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"),
+                                    ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                            .getAsJsonObject().get("name").getAsString()).exists())
+                                return;
+                            downloadURL = ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                    .getAsJsonObject().get("browser_download_url").getAsString();
+                            // 开始下载
+                            if (!FileDownloader.updateFunc(downloadURL,
+                                    ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                            .getAsJsonObject().get("name").getAsString(),
+                                    plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+                                    .equalsIgnoreCase("")) {
+                                Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
+                                Bukkit.getServer().getLogger()
+                                        .info(Lang.readGeneralText("update_done")
+                                                .replaceAll("\\{new_version\\}",
+                                                        ja.get(0).getAsJsonObject().get("tag_name").getAsString())
+                                                .replaceAll("\\{old_version\\}",
+                                                        ClayTech.getInstance().getPluginVersion()));
+                                Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_6"));
+                                ClayTechData.currentVersion = ja.get(0).getAsJsonObject().get("tag_name")
+                                        .getAsString();
+                                return;
+                            }
+                        } else {
+                            Bukkit.getServer().getLogger().info(Lang.readGeneralText("LatestVersion"));
+                            return;
+                        }
                     }
 
                 } catch (IOException e) {

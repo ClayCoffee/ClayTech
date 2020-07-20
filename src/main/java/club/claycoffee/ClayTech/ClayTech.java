@@ -6,26 +6,20 @@ import club.claycoffee.ClayTech.implementation.Planets.Earth;
 import club.claycoffee.ClayTech.implementation.Planets.Mars;
 import club.claycoffee.ClayTech.implementation.Planets.Moon;
 import club.claycoffee.ClayTech.implementation.items.*;
-import club.claycoffee.ClayTech.implementation.machines.*;
 import club.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import club.claycoffee.ClayTech.listeners.*;
 import club.claycoffee.ClayTech.utils.*;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.generator.ChunkGenerator;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -49,6 +43,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
     private static DataYML planetDataYML;
     private static ClayTechUpdater updater;
     private static boolean spacetravelneedperm;
+    private static String updateBranch;
+    private static FileConfiguration config;
 
     public static ClayTech getInstance() {
         return plugin;
@@ -94,13 +90,17 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         return planetDataYML;
     }
 
+    public static String getUpdateBranch() {
+        return updateBranch;
+    }
+
     @SuppressWarnings({"unused", "static-access"})
     @Override
     public void onEnable() {
         plugin = this;
-        // 当前研究ID: 9933
+        // 当前研究ID: 9934
         this.saveDefaultConfig();
-        FileConfiguration config = this.getConfig();
+        config = this.getConfig();
         locale = config.getString("Locale");
         if (locale == null)
             locale = "en-US";
@@ -261,6 +261,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             @Override
             public void run() {
                 // Updater
+                updateBranch = config.getString("update-branch");
                 updater = new ClayTechUpdater();
                 if (!getConfig().getBoolean("disable-auto-updater")) {
                     updater.tryUpdate();
@@ -367,7 +368,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
     }
 
     private void registerSlimefun() {
-        registerMachines();
+        new Machines();
 
         new Clay_basic();
         new PotionAffect_Weapons();
@@ -389,106 +390,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         new Rockets();
     }
 
-    public void registerMachines() {
-        ItemStack[] ClayCrafingTable = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, new ItemStack(Material.CRAFTING_TABLE),
-                SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
-                ClayTechItems.MAGIC_CLAY};
-        ItemStack[] ClayStoneCrusher = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.SMALL_CAPACITOR,
-                new ItemStack(Material.DISPENSER)};
-        ItemStack[] ClayFoodCauldron = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE,
-                SlimefunItems.BATTERY, ClayTechItems.MAGIC_CLAY, SlimefunItems.MEDIUM_CAPACITOR,
-                ClayTechItems.MAGIC_CLAY};
-        ItemStack[] ClayChalkingMachine = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRO_MAGNET,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BATTERY, ClayTechItems.CLAY_CRAFTING_TABLE,
-                SlimefunItems.BATTERY, ClayTechItems.CLAY_STICK, SlimefunItems.MEDIUM_CAPACITOR,
-                ClayTechItems.MAGIC_CLAY};
-        ItemStack[] ClayElementExtracter = {ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE,
-                ClayTechItems.BLISTERING_CORE, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.PROGRAMMABLE_ANDROID,
-                SlimefunItems.WITHER_PROOF_OBSIDIAN};
-        ItemStack[] ClayExperimentTableBasic = {ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ELECTRIC_MOTOR,
-                ClayTechItems.CLAY_ALLOY_INGOT, SlimefunItems.ADVANCED_CIRCUIT_BOARD, ClayTechItems.CLAY_FOOD_CAULDRON,
-                ClayTechItems.BLISTERING_CORE, ClayTechItems.CLAY_ALLOY_INGOT, ClayTechItems.ELEMENT_UNIT,
-                ClayTechItems.CLAY_ALLOY_INGOT};
-        ItemStack[] ClayRocketAssemblingMachine = {SlimefunItems.ELECTRIC_MOTOR, ClayTechItems.BLISTERING_CORE,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
-                SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.MEDIUM_CAPACITOR,
-                SlimefunItems.PROGRAMMABLE_ANDROID, SlimefunItems.MEDIUM_CAPACITOR};
-        ItemStack[] ClayRocketFuelGenerator = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
-                SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR, ClayTechItems.CLAY_FUSION_INGOT,
-                SlimefunItems.SMALL_CAPACITOR};
-        ItemStack[] ClayRocketFuelInjector = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.WITHER_PROOF_OBSIDIAN,
-                SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR, ClayTechItems.BLISTERING_CORE,
-                SlimefunItems.SMALL_CAPACITOR};
-        ItemStack[] ClaySpaceSuitOxygenInjector = {SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ELECTRIC_MOTOR,
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.SMALL_CAPACITOR, ClayTechItems.OXYGEN_TANK, SlimefunItems.SMALL_CAPACITOR};
-        ItemStack[] ClayCobbleStoneGenerator = {SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.WATER_BUCKET),
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.LAVA_BUCKET), SlimefunItems.SMALL_CAPACITOR};
-        ItemStack[] ClayElectricWaterPump = {SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.DISPENSER),
-                SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.PROGRAMMABLE_ANDROID_MINER, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
-                SlimefunItems.SMALL_CAPACITOR, new ItemStack(Material.DISPENSER), SlimefunItems.SMALL_CAPACITOR};
-
-        // 机器
-        SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
-                ClayTechItems.CLAY_CRAFTING_TABLE);
-        SlimefunItemStack foodcauldron = new SlimefunItemStack("CLAY_FOOD_CAULDRON", ClayTechItems.CLAY_FOOD_CAULDRON);
-        SlimefunItemStack chalkingmachine = new SlimefunItemStack("CLAY_FOOD_CHALKING_MACHINE",
-                ClayTechItems.CLAY_FOOD_CHALKING_MACHINE);
-        SlimefunItemStack elementextracter = new SlimefunItemStack("CLAY_ELEMENT_EXTRACTER",
-                ClayTechItems.CLAY_ELEMENT_EXTRACTER);
-        SlimefunItemStack electricstonecrusher = new SlimefunItemStack("CLAY_ELECTRIC_STONE_CRUSHER",
-                ClayTechItems.CLAY_ELECTRIC_STONE_CRUSHER);
-        SlimefunItemStack experimenttablebasic = new SlimefunItemStack("CLAY_EXPERIMENT_TABLE_BASIC",
-                ClayTechItems.CLAY_EXPERIMENT_TABLE_NORMAL);
-        SlimefunItemStack rocketassemblingmachine = new SlimefunItemStack("CLAY_ROCKET_ASSEMBLING_MACHINE",
-                ClayTechItems.CLAY_ROCKET_ASSEMBLING_MACHINE);
-        SlimefunItemStack rocketfuelgenerator = new SlimefunItemStack("CLAY_ROCKET_FUEL_GENERATOR",
-                ClayTechItems.CLAY_ROCKET_FUEL_GENERATOR);
-        SlimefunItemStack rocketfuelinjector = new SlimefunItemStack("CLAY_ROCKET_FUEL_INJECTOR",
-                ClayTechItems.CLAY_ROCKET_FUEL_INJECTOR);
-        SlimefunItemStack spacesuitoxygeninjector = new SlimefunItemStack("CLAY_SPACESUIT_OXYGEN_INJECTOR",
-                ClayTechItems.CLAY_SPACESUIT_OXYGEN_INJECTOR);
-        SlimefunItemStack cobblestonegenerator = new SlimefunItemStack("CLAY_COBBLESTONE_GENERATOR",
-                ClayTechItems.CLAY_COBBLESTONE_GENERATOR);
-        SlimefunItemStack electricwaterpump = new SlimefunItemStack("CLAY_ELECTRIC_WATER_PUMP",
-                ClayTechItems.CLAY_ELECTRIC_WATER_PUMP);
-
-        new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(this);
-        new ElectricStoneCrusher(ClayTechItems.C_MACHINES, electricstonecrusher, "CLAY_ELECTRIC_STONE_CRUSHER",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayStoneCrusher).register(this);
-        new FoodCauldron(ClayTechItems.C_MACHINES, foodcauldron, "CLAY_FOOD_CAULDRON",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayFoodCauldron).register(this);
-        new FoodChalkingMachine(ClayTechItems.C_MACHINES, chalkingmachine, "CLAY_FOOD_CHALKING_MACHINE",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayChalkingMachine).register(this);
-        new ElementExtracter(ClayTechItems.C_MACHINES, elementextracter, "CLAY_ELEMENT_EXTRACTER",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayElementExtracter).register(this);
-        new ExperimentTableNormal(ClayTechItems.C_MACHINES, experimenttablebasic, "CLAY_EXPERIMENT_TABLE_BASIC",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayExperimentTableBasic).register(this);
-        new RocketAssemblingMachine(ClayTechItems.C_MACHINES, rocketassemblingmachine, "CLAY_ROCKET_ASSEMBLING_MACHINE",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketAssemblingMachine).register(this);
-        new RocketFuelGenerator(ClayTechItems.C_MACHINES, rocketfuelgenerator, "CLAY_ROCKET_FUEL_GENERATOR",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelGenerator).register(this);
-        new RocketFuelInjector(ClayTechItems.C_MACHINES, rocketfuelinjector, "CLAY_ROCKET_FUEL_INJECTOR",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelInjector).register(this);
-        new SpaceSuitOxygenInjector(ClayTechItems.C_MACHINES, spacesuitoxygeninjector, "CLAY_SPACESUIT_OXYGEN_INJECTOR",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClaySpaceSuitOxygenInjector).register(this);
-        new CobbleStoneGenerator(ClayTechItems.C_MACHINES, cobblestonegenerator, "CLAY_COBBLESTONE_GENERATOR",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayCobbleStoneGenerator).register(this);
-        new ElectricWaterPump(ClayTechItems.C_MACHINES, electricwaterpump, "CLAY_ELECTRIC_WATER_PUMP",
-                RecipeType.ENHANCED_CRAFTING_TABLE, ClayElectricWaterPump).register(this);
-    }
 
     @Override
     public JavaPlugin getJavaPlugin() {

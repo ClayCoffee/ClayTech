@@ -342,6 +342,20 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &716 J/s"
+  CLAY_ELECTRIC_COPIER: "&e電力復印機"
+  CLAY_ELECTRIC_COPIER_LORE:
+    - ""
+    - "&f能夠復印書本"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &740 J/s"
+  COPYING_MODULE: "&b復印模塊"
+  COPYING_MODULE_LORE:
+    - "&6用來復印書本的模塊."
+  INK_MODULE: "&b墨水模塊"
+  INK_MODULE_LORE:
+    - "&6儲存著墨水."
   HIGHSPEED_RAILWAY: "&b高速鐵路"
   HIGHSPEED_RAILWAY_LORE:
     - "&6在這種鐵路上行駛的礦車"
@@ -586,6 +600,7 @@ Researches:
   CLAYTECH_FISH_I: "魚類"
   CLAYTECH_COBBLESTONE_GENERATOR: "圓石制造機"
   CLAYTECH_ELECTRIC_WATER_PUMP: "電動水泵"
+  CLAYTECH_COPIER: "復印機"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"
@@ -614,6 +629,7 @@ Machines:
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&b宇航服氧氣註入器"
   CLAY_COBBLESTONE_GENERATOR: "&b圓石制造機"
   CLAY_ELECTRIC_WATER_PUMP: "&b電動水泵"
+  CLAY_ELECTRIC_COPIER: "&e電力復印機"
   ROCKET_LAUNCHER: "&9火箭發射器"
   DISTANCE_TO_PLANET: "&9距離當前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到達需要燃料 &6%fuel% &9點"

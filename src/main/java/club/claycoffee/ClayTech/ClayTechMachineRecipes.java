@@ -12,7 +12,9 @@ public class ClayTechMachineRecipes {
             new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), ClayTechItems.MAGIC_CLAY,
             new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.END_CRYSTAL),
             new ItemStack(Material.INK_SAC)};
-    public final static ItemStack[] BLIND_SWORD = {ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE,
+    public final static ItemStack[] BLIND_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? new ItemStack[]{ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE,
+            ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, new ItemStack(Material.NETHERITE_SWORD),
+            ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE} : new ItemStack[]{ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE,
             ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, new ItemStack(Material.DIAMOND_SWORD),
             ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE, ClayTechItems.BLIND_CORE};
     public final static ItemStack[] POISON_EYE = {new ItemStack(Material.SPIDER_EYE),
@@ -218,6 +220,9 @@ public class ClayTechMachineRecipes {
             SlimefunItems.REINFORCED_ALLOY_INGOT, ClayTechItems.SPACESUIT_OXYGEN_TANK,
             ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT,
             ClayTechItems.SPACESUIT_OXYGEN_TANK, ClayTechItems.KREEP_INGOT};
+    public final static ItemStack[] INK_MODULE = {new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.INK_SAC), new ItemStack(Material.INK_SAC), new ItemStack(Material.WRITABLE_BOOK), new ItemStack(Material.INK_SAC)};
+    public final static ItemStack[] COPYING_MODULE = {new ItemStack(Material.REDSTONE_BLOCK), new ItemStack(Material.REDSTONE_BLOCK), new ItemStack(Material.REDSTONE_BLOCK), SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.BLISTERING_INGOT_3, SlimefunItems.ELECTRIC_MOTOR, ClayTechItems.BLISTERING_CORE, SlimefunItems.ALUMINUM_BRONZE_INGOT, ClayTechItems.BLISTERING_CORE};
+
     public final static ItemStack[] COPPER_DUST_O = {null, null, null, null, ClayTechItems.COPPER_ORE, null, null,
             null, null};
     ;

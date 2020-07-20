@@ -2,7 +2,7 @@ package club.claycoffee.ClayTech.api;
 
 public enum ClayTechBranch {
 
-    DEVELOPMENT("dev"), STABLE("stable");
+    DEVELOPMENT("dev"), STABLE("stable"), ALL("all");
 
     public final String name;
 

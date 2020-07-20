@@ -37,8 +37,7 @@ public class ClayTechItems {
     public static final ItemStack ARTIFICIAL_ENCHANTED_GOLDEN_APPLE = Utils.newItemD(Material.ENCHANTED_GOLDEN_APPLE,
             Lang.readItemText("ARTIFICIAL_ENCHANTED_GOLDEN_APPLE"));
     public static final ItemStack BLIND_CORE = Utils.newItemD(Material.COAL, Lang.readItemText("BLIND_CORE"));
-    public static final ItemStack BLIND_SWORD = Utils.setLore(
-            Utils.newItemD(Material.DIAMOND_SWORD, Lang.readItemText("BLIND_SWORD")), Lang.readItemLore("BLIND_SWORD"));
+    public static final ItemStack BLIND_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Utils.setLore(Utils.newItemD(Material.NETHERITE_SWORD, Lang.readItemText("BLIND_SWORD")), Lang.readItemLore("BLIND_SWORD")) : Utils.setLore(Utils.newItemD(Material.DIAMOND_SWORD, Lang.readItemText("BLIND_SWORD")), Lang.readItemLore("BLIND_SWORD"));
     public static final ItemStack CONFUSION_CORE = Utils.newItemD(Material.WITHER_SKELETON_SKULL,
             Lang.readItemText("CONFUSION_CORE"));
     public static final ItemStack BLACK_ROCK_BLOCK = Utils.newItemD(Material.OBSIDIAN,
@@ -217,6 +216,11 @@ public class ClayTechItems {
             Utils.newItemD(Material.TROPICAL_FISH, Lang.readItemText("TUNA_FISH")), Lang.readItemLore("TUNA_FISH"));
     public static final ItemStack GREEN_GRASS = Utils.setLore(
             Utils.newItemD(Material.GRASS, Lang.readItemText("GREEN_GRASS")), Lang.readItemLore("GREEN_GRASS"));
+    public static final ItemStack INK_MODULE = Utils.setLore(
+            Utils.newItemD(Material.INK_SAC, Lang.readItemText("INK_MODULE")), Lang.readItemLore("INK_MODULE"));
+    public static final ItemStack COPYING_MODULE = Utils.setLore(
+            Utils.newItemD(Material.DIAMOND, Lang.readItemText("COPYING_MODULE")), Lang.readItemLore("COPYING_MODULE"));
+    // 头颅
     public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
             SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),
             Lang.readItemText("CLAY_FUEL"));
@@ -224,7 +228,6 @@ public class ClayTechItems {
             Utils.setDisplayName(SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),
                     Lang.readItemText("MIXED_ROCKET_FUEL")),
             Lang.readItemLore("MIXED_ROCKET_FUEL"));
-    // 头颅
     public static final ItemStack CLAYCOFFEE_HEAD = Utils.setDisplayName(SkullItem.fromURL(
             "http://textures.minecraft.net/texture/58c55ba01ccc7e79b5495e5c4e00080ff6c92a832b2905fed724f2f68a3bb94c"),
             Lang.readItemText("AUTHOR_HEAD"));
@@ -384,6 +387,14 @@ public class ClayTechItems {
                     Utils.newItemD(Material.DISPENSER, Lang.readItemText("CLAY_ELECTRIC_WATER_PUMP")), Utils
                             .replaceList(
                                     Utils.replaceList(Lang.readItemLore("CLAY_ELECTRIC_WATER_PUMP"), "%TIER%",
+                                            LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+                                                    .replaceAll("&", "§")),
+                                    "%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+    public static final ItemStack CLAY_ELECTRIC_COPIER = Utils
+            .setLore(
+                    Utils.newItemD(Material.IRON_BLOCK, Lang.readItemText("CLAY_ELECTRIC_COPIER")), Utils
+                            .replaceList(
+                                    Utils.replaceList(Lang.readItemLore("CLAY_ELECTRIC_COPIER"), "%TIER%",
                                             LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
                                                     .replaceAll("&", "§")),
                                     "%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));

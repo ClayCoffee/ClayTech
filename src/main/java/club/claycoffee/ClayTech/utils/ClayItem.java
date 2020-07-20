@@ -40,7 +40,7 @@ public class ClayItem {
             int i = 0;
             for (String each : Lore) {
                 if (each.startsWith(Lang.readGeneralText("Durability"))) {
-                    each = each.replace("" + getDurability(item), "" + durability);
+                    each = Lang.readGeneralText("Durability") + ": §6" + durability;
                     Lore.set(i, each);
                     break;
                 }
