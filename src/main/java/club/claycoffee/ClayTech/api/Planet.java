@@ -149,7 +149,11 @@ public class Planet {
 
             return;
         }
-        newWorld.createWorld();
+        try {
+            newWorld.createWorld();
+        }
+        catch(Exception e) {}
+
 
         new BukkitRunnable() {
 

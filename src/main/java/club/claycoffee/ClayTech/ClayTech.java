@@ -350,6 +350,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onDisable() {
+
     }
 
     private String languageCodeToLanguage(String code) {
@@ -431,5 +432,4 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         }
         return Bukkit.getWorld(getOverworld()).getGenerator();
     }
-
 }

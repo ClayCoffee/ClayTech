@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class ANewContainer extends AContainer implements InventoryBlock, EnergyNetComponent {
+    protected Map<Block, Integer> progress = new HashMap<Block, Integer>();
+    protected Map<Block, MachineRecipe> processing = new HashMap<Block, MachineRecipe>();
 
     public ANewContainer(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                          ItemStack[] recipe) {

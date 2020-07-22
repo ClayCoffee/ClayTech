@@ -40,9 +40,9 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
             Lang.readMachinesText("SPLIT_LINE"));
     private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    public static Map<Block, MachineRecipe> processing = new HashMap<>();
-    public static Map<Block, Integer> progress = new HashMap<>();
-    protected final List<MachineRecipe> recipes = new ArrayList<>();
+    public static Map<Block, MachineRecipe> processing = new HashMap<Block, MachineRecipe>();
+    public static Map<Block, Integer> progress = new HashMap<Block, Integer>();
+    protected final List<MachineRecipe> recipes = new ArrayList<MachineRecipe>();
 
     public CobbleStoneGenerator(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                                 ItemStack[] recipe) {
