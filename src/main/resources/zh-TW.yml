@@ -563,12 +563,12 @@ Items:
     - "&8\u21E8 &e\u26A1 &726 J/s"
   CLAY_WITHER_KILLER: "&e雕靈殺戮機"
   CLAY_WITHER_KILLER_LORE:
-      - ""
-      - "&3可以殺死雕靈"
-      - ""
-      - "%TIER%"
-      - "%POWER%"
-      - "&8\u21E8 &e\u26A1 &75120 J/個雕靈"
+    - ""
+    - "&3可以殺死雕靈"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &75120 J/個雕靈"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"

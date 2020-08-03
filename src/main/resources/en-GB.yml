@@ -553,12 +553,12 @@ Items:
     - "&8\u21E8 &e\u26A1 &726 J/s"
   CLAY_WITHER_KILLER: "&eWither Killer"
   CLAY_WITHER_KILLER_LORE:
-      - ""
-      - "&3Can kill withers automatically"
-      - ""
-      - "%TIER%"
-      - "%POWER%"
-      - "&8\u21E8 &e\u26A1 &75120 J per wither"
+    - ""
+    - "&3Can kill withers automatically"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &75120 J per wither"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
