@@ -151,8 +151,8 @@ public class Planet {
         }
         try {
             newWorld.createWorld();
+        } catch (Exception e) {
         }
-        catch(Exception e) {}
 
 
         new BukkitRunnable() {

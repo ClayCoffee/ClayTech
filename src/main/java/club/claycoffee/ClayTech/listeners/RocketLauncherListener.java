@@ -106,8 +106,7 @@ public class RocketLauncherListener implements Listener {
                                                     ItemStack thandItem = p.getInventory().getItemInMainHand();
                                                     if (ClayTechManager.isRocket(thandItem)) {
                                                         if (time >= 10) {
-                                                            BlockStorage._integrated_removeBlockInfo(b.getLocation(),
-                                                                    true);
+                                                            BlockStorage.clearBlockInfo(b.getLocation(), true);
                                                             b.setType(Material.AIR);
                                                             p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
                                                             DataYML planetsData = ClayTech.getPlanetDataYML();

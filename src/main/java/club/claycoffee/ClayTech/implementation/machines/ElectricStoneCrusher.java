@@ -37,7 +37,7 @@ public class ElectricStoneCrusher extends ANewContainer {
 
     @Override
     public void registerDefaultRecipes() {
-        this.registerRecipe(5, new ItemStack[]{new ItemStack(Material.COBBLESTONE)},
+        this.registerRecipe(2, new ItemStack[]{new ItemStack(Material.COBBLESTONE)},
                 new ItemStack[]{new ItemStack(Material.GRAVEL)});
     }
 

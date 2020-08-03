@@ -34,6 +34,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
 
         registerBlockHandler(id, (p, b, tool, reason) -> {
             BlockMenu inv = BlockStorage.getInventory(b);
+
             if (inv != null) {
                 for (int slot : getInputSlots()) {
                     if (inv.getItemInSlot(slot) != null) {
@@ -55,7 +56,44 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
             return true;
         });
 
-        this.registerDefaultRecipes();
+        registerDefaultRecipes();
+    }
+
+    public ANewContainer(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+        super(category, item, recipeType, recipe);
+
+        createPreset(this, getInventoryTitle(), this::constructMenu);
+
+        registerBlockHandler(id, (p, b, tool, reason) -> {
+            BlockMenu inv = BlockStorage.getInventory(b);
+
+            if (inv != null) {
+                for (int slot : getInputSlots()) {
+                    if (inv.getItemInSlot(slot) != null) {
+                        b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
+                        inv.replaceExistingItem(slot, null);
+                    }
+                }
+
+                for (int slot : getOutputSlots()) {
+                    if (inv.getItemInSlot(slot) != null) {
+                        b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
+                        inv.replaceExistingItem(slot, null);
+                    }
+                }
+            }
+
+            progress.remove(b);
+            processing.remove(b);
+            return true;
+        });
+
+        registerDefaultRecipes();
+    }
+
+    public ANewContainer(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, ItemStack recipeOutput) {
+        this(category, item, recipeType, recipe);
+        this.recipeOutput = recipeOutput;
     }
 
     protected void tick(Block b) {
@@ -118,5 +156,18 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                 progress.put(b, r.getTicks());
             }
         }
+    }
+
+    public void registerRecipe(MachineRecipe recipe) {
+        recipe.setTicks(recipe.getTicks() / getSpeed());
+        recipes.add(recipe);
+    }
+
+    public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
+        registerRecipe(new MachineRecipe(seconds, input, output));
+    }
+
+    public void registerRecipe(int seconds, ItemStack input, ItemStack output) {
+        registerRecipe(new MachineRecipe(seconds, new ItemStack[]{input}, new ItemStack[]{output}));
     }
 }
