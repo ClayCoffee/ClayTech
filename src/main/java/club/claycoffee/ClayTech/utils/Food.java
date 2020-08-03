@@ -1,9 +1,9 @@
 package club.claycoffee.ClayTech.utils;
 
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.api.listeners.PlayerDrinkEvent;
-import club.claycoffee.ClayTech.api.listeners.PlayerEatEvent;
-import club.claycoffee.ClayTech.api.listeners.PlayerWashEvent;
+import club.claycoffee.ClayTech.api.events.PlayerDrinkEvent;
+import club.claycoffee.ClayTech.api.events.PlayerEatEvent;
+import club.claycoffee.ClayTech.api.events.PlayerWashEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;

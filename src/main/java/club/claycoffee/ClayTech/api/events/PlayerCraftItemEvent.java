@@ -1,4 +1,4 @@
-package club.claycoffee.ClayTech.api.listeners;
+package club.claycoffee.ClayTech.api.events;
 
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;
@@ -6,17 +6,17 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player extracted a item. 当一个玩家使用元素提取器提取元素成功的时候触发.
+ * Called when a player crafted a item. 当一个玩家使用粘土融合器合成物品成功的时候触发.
  */
-public class PlayerExtractElementEvent extends Event {
+public class PlayerCraftItemEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
     private Block machine;
     private ItemStack[] Recipe;
-    private ItemStack Element;
+    private ItemStack CraftedItem;
 
-    public PlayerExtractElementEvent(Block machine, ItemStack[] Recipe, ItemStack Element) {
+    public PlayerCraftItemEvent(Block machine, ItemStack[] Recipe, ItemStack CraftedItem) {
         this.Recipe = Recipe;
-        this.Element = Element;
+        this.CraftedItem = CraftedItem;
         this.machine = machine;
     }
 
@@ -32,14 +32,14 @@ public class PlayerExtractElementEvent extends Event {
     }
 
     /**
-     * @return the element just extracted.刚刚提取成功的元素
+     * @return the item just crafted.刚刚被合成的物品
      */
-    public ItemStack getElement() {
-        return Element;
+    public ItemStack getCraftedItem() {
+        return CraftedItem;
     }
 
     /**
-     * @return the machine extracted the element.提取元素的机器
+     * @return the machine crafted the item.合成物品的机器
      */
     public Block getMachine() {
         return machine;
@@ -49,4 +49,5 @@ public class PlayerExtractElementEvent extends Event {
     public HandlerList getHandlers() {
         return handlers;
     }
+
 }

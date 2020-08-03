@@ -34,6 +34,8 @@ public class MachineMakingBasic {
 
         copier.addItems(new SlimefunItem[]{SlimefunItem.getByItem(ClayTechItems.COPYING_MODULE), SlimefunItem.getByItem(ClayTechItems.INK_MODULE), SlimefunItem.getByItem(ClayTechItems.CLAY_ELECTRIC_COPIER)});
         copier.register();
+
+
     }
 
 }

@@ -1,7 +1,7 @@
 package club.claycoffee.ClayTech.listeners;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.api.listeners.PlayerUseItemEvent;
+import club.claycoffee.ClayTech.api.events.PlayerUseItemEvent;
 import club.claycoffee.ClayTech.utils.ClayItem;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;

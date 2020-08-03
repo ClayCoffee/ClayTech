@@ -1,4 +1,4 @@
-package club.claycoffee.ClayTech.api.listeners;
+package club.claycoffee.ClayTech.api.events;
 
 import club.claycoffee.ClayTech.api.Planet;
 import org.bukkit.entity.Player;

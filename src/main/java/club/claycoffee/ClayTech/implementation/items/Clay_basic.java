@@ -55,5 +55,10 @@ public class Clay_basic {
                 Lang.readResearchesText("CLAYTECH_ELECTRIC_WATER_PUMP"), 65);
         basic5.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_ELECTRIC_WATER_PUMP));
         basic5.register();
+
+        Research basic6 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_WITHER_KILLER"), 9935,
+                Lang.readResearchesText("CLAYTECH_WITHER_KILLER"), 65);
+        basic6.addItems(SlimefunItem.getByItem(ClayTechItems.CLAY_WITHER_KILLER));
+        basic6.register();
     }
 }

@@ -5,7 +5,7 @@ import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.api.ClayTechManager;
 import club.claycoffee.ClayTech.api.Planet;
-import club.claycoffee.ClayTech.api.listeners.RocketLandEvent;
+import club.claycoffee.ClayTech.api.events.RocketLandEvent;
 import club.claycoffee.ClayTech.utils.*;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Bukkit;

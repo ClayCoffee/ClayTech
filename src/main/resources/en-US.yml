@@ -551,6 +551,14 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &726 J/s"
+  CLAY_WITHER_KILLER: "&eWither Killer"
+  CLAY_WITHER_KILLER_LORE:
+      - ""
+      - "&3Can kill withers automatically"
+      - ""
+      - "%TIER%"
+      - "%POWER%"
+      - "&8\u21E8 &e\u26A1 &75120 J per wither"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -591,6 +599,7 @@ Researches:
   CLAYTECH_COBBLESTONE_GENERATOR: "Cobblestone Generator"
   CLAYTECH_ELECTRIC_WATER_PUMP: "Electric Water Pump"
   CLAYTECH_COPIER: "Electric Copier"
+  CLAYTECH_WITHER_KILLER: "Wither Killer"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
@@ -620,6 +629,7 @@ Machines:
   CLAY_COBBLESTONE_GENERATOR: "&bCobblestone Generator"
   CLAY_ELECTRIC_WATER_PUMP: "&bElectric Water Pump"
   CLAY_ELECTRIC_COPIER: "&eClay Electric Copier"
+  CLAY_WITHER_KILLER: "&eWither Killer"
   ROCKET_LAUNCHER: "&9Rocket Launcher"
   DISTANCE_TO_PLANET: "&6%ly% &9light years to the planet you on"
   FUEL_TO_PLANET: "&9Require &6%fuel% &9points of fuel to reach"

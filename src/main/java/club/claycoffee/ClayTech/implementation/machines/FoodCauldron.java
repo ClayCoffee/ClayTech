@@ -3,7 +3,7 @@ package club.claycoffee.ClayTech.implementation.machines;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
 import club.claycoffee.ClayTech.ClayTechMachineRecipes;
-import club.claycoffee.ClayTech.api.listeners.PlayerCookItemEvent;
+import club.claycoffee.ClayTech.api.events.PlayerCookItemEvent;
 import club.claycoffee.ClayTech.implementation.abstractMachines.ACraftingTable;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;

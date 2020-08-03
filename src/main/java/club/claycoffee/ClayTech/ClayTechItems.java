@@ -398,6 +398,15 @@ public class ClayTechItems {
                                             LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
                                                     .replaceAll("&", "§")),
                                     "%POWER%", LoreBuilder.powerBuffer(256).replaceAll("&", "§")));
+    public static final ItemStack CLAY_WITHER_KILLER = Utils
+            .setLore(
+                    Utils.newItemD(Material.OBSIDIAN, Lang.readItemText("CLAY_WITHER_KILLER")), Utils
+                            .replaceList(
+                                    Utils.replaceList(Lang.readItemLore("CLAY_WITHER_KILLER"), "%TIER%",
+                                            LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE)
+                                                    .replaceAll("&", "§")),
+                                    "%POWER%", LoreBuilder.powerBuffer(5120).replaceAll("&", "§")));
+
     private static final NamespacedKey N_BASIC = new NamespacedKey(ClayTech.plugin, "claycategory");
     // 分类
     public static final LockedCategory C_BASICS = new LockedCategory(N_BASIC,

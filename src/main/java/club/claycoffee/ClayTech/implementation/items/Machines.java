@@ -71,6 +71,7 @@ public class Machines {
                 SlimefunItems.ELECTRIC_MOTOR, ClayTechItems.INK_MODULE,
                 SlimefunItems.PROGRAMMABLE_ANDROID_MINER, ClayTechItems.INK_MODULE,
                 SlimefunItems.SMALL_CAPACITOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD, SlimefunItems.SMALL_CAPACITOR};
+        ItemStack[] ClayWitherKiller = {ClayTechItems.BLISTERING_CORE, SlimefunItems.PROGRAMMABLE_ANDROID_2_BUTCHER, ClayTechItems.BLISTERING_CORE, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, SlimefunItems.WITHER_ASSEMBLER, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN, SlimefunItems.CARBONADO_EDGED_CAPACITOR, ClayTechItems.TEMPERATURE_RESISTANCE_OBSIDIAN};
 
         // 机器
         SlimefunItemStack craftingtable = new SlimefunItemStack("CLAY_CRAFTING_TABLE",
@@ -98,6 +99,8 @@ public class Machines {
                 ClayTechItems.CLAY_ELECTRIC_WATER_PUMP);
         SlimefunItemStack electriccopier = new SlimefunItemStack("CLAY_ELECTRIC_COPIER",
                 ClayTechItems.CLAY_ELECTRIC_COPIER);
+        SlimefunItemStack witherkiller = new SlimefunItemStack("CLAY_WITHER_KILLER",
+                ClayTechItems.CLAY_WITHER_KILLER);
 
         new CraftingTable(ClayTechItems.C_MACHINES, craftingtable, "CLAY_CRAFTING_TABLE",
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayCrafingTable).register(ClayTech.getInstance());
@@ -125,5 +128,7 @@ public class Machines {
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayElectricWaterPump).register(ClayTech.getInstance());
         new ClayElectricCopier(ClayTechItems.C_MACHINES, electriccopier, "CLAY_ELECTRIC_COPIER",
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayElectricCopier).register(ClayTech.getInstance());
+        new WitherKiller(ClayTechItems.C_MACHINES, witherkiller, "CLAY_WITHER_KILLER",
+                RecipeType.ENHANCED_CRAFTING_TABLE, ClayWitherKiller).register(ClayTech.getInstance());
     }
 }

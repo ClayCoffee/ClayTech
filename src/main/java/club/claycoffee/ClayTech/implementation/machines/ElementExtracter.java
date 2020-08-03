@@ -2,7 +2,7 @@ package club.claycoffee.ClayTech.implementation.machines;
 
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.api.listeners.PlayerExtractElementEvent;
+import club.claycoffee.ClayTech.api.events.PlayerExtractElementEvent;
 import club.claycoffee.ClayTech.implementation.abstractMachines.AExtracter;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;

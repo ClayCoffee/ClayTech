@@ -1,4 +1,4 @@
-package club.claycoffee.ClayTech.api.listeners;
+package club.claycoffee.ClayTech.api.events;
 
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;

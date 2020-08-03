@@ -534,6 +534,14 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &726 J/s"
+  CLAY_WITHER_KILLER: "&e沙雕机"
+  CLAY_WITHER_KILLER_LORE:
+    - ""
+    - "&3可以杀死凋灵"
+    - ""
+    - "%TIER%"
+    - "%POWER%"
+    - "&8\u21E8 &e\u26A1 &75120 J/个凋灵"
   KREEP_ROCK: "&9克里普岩"
   KREEP_ROCK_LORE:
     - "&3一种在月球上极其稀有的岩石"
@@ -601,6 +609,7 @@ Researches:
   CLAYTECH_COBBLESTONE_GENERATOR: "圆石制造机"
   CLAYTECH_ELECTRIC_WATER_PUMP: "电动水泵"
   CLAYTECH_COPIER: "复印机"
+  CLAYTECH_WITHER_KILLER: "沙雕机"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"
@@ -630,6 +639,7 @@ Machines:
   CLAY_COBBLESTONE_GENERATOR: "&b圆石制造机"
   CLAY_ELECTRIC_WATER_PUMP: "&b电动水泵"
   CLAY_ELECTRIC_COPIER: "&e电力复印机"
+  CLAY_WITHER_KILLER: "&e沙雕机"
   ROCKET_LAUNCHER: "&9火箭发射器"
   DISTANCE_TO_PLANET: "&9距离当前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到达需要燃料 &6%fuel% &9点"

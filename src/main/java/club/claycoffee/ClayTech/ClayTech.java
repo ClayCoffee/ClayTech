@@ -98,7 +98,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         plugin = this;
-        // 当前研究ID: 9934
+        // 当前研究ID: 9935
         this.saveDefaultConfig();
         config = this.getConfig();
         locale = config.getString("Locale");

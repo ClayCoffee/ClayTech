@@ -1,4 +1,4 @@
-package club.claycoffee.ClayTech.api.listeners;
+package club.claycoffee.ClayTech.api.events;
 
 import org.bukkit.block.Block;
 import org.bukkit.event.Event;
@@ -6,15 +6,15 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Called when a player crafted a item. 当一个玩家使用粘土融合器合成物品成功的时候触发.
+ * Called when a player cooked a item. 当一个玩家使用锅煮物品成功的时候触发.
  */
-public class PlayerCraftItemEvent extends Event {
+public class PlayerCookItemEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Block machine;
     private ItemStack[] Recipe;
     private ItemStack CraftedItem;
+    private Block machine;
 
-    public PlayerCraftItemEvent(Block machine, ItemStack[] Recipe, ItemStack CraftedItem) {
+    public PlayerCookItemEvent(Block machine, ItemStack[] Recipe, ItemStack CraftedItem) {
         this.Recipe = Recipe;
         this.CraftedItem = CraftedItem;
         this.machine = machine;
@@ -39,7 +39,7 @@ public class PlayerCraftItemEvent extends Event {
     }
 
     /**
-     * @return the machine crafted the item.合成物品的机器
+     * @return the machine crafted the item.合成物品的机器.
      */
     public Block getMachine() {
         return machine;

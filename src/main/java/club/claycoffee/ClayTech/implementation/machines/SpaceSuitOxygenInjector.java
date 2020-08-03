@@ -3,7 +3,7 @@ package club.claycoffee.ClayTech.implementation.machines;
 import club.claycoffee.ClayTech.ClayTech;
 import club.claycoffee.ClayTech.ClayTechData;
 import club.claycoffee.ClayTech.api.ClayTechManager;
-import club.claycoffee.ClayTech.api.listeners.InjectOxygenEvent;
+import club.claycoffee.ClayTech.api.events.InjectOxygenEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.RocketUtils;
 import club.claycoffee.ClayTech.utils.Utils;

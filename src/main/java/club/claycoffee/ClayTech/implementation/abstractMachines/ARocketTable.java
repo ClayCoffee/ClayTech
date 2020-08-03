@@ -1,7 +1,7 @@
 package club.claycoffee.ClayTech.implementation.abstractMachines;
 
 import club.claycoffee.ClayTech.ClayTech;
-import club.claycoffee.ClayTech.api.listeners.PlayerAssembleEvent;
+import club.claycoffee.ClayTech.api.events.PlayerAssembleEvent;
 import club.claycoffee.ClayTech.utils.Lang;
 import club.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
