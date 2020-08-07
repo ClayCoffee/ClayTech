@@ -45,68 +45,62 @@ public class Rockets {
 
         Slimefunutils.registerItem(ClayTechItems.C_MACHINES, "ROCKET_LAUNCHER", ClayTechItems.ROCKET_LAUNCHER,
                 "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, rocketlauncher, false,
-                new ItemHandler[]{new BlockPlaceHandler() {
+                new ItemHandler[]{new BlockPlaceHandler(false) {
                     @Override
-                    public boolean onBlockPlace(Player p, BlockPlaceEvent e, ItemStack item) {
-                        BlockStorage.addBlockInfo(e.getBlockPlaced(), "owner", e.getPlayer().getName(), true);
-                        return true;
+                    public void onPlayerPlace(BlockPlaceEvent blockPlaceEvent) {
+                        BlockStorage.addBlockInfo(blockPlaceEvent.getBlock(), "owner", blockPlaceEvent.getPlayer().getName(), true);
                     }
 
-                }, new BlockUseHandler() {
-
-                    @Override
-                    public void onRightClick(PlayerRightClickEvent ev) {
-                        PlayerInteractEvent e = ev.getInteractEvent();
-                        if (e.hasBlock() && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                            Block b = e.getClickedBlock();
-                            if (BlockStorage.checkID(b) != null) {
-                                if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
-                                    if (e.hasItem()) {
-                                        if (!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
-                                            return;
-                                        }
-                                    }
-                                    if (!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
+                }, (BlockUseHandler) ev -> {
+                    PlayerInteractEvent e = ev.getInteractEvent();
+                    if (e.hasBlock() && e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                        Block b = e.getClickedBlock();
+                        if (BlockStorage.checkID(b) != null) {
+                            if (BlockStorage.checkID(b).equalsIgnoreCase("ROCKET_LAUNCHER")) {
+                                if (e.hasItem()) {
+                                    if (!Slimefun.hasUnlocked(e.getPlayer(), e.getItem(), true)) {
                                         return;
                                     }
-                                    Map<String, String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
-                                    String ownerName = jbj.get("owner");
-                                    if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
-                                        Planet current = PlanetUtils.getPlanet(b.getWorld());
-                                        if (current == null) {
-                                            e.getPlayer().sendMessage(Lang.readGeneralText("NotAtAPlanet"));
-                                            return;
-                                        }
-                                        if (Utils.getMetadata(b, "currentPage") != null) {
-                                            currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
-                                        }
-                                        Inventory Preset = Bukkit.createInventory(null, 54,
-                                                Lang.readMachinesText("ROCKET_LAUNCHER"));
-                                        if (!ClayTechData.RunningLaunchersG.containsKey(Preset)) {
-                                            ClayTechData.RunningLaunchersG.put(Preset, b);
-                                        }
-                                        Preset.setItem(5, BORDER_ITEM);
-                                        for (int eachID : BORDER) {
-                                            Preset.setItem(eachID, BORDER_ITEM);
-                                        }
-                                        for (int eachID : BORDER_2) {
-                                            Preset.setItem(eachID, OTHERBORDER_ITEM);
-                                        }
-                                        Preset.setItem(5, BORDER_ITEM);
-
-                                        Preset = PlanetUtils.renderLauncherMenu(current, Preset, currentPage);
-
-                                        e.getPlayer().openInventory(Preset);
-                                    } else {
-                                        e.getPlayer().sendMessage(Lang.readGeneralText("notOwner"));
-                                        e.setCancelled(true);
+                                }
+                                if (!Slimefun.hasUnlocked(e.getPlayer(), ClayTechItems.ROCKET_LAUNCHER, true)) {
+                                    return;
+                                }
+                                Map<String, String> jbj = StrUtils.parseJSON(BlockStorage.getBlockInfoAsJson(b));
+                                String ownerName = jbj.get("owner");
+                                if (ownerName.equalsIgnoreCase(e.getPlayer().getName())) {
+                                    Planet current = PlanetUtils.getPlanet(b.getWorld());
+                                    if (current == null) {
+                                        e.getPlayer().sendMessage(Lang.readGeneralText("NotAtAPlanet"));
                                         return;
                                     }
+                                    if (Utils.getMetadata(b, "currentPage") != null) {
+                                        currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
+                                    }
+                                    Inventory Preset = Bukkit.createInventory(null, 54,
+                                            Lang.readMachinesText("ROCKET_LAUNCHER"));
+                                    if (!ClayTechData.RunningLaunchersG.containsKey(Preset)) {
+                                        ClayTechData.RunningLaunchersG.put(Preset, b);
+                                    }
+                                    Preset.setItem(5, BORDER_ITEM);
+                                    for (int eachID : BORDER) {
+                                        Preset.setItem(eachID, BORDER_ITEM);
+                                    }
+                                    for (int eachID : BORDER_2) {
+                                        Preset.setItem(eachID, OTHERBORDER_ITEM);
+                                    }
+                                    Preset.setItem(5, BORDER_ITEM);
+
+                                    Preset = PlanetUtils.renderLauncherMenu(current, Preset, currentPage);
+
+                                    e.getPlayer().openInventory(Preset);
+                                } else {
+                                    e.getPlayer().sendMessage(Lang.readGeneralText("notOwner"));
+                                    e.setCancelled(true);
+                                    return;
                                 }
                             }
                         }
                     }
-
                 }});
 
         Research ms2 = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_UNIVERSE_MACHINE_2"), 9929,

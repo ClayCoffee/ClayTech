@@ -393,8 +393,7 @@ public class PlanetListener implements Listener {
                     e.setCancelled(true);
                     return;
                 }
-            }
-            else {
+            } else {
                 // 再否则，目标位置不在任何星球。
                 // 比如，月球传送到地狱。
                 if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
@@ -414,8 +413,7 @@ public class PlanetListener implements Listener {
                     return;
                 }
             }
-        }
-        else if(to != null){
+        } else if (to != null) {
             // 目标位置是一个星球，但出发位置不是任何一个星球。
             if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
                 inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
