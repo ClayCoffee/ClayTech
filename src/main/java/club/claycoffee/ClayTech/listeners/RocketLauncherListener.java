@@ -37,8 +37,8 @@ public class RocketLauncherListener implements Listener {
             Player p = (Player) e.getWhoClicked();
             if (e.getView().getTitle().equalsIgnoreCase(Lang.readMachinesText("ROCKET_LAUNCHER"))) {
                 e.setCancelled(true);
-                if (Utils.ExitsInList(e.getSlot(), planet)) {
-                    if (e.getInventory().getItem(e.getSlot()) != null) {
+                if (Utils.ExitsInList(e.getRawSlot(), planet)) {
+                    if (e.getInventory().getItem(e.getRawSlot()) != null) {
                         ItemStack handItem = p.getInventory().getItemInMainHand();
                         if (ClayTechManager.isRocket(handItem)) {
                             // 是火箭
@@ -48,7 +48,7 @@ public class RocketLauncherListener implements Listener {
                             if (Utils.getMetadata(b, "currentPage") != null) {
                                 currentPage = new Integer(Utils.getMetadata(b, "currentPage")).intValue();
                             }
-                            int index = (currentPage - 1) * 21 + (e.getSlot() - 18) - 1;
+                            int index = (currentPage - 1) * 21 + (e.getRawSlot() - 18) - 1;
                             Planet current = PlanetUtils.getPlanet(b.getWorld());
                             // 排列星球
                             List<Planet> pl = new ArrayList<Planet>();
@@ -195,7 +195,7 @@ public class RocketLauncherListener implements Listener {
                 Block b = ClayTechData.RunningLaunchersG.get(inv);
                 Planet current = PlanetUtils.getPlanet(b.getWorld());
                 int currentPage = 1;
-                if (e.getSlot() == 46) {
+                if (e.getRawSlot() == 46) {
                     // 上一页
                     if (b != null) {
                         if (Utils.getMetadata(b, "currentPage") != null) {
@@ -211,7 +211,7 @@ public class RocketLauncherListener implements Listener {
                         }
                     }
                 }
-                if (e.getSlot() == 52) {
+                if (e.getRawSlot() == 52) {
                     // 下一页
                     if (b != null) {
                         if (Utils.getMetadata(b, "currentPage") != null) {
