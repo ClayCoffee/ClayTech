@@ -396,12 +396,8 @@ public class PlanetListener implements Listener {
             } else {
                 // 再否则，目标位置不在任何星球。
                 // 比如，月球传送到地狱。
-                if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
-                    inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
-                }
                 boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-                if (!inRocket.equalsIgnoreCase("true")
-                        && !p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
+                if (!p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
                     if (ast) {
                         e.getPlayer().setMetadata("allowSpaceTeleport",
                                 new FixedMetadataValue(ClayTech.getInstance(), false));
@@ -415,12 +411,8 @@ public class PlanetListener implements Listener {
             }
         } else if (to != null) {
             // 目标位置是一个星球，但出发位置不是任何一个星球。
-            if (Utils.readPlayerMetadataString(e.getPlayer(), "inrocket") != null) {
-                inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
-            }
             boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-            if (!inRocket.equalsIgnoreCase("true") && p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())
-                    && !to.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
+            if (!to.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
                 if (ast) {
                     e.getPlayer().setMetadata("allowSpaceTeleport",
                             new FixedMetadataValue(ClayTech.getInstance(), false));
