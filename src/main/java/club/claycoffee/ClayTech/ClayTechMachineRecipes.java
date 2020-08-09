@@ -31,7 +31,7 @@ public class ClayTechMachineRecipes {
             new ItemStack(Material.PUFFERFISH), new ItemStack(Material.PUFFERFISH)};
     public final static ItemStack[] BLACK_ROCK_BLOCK = {new ItemStack(Material.OBSIDIAN),
             new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN),
-            ClayTechItems.MAGIC_CLAY, new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN),
+            new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN),
             new ItemStack(Material.OBSIDIAN), new ItemStack(Material.OBSIDIAN)};
     public final static ItemStack[] SLOWNESS_CORE = {ClayTechItems.BLACK_ROCK_BLOCK, ClayTechItems.BLACK_ROCK_BLOCK,
             ClayTechItems.BLACK_ROCK_BLOCK, ClayTechItems.BLACK_ROCK_BLOCK, ClayTechItems.MAGIC_CLAY,
