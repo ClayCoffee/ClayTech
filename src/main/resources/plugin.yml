@@ -16,3 +16,6 @@ permissions:
   claytech.checkupdate:
     description: 'check update'
     default: op
+  claytech.bypasstpcheck:
+    description: 'bypass planet tp check'
+    default: op

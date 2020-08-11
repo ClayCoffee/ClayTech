@@ -367,6 +367,8 @@ public class PlanetListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void PlayerTeleportEvent(PlayerTeleportEvent e) {
+        if(e.getPlayer().hasPermission("claytech.bypasstpcheck")) return;
+
         Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
         Planet to = PlanetUtils.getPlanet(e.getTo().getWorld());
         String inRocket = "false";
