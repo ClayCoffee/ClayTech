@@ -55,7 +55,9 @@ public class ClayTechItems {
             Lang.readItemText("ADVANCED_POISON_CORE"));
     public static final ItemStack FOUR_BOW = Utils.setLore(Utils.newItemD(Material.BOW, Lang.readItemText("FOUR_BOW")),
             Lang.readItemLore("FOUR_BOW"));
-    public static final ItemStack POISON_SWORD = Utils.setLore(
+    public static final ItemStack POISON_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Utils.setLore(
+            Utils.newItemD(Material.NETHERITE_SWORD, Lang.readItemText("POISON_SWORD")),
+            Lang.readItemLore("POISON_SWORD")) : Utils.setLore(
             Utils.newItemD(Material.DIAMOND_SWORD, Lang.readItemText("POISON_SWORD")),
             Lang.readItemLore("POISON_SWORD"));
     public static final ItemStack ANTI_SLOWNESS_BOOTS = Utils.setLore(

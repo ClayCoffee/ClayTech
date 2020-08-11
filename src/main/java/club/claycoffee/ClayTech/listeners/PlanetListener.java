@@ -357,7 +357,7 @@ public class PlanetListener implements Listener {
     public void EntityPotionEffectEvent(EntityPotionEffectEvent e) {
         if (e.getCause() == Cause.MILK && e.getEntity() instanceof Player) {
             Planet p = PlanetUtils.getPlanet(e.getEntity().getWorld());
-            if(p == null) return;
+            if (p == null) return;
             if (p.getGravity() != 1) {
                 e.setCancelled(true);
                 e.getEntity().sendMessage(Lang.readGeneralText("Cant_Drink_Milk"));
@@ -367,7 +367,7 @@ public class PlanetListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void PlayerTeleportEvent(PlayerTeleportEvent e) {
-        if(e.getPlayer().hasPermission("claytech.bypasstpcheck")) return;
+        if (e.getPlayer().hasPermission("claytech.bypasstpcheck")) return;
 
         Planet p = PlanetUtils.getPlanet(e.getPlayer().getWorld());
         Planet to = PlanetUtils.getPlanet(e.getTo().getWorld());
