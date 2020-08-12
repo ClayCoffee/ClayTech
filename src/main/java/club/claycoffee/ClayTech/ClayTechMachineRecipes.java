@@ -56,7 +56,10 @@ public class ClayTechMachineRecipes {
             ClayTechItems.ADVANCED_CONFUSION_CORE, new ItemStack(Material.BOW), ClayTechItems.ADVANCED_CONFUSION_CORE,
             ClayTechItems.ADVANCED_BLIND_CORE, ClayTechItems.ADVANCED_POISON_CORE,
             ClayTechItems.ADVANCED_SLOWNESS_CORE};
-    public final static ItemStack[] POISON_SWORD = {ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
+    public final static ItemStack[] POISON_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? new ItemStack[]{ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
+            ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, new ItemStack(Material.NETHERITE_SWORD),
+            ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
+            ClayTechItems.POISON_CORE} :  new ItemStack[]{ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, new ItemStack(Material.DIAMOND_SWORD),
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
             ClayTechItems.POISON_CORE};
