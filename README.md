@@ -9,13 +9,13 @@ Please notify: the Public License has been changed.
 请注意: 开源协议已被更改.  
 GPLv3 → AGPLv3  
 
-# Supported Languages
+# 支持语言 / Supported Languages
 * 简体中文 zh-CN
 * 繁體中文 zh-TW
 * English(UK) en-UK
 * English(US) en-US (default)
 
-# Supported Minecraft Server Version
+# 支持版本 / Supported Minecraft Server Version
 * Spigot / PaperSpigot 1.13.x
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
@@ -24,6 +24,11 @@ GPLv3 → AGPLv3
 # API
 Javadocs: https://claycoffee.github.io/ClayTechWebsite/javadocs/
 
-# Translate
+# 翻译 / Translate
 You can translate ClayTech here: [Click me](https://gitlocalize.com/repo/4241)  
 The default language file(en-US、en-GB) might have some grammar mistakes, I hope you can help me translate it.
+
+# 下载 / Download
+* Jenkins: [Click me](http://build.claycoffee.cn:8688/)  
+* Github Releases
+
