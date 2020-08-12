@@ -384,8 +384,7 @@ public class PlanetListener implements Listener {
                     inRocket = Utils.readPlayerMetadataString(e.getPlayer(), "inrocket");
                 }
                 boolean ast = Utils.readPlayerMetadataBoolean(e.getPlayer(), "allowSpaceTeleport");
-                if (!inRocket.equalsIgnoreCase("true")
-                        && !p.getPlanetWorldName().equalsIgnoreCase(ClayTech.getOverworld())) {
+                if (!inRocket.equalsIgnoreCase("true")) {
                     if (ast) {
                         e.getPlayer().setMetadata("allowSpaceTeleport",
                                 new FixedMetadataValue(ClayTech.getInstance(), false));
