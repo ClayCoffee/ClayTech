@@ -10,5 +10,5 @@ public class ClayTechData {
     public static Map<Inventory, Block> RunningLaunchersG = new HashMap<Inventory, Block>();
     public static Map<Inventory, Block> RunningInjectors = new HashMap<Inventory, Block>();
     public static Map<Inventory, Block> RunningInjectorsOxygen = new HashMap<Inventory, Block>();
-    public static String currentVersion = ""; // 1
+    public static String currentVersion = ""; // 12
 }
