@@ -20,6 +20,7 @@ import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.block.CauldronLevelChangeEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityPotionEffectEvent;
 import org.bukkit.event.entity.EntityPotionEffectEvent.Cause;
 import org.bukkit.event.entity.EntitySpawnEvent;
@@ -431,6 +432,25 @@ public class PlanetListener implements Listener {
 
     @EventHandler
     public void EntityDamageEvent(EntityDamageEvent e) {
+        if (e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
+            Player p = (Player) e.getEntity();
+            if (ClayTechManager.isSpaceSuit(p.getInventory().getHelmet())
+                    && ClayTechManager.isSpaceSuit(p.getInventory().getChestplate())
+                    && ClayTechManager.isSpaceSuit(p.getInventory().getLeggings())
+                    && ClayTechManager.isSpaceSuit(p.getInventory().getBoots())) {
+                e.setDamage(e.getDamage() - e.getFinalDamage());
+                if (Utils.readPlayerMetadataBoolean(p, "SpaceSuitNoCostDurability")) {
+                    e.setCancelled(true);
+                    p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(), false));
+                }
+                p.sendMessage(Lang.readGeneralText("SpaceSuitFall"));
+            }
+        }
+    }
+
+    @EventHandler
+    public void EntityDeathEvent(EntityDeathEvent ev) {
+        EntityDamageEvent e = ev.getEntity().getLastDamageCause();
         if (e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
             Player p = (Player) e.getEntity();
             if (ClayTechManager.isSpaceSuit(p.getInventory().getHelmet())
