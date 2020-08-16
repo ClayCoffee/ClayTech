@@ -2,7 +2,6 @@ package cn.claycoffee.ClayTech.implementation.items;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
-import club.claycoffee.ClayTech.implementation.machines.*;
 import cn.claycoffee.ClayTech.implementation.machines.*;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;

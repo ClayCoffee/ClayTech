@@ -59,7 +59,7 @@ public class ClayTechMachineRecipes {
     public final static ItemStack[] POISON_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? new ItemStack[]{ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, new ItemStack(Material.NETHERITE_SWORD),
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
-            ClayTechItems.POISON_CORE} :  new ItemStack[]{ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
+            ClayTechItems.POISON_CORE} : new ItemStack[]{ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, new ItemStack(Material.DIAMOND_SWORD),
             ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE, ClayTechItems.POISON_CORE,
             ClayTechItems.POISON_CORE};

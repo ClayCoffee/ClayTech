@@ -1,10 +1,9 @@
 package cn.claycoffee.ClayTech.implementation.Planets;
 
 import cn.claycoffee.ClayTech.api.Planet;
-import club.claycoffee.ClayTech.implementation.Planets.populators.*;
+import cn.claycoffee.ClayTech.implementation.Planets.populators.*;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.Utils;
-import cn.claycoffee.ClayTech.implementation.Planets.populators.*;
 import com.google.common.collect.ImmutableList;
 import org.bukkit.Material;
 import org.bukkit.World;

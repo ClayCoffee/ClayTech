@@ -5,11 +5,8 @@ import cn.claycoffee.ClayTech.api.Planet;
 import cn.claycoffee.ClayTech.implementation.Planets.Earth;
 import cn.claycoffee.ClayTech.implementation.Planets.Mars;
 import cn.claycoffee.ClayTech.implementation.Planets.Moon;
-import club.claycoffee.ClayTech.implementation.items.*;
 import cn.claycoffee.ClayTech.implementation.items.*;
 import cn.claycoffee.ClayTech.implementation.resources.ClayFuel;
-import club.claycoffee.ClayTech.listeners.*;
-import club.claycoffee.ClayTech.utils.*;
 import cn.claycoffee.ClayTech.listeners.*;
 import cn.claycoffee.ClayTech.utils.*;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
@@ -201,6 +198,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         currentLangYML.saveCustomConfig();
         currentLangYML.reloadCustomConfig();
         switch (version) {
+            case "v1_16_R2":
+                break;
             case "v1_16_R1":
                 break;
             case "v1_15_R1":
