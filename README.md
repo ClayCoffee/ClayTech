@@ -1,6 +1,7 @@
 # ClayTech
 一个我的世界粘液科技插件.  
-A slimefun addon for minecraft.
+A slimefun addon for minecraft.  
+** The project is now abandoned for a little while. Maybe 3 to 4 weeks? **
 
 # 温馨提醒 / Tips
 This plugin made by me.Please do not claim this plugin as yours, because i put a lot of work on it.  
