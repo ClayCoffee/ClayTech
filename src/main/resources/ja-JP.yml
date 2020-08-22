@@ -1,4 +1,3 @@
----
 Items:
   CLAY_FUSION_MACHINE_LORE:
   - 
@@ -479,7 +478,7 @@ Items:
   - "%POWER%"
   - "&8⇨&e⚡&75120 J /ウィザー"
 General:
-  startTip: ClayTech By ClayCoffe
+  startTip: ClayTech By ClayCoffee
   registeringItems: スライムテクノロジーのアイテムを登録しています...
   registeringError: アイテムの登録中にエラーが発生しました：
   Info_1: "###########################################################"
@@ -496,6 +495,7 @@ General:
   CantPlaceLore: "&eは配置できません"
   no_permission: "§c許可がありません。"
   CantPlace: "§b[ClayTech]§cこのアイテムは配置できません。"
+  CantBreak: "§b[ClayTech]§cアイテムは破壊できません。"
   Blind_5_effect: "&7盲目 V"
   Slowness_5_effect: "&7移動速度低下 V"
   Confusion_5_effect: "&7吐き気V"

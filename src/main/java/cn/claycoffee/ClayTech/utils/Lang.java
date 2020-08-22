@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Lang {
-    public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US"};
+    public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US", "ja-JP"};
 
     public static String readItemText(String name) {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name) == null) {
