@@ -282,7 +282,7 @@ public class ClayTechItems {
             "http://textures.minecraft.net/texture/26834b5b25426de63538ec82ca8fbecfcbb3e682d8063643d2e67a7621bd"),
             Lang.readItemText("LUOSI_RICE_NOODLE")), Lang.readItemLore("LUOSI_RICE_NOODLE"));
     public static final ItemStack ROCKET = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
-            "http://textures.minecraft.net/texture/25b3f2cfa0739c4e828316f39f90b05bc1f4ed27b1e35888511f558d4675"),
+            "http://textures.minecraft.net/texture/377bf2855806da82d902314ce3e706cd3d1c1f83ed986df19e179b17a0595"),
             Lang.readItemText("ROCKET")), Lang.readItemLore("ROCKET"));
     public static final ItemStack FUEL_TANK = Utils.setLore(Utils.setDisplayName(SkullItem.fromURL(
             "http://textures.minecraft.net/texture/5175bdf47aea1a4bf1d349be6b7fa4ab37f479672f4c43aca57511b427ab4"),
