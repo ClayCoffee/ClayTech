@@ -1,6 +1,6 @@
 name: ClayTech
 main: cn.claycoffee.ClayTech.ClayTech
-version: 1.2.8
+version: 1.2.8-preview
 api-version: 1.13
 author: ClayCoffee
 loadbefore: [Multiverse-Core]
