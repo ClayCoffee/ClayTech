@@ -1,573 +1,573 @@
 Items:
   CLAY_FUSION_MACHINE_LORE:
-  - 
-  - "&fは特定の粘土テクノロジーアイテムを作成できます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&716 J / s"
+    - ''
+    - '&fは特定の粘土テクノロジーアイテムを作成できます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&716 J / s'
   CLAY_ELETRIC_CAULDRON_LORE:
-  - 
-  - "&fは粘土技術で食品を作ることができます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&732 J / s"
+    - ''
+    - '&fは粘土技術で食品を作ることができます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&732 J / s'
   CLAY_FOOD_CHALKING_MACHINE_LORE:
-  - 
-  - "&fは粘土技術で特定の粉末を作ることができます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&732 J / s"
+    - ''
+    - '&fは粘土技術で特定の粉末を作ることができます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&732 J / s'
   CLAY_ELEMENT_EXTRACTER_LORE:
-  - 
-  - "&fは化学元素を抽出できます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&764 J / s"
+    - ''
+    - '&fは化学元素を抽出できます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&764 J / s'
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
-  - 
-  - "&fは玉石を砂利に砕くことができます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&716 J / s"
+    - ''
+    - '&fは玉石を砂利に砕くことができます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&716 J / s'
   CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
-  - 
-  - "&fはいくつかの基本的な実験を行い、新しい物質を取得できます"
-  - 
-  - "％段％"
-  - "％パワー％"
-  - "&8⇨&e⚡&780 J / s"
+    - ''
+    - '&fはいくつかの基本的な実験を行い、新しい物質を取得できます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&780 J / s'
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
-  - 
-  - "&3はロケットを組み立てることができます"
-  - "&4あなたは地獄の準備ができています..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&7128 J / s"
+    - ''
+    - '&3はロケットを組み立てることができます'
+    - '&4あなたは地獄の準備ができています...'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&7128 J / s'
   CLAY_ROCKET_FUEL_GENERATOR_LORE:
-  - 
-  - "&3はロケット燃料を作ることができます"
-  - "&4あなたは地獄の準備ができています..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&764 J / s"
+    - ''
+    - '&3はロケット燃料を作ることができます'
+    - '&4あなたは地獄の準備ができています...'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&764 J / s'
   CLAY_ROCKET_FUEL_INJECTOR_LORE:
-  - 
-  - "&3はロケット燃料を噴射できます"
-  - "&4あなたは地獄の準備ができています..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&764 J / s"
+    - ''
+    - '&3はロケット燃料を噴射できます'
+    - '&4あなたは地獄の準備ができています...'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&764 J / s'
   CLAY_SPACESUIT_OXYGEN_INJECTOR_LORE:
-  - 
-  - "&3は宇宙服に酸素を注入できる"
-  - "&3作業中、酸素は上の葉から自動的に抽出され、宇宙服に注入されます"
-  - "&3は上に葉がない場合機能しません"
-  - "&4あなたは地獄の準備ができています..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&780 J / s"
-  USEFUL_DIRT: "&6有用な土壌"
+    - ''
+    - '&3は宇宙服に酸素を注入できる'
+    - '&3作業中、酸素は上の葉から自動的に抽出され、宇宙服に注入されます'
+    - '&3は上に葉がない場合機能しません'
+    - '&4あなたは地獄の準備ができています...'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&780 J / s'
+  USEFUL_DIRT: '&6有用な土壌'
   USEFUL_DIRT_LORE:
-  - "&b地球から地球へ..."
-  - "&b有用なミネラルがいっぱい..."
-  ORE_DIAMOND: "&bミネラルダイヤモンド"
-  MAGIC_CLAY: "&6魔法の粘土"
+    - '&b地球から地球へ...'
+    - '&b有用なミネラルがいっぱい...'
+  ORE_DIAMOND: '&bミネラルダイヤモンド'
+  MAGIC_CLAY: '&6魔法の粘土'
   MAGIC_CLAY_LORE:
-  - "&b粘土技術の基本的なアイテム、多くの粘土技術の合成にはこれが必要です"
-  CLAY_STICK: "§6粘土の木の棒"
+    - '&b粘土技術の基本的なアイテム、多くの粘土技術の合成にはこれが必要です'
+  CLAY_STICK: §6粘土の木の棒
   CLAY_STICK_LORE:
-  - "&b Clay Coffeeが収集した木の棒は、いくつかのツールとして使用できます。"
-  ARTIFICIAL_GOLD_NUGGET: "&6人工金粒子"
-  ARTIFICIAL_GOLD_INGOT_O: "&6人工金インゴット鉱石"
-  ARTIFICIAL_GOLD_INGOT: "&6人工金インゴット"
-  ARTIFICIAL_GOLD_BLOCK: "&6人工金塊"
-  ARTIFICIAL_ENCHANTED_GOLDEN_APPLE: "&5&l人工エンチャント金リンゴ"
-  BLIND_CORE: "&7盲目コア"
-  BLIND_SWORD: "&7盲目剣"
+    - '&b Clay Coffeeが収集した木の棒は、いくつかのツールとして使用できます。'
+  ARTIFICIAL_GOLD_NUGGET: '&6人工金粒子'
+  ARTIFICIAL_GOLD_INGOT_O: '&6人工金インゴット鉱石'
+  ARTIFICIAL_GOLD_INGOT: '&6人工金インゴット'
+  ARTIFICIAL_GOLD_BLOCK: '&6人工金塊'
+  ARTIFICIAL_ENCHANTED_GOLDEN_APPLE: '&5&l人工エンチャント金リンゴ'
+  BLIND_CORE: '&7盲目コア'
+  BLIND_SWORD: '&7盲目剣'
   BLIND_SWORD_LORE:
-  - "&6攻撃したプレーヤーに、攻撃後5秒間盲目Vエフェクトを与える"
-  - "&7盲目 V"
-  CONFUSION_CORE: "&7吐き気コア"
-  BLACK_ROCK_BLOCK: "&7ブラックロックブロック"
-  SLOWNESS_CORE: "&7移動速度低下コア"
-  POISON_EYE: "&7有毒な目"
-  POISON_CORE: "&7有毒なコア"
-  ADVANCED_BLIND_CORE: "&7高度な盲目コア"
-  ADVANCED_CONFUSION_CORE: "&7高度な吐き気コア"
-  ADVANCED_SLOWNESS_CORE: "&7高度な移動速度低下コア"
-  ADVANCED_POISON_CORE: "&7高度な有毒コア"
-  FOUR_BOW: "&7レイキクアドラプル弓"
+    - '&6攻撃したプレーヤーに、攻撃後5秒間盲目Vエフェクトを与える'
+    - '&7盲目 V'
+  CONFUSION_CORE: '&7吐き気コア'
+  BLACK_ROCK_BLOCK: '&7ブラックロックブロック'
+  SLOWNESS_CORE: '&7移動速度低下コア'
+  POISON_EYE: '&7有毒な目'
+  POISON_CORE: '&7有毒なコア'
+  ADVANCED_BLIND_CORE: '&7高度な盲目コア'
+  ADVANCED_CONFUSION_CORE: '&7高度な吐き気コア'
+  ADVANCED_SLOWNESS_CORE: '&7高度な移動速度低下コア'
+  ADVANCED_POISON_CORE: '&7高度な有毒コア'
+  FOUR_BOW: '&7レイキクアドラプル弓'
   FOUR_BOW_LORE:
-  - "&6攻撃したプレイヤーに、攻撃後2秒間、盲目V、移動速度低下V、吐き気V、毒IIIを与えます。"
-  - "&7盲目 V"
-  - "&7移動速度低下 V"
-  - "&7吐き気 V"
-  - "&7毒 III"
-  POISON_SWORD: "&7梓毒剣"
+    - '&6攻撃したプレイヤーに、攻撃後2秒間、盲目V、移動速度低下V、吐き気V、毒IIIを与えます。'
+    - '&7盲目 V'
+    - '&7移動速度低下 V'
+    - '&7吐き気 V'
+    - '&7毒 III'
+  POISON_SWORD: '&7梓毒剣'
   POISON_SWORD_LORE:
-  - "&6攻撃したプレイヤーに、攻撃後2秒間、毒III効果を与えます。"
-  - "&7毒 III"
-  ANTI_SLOWNESS_BOOTS: "&7アンチスローブーツ"
+    - '&6攻撃したプレイヤーに、攻撃後2秒間、毒III効果を与えます。'
+    - '&7毒 III'
+  ANTI_SLOWNESS_BOOTS: '&7アンチスローブーツ'
   ANTI_SLOWNESS_BOOTS_LORE:
-  - "&6他の人があなたにぶつかると、2秒間3の効果が遅くなります"
-  - "&7移動速度低下リバウンド III"
-  COCOA_BEAN: "&eカカオ豆"
+    - '&6他の人があなたにぶつかると、2秒間3の効果が遅くなります'
+    - '&7移動速度低下リバウンド III'
+  COCOA_BEAN: '&eカカオ豆'
   COCOA_BEAN_LORE:
-  - "&6Yay！おいしいカカオ豆！"
-  - "&7は、コーヒーやチョコレートなどを作るために使用できます。"
-  PLASTIC: "&eプラスチック"
+    - '&6Yay！おいしいカカオ豆！'
+    - '&7は、コーヒーやチョコレートなどを作るために使用できます。'
+  PLASTIC: '&eプラスチック'
   PLASTIC_LORE:
-  - "&6環境に配慮して、思いのまま捨てないでください。"
-  - "&7は飲料ボトルの作成に使用できます"
-  RAW_CHICKEN_FOOT: "&e鶏もも肉"
+    - '&6環境に配慮して、思いのまま捨てないでください。'
+    - '&7は飲料ボトルの作成に使用できます'
+  RAW_CHICKEN_FOOT: '&e鶏もも肉'
   RAW_CHICKEN_FOOT_LORE:
-  - "&6鶏もも肉"
-  - "&7は食べられません。食べる前に電気鍋で調理してください。"
-  FRIED_CHICKEN_FOOT: "&eから揚げ"
+    - '&6鶏もも肉'
+    - '&7は食べられません。食べる前に電気鍋で調理してください。'
+  FRIED_CHICKEN_FOOT: '&eから揚げ'
   FRIED_CHICKEN_FOOT_LORE:
-  - "&6フライドチキン"
-  - "&7食事後、満腹感を8増やします。"
-  RAW_BREAD: "&eバンズ"
+    - '&6フライドチキン'
+    - '&7食事後、満腹感を8増やします。'
+  RAW_BREAD: '&eバンズ'
   RAW_BREAD_LORE:
-  - "&6バンズ"
-  - "&7食事後、満腹感を6増やします。"
-  DIRTY_TEA: "&e汚れた茶葉"
+    - '&6バンズ'
+    - '&7食事後、満腹感を6増やします。'
+  DIRTY_TEA: '&e汚れた茶葉'
   DIRTY_TEA_LORE:
-  - "&6汚れた茶葉"
-  - "&7右クリックできれいにしてお茶にしましょう！"
-  - "&7葉を手にするチャンス"
-  TEA: "&eお茶"
+    - '&6汚れた茶葉'
+    - '&7右クリックできれいにしてお茶にしましょう！'
+    - '&7葉を手にするチャンス'
+  TEA: '&eお茶'
   TEA_LORE:
-  - "&6お茶"
-  - "&7お茶の粉を作ることができます"
-  - "&7きれいな汚れた茶葉"
-  TEA_POWDER: "&e茶粉"
+    - '&6お茶'
+    - '&7お茶の粉を作ることができます'
+    - '&7きれいな汚れた茶葉'
+  TEA_POWDER: '&e茶粉'
   TEA_POWDER_LORE:
-  - "&6茶粉"
-  - "&7お茶ができる"
-  LEMON_POWDER: "&eレモンパウダー"
+    - '&6茶粉'
+    - '&7お茶ができる'
+  LEMON_POWDER: '&eレモンパウダー'
   LEMON_POWDER_LORE:
-  - "&6レモンパウダー"
-  - "&7レモン汁が作れる"
-  FLOUR: "&e小麦粉"
+    - '&6レモンパウダー'
+    - '&7レモン汁が作れる'
+  FLOUR: '&e小麦粉'
   FLOUR_LORE:
-  - "&6小麦粉"
-  - "&7多くのものを作るために使用できます"
-  - "&7多くのものを作るために使用できます"
-  STARCH: "&eスターチ"
+    - '&6小麦粉'
+    - '&7多くのものを作るために使用できます'
+    - '&7多くのものを作るために使用できます'
+  STARCH: '&eスターチ'
   STARCH_LORE:
-  - "&6スターチ"
-  - "&7多くのものを作るために使用できます"
-  - "&7じゃがいもが手に入るチャンス"
-  SNAIL_HEALTHY: "&eカタツムリ"
+    - '&6スターチ'
+    - '&7多くのものを作るために使用できます'
+    - '&7じゃがいもが手に入るチャンス'
+  SNAIL_HEALTHY: '&eカタツムリ'
   SNAIL_HEALTHY_LORE:
-  - "&6カタツムリ"
-  - "&7カタツムリ麺を作るために使用することができます"
-  - "&7釣りのチャンスがあります"
-  SNAIL_BAD: "&eフォーチュンカタツムリ"
+    - '&6カタツムリ'
+    - '&7カタツムリ麺を作るために使用することができます'
+    - '&7釣りのチャンスがあります'
+  SNAIL_BAD: '&eフォーチュンカタツムリ'
   SNAIL_BAD_LORE:
-  - "&6フォーチュンカタツムリ"
-  - "&7やってみる？"
-  - "&7釣りのチャンスがあります"
-  HONEY_SWEET: "&e蜂蜜"
+    - '&6フォーチュンカタツムリ'
+    - '&7やってみる？'
+    - '&7釣りのチャンスがあります'
+  HONEY_SWEET: '&e蜂蜜'
   HONEY_SWEET_LORE:
-  - "&6蜂蜜"
-  - "&7甘いものを教えてください⑧.."
-  - "&7食べた後、満腹感を8増やします。"
-  GREEN_GRASS: "&2草"
+    - '&6蜂蜜'
+    - '&7甘いものを教えてください⑧..'
+    - '&7食べた後、満腹感を8増やします。'
+  GREEN_GRASS: '&2草'
   GREEN_GRASS_LORE:
-  - "&7私は羊だと思わないで"
-  - "&7飢饉をもたらす？これを試してください！"
-  - "&7食べた後、満腹感を1増やします。"
-  ELEMENT_UNIT: "&eエレメントユニット"
+    - '&7私は羊だと思わないで'
+    - '&7飢饉をもたらす？これを試してください！'
+    - '&7食べた後、満腹感を1増やします。'
+  ELEMENT_UNIT: '&eエレメントユニット'
   ELEMENT_UNIT_LORE:
-  - "&6エレメントユニット"
-  - "&7要素を保持できます！"
-  - "&e配置できません"
-  ELEMENT_OXYGEN: "&e酸素"
+    - '&6エレメントユニット'
+    - '&7要素を保持できます！'
+    - '&e配置できません'
+  ELEMENT_OXYGEN: '&e酸素'
   ELEMENT_OXYGEN_LORE:
-  - "&e酸素"
-  - "&74P + 5O2 =点火する=2P2O5"
-  - "&7要素抽出機に3つのグラスキューブを入れて、"
-  - "&e配置できません"
-  ELEMENT_CARBON: "&e炭素元素"
+    - '&e酸素'
+    - '&74P + 5O2 =点火する=2P2O5'
+    - '&7要素抽出機に3つのグラスキューブを入れて、'
+    - '&e配置できません'
+  ELEMENT_CARBON: '&e炭素元素'
   ELEMENT_CARBON_LORE:
-  - "&6炭素元素"
-  - "&7色んなことができます〜"
-  - "&7元素抽出機に8つの石炭を入れて、"
-  - "&e配置できません"
-  ELEMENT_SILICON: "&eケイ素"
+    - '&6炭素元素'
+    - '&7色んなことができます〜'
+    - '&7元素抽出機に8つの石炭を入れて、'
+    - '&e配置できません'
+  ELEMENT_SILICON: '&eケイ素'
   ELEMENT_SILICON_LORE:
-  - "&6ケイ素"
-  - "&7シリコンインゴットの合成や回路基板の製作に！"
-  - "&7元素抽出機に砂を10個入れて、"
-  - "&e配置できません"
-  BLISTERING_CORE: "&e発泡コア"
-  AUTHOR_HEAD: "&6作者の頭"
-  STALIN_HEAD: "&bスターリンの頭"
-  MARX_HEAD: "&bマルクスの頭"
-  LANTERN: "&b灯籠"
-  BLACK_CLOCK: "&b黒い時計"
-  CLAY_COFFEE: "&e粘土コーヒー"
+    - '&6ケイ素'
+    - '&7シリコンインゴットの合成や回路基板の製作に！'
+    - '&7元素抽出機に砂を10個入れて、'
+    - '&e配置できません'
+  BLISTERING_CORE: '&e発泡コア'
+  AUTHOR_HEAD: '&6作者の頭'
+  STALIN_HEAD: '&bスターリンの頭'
+  MARX_HEAD: '&bマルクスの頭'
+  LANTERN: '&b灯籠'
+  BLACK_CLOCK: '&b黒い時計'
+  CLAY_COFFEE: '&e粘土コーヒー'
   CLAY_COFFEE_LORE:
-  - "&e粘土コーヒー!"
-  - "&7食べた後、それは5ポイントの膨満感と3分間の暗視の効果を増やすことができます"
-  - "&e配置できません"
-  DRINK_BOTTLE: "&eドリンクボトル"
+    - '&e粘土コーヒー!'
+    - '&7食べた後、それは5ポイントの膨満感と3分間の暗視の効果を増やすことができます'
+    - '&e配置できません'
+  DRINK_BOTTLE: '&eドリンクボトル'
   DRINK_BOTTLE_LORE:
-  - "&6ドリンクボトル"
-  - "&7ドリンク作りに欠かせないアイテム"
-  - "&7ボトルなしで飲み物をどうやって満たすのですか？口を使いますか？"
-  - "&e配置できません"
-  DIRTY_DRINK_BOTTLE: "&e汚れたドリンクボトル"
+    - '&6ドリンクボトル'
+    - '&7ドリンク作りに欠かせないアイテム'
+    - '&7ボトルなしで飲み物をどうやって満たすのですか？口を使いますか？'
+    - '&e配置できません'
+  DIRTY_DRINK_BOTTLE: '&e汚れたドリンクボトル'
   DIRTY_DRINK_BOTTLE_LORE:
-  - "&6汚れたドリンクボトル"
-  - "&7この飲料ボトルは洗濯機で洗う必要があります。"
-  - "&7汚れたドリンクボトルを飲む男の子はどれですか？右クリックしてクリーニングします（バケツが必要です）"
-  - "&e配置できません"
-  SPICY_CHICKEN_BURGER: "&eスパイシーチキンバーガー"
+    - '&6汚れたドリンクボトル'
+    - '&7この飲料ボトルは洗濯機で洗う必要があります。'
+    - '&7汚れたドリンクボトルを飲む男の子はどれですか？右クリックしてクリーニングします（バケツが必要です）'
+    - '&e配置できません'
+  SPICY_CHICKEN_BURGER: '&eスパイシーチキンバーガー'
   SPICY_CHICKEN_BURGER_LORE:
-  - "&6スパイシーチキンバーガー"
-  - "&7食後15の膨満感と20秒の攻撃力増加 IIの効果を増加させます"
-  - "&7NingはCFCをコピーしていますか？"
-  - "&e配置できません"
-  BABA_BURGER: "&eオールドエイトシークレットミニバッグ"
+    - '&6スパイシーチキンバーガー'
+    - '&7食後15の膨満感と20秒の攻撃力増加 IIの効果を増加させます'
+    - '&7NingはCFCをコピーしていますか？'
+    - '&e配置できません'
+  BABA_BURGER: '&eオールドエイトシークレットミニバッグ'
   BABA_BURGER_LORE:
-  - "&6オールドエイトシークレットミニバッグ"
-  - "&7やってみませんか？"
-  - "&e配置できません"
-  LETTUSE: "&eレタス"
+    - '&6オールドエイトシークレットミニバッグ'
+    - '&7やってみませんか？'
+    - '&e配置できません'
+  LETTUSE: '&eレタス'
   LETTUSE_LORE:
-  - "&6レタス"
-  - "&7食後に満腹を1ポイント追加"
-  - "&e配置できません"
-  LEMON: "&eレモン"
+    - '&6レタス'
+    - '&7食後に満腹を1ポイント追加'
+    - '&e配置できません'
+  LEMON: '&eレモン'
   LEMON_LORE:
-  - "&6レモン"
-  - "&7満腹感を1ポイント加え、食後に10秒の吐き気IV効果"
-  - "&7私はレモンを持っています"
-  - "&7葉を破壊すると取得するチャンスがあります"
-  - "&e配置できません"
-  LEMON_POWDER_DRINK: "&eレモン汁"
+    - '&6レモン'
+    - '&7満腹感を1ポイント加え、食後に10秒の吐き気IV効果'
+    - '&7私はレモンを持っています'
+    - '&7葉を破壊すると取得するチャンスがあります'
+    - '&e配置できません'
+  LEMON_POWDER_DRINK: '&eレモン汁'
   LEMON_POWDER_DRINK_LORE:
-  - "&6レモン汁"
-  - "&7食べた後、満腹6ポイント、10秒の吐き気IV効果を増加させる"
-  - "&7私はレモンを持っています"
-  - "&eは配置できません"
-  TEA_DRINK: "&e茶"
+    - '&6レモン汁'
+    - '&7食べた後、満腹6ポイント、10秒の吐き気IV効果を増加させる'
+    - '&7私はレモンを持っています'
+    - '&eは配置できません'
+  TEA_DRINK: '&e茶'
   TEA_DRINK_LORE:
-  - "&6茶"
-  - "&7食後、6ポイントの満腹感と30秒の抵抗増加III効果が増加します。"
-  - "&eは配置できません"
+    - '&6茶'
+    - '&7食後、6ポイントの満腹感と30秒の抵抗増加III効果が増加します。'
+    - '&eは配置できません'
   LEMON_TEA_DRINK: レモンティー
   LEMON_TEA_DRINK_LORE:
-  - "&6レモンティー"
-  - "&7満腹感を12ポイント増加させ、食事後60秒の耐性ブーストIII効果"
-  - "&7これはもっと寒ければアイスティーかもしれません。"
-  - "&eは配置できません"
-  CHOCOLATE: "&eチョコレート"
+    - '&6レモンティー'
+    - '&7満腹感を12ポイント増加させ、食事後60秒の耐性ブーストIII効果'
+    - '&7これはもっと寒ければアイスティーかもしれません。'
+    - '&eは配置できません'
+  CHOCOLATE: '&eチョコレート'
   CHOCOLATE_LORE:
-  - "&6チョコレート"
-  - "&7食事後、15ポイントの満腹感と30秒の抵抗増加III効果が増加します。"
-  - "&7お腹が空いた商品！シンプルなフレームに来て！空腹を掃除して、もう一度やってください〜"
-  - "&eは配置できません"
-  LUOSI_RICE_NOODLE: "&eカタツムリパウダー"
+    - '&6チョコレート'
+    - '&7食事後、15ポイントの満腹感と30秒の抵抗増加III効果が増加します。'
+    - '&7お腹が空いた商品！シンプルなフレームに来て！空腹を掃除して、もう一度やってください〜'
+    - '&eは配置できません'
+  LUOSI_RICE_NOODLE: '&eカタツムリパウダー'
   LUOSI_RICE_NOODLE_LORE:
-  - "&6カタツムリパウダー"
-  - "&7満腹感を12ポイント増加させ、食事後30秒の耐性ブーストIII効果"
-  - "&7それはにおいがします...しかし、それはおいしいです。"
-  - "&eは配置できません"
-  CLAY_FUSION_MACHINE: "&e粘土融合器"
-  CLAY_ELETRIC_CAULDRON: "&e電気ポット"
-  CLAY_FOOD_CHALKING_MACHINE: "&e食品小麦粉機"
-  CLAY_ELEMENT_EXTRACTER: "&e元素抽出機"
-  CLAY_ELECTRIC_STONE_CRUSHER: "&eパワーストーンクラッシャー"
-  HIGHSPEED_RAILWAY: "&b高速鉄道"
+    - '&6カタツムリパウダー'
+    - '&7満腹感を12ポイント増加させ、食事後30秒の耐性ブーストIII効果'
+    - '&7それはにおいがします...しかし、それはおいしいです。'
+    - '&eは配置できません'
+  CLAY_FUSION_MACHINE: '&e粘土融合器'
+  CLAY_ELETRIC_CAULDRON: '&e電気ポット'
+  CLAY_FOOD_CHALKING_MACHINE: '&e食品小麦粉機'
+  CLAY_ELEMENT_EXTRACTER: '&e元素抽出機'
+  CLAY_ELECTRIC_STONE_CRUSHER: '&eパワーストーンクラッシャー'
+  HIGHSPEED_RAILWAY: '&b高速鉄道'
   HIGHSPEED_RAILWAY_LORE:
-  - "&6この種類の鉄道で走っているトロッコ"
-  - "&6最高速を3倍にすることができます。"
-  ELECTRIC_MOTOR_8: "&c電気モーターフラグメント"
-  TNT_EXPLOSION_CREATER: "&6TNT爆発発生器"
+    - '&6この種類の鉄道で走っているトロッコ'
+    - '&6最高速を3倍にすることができます。'
+  ELECTRIC_MOTOR_8: '&c電気モーターフラグメント'
+  TNT_EXPLOSION_CREATER: '&6TNT爆発発生器'
   TNT_EXPLOSION_CREATER_LORE:
-  - "&b右クリックして、点灯しているTNTをバックパックの現在の場所に配置します"
-  - "&bは、使用するたびに1つの耐久性を失います。"
-  - "&b（コンテナーを破棄しません）"
-  - "&b耐久：&632"
-  - "&7は対話式ではありません"
-  SWEET_POTATO: "&eさつまいも"
+    - '&b右クリックして、点灯しているTNTをバックパックの現在の場所に配置します'
+    - '&bは、使用するたびに1つの耐久性を失います。'
+    - '&b（コンテナーを破棄しません）'
+    - '&b耐久：&632'
+    - '&7は対話式ではありません'
+  SWEET_POTATO: '&eさつまいも'
   SWEET_POTATO_LORE:
-  - "&6さつまいも"
-  - "&7収穫ジャガイモには、"
-  - "&7食べられない"
-  COOKED_SWEET_POTATO: "&e焼き芋"
+    - '&6さつまいも'
+    - '&7収穫ジャガイモには、'
+    - '&7食べられない'
+  COOKED_SWEET_POTATO: '&e焼き芋'
   COOKED_SWEET_POTATO_LORE:
-  - "&6焼き芋"
-  - "&7食べた後、満腹感が6ポイント増加します。"
-  REINFORCED_ALLOY_PICKAXE: "&9強化合金ピック"
-  CLAY_FUSION_INGOT: "&b&l粘土融合インゴット"
-  CLAY_ALLOY_INGOT: "&9&l粘土合金インゴット"
-  CLAY_ALLOY_PICKAXE: "&9粘土合金ピック"
-  CLAY_ALLOY_HELMET: "&9粘土合金ヘルメット"
-  CLAY_ALLOY_CHESTPLATE: "＆9粘土合金チェストプレート"
-  CLAY_ALLOY_LEGGINGS: "＆9粘土合金レギンス"
-  CLAY_ALLOY_BOOTS: "&9粘土合金ブーツ"
-  CLAY_EXPERIMENT_TABLE_NORMAL: "&e実験テーブル（基本）"
-  SILICON_INGOT: "&bシリコンインゴット"
-  ROCKET_LAUNCHER: "&6ロケットランチャー"
-  ROCKET: "&9ロケット（第1層）"
+    - '&6焼き芋'
+    - '&7食べた後、満腹感が6ポイント増加します。'
+  REINFORCED_ALLOY_PICKAXE: '&9強化合金ピック'
+  CLAY_FUSION_INGOT: '&b&l粘土融合インゴット'
+  CLAY_ALLOY_INGOT: '&9&l粘土合金インゴット'
+  CLAY_ALLOY_PICKAXE: '&9粘土合金ピック'
+  CLAY_ALLOY_HELMET: '&9粘土合金ヘルメット'
+  CLAY_ALLOY_CHESTPLATE: '&9粘土合金チェストプレート'
+  CLAY_ALLOY_LEGGINGS: '&9粘土合金レギンス'
+  CLAY_ALLOY_BOOTS: '&9粘土合金ブーツ'
+  CLAY_EXPERIMENT_TABLE_NORMAL: '&e実験テーブル（基本）'
+  SILICON_INGOT: '&bシリコンインゴット'
+  ROCKET_LAUNCHER: '&6ロケットランチャー'
+  ROCKET: '&9ロケット（第1層）'
   ROCKET_LORE:
-  - "&3一次ロケット"
-  - "&b現在の燃料：&60&9 /&a125"
-  - "&c&lスタックしない"
-  - "&eは配置できません"
-  MOTOR_CORE: "&eモーターコア"
-  TEMPERATURE_RESISTANCE_OBSIDIAN: "&3一次温度耐性黒曜石"
+    - '&3一次ロケット'
+    - '&b現在の燃料：&60&9 /&a125'
+    - '&c&lスタックしない'
+    - '&eは配置できません'
+  MOTOR_CORE: '&eモーターコア'
+  TEMPERATURE_RESISTANCE_OBSIDIAN: '&3一次温度耐性黒曜石'
   TEMPERATURE_RESISTANCE_OBSIDIAN_LORE:
-  - "&6この種類の黒曜石は高温に非常に耐性があります"
-  - "&6はロケットの構築に非常に適しています。"
-  - "&eは配置できません"
-  ROCKET_ENGINE_SHELL: "&6一次ロケットエンジンシェル"
-  FUEL_TANK: "&6燃料バレル"
+    - '&6この種類の黒曜石は高温に非常に耐性があります'
+    - '&6はロケットの構築に非常に適しています。'
+    - '&eは配置できません'
+  ROCKET_ENGINE_SHELL: '&6一次ロケットエンジンシェル'
+  FUEL_TANK: '&6燃料バレル'
   FUEL_TANK_LORE:
-  - "&3は燃料に使用できます！"
-  - "&bは&610&bポイント燃料を保存できます"
-  - "&eは配置できません"
-  ROCKET_ENGINE: "&9一次ロケットエンジン"
+    - '&3は燃料に使用できます！'
+    - '&bは&610&bポイント燃料を保存できます'
+    - '&eは配置できません'
+  ROCKET_ENGINE: '&9一次ロケットエンジン'
   ROCKET_ENGINE_LORE:
-  - "&3一次ロケットを作るための必需品！"
-  - "&eは配置できません"
-  ROCKET_ANTENNA: "&9一次ロケットアンテナ"
+    - '&3一次ロケットを作るための必需品！'
+    - '&eは配置できません'
+  ROCKET_ANTENNA: '&9一次ロケットアンテナ'
   ROCKET_ANTENNA_LORE:
-  - "&3はロケット軌道での情報伝達に使用されます"
-  - "&eは配置できません"
-  ROCKET_CPU: "&9一次ロケット中央処理装置"
+    - '&3はロケット軌道での情報伝達に使用されます'
+    - '&eは配置できません'
+  ROCKET_CPU: '&9一次ロケット中央処理装置'
   ROCKET_CPU_LORE:
-  - "&3ロケットの基本情報を処理"
-  ROCKET_CONTROL_CORE: "&9一次ロケット制御コア"
+    - '&3ロケットの基本情報を処理'
+  ROCKET_CONTROL_CORE: '&9一次ロケット制御コア'
   ROCKET_CONTROL_CORE_LORE:
-  - "&3ロケットの脳、それなしではロケットはありません"
-  ROCKET_FUEL_TANK: "&9初段ロケット燃料タンク"
+    - '&3ロケットの脳、それなしではロケットはありません'
+  ROCKET_FUEL_TANK: '&9初段ロケット燃料タンク'
   ROCKET_FUEL_TANK_LORE:
-  - "&3は燃料に使用できます！"
-  - "&bは&6125&bポイント燃料を保存できます"
-  - "&eは配置できません"
-  ROCKET_GLASS: "&9一次ロケットガラス"
+    - '&3は燃料に使用できます！'
+    - '&bは&6125&bポイント燃料を保存できます'
+    - '&eは配置できません'
+  ROCKET_GLASS: '&9一次ロケットガラス'
   ROCKET_GLASS_LORE:
-  - "&3珍しいガラス"
-  - "&3は宇宙で使用できます！"
-  - "&eは配置できません"
-  ROCKET_STEEL_PLATE: "&9一次ロケット鋼板"
+    - '&3珍しいガラス'
+    - '&3は宇宙で使用できます！'
+    - '&eは配置できません'
+  ROCKET_STEEL_PLATE: '&9一次ロケット鋼板'
   ROCKET_STEEL_PLATE_LORE:
-  - "&3一次ロケットを作るために必要な材料"
-  CLAY_ROCKET_ASSEMBLING_MACHINE: "&9ロケットアセンブラ"
-  CLAY_FUEL: "&6粘土燃料"
-  MIXED_ROCKET_FUEL: "&6混合ロケット燃料"
+    - '&3一次ロケットを作るために必要な材料'
+  CLAY_ROCKET_ASSEMBLING_MACHINE: '&9ロケットアセンブラ'
+  CLAY_FUEL: '&6粘土燃料'
+  MIXED_ROCKET_FUEL: '&6混合ロケット燃料'
   MIXED_ROCKET_FUEL_LORE:
-  - "&9はロケットに燃料を噴射できます"
-  - "&9より深い宇宙へ"
-  - "&eは配置できません"
-  CLAY_ROCKET_FUEL_GENERATOR: "&9ロケット燃料製造機"
-  CLAY_ROCKET_FUEL_INJECTOR: "&9ロケット燃料噴射装置"
-  OXYGEN_TANK: "&9酸素タンク"
+    - '&9はロケットに燃料を噴射できます'
+    - '&9より深い宇宙へ'
+    - '&eは配置できません'
+  CLAY_ROCKET_FUEL_GENERATOR: '&9ロケット燃料製造機'
+  CLAY_ROCKET_FUEL_INJECTOR: '&9ロケット燃料噴射装置'
+  OXYGEN_TANK: '&9酸素タンク'
   OXYGEN_TANK_LORE:
-  - "&3は通常の酸素タンクです。"
-  - "&bは&65&bポイントの酸素を保存できます"
-  - "&eは配置できません"
-  SPACESUIT_OXYGEN_TANK: "&9宇宙服酸素タンク"
+    - '&3は通常の酸素タンクです。'
+    - '&bは&65&bポイントの酸素を保存できます'
+    - '&eは配置できません'
+  SPACESUIT_OXYGEN_TANK: '&9宇宙服酸素タンク'
   SPACESUIT_OXYGEN_TANK_LORE:
-  - "&3は宇宙服に酸素を供給することができます"
-  - "&bは&640&bポイントの酸素を保存できます"
-  - "&eは配置できません"
-  SPACESUIT_HELMET: "&9宇宙服ヘルメット"
+    - '&3は宇宙服に酸素を供給することができます'
+    - '&bは&640&bポイントの酸素を保存できます'
+    - '&eは配置できません'
+  SPACESUIT_HELMET: '&9宇宙服ヘルメット'
   SPACESUIT_HELMET_LORE:
-  - "&3は宇宙からの高エネルギー光線を遮断できます"
-  - "&3スペースに必要"
-  - "&b保護レベル：&61"
-  - "&b現在の酸素：&60&9 /&a40"
-  SPACESUIT_CHESTPLATE: "&9宇宙服の胸当て"
+    - '&3は宇宙からの高エネルギー光線を遮断できます'
+    - '&3スペースに必要'
+    - '&b保護レベル：&61'
+    - '&b現在の酸素：&60&9 /&a40'
+  SPACESUIT_CHESTPLATE: '&9宇宙服の胸当て'
   SPACESUIT_CHESTPLATE_LORE:
-  - "&3は宇宙からの高エネルギー光線を遮断できます"
-  - "&3スペースに必要"
-  - "&b保護レベル：&61"
-  - "&b現在の酸素：&60&9 /&a40"
-  SPACESUIT_LEGGINGS: "&9宇宙服レギンス"
+    - '&3は宇宙からの高エネルギー光線を遮断できます'
+    - '&3スペースに必要'
+    - '&b保護レベル：&61'
+    - '&b現在の酸素：&60&9 /&a40'
+  SPACESUIT_LEGGINGS: '&9宇宙服レギンス'
   SPACESUIT_LEGGINGS_LORE:
-  - "&3は宇宙からの高エネルギー光線を遮断できます"
-  - "&3スペースに必要"
-  - "&b保護レベル：&61"
-  - "&b現在の酸素：&60&9 /&a40"
-  SPACESUIT_BOOTS: "&9宇宙服ブーツ"
+    - '&3は宇宙からの高エネルギー光線を遮断できます'
+    - '&3スペースに必要'
+    - '&b保護レベル：&61'
+    - '&b現在の酸素：&60&9 /&a40'
+  SPACESUIT_BOOTS: '&9宇宙服ブーツ'
   SPACESUIT_BOOTS_LORE:
-  - "&3は宇宙からの高エネルギー光線を遮断できます"
-  - "&3スペースに必要"
-  - "&b保護レベル：&61"
-  - "&b現在の酸素：&60&9 /&a40"
-  CLAY_SPACESUIT_OXYGEN_INJECTOR: "&9宇宙服酸素インジェクター"
+    - '&3は宇宙からの高エネルギー光線を遮断できます'
+    - '&3スペースに必要'
+    - '&b保護レベル：&61'
+    - '&b現在の酸素：&60&9 /&a40'
+  CLAY_SPACESUIT_OXYGEN_INJECTOR: '&9宇宙服酸素インジェクター'
   CLAY_COBBLESTONE_GENERATOR_LORE:
-  - 
-  - "&3は玉石を自動的に生成できます"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&750 J / s"
-  CLAY_COBBLESTONE_GENERATOR: "&b玉石製造機"
-  CLAY_ELECTRIC_WATER_PUMP: "&b電動ウォーターポンプ"
+    - ''
+    - '&3は玉石を自動的に生成できます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&750 J / s'
+  CLAY_COBBLESTONE_GENERATOR: '&b玉石製造機'
+  CLAY_ELECTRIC_WATER_PUMP: '&b電動ウォーターポンプ'
   CLAY_ELECTRIC_WATER_PUMP_LORE:
-  - 
-  - "&3は機械に水を送り込むことができます"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&726 J / s"
-  KREEP_ROCK: "&9クリップロック"
+    - ''
+    - '&3は機械に水を送り込むことができます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&726 J / s'
+  KREEP_ROCK: '&9クリップロック'
   KREEP_ROCK_LORE:
-  - "&3月にある非常に珍しい岩の一種"
-  - "&3はロケットをアップグレードできます"
-  KREEP_INGOT: "&9クリップインゴット"
+    - '&3月にある非常に珍しい岩の一種'
+    - '&3はロケットをアップグレードできます'
+  KREEP_INGOT: '&9クリップインゴット'
   KREEP_INGOT_LORE:
-  - "&3月の非常に珍しい岩から作られたインゴット"
-  - "&3はロケットをアップグレードできます"
-  PLANET_BASE_SIGNER: "&9惑星ベースマーカー"
+    - '&3月の非常に珍しい岩から作られたインゴット'
+    - '&3はロケットをアップグレードできます'
+  PLANET_BASE_SIGNER: '&9惑星ベースマーカー'
   PLANET_BASE_SIGNER_LORE:
-  - "&3配置後、この惑星にロケットを発射すると、この場所に直接テレポートできます。"
-  TUBE: "&9ストロー"
-  OXYGEN_DISTRIBUTER: "&9酸素ディストリビューター（最初の注文）"
+    - '&3配置後、この惑星にロケットを発射すると、この場所に直接テレポートできます。'
+  TUBE: '&9ストロー'
+  OXYGEN_DISTRIBUTER: '&9酸素ディストリビューター（最初の注文）'
   OXYGEN_DISTRIBUTER_LORE:
-  - "&3アイテムを右クリックすると、アイテムに保存されている酸素が宇宙服に均等に分配されます"
-  - "&b現在の酸素：&60&9 /&a120"
-  COPPER_ORE: "&6銅鉱石"
+    - '&3アイテムを右クリックすると、アイテムに保存されている酸素が宇宙服に均等に分配されます'
+    - '&b現在の酸素：&60&9 /&a120'
+  COPPER_ORE: '&6銅鉱石'
   COPPER_ORE_LORE:
-  - "&3は粘土融合器の中央に配置して、銅粉に粉砕できます"
-  CLAY_FUSION_ORE: "&6粘土融合インゴット鉱石"
+    - '&3は粘土融合器の中央に配置して、銅粉に粉砕できます'
+  CLAY_FUSION_ORE: '&6粘土融合インゴット鉱石'
   CLAY_FUSION_ORE_LORE:
-  - "&3は粘土融合器の中央に配置し、粘土融合インゴットに粉砕できます"
-  TUNA_FISH: "&eマグロ"
+    - '&3は粘土融合器の中央に配置し、粘土融合インゴットに粉砕できます'
+  TUNA_FISH: '&eマグロ'
   TUNA_FISH_LORE:
-  - "&6刺身できる"
-  - "&9釣り"
-  - "&7食べた後、満腹感が6ポイント増加します。"
-  CLAY_ELECTRIC_COPIER: "&eパワーコピー機"
+    - '&6刺身できる'
+    - '&9釣り'
+    - '&7食べた後、満腹感が6ポイント増加します。'
+  CLAY_ELECTRIC_COPIER: '&eパワーコピー機'
   CLAY_ELECTRIC_COPIER_LORE:
-  - 
-  - "&fは本をコピーできます"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&740 J / s"
-  COPYING_MODULE: "&bモジュールのコピー"
+    - ''
+    - '&fは本をコピーできます'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&740 J / s'
+  COPYING_MODULE: '&bモジュールのコピー'
   COPYING_MODULE_LORE:
-  - "&6書籍のコピーに使用されるモジュール。"
-  INK_MODULE: "&bインクモジュール"
+    - '&6書籍のコピーに使用されるモジュール。'
+  INK_MODULE: '&bインクモジュール'
   INK_MODULE_LORE:
-  - "&6はインクを保管しています。"
-  CLAY_WITHER_KILLER: "&e砂カービングマシン"
+    - '&6はインクを保管しています。'
+  CLAY_WITHER_KILLER: '&e砂カービングマシン'
   CLAY_WITHER_KILLER_LORE:
-  - 
-  - "&3は枯れを殺すことができる"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨&e⚡&75120 J /ウィザー"
+    - ''
+    - '&3は枯れを殺すことができる'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨&e⚡&75120 J /ウィザー'
 General:
-  startTip: ClayTech By ClayCoffee
-  registeringItems: スライムテクノロジーのアイテムを登録しています...
-  registeringError: アイテムの登録中にエラーが発生しました：
-  Info_1: "###########################################################"
-  Info_2: ClayTech v{version}が正常にロードされました。
+  startTip: 'ClayTech By ClayCoffee'
+  registeringItems: 'スライムテクノロジーのアイテムを登録しています...'
+  registeringError: 'アイテムの登録中にエラーが発生しました：'
+  Info_1: '###########################################################'
+  Info_2: 'ClayTech v{version}が正常にロードされました。'
   Info_3: '作者: {author}'
-  Info_5: 課題追跡：{issue_tracker}
-  Info_6: "###########################################################"
-  Auto-updater_disabled: 自動更新を無効にしました！これにより、自動的に修正できない問題が発生する可能性があります。
-  update_done: "&aバージョン&c{old_version}&aから&6 {new_version}に正常に更新されました。&aサーバーを再起動して更新を適用してください！"
-  DEV_VERSION: "&eClayTechが開発バージョンを使用していることを検出しました。バグがある場合は、問題トラッカーに提出してください！"
-  command_not_found: "§b[ClayTech]§c注文が見つかりませんでした。"
-  basic_command: "&3ClayTech{version}&eBy&6ClayCoffee"
-  LatestVersion: "&a現在、最新バージョンの&6ClayTech&aを使用しています。"
-  CantPlaceLore: "&eは配置できません"
-  no_permission: "§c許可がありません。"
-  CantPlace: "§b[ClayTech]§cこのアイテムは配置できません。"
-  CantBreak: "§b[ClayTech]§cアイテムは破壊できません。"
-  Blind_5_effect: "&7盲目 V"
-  Slowness_5_effect: "&7移動速度低下 V"
-  Confusion_5_effect: "&7吐き気V"
-  Poison_3_effect: "&7毒III"
-  Anti_Slowness_3_effect: "&7移動速度上昇III"
-  Drink_Message: "&6がらがらがらがら...とても美味しい..."
-  Eat_Message: "&6カリカリ…とてもおいしい。"
-  Cant_Drink_Message: "&cあなたはすでにいっぱいです。もう飲む必要はありません！"
-  Cant_Eat_Message: "＆cあなたはすでに満員です、もう食べる必要はありません！"
-  Wash_Message: "&6がクリーニングされました!!"
-  Cant_Wash_Message: "&cをクリーニングできません！バケツがありません！"
-  Before_115: "&cは、サーバーがバージョン1.15より前で実行されていることを検出しました。これにより、一部のアイテムが登録に失敗する可能性がありますが、このプラグインは引き続き正常に実行できます。"
-  Not_compatible: "&c申し訳ありませんが、このプラグインは1.13.x、1.14.x、1.15.x、1.16.xのサーバーでのみ使用できます！サーバーをアップグレードしてください。"
-  TNT_EXPLOSION_CREATER_WAIT: "&aTNTは5秒後に配置されます。けがをしないようにできるだけ早く脱出してください。"
-  TNT_EXPLOSION_CREATER_NO_TNT: "&cバックパックにTNTがありません。配置できません！"
-  TNT_EXPLOSION_CREATER_SUCCESS: "&aTNTの爆破に成功しました。"
-  TNT_EXPLOSION_CREATER_FATAL: "&cTNTの爆発に失敗しました。保護やその他の理由が考えられます。"
-  TNT_EXPLOSION_CREATER_CD: "&c冷却されるまでお待ちください..."
-  Durability: "&b耐久"
-  CantEat: "&7食べられない"
-  CantEatMessage: "&cこのアイテムは食べられません。"
-  CantInteract: "&7インタラクティブではない"
-  CantInteractMessage: "&cこのアイテムを操作することはできません。"
-  Rocket: "&9ロケット"
-  SpaceSuit: "&9宇宙服"
-  Fuel: "&b現在の燃料："
-  Oxygen: "&b現在の酸素："
-  ProtectLevel: "&b保護レベル："
-  SpaceSuitError: "&c&l酸素不足"
-  SpaceSuitError_Sub: "&6宇宙服を着用していないか、宇宙服の保護レベルが不十分または酸素不足です！"
-  NotRocket: "&c申し訳ありませんが、この操作を続行するにはロケットが必要です！"
-  NotEnoughFuel: "&c申し訳ありませんが、ロケットの離陸に必要な燃料が不足しています！"
-  RocketOK: "&610&e秒後に離陸します!キャンセルする場合はアイテムを手に持ってください。"
-  RocketArrived: "&aがターゲットの惑星に到達しました！"
-  RocketCountdown: あと&6%seconds% &b秒で目標の惑星に到達します！キャンセルするためのアイテムを移動します。
-  SamePlanet: "&cあなたはすでにこの惑星にいます！"
-  StakingRockets: "&cロケットを積み重ねることはできません！"
-  CantUseOtherTeleportInUniverse: "&cごめんなさい。宇宙でのテレポートや宇宙へのテレポートはできません！"
-  BaseCompleted: "&3基地が設置されました！"
-  BaseExists: "&cこの惑星にはすでに基地があります！破壊してもう一度やり直してください。"
-  BaseDestroyed: "&6基地が破壊されました！"
-  TeleportedToBase: "&aは基地にテレポートされました"
-  TeleportedToBase_Sub: "&a基地があなたを歓迎します"
-  OxygenDistributer: "&9酸素ディストリビューター"
-  SPACESUIT_NOT_OK: "&c宇宙服が完全に着用されていません！"
-  SPACESUIT_4: "&cディスペンサーには少なくとも4点の酸素が必要です！"
-  SPACESUIT_DISTRIBUTER_OK: "&3が正常に割り当てられました！"
-  NotInPlanet: "&c申し訳ありませんが、あなたは現在地球上にいません！基地を設定できません。"
-  NotYourBase: "&c申し訳ありませんが、これは基地ではありません。分解することはできません。"
-  notOwner: "&c自分のロケットランチャーしか開けません！"
-  SpaceSuitFall: "&6 >>宇宙服は落下によるダメージからあなたを救います"
-  AlreadyInRocket: "&cあなたはすでにロケットに入っています！アイテムスロットを移動して打ち上げをキャンセルしてください。"
-  LocationFatal: "&c着陸に失敗しました！しかし、燃料は消費されませんでした。"
-  NotAtAPlanet: "&c申し訳ありませんが、惑星（主な世界など）から離陸する必要があります！"
-  Cant_Drink_Milk: "&cこの惑星で牛乳を飲んで効果を取り除くことはできません。"
-  Yes_1: はい
-  No_1: いいえ
-  SPACESUIT_DISTRIBUTER_FULL: "&3宇宙服は酸素でいっぱいです。"
+  Info_5: '課題追跡：{issue_tracker}'
+  Info_6: '###########################################################'
+  Auto-updater_disabled: '自動更新を無効にしました！これにより、自動的に修正できない問題が発生する可能性があります。'
+  update_done: '&aバージョン&c{old_version}&aから&6 {new_version}に正常に更新されました。&aサーバーを再起動して更新を適用してください！'
+  DEV_VERSION: '&eClayTechが開発バージョンを使用していることを検出しました。バグがある場合は、問題トラッカーに提出してください！'
+  command_not_found: '§b[ClayTech]§c注文が見つかりませんでした。'
+  basic_command: '&3ClayTech{version}&eBy&6ClayCoffee'
+  LatestVersion: '&a現在、最新バージョンの&6ClayTech&aを使用しています。'
+  CantPlaceLore: '&e配置できません'
+  no_permission: '§c許可がありません。'
+  CantPlace: '§b[ClayTech]§cこのアイテムは配置できません。'
+  CantBreak: '§b[ClayTech]§cアイテムは破壊できません。'
+  Blind_5_effect: '&7盲目 V'
+  Slowness_5_effect: '&7移動速度低下 V'
+  Confusion_5_effect: '&7吐き気 V'
+  Poison_3_effect: '&7毒 III'
+  Anti_Slowness_3_effect: '&7移動速度低下リバウンド III'
+  Drink_Message: '&6がらがらがらがら...とても美味しい...'
+  Eat_Message: '&6カリカリ…とてもおいしい。'
+  Cant_Drink_Message: '&cあなたはすでにいっぱいです。もう飲む必要はありません！'
+  Cant_Eat_Message: '&cあなたはすでに満員です、もう食べる必要はありません！'
+  Wash_Message: '&6がクリーニングされました!!'
+  Cant_Wash_Message: '&cをクリーニングできません！バケツがありません！'
+  Before_115: '&cは、サーバーがバージョン1.15より前で実行されていることを検出しました。これにより、一部のアイテムが登録に失敗する可能性がありますが、このプラグインは引き続き正常に実行できます。'
+  Not_compatible: '&c申し訳ありませんが、このプラグインは1.13.x、1.14.x、1.15.x、1.16.xのサーバーでのみ使用できます！サーバーをアップグレードしてください。'
+  TNT_EXPLOSION_CREATER_WAIT: '&aTNTは5秒後に配置されます。けがをしないようにできるだけ早く脱出してください。'
+  TNT_EXPLOSION_CREATER_NO_TNT: '&cバックパックにTNTがありません。配置できません！'
+  TNT_EXPLOSION_CREATER_SUCCESS: '&aTNTの爆破に成功しました。'
+  TNT_EXPLOSION_CREATER_FATAL: '&cTNTの爆発に失敗しました。保護やその他の理由が考えられます。'
+  TNT_EXPLOSION_CREATER_CD: '&c冷却されるまでお待ちください...'
+  Durability: '&b耐久'
+  CantEat: '&7食べられない'
+  CantEatMessage: '&cこのアイテムは食べられません。'
+  CantInteract: '&7は対話式ではありません'
+  CantInteractMessage: '&cこのアイテムを操作することはできません。'
+  Rocket: '&9ロケット'
+  SpaceSuit: '&9宇宙服'
+  Fuel: '&b現在の燃料：'
+  Oxygen: '&b現在の酸素：'
+  ProtectLevel: '&b保護レベル：'
+  SpaceSuitError: '&c&l酸素不足'
+  SpaceSuitError_Sub: '&6宇宙服を着用していないか、宇宙服の保護レベルが不十分または酸素不足です！'
+  NotRocket: '&c申し訳ありませんが、この操作を続行するにはロケットが必要です！'
+  NotEnoughFuel: '&c申し訳ありませんが、ロケットの離陸に必要な燃料が不足しています！'
+  RocketOK: '&610&e秒後に離陸します!キャンセルする場合はアイテムを手に持ってください。'
+  RocketArrived: '&aがターゲットの惑星に到達しました！'
+  RocketCountdown: 'あと&6%seconds% &b秒で目標の惑星に到達します！キャンセルするためのアイテムを移動します。'
+  SamePlanet: '&cあなたはすでにこの惑星にいます！'
+  StakingRockets: '&cロケットを積み重ねることはできません！'
+  CantUseOtherTeleportInUniverse: '&cごめんなさい。宇宙でのテレポートや宇宙へのテレポートはできません！'
+  BaseCompleted: '&3基地が設置されました！'
+  BaseExists: '&cこの惑星にはすでに基地があります！破壊してもう一度やり直してください。'
+  BaseDestroyed: '&6基地が破壊されました！'
+  TeleportedToBase: '&aは基地にテレポートされました'
+  TeleportedToBase_Sub: '&a基地があなたを歓迎します'
+  OxygenDistributer: '&9酸素ディストリビューター'
+  SPACESUIT_NOT_OK: '&c宇宙服が完全に着用されていません！'
+  SPACESUIT_4: '&cディスペンサーには少なくとも4点の酸素が必要です！'
+  SPACESUIT_DISTRIBUTER_OK: '&3が正常に割り当てられました！'
+  NotInPlanet: '&c申し訳ありませんが、あなたは現在地球上にいません！基地を設定できません。'
+  NotYourBase: '&c申し訳ありませんが、これは基地ではありません。分解することはできません。'
+  notOwner: '&c自分のロケットランチャーしか開けません！'
+  SpaceSuitFall: '&6 >>宇宙服は落下によるダメージからあなたを救います'
+  AlreadyInRocket: '&cあなたはすでにロケットに入っています！アイテムスロットを移動して打ち上げをキャンセルしてください。'
+  LocationFatal: '&c着陸に失敗しました！しかし、燃料は消費されませんでした。'
+  NotAtAPlanet: '&c申し訳ありませんが、惑星（主な世界など）から離陸する必要があります！'
+  Cant_Drink_Milk: '&cこの惑星で牛乳を飲んで効果を取り除くことはできません。'
+  Yes_1: 'はい'
+  No_1: 'いいえ'
+  SPACESUIT_DISTRIBUTER_FULL: '&3宇宙服は酸素でいっぱいです。'
 Categories:
-  Basic: "&bClayTech-基本"
-  Weapons: "&bClayTech-武器"
-  Food: "&bClayTech-食料"
-  FoodMakings: "&bClayTech-食料および飲料材料"
-  Drink: "&bClayTech-飲料"
-  Makings: "&bClayTech-材料"
-  Armors: "&bClayTech-装置"
-  Decorates: "&bClayTech-装飾"
-  Elements: "&bClayTech-元素"
-  Machines: "&bClayTech-機械"
-  Other: "&bClayTech-その他"
-  Tools: "&bClayTech-ツール"
-  OreThings: "&bClayTech-鉱物資源"
+  Basic: '&bClayTech-基本'
+  Weapons: '&bClayTech-武器'
+  Food: '&bClayTech-食料'
+  FoodMakings: '&bClayTech-食料および飲料材料'
+  Drink: '&bClayTech-飲料'
+  Makings: '&bClayTech-材料'
+  Armors: '&bClayTech-装置'
+  Decorates: '&bClayTech-装飾'
+  Elements: '&bClayTech-元素'
+  Machines: '&bClayTech-機械'
+  Other: '&bClayTech-その他'
+  Tools: '&bClayTech-ツール'
+  OreThings: '&bClayTech-鉱物資源'
 Researches:
   CLAYTECH_ARMORS_I: 基本エフェクト機器
   CLAYTECH_START: ねえ、クレイテック！主はここにいる！
@@ -609,49 +609,49 @@ Researches:
   CLAYTECH_COPIER: 複写機
   CLAYTECH_WITHER_KILLER: 砂彫り機
 MachineRecipes:
-  CLAY_FUSION_MACHINE: "&a&oは粘土融合ベッセルで作られています"
-  CLAY_ELETRIC_CAULDRON: "&a&oは電気ポットで合成されます"
-  CLAY_FOOD_CHALKING_MACHINE: "&a&oは食品用小麦粉機械で合成されます"
-  CLAY_ELEMENT_EXTRACTER: "&a&oは要素抽出マシンで抽出されます"
-  CLAY_EXPERIMENT_TABLE_BASIC: "&a&oは実験プラットフォームで実験的に取得されます（基本）"
-  CLAY_ROCKET_ASSEMBLING_MACHINE: "&a&oはロケットアセンブラで組み立てられます"
-  CLAY_ROCKET_FUEL_GENERATOR: "&a&oはロケット燃料メーカーで製造されています"
-  DIG_IN_THE_MOON: "&a&o月面を掘る"
-  DIG_IN_NON_EARTH: "&a&o地球以外（主世界）の惑星を掘る"
-  FISHING: "&a&o釣りを通して"
-  HARVEST: "&a&oは特定の作物を収穫することで得られます"
-  PLUCKING: "&a&oは、葉を摘むことによって取得されます"
-  CLEANING: "&a&oクリーニングによって取得された"
+  CLAY_FUSION_MACHINE: '&a&oは粘土融合ベッセルで作られています'
+  CLAY_ELETRIC_CAULDRON: '&a&oは電気ポットで合成されます'
+  CLAY_FOOD_CHALKING_MACHINE: '&a&oは食品用小麦粉機械で合成されます'
+  CLAY_ELEMENT_EXTRACTER: '&a&oは要素抽出マシンで抽出されます'
+  CLAY_EXPERIMENT_TABLE_BASIC: '&a&oは実験プラットフォームで実験的に取得されます（基本）'
+  CLAY_ROCKET_ASSEMBLING_MACHINE: '&a&oはロケットアセンブラで組み立てられます'
+  CLAY_ROCKET_FUEL_GENERATOR: '&a&oはロケット燃料メーカーで製造されています'
+  DIG_IN_THE_MOON: '&a&o月面を掘る'
+  DIG_IN_NON_EARTH: '&a&o地球以外（主世界）の惑星を掘る'
+  FISHING: '&a&o釣りを通して'
+  HARVEST: '&a&oは特定の作物を収穫することで得られます'
+  PLUCKING: '&a&oは、葉を摘むことによって取得されます'
+  CLEANING: '&a&oクリーニングによって取得された'
 Machines:
-  CLAY_FUSION_MACHINE: "&b粘土融合器"
-  CLAY_ELEMENT_EXTRACTER: "&b元素抽出機"
-  CLAY_FOOD_CAULDRON: "&b電気炊飯器"
-  CLAY_FOOD_CHALKING_MACHINE: "&b食品小麦粉機"
-  CLAY_ELECTRIC_STONE_CRUSHER: "&bパワーストーンクラッシャー"
-  CLAY_EXPERIMENTTABLE_NORMAL: "&b実験プラットフォーム（基本）"
-  CLAY_ROCKET_ASSEMBLING_MACHINE: "&bロケットアセンブラー"
-  CLAY_ROCKET_FUEL_GENERATOR: "&bロケット燃料製造機"
-  CLAY_ROCKET_FUEL_INJECTOR: "&bロケット燃料噴射装置"
-  CLAY_SPACESUIT_OXYGEN_INJECTOR: "&b宇宙服酸素インジェクター"
-  CLAY_COBBLESTONE_GENERATOR: "&b玉石製造機"
-  CLAY_ELECTRIC_WATER_PUMP: "&b電動ウォーターポンプ"
-  ROCKET_LAUNCHER: "&9ロケットランチャー"
-  DISTANCE_TO_PLANET: "&9現在の惑星までの距離&6%ly%&9光年"
-  FUEL_TO_PLANET: "&9到着時に燃料が必要&6%fuel%&9ポイント"
-  PLANET_HABITABLE: "&9生活に適しています：&6%habitable%"
-  PLANET_GRAVITY: "&9重力：&6%gravity%&9G"
-  PLANET_HARM_LEVEL: "&9ハザードレベル：&6%harm_level%"
-  PREVIOUS_PAGE_CANT_USE: "&b前のページ（使用不可！）"
-  NEXT_PAGE_CANT_USE: "&b次のページ（利用不可！）"
-  PREVIOUS_PAGE: "&b前へ"
-  NEXT_PAGE: "&b次へ"
-  ELEMENT_UNIT_DOWN: "&e元素ユニットを下に置く↓"
-  ROCKET_ASSEMBLING_BLUEPRINT: "&e下の図を下に置く↓（主要アイテムは不要）"
-  CLAY_ELECTRIC_COPIER: "&eパワーコピー機"
-  CLAY_WITHER_KILLER: "&e砂カービングマシン"
+  CLAY_FUSION_MACHINE: '&b粘土融合器'
+  CLAY_ELEMENT_EXTRACTER: '&b元素抽出機'
+  CLAY_FOOD_CAULDRON: '&b電気炊飯器'
+  CLAY_FOOD_CHALKING_MACHINE: '&b食品小麦粉機'
+  CLAY_ELECTRIC_STONE_CRUSHER: '&bパワーストーンクラッシャー'
+  CLAY_EXPERIMENTTABLE_NORMAL: '&b実験プラットフォーム（基本）'
+  CLAY_ROCKET_ASSEMBLING_MACHINE: '&bロケットアセンブラー'
+  CLAY_ROCKET_FUEL_GENERATOR: '&bロケット燃料製造機'
+  CLAY_ROCKET_FUEL_INJECTOR: '&bロケット燃料噴射装置'
+  CLAY_SPACESUIT_OXYGEN_INJECTOR: '&b宇宙服酸素インジェクター'
+  CLAY_COBBLESTONE_GENERATOR: '&b玉石製造機'
+  CLAY_ELECTRIC_WATER_PUMP: '&b電動ウォーターポンプ'
+  ROCKET_LAUNCHER: '&9ロケットランチャー'
+  DISTANCE_TO_PLANET: '&9現在の惑星までの距離&6%ly%&9光年'
+  FUEL_TO_PLANET: '&9到着時に燃料が必要&6%fuel%&9ポイント'
+  PLANET_HABITABLE: '&9生活に適しています：&6%habitable%'
+  PLANET_GRAVITY: '&9重力：&6%gravity%&9G'
+  PLANET_HARM_LEVEL: '&9ハザードレベル：&6%harm_level%'
+  PREVIOUS_PAGE_CANT_USE: '&b前のページ（使用不可！）'
+  NEXT_PAGE_CANT_USE: '&b次のページ（利用不可！）'
+  PREVIOUS_PAGE: '&b前へ'
+  NEXT_PAGE: '&b次へ'
+  ELEMENT_UNIT_DOWN: '&e元素ユニットを下に置く↓'
+  ROCKET_ASSEMBLING_BLUEPRINT: '&e下の図を下に置く↓（主要アイテムは不要）'
+  CLAY_ELECTRIC_COPIER: '&eパワーコピー機'
+  CLAY_WITHER_KILLER: '&e砂カービングマシン'
 Planets:
-  Earth: "&a地球（メインワールド）"
-  Moon: "&e月"
-  Mars: "&6火星"
+  Earth: '&a地球（メインワールド）'
+  Moon: '&e月'
+  Mars: '&6火星'
 Resources:
   CLAY_FUEL: 粘土燃料
