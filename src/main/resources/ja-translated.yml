@@ -4,44 +4,44 @@ Items:
   - 
   - "&fは特定の粘土テクノロジーアイテムを作成できます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &716 J/s"
+  - "&8⇨&e⚡&716 J / s"
   CLAY_ELETRIC_CAULDRON_LORE:
   - 
   - "&fは粘土技術で食品を作ることができます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &732 J/s"
+  - "&8⇨&e⚡&732 J / s"
   CLAY_FOOD_CHALKING_MACHINE_LORE:
   - 
   - "&fは粘土技術で特定の粉末を作ることができます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &732 J/s"
+  - "&8⇨&e⚡&732 J / s"
   CLAY_ELEMENT_EXTRACTER_LORE:
   - 
   - "&fは化学元素を抽出できます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+  - "&8⇨&e⚡&764 J / s"
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
   - 
   - "&fは玉石を砂利に砕くことができます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &716 J/s"
+  - "&8⇨&e⚡&716 J / s"
   CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
   - 
   - "&fはいくつかの基本的な実験を行い、新しい物質を取得できます"
   - 
-  - "%TIER%"
+  - "％段％"
   - "%POWER%"
-  - "&8⇨ &e⚡ &780 J/s"
+  - "&8⇨&e⚡&780 J / s"
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
   - 
   - "&3はロケットを組み立てることができます"
@@ -49,7 +49,7 @@ Items:
   - 
   - "%TIER%"
   - "%POWER%"
-  - "&8⇨ &e⚡ &7128 J/s"
+  - "&8⇨&e⚡&7128 J / s"
   CLAY_ROCKET_FUEL_GENERATOR_LORE:
   - 
   - "&3はロケット燃料を作ることができます"
@@ -57,7 +57,7 @@ Items:
   - 
   - "%TIER%"
   - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+  - "&8⇨&e⚡&764 J / s"
   CLAY_ROCKET_FUEL_INJECTOR_LORE:
   - 
   - "&3はロケット燃料を噴射できます"
@@ -65,7 +65,7 @@ Items:
   - 
   - "%TIER%"
   - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+  - "&8⇨&e⚡&764 J / s"
   CLAY_SPACESUIT_OXYGEN_INJECTOR_LORE:
   - 
   - "&3は宇宙服に酸素を注入できる"
@@ -75,7 +75,7 @@ Items:
   - 
   - "%TIER%"
   - "%POWER%"
-  - "&8⇨ &e⚡ &780 J/s"
+  - "&8⇨&e⚡&780 J / s"
   USEFUL_DIRT: "&6有用な土壌"
   USEFUL_DIRT_LORE:
   - "&b地球から地球へ..."
