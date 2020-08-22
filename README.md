@@ -12,8 +12,8 @@ GPLv3 → AGPLv3
 # 支持语言 / Supported Languages
 * 简体中文 zh-CN
 * 繁體中文 zh-TW
-* 日本語 ja-JP
-* English(UK) en-UK
+* 日本語 ja
+* English(UK) en-GB
 * English(US) en-US (default)
 
 # 支持版本 / Supported Minecraft Server Version

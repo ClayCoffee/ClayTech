@@ -623,6 +623,7 @@ MachineRecipes:
   PLUCKING: '&a&oは、葉を摘むことによって取得されます'
   CLEANING: '&a&oクリーニングによって取得された'
 Machines:
+  SPLIT_LINE: ''
   CLAY_FUSION_MACHINE: '&b粘土融合器'
   CLAY_ELEMENT_EXTRACTER: '&b元素抽出機'
   CLAY_FOOD_CAULDRON: '&b電気炊飯器'
