@@ -5,42 +5,42 @@ Items:
   - "&fは特定の粘土テクノロジーアイテムを作成できます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&716 J / s"
   CLAY_ELETRIC_CAULDRON_LORE:
   - 
   - "&fは粘土技術で食品を作ることができます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&732 J / s"
   CLAY_FOOD_CHALKING_MACHINE_LORE:
   - 
   - "&fは粘土技術で特定の粉末を作ることができます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&732 J / s"
   CLAY_ELEMENT_EXTRACTER_LORE:
   - 
   - "&fは化学元素を抽出できます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&764 J / s"
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
   - 
   - "&fは玉石を砂利に砕くことができます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&716 J / s"
   CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
   - 
   - "&fはいくつかの基本的な実験を行い、新しい物質を取得できます"
   - 
   - "％段％"
-  - "%POWER%"
+  - "％パワー％"
   - "&8⇨&e⚡&780 J / s"
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
   - 
