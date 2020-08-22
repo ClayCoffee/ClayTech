@@ -17,6 +17,7 @@ General:
   CantPlaceLore: "&e不可放置"
   no_permission: "§c妳沒有權限."
   CantPlace: "§b[粘土科技]§c妳不能放置該物品."
+  CantBreak: "§b[粘土科技]§c妳不能破壞該物品."
   Blind_5_effect: "&7失明 V"
   Slowness_5_effect: "&7緩慢 V"
   Confusion_5_effect: "&7反胃 V"

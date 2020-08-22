@@ -15,6 +15,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
@@ -117,6 +118,21 @@ public class ItemUseListener implements Listener {
                     }
                 }
             }
+        }
+    }
+
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent e) {
+        if (Utils.getBlockMetadata(e.getBlock(), "cantDestroy") != null) {
+            boolean canDestroy = !((boolean) Utils.getBlockMetadata(e.getBlock(), "cantDestroy"));
+            if (!canDestroy) {
+                e.setCancelled(true);
+                e.getPlayer().sendMessage(Lang.readGeneralText("cantBreak"));
+            }
+        }
+        if (Utils.readPlayerMetadataBoolean(e.getPlayer(), "cantDestroy")) {
+            e.setCancelled(true);
+            e.getPlayer().sendMessage(Lang.readGeneralText("cantBreak"));
         }
     }
 }

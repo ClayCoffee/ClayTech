@@ -25,6 +25,15 @@ public final class Utils {
         return (is);
     }
 
+    public static Object getBlockMetadata(Block b, String s) {
+        for (MetadataValue mv : b.getMetadata(s)) {
+            if (mv.getOwningPlugin() == ClayTech.getInstance()) {
+                return mv.value();
+            }
+        }
+        return null;
+    }
+
     // ��
     public static ItemStack setLore(ItemStack is, int Line, String content) {
         ItemMeta im = is.getItemMeta();

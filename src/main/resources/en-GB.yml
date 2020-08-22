@@ -17,6 +17,7 @@ General:
   CantPlaceLore: "&eCan't Place"
   no_permission: "§cYou don't have permission."
   CantPlace: "&b[ClayTech]&cYou cannot place this!"
+  CantBreak: "§b[ClayTech]§cYou cannot break this!"
   Blind_5_effect: "&7Blind V"
   Slowness_5_effect: "&7Slowness V"
   Confusion_5_effect: "&7Nausea V"
