@@ -45,8 +45,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                 } else {
                     progress.put(b, timeleft - 1);
                 }
-            }
-            else {
+            } else {
                 inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                 for (ItemStack output : processing.get(b).getOutput()) {
@@ -56,8 +55,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                 progress.remove(b);
                 processing.remove(b);
             }
-        }
-        else {
+        } else {
             MachineRecipe r = null;
             Map<Integer, Integer> found = new HashMap<>();
 
@@ -65,10 +63,9 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                 for (ItemStack input : recipe.getInput()) {
                     for (int slot : getInputSlots()) {
                         if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(slot), input, true)) {
-                            if(input == null) {
+                            if (input == null) {
                                 found.put(slot, 1);
-                            }
-                            else {
+                            } else {
                                 found.put(slot, input.getAmount());
                             }
                             break;

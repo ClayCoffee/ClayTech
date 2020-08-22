@@ -1,10 +1,11 @@
 package cn.claycoffee.ClayTech.implementation.Planets;
 
+import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.api.Planet;
 import cn.claycoffee.ClayTech.implementation.Planets.populators.*;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.Utils;
-import com.google.common.collect.ImmutableList;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
@@ -13,6 +14,7 @@ import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.util.noise.SimplexOctaveGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -60,7 +62,14 @@ public class Moon extends ChunkGenerator {
 
     @Override
     public List<BlockPopulator> getDefaultPopulators(World world) {
-        return ImmutableList.of(new MoonKreepPopulator(), new MoonDiamondPopulator(), new MoonCoalPopulator(),
-                new MoonCopperOrePopulator(), new MoonClayFusionOrePopulator());
+        List<BlockPopulator> ret = new ArrayList<>();
+        ret.add(new MoonCoalPopulator());
+        ret.add(new MoonDiamondPopulator());
+        // Check enabled ores then add its populator to the list
+        if (!SlimefunItem.getByItem(ClayTechItems.KREEP_ROCK).isDisabled()) ret.add(new MoonKreepPopulator());
+        if (!SlimefunItem.getByItem(ClayTechItems.COPPER_ORE).isDisabled()) ret.add(new MoonCopperOrePopulator());
+        if (!SlimefunItem.getByItem(ClayTechItems.CLAY_FUSION_ORE).isDisabled())
+            ret.add(new MoonClayFusionOrePopulator());
+        return ret;
     }
 }
