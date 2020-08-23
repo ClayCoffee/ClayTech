@@ -570,6 +570,15 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &75120 J/個雕靈"
+  CLAY_AIR_LOCK_PLATE: "&e氣閘門"
+  CLAY_AIR_LOCK_PLATE_LORE:
+    - "&3放置在地面上"
+    - "&3將會自動檢測半徑4之內前後左右的氣閘門方塊"
+    - "&3請註意對準"
+  CLAY_AIR_LOCK_BLOCK: "&e氣閘門方塊"
+  CLAY_AIR_LOCK_BLOCK_LORE:
+    - "&3與氣閘門壹同使用"
+    - "&3當氣閘門被踩時生效"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基礎效果裝備"
@@ -611,6 +620,7 @@ Researches:
   CLAYTECH_ELECTRIC_WATER_PUMP: "電動水泵"
   CLAYTECH_COPIER: "復印機"
   CLAYTECH_WITHER_KILLER: "&e雕靈殺戮機"
+  CLAYTECH_SPACETHINGS_I: "氣閘門"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器內合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在電鍋內合成"
@@ -641,6 +651,7 @@ Machines:
   CLAY_ELECTRIC_WATER_PUMP: "&b電動水泵"
   CLAY_ELECTRIC_COPIER: "&e電力復印機"
   CLAY_WITHER_KILLER: "&e雕靈殺戮機"
+  CLAY_AIR_LOCKER: "&e氣閘門"
   ROCKET_LAUNCHER: "&9火箭發射器"
   DISTANCE_TO_PLANET: "&9距離當前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到達需要燃料 &6%fuel% &9點"
@@ -653,6 +664,9 @@ Machines:
   NEXT_PAGE: "&b上一頁"
   ELEMENT_UNIT_DOWN: "&e在下方放入元素單元 ↓"
   ROCKET_ASSEMBLING_BLUEPRINT: "&e在下方放入圖紙 ↓(初級物品不需要)"
+  add: "&3點擊以 &a+1"
+  sub: "&3點擊以 &c-1"
+  wait-time: "§3當前等待時間 &b%TIME%"
 Planets:
   Earth: "&a地球(主世界)"
   Moon: "&e月球"

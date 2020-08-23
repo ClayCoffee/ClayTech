@@ -570,6 +570,15 @@ Items:
     - "&6可以做刺身"
     - "&9钓鱼获得"
     - "&7食用后增加6点饱食度"
+  CLAY_AIR_LOCK_PLATE: "&e气闸门"
+  CLAY_AIR_LOCK_PLATE_LORE:
+    - "&3放置在地面上"
+    - "&3将会自动检测半径4之内前后左右的气闸门方块"
+    - "&3请注意对准"
+  CLAY_AIR_LOCK_BLOCK: "&e气闸门方块"
+  CLAY_AIR_LOCK_BLOCK_LORE:
+    - "&3与气闸门一同使用"
+    - "&3当气闸门被踩时生效"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "基础效果装备"
@@ -611,6 +620,7 @@ Researches:
   CLAYTECH_ELECTRIC_WATER_PUMP: "电动水泵"
   CLAYTECH_COPIER: "复印机"
   CLAYTECH_WITHER_KILLER: "沙雕机"
+  CLAYTECH_SPACETHINGS_I: "气闸门"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&o在粘土融合器内合成"
   CLAY_ELETRIC_CAULDRON: "&a&o在电锅内合成"
@@ -641,6 +651,7 @@ Machines:
   CLAY_ELECTRIC_WATER_PUMP: "&b电动水泵"
   CLAY_ELECTRIC_COPIER: "&e电力复印机"
   CLAY_WITHER_KILLER: "&e沙雕机"
+  CLAY_AIR_LOCKER: "&e气闸门"
   ROCKET_LAUNCHER: "&9火箭发射器"
   DISTANCE_TO_PLANET: "&9距离当前星球 &6%ly% &9光年"
   FUEL_TO_PLANET: "&9到达需要燃料 &6%fuel% &9点"
@@ -653,6 +664,9 @@ Machines:
   NEXT_PAGE: "&b下一页"
   ELEMENT_UNIT_DOWN: "&e在下方放入元素单元 ↓"
   ROCKET_ASSEMBLING_BLUEPRINT: "&e在下方放入图纸 ↓(初级物品不需要)"
+  add: "&3点击以 &a+1"
+  sub: "&3点击以 &c-1"
+  wait-time: "§3当前等待时间 &b%TIME%"
 Planets:
   Earth: "&a地球(主世界)"
   Moon: "&e月球"

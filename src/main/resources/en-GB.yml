@@ -560,6 +560,15 @@ Items:
     - "%TIER%"
     - "%POWER%"
     - "&8\u21E8 &e\u26A1 &75120 J per wither"
+  CLAY_AIR_LOCK_PLATE: "&eClay Airlock Plate"
+  CLAY_AIR_LOCK_PLATE_LORE:
+    - "&3Please place it on the ground"
+    - "&3Will automatically detect the front, rear, left, and right clay airlock blocks within a radius of 4"
+    - "&3Remember to align"
+  CLAY_AIR_LOCK_BLOCK: "&eClay Airlock Block"
+  CLAY_AIR_LOCK_BLOCK_LORE:
+    - "&3Use with clay airlock plate"
+    - "&3Active when the airlock plate is stepped on"
   # End Items
 Researches:
   CLAYTECH_ARMORS_I: "Basic Effect Armors"
@@ -601,6 +610,7 @@ Researches:
   CLAYTECH_ELECTRIC_WATER_PUMP: "Electric Water Pump"
   CLAYTECH_COPIER: "Electric Copier"
   CLAYTECH_WITHER_KILLER: "Wither Killer"
+  CLAYTECH_SPACETHINGS_I: "Airlock blocks"
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oCraft this in Clay Fusing Machine"
   CLAY_ELETRIC_CAULDRON: "&a&oCraft this in Electric Cauldron"
@@ -631,6 +641,7 @@ Machines:
   CLAY_ELECTRIC_WATER_PUMP: "&bElectric Water Pump"
   CLAY_ELECTRIC_COPIER: "&eClay Electric Copier"
   CLAY_WITHER_KILLER: "&eWither Killer"
+  CLAY_AIRLOCK_PLATE: "&eAirlock Controller"
   ROCKET_LAUNCHER: "&9Rocket Launcher"
   DISTANCE_TO_PLANET: "&6%ly% &9light years to the planet you on"
   FUEL_TO_PLANET: "&9Require &6%fuel% &9points of fuel to reach"
@@ -643,6 +654,9 @@ Machines:
   NEXT_PAGE: "&bNext Page"
   ELEMENT_UNIT_DOWN: "&ePut element units below ↓"
   ROCKET_ASSEMBLING_BLUEPRINT: "&ePut blueprints below ↓(Tier I rocket doesn't require this)"
+  add: "&3Click to &a+1"
+  sub: "&3Click to &c-1"
+  wait-time: "§3Current wait time &b%TIME%"
 Planets:
   Earth: "&aEarth(Overworld)"
   Moon: "&eMoon"

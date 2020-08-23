@@ -222,6 +222,11 @@ public class ClayTechItems {
             Utils.newItemD(Material.INK_SAC, Lang.readItemText("INK_MODULE")), Lang.readItemLore("INK_MODULE"));
     public static final ItemStack COPYING_MODULE = Utils.setLore(
             Utils.newItemD(Material.DIAMOND, Lang.readItemText("COPYING_MODULE")), Lang.readItemLore("COPYING_MODULE"));
+    public static final ItemStack CLAY_AIR_LOCK_PLATE = Utils.setLore(
+            Utils.newItemD(Material.STONE_PRESSURE_PLATE, Lang.readItemText("CLAY_AIR_LOCK_PLATE")), Lang.readItemLore("CLAY_AIR_LOCK_PLATE"));
+    public static final ItemStack CLAY_AIR_LOCK_BLOCK = Utils.setLore(
+            Utils.newItemD(Material.IRON_BLOCK, Lang.readItemText("CLAY_AIR_LOCK_BLOCK")), Lang.readItemLore("CLAY_AIR_LOCK_BLOCK"));
+
     // 头颅
     public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
             SkullItem.fromHash("3ce2dad9baf7eaba7e80d4d0f9fac0aab01a76b12fb71c3d2af2a16fdd4c7383"),

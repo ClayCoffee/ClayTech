@@ -477,6 +477,15 @@ Items:
     - '%TIER%'
     - '%POWER%'
     - '&8⇨ &e⚡ &75120 J/ウィザー'
+  CLAY_AIR_LOCK_PLATE: '&eエアロックドア'
+  CLAY_AIR_LOCK_PLATE_LORE:
+    - '&3地面に置いた'
+    - '&3は、半径4以内の前、後、左、右のエアロックブロックを自動的に検出します'
+    - '&3アライメントに注意してください'
+  CLAY_AIR_LOCK_BLOCK: '＆eAirlockゲートブロック'
+  CLAY_AIR_LOCK_BLOCK_LORE:
+    - '&3エアロックで使用'
+    - '&3はエアロックが踏まれたときに有効になります'
 General:
   startTip: 'ClayTech By ClayCoffee'
   registeringItems: 'スライムテクノロジーのアイテムを登録しています...'
@@ -608,6 +617,7 @@ Researches:
   CLAYTECH_ELECTRIC_WATER_PUMP: 電動ウォーターポンプ
   CLAYTECH_COPIER: 複写機
   CLAYTECH_WITHER_KILLER: 砂彫り機
+  CLAYTECH_SPACETHINGS_I: エアロックドア
 MachineRecipes:
   CLAY_FUSION_MACHINE: '&a&oは粘土融合ベッセルで作られています'
   CLAY_ELETRIC_CAULDRON: '&a&oは電気ポットで合成されます'
@@ -636,6 +646,7 @@ Machines:
   CLAY_SPACESUIT_OXYGEN_INJECTOR: '&b宇宙服酸素インジェクター'
   CLAY_COBBLESTONE_GENERATOR: '&b玉石製造機'
   CLAY_ELECTRIC_WATER_PUMP: '&b電動ウォーターポンプ'
+  CLAY_AIRLOCK_PLATE: '&eエアロックドアコントローラ'
   ROCKET_LAUNCHER: '&9ロケットランチャー'
   DISTANCE_TO_PLANET: '&9現在の惑星までの距離&6%ly%&9光年'
   FUEL_TO_PLANET: '&9到着時に燃料が必要&6%fuel%&9ポイント'
@@ -650,6 +661,9 @@ Machines:
   ROCKET_ASSEMBLING_BLUEPRINT: '&e下の図を下に置く↓（主要アイテムは不要）'
   CLAY_ELECTRIC_COPIER: '&eパワーコピー機'
   CLAY_WITHER_KILLER: '&e砂カービングマシン'
+  add: "&3クリックして &a+1"
+  sub: "&3クリックして &c-1"
+  wait-time: "§3現在の待機時間 &b%TIME%"
 Planets:
   Earth: '&a地球（メインワールド）'
   Moon: '&e月'

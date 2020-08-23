@@ -18,7 +18,7 @@ import org.bukkit.potion.PotionEffect;
 
 import java.util.Random;
 
-public class Food {
+public class FoodUtils {
     public static void DrinkCheck(Player p, ItemStack HandItem, ItemStack food, int incraseFoodLevel,
                                   PotionEffect[] PotionEffect) {
         if (HandItem.hasItemMeta()) {
