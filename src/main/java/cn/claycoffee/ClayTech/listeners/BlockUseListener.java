@@ -28,7 +28,7 @@ public class BlockUseListener implements Listener {
         if (e.getAction() == Action.PHYSICAL) {
             if (BlockStorage.checkID(e.getClickedBlock()) != null && BlockStorage.checkID(e.getClickedBlock()).equals("CLAY_AIR_LOCK_PLATE")) {
                 Block plate = e.getClickedBlock();
-                List<BlockFace> lf = Arrays.asList(new BlockFace[]{BlockFace.NORTH, BlockFace.SOUTH, BlockFace.EAST, BlockFace.WEST});
+                BlockFace[] lf = new BlockFace[]{BlockFace.NORTH, BlockFace.SOUTH, BlockFace.EAST, BlockFace.WEST};
                 for (BlockFace face : lf) {
                     Slimefunutils.doAirlock(plate, face);
                 }
