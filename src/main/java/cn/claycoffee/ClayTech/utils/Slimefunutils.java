@@ -148,9 +148,14 @@ public class Slimefunutils {
                 }
             }
             if (blocks.size() > 1) {
-                for (Block b : blocks) {
-                    b.setType(Material.AIR);
-                }
+                new BukkitRunnable(){
+                    @Override
+                    public void run() {
+                        for (Block b : blocks) {
+                            b.setType(Material.AIR);
+                        }
+                    }
+                }.runTask(ClayTech.getInstance());
                 new BukkitRunnable() {
                     @Override
                     public void run() {
