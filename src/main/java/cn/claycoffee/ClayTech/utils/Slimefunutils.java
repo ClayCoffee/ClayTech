@@ -88,8 +88,6 @@ public class Slimefunutils {
                 for (int x : range) {
                     Block a2 = a1.getRelative(BlockFace.WEST, x);
                     Block a3 = a1.getRelative(BlockFace.EAST, x);
-                    Utils.info(a2.getType().name());
-                    Utils.info(a3.getType().name());
                     if (BlockStorage.checkID(a2) != null && BlockStorage.checkID(a2).equals("CLAY_AIR_LOCK_BLOCK")) {
                         l++;
                         block.add(a2);
