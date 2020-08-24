@@ -5,3 +5,4 @@ disable-auto-updater: false
 update-branch: ALL
 #Valid: ALL, STABLE, DEVELOPMENT
 space-travel-need-perm: false
+clay-air-lock-block-texture: IRON_BLOCK

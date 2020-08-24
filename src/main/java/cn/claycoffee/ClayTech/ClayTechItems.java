@@ -225,7 +225,7 @@ public class ClayTechItems {
     public static final ItemStack CLAY_AIR_LOCK_PLATE = Utils.setLore(
             Utils.newItemD(Material.STONE_PRESSURE_PLATE, Lang.readItemText("CLAY_AIR_LOCK_PLATE")), Lang.readItemLore("CLAY_AIR_LOCK_PLATE"));
     public static final ItemStack CLAY_AIR_LOCK_BLOCK = Utils.setLore(
-            Utils.newItemD(Material.IRON_BLOCK, Lang.readItemText("CLAY_AIR_LOCK_BLOCK")), Lang.readItemLore("CLAY_AIR_LOCK_BLOCK"));
+            Utils.newItemD(Material.getMaterial(ClayTech.getInstance().getConfig().getString("clay-air-lock-block-texture")), Lang.readItemText("CLAY_AIR_LOCK_BLOCK")), Lang.readItemLore("CLAY_AIR_LOCK_BLOCK"));
 
     // 头颅
     public static final ItemStack CLAY_FUEL = Utils.setDisplayName(
