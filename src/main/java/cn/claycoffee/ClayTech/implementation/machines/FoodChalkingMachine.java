@@ -52,7 +52,7 @@ public class FoodChalkingMachine extends ANewContainer {
         this.registerRecipe(8, new ItemStack[]{ClayTechItems.RAW_TEA}, new ItemStack[]{ClayTechItems.TEA_POWDER});
         this.registerRecipe(8, new ItemStack[]{ClayTechItems.CLAY_LEMON},
                 new ItemStack[]{ClayTechItems.LEMON_POWDER});
-        this.registerRecipe(8, ClayTechMachineRecipes.RAW_CHICKEN_FOOT,
+        this.registerRecipe(8, new ItemStack[]{new ItemStack(Material.CHICKEN)},
                 new ItemStack[]{ClayTechItems.RAW_CHICKEN_FOOT});
     }
 }
