@@ -8,6 +8,7 @@ This plugin made by me.Please do not claim this plugin as yours, because i put a
 Please notify: the Public License has been changed.  
 请注意: 开源协议已被更改.  
 GPLv3 → AGPLv3  
+Join our discord server: [Here](https://discord.gg/sbNKCCs)
 
 # 支持语言 / Supported Languages
 * 简体中文 zh-CN
