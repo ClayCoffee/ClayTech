@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class ANewContainer extends AContainer implements InventoryBlock, EnergyNetComponent {
-    public static Map<Block, Integer> progress = new HashMap<>();
-    public static Map<Block, MachineRecipe> processing = new HashMap<>();
+    public static Map<Block, Integer> pt = new HashMap<>();
+    public static Map<Block, MachineRecipe> pr = new HashMap<>();
 
     public ANewContainer(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                          ItemStack[] recipe) {
@@ -33,10 +33,10 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
         BlockMenu inv = BlockStorage.getInventory(b);
 
         if (isProcessing(b)) {
-            int timeleft = progress.get(b);
+            int timeleft = pt.get(b);
 
             if (timeleft > 0) {
-                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, pr.get(b).getTicks(), getProgressBar());
 
                 if (getCapacity() > 0) {
                     if (ChargableBlock.getCharge(b) < getEnergyConsumption()) {
@@ -44,19 +44,19 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                     }
 
                     ChargableBlock.addCharge(b, -getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
+                    pt.put(b, timeleft - 1);
                 } else {
-                    progress.put(b, timeleft - 1);
+                    pt.put(b, timeleft - 1);
                 }
             } else {
                 inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
 
-                for (ItemStack output : processing.get(b).getOutput()) {
+                for (ItemStack output : pr.get(b).getOutput()) {
                     inv.pushItem(output.clone(), getOutputSlots());
                 }
 
-                progress.remove(b);
-                processing.remove(b);
+                pt.remove(b);
+                pr.remove(b);
             }
         } else {
             MachineRecipe r = null;
@@ -88,9 +88,30 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                     inv.consumeItem(entry.getKey(), entry.getValue());
                 }
 
-                processing.put(b, r);
-                progress.put(b, r.getTicks());
+                pr.put(b, r);
+                pt.put(b, r.getTicks());
             }
         }
+    }
+
+    public void registerRecipe(MachineRecipe recipe) {
+        recipe.setTicks(recipe.getTicks() / getSpeed());
+        recipes.add(recipe);
+    }
+
+    public void registerRecipe(int seconds, ItemStack[] input, ItemStack[] output) {
+        registerRecipe(new MachineRecipe(seconds, input, output));
+    }
+
+    public void registerRecipe(int seconds, ItemStack input, ItemStack output) {
+        registerRecipe(new MachineRecipe(seconds, new ItemStack[]{input}, new ItemStack[]{output}));
+    }
+
+    public MachineRecipe getProcessing(Block b) {
+        return pr.get(b);
+    }
+
+    public boolean isProcessing(Block b) {
+        return getProcessing(b) != null;
     }
 }
