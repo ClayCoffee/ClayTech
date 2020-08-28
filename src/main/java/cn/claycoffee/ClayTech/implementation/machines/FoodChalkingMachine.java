@@ -1,7 +1,6 @@
 package cn.claycoffee.ClayTech.implementation.machines;
 
 import cn.claycoffee.ClayTech.ClayTechItems;
-import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.implementation.abstractMachines.ANewContainer;
 import cn.claycoffee.ClayTech.utils.Lang;
 import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;

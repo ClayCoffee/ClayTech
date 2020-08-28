@@ -148,7 +148,7 @@ public class Slimefunutils {
                 }
             }
             if (blocks.size() > 1) {
-                new BukkitRunnable(){
+                new BukkitRunnable() {
                     @Override
                     public void run() {
                         for (Block b : blocks) {

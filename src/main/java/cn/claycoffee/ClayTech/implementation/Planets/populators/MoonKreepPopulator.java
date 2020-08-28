@@ -7,6 +7,7 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.eclipse.jdt.annotation.NonNull;
@@ -29,12 +30,14 @@ public class MoonKreepPopulator extends BlockPopulator {
                 final int ty = y;
                 final int tz = z;
                 int count = 0;
-                while (random.nextDouble() < 0.8D && count <= 6 || count <= 3) {
-                    if (source.getBlock(x, y, z).getType() == Material.STONE) {
+                Block sourceb = source.getBlock(x, y, z);
+                while (count <= 3 || random.nextDouble() < 0.8D && count <= 6) {
+                    if (sourceb.getType() == Material.STONE) {
                         if (!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
                             BlockStorage bs = new BlockStorage(world);
                             SlimefunPlugin.getRegistry().getWorlds().put(world.getName(), bs);
                         }
+                        if (BlockStorage.hasBlockInfo(sourceb.getLocation())) return;
                         new BukkitRunnable() {
 
                             @Override

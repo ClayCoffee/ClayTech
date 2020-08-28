@@ -28,31 +28,30 @@ public class MoonClayFusionOrePopulator extends BlockPopulator {
                     int y = random.nextInt(100) + 1;
                     int z = random.nextInt(16);
                     int count = 0;
-                    while (random.nextDouble() < 0.85D && count <= 6 || count <= 3) {
+                    while (count <= 3 || random.nextDouble() < 0.85D && count <= 6) {
                         final int tx = x;
                         final int ty = y;
                         final int tz = z;
                         Block sourceb = source.getBlock(x, y, z);
                         if (sourceb.getType() == Material.STONE) {
-                            if (sourceb.getType() == Material.STONE) {
-                                if (!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
-                                    BlockStorage bs = new BlockStorage(world);
-                                    SlimefunPlugin.getRegistry().getWorlds().put(world.getName(), bs);
-                                }
-                                new BukkitRunnable() {
-
-                                    @Override
-                                    public void run() {
-                                        source.getBlock(tx, ty, tz).setType(ClayTechItems.CLAY_FUSION_ORE.getType(),
-                                                false);
-                                        BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "CLAY_FUSION_ORE",
-                                                true);
-
-                                    }
-
-                                }.runTask(ClayTech.getInstance());
-                                count++;
+                            if (!SlimefunPlugin.getRegistry().getWorlds().containsKey(world.getName())) {
+                                BlockStorage bs = new BlockStorage(world);
+                                SlimefunPlugin.getRegistry().getWorlds().put(world.getName(), bs);
                             }
+                            if (BlockStorage.hasBlockInfo(sourceb.getLocation())) return;
+                            new BukkitRunnable() {
+
+                                @Override
+                                public void run() {
+                                    source.getBlock(tx, ty, tz).setType(ClayTechItems.CLAY_FUSION_ORE.getType(),
+                                            false);
+                                    BlockStorage.addBlockInfo(source.getBlock(tx, ty, tz), "id", "CLAY_FUSION_ORE",
+                                            true);
+
+                                }
+
+                            }.runTask(ClayTech.getInstance());
+                            count++;
                         }
 
                         switch (random.nextInt(6)) {
