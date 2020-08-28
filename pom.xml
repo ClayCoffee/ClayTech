@@ -52,8 +52,7 @@
         <dependency>
             <groupId>com.github.Multiverse</groupId>
             <artifactId>Multiverse-Core</artifactId>
-            <version>master-SNAPSHOT</version>
-            <scope>provided</scope>
+            <version>3afca50930</version>
         </dependency>
         <dependency>
             <groupId>com.github.TheBusyBiscuit</groupId>
