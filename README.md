@@ -31,6 +31,7 @@ You can translate ClayTech here: [Click me](https://gitlocalize.com/repo/4241)
 The default language file(en-US、en-GB) might have some grammar mistakes, I hope you can help me translate it.
 
 # 下载 / Download
-* Jenkins: [Click me](http://build.claycoffee.cn:8688/)  
+* The Repo Server: [Click me](https://thebusybiscuit.github.io/builds/ClayCoffee/ClayTech/)  
+* Jenkins: [Click me](http://build.claycoffee.cn:8688/job/ClayTech/) 
 * Github Releases
 

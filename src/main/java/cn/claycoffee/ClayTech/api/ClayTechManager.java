@@ -52,7 +52,7 @@ public class ClayTechManager {
         if (item == null)
             return false;
         if (item.hasItemMeta()) {
-            if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("Rocket"))) {
+            if (item.getItemMeta().getDisplayName().startsWith(Lang.rocketPrefix)) {
                 return true;
             } else {
                 return false;
@@ -65,7 +65,7 @@ public class ClayTechManager {
         if (item == null)
             return false;
         if (item.hasItemMeta()) {
-            if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("SpaceSuit"))) {
+            if (item.getItemMeta().getDisplayName().startsWith(Lang.spaceSuitPrefix)) {
                 return true;
             } else {
                 return false;
@@ -78,7 +78,7 @@ public class ClayTechManager {
         if (item == null)
             return false;
         if (item.hasItemMeta()) {
-            if (item.getItemMeta().getDisplayName().startsWith(Lang.readGeneralText("OxygenDistributer"))) {
+            if (item.getItemMeta().getDisplayName().startsWith(Lang.oxygenDistributerPrefix)) {
                 return true;
             } else {
                 return false;

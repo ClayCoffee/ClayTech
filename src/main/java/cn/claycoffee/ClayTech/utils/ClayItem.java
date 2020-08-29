@@ -8,7 +8,7 @@ import java.util.List;
 public class ClayItem {
     public static boolean hasDurability(ItemStack item) {
         for (String each : Utils.getLoreList(item)) {
-            if (each.startsWith(Lang.readGeneralText("Durability"))) {
+            if (each.startsWith(Lang.durability)) {
                 return true;
             }
         }
@@ -18,9 +18,9 @@ public class ClayItem {
     public static int getDurability(ItemStack item) {
         if (hasDurability(item)) {
             for (String each : Utils.getLoreList(item)) {
-                if (each.startsWith(Lang.readGeneralText("Durability"))) {
+                if (each.startsWith(Lang.durability)) {
                     return new Integer(
-                            each.replaceFirst(Lang.readGeneralText("Durability") + ":", "").replace(" §6", ""))
+                            each.replaceFirst(Lang.durability + ":", "").replace(" §6", ""))
                             .intValue();
                 }
             }
@@ -39,8 +39,8 @@ public class ClayItem {
             List<String> Lore = Utils.getLoreList(item);
             int i = 0;
             for (String each : Lore) {
-                if (each.startsWith(Lang.readGeneralText("Durability"))) {
-                    each = Lang.readGeneralText("Durability") + ": §6" + durability;
+                if (each.startsWith(Lang.durability)) {
+                    each = Lang.durability + ": §6" + durability;
                     Lore.set(i, each);
                     break;
                 }

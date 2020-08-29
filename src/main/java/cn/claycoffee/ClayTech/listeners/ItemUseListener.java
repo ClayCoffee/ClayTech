@@ -66,7 +66,7 @@ public class ItemUseListener implements Listener {
                 e.getPlayer().sendMessage(Lang.readGeneralText("cantBreak"));
             }
         }
-        if (Utils.readPlayerMetadataBoolean(e.getPlayer(), "cantDestroy")) {
+        if (Utils.readPlayerMetadataBoolean(e.getPlayer(), "inRocket")) {
             e.setCancelled(true);
             e.getPlayer().sendMessage(Lang.readGeneralText("cantBreak"));
         }

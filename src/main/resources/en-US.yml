@@ -111,7 +111,7 @@ Items:
   BLIND_SWORD: "&7Blind Sword"
   BLIND_SWORD_LORE:
     - "&6Give the target player Blind V effect for 5 seconds after attack"
-    - "&7Blind V"
+    - "<blindfive>"
   CONFUSION_CORE: "&7Nausea Core"
   BLACK_ROCK_BLOCK: "&7Black Rock Block"
   SLOWNESS_CORE: "&7Slowness Core"
@@ -124,18 +124,18 @@ Items:
   FOUR_BOW: "&7Four Bound Bow"
   FOUR_BOW_LORE:
     - "&6Give the target player 5 seconds of Blind V,Slowness V and Nausea V effect and 2 seconds of Poison III affect"
-    - "&7Blind V"
-    - "&7Slowness V"
-    - "&7Nausea V"
-    - "&7Poison III"
+    - "<blindfive>"
+    - "<slownessfive>"
+    - "<confusionfive>"
+    - "<poisonthree>"
   POISON_SWORD: "&7Poison Sword"
   POISON_SWORD_LORE:
     - "&6Give the target player Poison III effect for 2 seconds after attack"
-    - "&7Poison III"
+    - "<poisonthree>"
   ANTI_SLOWNESS_BOOTS: "&7Anti Slowness Boots"
   ANTI_SLOWNESS_BOOTS_LORE:
     - "&6Give the attacker player 2 seconds of Slowness III affect when you got a hit."
-    - "&7Anti Slowness III"
+    - "<antislownessthree>"
   COCOA_BEAN: "&eCocoa Bean"
   COCOA_BEAN_LORE:
     - "&6Yay!Yummy Cocoa Beans!"
@@ -210,25 +210,25 @@ Items:
   ELEMENT_UNIT_LORE:
     - "&6Element Unit"
     - "&7Can cover elements!"
-    - "&eCan't Place"
+    - "<cantplace>"
   ELEMENT_OXYGEN: "&eElement O"
   ELEMENT_OXYGEN_LORE:
     - "&eElement O"
     - "&74P + 5O2 =Light=2P2O5"
     - "&7Gain this by putting three grass blocks in the Element Extracter."
-    - "&eCan't Place"
+    - "<cantplace>"
   ELEMENT_CARBON: "&eElement C"
   ELEMENT_CARBON_LORE:
     - "&6Element C"
     - "&7Can do a lot of things."
     - "&7Gain this by putting eight coals in the Element Extracter."
-    - "&eCan't Place"
+    - "<cantplace>"
   ELEMENT_SILICON: "&eElement Si"
   ELEMENT_SILICON_LORE:
     - "&6Element Si"
     - "&7Can craft Silicon Ingots."
     - "&7Gain this by putting ten blocks of sand in the Element Extracter."
-    - "&eCan't Place"
+    - "<cantplace>"
   BLISTERING_CORE: "&eBlistering Core"
   AUTHOR_HEAD: "&6Author's Head"
   STALIN_HEAD: "&bStalin's Head"
@@ -239,71 +239,71 @@ Items:
   CLAY_COFFEE_LORE:
     - "&eClay Coffee"
     - "&7Increase 5 hunger value and gain three minutes of night vision effect after drinking."
-    - "&eCan't Place"
+    - "<cantplace>"
   DRINK_BOTTLE: "&eDrink Bottle"
   DRINK_BOTTLE_LORE:
     - "&6Drink Bottle"
     - "&7Can craft drink."
     - "&7No bottle no drink!"
-    - "&eCan't Place"
+    - "<cantplace>"
   DIRTY_DRINK_BOTTLE: "&eDirty Drink Bottle"
   DIRTY_DRINK_BOTTLE_LORE:
     - "&6Dirty Drink Bottle"
     - "&7Right click to clean!"
     - "&7Which boy likes to drink dirty drink?"
-    - "&eCan't Place"
+    - "<cantplace>"
   SPICY_CHICKEN_BURGER: "&eSpicy Chicken Burger"
   SPICY_CHICKEN_BURGER_LORE:
     - "&6Spicy Chicken Burger"
     - "&7Increase 15 hunger value and gain twenty seconds of strength effect after eating."
     - "&7KFC?"
-    - "&eCan't Place"
+    - "<cantplace>"
   BABA_BURGER: "&eShit Burger"
   BABA_BURGER_LORE:
     - "&6Shit Burger"
     - "&7Try this!"
-    - "&eCan't Place"
+    - "<cantplace>"
   LETTUSE: "&eLettuce" #Sorry...It's Lettuce,not Lettuse.
   LETTUSE_LORE:
     - "&6Lettuce"
     - "&7Increase 1 hunger value after eat"
-    - "&eCan't Place"
+    - "<cantplace>"
   LEMON: "&eLemon"
   LEMON_LORE:
     - "&6Lemon"
     - "&7Increase 1 hunger value and gain 10 seconds of nausea IV affect after eating."
     - "&7Well."
     - "&7Gain this by breaking oak leaves."
-    - "&eCan't Place"
+    - "<cantplace>"
   LEMON_POWDER_DRINK: "&eLemon Juice"
   LEMON_POWDER_DRINK_LORE:
     - "&6Lemon Juice"
     - "&7Increase 6 hunger value and gain 10 seconds of nausea IV affect after drinking."
     - "&7Well."
-    - "&eCan't Place"
+    - "<cantplace>"
   TEA_DRINK: "&eTea"
   TEA_DRINK_LORE:
     - "&6Tea"
     - "&7Increase 6 hunger value and gain 30 seconds of resistance III affect after drinking."
-    - "&eCan't Place"
+    - "<cantplace>"
   LEMON_TEA_DRINK: "&eLemon Tea"
   LEMON_TEA_DRINK_LORE:
     - "&6Lemon Tea"
     - "&7Increase 12 hunger value and gain 60 seconds of resistance III affect after drinking."
     - "&7Coldder and Coldder!"
-    - "&eCan't Place"
+    - "<cantplace>"
   CHOCOLATE: "&eChocolate"
   CHOCOLATE_LORE:
     - "&6Chocolate"
     - "&7Increase 15 hunger value and gain 30 seconds of resistance III affect after eating."
     - "&7Try some chocolate!"
-    - "&eCan't Place"
+    - "<cantplace>"
   LUOSI_RICE_NOODLE: "&eSnail Rice Noddle"
   LUOSI_RICE_NOODLE_LORE:
     - "&6Snail Rice Noddle"
     - "&7Increase 12 hunger value and gain 30 seconds of resistance III affect after eating."
     - "&7Yummy!But it's stinking.."
-    - "&eCan't Place"
+    - "<cantplace>"
   CLAY_FUSION_MACHINE: "&eClay Fusing Machine"
   CLAY_FUSION_MACHINE_LORE:
     - ""
@@ -368,13 +368,13 @@ Items:
     - "&bPut a lighted TNT on your location when right click"
     - "&bWill affect the durability"
     - "&bWon't break containers."
-    - "&bDurability: &632"
-    - "&7Can't Interact"
+    - "<durability>: &632"
+    - "<cantinteract>"
   SWEET_POTATO: "&eSweet Potato"
   SWEET_POTATO_LORE:
     - "&6Sweet Potato"
     - "&7Gain this by harvesting potatoes"
-    - "&7Can't eat"
+    - "<canteat>"
   COOKED_SWEET_POTATO: "&eRoasted Sweet Potato"
   COOKED_SWEET_POTATO_LORE:
     - "&6Roasted Sweet Potato"
@@ -397,29 +397,29 @@ Items:
     - "&8\u21E8 &e\u26A1 &780 J/s"
   SILICON_INGOT: "&bSilicon Ingot"
   ROCKET_LAUNCHER: "&6Rocket Launcher"
-  ROCKET: "&9Rocket (Tier I)"
+  ROCKET: "<rocket> (Tier I)"
   ROCKET_LORE:
-    - "&bCurrent Fuel Level: &60&9/&a125"
+    - "<fuel> &60&9/&a125"
     - "&c&lDon't stack"
-    - "&eCan't Place"
+    - "<cantplace>"
   MOTOR_CORE: "&eMotor Core"
   TEMPERATURE_RESISTANCE_OBSIDIAN: "&3Temperature Resistance Obsidian(Tier I)"
   TEMPERATURE_RESISTANCE_OBSIDIAN_LORE:
     - "&6This kind of obsidian has high-temperature stability."
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_ENGINE_SHELL: "&6Rocket Engine Shell(Tier I)"
   FUEL_TANK: "&6Fuel Tank"
   FUEL_TANK_LORE:
     - "&3Can cover fuel!"
     - "&bCan save &610&b points of fuel"
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_ENGINE: "&9Rocket Engine(Tier I)"
   ROCKET_ENGINE_LORE:
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_ANTENNA: "&9Rocket Antenna(Tier I)"
   ROCKET_ANTENNA_LORE:
     - "&3Used for transmitting informations on the orbit"
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_CPU: "&9Rocket CPU(Tier I)"
   ROCKET_CPU_LORE:
     - "&3Used for processing informations."
@@ -430,12 +430,12 @@ Items:
   ROCKET_FUEL_TANK_LORE:
     - "&3Can cover fuel!"
     - "&bCan save &6125&b points of fuel"
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_GLASS: "&9Rocket Glass(Tier I)"
   ROCKET_GLASS_LORE:
     - "&3This kind of glass is unusual."
     - "&3It can use in the space!"
-    - "&eCan't Place"
+    - "<cantplace>"
   ROCKET_STEEL_PLATE: "&9Rocket Steel Plate(Tier I)"
   ROCKET_STEEL_PLATE_LORE:
     - "&3It's so 'steel'."
@@ -453,7 +453,7 @@ Items:
   MIXED_ROCKET_FUEL_LORE:
     - "&9Can inject into the rocket"
     - "&9so you can go to the deeper universe"
-    - "&eCan't Place"
+    - "<cantplace>"
   CLAY_ROCKET_FUEL_GENERATOR: "&9Rocket Fuel Generator"
   CLAY_ROCKET_FUEL_GENERATOR_LORE:
     - ""
@@ -476,28 +476,28 @@ Items:
   OXYGEN_TANK_LORE:
     - "&3A normal oxygen tank.."
     - "&bCan save &65&b points of oxygen"
-    - "&eCan't Place"
+    - "<cantplace>"
   SPACESUIT_OXYGEN_TANK: "&9Spacesuit Oxygen Tank"
   SPACESUIT_OXYGEN_TANK_LORE:
     - "&3Used to craft the space suit"
     - "&bCan save &640&b points of oxygen"
-    - "&eCan't Place"
+    - "<cantplace>"
   SPACESUIT_HELMET: "&9Spacesuit Helmet"
   SPACESUIT_HELMET_LORE:
-    - "&bProtecting Level: &61"
-    - "&bCurrent Oxygen Level: &60&9/&a40"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_CHESTPLATE: "&9Spacesuit Chestplate"
   SPACESUIT_CHESTPLATE_LORE:
-    - "&bProtecting Level: &61"
-    - "&bCurrent Oxygen Level: &60&9/&a40"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_LEGGINGS: "&9Spacesuit Leggings"
   SPACESUIT_LEGGINGS_LORE:
-    - "&bProtecting Level: &61"
-    - "&bCurrent Oxygen Level: &60&9/&a40"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_BOOTS: "&9Spacesuit Boots"
   SPACESUIT_BOOTS_LORE:
-    - "&bProtecting Level: &61"
-    - "&bCurrent Oxygen Level: &60&9/&a40"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&9Spacesuit Oxygen Injector"
   CLAY_SPACESUIT_OXYGEN_INJECTOR_LORE:
     - ""
@@ -522,10 +522,10 @@ Items:
     - "&3When you teleport to the planet you signed"
     - "&3It will teleport to here"
   TUBE: "&9Tube"
-  OXYGEN_DISTRIBUTER: "&9Oxygen Distributer(Tier I)"
+  OXYGEN_DISTRIBUTER: "<oxygendistributer>(Tier I)"
   OXYGEN_DISTRIBUTER_LORE:
     - "&3When you use this item,It will share its oxygen level to your spacesuits averagely."
-    - "&bCurrent Oxygen Level: &60&9/&a120"
+    - "<oxygen> &60&9/&a120"
   COPPER_ORE: "&6Copper Ore"
   COPPER_ORE_LORE:
     - "&3Put this in the middle slot of the Clay Crafting table to gain the dust."

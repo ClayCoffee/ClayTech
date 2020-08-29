@@ -93,7 +93,6 @@ public class RocketLauncherListener implements Listener {
                                         if (!inRocket.equalsIgnoreCase("true")) {
                                             p.setMetadata("inrocket",
                                                     new FixedMetadataValue(ClayTech.getInstance(), "true"));
-                                            p.setMetadata("cantDestroy", new FixedMetadataValue(ClayTech.getInstance(), true));
                                             p.sendMessage(Lang.readGeneralText("RocketOK"));
                                             new BukkitRunnable() {
                                                 int time = 0;
@@ -110,7 +109,6 @@ public class RocketLauncherListener implements Listener {
                                                             BlockStorage.clearBlockInfo(b.getLocation(), true);
                                                             b.setType(Material.AIR);
                                                             p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
-                                                            p.setMetadata("cantDestroy", new FixedMetadataValue(ClayTech.getInstance(), false));
                                                             DataYML planetsData = ClayTech.getPlanetDataYML();
                                                             FileConfiguration pd = planetsData.getCustomConfig();
                                                             if (pd.getBoolean(p.getName() + "."

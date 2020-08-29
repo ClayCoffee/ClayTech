@@ -2,17 +2,35 @@ package cn.claycoffee.ClayTech.utils;
 
 import cn.claycoffee.ClayTech.ClayTech;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Lang {
     public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US", "ja"};
+    public static String cantPlace = readGeneralText("CantPlaceLore");
+    public static String blindFive = readGeneralText("Blind_5_effect");
+    public static String slownessFive = readGeneralText("Slowness_5_effect");
+    public static String confusionFive = readGeneralText("Confusion_5_effect");
+    public static String poisonThree = readGeneralText("Poison_3_effect");
+    public static String antiSlownessThree = readGeneralText("Anti_Slowness_5_effect");
+    public static String durability = readGeneralText("Durability");
+    public static String cantEat = readGeneralText("CantEat");
+    public static String cantInteract = readGeneralText("CantInteract");
+    public static String rocketPrefix = readGeneralText("Rocket");
+    public static String spaceSuitPrefix = readGeneralText("SpaceSuit");
+    public static String fuelPrefix = readGeneralText("Fuel");
+    public static String oxygenPrefix = readGeneralText("Oxygen");
+    public static String protectLevel = readGeneralText("ProtectLevel");
+    public static String oxygenDistributerPrefix = readGeneralText("OxygenDistributer");
+
+
 
     public static String readItemText(String name) {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name) == null) {
             return "Missing locale.";
         } else {
-            return ClayTech.getLangYML().getCustomConfig().getString("Items." + name).replaceAll("&", "§");
+            return format(ClayTech.getLangYML().getCustomConfig().getString("Items." + name));
         }
     }
 
@@ -21,9 +39,8 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name + "_LORE") == null) {
             return Arrays.asList(new String[]{"Missing locale."});
         } else {
-            return Utils.replaceList(
-                    ((List<String>) ClayTech.getLangYML().getCustomConfig().getList("Items." + name + "_LORE")), "&",
-                    "§");
+            return format(
+                    ((List<String>) ClayTech.getLangYML().getCustomConfig().getList("Items." + name + "_LORE")));
         }
     }
 
@@ -55,7 +72,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Machines." + name) == null) {
             return "Missing locale.";
         } else {
-            return ClayTech.getLangYML().getCustomConfig().getString("Machines." + name).replaceAll("&", "§");
+            return format(ClayTech.getLangYML().getCustomConfig().getString("Machines." + name));
         }
     }
 
@@ -81,5 +98,50 @@ public class Lang {
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Resources." + name).replaceAll("&", "§");
         }
+    }
+
+    public static String format(String s) {
+        s = s.replaceAll("&", "§");
+        s = s.replaceAll("<cantplace>", cantPlace);
+        s = s.replaceAll("<cantinteract>", cantInteract);
+        s = s.replaceAll("<canteat>", cantEat);
+        s = s.replaceAll("<blindFive>", blindFive);
+        s = s.replaceAll("<slownessfive>", slownessFive);
+        s = s.replaceAll("<confusionfive>", confusionFive);
+        s = s.replaceAll("<poisonthree>", poisonThree);
+        s = s.replaceAll("<antislownessthree>", antiSlownessThree);
+        s = s.replaceAll("<durability>", durability);
+        s = s.replaceAll("<rocket>", rocketPrefix);
+        s = s.replaceAll("<spacesuit>", spaceSuitPrefix);
+        s = s.replaceAll("<fuel>", fuelPrefix);
+        s = s.replaceAll("<oxygen>", oxygenPrefix);
+        s = s.replaceAll("<protectlevel>", protectLevel);
+        s = s.replaceAll("<oxygendistributer>", oxygenDistributerPrefix);
+
+        return s;
+    }
+
+    public static List<String> format(List<String> list) {
+        List<String> ret = new ArrayList<>();
+        for(String s : list) {
+            s = s.replaceAll("&", "§");
+            s = s.replaceAll("<cantplace>", cantPlace);
+            s = s.replaceAll("<cantinteract>", cantInteract);
+            s = s.replaceAll("<canteat>", cantEat);
+            s = s.replaceAll("<blindFive>", blindFive);
+            s = s.replaceAll("<slownessfive>", slownessFive);
+            s = s.replaceAll("<confusionfive>", confusionFive);
+            s = s.replaceAll("<poisonthree>", poisonThree);
+            s = s.replaceAll("<antislownessthree>", antiSlownessThree);
+            s = s.replaceAll("<durability>", durability);
+            s = s.replaceAll("<rocket>", rocketPrefix);
+            s = s.replaceAll("<spacesuit>", spaceSuitPrefix);
+            s = s.replaceAll("<fuel>", fuelPrefix);
+            s = s.replaceAll("<oxygen>", oxygenPrefix);
+            s = s.replaceAll("<protectlevel>", protectLevel);
+            s = s.replaceAll("<oxygendistributer>", oxygenDistributerPrefix);
+            ret.add(s);
+        }
+        return ret;
     }
 }
