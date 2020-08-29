@@ -107,11 +107,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
         registerRecipe(new MachineRecipe(seconds, new ItemStack[]{input}, new ItemStack[]{output}));
     }
 
-    public MachineRecipe getProcessing(Block b) {
-        return pr.get(b);
-    }
-
     public boolean isProcessing(Block b) {
-        return getProcessing(b) != null;
+        return pr.get(b) == null ? false : true;
     }
 }

@@ -19,8 +19,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.16-R0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:CS-CoreLib:master-v1.6.1-g9dd4a1c-118" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.Multiverse:Multiverse-Core:master-2.3-g3afca50-387" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-g5942e3b-1709" level="project" />
+    <orderEntry type="library" name="Maven: com.github.Multiverse:Multiverse-Core:3afca50930" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-gf97935b-1718" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: org.eclipse.jdt:Anotation:2.2.400">
         <CLASSES>

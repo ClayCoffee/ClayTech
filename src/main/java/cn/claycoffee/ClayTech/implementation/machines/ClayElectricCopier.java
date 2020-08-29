@@ -66,19 +66,19 @@ public class ClayElectricCopier extends ANewContainer {
 
     protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
-        if (progress.keySet().size() > 0) {
-            int timeleft = progress.get(b);
+        if (isProcessing(b)) {
+            int timeleft = pt.get(b);
 
             if (timeleft > 0) {
-                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, pr.get(b).getTicks(), getProgressBar());
 
                 if (ChargableBlock.isChargable(b)) {
                     if (ChargableBlock.getCharge(b) < getEnergyConsumption())
                         return;
                     ChargableBlock.addCharge(b, -getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
+                    pt.put(b, timeleft - 1);
                 } else
-                    progress.put(b, timeleft - 1);
+                    pt.put(b, timeleft - 1);
             } else {
                 if (inv.getItemInSlot(getOutputSlots()[0]) != null || inv.getItemInSlot(getOutputSlots()[1]) != null)
                     return;
@@ -97,8 +97,8 @@ public class ClayElectricCopier extends ANewContainer {
                     inv.pushItem(source, getOutputSlots());
                     inv.pushItem(copy, getOutputSlots());
                 }
-                progress.remove(b);
-                processing.remove(b);
+                pt.remove(b);
+                pr.remove(b);
             }
         } else {
             if (inv.getItemInSlot(19) == null || inv.getItemInSlot(20) == null) return;
@@ -121,8 +121,8 @@ public class ClayElectricCopier extends ANewContainer {
             if (mode > 0) {
                 BookMeta sourceMeta = (BookMeta) source.getItemMeta();
                 MachineRecipe r = new MachineRecipe(sourceMeta.getPages().size() * 4, null, null);
-                progress.put(b, r.getTicks());
-                processing.put(b, r);
+                pt.put(b, r.getTicks());
+                pr.put(b, r);
                 inv.consumeItem(19);
                 inv.consumeItem(20);
                 return;
