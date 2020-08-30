@@ -8,23 +8,39 @@ import java.util.List;
 
 public class Lang {
     public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US", "ja"};
-    public static String cantPlace = readGeneralText("CantPlaceLore");
-    public static String blindFive = readGeneralText("Blind_5_effect");
-    public static String slownessFive = readGeneralText("Slowness_5_effect");
-    public static String confusionFive = readGeneralText("Confusion_5_effect");
-    public static String poisonThree = readGeneralText("Poison_3_effect");
-    public static String antiSlownessThree = readGeneralText("Anti_Slowness_5_effect");
-    public static String durability = readGeneralText("Durability");
-    public static String cantEat = readGeneralText("CantEat");
-    public static String cantInteract = readGeneralText("CantInteract");
-    public static String rocketPrefix = readGeneralText("Rocket");
-    public static String spaceSuitPrefix = readGeneralText("SpaceSuit");
-    public static String fuelPrefix = readGeneralText("Fuel");
-    public static String oxygenPrefix = readGeneralText("Oxygen");
-    public static String protectLevel = readGeneralText("ProtectLevel");
-    public static String oxygenDistributerPrefix = readGeneralText("OxygenDistributer");
+    public static String cantPlace;
+    public static String blindFive;
+    public static String slownessFive;
+    public static String confusionFive;
+    public static String poisonThree;
+    public static String antiSlownessThree;
+    public static String durability;
+    public static String cantEat;
+    public static String cantInteract;
+    public static String rocketPrefix;
+    public static String spaceSuitPrefix;
+    public static String fuelPrefix;
+    public static String oxygenPrefix;
+    public static String protectLevel;
+    public static String oxygenDistributerPrefix;
 
-
+    public static void init() {
+        cantPlace = readGeneralText("CantPlaceLore");
+        blindFive = readGeneralText("Blind_5_effect");
+        slownessFive = readGeneralText("Slowness_5_effect");
+        confusionFive = readGeneralText("Confusion_5_effect");
+        poisonThree = readGeneralText("Poison_3_effect");
+        antiSlownessThree = readGeneralText("Anti_Slowness_5_effect");
+        durability = readGeneralText("Durability");
+        cantEat = readGeneralText("CantEat");
+        cantInteract = readGeneralText("CantInteract");
+        rocketPrefix = readGeneralText("Rocket");
+        spaceSuitPrefix = readGeneralText("SpaceSuit");
+        fuelPrefix = readGeneralText("Fuel");
+        oxygenPrefix = readGeneralText("Oxygen");
+        protectLevel = readGeneralText("ProtectLevel");
+        oxygenDistributerPrefix = readGeneralText("OxygenDistributer");
+    }
 
     public static String readItemText(String name) {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name) == null) {

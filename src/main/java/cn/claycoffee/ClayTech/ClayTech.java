@@ -108,7 +108,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         if (highrailspeed == null)
             highrailspeed = "3";
         if (!Utils.ExitsInList(locale, Lang.LocaleList)) {
-            Utils.info("§cLoading Error: Locale not found.Disableing plugin..");
+            Utils.info("§cLoading Error: Locale not found.Disabling plugin..");
             this.getServer().getPluginManager().disablePlugin(this);
         }
         // config
@@ -197,6 +197,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         }
         currentLangYML.saveCustomConfig();
         currentLangYML.reloadCustomConfig();
+        Lang.init();
         switch (version) {
             case "v1_16_R2":
                 break;
