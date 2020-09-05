@@ -451,6 +451,7 @@ public class PlanetListener implements Listener {
     @EventHandler
     public void EntityDeathEvent(EntityDeathEvent ev) {
         EntityDamageEvent e = ev.getEntity().getLastDamageCause();
+        if (e.getEntityType() == null) return;
         if (e.getEntityType() == EntityType.PLAYER && e.getCause() == DamageCause.FALL) {
             Player p = (Player) e.getEntity();
             if (ClayTechManager.isSpaceSuit(p.getInventory().getHelmet())
