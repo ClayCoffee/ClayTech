@@ -44,6 +44,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
     private static boolean spacetravelneedperm;
     private static String updateBranch;
     private static FileConfiguration config;
+    private static DataYML defaultLangYML;
+    private static FileConfiguration defaultLang;
 
     public static ClayTech getInstance() {
         return plugin;
@@ -93,12 +95,18 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         return updateBranch;
     }
 
+    public static DataYML getDefaultLangYML() {return defaultLangYML;}
+
+    public static FileConfiguration getDefaultLang() {return defaultLang;}
+
     @SuppressWarnings({"unused", "static-access"})
     @Override
     public void onEnable() {
         plugin = this;
         // 当前研究ID: 9936
-        this.saveDefaultConfig();
+        DataYML configDYML = new DataYML("config.yml");
+        config = configDYML.getCustomConfig();
+        configDYML.saveCustomConfig();
         config = this.getConfig();
         locale = config.getString("Locale");
         if (locale == null)
@@ -111,91 +119,22 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             this.getServer().getPluginManager().disablePlugin(this);
         }
         // config
-        try {
-            FileConfiguration current = YamlConfiguration
-                    .loadConfiguration(new InputStreamReader(this.getResource("config.yml"), "UTF8"));
-            List<String> currentconfig = new ArrayList<String>();
-            for (String each : config.getKeys(false)) {
-                currentconfig.add(each);
-            }
-            for (String each : current.getKeys(false)) {
-                if (!Utils.ExitsInListL(each, currentconfig)) {
-                    try {
-                        if (current.isString(each)) {
-                            config.set(each, current.getString(each));
-                        }
-                        if (current.isInt(each)) {
-                            config.set(each, current.getInt(each));
-                        }
-                        if (current.isList(each)) {
-                            config.set(each, current.getList(each));
-                        }
-                        if (current.isBoolean(each)) {
-                            config.set(each, current.getBoolean(each));
-                        }
-
-                    } catch (Exception e) {
-                        Utils.info("§cThere is an error when reading the config file.Replacing the new config file..");
-                        config = current;
-                        this.saveConfig();
-                        this.reloadConfig();
-                        e.printStackTrace();
-                    }
-                }
-            }
-        } catch (Exception e2) {
-            Utils.info("§cThere is an error when reading the config file.");
-            e2.printStackTrace();
-        }
-        this.saveConfig();
-        this.reloadConfig();
+        Utils.updateConfig(this, configDYML);
+        configDYML.saveCustomConfig();
+        configDYML.reloadCustomConfig();
         overworld = config.getString("overworld");
         currentLangYML = new DataYML(locale + ".yml");
         currentLangYML.saveCDefaultConfig();
         currentLangYML.reloadCustomConfig();
         currentLang = currentLangYML.getCustomConfig();
-        try {
-            FileConfiguration current = YamlConfiguration
-                    .loadConfiguration(new InputStreamReader(this.getResource(locale + ".yml"), "UTF8"));
-            for (String select : current.getKeys(false)) {
-                if (Utils.sectionKeyToList(current.getConfigurationSection(select)).get(0).equalsIgnoreCase("null")
-                        || current.getConfigurationSection(select).getKeys(false) == null) {
-                    currentLang.createPath(current.getConfigurationSection(select), select);
-                    currentLangYML.saveCustomConfig();
-                    continue;
-                } else {
-                    List<String> found = Utils.sectionKeyToList(current.getConfigurationSection(select));
-                    List<String> found2 = Utils.sectionKeyToList(currentLang.getConfigurationSection(select));
-                    for (String each : found) {
-                        if (!Utils.ExitsInListL(each, found2)) {
-                            try {
-                                if (current.isString(select + "." + each)) {
-                                    currentLang.set(select + "." + each, current.getString(select + "." + each));
-                                }
-                                if (current.isInt(select + "." + each)) {
-                                    currentLang.set(select + "." + each, current.getInt(select + "." + each));
-                                }
-                                if (current.isList(select + "." + each)) {
-                                    currentLang.set(select + "." + each, current.getList(select + "." + each));
-                                }
-                            } catch (Exception e) {
-                                Utils.info(
-                                        "§cThere is an error when reading the language file.Replacing the new language file..");
-                                currentLang = current;
-                                currentLangYML.saveCustomConfig();
-                                currentLangYML.reloadCustomConfig();
-                                e.printStackTrace();
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (Exception e2) {
-            Utils.info("§cThere is an error when reading the language file.Replacing the new language file..");
-            e2.printStackTrace();
-        }
+        defaultLangYML = new DataYML("en-US.yml");
+        defaultLang = defaultLangYML.getCustomConfig();
+        Utils.updateLocale(this, locale, currentLangYML);
+        Utils.updateLocale(this, "en-US", defaultLangYML);
         currentLangYML.saveCustomConfig();
         currentLangYML.reloadCustomConfig();
+        defaultLangYML.saveCustomConfig();
+        defaultLangYML.reloadCustomConfig();
         Lang.init();
         switch (version) {
             case "v1_16_R2":

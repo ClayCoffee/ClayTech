@@ -6,6 +6,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
@@ -13,7 +15,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
+import org.bukkit.plugin.Plugin;
 
+import java.io.InputStreamReader;
 import java.util.*;
 
 public final class Utils {
@@ -414,5 +418,89 @@ public final class Utils {
             return false;
         }
         return false;
+    }
+
+    public static void updateConfig(Plugin plugin, DataYML updateConfig) {
+        try {
+            FileConfiguration current = YamlConfiguration
+                    .loadConfiguration(new InputStreamReader(plugin.getResource("config.yml"), "UTF8"));
+            FileConfiguration config = updateConfig.getCustomConfig();
+            List<String> currentconfig = new ArrayList<String>();
+            for (String each : config.getKeys(false)) {
+                currentconfig.add(each);
+            }
+            for (String each : current.getKeys(false)) {
+                if (!Utils.ExitsInListL(each, currentconfig)) {
+                    try {
+                        if (current.isString(each)) {
+                            config.set(each, current.getString(each));
+                        }
+                        if (current.isInt(each)) {
+                            config.set(each, current.getInt(each));
+                        }
+                        if (current.isList(each)) {
+                            config.set(each, current.getList(each));
+                        }
+                        if (current.isBoolean(each)) {
+                            config.set(each, current.getBoolean(each));
+                        }
+
+                    } catch (Exception e) {
+                        Utils.info("§cThere is an error when reading the config file.Replacing the new config file..");
+                        config = current;
+                        updateConfig.saveCustomConfig();
+                        updateConfig.reloadCustomConfig();
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } catch (Exception e2) {
+            Utils.info("§cThere is an error when reading the config file.");
+            e2.printStackTrace();
+        }
+    }
+
+    public static void updateLocale(Plugin plugin, String locale, DataYML currentLangYML) {
+        try {
+            FileConfiguration current = YamlConfiguration
+                    .loadConfiguration(new InputStreamReader(plugin.getResource(locale + ".yml"), "UTF8"));
+            FileConfiguration currentLang = currentLangYML.getCustomConfig();
+            for (String select : current.getKeys(false)) {
+                if (Utils.sectionKeyToList(current.getConfigurationSection(select)).get(0).equalsIgnoreCase("null")
+                        || current.getConfigurationSection(select).getKeys(false) == null) {
+                    currentLang.createPath(current.getConfigurationSection(select), select);
+                    currentLangYML.saveCustomConfig();
+                    continue;
+                } else {
+                    List<String> found = Utils.sectionKeyToList(current.getConfigurationSection(select));
+                    List<String> found2 = Utils.sectionKeyToList(currentLang.getConfigurationSection(select));
+                    for (String each : found) {
+                        if (!Utils.ExitsInListL(each, found2)) {
+                            try {
+                                if (current.isString(select + "." + each)) {
+                                    currentLang.set(select + "." + each, current.getString(select + "." + each));
+                                }
+                                if (current.isInt(select + "." + each)) {
+                                    currentLang.set(select + "." + each, current.getInt(select + "." + each));
+                                }
+                                if (current.isList(select + "." + each)) {
+                                    currentLang.set(select + "." + each, current.getList(select + "." + each));
+                                }
+                            } catch (Exception e) {
+                                Utils.info(
+                                        "§cThere is an error when reading the language file.Replacing the new language file..");
+                                currentLang = current;
+                                currentLangYML.saveCustomConfig();
+                                currentLangYML.reloadCustomConfig();
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e2) {
+            Utils.info("§cThere is an error when reading the language file.Replacing the new language file..");
+            e2.printStackTrace();
+        }
     }
 }
