@@ -23,8 +23,7 @@ import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.io.File;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -270,6 +269,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
                 updateBranch = config.getString("update-branch");
                 updater = new ClayTechUpdater();
                 if (!getConfig().getBoolean("disable-auto-updater")) {
+
                     updater.tryUpdate();
                     new BukkitRunnable() {
 
@@ -356,7 +356,21 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onDisable() {
+        if (ClayTech.getInstance().getConfig().getBoolean("replace-when-server-stops")) {
+            if (ClayTechData.jarLocation != null & ClayTechData.updateJar != null) {
+                try {
+                    FileOutputStream os = new FileOutputStream(new File(ClayTechData.jarLocation));
+                    os.write(ClayTechData.updateJar);
+                    os.close();
 
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
     }
 
     private String languageCodeToLanguage(String code) {

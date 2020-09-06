@@ -139,7 +139,7 @@ public class Lang {
 
     public static List<String> format(List<String> list) {
         List<String> ret = new ArrayList<>();
-        for(String s : list) {
+        for (String s : list) {
             s = s.replaceAll("&", "§");
             s = s.replaceAll("<cantplace>", cantPlace);
             s = s.replaceAll("<cantinteract>", cantInteract);

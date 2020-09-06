@@ -1,6 +1,7 @@
 package cn.claycoffee.ClayTech.utils;
 
 import cn.claycoffee.ClayTech.ClayTech;
+import cn.claycoffee.ClayTech.ClayTechData;
 import com.google.gson.JsonArray;
 
 import java.io.*;
@@ -11,6 +12,11 @@ public class FileDownloader {
 
     public static String updateFunc(String urlp, String fileName, String savePath, JsonArray ja) {
         try {
+            if (ClayTech.getInstance().getConfig().getBoolean("replace-when-server-stops")) {
+                ClayTechData.updateJar = getFileData(urlp);
+                ClayTechData.jarLocation = savePath + File.separator + fileName;
+                return savePath + File.separator + fileName;
+            }
             URL url = new URL(urlp);
             HttpURLConnection conne = (HttpURLConnection) url.openConnection();
             conne.setConnectTimeout(5 * 1000);
@@ -66,6 +72,25 @@ public class FileDownloader {
         } catch (Exception e) {
             e.printStackTrace();
             return "";
+        }
+    }
+
+    public static byte[] getFileData(String urlp) {
+        try {
+            URL url = new URL(urlp);
+            HttpURLConnection conne = (HttpURLConnection) url.openConnection();
+            conne.setConnectTimeout(5 * 1000);
+            conne.setRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)");
+
+            InputStream input = conne.getInputStream();
+            byte[] getdata = readInputStream(input);
+            if (input != null) {
+                input.close();
+            }
+            return getdata;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

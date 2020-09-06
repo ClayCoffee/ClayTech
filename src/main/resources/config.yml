@@ -2,6 +2,7 @@ Locale: "en-US"
 highrailspeed: "3"
 overworld: "world"
 disable-auto-updater: false
+replace-when-server-stops: true
 update-branch: ALL
 #Valid: ALL, STABLE, DEVELOPMENT
 space-travel-need-perm: false
