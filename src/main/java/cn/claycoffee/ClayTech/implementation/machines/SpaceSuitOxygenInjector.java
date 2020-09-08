@@ -21,7 +21,6 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.Bukkit;
@@ -200,10 +199,10 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                 // 还在处理
                 ChestMenuUtils.updateProgressbar(inv, 4, timeleft, processing.get(b).getTicks(), getProgressBar());
 
-                if (ChargableBlock.isChargable(b)) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                if (isChargeable()) {
+                    if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    addCharge(b.getLocation(), -getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else {
                     if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
@@ -240,10 +239,10 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
             if (spacesuit != null) {
                 if (ClayTechManager.isSpaceSuit(spacesuit) && spacesuit.getAmount() == 1
                         || ClayTechManager.isOxygenDistributer(spacesuit) && spacesuit.getAmount() == 1) {
-                    if (ChargableBlock.isChargable(b)) {
-                        if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                    if (isChargeable()) {
+                        if (getCharge(b.getLocation()) < getEnergyConsumption())
                             return;
-                        ChargableBlock.addCharge(b, -getEnergyConsumption());
+                        addCharge(b.getLocation(), -getEnergyConsumption());
                     }
                     if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
                         return;

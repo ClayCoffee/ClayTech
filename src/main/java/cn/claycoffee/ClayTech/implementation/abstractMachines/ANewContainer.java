@@ -10,7 +10,6 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecip
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
@@ -39,11 +38,11 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                 ChestMenuUtils.updateProgressbar(inv, 22, timeleft, pr.get(b).getTicks(), getProgressBar());
 
                 if (getCapacity() > 0) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption()) {
+                    if (getCharge(b.getLocation()) < getEnergyConsumption()) {
                         return;
                     }
 
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    addCharge(b.getLocation(), -getEnergyConsumption());
                     pt.put(b, timeleft - 1);
                 } else {
                     pt.put(b, timeleft - 1);

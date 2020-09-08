@@ -15,7 +15,6 @@ import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -176,10 +175,10 @@ public class CraftingTable extends ACraftingTable {
                 // 还在处理
                 ChestMenuUtils.updateProgressbar(inv, 4, timeleft, processing.get(b).getTicks(), getProgressBar());
 
-                if (ChargableBlock.isChargable(b)) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                if (isChargeable()) {
+                    if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    addCharge(b.getLocation(), -getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else
                     progress.put(b, timeleft - 1);
@@ -235,10 +234,10 @@ public class CraftingTable extends ACraftingTable {
             }
 
             if (r != null) {
-                if (ChargableBlock.isChargable(b)) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                if (isChargeable()) {
+                    if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    addCharge(b.getLocation(), -getEnergyConsumption());
                 }
                 if (inv.getItemInSlot(outputslots[0]) != null) {
                     ItemStack is = inv.getItemInSlot(outputslots[0]);

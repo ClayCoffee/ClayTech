@@ -8,7 +8,6 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.api.energy.ChargableBlock;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
@@ -72,10 +71,10 @@ public class ClayElectricCopier extends ANewContainer {
             if (timeleft > 0) {
                 ChestMenuUtils.updateProgressbar(inv, 22, timeleft, pr.get(b).getTicks(), getProgressBar());
 
-                if (ChargableBlock.isChargable(b)) {
-                    if (ChargableBlock.getCharge(b) < getEnergyConsumption())
+                if (isChargeable()) {
+                    if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    ChargableBlock.addCharge(b, -getEnergyConsumption());
+                    addCharge(b.getLocation(), -getEnergyConsumption());
                     pt.put(b, timeleft - 1);
                 } else
                     pt.put(b, timeleft - 1);
