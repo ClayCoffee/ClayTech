@@ -74,7 +74,7 @@ public class ClayElectricCopier extends ANewContainer {
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     pt.put(b, timeleft - 1);
                 } else
                     pt.put(b, timeleft - 1);

@@ -202,7 +202,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else {
                     if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
@@ -242,7 +242,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                     if (isChargeable()) {
                         if (getCharge(b.getLocation()) < getEnergyConsumption())
                             return;
-                        addCharge(b.getLocation(), -getEnergyConsumption());
+                        removeCharge(b.getLocation(), getEnergyConsumption());
                     }
                     if (!LEAVES.contains(b.getLocation().add(0, 1, 0).getBlock().getType()))
                         return;

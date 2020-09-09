@@ -197,7 +197,7 @@ public class ElectricWaterPump extends SlimefunItem implements InventoryBlock, E
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else
                     progress.put(b, timeleft - 1);
@@ -222,7 +222,7 @@ public class ElectricWaterPump extends SlimefunItem implements InventoryBlock, E
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                 }
                 Dispenser dp = (Dispenser) b.getBlockData();
                 Block targetBlock = b.getRelative(dp.getFacing());

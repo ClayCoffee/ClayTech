@@ -66,10 +66,9 @@ public class Moon extends ChunkGenerator {
         ret.add(new MoonCoalPopulator());
         ret.add(new MoonDiamondPopulator());
         // Check enabled ores then add its populator to the list
-        if (!SlimefunItem.getByItem(ClayTechItems.KREEP_ROCK).isDisabled()) ret.add(new MoonKreepPopulator());
-        if (!SlimefunItem.getByItem(ClayTechItems.COPPER_ORE).isDisabled()) ret.add(new MoonCopperOrePopulator());
-        if (!SlimefunItem.getByItem(ClayTechItems.CLAY_FUSION_ORE).isDisabled())
-            ret.add(new MoonClayFusionOrePopulator());
+        ret.add(new MoonKreepPopulator());
+        ret.add(new MoonCopperOrePopulator());
+        ret.add(new MoonClayFusionOrePopulator());
         return ret;
     }
 }

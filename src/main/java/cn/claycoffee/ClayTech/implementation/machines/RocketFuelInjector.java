@@ -205,7 +205,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else
                     progress.put(b, timeleft - 1);
@@ -244,7 +244,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
                     if (isChargeable()) {
                         if (getCharge(b.getLocation()) < getEnergyConsumption())
                             return;
-                        addCharge(b.getLocation(), -getEnergyConsumption());
+                        removeCharge(b.getLocation(), getEnergyConsumption());
                     }
                     if (RocketUtils.getFuel(rocket) == RocketUtils.getMaxFuel(rocket))
                         return;

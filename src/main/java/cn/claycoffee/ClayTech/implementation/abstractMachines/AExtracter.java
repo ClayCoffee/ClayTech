@@ -216,7 +216,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else
                     progress.put(b, timeleft - 1);
@@ -254,7 +254,7 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                 }
                 if (!SlimefunUtils.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
                     return;

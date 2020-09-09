@@ -42,7 +42,7 @@ public abstract class ANewContainer extends AContainer implements InventoryBlock
                         return;
                     }
 
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     pt.put(b, timeleft - 1);
                 } else {
                     pt.put(b, timeleft - 1);

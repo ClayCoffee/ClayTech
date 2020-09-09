@@ -178,7 +178,7 @@ public class CraftingTable extends ACraftingTable {
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                     progress.put(b, timeleft - 1);
                 } else
                     progress.put(b, timeleft - 1);
@@ -237,7 +237,7 @@ public class CraftingTable extends ACraftingTable {
                 if (isChargeable()) {
                     if (getCharge(b.getLocation()) < getEnergyConsumption())
                         return;
-                    addCharge(b.getLocation(), -getEnergyConsumption());
+                    removeCharge(b.getLocation(), getEnergyConsumption());
                 }
                 if (inv.getItemInSlot(outputslots[0]) != null) {
                     ItemStack is = inv.getItemInSlot(outputslots[0]);
