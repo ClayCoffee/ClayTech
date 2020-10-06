@@ -38,7 +38,7 @@ public class ClayTechItems {
             Lang.readItemText("ARTIFICIAL_ENCHANTED_GOLDEN_APPLE"));
     public static final ItemStack BLIND_CORE = Utils.newItemD(Material.COAL, Lang.readItemText("BLIND_CORE"));
     public static final ItemStack BLIND_SWORD = SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Utils.setLore(Utils.newItemD(Material.NETHERITE_SWORD, Lang.readItemText("BLIND_SWORD")), Lang.readItemLore("BLIND_SWORD")) : Utils.setLore(Utils.newItemD(Material.DIAMOND_SWORD, Lang.readItemText("BLIND_SWORD")), Lang.readItemLore("BLIND_SWORD"));
-    public static final ItemStack CONFUSION_CORE = Utils.newItemD(Material.WITHER_SKELETON_SKULL,
+    public static final ItemStack CONFUSION_CORE = Utils.newItemD(Material.INK_SAC,
             Lang.readItemText("CONFUSION_CORE"));
     public static final ItemStack BLACK_ROCK_BLOCK = Utils.newItemD(Material.OBSIDIAN,
             Lang.readItemText("BLACK_ROCK_BLOCK"));
