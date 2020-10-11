@@ -11,6 +11,7 @@ You can join our discord server here: [Click this](https://discord.gg/sbNKCCs)
 * 繁體中文 zh-TW
 * 日本語 ja
 * Polski pl-PL
+* Français fr
 * English(UK) en-GB
 * English(US) en-US (default)
 
