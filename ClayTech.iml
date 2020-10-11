@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="minecraft" name="Minecraft">
+      <configuration>
+        <autoDetectTypes>
+          <platformType>SPIGOT</platformType>
+        </autoDetectTypes>
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
@@ -20,7 +29,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:CS-CoreLib:master-v1.6.1-g832d33f-121" level="project" />
     <orderEntry type="library" name="Maven: com.github.Multiverse:Multiverse-Core:3afca50930" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-g0cc934f-2013" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-gfc26f95-2250" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: org.eclipse.jdt:Anotation:2.2.400">
         <CLASSES>

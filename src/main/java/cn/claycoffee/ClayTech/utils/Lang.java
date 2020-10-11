@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Lang {
-    public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US", "ja", "pl-PL"};
+    public static String[] LocaleList = {"zh-CN", "zh-TW", "en-GB", "en-US", "ja", "pl-PL", "fr"};
     public static String cantPlace;
     public static String blindFive;
     public static String slownessFive;

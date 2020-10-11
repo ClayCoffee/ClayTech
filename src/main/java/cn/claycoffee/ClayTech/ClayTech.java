@@ -325,7 +325,9 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             case "JA":
                 return "Japanese";
             case "PL-PL":
-                return "Poland";
+                return "Polski";
+            case "FR":
+                return "Français";
             default:
                 return code;
         }
