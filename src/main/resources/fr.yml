@@ -6,11 +6,21 @@ General:
     :'
   Info_1: "###########################################################"
   Info_2: ClayTech v (version) a été chargé avec succès.
-  Info_3: 'Auteur: {author}'
+  Info_3: 'Auteur : {author}'
   Info_5: 'Suivi Bug : {issue_tracker}'
   Info_6: "###########################################################"
-  CantPlaceLore: "&e ne peut pas être placé"
-  CantPlace: "§b[Clay Technology] §cVous ne pouvez pas placer cet objet."
+  Auto-updater_disabled: Vous avez désactivé les mises à jour automatiques. Vous risquez
+    de rencontrer des bugs qui ne seront pas résolus automatiquement.
+  update_done: "&aMise à jour réussie de la version &c{old_version}&a à &6{new_version}.
+    &aVeuillez redémarrer votre serveur pour appliquer la mise à jour!"
+  DEV_VERSION: "&eClayTech a détecté que vous utilisez la version de développement.
+    En cas de bug, veuillez le soumettre à notre outil de suivi de Bug!"
+  command_not_found: "§b[ClayTech]§cLa commande n'a pas été trouvée."
+  basic_command: "&3ClayTech {version} &eBy &6ClayCoffee"
+  LatestVersion: "&aVous utilisez actuellement la dernière version de &6ClayTech&a."
+  CantPlaceLore: "&eNe peut pas être placé"
+  no_permission: "§cVous n'avez pas la permission."
+  CantPlace: "§b[ClayTech]§cVous ne pouvez pas placer cet objet."
   Blind_5_effect: "&7Cécité V"
   Slowness_5_effect: "&7Lenteur V"
   Confusion_5_effect: "&7Nausée V"
@@ -21,12 +31,13 @@ General:
   Cant_Drink_Message: "&cVous êtes déjà rassasié, plus besoin de boire!"
   Cant_Eat_Message: "&cVous êtes déjà rassasié, plus besoin de manger!"
   Wash_Message: "&6est nettoyé !!"
-  Cant_Wash_Message: "&cne peut pas être nettoyé! Vous n'avez pas de seau!"
-  Before_115: "&cVotre serveur fonctionne en version 1.15, ce qui peut entraîner l'échec
-    de l'enregistrement de certains éléments, mais ce plugin peut toujours fonctionner
-    normalement."
-  Not_compatible: "&cDésolé, ce plugin n'est disponible que pour les serveurs 1.13.x,
-    1.14.x, 1.15.x, 1.16.x! Veuillez mettre à jour votre serveur dès que possible!"
+  Cant_Wash_Message: "&cne peut pas être nettoyé ! Vous n'avez pas de seau !"
+  Before_115: "&cVotre serveur fonctionne sur une ancienne version (< 1.15), cela
+    pourrait causer des problèmes de sauvegardes. (Cependant ClayTech fonctionnera
+    toujours normalement)"
+  Not_compatible: "&cDésolé, ce plugin n'est compatible qu'avec les versions 1.13.x,
+    1.14.x, 1.15.x, 1.16.x ! Veuillez mettre à jour votre serveur dès que possible
+    !"
   TNT_EXPLOSION_CREATER_WAIT: "&aLa TNT sera placé après 5 secondes. Échappez-vous
     dès que possible pour éviter les dégâts."
   TNT_EXPLOSION_CREATER_NO_TNT: "&cIl n'y a pas de TNT dans votre sac à dos, elle
@@ -35,7 +46,7 @@ General:
   TNT_EXPLOSION_CREATER_FATAL: "&cLa TNT n'a pas explosée. Elle se trouvait dans une
     zone protégée ou alors les explosions sont désactivées. "
   TNT_EXPLOSION_CREATER_CD: "&cVeuillez patienter avant de réutiliser la TNT."
-  Durability: "&bdurabilité "
+  Durability: "&bDurabilité "
   CantEat: "&7Non comestible"
   CantEatMessage: "&cVous ne pouvez pas manger cet objet."
   CantInteract: "&7Pas d'interaction"
@@ -46,10 +57,10 @@ General:
   Oxygen: "&bOxygène actuel :"
   ProtectLevel: "&bNiveau de protection :"
   SpaceSuitError: "&c&lOxygène insuffisant"
-  SpaceSuitError_Sub: "&6Vous ne portez peut-être pas de combinaison spatiale ou le
-    niveau d'oxygène ou de protection de la combinaison spatiale est insuffisant."
-  NotRocket: "&cDésolé, vous avez besoin d'une fusée à la main pour continuer cette
-    opération!"
+  SpaceSuitError_Sub: "&6Vous ne portez pas de combinaison spatiale ou alors son niveau
+    d'oxygène ou de protection est insuffisant."
+  NotRocket: "&cDésolé, vous avez besoin d'une fusée en main pour continuer cette
+    opération !"
   NotEnoughFuel: "&cDésolé, la fusée n'a pas assez de carburant pour décoller!"
   RocketOK: "&eDécolage dans &610 &esecondes! Si vous souhaitez annuler, veuillez
     déplacer l'objet dans votre main."
@@ -59,7 +70,7 @@ General:
   SamePlanet: "&cVous êtes déjà sur cette planète!"
   StakingRockets: "&cVous ne pouvez pas stacker des Fusées!"
   CantUseOtherTeleportInUniverse: "&cDésolé, vous ne pouvez pas utiliser la téléportation
-    dans l'espace extra-atmosphérique ou vous téléporter dans l'espace extra-atmosphérique!"
+    dans l'espace."
   BaseCompleted: "&3La base est installée!"
   BaseExists: "&cVous avez déjà une base sur cette planète! Détruisez-la et réessayez."
   BaseDestroyed: "&6La base a été détruite avec succès!"
@@ -77,37 +88,27 @@ General:
   AlreadyInRocket: "&cVous êtes déjà dans la fusée! Déplacez l'objet pour annuler
     le lancement."
   LocationFatal: "&cL'atterrissage a échoué(Mais le carburant n'a pas été consommé)."
-  Yes_1: Oui
-  No_1: Non
   NotAtAPlanet: "&cDésolé, vous devez décoller sur une planète! (comme le monde principal)"
-  Auto-updater_disabled: Vous avez désactivé les mises à jour automatiques. Cela peut
-    entraîner des problèmes qui ne seront pas résolus automatiquement.
-  update_done: "&aMise à jour réussie de la version &c{old_version}&a à &6{new_version}.
-    &aVeuillez redémarrer votre serveur pour appliquer la mise à jour!"
-  DEV_VERSION: "&eClayTech a détecté que vous utilisez la version de développement.
-    En cas de bug, veuillez le soumettre à notre outil de suivi de Bug!"
-  command_not_found: "§b[Clay Technology] §cLa commande n'a pas été trouvée."
-  basic_command: "&3Clay Technology {version} &eBy &6ClayCoffee"
-  LatestVersion: "&aVous utilisez actuellement la dernière version de &6ClayTech&a."
-  no_permission: "§cVous n'avez pas la permission."
   Cant_Drink_Milk: "&cVous ne pouvez pas boire de lait sur cette planète pour supprimer
     l'effet."
+  Yes_1: Oui
+  No_1: Non
   SPACESUIT_DISTRIBUTER_FULL: "&3La combinaison spatiale est pleine d'oxygène."
   CantBreak: "§B[ClayTech]§cVous ne pouvez pas détruire cet objet."
 Categories:
-  Basic: "&bClay Technology - Bases"
-  Weapons: "&bClay Technology - Armes"
-  Food: "&bClay Technology - Nourriture"
-  FoodMakings: "&bClay Technology - Ingrédients"
-  Drink: "&bClay Technology - Boisson"
-  Makings: "&bClay Technology - Matériaux"
-  Armors: "&bClay Technology - Armures"
-  Decorates: "&bClay Technology - Décoration"
-  Elements: "&bClay Technology - Elements"
-  Machines: "&bClay Technology - Machines"
-  Other: "&bClay Technology - Autres"
-  Tools: "&bClay Technology - Outils"
-  OreThings: "&bClay Technology - Ressources"
+  Basic: "&bClayTech - Bases"
+  Weapons: "&bClayTech - Armes"
+  Food: "&bClayTech - Nourriture"
+  FoodMakings: "&bClayTech - Ingrédients"
+  Drink: "&bClayTech - Boisson"
+  Makings: "&bClayTech- Matériaux"
+  Armors: "&bClayTech- Armures"
+  Decorates: "&bClayTech - Décoration"
+  Elements: "&bClayTech - Elements"
+  Machines: "&bClayTech - Machines"
+  Other: "&bClayTech - Autres"
+  Tools: "&bClayTech - Outils"
+  OreThings: "&bClayTech - Ressources"
 Items:
   USEFUL_DIRT: "&6Dirt utile"
   USEFUL_DIRT_LORE:
@@ -116,11 +117,10 @@ Items:
   ORE_DIAMOND: "&bMinerai de Diamant"
   MAGIC_CLAY: "&6Argile Magique "
   MAGIC_CLAY_LORE:
-  - "&bLes éléments de base de la ClayTech, de nombreuses synthèses de la ClayTech
-    en ont besoin"
+  - "&bObjet élémentaire de ClayTech. Nécessaire dans de nombreuse synthèse."
   CLAY_STICK: "§6Bâton d'argile"
   CLAY_STICK_LORE:
-  - "&bLe bâton d'argile de Clay Coffee peut être utilisé pour faire des outils"
+  - "&bBâton d'argile de ClayCoffee. Il peut être utilisé pour faire des outils."
   ARTIFICIAL_GOLD_NUGGET: "&6Pépite d'or artificielles"
   ARTIFICIAL_GOLD_INGOT_O: "&6Minerai de lingot d'or artificiel"
   ARTIFICIAL_GOLD_INGOT: "&6Lingots d'or artificiels"
@@ -148,7 +148,7 @@ Items:
   - "<slownessfive>"
   - "<confusionfive>"
   - "<poisonthree>"
-  POISON_SWORD: "&7Épée de poison d'azur"
+  POISON_SWORD: "&7Épée de poison azur"
   POISON_SWORD_LORE:
   - "&6Le joueur attaqué subit un effet de poison III pendant 2 secondes après l'attaque"
   - "<poisonthree>"
@@ -180,7 +180,7 @@ Items:
   DIRTY_TEA_LORE:
   - "&6Faudrait la nettoyer un peu.."
   - "&7Faites un clic droit pour la nettoyer"
-  - "&7On la trouve en cassant des l'herbes"
+  - "&7On la trouve en cassant des herbes"
   TEA: "&eFeuille de Thé"
   TEA_LORE:
   - "&6Feuille de Thé"
@@ -196,7 +196,7 @@ Items:
   - "&7Utile pour faire du jus de citron"
   FLOUR: "&eFarine"
   FLOUR_LORE:
-  - "&6Poudre douteuse?"
+  - "&6Substance douteuse?"
   - "&7Utile pour faire beaucoup de choses"
   - "&7Parfois trouvé en récoltant du blé"
   STARCH: "&eAmidon"
@@ -219,6 +219,11 @@ Items:
   - "&6Très sucré"
   - "&7mais tellement bon"
   - "&7Restaure 8 points de nourriture"
+  GREEN_GRASS: "&2Herbe verte"
+  GREEN_GRASS_LORE:
+  - "&7Il n'y a pas que les moutons qui peuvent manger de l'herbe"
+  - "&7Vous avez vraiment faim ? essayez ça "
+  - "&7Restaure 1 point de nourriture"
   ELEMENT_UNIT: "&eUnité à élément"
   ELEMENT_UNIT_LORE:
   - "&6Unité à élément"
@@ -236,14 +241,14 @@ Items:
   - "&7Utile pour faire beaucoup de choses"
   - "&7Obtenu en mettant huit charbons dans la machine d'extraction d'éléments"
   - "<cantplace>"
-  ELEMENT_SILICON: "&eÉlément Silicone"
+  ELEMENT_SILICON: "&eÉlément Silicium"
   ELEMENT_SILICON_LORE:
-  - "&6Élément Silicone"
+  - "&6Élément Silicium"
   - "&7Utile pour synthétiser des lingots de silicium et fabriquer des circuits imprimés
     !"
   - "&7Obtenu en mettant dix bloc de sable dans la machine d'extraction d'éléments"
   - "<cantplace>"
-  BLISTERING_CORE: "&eCoeur Brulant"
+  BLISTERING_CORE: "&eCœur Brulant"
   AUTHOR_HEAD: "&6Tête de l'auteur"
   STALIN_HEAD: "&bTête de Staline"
   MARX_HEAD: "&bTête de Marx"
@@ -360,7 +365,7 @@ Items:
   - "&8⇨ &e⚡ &716 J/s"
   HIGHSPEED_RAILWAY: "&bRails à grande vitesse"
   HIGHSPEED_RAILWAY_LORE:
-  - "&6Les Minecarts utilisant ce type de chemin de fer"
+  - "&6Les Minecarts utilisant ce type de rails"
   - "&6auront leur vitesse triplée!"
   ELECTRIC_MOTOR_8: "&cDébris de moteur électrique"
   TNT_EXPLOSION_CREATER: "&6Générateur d'explosion de TNT"
@@ -424,7 +429,7 @@ Items:
   ROCKET_ANTENNA_LORE:
   - "&3est utilisé pour la transmission d'informations en orbite"
   - "<cantplace>"
-  ROCKET_CPU: "& 9 CPU Rocket du Premier Ordre"
+  ROCKET_CPU: "&9Processeur de fusée de niveau 1"
   ROCKET_CPU_LORE:
   - "&3Unité centrale traitant les données de navigations"
   ROCKET_CONTROL_CORE: "&9Noyau de contrôle de fusée de niveau 1"
@@ -522,6 +527,22 @@ Items:
   - "%TIER%"
   - "%POWER%"
   - "&8⇨ &e⚡ &780 J/s"
+  CLAY_COBBLESTONE_GENERATOR_LORE:
+  - 
+  - "&3peut générer automatiquement de la pierre"
+  - 
+  - "%TIER%"
+  - "%POWER%"
+  - "&8⇨ &e⚡ &750 J/s"
+  CLAY_COBBLESTONE_GENERATOR: "&bGénérateur de pierre"
+  CLAY_ELECTRIC_WATER_PUMP: "&bPompe à eau électrique"
+  CLAY_ELECTRIC_WATER_PUMP_LORE:
+  - 
+  - "&3Pompe de l'eau"
+  - 
+  - "%TIER%"
+  - "%POWER%"
+  - "&8⇨ &e⚡ &726 J/s"
   KREEP_ROCK: "&9Roche de Kreep"
   KREEP_ROCK_LORE:
   - "&3Une roche lunaire extrêmement rare"
@@ -551,28 +572,7 @@ Items:
   - "&6Sashimi ?"
   - "&9Pêche"
   - "&7Restaure 6 points de nourriture"
-  GREEN_GRASS: "&2Herbe verte"
-  GREEN_GRASS_LORE:
-  - "&7Il n'y a pas que les moutons qui peuvent manger de l'herbe"
-  - "&7Vous avez vraiment faim ? essayez ça "
-  - "&7Restaure 1 point de nourriture"
-  CLAY_COBBLESTONE_GENERATOR_LORE:
-  - 
-  - "&3peut générer automatiquement de la pierre"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &750 J/s"
-  CLAY_COBBLESTONE_GENERATOR: "&bGénérateur de pierre"
-  CLAY_ELECTRIC_WATER_PUMP: "&bPompe à eau électrique"
-  CLAY_ELECTRIC_WATER_PUMP_LORE:
-  - 
-  - "&3Pompe de l'eau"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &726 J/s"
-  CLAY_ELECTRIC_COPIER: "&ePhotocopieurs électriques"
+  CLAY_ELECTRIC_COPIER: "&ePhotocopieuse électriques"
   CLAY_ELECTRIC_COPIER_LORE:
   - 
   - "&fpermet de copier des livres"
@@ -586,7 +586,7 @@ Items:
   INK_MODULE: "&bModule d'encre"
   INK_MODULE_LORE:
   - "&6Stocke l'encre."
-  CLAY_WITHER_KILLER: "&eMachine Drone Chasseur de Wither"
+  CLAY_WITHER_KILLER: "&eDrone tueur de Wither"
   CLAY_WITHER_KILLER_LORE:
   - 
   - "&3Permet de tuer le wither"
@@ -605,7 +605,7 @@ Items:
   - "&3Il fonctionne lorsque la porte du sas est enfoncée."
 Researches:
   CLAYTECH_ARMORS_I: Équipement basique
-  CLAYTECH_START: Hé, Clay Tech! Lord est là!
+  CLAYTECH_START: Hé, ClayTech! C'est parti !
   CLAYTECH_ELECTRICMACHINE: Appareil électrique I
   CLAYTECH_ELEMENT_EXTRACTER_MACHINE: Machine d'extraction d'éléments
   CLAYTECH_DRINK_MAKINGS_I: Ingrédients boissons I
@@ -643,7 +643,7 @@ Researches:
   CLAYTECH_COBBLESTONE_GENERATOR: Fabrication de pierre
   CLAYTECH_ELECTRIC_WATER_PUMP: Pompe à eau électrique
   CLAYTECH_COPIER: Photocopieuse
-  CLAYTECH_WITHER_KILLER: Tueur automatique de wither
+  CLAYTECH_WITHER_KILLER: Un drone VS le Wither
   CLAYTECH_SPACETHINGS_I: Infrastructure Extra-Terrestre I
 MachineRecipes:
   CLAY_FUSION_MACHINE: "&a&oest fabriqué dans la machine à fusion d'argile"
@@ -672,6 +672,8 @@ Machines:
   CLAY_ROCKET_FUEL_GENERATOR: "&bMachine de fabrication de carburant de fusée"
   CLAY_ROCKET_FUEL_INJECTOR: "&bInjecteur de carburant"
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&bInjecteur d'oxygène pour combinaison spatiale"
+  CLAY_COBBLESTONE_GENERATOR: "&bMachine de fabrication de pierres"
+  CLAY_ELECTRIC_WATER_PUMP: "&bPompe à eau électrique"
   ROCKET_LAUNCHER: "&9Lance-roquettes"
   DISTANCE_TO_PLANET: "&9Distance de la planète actuelle : &6%ly% &9années-lumière"
   FUEL_TO_PLANET: "&9Arrivée a besoin de &6%fuel% &9carburant"
@@ -685,10 +687,8 @@ Machines:
   ELEMENT_UNIT_DOWN: "&ePlacez l'unité de l'élément ci-dessous ↓"
   ROCKET_ASSEMBLING_BLUEPRINT: "&eMettez le plan ci-dessous ↓ (pas besoin d'éléments
     principaux)"
-  CLAY_COBBLESTONE_GENERATOR: "&bMachine de fabrication de pierres"
-  CLAY_ELECTRIC_WATER_PUMP: "&bPompe à eau électrique"
   CLAY_ELECTRIC_COPIER: "&ePhotocopieuse électrique"
-  CLAY_WITHER_KILLER: Machine Drone Chasseur de Wither
+  CLAY_WITHER_KILLER: "&eDrone tueur de Wither"
   CLAY_AIR_LOCKER: "&eSas"
   add: "&3Cliquez sur &a+ 1"
   sub: "&3Cliquez sur &c- 1"
