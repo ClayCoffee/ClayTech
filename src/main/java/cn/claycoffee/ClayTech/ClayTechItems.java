@@ -47,7 +47,7 @@ public class ClayTechItems {
     public static final ItemStack POISON_CORE = Utils.newItemD(Material.SPIDER_EYE, Lang.readItemText("POISON_CORE"));
     public static final ItemStack ADVANCED_BLIND_CORE = Utils.newItemD(Material.COAL,
             Lang.readItemText("ADVANCED_BLIND_CORE"));
-    public static final ItemStack ADVANCED_CONFUSION_CORE = Utils.newItemD(Material.WITHER_SKELETON_SKULL,
+    public static final ItemStack ADVANCED_CONFUSION_CORE = Utils.newItemD(Material.INK_SAC,
             Lang.readItemText("ADVANCED_CONFUSION_CORE"));
     public static final ItemStack ADVANCED_SLOWNESS_CORE = Utils.newItemD(Material.OBSIDIAN,
             Lang.readItemText("ADVANCED_SLOWNESS_CORE"));
