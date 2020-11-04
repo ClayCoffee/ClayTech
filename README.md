@@ -16,10 +16,10 @@ You can join our discord server here: [Click this](https://discord.gg/sbNKCCs)
 * English(US) en-US (default)
 
 # 支持版本 / Supported Minecraft Server Version
-* Spigot / PaperSpigot 1.13.x
 * Spigot / PaperSpigot 1.14.x
 * Spigot / PaperSpigot 1.15.x
-* Spigot / PaperSpigot 1.16.x
+* Spigot / PaperSpigot 1.16.x  
+** For Minecraft 1.13.x, please use 1.2.17 or below.
 
 # API
 Javadocs: https://claycoffee.github.io/ClayTechWebsite/javadocs/

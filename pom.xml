@@ -77,6 +77,13 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/org.eclipse.jdt.annotation_2.2.400.v20191120-1313.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.wimbli</groupId>
+            <artifactId>WorldBorder</artifactId>
+            <version>1.9.10-beta</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/WorldBorder.jar</systemPath>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

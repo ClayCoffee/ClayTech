@@ -1,11 +1,9 @@
 package cn.claycoffee.ClayTech.implementation.Planets;
 
-import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.api.Planet;
 import cn.claycoffee.ClayTech.implementation.Planets.populators.*;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.Utils;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;

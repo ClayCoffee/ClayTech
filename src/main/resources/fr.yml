@@ -35,7 +35,7 @@ General:
   Before_115: "&cVotre serveur fonctionne sur une ancienne version (< 1.15), cela
     pourrait causer des problèmes de sauvegardes. (Cependant ClayTech fonctionnera
     toujours normalement)"
-  Not_compatible: "&cDésolé, ce plugin n'est compatible qu'avec les versions 1.13.x,
+  Not_compatible: "&cDésolé, ce plugin n'est compatible qu'avec les versions
     1.14.x, 1.15.x, 1.16.x ! Veuillez mettre à jour votre serveur dès que possible
     !"
   TNT_EXPLOSION_CREATER_WAIT: "&aLa TNT sera placé après 5 secondes. Échappez-vous
@@ -112,15 +112,15 @@ Categories:
 Items:
   USEFUL_DIRT: "&6Dirt utile"
   USEFUL_DIRT_LORE:
-  - "&bDe la terre sur Terre ..."
-  - "&bElle regorge de minéraux utiles ..."
+    - "&bDe la terre sur Terre ..."
+    - "&bElle regorge de minéraux utiles ..."
   ORE_DIAMOND: "&bMinerai de Diamant"
   MAGIC_CLAY: "&6Argile Magique "
   MAGIC_CLAY_LORE:
-  - "&bObjet élémentaire de ClayTech. Nécessaire dans de nombreuse synthèse."
+    - "&bObjet élémentaire de ClayTech. Nécessaire dans de nombreuse synthèse."
   CLAY_STICK: "§6Bâton d'argile"
   CLAY_STICK_LORE:
-  - "&bBâton d'argile de ClayCoffee. Il peut être utilisé pour faire des outils."
+    - "&bBâton d'argile de ClayCoffee. Il peut être utilisé pour faire des outils."
   ARTIFICIAL_GOLD_NUGGET: "&6Pépite d'or artificielles"
   ARTIFICIAL_GOLD_INGOT_O: "&6Minerai de lingot d'or artificiel"
   ARTIFICIAL_GOLD_INGOT: "&6Lingots d'or artificiels"
@@ -129,8 +129,8 @@ Items:
   BLIND_CORE: "&7Cœur de Cécité"
   BLIND_SWORD: "&7Épée de cécité"
   BLIND_SWORD_LORE:
-  - "&6Le joueur attaqué subit un effet de cécité V pendant 5 secondes après l'attaque"
-  - "<blindfive>"
+    - "&6Le joueur attaqué subit un effet de cécité V pendant 5 secondes après l'attaque"
+    - "<blindfive>"
   CONFUSION_CORE: "&7Cœur de Nausée"
   BLACK_ROCK_BLOCK: "&7Bloc de Pierre noir"
   SLOWNESS_CORE: "&7Cœur de Lenteur"
@@ -142,112 +142,112 @@ Items:
   ADVANCED_POISON_CORE: "&7Cœur de Poison Avancé"
   FOUR_BOW: "&7Quadruple Arc "
   FOUR_BOW_LORE:
-  - "&6Le joueur attaqué subit un effet de cécité V et de lenteur V pendant 5 secondes
+    - "&6Le joueur attaqué subit un effet de cécité V et de lenteur V pendant 5 secondes
     et un effet de poison III pendant 2 secondes après l'attaque"
-  - "<blindfive>"
-  - "<slownessfive>"
-  - "<confusionfive>"
-  - "<poisonthree>"
+    - "<blindfive>"
+    - "<slownessfive>"
+    - "<confusionfive>"
+    - "<poisonthree>"
   POISON_SWORD: "&7Épée de poison azur"
   POISON_SWORD_LORE:
-  - "&6Le joueur attaqué subit un effet de poison III pendant 2 secondes après l'attaque"
-  - "<poisonthree>"
+    - "&6Le joueur attaqué subit un effet de poison III pendant 2 secondes après l'attaque"
+    - "<poisonthree>"
   ANTI_SLOWNESS_BOOTS: "&7Bottes anti-ralentissement"
   ANTI_SLOWNESS_BOOTS_LORE:
-  - "&6Votre agresseur obtiendra un effet de lenteur III pendant 2 secondes"
-  - "<antislownessthree>"
+    - "&6Votre agresseur obtiendra un effet de lenteur III pendant 2 secondes"
+    - "<antislownessthree>"
   COCOA_BEAN: "&eFèves de cacao"
   COCOA_BEAN_LORE:
-  - "&6Youhou! De délicieuses fèves de cacao!"
-  - "&7Peut être utilisé pour faire du café, du chocolat, etc..."
+    - "&6Youhou! De délicieuses fèves de cacao!"
+    - "&7Peut être utilisé pour faire du café, du chocolat, etc..."
   PLASTIC: "&ePlastique"
   PLASTIC_LORE:
-  - "&6Prenez soin de l'environnement ! ne jetez pas ça par-terre !"
-  - "&7Peut être utilisé pour fabriquer des boissons"
+    - "&6Prenez soin de l'environnement ! ne jetez pas ça par-terre !"
+    - "&7Peut être utilisé pour fabriquer des boissons"
   RAW_CHICKEN_FOOT: "&ePilon de poulet cru"
   RAW_CHICKEN_FOOT_LORE:
-  - "&6KFC n'a qu'à bien se tenir !"
-  - "&7Pas comestible. Il faut le faire cuir."
+    - "&6KFC n'a qu'à bien se tenir !"
+    - "&7Pas comestible. Il faut le faire cuir."
   FRIED_CHICKEN_FOOT: "&ePilon de poulet cuit"
   FRIED_CHICKEN_FOOT_LORE:
-  - "&6Prêt à ouvrir un KFC!!"
-  - "&7Restaure 8 points de nourriture"
+    - "&6Prêt à ouvrir un KFC!!"
+    - "&7Restaure 8 points de nourriture"
   RAW_BREAD: "&ePain"
   RAW_BREAD_LORE:
-  - "&6Utile pour faire un burger"
-  - "&7Restaure 6 points de nourriture"
+    - "&6Utile pour faire un burger"
+    - "&7Restaure 6 points de nourriture"
   DIRTY_TEA: "&eFeuille de Thé sale"
   DIRTY_TEA_LORE:
-  - "&6Faudrait la nettoyer un peu.."
-  - "&7Faites un clic droit pour la nettoyer"
-  - "&7On la trouve en cassant des herbes"
+    - "&6Faudrait la nettoyer un peu.."
+    - "&7Faites un clic droit pour la nettoyer"
+    - "&7On la trouve en cassant des herbes"
   TEA: "&eFeuille de Thé"
   TEA_LORE:
-  - "&6Feuille de Thé"
-  - "&7Transformable en poudre"
-  - "&7Obtenu en nettoyant une feuille de thé sale"
+    - "&6Feuille de Thé"
+    - "&7Transformable en poudre"
+    - "&7Obtenu en nettoyant une feuille de thé sale"
   TEA_POWDER: "&eThé en poudre"
   TEA_POWDER_LORE:
-  - "&6Aaa de quoi faire une bonne infusion"
-  - "&7Utile pour faire du Thé"
+    - "&6Aaa de quoi faire une bonne infusion"
+    - "&7Utile pour faire du Thé"
   LEMON_POWDER: "&ePoudre de citron"
   LEMON_POWDER_LORE:
-  - "&6Un concentré d'acidité"
-  - "&7Utile pour faire du jus de citron"
+    - "&6Un concentré d'acidité"
+    - "&7Utile pour faire du jus de citron"
   FLOUR: "&eFarine"
   FLOUR_LORE:
-  - "&6Substance douteuse?"
-  - "&7Utile pour faire beaucoup de choses"
-  - "&7Parfois trouvé en récoltant du blé"
+    - "&6Substance douteuse?"
+    - "&7Utile pour faire beaucoup de choses"
+    - "&7Parfois trouvé en récoltant du blé"
   STARCH: "&eAmidon"
   STARCH_LORE:
-  - "&6Fécule de Pomme de Terre"
-  - "&7Utile pour faire beaucoup de choses"
-  - "&7Parfois trouvé en récoltant des Pommes de Terre"
+    - "&6Fécule de Pomme de Terre"
+    - "&7Utile pour faire beaucoup de choses"
+    - "&7Parfois trouvé en récoltant des Pommes de Terre"
   SNAIL_HEALTHY: "&eEscargot"
   SNAIL_HEALTHY_LORE:
-  - "&6Spécialité de Bourgogne!"
-  - "&7Utile pour faire des nouilles aux escargots"
-  - "&7Parfois trouvé en péchant"
+    - "&6Spécialité de Bourgogne!"
+    - "&7Utile pour faire des nouilles aux escargots"
+    - "&7Parfois trouvé en péchant"
   SNAIL_BAD: "&eSoupe d'escargot"
   SNAIL_BAD_LORE:
-  - "&eSoupe d'escargot"
-  - "&7Essayez la ça vaut le coup"
-  - "&7Parfois trouvé en péchant"
+    - "&eSoupe d'escargot"
+    - "&7Essayez la ça vaut le coup"
+    - "&7Parfois trouvé en péchant"
   HONEY_SWEET: "&eBonbons au miel"
   HONEY_SWEET_LORE:
-  - "&6Très sucré"
-  - "&7mais tellement bon"
-  - "&7Restaure 8 points de nourriture"
+    - "&6Très sucré"
+    - "&7mais tellement bon"
+    - "&7Restaure 8 points de nourriture"
   GREEN_GRASS: "&2Herbe verte"
   GREEN_GRASS_LORE:
-  - "&7Il n'y a pas que les moutons qui peuvent manger de l'herbe"
-  - "&7Vous avez vraiment faim ? essayez ça "
-  - "&7Restaure 1 point de nourriture"
+    - "&7Il n'y a pas que les moutons qui peuvent manger de l'herbe"
+    - "&7Vous avez vraiment faim ? essayez ça "
+    - "&7Restaure 1 point de nourriture"
   ELEMENT_UNIT: "&eUnité à élément"
   ELEMENT_UNIT_LORE:
-  - "&6Unité à élément"
-  - "&7Peut contenir des éléments!"
-  - "<cantplace>"
+    - "&6Unité à élément"
+    - "&7Peut contenir des éléments!"
+    - "<cantplace>"
   ELEMENT_OXYGEN: "&eÉlément Oxygène"
   ELEMENT_OXYGEN_LORE:
-  - "&eÉlément Oxygène"
-  - "&74P + 5O2 = Allumer = 2P2O5"
-  - "&7Obtenu en mettant trois cubes d'herbe dans la machine d'extraction d'éléments"
-  - "<cantplace>"
+    - "&eÉlément Oxygène"
+    - "&74P + 5O2 = Allumer = 2P2O5"
+    - "&7Obtenu en mettant trois cubes d'herbe dans la machine d'extraction d'éléments"
+    - "<cantplace>"
   ELEMENT_CARBON: "&eÉlément Carbone"
   ELEMENT_CARBON_LORE:
-  - "&eÉlément Carbone"
-  - "&7Utile pour faire beaucoup de choses"
-  - "&7Obtenu en mettant huit charbons dans la machine d'extraction d'éléments"
-  - "<cantplace>"
+    - "&eÉlément Carbone"
+    - "&7Utile pour faire beaucoup de choses"
+    - "&7Obtenu en mettant huit charbons dans la machine d'extraction d'éléments"
+    - "<cantplace>"
   ELEMENT_SILICON: "&eÉlément Silicium"
   ELEMENT_SILICON_LORE:
-  - "&6Élément Silicium"
-  - "&7Utile pour synthétiser des lingots de silicium et fabriquer des circuits imprimés
+    - "&6Élément Silicium"
+    - "&7Utile pour synthétiser des lingots de silicium et fabriquer des circuits imprimés
     !"
-  - "&7Obtenu en mettant dix bloc de sable dans la machine d'extraction d'éléments"
-  - "<cantplace>"
+    - "&7Obtenu en mettant dix bloc de sable dans la machine d'extraction d'éléments"
+    - "<cantplace>"
   BLISTERING_CORE: "&eCœur Brulant"
   AUTHOR_HEAD: "&6Tête de l'auteur"
   STALIN_HEAD: "&bTête de Staline"
@@ -256,134 +256,134 @@ Items:
   BLACK_CLOCK: "&bHorloge noire"
   CLAY_COFFEE: "&eCafé ClayTech"
   CLAY_COFFEE_LORE:
-  - "&eUn café d'argile !"
-  - "&7Restaure 5 points de nourriture et donne 3 minutes de vision nocturne"
-  - "<cantplace>"
+    - "&eUn café d'argile !"
+    - "&7Restaure 5 points de nourriture et donne 3 minutes de vision nocturne"
+    - "<cantplace>"
   DRINK_BOTTLE: "&eBouteille"
   DRINK_BOTTLE_LORE:
-  - "&6Une bouteille à remplir"
-  - "&7Essentiel pour faire des boissons"
-  - "&7Comment boire sans bouteille??"
-  - "<cantplace>"
+    - "&6Une bouteille à remplir"
+    - "&7Essentiel pour faire des boissons"
+    - "&7Comment boire sans bouteille??"
+    - "<cantplace>"
   DIRTY_DRINK_BOTTLE: "&eBouteille sale"
   DIRTY_DRINK_BOTTLE_LORE:
-  - "&6Il va falloir la rincer..."
-  - "&7Utilisez un seau d'eau pour la rincer"
-  - "&7Faites un clic droit pour la nettoyer"
-  - "<cantplace>"
+    - "&6Il va falloir la rincer..."
+    - "&7Utilisez un seau d'eau pour la rincer"
+    - "&7Faites un clic droit pour la nettoyer"
+    - "<cantplace>"
   SPICY_CHICKEN_BURGER: "&eBurger de pilons de poulets épicés"
   SPICY_CHICKEN_BURGER_LORE:
-  - "&6Burger de pilons de poulets épicés"
-  - "&7Restaure 15 point de nourriture et donne 20 secondes de force II"
-  - "&7Il va falloir songer à ouvrir un KFC"
-  - "<cantplace>"
+    - "&6Burger de pilons de poulets épicés"
+    - "&7Restaure 15 point de nourriture et donne 20 secondes de force II"
+    - "&7Il va falloir songer à ouvrir un KFC"
+    - "<cantplace>"
   BABA_BURGER: "&eBrioche au porc"
   BABA_BURGER_LORE:
-  - "&6Une bonne brioche vapeur"
-  - "&7Essayez-la !"
-  - "<cantplace>"
+    - "&6Une bonne brioche vapeur"
+    - "&7Essayez-la !"
+    - "<cantplace>"
   LETTUSE: "&eLaitue"
   LETTUSE_LORE:
-  - "&6En gros, c'est de la salade"
-  - "&7Restaure 1 point de nourriture"
-  - "<cantplace>"
+    - "&6En gros, c'est de la salade"
+    - "&7Restaure 1 point de nourriture"
+    - "<cantplace>"
   LEMON: "&eCitron"
   LEMON_LORE:
-  - "&6Citron"
-  - "&7Restaure 1 point de nourriture et donne 10 secondes de nausée IV"
-  - "&7J'ai du citron"
-  - "&7Obtenu en détruisant des feuilles d'arbre"
-  - "<cantplace>"
+    - "&6Citron"
+    - "&7Restaure 1 point de nourriture et donne 10 secondes de nausée IV"
+    - "&7J'ai du citron"
+    - "&7Obtenu en détruisant des feuilles d'arbre"
+    - "<cantplace>"
   LEMON_POWDER_DRINK: "&eJus de citron"
   LEMON_POWDER_DRINK_LORE:
-  - "&6Jus de citron"
-  - "&7Restaure 6 points de nourriture et donne 10 secondes de nausée IV"
-  - "&7J'ai du citron"
-  - "<cantplace>"
+    - "&6Jus de citron"
+    - "&7Restaure 6 points de nourriture et donne 10 secondes de nausée IV"
+    - "&7J'ai du citron"
+    - "<cantplace>"
   TEA_DRINK: "&eThé"
   TEA_DRINK_LORE:
-  - "&6Thé"
-  - "&7Restaure 6 points de nourriture et donne 30 secondes de résistance III"
-  - "<cantplace>"
+    - "&6Thé"
+    - "&7Restaure 6 points de nourriture et donne 30 secondes de résistance III"
+    - "<cantplace>"
   LEMON_TEA_DRINK: "&eThé au citron"
   LEMON_TEA_DRINK_LORE:
-  - "&6Thé au citron"
-  - "&7Restaure 12 points de nourriture et donne 60 secondes de résistance III"
-  - "&7Frigo et paf thé glacé."
-  - "<cantplace>"
+    - "&6Thé au citron"
+    - "&7Restaure 12 points de nourriture et donne 60 secondes de résistance III"
+    - "&7Frigo et paf thé glacé."
+    - "<cantplace>"
   CHOCOLATE: "&eChocolat"
   CHOCOLATE_LORE:
-  - "&6Chocolat"
-  - "&7Restaure 15 points de nourriture et donne 30 secondes de résistance III"
-  - "&7Contient un max de magnésium!"
-  - "<cantplace>"
+    - "&6Chocolat"
+    - "&7Restaure 15 points de nourriture et donne 30 secondes de résistance III"
+    - "&7Contient un max de magnésium!"
+    - "<cantplace>"
   LUOSI_RICE_NOODLE: "&eNouilles aux escargots"
   LUOSI_RICE_NOODLE_LORE:
-  - "&6Nouilles aux escargots"
-  - "&7Restaure 12 points de nourriture et donne 30 secondes de résistance III"
-  - "&7Pas convaincu par les escargots... mais c'est délicieux."
-  - "<cantplace>"
+    - "&6Nouilles aux escargots"
+    - "&7Restaure 12 points de nourriture et donne 30 secondes de résistance III"
+    - "&7Pas convaincu par les escargots... mais c'est délicieux."
+    - "<cantplace>"
   CLAY_FUSION_MACHINE: "&eMachine de fusion d'argiles"
   CLAY_FUSION_MACHINE_LORE:
-  - 
-  - "&fPermet de fabriquer certains objets de ClayTech"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &716 J/s"
+    -
+    - "&fPermet de fabriquer certains objets de ClayTech"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &716 J/s"
   CLAY_ELETRIC_CAULDRON: "&eChaudron électrique"
   CLAY_ELETRIC_CAULDRON_LORE:
-  - 
-  - "&fPermet de faire de la nourriture de ClayTech"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &732 J/s"
+    -
+    - "&fPermet de faire de la nourriture de ClayTech"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &732 J/s"
   CLAY_FOOD_CHALKING_MACHINE: "&eBatteur de cuisine"
   CLAY_FOOD_CHALKING_MACHINE_LORE:
-  - 
-  - "&fPermet de fabriquer certaines poudres de ClayTech"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &732 J/s"
+    -
+    - "&fPermet de fabriquer certaines poudres de ClayTech"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &732 J/s"
   CLAY_ELEMENT_EXTRACTER: "&eExtracteur d'éléments chimiques"
   CLAY_ELEMENT_EXTRACTER_LORE:
-  - 
-  - "&fPermet d'extraire des éléments chimiques"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+    -
+    - "&fPermet d'extraire des éléments chimiques"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &764 J/s"
   CLAY_ELECTRIC_STONE_CRUSHER: "&eBroyeur de pierres électrique"
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
-  - 
-  - "&fPermet de concasser la pierre"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &716 J/s"
+    -
+    - "&fPermet de concasser la pierre"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &716 J/s"
   HIGHSPEED_RAILWAY: "&bRails à grande vitesse"
   HIGHSPEED_RAILWAY_LORE:
-  - "&6Les Minecarts utilisant ce type de rails"
-  - "&6auront leur vitesse triplée!"
+    - "&6Les Minecarts utilisant ce type de rails"
+    - "&6auront leur vitesse triplée!"
   ELECTRIC_MOTOR_8: "&cDébris de moteur électrique"
   TNT_EXPLOSION_CREATER: "&6Générateur d'explosion de TNT"
   TNT_EXPLOSION_CREATER_LORE:
-  - "&bFaites un clic droit pour placer une TNT allumée à vos pieds depuis votre inventaire"
-  - "&bConsomme 1 durabilité après chaque utilisation."
-  - "&b(Aucun dommage au conteneur)"
-  - "<durability>: &632"
-  - "<cantinteract>"
+    - "&bFaites un clic droit pour placer une TNT allumée à vos pieds depuis votre inventaire"
+    - "&bConsomme 1 durabilité après chaque utilisation."
+    - "&b(Aucun dommage au conteneur)"
+    - "<durability>: &632"
+    - "<cantinteract>"
   SWEET_POTATO: "&ePatate douce"
   SWEET_POTATO_LORE:
-  - "&6Patate douce"
-  - "&7Obtenu parfois en récoltant des pommes de terre"
-  - "<canteat>"
+    - "&6Patate douce"
+    - "&7Obtenu parfois en récoltant des pommes de terre"
+    - "<canteat>"
   COOKED_SWEET_POTATO: "&ePatate douce cuite"
   COOKED_SWEET_POTATO_LORE:
-  - "&6Patate douce cuite"
-  - "&7Restaure 6 points de nourriture"
+    - "&6Patate douce cuite"
+    - "&7Restaure 6 points de nourriture"
   REINFORCED_ALLOY_PICKAXE: "&9Pioche en alliage renforcée"
   CLAY_FUSION_INGOT: "&b&lLingot de fusion d'argile"
   CLAY_ALLOY_INGOT: "&9&lLingot d'alliage d'argile"
@@ -394,215 +394,215 @@ Items:
   CLAY_ALLOY_BOOTS: "&9Bottes en alliage d'argile"
   CLAY_EXPERIMENT_TABLE_NORMAL: "&eTable d'expérimentation basique"
   CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
-  - 
-  - "&fPermet de faire des expériences de base et obtenir de nouvelles substances"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &780 J/s"
+    -
+    - "&fPermet de faire des expériences de base et obtenir de nouvelles substances"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &780 J/s"
   SILICON_INGOT: "&bLingot de silicium"
   ROCKET_LAUNCHER: "&6Lance-roquettes"
   ROCKET: "<rocket> (niveau 1)"
   ROCKET_LORE:
-  - "&3Fusées de niveau 1"
-  - "<fuel> &60&9/&a125"
-  - "&c&lNon-Stackable"
-  - "<cantplace>"
+    - "&3Fusées de niveau 1"
+    - "<fuel> &60&9/&a125"
+    - "&c&lNon-Stackable"
+    - "<cantplace>"
   MOTOR_CORE: "&eNoyau moteur"
   TEMPERATURE_RESISTANCE_OBSIDIAN: "&3Obsidienne résistante à la température de niveau
     1"
   TEMPERATURE_RESISTANCE_OBSIDIAN_LORE:
-  - "&6Ce type d'obsidienne est très résistant aux températures élevées"
-  - "&6et très approprié pour la construction de fusées!"
-  - "<cantplace>"
+    - "&6Ce type d'obsidienne est très résistant aux températures élevées"
+    - "&6et très approprié pour la construction de fusées!"
+    - "<cantplace>"
   ROCKET_ENGINE_SHELL: "&6Bloc de moteur de fusée de niveau 1"
   FUEL_TANK: "&6Baril de carburant"
   FUEL_TANK_LORE:
-  - "&3peut être utilisé comme carburant !"
-  - "&bpeut stocker &610&bunités de carburant"
-  - "<cantplace>"
+    - "&3peut être utilisé comme carburant !"
+    - "&bpeut stocker &610&bunités de carburant"
+    - "<cantplace>"
   ROCKET_ENGINE: "&9Moteur de fusée de niveau 1"
   ROCKET_ENGINE_LORE:
-  - "&3Nécessaire pour fabriquer des fusées de niveau 1"
-  - "<cantplace>"
+    - "&3Nécessaire pour fabriquer des fusées de niveau 1"
+    - "<cantplace>"
   ROCKET_ANTENNA: "&9Antenne de fusée de niveau 1"
   ROCKET_ANTENNA_LORE:
-  - "&3est utilisé pour la transmission d'informations en orbite"
-  - "<cantplace>"
+    - "&3est utilisé pour la transmission d'informations en orbite"
+    - "<cantplace>"
   ROCKET_CPU: "&9Processeur de fusée de niveau 1"
   ROCKET_CPU_LORE:
-  - "&3Unité centrale traitant les données de navigations"
+    - "&3Unité centrale traitant les données de navigations"
   ROCKET_CONTROL_CORE: "&9Noyau de contrôle de fusée de niveau 1"
   ROCKET_CONTROL_CORE_LORE:
-  - "&3Le cerveau de la fusée, sans lui il n'y aurait pas de fusée"
+    - "&3Le cerveau de la fusée, sans lui il n'y aurait pas de fusée"
   ROCKET_FUEL_TANK: "&9Réservoir de carburant pour fusée de niveau 1"
   ROCKET_FUEL_TANK_LORE:
-  - "&3peut être utilisé comme carburant !"
-  - "&bpeut stocker &6125&b unité de carburant"
-  - "<cantplace>"
+    - "&3peut être utilisé comme carburant !"
+    - "&bpeut stocker &6125&b unité de carburant"
+    - "<cantplace>"
   ROCKET_GLASS: "&9Vitre pour fusée de niveau 1"
   ROCKET_GLASS_LORE:
-  - "&3Verre inhabituel"
-  - "&3peut être utilisé dans l'espace!"
-  - "<cantplace>"
+    - "&3Verre inhabituel"
+    - "&3peut être utilisé dans l'espace!"
+    - "<cantplace>"
   ROCKET_STEEL_PLATE: "&9Plaque d'acier pour fusée de niveau 1"
   ROCKET_STEEL_PLATE_LORE:
-  - "&3Matériau nécessaire pour fabriquer des fusées de niveau 1"
+    - "&3Matériau nécessaire pour fabriquer des fusées de niveau 1"
   CLAY_ROCKET_ASSEMBLING_MACHINE: "&9Assembleur de fusées"
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
-  - 
-  - "&3permet d'assembler des fusées"
-  - "&4Êtes-vous prêt pour l'enfer..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &7128 J/s"
+    -
+    - "&3permet d'assembler des fusées"
+    - "&4Êtes-vous prêt pour l'enfer..."
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &7128 J/s"
   CLAY_FUEL: "&6Combustible d'argile"
   MIXED_ROCKET_FUEL: "&6Carburants mixtes pour fusées"
   MIXED_ROCKET_FUEL_LORE:
-  - "&9Carburant de fusée"
-  - "&9Accédez à l'univers plus profond"
-  - "<cantplace>"
+    - "&9Carburant de fusée"
+    - "&9Accédez à l'univers plus profond"
+    - "<cantplace>"
   CLAY_ROCKET_FUEL_GENERATOR: "&9Générateur de carburant de fusée"
   CLAY_ROCKET_FUEL_GENERATOR_LORE:
-  - 
-  - "&3permet de créer du carburant pour fusée"
-  - "&4Êtes-vous prêt pour l'enfer..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+    -
+    - "&3permet de créer du carburant pour fusée"
+    - "&4Êtes-vous prêt pour l'enfer..."
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &764 J/s"
   CLAY_ROCKET_FUEL_INJECTOR: "&9Injecteur de carburant"
   CLAY_ROCKET_FUEL_INJECTOR_LORE:
-  - 
-  - "&3permet d'injecter du carburant dans une fusée"
-  - "&4Êtes-vous prêt pour l'enfer..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &764 J/s"
+    -
+    - "&3permet d'injecter du carburant dans une fusée"
+    - "&4Êtes-vous prêt pour l'enfer..."
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &764 J/s"
   OXYGEN_TANK: "&9Réservoir d'oxygène"
   OXYGEN_TANK_LORE:
-  - "&3un réservoir d'oxygène ordinaire."
-  - "&bpeut stocker &65&b unités d'oxygène"
-  - "<cantplace>"
+    - "&3un réservoir d'oxygène ordinaire."
+    - "&bpeut stocker &65&b unités d'oxygène"
+    - "<cantplace>"
   SPACESUIT_OXYGEN_TANK: "&9Réservoir d'oxygène pour combinaison spatiale"
   SPACESUIT_OXYGEN_TANK_LORE:
-  - "&3Stockage interne d'oxygène pour les combinaisons spatiales"
-  - "&bpeut stocker &640&b unités d'oxygène"
-  - "<cantplace>"
+    - "&3Stockage interne d'oxygène pour les combinaisons spatiales"
+    - "&bpeut stocker &640&b unités d'oxygène"
+    - "<cantplace>"
   SPACESUIT_HELMET: "&9<spacesuit> casque"
   SPACESUIT_HELMET_LORE:
-  - "&3bloque les rayons dangereux  émis par les étoiles"
-  - "&3Nécessaire pour l'espace"
-  - "<protectlevel> &61"
-  - "<oxygen> &60&9/&a40"
+    - "&3bloque les rayons dangereux  émis par les étoiles"
+    - "&3Nécessaire pour l'espace"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_CHESTPLATE: "&9<spacesuit> Plastron"
   SPACESUIT_CHESTPLATE_LORE:
-  - "&3bloque les rayons dangereux émis par les étoiles"
-  - "&3Nécessaire pour l'espace"
-  - "<protectlevel> &61"
-  - "<oxygen> &60&9/&a40"
+    - "&3bloque les rayons dangereux émis par les étoiles"
+    - "&3Nécessaire pour l'espace"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_LEGGINGS: "&9<spacesuit> jambières"
   SPACESUIT_LEGGINGS_LORE:
-  - "&3bloque les rayons dangereux émis par les étoiles"
-  - "&3Nécessaire pour l'espace"
-  - "<protectlevel> &61"
-  - "<oxygen> &60&9/&a40"
+    - "&3bloque les rayons dangereux émis par les étoiles"
+    - "&3Nécessaire pour l'espace"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   SPACESUIT_BOOTS: "&9<spacesuit> bottes"
   SPACESUIT_BOOTS_LORE:
-  - "&3bloque les rayons dangereux émis par les étoiles"
-  - "&3Nécessaire pour l'espace"
-  - "<protectlevel> &61"
-  - "<oxygen> &60&9/&a40"
+    - "&3bloque les rayons dangereux émis par les étoiles"
+    - "&3Nécessaire pour l'espace"
+    - "<protectlevel> &61"
+    - "<oxygen> &60&9/&a40"
   CLAY_SPACESUIT_OXYGEN_INJECTOR: "&9Injecteur d'oxygène pour combinaison spatiale"
   CLAY_SPACESUIT_OXYGEN_INJECTOR_LORE:
-  - 
-  - "&3permet d'injecter de l'oxygène dans la combinaison spatiale"
-  - "&3Il extrait automatiquement l'oxygène des feuilles et l'injecte dans la combinaison
+    -
+    - "&3permet d'injecter de l'oxygène dans la combinaison spatiale"
+    - "&3Il extrait automatiquement l'oxygène des feuilles et l'injecte dans la combinaison
     spatiale"
-  - "&3Fonctionnera pas s'il n'y a pas de feuilles au-dessus"
-  - "&4Êtes-vous prêt pour l'enfer..."
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &780 J/s"
+    - "&3Fonctionnera pas s'il n'y a pas de feuilles au-dessus"
+    - "&4Êtes-vous prêt pour l'enfer..."
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &780 J/s"
   CLAY_COBBLESTONE_GENERATOR_LORE:
-  - 
-  - "&3peut générer automatiquement de la pierre"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &750 J/s"
+    -
+    - "&3peut générer automatiquement de la pierre"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &750 J/s"
   CLAY_COBBLESTONE_GENERATOR: "&bGénérateur de pierre"
   CLAY_ELECTRIC_WATER_PUMP: "&bPompe à eau électrique"
   CLAY_ELECTRIC_WATER_PUMP_LORE:
-  - 
-  - "&3Pompe de l'eau"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &726 J/s"
+    -
+    - "&3Pompe de l'eau"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &726 J/s"
   KREEP_ROCK: "&9Roche de Kreep"
   KREEP_ROCK_LORE:
-  - "&3Une roche lunaire extrêmement rare"
-  - "&3Permet d'améliorer la fusée"
+    - "&3Une roche lunaire extrêmement rare"
+    - "&3Permet d'améliorer la fusée"
   KREEP_INGOT: "&9Lingot de Kreep"
   KREEP_INGOT_LORE:
-  - "&3Un lingot fabriqué à partir de roches lunaires extrêmement rares"
-  - "&3Permet d'améliorer la fusée"
+    - "&3Un lingot fabriqué à partir de roches lunaires extrêmement rares"
+    - "&3Permet d'améliorer la fusée"
   PLANET_BASE_SIGNER: "&9Marqueur de base planétaire"
   PLANET_BASE_SIGNER_LORE:
-  - "&3Après l'avoir placé, vous atterrirez à cet endroit "
+    - "&3Après l'avoir placé, vous atterrirez à cet endroit "
   TUBE: "&9Conduit"
   OXYGEN_DISTRIBUTER: "<oxygendistributer>(niveau 1)"
   OXYGEN_DISTRIBUTER_LORE:
-  - "&3Un clique droit avec l'objet permettra à l'oxygène stocké dans l'objet de se
+    - "&3Un clique droit avec l'objet permettra à l'oxygène stocké dans l'objet de se
     répartir uniformément dans la combinaison spatiale"
-  - "<oxygen> &60&9/&a120"
+    - "<oxygen> &60&9/&a120"
   COPPER_ORE: "&6Minerai de cuivre"
   COPPER_ORE_LORE:
-  - "&3Il peut être broyé en poudre de cuivre à l'aide du dispositif de fusion d'argile"
+    - "&3Il peut être broyé en poudre de cuivre à l'aide du dispositif de fusion d'argile"
   CLAY_FUSION_ORE: "&6Lingots de fusion d'argile"
   CLAY_FUSION_ORE_LORE:
-  - "&3Il peut être écrasé en lingots de fusion d'argile à l'aide du dispositif de
+    - "&3Il peut être écrasé en lingots de fusion d'argile à l'aide du dispositif de
     fusion d'argile"
   TUNA_FISH: "&eThon"
   TUNA_FISH_LORE:
-  - "&6Sashimi ?"
-  - "&9Pêche"
-  - "&7Restaure 6 points de nourriture"
+    - "&6Sashimi ?"
+    - "&9Pêche"
+    - "&7Restaure 6 points de nourriture"
   CLAY_ELECTRIC_COPIER: "&ePhotocopieuse électriques"
   CLAY_ELECTRIC_COPIER_LORE:
-  - 
-  - "&fpermet de copier des livres"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &740 J/s"
+    -
+    - "&fpermet de copier des livres"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &740 J/s"
   COPYING_MODULE: "&bModule de copie"
   COPYING_MODULE_LORE:
-  - "&6Module utilisé pour copier des livres."
+    - "&6Module utilisé pour copier des livres."
   INK_MODULE: "&bModule d'encre"
   INK_MODULE_LORE:
-  - "&6Stocke l'encre."
+    - "&6Stocke l'encre."
   CLAY_WITHER_KILLER: "&eDrone tueur de Wither"
   CLAY_WITHER_KILLER_LORE:
-  - 
-  - "&3Permet de tuer le wither"
-  - 
-  - "%TIER%"
-  - "%POWER%"
-  - "&8⇨ &e⚡ &75120 J/ Wither"
+    -
+    - "&3Permet de tuer le wither"
+    -
+    - "%TIER%"
+    - "%POWER%"
+    - "&8⇨ &e⚡ &75120 J/ Wither"
   CLAY_AIR_LOCK_PLATE: "&eSas"
   CLAY_AIR_LOCK_PLATE_LORE:
-  - "&3Posé au sol"
-  - "&3il détectera automatiquement les blocs de sas dans un rayon de 4"
-  - "&3Veuillez faire attention à l'alignement"
+    - "&3Posé au sol"
+    - "&3il détectera automatiquement les blocs de sas dans un rayon de 4"
+    - "&3Veuillez faire attention à l'alignement"
   CLAY_AIR_LOCK_BLOCK: "&eBloc de porte sas"
   CLAY_AIR_LOCK_BLOCK_LORE:
-  - "&3Utilisé pour créer un sas"
-  - "&3Il fonctionne lorsque la porte du sas est enfoncée."
+    - "&3Utilisé pour créer un sas"
+    - "&3Il fonctionne lorsque la porte du sas est enfoncée."
 Researches:
   CLAYTECH_ARMORS_I: Équipement basique
   CLAYTECH_START: Hé, ClayTech! C'est parti !

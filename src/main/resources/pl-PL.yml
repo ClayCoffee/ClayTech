@@ -35,7 +35,7 @@ General:
   Before_115: '&cYour server api version is before 1.15,the plugin also can run, but
     might cause some items can''t register.'
   Not_compatible: '&cPrzepraszamy, wtyczka nie jest zgodna z Twoją wersją serwera
-    Server Version: 1.13.x, 1.14.x, 1.15.x, 1.16.x. Zaktualizuj serwer!'
+    Server Version: 1.14.x, 1.15.x, 1.16.x. Zaktualizuj serwer!'
   TNT_EXPLOSION_CREATER_WAIT: '&aTNT zostanie położone za 5 sekund...'
   TNT_EXPLOSION_CREATER_NO_TNT: '&cW twoim ekwipunku nie ma TNT.'
   TNT_EXPLOSION_CREATER_SUCCESS: '&aTNT eksplodował pomyślnie.'
@@ -101,15 +101,15 @@ Categories:
 Items:
   USEFUL_DIRT: '&6Useful Dirt'
   USEFUL_DIRT_LORE:
-  - '&bA dirt from the Earth.'
-  - '&bPosiada wiele przydatnych zasobów.'
+    - '&bA dirt from the Earth.'
+    - '&bPosiada wiele przydatnych zasobów.'
   ORE_DIAMOND: '&bRuda Diamentu'
   MAGIC_CLAY: '&6Magiczna Glina'
   MAGIC_CLAY_LORE:
-  - '&bPodstawowy element ClayTech.'
+    - '&bPodstawowy element ClayTech.'
   CLAY_STICK: '&6Gliniany Patyk'
   CLAY_STICK_LORE:
-  - '&bPodstawowy element ClayTech.'
+    - '&bPodstawowy element ClayTech.'
   ARTIFICIAL_GOLD_NUGGET: '&6Sztuczna Złoty Samorodek'
   ARTIFICIAL_GOLD_INGOT_O: '&6Sztuczna Ruda Sztabki Złota'
   ARTIFICIAL_GOLD_INGOT: '&6Sztuczna Sztabka złota'
@@ -118,8 +118,8 @@ Items:
   BLIND_CORE: '&7Ślepy Rdzeń'
   BLIND_SWORD: '&7Ślepy Miecz'
   BLIND_SWORD_LORE:
-  - '&6Daj celowemu graczowi efekt Ślepoty V na 5 sekund po ataku'
-  - <blindfive>
+    - '&6Daj celowemu graczowi efekt Ślepoty V na 5 sekund po ataku'
+    - <blindfive>
   CONFUSION_CORE: '&7Nudności Rdzeń'
   BLACK_ROCK_BLOCK: '&7Czarny Blok Skalny'
   SLOWNESS_CORE: '&7Powolny Rdzeń'
@@ -131,112 +131,112 @@ Items:
   ADVANCED_POISON_CORE: '&7Zaawansowany Trujący Rdzeń'
   FOUR_BOW: '&7Cztery Związane Łuki'
   FOUR_BOW_LORE:
-  - '&6Daj docelowemu graczowi 5 sekund efektu Ślep.. V, Spowol.. V i Nudno.. V. na
+    - '&6Daj docelowemu graczowi 5 sekund efektu Ślep.. V, Spowol.. V i Nudno.. V. na
     2 seconds oraz Trucizna III.'
-  - <blindfive>
-  - <slownessfive>
-  - <confusionfive>
-  - <poisonthree>
+    - <blindfive>
+    - <slownessfive>
+    - <confusionfive>
+    - <poisonthree>
   POISON_SWORD: '&7Trujący Miecz'
   POISON_SWORD_LORE:
-  - '&6Daj wybranemu graczowi efekt Trucizny III na 2 sekundy po ataku'
-  - <poisonthree>
+    - '&6Daj wybranemu graczowi efekt Trucizny III na 2 sekundy po ataku'
+    - <poisonthree>
   ANTI_SLOWNESS_BOOTS: '&7Buty Zapobiegające Spowolnieniu'
   ANTI_SLOWNESS_BOOTS_LORE:
-  - '&6Daj atakującemu graczowi 2 sekundy efektu Spowol.. III, kiedy otrzymałeś trafienie.'
-  - <antislownessthree>
+    - '&6Daj atakującemu graczowi 2 sekundy efektu Spowol.. III, kiedy otrzymałeś trafienie.'
+    - <antislownessthree>
   COCOA_BEAN: '&eZiarna Kakaowca'
   COCOA_BEAN_LORE:
-  - '&6Yay!Przepyszne Ziarna Kakaowca!'
-  - '&7Potrafi wytwarzać czekoladę i kawę itp.'
+    - '&6Yay!Przepyszne Ziarna Kakaowca!'
+    - '&7Potrafi wytwarzać czekoladę i kawę itp.'
   PLASTIC: '&ePlastic'
   PLASTIC_LORE:
-  - '&6Dbajmy o czystość środowiska!'
-  - '&7Potrafi tworzyć butelki na napoje.'
+    - '&6Dbajmy o czystość środowiska!'
+    - '&7Potrafi tworzyć butelki na napoje.'
   RAW_CHICKEN_FOOT: '&ePodudzie z Kurczaka'
   RAW_CHICKEN_FOOT_LORE:
-  - '&6Podudzie z Kurczaka'
-  - '&7Nie do zjedzenia, przed jedzeniem ugotuj w kociołku na żywność.'
+    - '&6Podudzie z Kurczaka'
+    - '&7Nie do zjedzenia, przed jedzeniem ugotuj w kociołku na żywność.'
   FRIED_CHICKEN_FOOT: '&eSmażony Podudzie Kurczaka'
   FRIED_CHICKEN_FOOT_LORE:
-  - '&6Smażony Podudzie Kurczaka'
-  - '&7Zwiększa wartość głodu o 8 po jedzeniu.'
+    - '&6Smażony Podudzie Kurczaka'
+    - '&7Zwiększa wartość głodu o 8 po jedzeniu.'
   RAW_BREAD: '&eChleb'
   RAW_BREAD_LORE:
-  - '&6Chleb'
-  - '&7Zwiększyć wartość głodu o 6 po jedzeniu.'
+    - '&6Chleb'
+    - '&7Zwiększyć wartość głodu o 6 po jedzeniu.'
   DIRTY_TEA: '&eBrudna Surowa Herbata'
   DIRTY_TEA_LORE:
-  - '&6Brudna Surowa Herbata'
-  - '&7Jest brudny, kliknij mnie prawym przyciskiem myszy, aby wyczyścić!'
-  - '&7Zdobądź to, łamiąc trawę.'
+    - '&6Brudna Surowa Herbata'
+    - '&7Jest brudny, kliknij mnie prawym przyciskiem myszy, aby wyczyścić!'
+    - '&7Zdobądź to, łamiąc trawę.'
   TEA: '&eSurowa Herbata'
   TEA_LORE:
-  - '&6Surowa Herbata'
-  - '&7Może wytwarzać proszek do herbaty.'
-  - '&7Osiągnij to, czyszcząc brudną surową herbatę.'
+    - '&6Surowa Herbata'
+    - '&7Może wytwarzać proszek do herbaty.'
+    - '&7Osiągnij to, czyszcząc brudną surową herbatę.'
   TEA_POWDER: '&eHerbata w Proszku'
   TEA_POWDER_LORE:
-  - '&6Herbata w Proszku'
-  - '&7Może zrobić herbatę.'
+    - '&6Herbata w Proszku'
+    - '&7Może zrobić herbatę.'
   LEMON_POWDER: '&eProszek Cytrynowy'
   LEMON_POWDER_LORE:
-  - '&6Proszek Cytrynowy'
-  - '&7Potrafi zrobić sok z cytryny.'
+    - '&6Proszek Cytrynowy'
+    - '&7Potrafi zrobić sok z cytryny.'
   FLOUR: '&eMąka'
   FLOUR_LORE:
-  - '&6Mąka'
-  - '&7Potrafi wiele rzeczy.'
-  - '&7Może to osiągnąć zbierając pszenicę.'
+    - '&6Mąka'
+    - '&7Potrafi wiele rzeczy.'
+    - '&7Może to osiągnąć zbierając pszenicę.'
   STARCH: '&eSkrobia'
   STARCH_LORE:
-  - '&6Skrobia'
-  - '&7Potrafi wiele rzeczy.'
-  - '&7Może to osiągnąć zbierając ziemniaki.'
+    - '&6Skrobia'
+    - '&7Potrafi wiele rzeczy.'
+    - '&7Może to osiągnąć zbierając ziemniaki.'
   SNAIL_HEALTHY: '&eŚlimak'
   SNAIL_HEALTHY_LORE:
-  - '&6Ślimak'
-  - '&7Może zrobić makaron ze ślimakiem ryżowym.'
-  - '&7Może to osiągnąć łowiąc ryby.'
+    - '&6Ślimak'
+    - '&7Może zrobić makaron ze ślimakiem ryżowym.'
+    - '&7Może to osiągnąć łowiąc ryby.'
   SNAIL_BAD: '&eZły Ślimak'
   SNAIL_BAD_LORE:
-  - '&6Zły Ślimak'
-  - '&7Spróbuj to zjeść!'
-  - '&7Może to osiągnąć łowiąc ryby.'
+    - '&6Zły Ślimak'
+    - '&7Spróbuj to zjeść!'
+    - '&7Może to osiągnąć łowiąc ryby.'
   HONEY_SWEET: '&eSłodki Miód'
   HONEY_SWEET_LORE:
-  - '&6Słodki Miód'
-  - '&7To jest zbyt słodkie...'
-  - '&7Zwiększa wartość głodu o 8 po jedzeniu.'
+    - '&6Słodki Miód'
+    - '&7To jest zbyt słodkie...'
+    - '&7Zwiększa wartość głodu o 8 po jedzeniu.'
   GREEN_GRASS: '&2Zielona Trawa'
   GREEN_GRASS_LORE:
-  - '&7Jestem owcą!'
-  - '&7Jeśli nie masz wystarczającej ilości jedzenia,'
-  - '&7Spróbuj tego!'
-  - '&7Zwiększ 1 wartość głodu po jedzeniu'
+    - '&7Jestem owcą!'
+    - '&7Jeśli nie masz wystarczającej ilości jedzenia,'
+    - '&7Spróbuj tego!'
+    - '&7Zwiększ 1 wartość głodu po jedzeniu'
   ELEMENT_UNIT: '&eElement Unit'
   ELEMENT_UNIT_LORE:
-  - '&6Element Unit'
-  - '&7Może zakrywać elementy!'
-  - <cantplace>
+    - '&6Element Unit'
+    - '&7Może zakrywać elementy!'
+    - <cantplace>
   ELEMENT_OXYGEN: '&eElement O'
   ELEMENT_OXYGEN_LORE:
-  - '&eElement O'
-  - '&74P + 5O2 =Light=2P2O5'
-  - '&7Osiągnij to, umieszczając trzy bloki trawy w Ekstrakcie Żywiołów.'
-  - <cantplace>
+    - '&eElement O'
+    - '&74P + 5O2 =Light=2P2O5'
+    - '&7Osiągnij to, umieszczając trzy bloki trawy w Ekstrakcie Żywiołów.'
+    - <cantplace>
   ELEMENT_CARBON: '&eElement C'
   ELEMENT_CARBON_LORE:
-  - '&6Element C'
-  - '&7Potrafi wiele rzeczy.'
-  - '&7Osiągnij to, umieszczając osiem węgli w Ekstrakcie Żywiołu.'
-  - <cantplace>
+    - '&6Element C'
+    - '&7Potrafi wiele rzeczy.'
+    - '&7Osiągnij to, umieszczając osiem węgli w Ekstrakcie Żywiołu.'
+    - <cantplace>
   ELEMENT_SILICON: '&eElement Si'
   ELEMENT_SILICON_LORE:
-  - '&6Element Si'
-  - '&7Potrafi wytwarzać sztabki krzemu.'
-  - '&7Osiągnij to, umieszczając dziesięć bloków piasku w Ekstrakcie Żywiołów.'
-  - <cantplace>
+    - '&6Element Si'
+    - '&7Potrafi wytwarzać sztabki krzemu.'
+    - '&7Osiągnij to, umieszczając dziesięć bloków piasku w Ekstrakcie Żywiołów.'
+    - <cantplace>
   BLISTERING_CORE: '&ePęcherzący rdzeń'
   AUTHOR_HEAD: '&6Głowa Autora ClayTech'
   STALIN_HEAD: '&bGłowa Stalina'
@@ -245,146 +245,146 @@ Items:
   BLACK_CLOCK: '&bCzarny Zegar'
   CLAY_COFFEE: '&eGliniana Kawa'
   CLAY_COFFEE_LORE:
-  - '&eGliniana Kawa'
-  - '&7Zwiększ wartość głodu o 5 i uzyskaj trzy minuty widzenia w nocy działa po wypiciu.'
-  - <cantplace>
+    - '&eGliniana Kawa'
+    - '&7Zwiększ wartość głodu o 5 i uzyskaj trzy minuty widzenia w nocy działa po wypiciu.'
+    - <cantplace>
   DRINK_BOTTLE: '&eButelka do picia'
   DRINK_BOTTLE_LORE:
-  - '&6Butelka do picia'
-  - '&7Potrafi przygotować napój.'
-  - '&7Bez butelki nie ma napoju!'
-  - <cantplace>
+    - '&6Butelka do picia'
+    - '&7Potrafi przygotować napój.'
+    - '&7Bez butelki nie ma napoju!'
+    - <cantplace>
   DIRTY_DRINK_BOTTLE: '&eBrudna Butelka Napoju'
   DIRTY_DRINK_BOTTLE_LORE:
-  - '&6Brudna Butelka Napoju'
-  - '&7Kliknij prawym przyciskiem myszy, aby wyczyścić!'
-  - '&7Który chłopak lubi pić brudny napój?'
-  - <cantplace>
+    - '&6Brudna Butelka Napoju'
+    - '&7Kliknij prawym przyciskiem myszy, aby wyczyścić!'
+    - '&7Który chłopak lubi pić brudny napój?'
+    - <cantplace>
   SPICY_CHICKEN_BURGER: '&ePikantny Burger z Kurczaka'
   SPICY_CHICKEN_BURGER_LORE:
-  - '&6Pikantny Burger z Kurczaka'
-  - '&7Zwiększ wartość głodu o 15 i uzyskaj efekt siły 20 sekund działa po zjedzeniu.'
-  - '&7KFC?'
-  - <cantplace>
+    - '&6Pikantny Burger z Kurczaka'
+    - '&7Zwiększ wartość głodu o 15 i uzyskaj efekt siły 20 sekund działa po zjedzeniu.'
+    - '&7KFC?'
+    - <cantplace>
   BABA_BURGER: '&eGówno Burger'
   BABA_BURGER_LORE:
-  - '&6Gówno Burger'
-  - '&7Spróbuj tego!'
-  - <cantplace>
+    - '&6Gówno Burger'
+    - '&7Spróbuj tego!'
+    - <cantplace>
   LETTUSE: '&eSałata'
   LETTUSE_LORE:
-  - '&6Sałata'
-  - '&7Zwiększ 1 wartość głodu po jedzeniu'
-  - <cantplace>
+    - '&6Sałata'
+    - '&7Zwiększ 1 wartość głodu po jedzeniu'
+    - <cantplace>
   LEMON: '&eCytryna'
   LEMON_LORE:
-  - '&6Cytryna'
-  - '&7Zwiększ 1 wartość głodu i uzyskaj 10 sekund mdłości IV działa po wypiciu.'
-  - '&7Zyskaj to, łamiąc liście dębu.'
-  - <cantplace>
+    - '&6Cytryna'
+    - '&7Zwiększ 1 wartość głodu i uzyskaj 10 sekund mdłości IV działa po wypiciu.'
+    - '&7Zyskaj to, łamiąc liście dębu.'
+    - <cantplace>
   LEMON_POWDER_DRINK: '&eSok Cytrynowy'
   LEMON_POWDER_DRINK_LORE:
-  - '&6Sok Cytrynowy'
-  - '&7Zwiększa wartość głodu 6 i daje 10 sekund mdłości IV działa po wypiciu.'
-  - <cantplace>
+    - '&6Sok Cytrynowy'
+    - '&7Zwiększa wartość głodu 6 i daje 10 sekund mdłości IV działa po wypiciu.'
+    - <cantplace>
   TEA_DRINK: '&eHerbata'
   TEA_DRINK_LORE:
-  - '&6Herbata'
-  - '&7Zwiększa wartość głodu o 6 i zyskuje 30 sekund odporności III działa po wypiciu.'
-  - <cantplace>
+    - '&6Herbata'
+    - '&7Zwiększa wartość głodu o 6 i zyskuje 30 sekund odporności III działa po wypiciu.'
+    - <cantplace>
   LEMON_TEA_DRINK: '&eHerbata Cytrynowa'
   LEMON_TEA_DRINK_LORE:
-  - '&6Herbata Cytrynowa'
-  - '&7Zwiększa 12 głodu i 60 sekund odporności III działa po wypiciu.'
-  - '&7Zimniej i zimniej!'
-  - <cantplace>
+    - '&6Herbata Cytrynowa'
+    - '&7Zwiększa 12 głodu i 60 sekund odporności III działa po wypiciu.'
+    - '&7Zimniej i zimniej!'
+    - <cantplace>
   CHOCOLATE: '&eChocolate'
   CHOCOLATE_LORE:
-  - '&6Czekolada'
-  - '&7Zwiększa 15 wartość głodu i 30 sekund odporności III działa po zjedzeniu.'
-  - '&7Spróbuj czekolady!'
-  - <cantplace>
+    - '&6Czekolada'
+    - '&7Zwiększa 15 wartość głodu i 30 sekund odporności III działa po zjedzeniu.'
+    - '&7Spróbuj czekolady!'
+    - <cantplace>
   LUOSI_RICE_NOODLE: '&eŚlimak Ryżowy z Makaronem'
   LUOSI_RICE_NOODLE_LORE:
-  - '&6Ślimak Ryżowy z Makaronem'
-  - '&7zwiększa wartość głodu 12 i zyskuje 30 sekund odporności III działa po zjedzeniu.'
-  - '&7Przepyszny!Ale jes''t śmierdzący..'
-  - <cantplace>
+    - '&6Ślimak Ryżowy z Makaronem'
+    - '&7zwiększa wartość głodu 12 i zyskuje 30 sekund odporności III działa po zjedzeniu.'
+    - '&7Przepyszny!Ale jes''t śmierdzący..'
+    - <cantplace>
   CLAY_FUSION_MACHINE: '&eMaszyna do Wtapiania Gliny'
   CLAY_FUSION_MACHINE_LORE:
-  - ''
-  - '&fMoże wytwarzać niektóre przedmioty ClayTech.'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &716 J/s'
+    - ''
+    - '&fMoże wytwarzać niektóre przedmioty ClayTech.'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &716 J/s'
   CLAY_ELETRIC_CAULDRON: '&eKocioł Elektryczny'
   CLAY_ELETRIC_CAULDRON_LORE:
-  - ''
-  - '&fPotrafi wytwarzać żywność z ClayTech'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &732 J/s'
+    - ''
+    - '&fPotrafi wytwarzać żywność z ClayTech'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &732 J/s'
   CLAY_FOOD_CHALKING_MACHINE: '&eMaszyna do Kruszenia Żywności'
   CLAY_FOOD_CHALKING_MACHINE_LORE:
-  - ''
-  - '&fPotrafi wytworzyć proszek ClayTech.'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &732 J/s'
+    - ''
+    - '&fPotrafi wytworzyć proszek ClayTech.'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &732 J/s'
   CLAY_ELEMENT_EXTRACTER: '&eEkstraktor Pierwiastków'
   CLAY_ELEMENT_EXTRACTER_LORE:
-  - ''
-  - '&fPotrafi wydobywać elementy.'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &764 J/s'
+    - ''
+    - '&fPotrafi wydobywać elementy.'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &764 J/s'
   CLAY_ELECTRIC_STONE_CRUSHER: '&eElektryczna Kruszarka do Kamienia'
   CLAY_ELECTRIC_STONE_CRUSHER_LORE:
-  - ''
-  - '&fMoże kruszyć kostkę brukową w żwir.'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &716 J/s'
+    - ''
+    - '&fMoże kruszyć kostkę brukową w żwir.'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &716 J/s'
   CLAY_ELECTRIC_COPIER: '&eKopiarka Elektryczna z Gliną'
   CLAY_ELECTRIC_COPIER_LORE:
-  - ''
-  - '&fMoże kopiować książki'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &740 J/s'
+    - ''
+    - '&fMoże kopiować książki'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &740 J/s'
   COPYING_MODULE: '&bModuł kopiujący'
   COPYING_MODULE_LORE:
-  - '&6Moduł do kopiowania książek.'
+    - '&6Moduł do kopiowania książek.'
   INK_MODULE: '&bModuł atramentu'
   INK_MODULE_LORE:
-  - '&6Jest w nim dużo atramentu.'
+    - '&6Jest w nim dużo atramentu.'
   HIGHSPEED_RAILWAY: '&bPociąg szybkobieżny'
   HIGHSPEED_RAILWAY_LORE:
-  - '&6Wagonik, który jeździ na tego rodzaju szynie'
-  - '&6Jego maksymalna prędkość może być trzykrotna!'
+    - '&6Wagonik, który jeździ na tego rodzaju szynie'
+    - '&6Jego maksymalna prędkość może być trzykrotna!'
   ELECTRIC_MOTOR_8: '&cFragment Elektrycznego Motoru'
   TNT_EXPLOSION_CREATER: '&6Krater wybuchowy TNT'
   TNT_EXPLOSION_CREATER_LORE:
-  - '&bPo kliknięciu prawym przyciskiem myszy umieść zapalone TNT na swojej lokalizacji'
-  - '&bWpłynie na trwałość'
-  - '&bNie rozbije pojemników.'
-  - '<durability>: &632'
-  - <cantinteract>
+    - '&bPo kliknięciu prawym przyciskiem myszy umieść zapalone TNT na swojej lokalizacji'
+    - '&bWpłynie na trwałość'
+    - '&bNie rozbije pojemników.'
+    - '<durability>: &632'
+    - <cantinteract>
   SWEET_POTATO: '&eSłodki Ziemniak'
   SWEET_POTATO_LORE:
-  - '&6Słodki Ziemniak'
-  - '&7Zdobądź to zbierając ziemniaki'
-  - <canteat>
+    - '&6Słodki Ziemniak'
+    - '&7Zdobądź to zbierając ziemniaki'
+    - <canteat>
   COOKED_SWEET_POTATO: '&ePieczone słodkie ziemniaki'
   COOKED_SWEET_POTATO_LORE:
-  - '&6Pieczone słodkie ziemniaki'
-  - '&7Zwiększa wartość głodu o 6 po jedzeniu'
+    - '&6Pieczone słodkie ziemniaki'
+    - '&7Zwiększa wartość głodu o 6 po jedzeniu'
   REINFORCED_ALLOY_PICKAXE: '&9Wzmocniony kilof ze stopu'
   CLAY_FUSION_INGOT: '&b&lSztabka Fuzji Gliny'
   CLAY_ALLOY_INGOT: '&9&lSztabka Stopionej Gliny'
@@ -395,189 +395,189 @@ Items:
   CLAY_ALLOY_BOOTS: '&9Buty ze stopionej gliny'
   CLAY_EXPERIMENT_TABLE_NORMAL: '&eStół do Eksperymentów(Podstawowy)'
   CLAY_EXPERIMENT_TABLE_NORMAL_LORE:
-  - ''
-  - '&fPotrafi wykonywać podstawowe eksperymenty lub tworzyć nową materię.'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &780 J/s'
+    - ''
+    - '&fPotrafi wykonywać podstawowe eksperymenty lub tworzyć nową materię.'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &780 J/s'
   SILICON_INGOT: '&bSztabka Krzemu'
   ROCKET_LAUNCHER: '&6Wyrzutnia Rakiet'
   ROCKET: <rocket> (Tier I)
   ROCKET_LORE:
-  - <fuel> &60&9/&a125
-  - '&c&lNie stackuj'
-  - <cantplace>
+    - <fuel> &60&9/&a125
+    - '&c&lNie stackuj'
+    - <cantplace>
   MOTOR_CORE: '&eMotor Core'
   TEMPERATURE_RESISTANCE_OBSIDIAN: '&3Obsydian Odporny na Temperaturę(Poziom I)'
   TEMPERATURE_RESISTANCE_OBSIDIAN_LORE:
-  - '&6Ten rodzaj obsydianu ma stabilność w wysokiej temperaturze.'
-  - <cantplace>
+    - '&6Ten rodzaj obsydianu ma stabilność w wysokiej temperaturze.'
+    - <cantplace>
   ROCKET_ENGINE_SHELL: '&6Powłoka Silnika Rakietowego(Poziom I)'
   FUEL_TANK: '&6Zbiornik paliwa'
   FUEL_TANK_LORE:
-  - '&3Może pokrywać paliwo!'
-  - '&bMożna zapisać &610&b punkty paliwa'
-  - <cantplace>
+    - '&3Może pokrywać paliwo!'
+    - '&bMożna zapisać &610&b punkty paliwa'
+    - <cantplace>
   ROCKET_ENGINE: '&9Silnik Rakietowy(Poziom I)'
   ROCKET_ENGINE_LORE:
-  - <cantplace>
+    - <cantplace>
   ROCKET_ANTENNA: '&9Antena Rakietowa(Poziom I)'
   ROCKET_ANTENNA_LORE:
-  - '&3Służy do przesyłania informacji o orbicie'
-  - <cantplace>
+    - '&3Służy do przesyłania informacji o orbicie'
+    - <cantplace>
   ROCKET_CPU: '&9Rakietowy Procesor(Poziom I)'
   ROCKET_CPU_LORE:
-  - '&3Służy do przetwarzania informacji.'
+    - '&3Służy do przetwarzania informacji.'
   ROCKET_CONTROL_CORE: '&9Rdzeń Sterowania Rakietą(Poziom I)'
   ROCKET_CONTROL_CORE_LORE:
-  - '&3Mózg rakiety.'
+    - '&3Mózg rakiety.'
   ROCKET_FUEL_TANK: '&9Zbiornik Paliwa Rakietowego(Poziom I)'
   ROCKET_FUEL_TANK_LORE:
-  - '&3Może pokrywać paliwo!'
-  - '&bMożna zapisać &6125&b punktów paliwa'
-  - <cantplace>
+    - '&3Może pokrywać paliwo!'
+    - '&bMożna zapisać &6125&b punktów paliwa'
+    - <cantplace>
   ROCKET_GLASS: '&9Szkło Rakietowe(Poziom I)'
   ROCKET_GLASS_LORE:
-  - '&3Ten rodzaj szkła jest niezwykły.'
-  - '&3Można go używać w przestrzeni!'
-  - <cantplace>
+    - '&3Ten rodzaj szkła jest niezwykły.'
+    - '&3Można go używać w przestrzeni!'
+    - <cantplace>
   ROCKET_STEEL_PLATE: '&9Rakietowa Blacha Stalowa(Poziom I)'
   ROCKET_STEEL_PLATE_LORE:
-  - '&3jest'' taka ''stalowa''.'
+    - '&3jest'' taka ''stalowa''.'
   CLAY_ROCKET_ASSEMBLING_MACHINE: '&9Maszyna do montażu rakiet'
   CLAY_ROCKET_ASSEMBLING_MACHINE_LORE:
-  - ''
-  - '&3Potrafi montować rakiety'
-  - '&4Czy jesteś na to gotowy?'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &7128 J/s'
+    - ''
+    - '&3Potrafi montować rakiety'
+    - '&4Czy jesteś na to gotowy?'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &7128 J/s'
   CLAY_FUEL: '&6Paliwo gliniane'
   MIXED_ROCKET_FUEL: '&6Mieszane paliwo rakietowe'
   MIXED_ROCKET_FUEL_LORE:
-  - '&9Można wstrzyknąć do rakiety'
-  - '&9więc możesz udać się do głębszego wszechświata'
-  - <cantplace>
+    - '&9Można wstrzyknąć do rakiety'
+    - '&9więc możesz udać się do głębszego wszechświata'
+    - <cantplace>
   CLAY_ROCKET_FUEL_GENERATOR: '&9Generator paliwa rakietowego'
   CLAY_ROCKET_FUEL_GENERATOR_LORE:
-  - ''
-  - '&3Można wstrzykiwać paliwo rakietowe'
-  - '&4Czy jesteś na to gotowy?'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &764 J/s'
+    - ''
+    - '&3Można wstrzykiwać paliwo rakietowe'
+    - '&4Czy jesteś na to gotowy?'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &764 J/s'
   CLAY_ROCKET_FUEL_INJECTOR: '&9Wtryskiwacz paliwa rakietowego'
   CLAY_ROCKET_FUEL_INJECTOR_LORE:
-  - ''
-  - '&3Można wstrzykiwać paliwo rakietowe'
-  - '&4czy jesteś na to gotowy?'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &764 J/s'
+    - ''
+    - '&3Można wstrzykiwać paliwo rakietowe'
+    - '&4czy jesteś na to gotowy?'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &764 J/s'
   OXYGEN_TANK: '&9Zbiornik tlenu'
   OXYGEN_TANK_LORE:
-  - '&3Normalna butla z tlenem..'
-  - '&bMożna zapisać &65&b punkty tlenu'
-  - <cantplace>
+    - '&3Normalna butla z tlenem..'
+    - '&bMożna zapisać &65&b punkty tlenu'
+    - <cantplace>
   SPACESUIT_OXYGEN_TANK: '&9Zbiornik tlenu w skafandrze kosmicznym'
   SPACESUIT_OXYGEN_TANK_LORE:
-  - '&3Służy do tworzenia skafandra kosmicznego'
-  - '&bMoże zaoszczędzić &640&b punktów tlenu'
-  - <cantplace>
+    - '&3Służy do tworzenia skafandra kosmicznego'
+    - '&bMoże zaoszczędzić &640&b punktów tlenu'
+    - <cantplace>
   SPACESUIT_HELMET: '&9Kask skafandra kosmicznego'
   SPACESUIT_HELMET_LORE:
-  - <protectlevel> &61
-  - <oxygen> &60&9/&a40
+    - <protectlevel> &61
+    - <oxygen> &60&9/&a40
   SPACESUIT_CHESTPLATE: '&9Napierśnik skafandra kosmicznego'
   SPACESUIT_CHESTPLATE_LORE:
-  - <protectlevel> &61
-  - <oxygen> &60&9/&a40
+    - <protectlevel> &61
+    - <oxygen> &60&9/&a40
   SPACESUIT_LEGGINGS: '&9Spodnie skafandra kosmicznego'
   SPACESUIT_LEGGINGS_LORE:
-  - <protectlevel> &61
-  - <oxygen> &60&9/&a40
+    - <protectlevel> &61
+    - <oxygen> &60&9/&a40
   SPACESUIT_BOOTS: '&9Buty skafandra kosmicznego'
   SPACESUIT_BOOTS_LORE:
-  - <protectlevel> &61
-  - <oxygen> &60&9/&a40
+    - <protectlevel> &61
+    - <oxygen> &60&9/&a40
   CLAY_SPACESUIT_OXYGEN_INJECTOR: '&9Wtryskiwacz tlenu w skafandrze kosmicznym'
   CLAY_SPACESUIT_OXYGEN_INJECTOR_LORE:
-  - ''
-  - '&3Może wstrzyknąć tlen do skafandrów'
-  - '&3Podczas operacji tlen zostanie automatycznie wydobyty z liści nad maszyną i
+    - ''
+    - '&3Może wstrzyknąć tlen do skafandrów'
+    - '&3Podczas operacji tlen zostanie automatycznie wydobyty z liści nad maszyną i
     może zostać wstrzyknięty do skafandra'
-  - '&4Czy jesteś na to gotowy?'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &780 J/s'
+    - '&4Czy jesteś na to gotowy?'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &780 J/s'
   KREEP_ROCK: '&9Kreep Skała'
   KREEP_ROCK_LORE:
-  - '&3Rzadko na Księżycu'
-  - '&3można ulepszać rakiety'
+    - '&3Rzadko na Księżycu'
+    - '&3można ulepszać rakiety'
   KREEP_INGOT: '&9Kreep Sztabka'
   KREEP_INGOT_LORE:
-  - '&3Rzadko na Księżycu'
-  - '&3Można ulepszać rakiety'
+    - '&3Rzadko na Księżycu'
+    - '&3Można ulepszać rakiety'
   PLANET_BASE_SIGNER: '&9Planetary Base Marker'
   PLANET_BASE_SIGNER_LORE:
-  - '&3Może podpisać Twoją aktualną lokalizację.'
-  - '&3Kiedy teleportujesz się na planetę, którą podpisałeś'
-  - '&3Teleportuje się tutaj'
+    - '&3Może podpisać Twoją aktualną lokalizację.'
+    - '&3Kiedy teleportujesz się na planetę, którą podpisałeś'
+    - '&3Teleportuje się tutaj'
   TUBE: '&9Rura'
   OXYGEN_DISTRIBUTER: <oxygendistributer>(Tier I)
   OXYGEN_DISTRIBUTER_LORE:
-  - '&3Kiedy użyjesz tego przedmiotu, będzie on średnio dzielił swój poziom tlenu
+    - '&3Kiedy użyjesz tego przedmiotu, będzie on średnio dzielił swój poziom tlenu
     z twoimi skafandrami.'
-  - <oxygen> &60&9/&a120
+    - <oxygen> &60&9/&a120
   COPPER_ORE: '&6Ruda Miedzi'
   COPPER_ORE_LORE:
-  - '&3Umieść to w środkowym miejscu stołu glinianego, aby zdobyć kurz.'
+    - '&3Umieść to w środkowym miejscu stołu glinianego, aby zdobyć kurz.'
   CLAY_FUSION_ORE: '&6Ruda Fuzji Gliny'
   CLAY_FUSION_ORE_LORE:
-  - '&3Umieść to w środkowym miejscu stołu glinianego, aby zdobyć sztabkę.'
+    - '&3Umieść to w środkowym miejscu stołu glinianego, aby zdobyć sztabkę.'
   TUNA_FISH: '&eTuńczyk'
   TUNA_FISH_LORE:
-  - '&9 Zdobądź to przez wędkowanie'
-  - '&6 Zwiększa wartość głodu o 6 po jedzeniu'
+    - '&9 Zdobądź to przez wędkowanie'
+    - '&6 Zwiększa wartość głodu o 6 po jedzeniu'
   CLAY_COBBLESTONE_GENERATOR: '&bGenerator Bruku'
   CLAY_COBBLESTONE_GENERATOR_LORE:
-  - ''
-  - '&3Może automatycznie generować bruk'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &750 J/s'
+    - ''
+    - '&3Może automatycznie generować bruk'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &750 J/s'
   CLAY_ELECTRIC_WATER_PUMP: '&bElektryczna Pompa Wodna'
   CLAY_ELECTRIC_WATER_PUMP_LORE:
-  - ''
-  - '&3Can pump water into the machine'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &726 J/s'
+    - ''
+    - '&3Can pump water into the machine'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &726 J/s'
   CLAY_WITHER_KILLER: '&eWither Killer'
   CLAY_WITHER_KILLER_LORE:
-  - ''
-  - '&3Może automatycznie zabijać withery'
-  - ''
-  - '%TIER%'
-  - '%POWER%'
-  - '&8⇨ &e⚡ &75120 J per wither'
+    - ''
+    - '&3Może automatycznie zabijać withery'
+    - ''
+    - '%TIER%'
+    - '%POWER%'
+    - '&8⇨ &e⚡ &75120 J per wither'
   CLAY_AIR_LOCK_PLATE: '&ePłytka powietrznej śluzy glinianej'
   CLAY_AIR_LOCK_PLATE_LORE:
-  - '&3Proszę położyć go na ziemi'
-  - '&3Automatycznie wykryje przednie, tylne, lewe i prawe gliniane bloki śluzy w
+    - '&3Proszę położyć go na ziemi'
+    - '&3Automatycznie wykryje przednie, tylne, lewe i prawe gliniane bloki śluzy w
     promieniu 4 kratek'
-  - '&3Pamiętaj o wyrównaniu'
+    - '&3Pamiętaj o wyrównaniu'
   CLAY_AIR_LOCK_BLOCK: '&eBlok powietrznej śluzy glinianej'
   CLAY_AIR_LOCK_BLOCK_LORE:
-  - '&3Używaj z glinianą płytą śluzy powietrznej'
-  - '&3Aktywne, gdy nastąpiło nadepnięcie na płytę śluzy'
+    - '&3Używaj z glinianą płytą śluzy powietrznej'
+    - '&3Aktywne, gdy nastąpiło nadepnięcie na płytę śluzy'
 Researches:
   CLAYTECH_ARMORS_I: Basic Effect Armors
   CLAYTECH_START: The start of ClayTech

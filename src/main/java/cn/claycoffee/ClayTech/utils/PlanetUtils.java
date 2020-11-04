@@ -3,6 +3,8 @@ package cn.claycoffee.ClayTech.utils;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechBiomes;
 import cn.claycoffee.ClayTech.api.Planet;
+import com.wimbli.WorldBorder.BorderData;
+import com.wimbli.WorldBorder.Config;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -39,6 +41,13 @@ public class PlanetUtils {
                 int x = new Random().nextInt(10000);
                 int z = new Random().nextInt(10000);
                 int y = getHighestBlockAt(w, x, z);
+                if (ClayTech.isWorldBorderEnabled()) {
+                    BorderData border = Config.Border(w.getName());
+                    if (border != null && !border.insideBorder(x, z)) {
+                        i++;
+                        continue;
+                    }
+                }
                 Material BlockType = w.getBlockAt(x, y, z).getType();
                 if (BlockType != Material.AIR && BlockType != Material.WATER && BlockType != Material.LAVA) {
                     ret = new Location(w, x + 0.0D, y + 0.0D, z + 0.0D);

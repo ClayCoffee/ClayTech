@@ -9,6 +9,7 @@ import cn.claycoffee.ClayTech.implementation.items.*;
 import cn.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import cn.claycoffee.ClayTech.listeners.*;
 import cn.claycoffee.ClayTech.utils.*;
+import com.wimbli.WorldBorder.WorldBorder;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -17,13 +18,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,6 +49,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
     private static FileConfiguration config;
     private static DataYML defaultLangYML;
     private static FileConfiguration defaultLang;
+    private static boolean worldBorderEnabled;
 
     public static ClayTech getInstance() {
         return plugin;
@@ -95,9 +99,17 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         return updateBranch;
     }
 
-    public static DataYML getDefaultLangYML() {return defaultLangYML;}
+    public static DataYML getDefaultLangYML() {
+        return defaultLangYML;
+    }
 
-    public static FileConfiguration getDefaultLang() {return defaultLang;}
+    public static FileConfiguration getDefaultLang() {
+        return defaultLang;
+    }
+
+    public static boolean isWorldBorderEnabled() {
+        return worldBorderEnabled;
+    }
 
     @SuppressWarnings({"unused", "static-access"})
     @Override
@@ -137,6 +149,8 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         defaultLangYML.reloadCustomConfig();
         Lang.init();
         switch (version) {
+            case "v1_16_R3":
+                break;
             case "v1_16_R2":
                 break;
             case "v1_16_R1":
@@ -144,10 +158,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             case "v1_15_R1":
                 break;
             case "v1_14_R1":
-                break;
-            case "v1_13_R2":
-                break;
-            case "v1_13_R1":
                 break;
             default:
                 compatible = false;
@@ -180,6 +190,10 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         } catch (Exception e) {
             Utils.info(Lang.readGeneralText("registeringError"));
             e.printStackTrace();
+        }
+        if (this.getServer().getPluginManager().isPluginEnabled(WorldBorder.plugin)) {
+            Utils.info(Lang.readGeneralText("WorldBorder"));
+            worldBorderEnabled = true;
         }
 
         Bukkit.getPluginManager().registerEvents(new MenuListener(), this);

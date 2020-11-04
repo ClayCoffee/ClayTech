@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 public class WeaponListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     public void EntityDamageByEntityEvent(EntityDamageByEntityEvent e) {
-        if(e.isCancelled()) return;
+        if (e.isCancelled()) return;
         if (e.getDamager().getType() == EntityType.ARROW) {
             try {
                 Player d = (Player) ((Projectile) e.getDamager()).getShooter();
