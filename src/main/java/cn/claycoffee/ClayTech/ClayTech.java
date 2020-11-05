@@ -9,7 +9,6 @@ import cn.claycoffee.ClayTech.implementation.items.*;
 import cn.claycoffee.ClayTech.implementation.resources.ClayFuel;
 import cn.claycoffee.ClayTech.listeners.*;
 import cn.claycoffee.ClayTech.utils.*;
-import com.wimbli.WorldBorder.WorldBorder;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -191,7 +190,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             Utils.info(Lang.readGeneralText("registeringError"));
             e.printStackTrace();
         }
-        if (this.getServer().getPluginManager().isPluginEnabled(WorldBorder.plugin)) {
+        if (this.getServer().getPluginManager().isPluginEnabled("WorldBorder")) {
             Utils.info(Lang.readGeneralText("WorldBorder"));
             worldBorderEnabled = true;
         }

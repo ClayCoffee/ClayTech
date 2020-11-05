@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.wimbli:WorldBorder:1.9.10-beta">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/wimbli/WorldBorder/1.9.10-beta/WorldBorder-1.9.10-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/wimbli/WorldBorder/1.9.10-beta/WorldBorder-1.9.10-beta-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/wimbli/WorldBorder/1.9.10-beta/WorldBorder-1.9.10-beta-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

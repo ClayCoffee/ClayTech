@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>club.claycoffee</groupId>
     <artifactId>ClayTech</artifactId>
-    <version>1.2.18</version>
+    <version>1.2.18-hotfix</version>
     <build>
         <plugins>
             <plugin>
@@ -81,7 +81,7 @@
             <groupId>com.wimbli</groupId>
             <artifactId>WorldBorder</artifactId>
             <version>1.9.10-beta</version>
-            <scope>system</scope>
+            <scope>provided</scope>
             <systemPath>${project.basedir}/lib/WorldBorder.jar</systemPath>
         </dependency>
     </dependencies>

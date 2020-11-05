@@ -48,5 +48,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-gc54dd1e-2645" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.wimbli:WorldBorder:1.9.10-beta" level="project" />
   </component>
 </module>
