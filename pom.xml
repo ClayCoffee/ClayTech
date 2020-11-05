@@ -81,7 +81,7 @@
             <groupId>com.wimbli</groupId>
             <artifactId>WorldBorder</artifactId>
             <version>1.9.10-beta</version>
-            <scope>provided</scope>
+            <scope>system</scope>
             <systemPath>${project.basedir}/lib/WorldBorder.jar</systemPath>
         </dependency>
     </dependencies>
