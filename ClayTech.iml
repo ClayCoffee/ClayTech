@@ -29,7 +29,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:CS-CoreLib:master-v1.6.1-g832d33f-121" level="project" />
     <orderEntry type="library" name="Maven: com.github.Multiverse:Multiverse-Core:3afca50930" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-g57590b2-2640" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-g19873de-2649" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: org.eclipse.jdt:Anotation:2.2.400">
         <CLASSES>
@@ -48,7 +48,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-gc54dd1e-2645" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.wimbli:WorldBorder:1.9.10-beta" level="project" />
   </component>
 </module>

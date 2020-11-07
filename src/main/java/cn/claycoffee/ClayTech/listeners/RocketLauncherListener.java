@@ -108,7 +108,7 @@ public class RocketLauncherListener implements Listener {
                                                         if (time >= 10) {
                                                             BlockStorage.clearBlockInfo(b.getLocation(), true);
                                                             b.setType(Material.AIR);
-                                                            p.getInventory().addItem(ClayTechItems.ROCKET_LAUNCHER);
+                                                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "sf give "+p.getName()+" ROCKET_LAUNCHER");
                                                             DataYML planetsData = ClayTech.getPlanetDataYML();
                                                             FileConfiguration pd = planetsData.getCustomConfig();
                                                             if (pd.getBoolean(p.getName() + "."
