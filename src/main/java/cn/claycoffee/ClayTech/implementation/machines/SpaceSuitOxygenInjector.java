@@ -49,7 +49,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
     public static Map<Block, MachineRecipe> processing = new HashMap<>();
     public static Map<Block, Integer> progress = new HashMap<>();
     protected final List<MachineRecipe> recipes = new ArrayList<>();
-    private ItemStack item;
+    private static Map<Block, ItemStack> item = new HashMap<>();
 
     public SpaceSuitOxygenInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                                    ItemStack[] recipe) {
@@ -213,7 +213,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                 // 处理结束
                 inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
 
-                ItemStack spacesuit = item;
+                ItemStack spacesuit = item.get(b);
                 if (RocketUtils.getOxygen(spacesuit) + 5 > RocketUtils.getMaxOxygen(spacesuit)) {
                     RocketUtils.setOxygen(spacesuit, RocketUtils.getMaxOxygen(spacesuit));
                 } else {
@@ -258,7 +258,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                     }.runTask(ClayTech.getInstance());
                     MachineRecipe oxygeninjectrecipe = new MachineRecipe(8, new ItemStack[]{spacesuit},
                             new ItemStack[]{});
-                    item = spacesuit.clone();
+                    item.put(b,spacesuit.clone());
                     inv.consumeItem(22, 1);
                     ClayTechData.RunningInjectorsOxygen.put(inv.toInventory(), b);
                     inv.replaceExistingItem(22, new ItemStack(Material.BEDROCK));

@@ -24,8 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ElementExtracter extends AExtracter {
-    private ItemStack[] inputItem;
-    private ItemStack outputItem;
+    private static Map<Block, ItemStack[]> inputItem = new HashMap<>();
+    private static Map<Block, ItemStack> outputItem = new HashMap<>();
 
     public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                             ItemStack[] recipe) {
@@ -91,7 +91,7 @@ public class ElementExtracter extends AExtracter {
 
                     @Override
                     public void run() {
-                        Bukkit.getPluginManager().callEvent(new PlayerExtractElementEvent(b, inputItem, outputItem));
+                        Bukkit.getPluginManager().callEvent(new PlayerExtractElementEvent(b, inputItem.get(b), outputItem.get(b)));
 
                     }
 
@@ -143,8 +143,9 @@ public class ElementExtracter extends AExtracter {
                     }
 
                 }
-                inputItem = r.getInput();
-                outputItem = r.getOutput()[0];
+
+                inputItem.put(b,r.getInput());
+                outputItem.put(b,r.getOutput()[0]);
                 processing.put(b, r);
                 progress.put(b, r.getTicks());
             }

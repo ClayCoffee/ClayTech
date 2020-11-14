@@ -26,8 +26,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CraftingTable extends ACraftingTable {
-    private ItemStack[] inputItem;
-    private ItemStack outputItem;
+    private static Map<Block, ItemStack[]> inputItem = new HashMap<>();
+    private static Map<Block, ItemStack> outputItem = new HashMap<>();
 
     public CraftingTable(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                          ItemStack[] recipe) {
@@ -190,7 +190,7 @@ public class CraftingTable extends ACraftingTable {
 
                     @Override
                     public void run() {
-                        Bukkit.getPluginManager().callEvent(new PlayerCraftItemEvent(b, inputItem, outputItem));
+                        Bukkit.getPluginManager().callEvent(new PlayerCraftItemEvent(b, inputItem.get(b), outputItem.get(b)));
 
                     }
 
@@ -248,8 +248,8 @@ public class CraftingTable extends ACraftingTable {
                     if (entry.getValue() > 0)
                         inv.consumeItem(entry.getKey(), entry.getValue());
                 }
-                inputItem = r.getInput();
-                outputItem = r.getOutput()[0];
+                inputItem.put(b,r.getInput());
+                outputItem.put(b,r.getOutput()[0]);
                 processing.put(b, r);
                 progress.put(b, r.getTicks());
             }

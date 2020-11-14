@@ -15,6 +15,9 @@ import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Project: ClayTech
  * @Author: ClayCoffee
@@ -25,8 +28,8 @@ import org.bukkit.inventory.meta.BookMeta;
 
 public class ClayElectricCopier extends ANewContainer {
     private int mode;
-    private ItemStack source;
-    private ItemStack copy;
+    private static Map<Block, ItemStack> source = new HashMap<>();
+    private static Map<Block, ItemStack> copy = new HashMap<>();
 
     public ClayElectricCopier(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
@@ -85,16 +88,18 @@ public class ClayElectricCopier extends ANewContainer {
                 inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
 
                 if (mode == 1) {
-                    inv.pushItem(source, getOutputSlots());
-                    inv.pushItem(source, getOutputSlots());
+                    inv.pushItem(source.get(b), getOutputSlots());
+                    inv.pushItem(source.get(b), getOutputSlots());
                 } else if (mode == 2) {
-                    BookMeta sourceMeta = (BookMeta) source.getItemMeta();
-                    BookMeta copyMeta = (BookMeta) copy.getItemMeta();
+                    BookMeta sourceMeta = (BookMeta) source.get(b).getItemMeta();
+                    BookMeta copyMeta = (BookMeta) copy.get(b).getItemMeta();
                     copyMeta.setPages(sourceMeta.getPages());
                     copyMeta.setGeneration(BookMeta.Generation.COPY_OF_ORIGINAL);
-                    copy.setItemMeta(copyMeta);
-                    inv.pushItem(source, getOutputSlots());
-                    inv.pushItem(copy, getOutputSlots());
+                    ItemStack c = copy.get(b);
+                    c.setItemMeta(copyMeta);
+                    copy.put(b,c);
+                    inv.pushItem(source.get(b), getOutputSlots());
+                    inv.pushItem(copy.get(b), getOutputSlots());
                 }
                 pt.remove(b);
                 pr.remove(b);
@@ -104,21 +109,21 @@ public class ClayElectricCopier extends ANewContainer {
             if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode I
                 mode = 1;
-                source = inv.getItemInSlot(19).clone();
-                copy = inv.getItemInSlot(20).clone();
+                source.put(b,inv.getItemInSlot(19).clone());
+                copy.put(b,inv.getItemInSlot(20).clone());
             } else if (inv.getItemInSlot(19).getType() == Material.WRITTEN_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode II
                 mode = 2;
-                source = inv.getItemInSlot(19).clone();
-                copy = inv.getItemInSlot(20).clone();
+                source.put(b,inv.getItemInSlot(19).clone());
+                copy.put(b,inv.getItemInSlot(20).clone());
             } else if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITTEN_BOOK) {
                 // Mode II
                 mode = 2;
-                source = inv.getItemInSlot(20).clone();
-                copy = inv.getItemInSlot(19).clone();
+                source.put(b,inv.getItemInSlot(19).clone());
+                copy.put(b,inv.getItemInSlot(20).clone());
             } else mode = 0;
             if (mode > 0) {
-                BookMeta sourceMeta = (BookMeta) source.getItemMeta();
+                BookMeta sourceMeta = (BookMeta) source.get(b).getItemMeta();
                 MachineRecipe r = new MachineRecipe(sourceMeta.getPages().size() * 4, null, null);
                 pt.put(b, r.getTicks());
                 pr.put(b, r);

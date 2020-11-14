@@ -51,8 +51,8 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
     public static Map<Block, MachineRecipe> processing = new HashMap<>();
     public static Map<Block, Integer> progress = new HashMap<>();
     protected final List<MachineRecipe> recipes = new ArrayList<>();
-    private ItemStack item;
-    private ItemStack itemfuel;
+    private static Map<Block, ItemStack> item = new HashMap<>();
+    private static Map<Block, ItemStack> itemfuel = new HashMap<>();
 
     public RocketFuelInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
@@ -214,7 +214,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
                 inv.replaceExistingItem(22,
                         Utils.addLore(Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE, "§9§l←"), " "));
 
-                ItemStack rocket = item;
+                ItemStack rocket = item.get(b);
                 if (RocketUtils.getFuel(rocket) + 5 > RocketUtils.getMaxFuel(rocket)) {
                     RocketUtils.setFuel(rocket, RocketUtils.getMaxFuel(rocket));
                 } else {
@@ -224,7 +224,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 
                     @Override
                     public void run() {
-                        Bukkit.getPluginManager().callEvent(new RocketInjectFuelEvent(b, itemfuel, rocket));
+                        Bukkit.getPluginManager().callEvent(new RocketInjectFuelEvent(b, itemfuel.get(b), rocket));
                     }
 
                 }.runTask(ClayTech.getInstance());
@@ -248,14 +248,15 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
                     }
                     if (RocketUtils.getFuel(rocket) == RocketUtils.getMaxFuel(rocket))
                         return;
-                    itemfuel = fuel.clone();
-                    itemfuel.setAmount(1);
+                    ItemStack f = fuel.clone();
+                    f.setAmount(1);
+                    itemfuel.put(b, f);
 
                     inv.consumeItem(24, 1);
 
                     MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[]{rocket, fuel},
                             new ItemStack[]{});
-                    item = rocket.clone();
+                    item.put(b,rocket.clone());
                     inv.consumeItem(20, 1);
                     ClayTechData.RunningInjectors.put(inv.toInventory(), b);
                     inv.replaceExistingItem(20, new ItemStack(Material.BEDROCK));

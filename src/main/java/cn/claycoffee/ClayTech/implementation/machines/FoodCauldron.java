@@ -25,8 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FoodCauldron extends ACraftingTable {
-    private ItemStack[] inputItem;
-    private ItemStack outputItem;
+    private static Map<Block, ItemStack[]> inputItem = new HashMap<>();
+    private static Map<Block, ItemStack> outputItem = new HashMap<>();
 
     public FoodCauldron(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                         ItemStack[] recipe) {
@@ -110,7 +110,7 @@ public class FoodCauldron extends ACraftingTable {
 
                     @Override
                     public void run() {
-                        Bukkit.getPluginManager().callEvent(new PlayerCookItemEvent(b, inputItem, outputItem));
+                        Bukkit.getPluginManager().callEvent(new PlayerCookItemEvent(b, inputItem.get(b), outputItem.get(b)));
 
                     }
 
@@ -166,8 +166,8 @@ public class FoodCauldron extends ACraftingTable {
                     if (entry.getValue() > 0)
                         inv.consumeItem(entry.getKey(), entry.getValue());
                 }
-                inputItem = r.getInput();
-                outputItem = r.getOutput()[0];
+                inputItem.put(b,r.getInput());
+                outputItem.put(b,r.getOutput()[0]);
                 processing.put(b, r);
                 progress.put(b, r.getTicks());
             }
