@@ -232,6 +232,7 @@ public class SpaceSuitOxygenInjector extends SlimefunItem implements InventoryBl
                 ClayTechData.RunningInjectorsOxygen.remove(inv.toInventory());
                 progress.remove(b);
                 processing.remove(b);
+                item.remove(b);
             }
         } else {
             // 没有在处理

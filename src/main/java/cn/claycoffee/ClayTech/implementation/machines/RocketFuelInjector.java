@@ -232,6 +232,8 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
                 ClayTechData.RunningInjectors.remove(inv.toInventory());
                 progress.remove(b);
                 processing.remove(b);
+                item.remove(b);
+                itemfuel.remove(b);
             }
         } else {
             // 没有在处理

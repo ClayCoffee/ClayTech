@@ -203,6 +203,8 @@ public class CraftingTable extends ACraftingTable {
 
                 progress.remove(b);
                 processing.remove(b);
+                inputItem.remove(b);
+                outputItem.remove(b);
             }
         } else {
             // 没有在处理

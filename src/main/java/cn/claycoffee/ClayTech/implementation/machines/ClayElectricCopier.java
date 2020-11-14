@@ -103,6 +103,8 @@ public class ClayElectricCopier extends ANewContainer {
                 }
                 pt.remove(b);
                 pr.remove(b);
+                source.remove(b);
+                copy.remove(b);
             }
         } else {
             if (inv.getItemInSlot(19) == null || inv.getItemInSlot(20) == null) return;
