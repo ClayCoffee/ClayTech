@@ -72,7 +72,7 @@ public class Mars extends ChunkGenerator {
 
                 if (finalHeight + 1 <= 57) {
                     for (int i = 57; i >= finalHeight + 1; i--) {
-                        chunkData.setBlock(x, i, z, Material.LAVA);
+                        chunkData.setBlock(x, i, z, Material.MAGMA_BLOCK);
                     }
                 } else if (finalHeight + 1 <= 60) {
                     for (int i = 60; i >= finalHeight + 1; i--) {

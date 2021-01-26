@@ -46,7 +46,7 @@ public class Moon extends ChunkGenerator {
                 }
                 if (height <= 66) {
                     for (; height <= 66; height++) {
-                        chunkData.setBlock(x, height, z, Material.LAVA);
+                        chunkData.setBlock(x, height, z, Material.MAGMA_BLOCK);
                     }
                 } else {
                     chunkData.setBlock(x, height, z, Material.END_STONE);
