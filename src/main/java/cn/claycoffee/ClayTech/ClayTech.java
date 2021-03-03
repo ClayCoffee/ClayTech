@@ -12,7 +12,7 @@ import cn.claycoffee.ClayTech.utils.*;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
-import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -129,7 +129,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
             Utils.info("§cLoading Error: Locale not found.Disabling plugin..");
             this.getServer().getPluginManager().disablePlugin(this);
         }
-        // config
         Utils.updateConfig(this, configDYML);
         configDYML.saveCustomConfig();
         configDYML.reloadCustomConfig();

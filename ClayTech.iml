@@ -27,7 +27,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.16-R0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:CS-CoreLib:master-v1.6.1-gd4e3eab-124" level="project" />
     <orderEntry type="library" name="Maven: com.github.Multiverse:Multiverse-Core:3afca50930" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.TheBusyBiscuit:Slimefun4:master-RC-7-g7d177cf-3501" level="project" />
     <orderEntry type="module-library">
