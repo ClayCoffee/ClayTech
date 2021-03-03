@@ -3,7 +3,7 @@ main: cn.claycoffee.ClayTech.ClayTech
 version: 1.2.20
 api-version: 1.13
 author: ClayCoffee
-loadbefore: [ Multiverse-Core ]d
+loadbefore: [ Multiverse-Core ]
 depend: [ Slimefun ]
 softdepend: [ WorldBorder ]
 commands:
