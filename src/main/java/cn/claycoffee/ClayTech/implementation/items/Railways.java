@@ -18,10 +18,11 @@ public class Railways {
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.HIGHSPEED_RAILWAY,
                 false);
         ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
-        elem8.setAmount(8);
+        ItemStack elem8Output = elem8.clone();
+        elem8Output.setAmount(8);
         SlimefunItemStack motor_8 = new SlimefunItemStack("ELECTRIC_MOTOR_8", elem8);
         SlimefunItem motor_8_i = new SlimefunItem(ClayTechItems.C_OTHER, motor_8,
-                ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ELECTRIC_MOTOR_8);
+                ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ELECTRIC_MOTOR_8, elem8Output);
         motor_8_i.register(ClayTech.getInstance());
         Research railway_basic = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_RAILWAY_BASIC"), 9920,
                 Lang.readResearchesText("CLAYTECH_RAILWAY_I"), 40);

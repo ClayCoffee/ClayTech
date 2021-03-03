@@ -94,7 +94,7 @@ public class CraftingTable extends ACraftingTable {
         this.registerRecipe(30, ClayTechMachineRecipes.ELEMENT_UNIT, new ItemStack[]{ClayTechItems.ELEMENT_UNIT});
         this.registerRecipe(8, ClayTechMachineRecipes.HIGHSPEED_RAILWAY,
                 new ItemStack[]{ClayTechItems.HIGHSPEED_RAILWAY});
-        ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;
+        ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8.clone();
         elem8.setAmount(8);
         this.registerRecipe(8, ClayTechMachineRecipes.ELECTRIC_MOTOR_8, new ItemStack[]{elem8});
 
