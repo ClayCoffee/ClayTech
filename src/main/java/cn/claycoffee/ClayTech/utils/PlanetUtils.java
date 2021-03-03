@@ -38,8 +38,17 @@ public class PlanetUtils {
         while (!pass) {
             // 最多寻找MAX_TRY_TIMES次,否则返回null.
             if (i <= MAX_TRY_TIMES) {
-                int x = new Random().nextInt(10000);
-                int z = new Random().nextInt(10000);
+                int x;
+                int z;
+                if (ClayTech.isWorldBorderEnabled() && Config.Border(w.getName()) != null) {
+                    BorderData border = Config.Border(w.getName());
+                    x = new Random().nextInt(border.getRadiusX());
+                    z = new Random().nextInt(border.getRadiusZ());
+                }
+                else {
+                    x = new Random().nextInt(10000);
+                    z = new Random().nextInt(10000);
+                }
                 int y = getHighestBlockAt(w, x, z);
                 if (ClayTech.isWorldBorderEnabled()) {
                     BorderData border = Config.Border(w.getName());
