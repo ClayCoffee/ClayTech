@@ -168,8 +168,8 @@ public class FoodCauldron extends ACraftingTable {
                     if (entry.getValue() > 0)
                         inv.consumeItem(entry.getKey(), entry.getValue());
                 }
-                inputItem.put(b,r.getInput());
-                outputItem.put(b,r.getOutput()[0]);
+                inputItem.put(b, r.getInput());
+                outputItem.put(b, r.getOutput()[0]);
                 processing.put(b, r);
                 progress.put(b, r.getTicks());
             }

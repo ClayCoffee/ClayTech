@@ -2,7 +2,6 @@ package cn.claycoffee.ClayTech.listeners;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechData;
-import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.api.ClayTechManager;
 import cn.claycoffee.ClayTech.api.Planet;
 import cn.claycoffee.ClayTech.api.events.RocketLandEvent;
@@ -108,7 +107,7 @@ public class RocketLauncherListener implements Listener {
                                                         if (time >= 10) {
                                                             BlockStorage.clearBlockInfo(b.getLocation(), true);
                                                             b.setType(Material.AIR);
-                                                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "sf give "+p.getName()+" ROCKET_LAUNCHER");
+                                                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "sf give " + p.getName() + " ROCKET_LAUNCHER");
                                                             DataYML planetsData = ClayTech.getPlanetDataYML();
                                                             FileConfiguration pd = planetsData.getCustomConfig();
                                                             if (pd.getBoolean(p.getName() + "."

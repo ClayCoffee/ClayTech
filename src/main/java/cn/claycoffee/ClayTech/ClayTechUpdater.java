@@ -48,9 +48,9 @@ public class ClayTechUpdater {
                                 downloadURL = ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
                                         .getAsJsonObject().get("browser_download_url").getAsString();
                                 if (!FileDownloader.updateFunc(downloadURL,
-                                        ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
-                                                .getAsJsonObject().get("name").getAsString(),
-                                        plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+                                                ja.get(i).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                                        .getAsJsonObject().get("name").getAsString(),
+                                                plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
                                         .equalsIgnoreCase("")) {
                                     Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
                                     Bukkit.getServer().getLogger()
@@ -81,9 +81,9 @@ public class ClayTechUpdater {
                                         .getAsJsonObject().get("browser_download_url").getAsString();
                                 // 开始下载
                                 if (!FileDownloader.updateFunc(downloadURL,
-                                        ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
-                                                .getAsJsonObject().get("name").getAsString(),
-                                        plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+                                                ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                                        .getAsJsonObject().get("name").getAsString(),
+                                                plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
                                         .equalsIgnoreCase("")) {
                                     Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
                                     Bukkit.getServer().getLogger()
@@ -114,9 +114,9 @@ public class ClayTechUpdater {
                                     .getAsJsonObject().get("browser_download_url").getAsString();
                             // 开始下载
                             if (!FileDownloader.updateFunc(downloadURL,
-                                    ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
-                                            .getAsJsonObject().get("name").getAsString(),
-                                    plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
+                                            ja.get(0).getAsJsonObject().get("assets").getAsJsonArray().get(0)
+                                                    .getAsJsonObject().get("name").getAsString(),
+                                            plugin.getServer().getUpdateFolder().replaceAll("update", "plugins"), ja)
                                     .equalsIgnoreCase("")) {
                                 Bukkit.getServer().getLogger().info("§a" + Lang.readGeneralText("Info_1"));
                                 Bukkit.getServer().getLogger()

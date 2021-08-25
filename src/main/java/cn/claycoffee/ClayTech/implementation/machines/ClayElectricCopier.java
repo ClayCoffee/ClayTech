@@ -27,9 +27,9 @@ import java.util.Map;
  */
 
 public class ClayElectricCopier extends ANewContainer {
-    private int mode;
     private static Map<Block, ItemStack> source = new HashMap<>();
     private static Map<Block, ItemStack> copy = new HashMap<>();
+    private int mode;
 
     public ClayElectricCopier(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
@@ -97,7 +97,7 @@ public class ClayElectricCopier extends ANewContainer {
                     copyMeta.setGeneration(BookMeta.Generation.COPY_OF_ORIGINAL);
                     ItemStack c = copy.get(b);
                     c.setItemMeta(copyMeta);
-                    copy.put(b,c);
+                    copy.put(b, c);
                     inv.pushItem(source.get(b), getOutputSlots());
                     inv.pushItem(copy.get(b), getOutputSlots());
                 }
@@ -111,18 +111,18 @@ public class ClayElectricCopier extends ANewContainer {
             if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode I
                 mode = 1;
-                source.put(b,inv.getItemInSlot(19).clone());
-                copy.put(b,inv.getItemInSlot(20).clone());
+                source.put(b, inv.getItemInSlot(19).clone());
+                copy.put(b, inv.getItemInSlot(20).clone());
             } else if (inv.getItemInSlot(19).getType() == Material.WRITTEN_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode II
                 mode = 2;
-                source.put(b,inv.getItemInSlot(19).clone());
-                copy.put(b,inv.getItemInSlot(20).clone());
+                source.put(b, inv.getItemInSlot(19).clone());
+                copy.put(b, inv.getItemInSlot(20).clone());
             } else if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITTEN_BOOK) {
                 // Mode II
                 mode = 2;
-                source.put(b,inv.getItemInSlot(19).clone());
-                copy.put(b,inv.getItemInSlot(20).clone());
+                source.put(b, inv.getItemInSlot(19).clone());
+                copy.put(b, inv.getItemInSlot(20).clone());
             } else mode = 0;
             if (mode > 0) {
                 BookMeta sourceMeta = (BookMeta) source.get(b).getItemMeta();

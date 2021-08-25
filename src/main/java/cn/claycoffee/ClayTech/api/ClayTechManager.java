@@ -87,16 +87,7 @@ public class ClayTechManager {
         return false;
     }
 
-    /**
-     * set a player's spacesuit cost no durability once.(will lose efficacy when the
-     * server restarting or reloading)
-     */
-    public static void setSpaceSuitFallNoCostDurabilityOnce(Player p) {
-        p.setMetadata("SpaceSuitNoCostDurability", new FixedMetadataValue(ClayTech.getInstance(), true));
-    }
-
     public static void allowSpaceTeleportOnce(Player p) {
         p.setMetadata("allowSpaceTeleport", new FixedMetadataValue(ClayTech.getInstance(), true));
     }
-
 }

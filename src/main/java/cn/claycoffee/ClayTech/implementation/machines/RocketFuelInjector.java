@@ -50,9 +50,9 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
             Lang.readMachinesText("SPLIT_LINE"));
     public static Map<Block, MachineRecipe> processing = new HashMap<>();
     public static Map<Block, Integer> progress = new HashMap<>();
-    protected final List<MachineRecipe> recipes = new ArrayList<>();
     private static Map<Block, ItemStack> item = new HashMap<>();
     private static Map<Block, ItemStack> itemfuel = new HashMap<>();
+    protected final List<MachineRecipe> recipes = new ArrayList<>();
 
     public RocketFuelInjector(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
@@ -258,7 +258,7 @@ public class RocketFuelInjector extends SlimefunItem implements InventoryBlock, 
 
                     MachineRecipe fuelinjectrecipe = new MachineRecipe(8, new ItemStack[]{rocket, fuel},
                             new ItemStack[]{});
-                    item.put(b,rocket.clone());
+                    item.put(b, rocket.clone());
                     inv.consumeItem(20, 1);
                     ClayTechData.RunningInjectors.put(inv.toInventory(), b);
                     inv.replaceExistingItem(20, new ItemStack(Material.BEDROCK));

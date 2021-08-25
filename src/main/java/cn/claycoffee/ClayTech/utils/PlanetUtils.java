@@ -44,8 +44,7 @@ public class PlanetUtils {
                     BorderData border = Config.Border(w.getName());
                     x = new Random().nextInt(border.getRadiusX());
                     z = new Random().nextInt(border.getRadiusZ());
-                }
-                else {
+                } else {
                     x = new Random().nextInt(10000);
                     z = new Random().nextInt(10000);
                 }
