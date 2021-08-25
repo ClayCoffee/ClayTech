@@ -17,18 +17,18 @@ import java.util.Random;
  * Planet. 星球.
  */
 public class Planet {
+    private static final DataYML planets = ClayTech.getPlanetYML();
+    private static final FileConfiguration f = planets.getCustomConfig();
     private final String planetName;
     private final ItemStack displayItem;
     private final ChunkGenerator planetWorld;
     private final Environment environment;
+    private final boolean spawnMob;
     private boolean habitable;
     private int gravity;
     private int distance;
     private int harmlevel;
     private boolean cold;
-    private final boolean spawnMob;
-    private static final DataYML planets = ClayTech.getPlanetYML();
-    private static final FileConfiguration f = planets.getCustomConfig();
 
     public Planet(String planetName, ItemStack displayItem, ChunkGenerator planetWorld, Environment environment,
                   boolean habitable, int gravity, int distance, int harmlevel, boolean cold) {

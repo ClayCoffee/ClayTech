@@ -12,9 +12,9 @@ import org.bukkit.inventory.ItemStack;
 
 public class ExperimentTableNormal extends AExperimentTable {
 
-    public ExperimentTableNormal(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
+    public ExperimentTableNormal(Category category, SlimefunItemStack item, RecipeType recipeType,
                                  ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

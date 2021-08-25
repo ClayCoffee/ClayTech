@@ -1,9 +1,15 @@
 package cn.claycoffee.ClayTech.implementation.machines;
 
+import cn.claycoffee.ClayTech.ClayTech;
+import cn.claycoffee.ClayTech.api.events.PlayerCraftItemEvent;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
+import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder;
+import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
+import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
+import io.github.thebusybiscuit.slimefun4.implementation.handlers.SimpleBlockBreakHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.AdvancedMenuClickHandler;
@@ -18,61 +24,61 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import org.apache.commons.lang.Validate;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
-    public final static int[] inputslots = new int[]{};
-    public final static int[] outputslots = new int[]{22};
+public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+    public final static int[] inputSlots = new int[]{};
+    public final static int[] outputSlots = new int[]{22};
     private static final int[] BORDER_A = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 37, 38, 39, 40, 41,
             42, 43, 44, 12, 14, 21, 23, 30, 31, 32};
     private static final int[] BORDER_B = {10, 11, 15, 16, 19, 20, 24, 25, 28, 29, 33, 34};
-    private static final ItemStack BORDER_A_ITEM = Utils.newItemD(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
+    private static final ItemStack BORDER_A_ITEM = new CustomItem(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    private static final ItemStack BORDER_B_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
+    private static final ItemStack BORDER_B_ITEM = new CustomItem(Material.LIME_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
     public static Map<Block, MachineRecipe> processing = new HashMap<Block, MachineRecipe>();
     public static Map<Block, Integer> progress = new HashMap<Block, Integer>();
     protected final List<MachineRecipe> recipes = new ArrayList<MachineRecipe>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     public CobbleStoneGenerator(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                                 ItemStack[] recipe) {
         super(category, item, id, recipeType, recipe);
 
-        createPreset(this, getInventoryTitle(), this::SetupMenu);
+        createPreset(this, getInventoryTitle(), this::constructMenu);
+        processor.setProgressBar(getProgressBar());
+    }
 
-        registerBlockHandler(id, (p, b, tool, reason) -> {
-            BlockMenu inv = BlockStorage.getInventory(b);
-            if (inv != null) {
-                for (int slot : getInputSlots()) {
-                    if (inv.getItemInSlot(slot) != null) {
-                        if (inv.getItemInSlot(slot).getType() != Material.BEDROCK) {
-                            b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-                            inv.replaceExistingItem(slot, null);
-                        }
-                    }
+    protected BlockBreakHandler onBlockBreak() {
+        return new SimpleBlockBreakHandler() {
+
+            @Override
+            public void onBlockBreak(@NotNull Block b) {
+                BlockMenu inv = BlockStorage.getInventory(b);
+
+                if (inv != null) {
+                    inv.dropItems(b.getLocation(), getOutputSlots());
                 }
 
-                for (int slot : getOutputSlots()) {
-                    if (inv.getItemInSlot(slot) != null) {
-                        b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-                        inv.replaceExistingItem(slot, null);
-                    }
-                }
+                processor.endOperation(b);
             }
 
-            progress.remove(b);
-            processing.remove(b);
-            return true;
-        });
+        };
     }
 
     private String getInventoryTitle() {
@@ -94,17 +100,18 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
         return new int[]{22};
     }
 
-    public void SetupMenu(BlockMenuPreset Preset) {
+    public void constructMenu(BlockMenuPreset preset) {
         for (int eachID : BORDER_A) {
-            Preset.addItem(eachID, BORDER_A_ITEM.clone(), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(eachID, BORDER_A_ITEM.clone(), ChestMenuUtils.getEmptyClickHandler());
         }
         for (int eachID : BORDER_B) {
-            Preset.addItem(eachID, BORDER_B_ITEM.clone(), ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(eachID, BORDER_B_ITEM.clone(), ChestMenuUtils.getEmptyClickHandler());
         }
-        Preset.addItem(13, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "),
+        preset.addItem(13, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "),
                 ChestMenuUtils.getEmptyClickHandler());
+
         for (int i : getOutputSlots()) {
-            Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
+            preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 
                 @Override
                 public boolean onClick(Player p, int slot, ItemStack cursor, ClickAction action) {
@@ -140,53 +147,54 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
         });
     }
 
+    /**
+     * This method will remove charge from a location if it is chargeable.
+     *
+     * @param l location to try to remove charge from
+     * @return Whether charge was taken if its chargeable
+     * @author TheBusyBiscuit
+     */
+    protected boolean takeCharge(Location l) {
+        Validate.notNull(l, "Can't attempt to take charge from a null location!");
+
+        if (isChargeable()) {
+            int charge = getCharge(l);
+
+            if (charge < getEnergyConsumption()) {
+                return false;
+            }
+
+            setCharge(l, charge - getEnergyConsumption());
+            return true;
+        } else {
+            return true;
+        }
+    }
+
     protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
-        // 机器正在处理
-        if (isProcessing(b)) {
-            // 剩余时间
-            int timeleft = progress.get(b);
+        CraftingOperation currentOperation = processor.getOperation(b);
 
-            if (timeleft > 0) {
-                // 还在处理
-                ChestMenuUtils.updateProgressbar(inv, 13, timeleft, processing.get(b).getTicks(), getProgressBar());
+        if (currentOperation != null) {
+            if (takeCharge(b.getLocation())) {
 
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
-                } else
-                    progress.put(b, timeleft - 1);
-            } else {
-                // 处理结束
-                inv.replaceExistingItem(13, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
+                if (!currentOperation.isFinished()) {
+                    processor.updateProgressBar(inv, 22, currentOperation);
+                    currentOperation.addProgress(1);
+                } else {
+                    inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
 
-                for (ItemStack output : processing.get(b).getOutput()) {
-                    if (output != null)
+                    for (ItemStack output : currentOperation.getResults()) {
                         inv.pushItem(output.clone(), getOutputSlots());
-                }
+                    }
 
-                progress.remove(b);
-                processing.remove(b);
+                    processor.endOperation(b);
+                }
             }
         } else {
-            // 没有在处理
             MachineRecipe r = new MachineRecipe(1, new ItemStack[]{},
                     new ItemStack[]{new ItemStack(Material.COBBLESTONE)});
-            if (isChargeable()) {
-                if (getCharge(b.getLocation()) < getEnergyConsumption())
-                    return;
-                removeCharge(b.getLocation(), getEnergyConsumption());
-            }
-            if (inv.getItemInSlot(outputslots[0]) != null) {
-                ItemStack is = inv.getItemInSlot(outputslots[0]);
-                if (is.getMaxStackSize() == is.getAmount())
-                    return;
-            }
-
-            processing.put(b, r);
-            progress.put(b, r.getTicks());
+            processor.startOperation(b, new CraftingOperation(r));
         }
     }
 
@@ -206,4 +214,8 @@ public class CobbleStoneGenerator extends SlimefunItem implements InventoryBlock
         return getProcessing(b) != null;
     }
 
+    @Override
+    public MachineProcessor<CraftingOperation> getMachineProcessor() {
+        return processor;
+    }
 }

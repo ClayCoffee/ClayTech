@@ -1,8 +1,5 @@
 package cn.claycoffee.ClayTech.implementation.abstractMachines;
 
-import cn.claycoffee.ClayTech.ClayTech;
-import cn.claycoffee.ClayTech.ClayTechItems;
-import cn.claycoffee.ClayTech.api.events.PlayerAssembleEvent;
 import cn.claycoffee.ClayTech.utils.Lang;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
@@ -30,14 +27,12 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.apache.commons.lang.Validate;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -48,6 +43,8 @@ import java.util.Map;
 public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
     public final static int[] inputSlots = new int[]{20};
     public final static int[] outputSlots = new int[]{24};
+    public static final Map<Block, MachineRecipe> processing = new HashMap<>();
+    public static final Map<Block, Integer> progress = new HashMap<>();
     private static final int[] BORDER = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49,
             50, 51, 52, 53, 13};
     private static final int[] BORDER_A = {10, 11, 12, 19, 21, 28, 29, 30, 14, 15, 16, 23, 25, 32, 33, 34};
@@ -58,11 +55,8 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
             Lang.readMachinesText("SPLIT_LINE"));
     private static final ItemStack BORDERB_ITEM = new CustomItem(Material.MAGENTA_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-
-    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
-    public static final Map<Block, MachineRecipe> processing = new HashMap<>();
-    public static final Map<Block, Integer> progress = new HashMap<>();
     protected final List<MachineRecipe> recipes = new ArrayList<>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     public AExtracter(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
@@ -236,13 +230,17 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
         }
     }
 
+    @Override
+    public MachineProcessor<CraftingOperation> getMachineProcessor() {
+        return processor;
+    }
+
     /**
      * This method will remove charge from a location if it is chargeable.
      *
-     * @author TheBusyBiscuit
-     * @param l
-     *            location to try to remove charge from
+     * @param l location to try to remove charge from
      * @return Whether charge was taken if its chargeable
+     * @author TheBusyBiscuit
      */
     protected boolean takeCharge(Location l) {
         Validate.notNull(l, "Can't attempt to take charge from a null location!");

@@ -45,6 +45,8 @@ import java.util.Map;
 public abstract class ARocketTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
     public static final int[] inputSlots = new int[]{11, 19, 20, 21, 28, 29, 30, 37, 38, 39};
     public static final int[] outputSlots = new int[]{34};
+    public static final Map<Block, MachineRecipe> processing = new HashMap<>();
+    public static final Map<Block, Integer> progress = new HashMap<>();
     private static final int[] BORDER = {0, 1, 3, 5, 6, 7, 8, 14, 15, 16, 17, 23, 41, 50, 51, 52, 53, 32};
     private static final int[] BORDER_IN = {9, 10, 12, 13, 18, 22, 27, 31, 36, 40, 45, 46, 47, 48, 49};
     private static final int[] BORDER_OUT = {24, 25, 26, 33, 35, 42, 43, 44};
@@ -52,11 +54,8 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
             Lang.readMachinesText("SPLIT_LINE"));
     private static final ItemStack OTHERBORDER_ITEM = new CustomItem(Material.LIME_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    public static final Map<Block, MachineRecipe> processing = new HashMap<>();
-    public static final Map<Block, Integer> progress = new HashMap<>();
-
-    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
     protected final List<MachineRecipe> recipes = new ArrayList<>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     public ARocketTable(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                         ItemStack[] recipe) {
@@ -117,7 +116,7 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
         for (int eachID : BORDER_OUT) {
             preset.addItem(eachID, OTHERBORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
-        preset.addItem(4, new CustomItem(Material.BLACK_STAINED_GLASS_PANE," "),
+        preset.addItem(4, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "),
                 ChestMenuUtils.getEmptyClickHandler());
 
         preset.addItem(2, new CustomItem(Material.RED_STAINED_GLASS_PANE,
@@ -241,13 +240,17 @@ public abstract class ARocketTable extends SlimefunItem implements InventoryBloc
         }
     }
 
+    @Override
+    public MachineProcessor<CraftingOperation> getMachineProcessor() {
+        return processor;
+    }
+
     /**
      * This method will remove charge from a location if it is chargeable.
      *
-     * @author TheBusyBiscuit
-     * @param l
-     *            location to try to remove charge from
+     * @param l location to try to remove charge from
      * @return Whether charge was taken if its chargeable
+     * @author TheBusyBiscuit
      */
     protected boolean takeCharge(Location l) {
         Validate.notNull(l, "Can't attempt to take charge from a null location!");

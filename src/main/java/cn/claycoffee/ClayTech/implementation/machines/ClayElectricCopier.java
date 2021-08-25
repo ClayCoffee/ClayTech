@@ -2,6 +2,8 @@ package cn.claycoffee.ClayTech.implementation.machines;
 
 import cn.claycoffee.ClayTech.implementation.abstractMachines.ANewContainer;
 import cn.claycoffee.ClayTech.utils.Lang;
+import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
+import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
@@ -27,13 +29,17 @@ import java.util.Map;
  */
 
 public class ClayElectricCopier extends ANewContainer {
-    private static Map<Block, ItemStack> source = new HashMap<>();
-    private static Map<Block, ItemStack> copy = new HashMap<>();
-    private int mode;
+    private static final Map<Block, Integer> mode = new HashMap<>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     public ClayElectricCopier(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
+    }
+
+    @Override
+    public MachineProcessor<CraftingOperation> getMachineProcessor() {
+        return processor;
     }
 
     @Override
@@ -68,70 +74,50 @@ public class ClayElectricCopier extends ANewContainer {
 
     protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
-        if (isProcessing(b)) {
-            int timeleft = pt.get(b);
+        CraftingOperation currentOperation = processor.getOperation(b);
 
-            if (timeleft > 0) {
-                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, pr.get(b).getTicks(), getProgressBar());
+        if (currentOperation != null) {
+            if (takeCharge(b.getLocation())) {
 
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                    pt.put(b, timeleft - 1);
-                } else
-                    pt.put(b, timeleft - 1);
-            } else {
-                if (inv.getItemInSlot(getOutputSlots()[0]) != null || inv.getItemInSlot(getOutputSlots()[1]) != null)
-                    return;
-
-                inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
-
-                if (mode == 1) {
-                    inv.pushItem(source.get(b), getOutputSlots());
-                    inv.pushItem(source.get(b), getOutputSlots());
-                } else if (mode == 2) {
-                    BookMeta sourceMeta = (BookMeta) source.get(b).getItemMeta();
-                    BookMeta copyMeta = (BookMeta) copy.get(b).getItemMeta();
-                    copyMeta.setPages(sourceMeta.getPages());
-                    copyMeta.setGeneration(BookMeta.Generation.COPY_OF_ORIGINAL);
-                    ItemStack c = copy.get(b);
-                    c.setItemMeta(copyMeta);
-                    copy.put(b, c);
-                    inv.pushItem(source.get(b), getOutputSlots());
-                    inv.pushItem(copy.get(b), getOutputSlots());
+                if (!currentOperation.isFinished()) {
+                    processor.updateProgressBar(inv, 22, currentOperation);
+                    currentOperation.addProgress(1);
+                } else {
+                    inv.replaceExistingItem(22, new CustomItem(Material.BLACK_STAINED_GLASS_PANE, " "));
+                    processor.endOperation(b);
+                    inv.addItem(getInputSlots()[0], processor.getOperation(b).getIngredients()[0]);
                 }
-                pt.remove(b);
-                pr.remove(b);
-                source.remove(b);
-                copy.remove(b);
             }
         } else {
             if (inv.getItemInSlot(19) == null || inv.getItemInSlot(20) == null) return;
+
+            ItemStack input = inv.getItemInSlot(19);
+            ItemStack output = inv.getItemInSlot(20);
             if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode I
-                mode = 1;
-                source.put(b, inv.getItemInSlot(19).clone());
-                copy.put(b, inv.getItemInSlot(20).clone());
+                mode.put(b,1);
             } else if (inv.getItemInSlot(19).getType() == Material.WRITTEN_BOOK && inv.getItemInSlot(20).getType() == Material.WRITABLE_BOOK) {
                 // Mode II
-                mode = 2;
-                source.put(b, inv.getItemInSlot(19).clone());
-                copy.put(b, inv.getItemInSlot(20).clone());
+                mode.put(b,2);
             } else if (inv.getItemInSlot(19).getType() == Material.WRITABLE_BOOK && inv.getItemInSlot(20).getType() == Material.WRITTEN_BOOK) {
                 // Mode II
-                mode = 2;
-                source.put(b, inv.getItemInSlot(19).clone());
-                copy.put(b, inv.getItemInSlot(20).clone());
-            } else mode = 0;
-            if (mode > 0) {
-                BookMeta sourceMeta = (BookMeta) source.get(b).getItemMeta();
-                MachineRecipe r = new MachineRecipe(sourceMeta.getPages().size() * 4, null, null);
-                pt.put(b, r.getTicks());
-                pr.put(b, r);
-                inv.consumeItem(19);
-                inv.consumeItem(20);
-                return;
+                mode.put(b,2);
+            } else mode.put(b,0);;
+            if (mode.get(b) > 0) {
+                BookMeta sourceMeta = (BookMeta) input.getItemMeta();
+                MachineRecipe r;
+                if(mode.get(b) == 1) {
+                   r = new MachineRecipe(sourceMeta.getPages().size() * 4, new ItemStack[]{}, new ItemStack[]{input});
+                }
+                else {
+                    BookMeta copyMeta = (BookMeta) output.getItemMeta();
+                    copyMeta.setPages(sourceMeta.getPages());
+                    copyMeta.setGeneration(BookMeta.Generation.COPY_OF_ORIGINAL);
+                    ItemStack c = output.clone();
+                    c.setItemMeta(copyMeta);
+                    r = new MachineRecipe(sourceMeta.getPages().size() * 4, new ItemStack[]{input}, new ItemStack[]{c});
+                }
+                processor.startOperation(b, new CraftingOperation(r));
             }
         }
     }

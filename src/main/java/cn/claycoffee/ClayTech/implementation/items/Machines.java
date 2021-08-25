@@ -118,7 +118,7 @@ public class Machines {
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketAssemblingMachine).register(ClayTech.getInstance());
         new RocketFuelGenerator(ClayTechItems.C_MACHINES, rocketfuelgenerator, "CLAY_ROCKET_FUEL_GENERATOR",
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelGenerator).register(ClayTech.getInstance());
-        new RocketFuelInjector(ClayTechItems.C_MACHINES, rocketfuelinjector, "CLAY_ROCKET_FUEL_INJECTOR",
+        new RocketFuelInjector(ClayTechItems.C_MACHINES, rocketfuelinjector,
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClayRocketFuelInjector).register(ClayTech.getInstance());
         new SpaceSuitOxygenInjector(ClayTechItems.C_MACHINES, spacesuitoxygeninjector, "CLAY_SPACESUIT_OXYGEN_INJECTOR",
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClaySpaceSuitOxygenInjector).register(ClayTech.getInstance());

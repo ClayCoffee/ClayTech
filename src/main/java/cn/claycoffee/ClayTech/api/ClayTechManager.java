@@ -3,7 +3,6 @@ package cn.claycoffee.ClayTech.api;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Utils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -30,10 +29,9 @@ public class ClayTechManager {
                 return false;
             }
 
-            if(is != null && is.isSimilar(item)) {
+            if (is != null && is.isSimilar(item)) {
                 return true;
-            }
-            else if (isRocket(is) || isSpaceSuit(is) || isOxygenDistributer(is)) return true;
+            } else if (isRocket(is) || isSpaceSuit(is) || isOxygenDistributer(is)) return true;
         }
         return false;
     }

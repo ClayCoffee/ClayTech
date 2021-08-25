@@ -1,7 +1,6 @@
 package cn.claycoffee.ClayTech.implementation.abstractMachines;
 
 import cn.claycoffee.ClayTech.ClayTech;
-import cn.claycoffee.ClayTech.api.events.PlayerAssembleEvent;
 import cn.claycoffee.ClayTech.api.events.PlayerCraftItemEvent;
 import cn.claycoffee.ClayTech.utils.Lang;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
@@ -46,20 +45,17 @@ import java.util.Map;
 public abstract class ACraftingTable extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
     protected static final int[] inputSlots = new int[]{19, 20, 21, 28, 29, 30, 37, 38, 39};
     protected static final int[] outputSlots = new int[]{34};
+    protected static final Map<Block, MachineRecipe> processing = new HashMap<>();
+    protected static final Map<Block, Integer> progress = new HashMap<>();
     private static final int[] BORDER = {0, 1, 2, 3, 5, 6, 7, 8, 14, 15, 16, 17, 23, 41, 43, 50, 51, 52, 53, 32};
     private static final int[] BORDER_IN = {9, 10, 11, 12, 13, 18, 22, 27, 31, 36, 40, 45, 46, 47, 48, 49};
     private static final int[] BORDER_OUT = {24, 25, 26, 33, 35, 42, 43, 44};
-
-
     private static final ItemStack BORDER_ITEM = new CustomItem(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
     private static final ItemStack BORDER_2_ITEM = new CustomItem(Material.LIME_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-
-    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
-    protected static final Map<Block, MachineRecipe> processing = new HashMap<>();
-    protected static final Map<Block, Integer> progress = new HashMap<>();
     protected final List<MachineRecipe> recipes = new ArrayList<>();
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
 
     public ACraftingTable(Category category, SlimefunItemStack item, RecipeType recipeType,
                           ItemStack[] recipe) {
@@ -252,13 +248,17 @@ public abstract class ACraftingTable extends SlimefunItem implements InventoryBl
         }
     }
 
+    @Override
+    public MachineProcessor<CraftingOperation> getMachineProcessor() {
+        return processor;
+    }
+
     /**
      * This method will remove charge from a location if it is chargeable.
      *
-     * @author TheBusyBiscuit
-     * @param l
-     *            location to try to remove charge from
+     * @param l location to try to remove charge from
      * @return Whether charge was taken if its chargeable
+     * @author TheBusyBiscuit
      */
     protected boolean takeCharge(Location l) {
         Validate.notNull(l, "Can't attempt to take charge from a null location!");

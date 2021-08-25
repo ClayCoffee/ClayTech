@@ -6,9 +6,10 @@ import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.api.events.PlayerCraftItemEvent;
 import cn.claycoffee.ClayTech.implementation.abstractMachines.ACraftingTable;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.core.categories.LockedCategory;
+import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -98,8 +99,6 @@ public class CraftingTable extends ACraftingTable {
         elem8.setAmount(8);
         this.registerRecipe(8, ClayTechMachineRecipes.ELECTRIC_MOTOR_8, new ItemStack[]{elem8});
 
-        this.registerRecipe(50, ClayTechMachineRecipes.TNT_EXPLOSION_CREATER,
-                new ItemStack[]{ClayTechItems.TNT_EXPLOSION_CREATER});
         this.registerRecipe(180, ClayTechMachineRecipes.REINFORCED_ALLOY_PICKAXE,
                 new ItemStack[]{ClayTechItems.REINFORCED_ALLOY_PICKAXE});
         this.registerRecipe(40, ClayTechMachineRecipes.CLAY_FUSION_INGOT,
@@ -162,100 +161,4 @@ public class CraftingTable extends ACraftingTable {
         this.registerRecipe(60, ClayTechMachineRecipes.COPYING_MODULE,
                 new ItemStack[]{ClayTechItems.COPYING_MODULE});
     }
-
-    @Override
-    protected void tick(Block b) {
-        BlockMenu inv = BlockStorage.getInventory(b);
-        // 机器正在处理
-        if (isProcessing(b)) {
-            // 剩余时间
-            int timeleft = progress.get(b);
-
-            if (timeleft > 0) {
-                // 还在处理
-                ChestMenuUtils.updateProgressbar(inv, 4, timeleft, processing.get(b).getTicks(), getProgressBar());
-
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
-                } else
-                    progress.put(b, timeleft - 1);
-            } else {
-                // 处理结束
-                inv.replaceExistingItem(4, Utils.addLore(Utils.newItem(Material.BLACK_STAINED_GLASS_PANE), " "));
-
-                new BukkitRunnable() {
-
-                    @Override
-                    public void run() {
-                        Bukkit.getPluginManager().callEvent(new PlayerCraftItemEvent(b, inputItem.get(b), outputItem.get(b)));
-
-                    }
-
-                }.runTask(ClayTech.getInstance());
-
-                for (ItemStack output : processing.get(b).getOutput()) {
-                    if (output != null)
-                        inv.pushItem(output.clone(), getOutputSlots());
-                }
-
-                progress.remove(b);
-                processing.remove(b);
-                inputItem.remove(b);
-                outputItem.remove(b);
-            }
-        } else {
-            // 没有在处理
-            MachineRecipe r = null;
-            Map<Integer, Integer> found = new HashMap<>();
-            int i;
-            for (MachineRecipe recipe : recipes) {
-                i = 0;
-                for (ItemStack input : recipe.getInput()) {
-                    if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[i]), input, true)) {
-                        // 如果该位置的物品符合某合成配方的对应位置物品
-                        if (input != null) {
-                            found.put(inputslots[i], input.getAmount());
-                        }
-                    }
-                    if (inv.getItemInSlot(inputslots[i]) == input && input == null) {
-                        found.put(i, 0);
-                    }
-                    if (i < 8) {
-                        i++;
-                    } else
-                        i = 0;
-                }
-                if (found.size() == recipe.getInput().length) {
-                    r = recipe;
-                    break;
-                } else
-                    found.clear();
-            }
-
-            if (r != null) {
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                }
-                if (inv.getItemInSlot(outputslots[0]) != null) {
-                    ItemStack is = inv.getItemInSlot(outputslots[0]);
-                    if (is.getMaxStackSize() == is.getAmount())
-                        return;
-                }
-                for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    if (entry.getValue() > 0)
-                        inv.consumeItem(entry.getKey(), entry.getValue());
-                }
-                inputItem.put(b, r.getInput());
-                outputItem.put(b, r.getOutput()[0]);
-                processing.put(b, r);
-                progress.put(b, r.getTicks());
-            }
-        }
-    }
-
 }
