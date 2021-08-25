@@ -33,7 +33,7 @@ public class ClayElectricCopier extends ANewContainer {
 
     public ClayElectricCopier(Category category, SlimefunItemStack item, String id, RecipeType recipeType,
                               ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

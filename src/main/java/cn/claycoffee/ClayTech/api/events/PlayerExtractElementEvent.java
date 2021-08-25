@@ -10,13 +10,13 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerExtractElementEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Block machine;
-    private ItemStack[] Recipe;
-    private ItemStack Element;
+    private final Block machine;
+    private final ItemStack[] recipe;
+    private final ItemStack element;
 
-    public PlayerExtractElementEvent(Block machine, ItemStack[] Recipe, ItemStack Element) {
-        this.Recipe = Recipe;
-        this.Element = Element;
+    public PlayerExtractElementEvent(Block machine, ItemStack[] recipe, ItemStack element) {
+        this.recipe = recipe;
+        this.element = element;
         this.machine = machine;
     }
 
@@ -28,14 +28,14 @@ public class PlayerExtractElementEvent extends Event {
      * @return the recipe.合成配方
      */
     public ItemStack[] getRecipe() {
-        return Recipe;
+        return recipe;
     }
 
     /**
      * @return the element just extracted.刚刚提取成功的元素
      */
     public ItemStack getElement() {
-        return Element;
+        return element;
     }
 
     /**

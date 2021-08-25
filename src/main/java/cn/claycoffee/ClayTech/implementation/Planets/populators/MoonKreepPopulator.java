@@ -10,14 +10,13 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.eclipse.jdt.annotation.NonNull;
 
 import java.util.Random;
 
 public class MoonKreepPopulator extends BlockPopulator {
 
     @Override
-    public void populate(@NonNull World world, @NonNull Random random, @NonNull Chunk source) {
+    public void populate(World world, Random random, Chunk source) {
         new BukkitRunnable() {
 
             @Override

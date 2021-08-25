@@ -13,6 +13,8 @@ import java.lang.reflect.Field;
 /**
  * the ClayTech API manager. 粘土科技API管理器
  */
+
+// TODO: refactor
 public class ClayTechManager {
     /**
      * @param item The item.物品.
@@ -23,26 +25,15 @@ public class ClayTechManager {
         for (Field field : fields) {
             ItemStack is;
             try {
-                is = (ItemStack) field.get(new ClayTechItems());
-            } catch (IllegalArgumentException e) {
-                return false;
-            } catch (IllegalAccessException e) {
+                is = (ItemStack) field.get(null);
+            } catch (IllegalArgumentException | IllegalAccessException e) {
                 return false;
             }
-            if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
-                    && Utils.getLoreList(is).equals(Utils.getLoreList(item)) && is.getType() == item.getType()) {
-                return true;
-            } else if (Utils.getDisplayName(is).equalsIgnoreCase(Utils.getDisplayName(item))
-                    && !Utils.getLoreList(is).equals(Utils.getLoreList(item)) && ClayItem.hasDurability(is)
-                    && is.getType() == item.getType()) {
-                return true;
-            } else if (isRocket(is)) {
-                return true;
-            } else if (isSpaceSuit(is)) {
-                return true;
-            } else if (isOxygenDistributer(is)) {
+
+            if(is != null && is.isSimilar(item)) {
                 return true;
             }
+            else if (isRocket(is) || isSpaceSuit(is) || isOxygenDistributer(is)) return true;
         }
         return false;
     }

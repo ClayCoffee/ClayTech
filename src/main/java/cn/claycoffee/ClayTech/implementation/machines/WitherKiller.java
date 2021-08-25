@@ -18,7 +18,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class WitherKiller extends ACraftingTable {
     public WitherKiller(Category category, SlimefunItemStack item, String id, RecipeType recipeType, ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

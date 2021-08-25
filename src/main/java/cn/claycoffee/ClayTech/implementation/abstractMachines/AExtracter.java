@@ -1,12 +1,18 @@
 package cn.claycoffee.ClayTech.implementation.abstractMachines;
 
+import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
+import cn.claycoffee.ClayTech.api.events.PlayerAssembleEvent;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
+import io.github.thebusybiscuit.slimefun4.core.attributes.MachineProcessHolder;
+import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
+import io.github.thebusybiscuit.slimefun4.core.machines.MachineProcessor;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.handlers.SimpleBlockBreakHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.operations.CraftingOperation;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
@@ -22,79 +28,77 @@ import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import org.apache.commons.lang.Validate;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent {
-    public final static int[] inputslots = new int[]{20};
-    public final static int[] outputslots = new int[]{24};
+public abstract class AExtracter extends SlimefunItem implements InventoryBlock, EnergyNetComponent, MachineProcessHolder<CraftingOperation> {
+    public final static int[] inputSlots = new int[]{20};
+    public final static int[] outputSlots = new int[]{24};
     private static final int[] BORDER = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 47, 48, 49,
             50, 51, 52, 53, 13};
     private static final int[] BORDER_A = {10, 11, 12, 19, 21, 28, 29, 30, 14, 15, 16, 23, 25, 32, 33, 34};
     private static final int[] BORDER_B = {37, 38, 39, 41, 42, 43};
-    private static final ItemStack BORDER_ITEM = Utils.newItemD(Material.BLACK_STAINED_GLASS_PANE,
+    private static final ItemStack BORDER_ITEM = new CustomItem(Material.BLACK_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    private static final ItemStack BORDERA_ITEM = Utils.newItemD(Material.LIME_STAINED_GLASS_PANE,
+    private static final ItemStack BORDERA_ITEM = new CustomItem(Material.LIME_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    private static final ItemStack BORDERB_ITEM = Utils.newItemD(Material.MAGENTA_STAINED_GLASS_PANE,
+    private static final ItemStack BORDERB_ITEM = new CustomItem(Material.MAGENTA_STAINED_GLASS_PANE,
             Lang.readMachinesText("SPLIT_LINE"));
-    public static Map<Block, MachineRecipe> processing = new HashMap<>();
-    public static Map<Block, Integer> progress = new HashMap<>();
+
+    private final MachineProcessor<CraftingOperation> processor = new MachineProcessor<>(this);
+    public static final Map<Block, MachineRecipe> processing = new HashMap<>();
+    public static final Map<Block, Integer> progress = new HashMap<>();
     protected final List<MachineRecipe> recipes = new ArrayList<>();
-    SlimefunItemStack items;
 
-    public AExtracter(Category category, SlimefunItemStack item, String id, RecipeType recipeType, ItemStack[] recipe) {
-
+    public AExtracter(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
 
-        createPreset(this, getInventoryTitle(), this::SetupMenu);
+        processor.setProgressBar(getProgressBar());
+        createPreset(this, getInventoryTitle(), this::constructMenu);
 
-        registerBlockHandler(id, (p, b, tool, reason) -> {
-            BlockMenu inv = BlockStorage.getInventory(b);
-            if (inv != null) {
-                for (int slot : getInputSlots()) {
-                    if (inv.getItemInSlot(slot) != null) {
-                        b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-                        inv.replaceExistingItem(slot, null);
-                    }
+        addItemHandler(onBlockBreak());
+    }
+
+
+    protected BlockBreakHandler onBlockBreak() {
+        return new SimpleBlockBreakHandler() {
+
+            @Override
+            public void onBlockBreak(@NotNull Block b) {
+                BlockMenu inv = BlockStorage.getInventory(b);
+
+                if (inv != null) {
+                    inv.dropItems(b.getLocation(), getInputSlots());
+                    inv.dropItems(b.getLocation(), getOutputSlots());
                 }
 
-                for (int slot : getOutputSlots()) {
-                    if (inv.getItemInSlot(slot) != null) {
-                        b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(slot));
-                        inv.replaceExistingItem(slot, null);
-                    }
-                }
-
-                if (inv.getItemInSlot(40) != null) {
-                    b.getWorld().dropItemNaturally(b.getLocation(), inv.getItemInSlot(40));
-                    inv.replaceExistingItem(40, null);
-                }
+                processor.endOperation(b);
             }
 
-            progress.remove(b);
-            processing.remove(b);
-            return true;
-        });
-
-        this.registerDefaultRecipes();
+        };
     }
 
     public int[] getInputSlots() {
-        return inputslots;
+        return inputSlots;
     }
 
     @Override
     public int[] getOutputSlots() {
-        return outputslots;
+        return outputSlots;
     }
 
     public abstract String getInventoryTitle();
@@ -110,27 +114,28 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
     public abstract void registerDefaultRecipes();
 
     @SuppressWarnings("deprecation")
-    public void SetupMenu(BlockMenuPreset Preset) {
-        Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
+    public void constructMenu(BlockMenuPreset preset) {
+        preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
         for (int eachID : BORDER) {
-            Preset.addItem(eachID, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(eachID, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
         for (int eachID : BORDER_A) {
-            Preset.addItem(eachID, BORDERA_ITEM, ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(eachID, BORDERA_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
         for (int eachID : BORDER_B) {
-            Preset.addItem(eachID, BORDERB_ITEM, ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(eachID, BORDERB_ITEM, ChestMenuUtils.getEmptyClickHandler());
         }
-        Preset.addItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "),
+        preset.addItem(22, new CustomItem(Material.PINK_STAINED_GLASS_PANE, " "),
                 ChestMenuUtils.getEmptyClickHandler());
-        Preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
-        Preset.addItem(31,
-                Utils.newItemD(SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
+        preset.addItem(5, BORDER_ITEM, ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(31,
+                new CustomItem(SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_14)
                         ? Material.OAK_SIGN
                         : Material.LEGACY_SIGN, Lang.readMachinesText("ELEMENT_UNIT_DOWN")),
                 ChestMenuUtils.getEmptyClickHandler());
+
         for (int i : getOutputSlots()) {
-            Preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
+            preset.addMenuClickHandler(i, new AdvancedMenuClickHandler() {
 
                 @Override
                 public boolean onClick(Player p, int slot, ItemStack cursor, ClickAction action) {
@@ -204,77 +209,77 @@ public abstract class AExtracter extends SlimefunItem implements InventoryBlock,
 
     protected void tick(Block b) {
         BlockMenu inv = BlockStorage.getInventory(b);
-        // 机器正在处理
-        if (isProcessing(b)) {
-            // 剩余时间
-            int timeleft = progress.get(b);
+        CraftingOperation currentOperation = processor.getOperation(b);
 
-            if (timeleft > 0) {
-                // 还在处理
-                ChestMenuUtils.updateProgressbar(inv, 22, timeleft, processing.get(b).getTicks(), getProgressBar());
+        if (currentOperation != null) {
+            if (takeCharge(b.getLocation())) {
 
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                    progress.put(b, timeleft - 1);
-                } else
-                    progress.put(b, timeleft - 1);
-            } else {
-                // 处理结束
-                inv.replaceExistingItem(22, Utils.addLore(Utils.newItem(Material.PINK_STAINED_GLASS_PANE), " "));
+                if (!currentOperation.isFinished()) {
+                    processor.updateProgressBar(inv, 22, currentOperation);
+                    currentOperation.addProgress(1);
+                } else {
+                    inv.replaceExistingItem(22, new CustomItem(Material.PINK_STAINED_GLASS_PANE, " "));
 
-                for (ItemStack output : processing.get(b).getOutput()) {
-                    if (output != null)
+                    for (ItemStack output : currentOperation.getResults()) {
                         inv.pushItem(output.clone(), getOutputSlots());
+                    }
+
+                    processor.endOperation(b);
                 }
-                progress.remove(b);
-                processing.remove(b);
             }
         } else {
-            // 没有在处理
-            MachineRecipe r = null;
-            Map<Integer, Integer> found = new HashMap<>();
-            for (MachineRecipe recipe : recipes) {
-                ItemStack input = recipe.getInput()[0];
-                if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
-                    if (input != null) {
-                        found.put(inputslots[0], input.getAmount());
-                    }
-                }
-                if (found.size() == recipe.getInput().length) {
-                    r = recipe;
-                    break;
-                } else {
-                    found.clear();
-                }
-            }
+            MachineRecipe next = findNextRecipe(inv);
 
-            if (r != null) {
-                if (isChargeable()) {
-                    if (getCharge(b.getLocation()) < getEnergyConsumption())
-                        return;
-                    removeCharge(b.getLocation(), getEnergyConsumption());
-                }
-                if (!SlimefunUtils.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
-                    return;
-                if (inv.getItemInSlot(outputslots[0]) != null) {
-                    ItemStack is = inv.getItemInSlot(outputslots[0]);
-                    if (is.getMaxStackSize() == is.getAmount())
-                        return;
-                }
-                for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    if (entry.getValue() > 0) {
-                        inv.consumeItem(entry.getKey(), entry.getValue());
-                        inv.consumeItem(40, 1);
-                    }
-
-                }
-
-                processing.put(b, r);
-                progress.put(b, r.getTicks());
+            if (next != null) {
+                processor.startOperation(b, new CraftingOperation(next));
             }
         }
+    }
+
+    /**
+     * This method will remove charge from a location if it is chargeable.
+     *
+     * @author TheBusyBiscuit
+     * @param l
+     *            location to try to remove charge from
+     * @return Whether charge was taken if its chargeable
+     */
+    protected boolean takeCharge(Location l) {
+        Validate.notNull(l, "Can't attempt to take charge from a null location!");
+
+        if (isChargeable()) {
+            int charge = getCharge(l);
+
+            if (charge < getEnergyConsumption()) {
+                return false;
+            }
+
+            setCharge(l, charge - getEnergyConsumption());
+            return true;
+        } else {
+            return true;
+        }
+    }
+
+    protected MachineRecipe findNextRecipe(BlockMenu inv) {
+        MachineRecipe r = null;
+        Map<Integer, Integer> found = new HashMap<>();
+        for (MachineRecipe recipe : recipes) {
+            ItemStack input = recipe.getInput()[0];
+            if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputSlots[0]), input, true)) {
+                if (input != null) {
+                    found.put(inputSlots[0], input.getAmount());
+                }
+            }
+            if (found.size() == recipe.getInput().length) {
+                r = recipe;
+                break;
+            } else {
+                found.clear();
+            }
+        }
+
+        return r;
     }
 
 }

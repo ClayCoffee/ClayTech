@@ -9,7 +9,6 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.World.Environment;
 import org.bukkit.block.Biome;
 import org.bukkit.inventory.ItemStack;
-import org.eclipse.jdt.annotation.NonNull;
 
 public class ClayFuel implements GEOResource {
     private final NamespacedKey key = new NamespacedKey(ClayTech.getInstance(), "CLAY_FUEL");
@@ -19,8 +18,7 @@ public class ClayFuel implements GEOResource {
     }
 
     @Override
-    public @NonNull
-    NamespacedKey getKey() {
+    public NamespacedKey getKey() {
         return key;
     }
 

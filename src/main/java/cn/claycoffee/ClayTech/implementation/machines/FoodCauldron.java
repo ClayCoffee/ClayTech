@@ -30,7 +30,7 @@ public class FoodCauldron extends ACraftingTable {
 
     public FoodCauldron(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                         ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

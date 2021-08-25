@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
  */
 public class RocketLandEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Player onRocketPlayer;
-    private Planet fromPlanet;
-    private Planet toPlanet;
-    private ItemStack rocket;
+    private final Player onRocketPlayer;
+    private final Planet fromPlanet;
+    private final Planet toPlanet;
+    private final ItemStack rocket;
 
     public RocketLandEvent(Player p, Planet fromPlanet, Planet toPlanet, ItemStack rocket) {
         this.onRocketPlayer = p;

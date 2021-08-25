@@ -10,13 +10,13 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerAssembleEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Block machine;
-    private ItemStack[] Recipe;
-    private ItemStack AssembledItem;
+    private final Block machine;
+    private final ItemStack[] recipe;
+    private final ItemStack item;
 
-    public PlayerAssembleEvent(Block machine, ItemStack[] Recipe, ItemStack AssembledItem) {
-        this.Recipe = Recipe;
-        this.AssembledItem = AssembledItem;
+    public PlayerAssembleEvent(Block machine, ItemStack[] recipe, ItemStack item) {
+        this.recipe = recipe;
+        this.item = item;
         this.machine = machine;
     }
 
@@ -25,11 +25,11 @@ public class PlayerAssembleEvent extends Event {
     }
 
     public ItemStack[] getRecipe() {
-        return Recipe;
+        return recipe;
     }
 
-    public ItemStack getAssembledItem() {
-        return AssembledItem;
+    public ItemStack getItem() {
+        return item;
     }
 
     public Block getMachine() {

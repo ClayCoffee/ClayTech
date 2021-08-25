@@ -2,7 +2,6 @@ package cn.claycoffee.ClayTech.api;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.objects.storage.DataYML;
-import cn.claycoffee.ClayTech.utils.Utils;
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import com.onarandombox.MultiverseCore.api.MVWorldManager;
 import org.bukkit.*;
@@ -18,18 +17,18 @@ import java.util.Random;
  * Planet. 星球.
  */
 public class Planet {
-    private String planetName;
-    private ItemStack displayItem;
-    private ChunkGenerator planetWorld;
-    private Environment environment;
+    private final String planetName;
+    private final ItemStack displayItem;
+    private final ChunkGenerator planetWorld;
+    private final Environment environment;
     private boolean habitable;
     private int gravity;
     private int distance;
     private int harmlevel;
     private boolean cold;
-    private boolean spawnMob;
-    private DataYML planets = ClayTech.getPlanetYML();
-    private FileConfiguration f = planets.getCustomConfig();
+    private final boolean spawnMob;
+    private static final DataYML planets = ClayTech.getPlanetYML();
+    private static final FileConfiguration f = planets.getCustomConfig();
 
     public Planet(String planetName, ItemStack displayItem, ChunkGenerator planetWorld, Environment environment,
                   boolean habitable, int gravity, int distance, int harmlevel, boolean cold) {
@@ -111,7 +110,7 @@ public class Planet {
             }
             for (Planet each : ClayTech.getPlanets()) {
                 if (each.planetName.equalsIgnoreCase(this.planetName)) {
-                    Utils.info("Registering Error: Planet" + this.planetName + "already exists!");
+                    Bukkit.getLogger().info("Registering Error: Planet" + this.planetName + "already exists!");
                     return;
                 }
             }
@@ -127,7 +126,7 @@ public class Planet {
         }
         for (Planet each : ClayTech.getPlanets()) {
             if (each.planetName.equalsIgnoreCase(this.planetName)) {
-                Utils.info("Registering Error: Planet" + this.planetName + "already exists!");
+                Bukkit.getLogger().info("Registering Error: Planet" + this.planetName + "already exists!");
                 return;
             }
         }

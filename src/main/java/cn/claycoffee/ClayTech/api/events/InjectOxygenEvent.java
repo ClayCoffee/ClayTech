@@ -10,11 +10,11 @@ import org.bukkit.inventory.ItemStack;
  */
 public class InjectOxygenEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Block machine;
-    private ItemStack Item;
+    private final Block machine;
+    private final ItemStack item;
 
-    public InjectOxygenEvent(Block machine, ItemStack Item) {
-        this.Item = Item;
+    public InjectOxygenEvent(Block machine, ItemStack item) {
+        this.item = item;
         this.machine = machine;
     }
 
@@ -26,7 +26,7 @@ public class InjectOxygenEvent extends Event {
      * @return the item.物品
      */
     public ItemStack getItem() {
-        return Item;
+        return item;
     }
 
     /**

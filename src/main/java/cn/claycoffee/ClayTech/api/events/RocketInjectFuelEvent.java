@@ -10,13 +10,13 @@ import org.bukkit.inventory.ItemStack;
  */
 public class RocketInjectFuelEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Block machine;
-    private ItemStack Fuel;
-    private ItemStack Rocket;
+    private final Block machine;
+    private final ItemStack fuel;
+    private final ItemStack rocket;
 
-    public RocketInjectFuelEvent(Block machine, ItemStack Fuel, ItemStack Rocket) {
-        this.Fuel = Fuel;
-        this.Rocket = Rocket;
+    public RocketInjectFuelEvent(Block machine, ItemStack fuel, ItemStack rocket) {
+        this.fuel = fuel;
+        this.rocket = rocket;
         this.machine = machine;
     }
 
@@ -28,14 +28,14 @@ public class RocketInjectFuelEvent extends Event {
      * @return the fuel.燃料.
      */
     public ItemStack getFuel() {
-        return Fuel;
+        return fuel;
     }
 
     /**
      * @return the rocket.火箭
      */
     public ItemStack getRocket() {
-        return Rocket;
+        return rocket;
     }
 
     /**

@@ -10,13 +10,13 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerCookItemEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private ItemStack[] Recipe;
-    private ItemStack CraftedItem;
-    private Block machine;
+    private final ItemStack[] recipe;
+    private final ItemStack item;
+    private final Block machine;
 
-    public PlayerCookItemEvent(Block machine, ItemStack[] Recipe, ItemStack CraftedItem) {
-        this.Recipe = Recipe;
-        this.CraftedItem = CraftedItem;
+    public PlayerCookItemEvent(Block machine, ItemStack[] recipe, ItemStack item) {
+        this.recipe = recipe;
+        this.item = item;
         this.machine = machine;
     }
 
@@ -28,14 +28,14 @@ public class PlayerCookItemEvent extends Event {
      * @return the recipe.合成配方
      */
     public ItemStack[] getRecipe() {
-        return Recipe;
+        return recipe;
     }
 
     /**
      * @return the item just crafted.刚刚被合成的物品
      */
-    public ItemStack getCraftedItem() {
-        return CraftedItem;
+    public ItemStack getItem() {
+        return item;
     }
 
     /**

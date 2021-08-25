@@ -29,7 +29,7 @@ public class ElementExtracter extends AExtracter {
 
     public ElementExtracter(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                             ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     public String getInventoryTitle() {
@@ -112,9 +112,9 @@ public class ElementExtracter extends AExtracter {
             Map<Integer, Integer> found = new HashMap<>();
             for (MachineRecipe recipe : recipes) {
                 ItemStack input = recipe.getInput()[0];
-                if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputslots[0]), input, true)) {
+                if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(inputSlots[0]), input, true)) {
                     if (input != null) {
-                        found.put(inputslots[0], input.getAmount());
+                        found.put(inputSlots[0], input.getAmount());
                     }
                 }
                 if (found.size() == recipe.getInput().length) {
@@ -133,8 +133,8 @@ public class ElementExtracter extends AExtracter {
                 }
                 if (!SlimefunUtils.isItemSimilar(inv.getItemInSlot(40), ClayTechItems.ELEMENT_UNIT, true))
                     return;
-                if (inv.getItemInSlot(outputslots[0]) != null) {
-                    ItemStack is = inv.getItemInSlot(outputslots[0]);
+                if (inv.getItemInSlot(outputSlots[0]) != null) {
+                    ItemStack is = inv.getItemInSlot(outputSlots[0]);
                     if (is.getMaxStackSize() == is.getAmount())
                         return;
                 }

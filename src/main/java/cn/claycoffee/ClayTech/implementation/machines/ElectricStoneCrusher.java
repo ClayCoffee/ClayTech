@@ -12,7 +12,7 @@ public class ElectricStoneCrusher extends ANewContainer {
 
     public ElectricStoneCrusher(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                                 ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

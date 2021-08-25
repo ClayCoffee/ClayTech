@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.Planets;
 import cn.claycoffee.ClayTech.api.Planet;
 import cn.claycoffee.ClayTech.implementation.Planets.populators.*;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Utils;
+import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.World.Environment;
@@ -20,7 +20,7 @@ public class Moon extends ChunkGenerator {
     private SimplexOctaveGenerator sog;
 
     public Moon() {
-        new Planet("CMoon", Utils.newItemD(Material.GRAY_GLAZED_TERRACOTTA, Lang.readPlanetsText("Moon")), this,
+        new Planet("CMoon", new CustomItem(Material.GRAY_GLAZED_TERRACOTTA, Lang.readPlanetsText("Moon")), this,
                 Environment.NORMAL, false, 3, 100, 1, true).register();
     }
 

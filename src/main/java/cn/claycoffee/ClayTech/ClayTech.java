@@ -130,7 +130,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         if (highrailspeed == null)
             highrailspeed = "3";
         if (!new File(getDataFolder() + "/" + locale + ".yml").exists()) {
-            Utils.info("§cLoading Error: Locale not found.Disabling plugin..");
+            Bukkit.getLogger().info("§cLoading Error: Locale not found.Disabling plugin..");
             this.getServer().getPluginManager().disablePlugin(this);
         }
         Utils.updateConfig(this, configDYML);
@@ -149,7 +149,7 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         currentLangYML.reloadCustomConfig();
         defaultLangYML.saveCustomConfig();
         defaultLangYML.reloadCustomConfig();
-        Lang.init();
+
         switch (version) {
             case "v1_16_R3":
                 break;
@@ -166,12 +166,12 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
                 break;
         }
         if (!compatible) {
-            Utils.info(Lang.readGeneralText("Not_compatible"));
+            Bukkit.getLogger().info(Lang.readGeneralText("Not_compatible"));
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
         if (!SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_15)) {
-            Utils.info(Lang.readGeneralText("Before_115"));
+            Bukkit.getLogger().info(Lang.readGeneralText("Before_115"));
         }
         Metrics mt = new Metrics(this, 6887);
         mt.addCustomChart(new Metrics.SimplePie("language", () -> languageCodeToLanguage(locale)));
@@ -182,19 +182,19 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         planetDataYML = new DataYML("planetsdata.yml");
         planetDataYML.saveCDefaultConfig();
         planetDataYML.reloadCustomConfig();
-        Utils.info(Lang.readGeneralText("startTip"));
+        Bukkit.getLogger().info(Lang.readGeneralText("startTip"));
         Config cfg = new Config(this);
-        Utils.info(Lang.readGeneralText("registeringItems"));
+        Bukkit.getLogger().info(Lang.readGeneralText("registeringItems"));
         try {
             registerSlimefun();
             registerPlanets();
             registerResources();
         } catch (Exception e) {
-            Utils.info(Lang.readGeneralText("registeringError"));
+            Bukkit.getLogger().info(Lang.readGeneralText("registeringError"));
             e.printStackTrace();
         }
         if (this.getServer().getPluginManager().isPluginEnabled("WorldBorder")) {
-            Utils.info(Lang.readGeneralText("WorldBorder"));
+            Bukkit.getLogger().info(Lang.readGeneralText("WorldBorder"));
             worldBorderEnabled = true;
         }
 
@@ -215,7 +215,6 @@ public class ClayTech extends JavaPlugin implements SlimefunAddon {
         spacetravelneedperm = config.getBoolean("space-travel-need-perm");
 
         ClayTechData.currentVersion = this.getDescription().getVersion();
-//		Bukkit.getPluginManager().registerEvents(new Debug(), this);
         new BukkitRunnable() {
 
             @Override

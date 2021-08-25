@@ -10,14 +10,14 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerWashEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Player eatPlayer;
-    private ItemStack Washthing;
-    private ItemStack CleanedItem;
+    private final Player eatPlayer;
+    private final ItemStack dirty;
+    private final ItemStack clean;
 
-    public PlayerWashEvent(Player p, ItemStack ClayDirtyStack, ItemStack CleanedItem) {
+    public PlayerWashEvent(Player p, ItemStack dirty, ItemStack clean) {
         this.eatPlayer = p;
-        this.Washthing = ClayDirtyStack;
-        this.CleanedItem = CleanedItem;
+        this.dirty = dirty;
+        this.clean = clean;
     }
 
     public static HandlerList getHandlerList() {
@@ -35,14 +35,14 @@ public class PlayerWashEvent extends Event {
      * @return the item just washed.已经被清洗的脏物品
      */
     public ItemStack getItem() {
-        return Washthing;
+        return dirty;
     }
 
     /**
      * @return the item after washing.清洗后的干净物品
      */
-    public ItemStack getCleanedItem() {
-        return CleanedItem;
+    public ItemStack getClean() {
+        return clean;
     }
 
     @Override

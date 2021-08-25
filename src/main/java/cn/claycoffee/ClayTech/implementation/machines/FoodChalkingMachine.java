@@ -13,7 +13,7 @@ public class FoodChalkingMachine extends ANewContainer {
 
     public FoodChalkingMachine(LockedCategory category, SlimefunItemStack item, String id, RecipeType recipeType,
                                ItemStack[] recipe) {
-        super(category, item, id, recipeType, recipe);
+        super(category, item, recipeType, recipe);
     }
 
     @Override

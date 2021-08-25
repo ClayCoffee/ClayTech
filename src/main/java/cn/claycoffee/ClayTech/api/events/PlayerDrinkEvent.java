@@ -10,12 +10,12 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerDrinkEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Player eatPlayer;
-    private ItemStack drink;
+    private final Player player;
+    private final ItemStack drink;
 
-    public PlayerDrinkEvent(Player p, ItemStack ClayFoodStack) {
-        this.eatPlayer = p;
-        this.drink = ClayFoodStack;
+    public PlayerDrinkEvent(Player p, ItemStack drink) {
+        this.player = p;
+        this.drink = drink;
     }
 
     public static HandlerList getHandlerList() {
@@ -26,7 +26,7 @@ public class PlayerDrinkEvent extends Event {
      * @return the player who drank the food.喝饮料的玩家
      */
     public Player getPlayer() {
-        return eatPlayer;
+        return player;
     }
 
     /**

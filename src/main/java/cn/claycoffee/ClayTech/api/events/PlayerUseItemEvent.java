@@ -10,8 +10,8 @@ import org.bukkit.inventory.ItemStack;
  */
 public class PlayerUseItemEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
-    private Player player;
-    private ItemStack item;
+    private final Player player;
+    private final ItemStack item;
 
     public PlayerUseItemEvent(Player player, ItemStack item) {
         this.player = player;
