@@ -1,8 +1,0 @@
-
-K
-java:S1172!")Remove this unused method parameter "id".(ÚÕ”žøÿÿÿÿ8Øžóï·/
-O
-java:S1068"-Remove this unused "inputItem" private field.(Ú¶çúýÿÿÿÿ8Êû™ï·/
-K
-java:S1068".Remove this unused "outputItem" private field.(½Üæ¾8Êû™ï·/
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹Ë”×

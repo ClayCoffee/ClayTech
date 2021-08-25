@@ -1,20 +1,0 @@
-
-N
-java:S5993<"9Change the visibility of this constructor to "protected".(÷ƒá:
-8
-java:S2386."Make this member "protected".(‰ §“ÿÿÿÿÿ
-2
-java:S2386/"Make this member "protected".(—İÁ
-8
-java:S23860"Make this member "protected".(ıëĞ™ûÿÿÿÿ
-2
-java:S23861"Make this member "protected".(ü
-L
-java:S1874-"6Remove this use of "InventoryBlock"; it is deprecated.(õæõ¦
->
-java:S1172<")Remove this unused method parameter "id".(÷ƒá:
-i
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÂÅˆæ
-K
-java:S1066™"/Merge this if statement with the enclosing one.(Í™Ôüÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒ±îÿÿÿÿÿ

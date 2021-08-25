@@ -1,26 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(¹Ô—ÿÿÿÿÿ
->
-java:S1172")Remove this unused method parameter "ja".(©À¿
-<
-java:S1168]"&Return an empty array instead of null.(¥¹ï
-
-java:S1192"wDefine a constant instead of duplicating this literal "Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; DigExt)" 3 times.(ŽôÖö
-a
-java:S1192"KDefine a constant instead of duplicating this literal "User-Agent" 3 times.(ŽôÖö
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨ÔÂç
-d
-java:S2095?"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ŠÀø¯
-i
-java:S2095 "NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¼×–úÿÿÿÿ
-L
-java:S2589""7Remove this expression which always evaluates to "true"(£ æ#
-R
-java:S2589W"7Remove this expression which always evaluates to "true"(Í™Ôüÿÿÿÿ
-R
-java:S2589%"7Remove this expression which always evaluates to "true"(Í™Ôüÿÿÿÿ
-R
-java:S2589D"7Remove this expression which always evaluates to "true"(Í™Ôüÿÿÿÿ
-L
-java:S2589A"7Remove this expression which always evaluates to "true"(£ æ#

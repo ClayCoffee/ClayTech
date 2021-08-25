@@ -1,5 +1,0 @@
-
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÒ÷ðûÿÿÿÿ
-^
-java:S5738"HRemove this call to a deprecated method, it has been marked for removal.(»õÿð
-n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ë¥ S
