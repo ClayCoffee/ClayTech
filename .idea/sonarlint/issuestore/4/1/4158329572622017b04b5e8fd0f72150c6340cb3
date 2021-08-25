@@ -1,0 +1,16 @@
+
+U
+java:S1118	":Add a private constructor to hide the implicit public one.(Õ ‚÷ùÿÿÿÿ
+h	java:S100
+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•‹¸ºıÿÿÿÿ
+m
+java:S3776
+"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(•‹¸ºıÿÿÿÿ
+>	java:S108")Either remove or fill this block of code.(®üõ¦
+>	java:S108'")Either remove or fill this block of code.(®üõ¦
+J
+java:S1066 "/Merge this if statement with the enclosing one.(ÂÂ„…ûÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·†‘øÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨ÔÂç
+M
+java:S2589"7Remove this expression which always evaluates to "true"(·üº€

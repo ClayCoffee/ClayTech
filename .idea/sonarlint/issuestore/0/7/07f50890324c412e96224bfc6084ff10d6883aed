@@ -1,0 +1,42 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(¬ô…Àûÿÿÿÿ
+O
+java:S1135"2Complete the task associated to this TODO comment.(æƒƒ¡8±ÀÎğ·/
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(îÜÇ¬ıÿÿÿÿ
+m
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(‹Æ¢òıÿÿÿÿ
+B
+java:S1125h"'Remove the unnecessary boolean literal.(¾¤ô„şÿÿÿÿ
+<
+java:S1905r"&Remove this unnecessary cast to "int".(»‡ûù
+A
+java:S1905t"&Remove this unnecessary cast to "int".(•©şÌùÿÿÿÿ
+g
+java:S3776|"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ìÙ
+p
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(’Ê·Ü
+p
+java:S2293†"YReplace the type specification in this constructor call with the diamond operator ("<>").(æâ…
+F
+java:S1905ˆ"*Remove this unnecessary cast to "Integer".(èšÅßıÿÿÿÿ
+_
+java:S5361 "HReplace this call to "replaceAll()" by a call to the "replace()" method.(†ª–Ï
+_
+java:S5361¢"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Î‘«ç
+d
+java:S5361¤"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ŠŸĞ×ıÿÿÿÿ
+d
+java:S5361¦"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Î´¾æÿÿÿÿÿ
+_
+java:S5361§"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¤Éìõ
+i
+java:S3776À"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(†Ù÷û
+k	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹›×Æùÿÿÿÿ
+e	java:S117|"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÙ
+T
+java:S1155v">Use isEmpty() to check whether the collection is empty or not.(È´²‡
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨ÔÂç
+`
+java:S2583Æ"DChange this condition so that it does not always evaluate to "false"(¥ÒÎ¸úÿÿÿÿ

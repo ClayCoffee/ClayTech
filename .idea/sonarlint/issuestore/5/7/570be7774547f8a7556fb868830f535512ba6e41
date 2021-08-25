@@ -1,0 +1,56 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(îˆöÿıÿÿÿÿ
+S
+java:S3878"8Remove this array creation and simply pass the elements.(•Ëö›şÿÿÿÿ
+S
+java:S3878)"8Remove this array creation and simply pass the elements.(•Ëö›şÿÿÿÿ
+c
+java:S53616"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¬ù”ßüÿÿÿÿ
+^
+java:S5361>"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Œî×‹
+c
+java:S5361H"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Œâ÷¿ûÿÿÿÿ
+^
+java:S5361P"HReplace this call to "replaceAll()" by a call to the "replace()" method.(•Œ¼ 
+c
+java:S5361Z"HReplace this call to "replaceAll()" by a call to the "replace()" method.(®İ‚µşÿÿÿÿ
+^
+java:S5361b"HReplace this call to "replaceAll()" by a call to the "replace()" method.(áˆ¨š
+c
+java:S5361l"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¬Ëàƒøÿÿÿÿ
+^
+java:S5361t"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ÉŒßú
+^
+java:S5361~"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Î¯ˆ‡
+d
+java:S5361†"HReplace this call to "replaceAll()" by a call to the "replace()" method.(»¿«çøÿÿÿÿ
+d
+java:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ö¹üÑüÿÿÿÿ
+d
+java:S5361˜"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ºçù·ûÿÿÿÿ
+d
+java:S5361¢"HReplace this call to "replaceAll()" by a call to the "replace()" method.(Ö¹üÑüÿÿÿÿ
+^
+java:S5361ª"HReplace this call to "replaceAll()" by a call to the "replace()" method.(üíöZ
+e
+java:S1192‹"IDefine a constant instead of duplicating this literal "Planets." 6 times.(™²õŞøÿÿÿÿ
+`
+java:S1192g"JDefine a constant instead of duplicating this literal "Machines." 4 times.(¼ÏÀ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "en-US" 9 times.(ÜÚıêıÿÿÿÿ
+d
+java:S11921"IDefine a constant instead of duplicating this literal "General." 4 times.(Ò¾Ïğıÿÿÿÿ
+b
+java:S1192C"LDefine a constant instead of duplicating this literal "Categories." 4 times.(øäéÊ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "_LORE" 4 times.(õŞ½ğıÿÿÿÿ
+f
+java:S1192y"PDefine a constant instead of duplicating this literal "MachineRecipes." 4 times.(»ğß€
+b
+java:S1192U"LDefine a constant instead of duplicating this literal "Researches." 4 times.(çş›ã
+]
+java:S1192"GDefine a constant instead of duplicating this literal "Items." 8 times.(¸§äŒ
+g
+java:S1192"QDefine a constant instead of duplicating this literal "Missing locale." 18 times.(´’‚­
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨ÔÂç

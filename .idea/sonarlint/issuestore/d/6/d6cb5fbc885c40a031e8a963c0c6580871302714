@@ -1,0 +1,38 @@
+
+3
+java:S2386."Make this member "protected".(‹Ò“à
+3
+java:S23866"Make this member "protected".(¤¿Ü
+3
+java:S23867"Make this member "protected".(¨ñ¨ 
+Q
+java:S1874,"6Remove this use of "InventoryBlock"; it is deprecated.(ö©«¥úÿÿÿÿ
+`
+java:S1124-"EReorder the modifiers to comply with the Java Language Specification.(˜šë¸ÿÿÿÿÿ
+[
+java:S1124."EReorder the modifiers to comply with the Java Language Specification.(‹Ò“à
+o
+java:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤¿Ü
+o
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(¨ñ¨ 
+t
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ê¬ÁŸÿÿÿÿÿ
+P
+java:S3400Î"9Remove this method and declare a constant for this value.(ãÈÌÿ
+Y
+java:S1128"<Remove this unused import 'cn.claycoffee.ClayTech.ClayTech'.(ã‡ÍÀ8Èığï·/
+u
+java:S1128"SRemove this unused import 'cn.claycoffee.ClayTech.api.events.PlayerCraftItemEvent'.(‚ãË‚üÿÿÿÿ8Èığï·/
+K
+java:S1128".Remove this unused import 'org.bukkit.Bukkit'.(Ø­æ8Èığï·/
+b
+java:S1128$"@Remove this unused import 'org.bukkit.scheduler.BukkitRunnable'.(ˆ•ÁÕøÿÿÿÿ8Èığï·/
+l
+java:S11046"VMake processing a static final constant or non-public and provide accessors if needed.(¤¿Ü
+j
+java:S11047"TMake progress a static final constant or non-public and provide accessors if needed.(¨ñ¨ 
+F
+java:S14446"0Make this "public static processing" field final(¤¿Ü
+D
+java:S14447".Make this "public static progress" field final(¨ñ¨ 
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹Ë”×

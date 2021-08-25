@@ -1,0 +1,8 @@
+
+g
+java:S3776K"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(λι‰
+O
+java:S1161K":Add the "@Override" annotation above this method signature(λι‰
+2
+java:S1116i"Remove this empty statement.(Ζπώ«
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹Λ”Χ

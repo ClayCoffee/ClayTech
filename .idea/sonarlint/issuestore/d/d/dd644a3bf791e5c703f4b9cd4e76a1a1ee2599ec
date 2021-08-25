@@ -1,0 +1,27 @@
+
+U
+java:S1118
+":Add a private constructor to hide the implicit public one.(±Ä©èüÿÿÿÿ
+z
+java:S1192 "_Define a constant instead of duplicating this literal "CLAY_ROCKET_ASSEMBLING_MACHINE" 3 times.(µ®à¹şÿÿÿÿ
+v
+java:S1192$"[Define a constant instead of duplicating this literal "CLAY_ROCKET_FUEL_GENERATOR" 3 times.(®‰á“úÿÿÿÿ
+_
+java:S11926"IDefine a constant instead of duplicating this literal "CLEANING" 3 times.(éæô 
+k
+java:S1192("PDefine a constant instead of duplicating this literal "DIG_IN_THE_MOON" 3 times.(«ïØ×úÿÿÿÿ
+w
+java:S1192"\Define a constant instead of duplicating this literal "CLAY_EXPERIMENT_TABLE_BASIC" 3 times.(£Ş—†ûÿÿÿÿ
+q
+java:S1192"[Define a constant instead of duplicating this literal "CLAY_FOOD_CHALKING_MACHINE" 3 times.(™¹Å³
+^
+java:S1192-"HDefine a constant instead of duplicating this literal "FISHING" 3 times.(ëíö‹
+g
+java:S1192+"QDefine a constant instead of duplicating this literal "DIG_IN_NON_EARTH" 3 times.(ê§¹¼
+_
+java:S11923"IDefine a constant instead of duplicating this literal "PLUCKING" 3 times.(¤·âè
+r
+java:S1192"WDefine a constant instead of duplicating this literal "CLAY_ELEMENT_EXTRACTER" 3 times.(¾®ëõüÿÿÿÿ
+c
+java:S11920"HDefine a constant instead of duplicating this literal "HARVEST" 3 times.(ËÇñéÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»î¿

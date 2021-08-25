@@ -84,6 +84,13 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/WorldBorder.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>cn.claycoffee</groupId>
+            <artifactId>ClayAPI</artifactId>
+            <version>1.0.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ClayAPI-1.0.4.jar</systemPath>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

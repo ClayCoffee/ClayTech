@@ -1,0 +1,50 @@
+
+p
+java:S1450("ZRemove the "currentLang" field and declare it as a local variable in the relevant methods.(ş°ıÏ
+o
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(¸òåµ
+m
+java:S3776w"RRefactor this method to reduce its Cognitive Complexity from 53 to the 15 allowed.(âºˆ¾úÿÿÿÿ
+B
+java:S1075„"&Remove this hard-coded path-delimiter.(ø·è„ÿÿÿÿÿ
+_
+java:S5361ó"HReplace this call to "replaceAll()" by a call to the "replace()" method.(İ«¢Ï
+d
+java:S5361õ"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ÿ›Ùôùÿÿÿÿ
+_
+java:S5361ù"HReplace this call to "replaceAll()" by a call to the "replace()" method.(‹ğŠ
+0
+java:S2178º"Correct this "&" to "&&".(éˆÅ
+\
+java:S2147Â"ECombine this catch with the one at line 320, which has the same body.(ï­£Ä
+>
+java:S2440ó"'Remove this instantiation of "Rockets".(×ûÊŒ
+u
+java:S2293–"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤Ÿô±øÿÿÿÿ
+E
+java:S1068("/Remove this unused "currentLang" private field.(ş°ıÏ
+o
+java:S1192"SDefine a constant instead of duplicating this literal "SpaceSuitError_Sub" 3 times.(úß©¸üÿÿÿÿ
+f
+java:S1192"ODefine a constant instead of duplicating this literal "SpaceSuitError" 3 times.(üü
+K
+java:S1066ş"/Merge this if statement with the enclosing one.(¦éÓ‡üÿÿÿÿ
+F
+java:S1066º"/Merge this if statement with the enclosing one.(éˆÅ
+g	java:S117ñ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¦ŠŠ
+g	java:S117ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ÿ­õ
+l	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Ÿô±øÿÿÿÿ
+l	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÖùáşÿÿÿÿ
+G
+java:S2629©"$Invoke method(s) only conditionally.(€Õâ™ûÿÿÿÿ8õŞí·/
+G
+java:S2629®"$Invoke method(s) only conditionally.(Ö¿›çøÿÿÿÿ8õŞí·/
+G
+java:S2629¹"$Invoke method(s) only conditionally.(Ù±Ü£ùÿÿÿÿ8õŞí·/
+G
+java:S2629»"$Invoke method(s) only conditionally.(„†šØıÿÿÿÿ8õŞí·/
+B
+java:S2629Å"$Invoke method(s) only conditionally.(á§Ûè8´”ßí·/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»î¿
+q
+java:S2095¼"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ëË»–ÿÿÿÿÿ8…ê‚ï·/

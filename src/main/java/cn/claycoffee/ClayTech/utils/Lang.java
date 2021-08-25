@@ -11,9 +11,9 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readItemTextDefault(name));
+            return readItemTextDefault(name);
         } else {
-            return format(ClayTech.getLangYML().getCustomConfig().getString("Items." + name));
+            return ClayTech.getLangYML().getCustomConfig().getString("Items." + name);
         }
     }
 
@@ -21,7 +21,7 @@ public class Lang {
         if (ClayTech.getDefaultLangYML().getCustomConfig().getString("Items." + name) == null) {
             return "Missing locale.";
         } else {
-            return format(ClayTech.getDefaultLangYML().getCustomConfig().getString("Items." + name));
+            return ClayTech.getDefaultLangYML().getCustomConfig().getString("Items." + name);
         }
     }
 
@@ -29,10 +29,10 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Items." + name + "_LORE") == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return Arrays.asList(new String[]{"Missing locale."});
-            return format(readItemLoreDefault(name));
+            return readItemLoreDefault(name);
         } else {
-            return format(
-                    ((List<String>) ClayTech.getLangYML().getCustomConfig().getList("Items." + name + "_LORE")));
+            return 
+                    ((List<String>) ClayTech.getLangYML().getCustomConfig().getList("Items." + name + "_LORE"));
         }
     }
 
@@ -40,8 +40,8 @@ public class Lang {
         if (ClayTech.getDefaultLangYML().getCustomConfig().getString("Items." + name + "_LORE") == null) {
             return Arrays.asList(new String[]{"Missing locale."});
         } else {
-            return format(
-                    ((List<String>) ClayTech.getDefaultLangYML().getCustomConfig().getList("Items." + name + "_LORE")));
+            return 
+                    ((List<String>) ClayTech.getDefaultLangYML().getCustomConfig().getList("Items." + name + "_LORE"));
         }
     }
 
@@ -49,7 +49,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("General." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readGeneralTextDefault(name));
+            return readGeneralTextDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("General." + name).replaceAll("&", "§");
         }
@@ -67,7 +67,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Categories." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readCategoriesDefault(name));
+            return readCategoriesDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Categories." + name).replaceAll("&", "§");
         }
@@ -85,7 +85,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Researches." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readResearchesDefault(name));
+            return readResearchesDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Researches." + name).replaceAll("&", "§");
         }
@@ -103,7 +103,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Machines." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readMachinesDefault(name));
+            return readMachinesDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Machines." + name).replaceAll("&", "§");
         }
@@ -121,7 +121,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("MachineRecipes." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readMachineRecipesDefault(name));
+            return readMachineRecipesDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("MachineRecipes." + name).replaceAll("&", "§");
         }
@@ -139,7 +139,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Planets." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readPlanetsDefault(name));
+            return readPlanetsDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Planets." + name).replaceAll("&", "§");
         }
@@ -157,7 +157,7 @@ public class Lang {
         if (ClayTech.getLangYML().getCustomConfig().getString("Planets." + name) == null) {
             if (ClayTech.getLocale().equals("en-US"))
                 return "Missing locale.";
-            return format(readResourcesDefault(name));
+            return readResourcesDefault(name);
         } else {
             return ClayTech.getLangYML().getCustomConfig().getString("Planets." + name).replaceAll("&", "§");
         }

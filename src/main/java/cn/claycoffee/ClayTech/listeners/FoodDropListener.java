@@ -17,19 +17,19 @@ public class FoodDropListener implements Listener {
     public void BlockBreakEvent(BlockBreakEvent e) {
         if (!e.isCancelled()) {
             if (e.getPlayer().getGameMode() == GameMode.SURVIVAL) {
-                FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES),
+                FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.OAK_LEAVES),
                         ClayTechItems.CLAY_LEMON, new ItemStack(Material.SHEARS), 10, e);
                 try {
                     // 这里放其他事件
-                    FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
+                    FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
                             ClayTechItems.DIRTY_TEA, new ItemStack(Material.SHEARS), 10, e);
-                    FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.WHEAT), ClayTechItems.FLOUR,
+                    FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.WHEAT), ClayTechItems.FLOUR,
                             new ItemStack(Material.SHEARS), 15, 20, e);
-                    FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
+                    FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
                             ClayTechItems.STARCH, new ItemStack(Material.SHEARS), 15, 20, e);
-                    FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
+                    FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.POTATOES),
                             ClayTechItems.CLAY_SWEET_POTATO, new ItemStack(Material.SHEARS), 25, 30, e);
-                    FoodUtils.CheckDestroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
+                    FoodUtils.destroy(e.getPlayer(), e.getBlock(), new ItemStack(Material.GRASS),
                             ClayTechItems.GREEN_GRASS, new ItemStack(Material.SHEARS), 31, 40, e);
                 } catch (NullPointerException err) {
                 }
@@ -40,11 +40,11 @@ public class FoodDropListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void PlayerFishEvent(PlayerFishEvent e) {
         if (e.getState() == State.CAUGHT_FISH) {
-            FoodUtils.FishItemCheck(e, 1, 10, ClayTechItems.SNAIL_HEALTHY);
+            FoodUtils.fish(e, 1, 10, ClayTechItems.SNAIL_HEALTHY);
             try {
                 // 这里放其他食物/饮料8!!
-                FoodUtils.FishItemCheck(e, 11, 20, ClayTechItems.SNAIL_BAD);
-                FoodUtils.FishItemCheck(e, 85, 92, ClayTechItems.TUNA_FISH);
+                FoodUtils.fish(e, 11, 20, ClayTechItems.SNAIL_BAD);
+                FoodUtils.fish(e, 85, 92, ClayTechItems.TUNA_FISH);
             } catch (NullPointerException err) {
             }
 

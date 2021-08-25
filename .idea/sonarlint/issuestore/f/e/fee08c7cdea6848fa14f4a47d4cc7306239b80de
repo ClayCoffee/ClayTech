@@ -1,0 +1,8 @@
+
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şñÎúÿÿÿÿ
+>	java:S108"")Either remove or fill this block of code.(Õóº 
+h	java:S100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡İŞşøÿÿÿÿ
+>	java:S1080")Either remove or fill this block of code.(Õóº 
+J
+java:S1066"/Merge this if statement with the enclosing one.(ôãÑûûÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ë¥ S

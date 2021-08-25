@@ -1,0 +1,24 @@
+
+O
+java:S5993:"9Change the visibility of this constructor to "protected".(µÖÀˆ
+8
+java:S2386*"Make this member "protected".(ùéöûÿÿÿÿÿ
+3
+java:S2386+"Make this member "protected".(Ñ„Ûæ
+8
+java:S2386,"Make this member "protected".(ıëĞ™ûÿÿÿÿ
+2
+java:S2386-"Make this member "protected".(ü
+L
+java:S1874)"6Remove this use of "InventoryBlock"; it is deprecated.(ÂûÙî
+`
+java:S1124*"EReorder the modifiers to comply with the Java Language Specification.(ùéöûÿÿÿÿÿ
+[
+java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(Ñ„Ûæ
+p
+java:S3776ı"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÂÅˆæ8ôë²î·/
+a
+java:S11922"KDefine a constant instead of duplicating this literal "SPLIT_LINE" 3 times.(‹í××
+R
+java:S1066†"/Merge this if statement with the enclosing one.(Í™Ôüÿÿÿÿ8øë²î·/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ƒ±îÿÿÿÿÿ

@@ -5,7 +5,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 
-// TODO
+// TODO: refactor, read nbt
 public class RocketUtils {
     public static int getFuel(ItemStack im) {
         if (ClayTechManager.isRocket(im)) {

@@ -1,0 +1,36 @@
+
+c	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö™…É
+i
+java:S3776%"SRefactor this method to reduce its Cognitive Complexity from 206 to the 15 allowed.(ö™…É
+S
+java:S1854â"7Remove this useless assignment to local variable "inv".(ˆ×¬²ùÿÿÿÿ
+^
+java:S57383"HRemove this call to a deprecated method, it has been marked for removal.(ÌœÈ–
+o
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").(’Ê·Ü
+o
+java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(æâ…
+@
+java:S1905?"*Remove this unnecessary cast to "Integer".(·À÷§
+c
+java:S5361k"HReplace this call to "replaceAll()" by a call to the "replace()" method.(«‡À»üÿÿÿÿ
+_
+java:S5738Í"HRemove this call to a deprecated method, it has been marked for removal.(ÌœÈ–
+_
+java:S5738İ"HRemove this call to a deprecated method, it has been marked for removal.(ÌœÈ–
+_
+java:S1192\"IDefine a constant instead of duplicating this literal "inrocket" 5 times.(ü•Èå
+a
+java:S1192["FDefine a constant instead of duplicating this literal "false" 3 times.(—¿úÈùÿÿÿÿ
+a
+java:S11922"LDefine a constant instead of duplicating this literal "currentPage" 8 times.(˜ª¡B
+J
+java:S1066V"/Merge this if statement with the enclosing one.(ğŸ…ˆúÿÿÿÿ
+K
+java:S1066Ë"/Merge this if statement with the enclosing one.(Ê§ò÷ÿÿÿÿÿ
+K
+java:S1066Û"/Merge this if statement with the enclosing one.(Ê§ò÷ÿÿÿÿÿ
+f	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îâÌÛ
+k	java:S117x"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­„Ÿùşÿÿÿÿ
+f	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªİ ¢
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ë¥ S

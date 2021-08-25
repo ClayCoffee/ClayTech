@@ -4,7 +4,7 @@ version: ${project.version}
 api-version: 1.13
 author: ClayCoffee
 loadbefore: [ Multiverse-Core ]
-depend: [ Slimefun ]
+depend: [ Slimefun, ClayAPI ]
 softdepend: [ WorldBorder ]
 commands:
   claytech:

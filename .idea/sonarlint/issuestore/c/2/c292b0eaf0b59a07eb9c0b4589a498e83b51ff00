@@ -1,0 +1,53 @@
+
+\	java:S112š"FDefine and throw a dedicated exception instead of using a generic one.(ñ·õ‰
+a	java:S112³"FDefine and throw a dedicated exception instead of using a generic one.(Šëüùÿÿÿÿ
+=
+java:S3010z"'Remove this assignment of "serverUUID".(““ç®
+I
+java:S3010{".Remove this assignment of "logFailedRequests".(üüêÃøÿÿÿÿ
+>
+java:S3010|"(Remove this assignment of "logSentData".(™æŸº
+M
+java:S3010}"2Remove this assignment of "logResponseStatusText".(‚„·åùÿÿÿÿ
+=	java:S108t")Either remove or fill this block of code.(”ã‰G
+D	java:S108‡")Either remove or fill this block of code.(´‘‚±ùÿÿÿÿ
+=
+java:S1168Î"&Return an empty array instead of null.(¥¹ï
+C
+java:S1612ü",Replace this lambda with a method reference.(ÀÜ¹ñ
+W	java:S125­"<This block of commented-out lines of code should be removed.(¤ÔÖŠÿÿÿÿÿ
+i
+java:S3776Õ"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(î¹“Æ
+V
+java:S1117à":Rename "plugin" which hides the field declared at line 65.(äøÔÚûÿÿÿÿ
+C
+java:S3011è",This accessibility update should be removed.(”™ÖÙ
+D	java:S108õ")Either remove or fill this block of code.(â¨šÛşÿÿÿÿ
+D	java:S108ø")Either remove or fill this block of code.(´‘‚±ùÿÿÿÿ
+P
+java:S3457†"4Lambda should be used to defer string concatenation.(éª€øÿÿÿÿ
+a
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(íçÂÊÿÿÿÿÿ
+A
+java:S1181ª"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+K
+java:S3457¬"4Lambda should be used to defer string concatenation.(¬¹’÷
+a
+java:S1192^"KDefine a constant instead of duplicating this literal "serverUuid" 3 times.(×‡¶–
+c
+java:S1192ı"GDefine a constant instead of duplicating this literal "values" 5 times.(”®¿‚üÿÿÿÿ
+Q
+java:S1141ß"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141ä"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+S
+java:S2629¢"7Use the built-in formatting to construct this argument.(äºÊÿÿÿÿÿ
+S
+java:S2629Á"7Use the built-in formatting to construct this argument.(Ó’½´úÿÿÿÿ
+b
+java:S2184ş"FCast one of the operands of this multiplication operation to a "long".(ÎÛ»ãøÿÿÿÿ
+b
+java:S2184ş"FCast one of the operands of this multiplication operation to a "long".(ÎÛ»ãøÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¨ÔÂç
+c
+java:S2259®"LA "NullPointerException" could be thrown; "compressedData" is nullable here.(ö»Øê
