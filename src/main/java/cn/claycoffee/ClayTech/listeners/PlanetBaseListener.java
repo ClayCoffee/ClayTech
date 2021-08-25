@@ -5,7 +5,7 @@ import cn.claycoffee.ClayTech.ClayTechData;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.api.ClayTechManager;
 import cn.claycoffee.ClayTech.api.Planet;
-import cn.claycoffee.ClayTech.utils.DataYML;
+import cn.claycoffee.ClayTech.objects.storage.DataYML;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.PlanetUtils;
 import cn.claycoffee.ClayTech.utils.RocketUtils;

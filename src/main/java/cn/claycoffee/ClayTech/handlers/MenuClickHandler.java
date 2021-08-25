@@ -1,7 +1,7 @@
 package cn.claycoffee.ClayTech.handlers;
 
 
-import cn.claycoffee.ClayTech.utils.GUI;
+import cn.claycoffee.ClayTech.objects.gui.GUI;
 import org.bukkit.entity.Player;
 
 /**

@@ -5,7 +5,7 @@ import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.ClayTechRecipeType;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -13,38 +13,38 @@ import org.bukkit.NamespacedKey;
 
 public class PotionAffect_Weapons {
     public PotionAffect_Weapons() {
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "BLIND_CORE", ClayTechItems.BLIND_CORE, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "BLIND_CORE", ClayTechItems.BLIND_CORE, "notresearch", 10,
                 ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLIND_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_BLIND_CORE", ClayTechItems.ADVANCED_BLIND_CORE,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_BLIND_CORE", ClayTechItems.ADVANCED_BLIND_CORE,
                 "notresearch", 10, RecipeType.ANCIENT_ALTAR, ClayTechMachineRecipes.ADVANCED_BLIND_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "POISON_CORE", ClayTechItems.POISON_CORE, "notresearch",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "POISON_CORE", ClayTechItems.POISON_CORE, "notresearch",
                 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.POISON_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_POISON_CORE",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_POISON_CORE",
                 ClayTechItems.ADVANCED_POISON_CORE, "notresearch", 10, RecipeType.ANCIENT_ALTAR,
                 ClayTechMachineRecipes.ADVANCED_POISON_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "CONFUSION_CORE", ClayTechItems.CONFUSION_CORE,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "CONFUSION_CORE", ClayTechItems.CONFUSION_CORE,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.CONFUSION_CORE,
                 false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_CONFUSION_CORE",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_CONFUSION_CORE",
                 ClayTechItems.ADVANCED_CONFUSION_CORE, "notresearch", 10, RecipeType.ANCIENT_ALTAR,
                 ClayTechMachineRecipes.ADVANCED_CONFUSION_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "SLOWNESS_CORE", ClayTechItems.SLOWNESS_CORE,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "SLOWNESS_CORE", ClayTechItems.SLOWNESS_CORE,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.SLOWNESS_CORE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_SLOWNESS_CORE",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ADVANCED_SLOWNESS_CORE",
                 ClayTechItems.ADVANCED_SLOWNESS_CORE, "notresearch", 10, RecipeType.ANCIENT_ALTAR,
                 ClayTechMachineRecipes.ADVANCED_SLOWNESS_CORE, false);
 
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "POISON_EYE", ClayTechItems.POISON_EYE, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "POISON_EYE", ClayTechItems.POISON_EYE, "notresearch", 10,
                 ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.POISON_EYE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "BLACK_ROCK_BLOCK", ClayTechItems.BLACK_ROCK_BLOCK,
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "BLACK_ROCK_BLOCK", ClayTechItems.BLACK_ROCK_BLOCK,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLACK_ROCK_BLOCK,
                 false);
 
-        Slimefunutils.registerItem(ClayTechItems.C_WEAPONS, "BLIND_SWORD", ClayTechItems.BLIND_SWORD, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_WEAPONS, "BLIND_SWORD", ClayTechItems.BLIND_SWORD, "notresearch", 10,
                 ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.BLIND_SWORD, false);
-        Slimefunutils.registerItem(ClayTechItems.C_WEAPONS, "FOUR_BOW", ClayTechItems.FOUR_BOW, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_WEAPONS, "FOUR_BOW", ClayTechItems.FOUR_BOW, "notresearch", 10,
                 ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.FOUR_BOW, false);
-        Slimefunutils.registerItem(ClayTechItems.C_WEAPONS, "POISON_SWORD", ClayTechItems.POISON_SWORD, "notresearch",
+        SlimefunUtils.registerItem(ClayTechItems.C_WEAPONS, "POISON_SWORD", ClayTechItems.POISON_SWORD, "notresearch",
                 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.POISON_SWORD, false);
 
         Research weapon_requires = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_EX_BASIC_WEAPONS"),

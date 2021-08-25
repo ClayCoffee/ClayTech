@@ -5,7 +5,7 @@ import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.ClayTechRecipeType;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Railways {
     public Railways() {
-        Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", ClayTechItems.HIGHSPEED_RAILWAY,
+        SlimefunUtils.registerItem(ClayTechItems.C_OTHER, "CLAY_HIGHSPEED_RAILWAY", ClayTechItems.HIGHSPEED_RAILWAY,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.HIGHSPEED_RAILWAY,
                 false);
         ItemStack elem8 = ClayTechItems.ELECTRIC_MOTOR_8;

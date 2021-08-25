@@ -2,7 +2,7 @@ package cn.claycoffee.ClayTech.listeners;
 
 import cn.claycoffee.ClayTech.implementation.guis.ClayAirLockerGUI;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -27,7 +27,7 @@ public class BlockUseListener implements Listener {
                 Block plate = e.getClickedBlock();
                 BlockFace[] lf = new BlockFace[]{BlockFace.NORTH, BlockFace.SOUTH, BlockFace.EAST, BlockFace.WEST};
                 for (BlockFace face : lf) {
-                    Slimefunutils.doAirlock(plate, face);
+                    SlimefunUtils.doAirlock(plate, face);
                 }
             }
         } else if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {

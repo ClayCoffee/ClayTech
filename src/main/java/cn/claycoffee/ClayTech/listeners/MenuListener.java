@@ -4,7 +4,7 @@ import cn.claycoffee.ClayTech.handlers.ItemProtectHandler;
 import cn.claycoffee.ClayTech.handlers.MenuActionHandler;
 import cn.claycoffee.ClayTech.handlers.MenuBlockHandler;
 import cn.claycoffee.ClayTech.handlers.MenuClickHandler;
-import cn.claycoffee.ClayTech.utils.GUIHolder;
+import cn.claycoffee.ClayTech.objects.gui.holder.GUIHolder;
 import cn.claycoffee.ClayTech.utils.ListUtils;
 import cn.claycoffee.ClayTech.utils.MenuUtils;
 import org.bukkit.entity.Player;

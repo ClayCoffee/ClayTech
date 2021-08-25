@@ -1,6 +1,7 @@
-package cn.claycoffee.ClayTech.utils;
+package cn.claycoffee.ClayTech.objects.gui;
 
 import cn.claycoffee.ClayTech.ClayTech;
+import cn.claycoffee.ClayTech.objects.gui.holder.GUIHolder;
 import org.bukkit.Bukkit;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;

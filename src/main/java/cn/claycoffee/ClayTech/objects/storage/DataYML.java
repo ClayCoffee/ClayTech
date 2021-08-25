@@ -1,4 +1,4 @@
-package cn.claycoffee.ClayTech.utils;
+package cn.claycoffee.ClayTech.objects.storage;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import org.bukkit.Bukkit;

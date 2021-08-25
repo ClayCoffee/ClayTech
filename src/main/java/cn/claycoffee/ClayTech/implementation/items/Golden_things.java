@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.items;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -34,19 +34,19 @@ public class Golden_things {
                 ClayTechItems.ARTIFICIAL_GOLD_BLOCK, ClayTechItems.ARTIFICIAL_GOLD_BLOCK,
                 ClayTechItems.ARTIFICIAL_GOLD_BLOCK};
 
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_NUGGET",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_NUGGET",
                 ClayTechItems.ARTIFICIAL_GOLD_NUGGET, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec,
                 false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT_O",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT_O",
                 ClayTechItems.ARTIFICIAL_GOLD_INGOT_O, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, reciped,
                 false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_INGOT",
                 ClayTechItems.ARTIFICIAL_GOLD_INGOT, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipee,
                 false);
-        Slimefunutils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_BLOCK",
+        SlimefunUtils.registerItem(ClayTechItems.C_MATERIALS, "ARTIFICIAL_GOLD_BLOCK",
                 ClayTechItems.ARTIFICIAL_GOLD_BLOCK, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipef,
                 false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOOD, "ARTIFICIAL_ENCHANTED_GOLDEN_APPLE",
+        SlimefunUtils.registerItem(ClayTechItems.C_FOOD, "ARTIFICIAL_ENCHANTED_GOLDEN_APPLE",
                 ClayTechItems.ARTIFICIAL_ENCHANTED_GOLDEN_APPLE, "notresearch", 10, RecipeType.ANCIENT_ALTAR, recipeg,
                 false);
 

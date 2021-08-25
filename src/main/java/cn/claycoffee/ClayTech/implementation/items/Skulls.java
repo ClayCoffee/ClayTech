@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.items;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -45,15 +45,15 @@ public class Skulls {
                 new ItemStack(Material.OAK_LOG)};
 
         // 注册物品
-        Slimefunutils.registerItem(ClayTechItems.C_DECORATES, "CLAYCOFFEE_HEAD", ClayTechItems.CLAYCOFFEE_HEAD,
+        SlimefunUtils.registerItem(ClayTechItems.C_DECORATES, "CLAYCOFFEE_HEAD", ClayTechItems.CLAYCOFFEE_HEAD,
                 "notresearch", 10, RecipeType.ANCIENT_ALTAR, ClayCoffeeHeadRecipe, false);
-        Slimefunutils.registerItem(ClayTechItems.C_DECORATES, "STALIN_HEAD", ClayTechItems.STALIN_HEAD, "notresearch",
+        SlimefunUtils.registerItem(ClayTechItems.C_DECORATES, "STALIN_HEAD", ClayTechItems.STALIN_HEAD, "notresearch",
                 10, RecipeType.ANCIENT_ALTAR, OtherHeadRecipe, false);
-        Slimefunutils.registerItem(ClayTechItems.C_DECORATES, "MARX_HEAD", ClayTechItems.MARX_HEAD, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_DECORATES, "MARX_HEAD", ClayTechItems.MARX_HEAD, "notresearch", 10,
                 RecipeType.ANCIENT_ALTAR, OtherHeadRecipe2, false);
-        Slimefunutils.registerItem(ClayTechItems.C_DECORATES, "CLOCK_C", ClayTechItems.CLOCK_C, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_DECORATES, "CLOCK_C", ClayTechItems.CLOCK_C, "notresearch", 10,
                 RecipeType.ENHANCED_CRAFTING_TABLE, ClockRecipe, false);
-        Slimefunutils.registerItem(ClayTechItems.C_DECORATES, "LANTERN_C", ClayTechItems.LANTERN_C, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_DECORATES, "LANTERN_C", ClayTechItems.LANTERN_C, "notresearch", 10,
                 RecipeType.ENHANCED_CRAFTING_TABLE, LanternRecipe, false);
 
         // 注册研究

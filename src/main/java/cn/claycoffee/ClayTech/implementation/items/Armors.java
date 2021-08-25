@@ -5,7 +5,7 @@ import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.ClayTechRecipeType;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.NamespacedKey;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class Armors {
     public Armors() {
 
-        Slimefunutils.registerItem(ClayTechItems.C_ARMORS, "ANTI_SLOWNESS_BOOTS", ClayTechItems.ANTI_SLOWNESS_BOOTS,
+        SlimefunUtils.registerItem(ClayTechItems.C_ARMORS, "ANTI_SLOWNESS_BOOTS", ClayTechItems.ANTI_SLOWNESS_BOOTS,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.ANTI_SLOWNESS_BOOTS,
                 false);
 
@@ -23,7 +23,7 @@ public class Armors {
         basic.addItems(SlimefunItem.getByItem(ClayTechItems.ANTI_SLOWNESS_BOOTS));
         basic.register();
 
-        Slimefunutils.registerArmors(ClayTechItems.C_ARMORS, "CLAY_ALLOY",
+        SlimefunUtils.registerArmors(ClayTechItems.C_ARMORS, "CLAY_ALLOY",
                 new ItemStack[]{ClayTechItems.CLAY_ALLOY_HELMET, ClayTechItems.CLAY_ALLOY_CHESTPLATE,
                         ClayTechItems.CLAY_ALLOY_LEGGINGS, ClayTechItems.CLAY_ALLOY_BOOTS},
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechItems.CLAY_ALLOY_INGOT, false);

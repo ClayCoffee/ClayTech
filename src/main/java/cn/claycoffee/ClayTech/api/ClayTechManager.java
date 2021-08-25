@@ -2,7 +2,6 @@ package cn.claycoffee.ClayTech.api;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
-import cn.claycoffee.ClayTech.utils.ClayItem;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.Utils;
 import org.bukkit.entity.Player;

@@ -5,7 +5,7 @@ import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.ClayTechRecipeType;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -25,22 +25,22 @@ public class FoodMakingStaff {
                         : new ItemStack(Material.KELP),
                 null};
 
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_CHICKEN_FOOT", ClayTechItems.RAW_CHICKEN_FOOT,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_CHICKEN_FOOT", ClayTechItems.RAW_CHICKEN_FOOT,
                 "notresearch", 10, ClayTechRecipeType.CLAY_FOOD_CHALKING_MACHINE,
                 ClayTechMachineRecipes.RAW_CHICKEN_FOOT, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_BREAD", ClayTechItems.RAW_BREAD, "notresearch",
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_BREAD", ClayTechItems.RAW_BREAD, "notresearch",
                 10, RecipeType.ENHANCED_CRAFTING_TABLE, recipec, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_VEGETABLE", ClayTechItems.RAW_VEGETABLE,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "RAW_VEGETABLE", ClayTechItems.RAW_VEGETABLE,
                 "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, reciped, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_LEMON", ClayTechItems.CLAY_LEMON, "notresearch",
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_LEMON", ClayTechItems.CLAY_LEMON, "notresearch",
                 10, ClayTechRecipeType.PLUCKING, ClayTechItems.NORECIPE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "STARCH", ClayTechItems.STARCH, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "STARCH", ClayTechItems.STARCH, "notresearch", 10,
                 ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "FLOUR", ClayTechItems.FLOUR, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "FLOUR", ClayTechItems.FLOUR, "notresearch", 10,
                 ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "SNAIL_HEALTHY", ClayTechItems.SNAIL_HEALTHY,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "SNAIL_HEALTHY", ClayTechItems.SNAIL_HEALTHY,
                 "notresearch", 10, ClayTechRecipeType.FISHING, ClayTechItems.NORECIPE, false);
-        Slimefunutils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_SWEET_POTATO", ClayTechItems.CLAY_SWEET_POTATO,
+        SlimefunUtils.registerItem(ClayTechItems.C_FOODMATERIALS, "CLAY_SWEET_POTATO", ClayTechItems.CLAY_SWEET_POTATO,
                 "notresearch", 10, ClayTechRecipeType.HARVEST, ClayTechItems.NORECIPE, false);
 
         Research foodmaterialsI = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_FOODMATERIALSBASIC"),

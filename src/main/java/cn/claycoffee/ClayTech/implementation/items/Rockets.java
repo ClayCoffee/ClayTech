@@ -2,7 +2,9 @@ package cn.claycoffee.ClayTech.implementation.items;
 
 import cn.claycoffee.ClayTech.*;
 import cn.claycoffee.ClayTech.api.Planet;
-import cn.claycoffee.ClayTech.utils.*;
+import cn.claycoffee.ClayTech.utils.Lang;
+import cn.claycoffee.ClayTech.utils.PlanetUtils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
@@ -41,7 +43,7 @@ public class Rockets {
                 ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT, ClayTechItems.CLAY_FUSION_INGOT,
                 ClayTechItems.CLAY_FUSION_INGOT};
 
-        Slimefunutils.registerItem(ClayTechItems.C_MACHINES, "ROCKET_LAUNCHER", ClayTechItems.ROCKET_LAUNCHER,
+        SlimefunUtils.registerItem(ClayTechItems.C_MACHINES, "ROCKET_LAUNCHER", ClayTechItems.ROCKET_LAUNCHER,
                 "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, rocketlauncher, false,
                 new ItemHandler[]{new BlockPlaceHandler(false) {
                     @Override
@@ -107,7 +109,7 @@ public class Rockets {
         ms2.register();
 
         // 火箭一阶
-        Slimefunutils.registerItem(ClayTechItems.C_OTHER, "ROCKET_1", ClayTechItems.ROCKET, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_OTHER, "ROCKET_1", ClayTechItems.ROCKET, "notresearch", 10,
                 ClayTechRecipeType.CLAY_ROCKET_ASSEMBLING_MACHINE, ClayTechMachineRecipes.ROCKET_1, false);
     }
 }

@@ -7,7 +7,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.Objects.handlers.ItemHandler;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Material;
@@ -19,23 +18,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Slimefunutils {
-
-    public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
-                                    RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch) {
-        SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
-        SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
-        item.register(ClayTech.getInstance());
-    }
-
-    public static void registerItem(Category category, String name, ItemStack ItemStack, String ResearchName, int cost,
-                                    RecipeType Recipetype, ItemStack[] RecipeStack, boolean registerResearch, ItemHandler[] handler) {
-        SlimefunItemStack items = new SlimefunItemStack(name, ItemStack);
-        SlimefunItem item = new SlimefunItem(category, items, Recipetype, RecipeStack);
-        item.addItemHandler(handler);
-        item.register(ClayTech.getInstance());
-    }
-
+public class SlimefunUtils {
     public static void registerArmors(Category category, String nameprefix, ItemStack[] ItemStack, String ResearchName,
                                       int cost, RecipeType Recipetype, ItemStack MaterialStack, boolean registerResearch) {
 
@@ -163,7 +146,7 @@ public class Slimefunutils {
                             b.setType(ClayTechItems.CLAY_AIR_LOCK_BLOCK.getType());
                         }
                     }
-                }.runTaskLater(ClayTech.getInstance(), waitTime * 20);
+                }.runTaskLater(ClayTech.getInstance(), waitTime * 20L);
             }
         }
 

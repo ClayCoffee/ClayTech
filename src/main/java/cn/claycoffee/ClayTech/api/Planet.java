@@ -1,7 +1,7 @@
 package cn.claycoffee.ClayTech.api;
 
 import cn.claycoffee.ClayTech.ClayTech;
-import cn.claycoffee.ClayTech.utils.DataYML;
+import cn.claycoffee.ClayTech.objects.storage.DataYML;
 import cn.claycoffee.ClayTech.utils.Utils;
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import com.onarandombox.MultiverseCore.api.MVWorldManager;

@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.resources;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World.Environment;
@@ -15,11 +15,12 @@ public class ClayFuel implements GEOResource {
     private final NamespacedKey key = new NamespacedKey(ClayTech.getInstance(), "CLAY_FUEL");
 
     public ClayFuel() {
-        Slimefunutils.registerResource(this);
+        SlimefunUtils.registerResource(this);
     }
 
     @Override
-    public @NonNull NamespacedKey getKey() {
+    public @NonNull
+    NamespacedKey getKey() {
         return key;
     }
 

@@ -1,6 +1,6 @@
 package cn.claycoffee.ClayTech;
 
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
@@ -128,12 +128,12 @@ public class ClayTechMachineRecipes {
     public final static ItemStack[] CLAY_ALLOY_PICKAXE = {ClayTechItems.CLAY_ALLOY_INGOT,
             ClayTechItems.CLAY_ALLOY_INGOT, ClayTechItems.CLAY_ALLOY_INGOT, null, ClayTechItems.CLAY_ALLOY_INGOT, null,
             null, ClayTechItems.CLAY_ALLOY_INGOT, null};
-    public final static ItemStack[] CLAY_ALLOY_HELMET = Slimefunutils.getArmorsStack(1, ClayTechItems.CLAY_ALLOY_INGOT);
-    public final static ItemStack[] CLAY_ALLOY_CHESTPLATE = Slimefunutils.getArmorsStack(2,
+    public final static ItemStack[] CLAY_ALLOY_HELMET = SlimefunUtils.getArmorsStack(1, ClayTechItems.CLAY_ALLOY_INGOT);
+    public final static ItemStack[] CLAY_ALLOY_CHESTPLATE = SlimefunUtils.getArmorsStack(2,
             ClayTechItems.CLAY_ALLOY_INGOT);
-    public final static ItemStack[] CLAY_ALLOY_LEGGINGS = Slimefunutils.getArmorsStack(3,
+    public final static ItemStack[] CLAY_ALLOY_LEGGINGS = SlimefunUtils.getArmorsStack(3,
             ClayTechItems.CLAY_ALLOY_INGOT);
-    public final static ItemStack[] CLAY_ALLOY_BOOTS = Slimefunutils.getArmorsStack(4, ClayTechItems.CLAY_ALLOY_INGOT);
+    public final static ItemStack[] CLAY_ALLOY_BOOTS = SlimefunUtils.getArmorsStack(4, ClayTechItems.CLAY_ALLOY_INGOT);
     public final static ItemStack[] SILICON_INGOT = {ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON,
             ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON, ClayTechItems.ELEMENT_SILICON, null, null,
             null, null};

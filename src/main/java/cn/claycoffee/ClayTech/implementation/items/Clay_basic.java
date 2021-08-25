@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.items;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
@@ -22,9 +22,9 @@ public class Clay_basic {
                 new ItemStack(Material.STICK), new ItemStack(Material.DIRT), endingot2,
                 new ItemStack(Material.IRON_INGOT), endingot2};
 
-        Slimefunutils.registerItem(ClayTechItems.C_BASICS, "MAGIC_CLAY", ClayTechItems.MAGIC_CLAY, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_BASICS, "MAGIC_CLAY", ClayTechItems.MAGIC_CLAY, "notresearch", 10,
                 RecipeType.ENHANCED_CRAFTING_TABLE, recipea, false);
-        Slimefunutils.registerItem(ClayTechItems.C_BASICS, "CLAY_STICK", ClayTechItems.CLAY_STICK, "notresearch", 10,
+        SlimefunUtils.registerItem(ClayTechItems.C_BASICS, "CLAY_STICK", ClayTechItems.CLAY_STICK, "notresearch", 10,
                 RecipeType.ENHANCED_CRAFTING_TABLE, recipeb, false);
 
         Research basic = new Research(new NamespacedKey(ClayTech.getInstance(), "CLAYTECH_BASIC"), 9900,

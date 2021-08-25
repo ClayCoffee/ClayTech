@@ -3,7 +3,7 @@ package cn.claycoffee.ClayTech.implementation.items;
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.ClayTechItems;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.core.researching.Research;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -25,10 +25,10 @@ public class Spacethings {
         ItemStack[] clayairlockplate = new ItemStack[]{new ItemStack(Material.STICKY_PISTON), new ItemStack(Material.STONE_PRESSURE_PLATE), new ItemStack(Material.STICKY_PISTON), new ItemStack(Material.STICKY_PISTON), SlimefunItems.ELECTRIC_MOTOR, new ItemStack(Material.STICKY_PISTON), ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE, ClayTechItems.BLISTERING_CORE};
         ItemStack[] clayairlockblock = new ItemStack[]{SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT, null, SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT, SlimefunItems.LEAD_INGOT};
 
-        Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_AIR_LOCK_PLATE",
+        SlimefunUtils.registerItem(ClayTechItems.C_OTHER, "CLAY_AIR_LOCK_PLATE",
                 ClayTechItems.CLAY_AIR_LOCK_PLATE, "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE,
                 clayairlockplate, false);
-        Slimefunutils.registerItem(ClayTechItems.C_OTHER, "CLAY_AIR_LOCK_BLOCK", ClayTechItems.CLAY_AIR_LOCK_BLOCK,
+        SlimefunUtils.registerItem(ClayTechItems.C_OTHER, "CLAY_AIR_LOCK_BLOCK", ClayTechItems.CLAY_AIR_LOCK_BLOCK,
                 "notresearch", 10, RecipeType.ENHANCED_CRAFTING_TABLE, clayairlockblock,
                 false);
 

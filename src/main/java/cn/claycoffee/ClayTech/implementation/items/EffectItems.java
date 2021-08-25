@@ -6,9 +6,8 @@ import cn.claycoffee.ClayTech.ClayTechMachineRecipes;
 import cn.claycoffee.ClayTech.ClayTechRecipeType;
 import cn.claycoffee.ClayTech.api.events.PlayerUseItemEvent;
 import cn.claycoffee.ClayTech.listeners.ItemUseListener;
-import cn.claycoffee.ClayTech.utils.ClayItem;
 import cn.claycoffee.ClayTech.utils.Lang;
-import cn.claycoffee.ClayTech.utils.Slimefunutils;
+import cn.claycoffee.ClayTech.utils.SlimefunUtils;
 import cn.claycoffee.ClayTech.utils.Utils;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
@@ -28,7 +27,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class EffectItems {
     public EffectItems() {
-        Slimefunutils.registerItem(ClayTechItems.C_TOOLS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER,
+        SlimefunUtils.registerItem(ClayTechItems.C_TOOLS, "TNT_EXPLOSION_CREATER", ClayTechItems.TNT_EXPLOSION_CREATER,
                 "notresearch", 10, ClayTechRecipeType.CLAY_CRAFTING_TABLE, ClayTechMachineRecipes.TNT_EXPLOSION_CREATER,
                 false, new ItemHandler[]{new ItemUseHandler() {
                     @Override

@@ -1,9 +1,10 @@
-package cn.claycoffee.ClayTech.utils;
+package cn.claycoffee.ClayTech.objects.gui;
 
 import cn.claycoffee.ClayTech.ClayTech;
 import cn.claycoffee.ClayTech.api.exceptions.AlreadyProtectedException;
 import cn.claycoffee.ClayTech.handlers.ItemProtectHandler;
 import cn.claycoffee.ClayTech.handlers.MenuBlockHandler;
+import cn.claycoffee.ClayTech.objects.gui.holder.GUIHolder;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;

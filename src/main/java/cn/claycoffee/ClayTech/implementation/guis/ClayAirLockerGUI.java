@@ -2,7 +2,7 @@ package cn.claycoffee.ClayTech.implementation.guis;
 
 import cn.claycoffee.ClayTech.api.exceptions.AlreadyProtectedException;
 import cn.claycoffee.ClayTech.handlers.MenuClickHandler;
-import cn.claycoffee.ClayTech.utils.BlockGUI;
+import cn.claycoffee.ClayTech.objects.gui.BlockGUI;
 import cn.claycoffee.ClayTech.utils.Lang;
 import cn.claycoffee.ClayTech.utils.Utils;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;

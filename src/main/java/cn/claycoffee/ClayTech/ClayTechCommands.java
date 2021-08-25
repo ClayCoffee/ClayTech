@@ -29,7 +29,6 @@ public class ClayTechCommands implements TabExecutor {
                 if (args.length == 1) {
                     if (args[0].equalsIgnoreCase("checkupdate")) {
                         if (sender.hasPermission("claytech.checkupdate")) {
-                            // 检查更新了兄弟!!
                             ClayTech.getUpdater().tryUpdate();
                             return true;
                         } else {
@@ -45,7 +44,7 @@ public class ClayTechCommands implements TabExecutor {
                 }
             } else {
                 // 基础命令
-                sender.sendMessage(Lang.readGeneralText("basic_command").replaceAll("\\{version\\}",
+                sender.sendMessage(Lang.readGeneralText("basic_command").replace("\\{version}",
                         ClayTech.getInstance().getPluginVersion()));
                 return true;
             }
